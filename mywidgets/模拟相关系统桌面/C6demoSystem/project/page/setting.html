@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C6演示系统-设置</title>
+<link rel="stylesheet" href="../style/reset.css" />
+<link rel="stylesheet" href="../style/portal.css" />
+<script src="../js/jquery/jquery-1.5.2.min.js"></script>
+<script>
+	$(function(){
+		$('.set-block ul li').click(function(){
+			$(this).addClass('set-current').siblings('li').removeClass('set-current') ;
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+	<div class="set-wrap">
+    	<div class="set-block">
+        	<h1>工作台设置</h1>
+            <ul>
+            	<li class="set-current"><a href="###"><img src="../image/set-desktop1.png" /><b>C6工作台</b></a></li>
+            	<li><a href="###"><img src="../image/set-desktop2.png" /><b>Metro UI</b></a></li>
+            </ul>
+        </div>
+        <div class="set-block">
+        	<h1>导航设置</h1>
+            <ul>
+            	<li class="set-current"><a href="###"><img src="../image/set-nav1.png" /><b>C6导航</b></a></li>
+            	<li><a href="###"><img src="../image/set-nav2.png" /><b>图标导航</b></a></li>
+            </ul>
+        </div>
+        <div class="set-block">
+        	<h1>皮肤设置</h1>
+            <ul class="set-skin">
+            	<li class="set-current"><a href="###" class="skinImg"><img src="../image/set-blue.png" /><b>蓝色经典</b></a></li>
+            	<li><a href="###"><img src="../image/set-green.png" /><b>早春十分</b></a></li>
+            	<li><a href="###"><img src="../image/set-red.png" /><b>激情岁月</b></a></li>
+            	<li><a href="###"><img src="../image/set-purple.png" /><b>紫晶物语</b></a></li>
+            	<li><a href="###"><img src="../image/set-gray.png" /><b>银色酷炫</b></a></li>
+            	<li><a href="###"><img src="../image/set-brown.png" /><b>棕色典雅</b></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="set-btn"><input type="button" value="确定" class="c6ui-button"/><input type="button" value="取消" class="c6ui-button"/></div>
+</body>
+</html>

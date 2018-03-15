@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>contacts</title>
+<script language="javascript" src="phonegap-1.3.0.js"></script>
+<script language="javascript">
+	// 等待加载PhoneGap
+	document.addEventListener("deviceready", onDeviceReady, false);
+	
+	// PhoneGap加载完毕
+	function onDeviceReady() {
+	
+		// 创建联系人
+		var contact = navigator.service.contacts.create();
+		contact.displayName = "Plumber";
+		contact.nickname = "Plumber";		//同时指定以支持所有设备
+		var name = new ContactName();
+		name.givenName = "Jane";
+		name.familyName = "Doe";
+		contact.name = name;
+	
+		// 存储联系人
+		contact.save(onSaveSuccess,onSaveError);
+	
+		// 克隆联系人
+		var clone = contact.clone();
+		clone.name.givenName = "John";
+		console.log("Original contact name = " + contact.name.givenName);
+		console.log("Cloned contact name = " + clone.name.givenName);
+	
+		// 删除联系人
+		contact.remove(onRemoveSuccess,onRemoveError);
+	}
+	
+		// onSaveSuccess: 返回当前保存成功的联系人数据的快照
+	function onSaveSuccess(contacts) {
+		alert("Save Success");
+	}
+	
+	// onSaveError: 获取联系人数据失败
+	function onSaveError(contactError) {
+		alert("Error = " + contactError.code);
+	}
+	
+	// onRemoveSuccess: 返回当前删除成功的联系人数据的快照
+	function onRemoveSuccess(contacts) {
+		alert("Removal Success");
+	}
+	
+	// onRemoveError: 获取联系人数据失败
+	function onRemoveError(contactError) {
+		alert("Error = " + contactError.code);
+	}
+</script>
+</head>
+
+<body>
+	<h1>Example</h1>
+ 	<p>Find Contact</p>
+</body>
+</html>

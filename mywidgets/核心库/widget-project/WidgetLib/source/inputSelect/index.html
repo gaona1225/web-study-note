@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>表单下拉选择框--inputSelect</title>
+	<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+	<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+	<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+	<script src="inputSelect.js"></script>
+	<script type='text/javascript'>
+	$(function(){
+		$('#hide').click(function(){$('#textfield').inputSelect('hide');});
+		$('#show').click(function(){$('#textfield').inputSelect('show');});
+		$('#disable').click(function(){$('#textfield').inputSelect('disable');});
+		$('#enable').click(function(){$('#textfield').inputSelect('enable');});
+	});
+	</script>
+</head>
+
+<body style="padding:20px;">
+下拉选择框（inputSelect）:
+<select name=""  id="textfield">
+  <option>请选择</option>
+  <option>项目列表1</option>
+  <option>项目列表2</option>
+</select>
+<select name="" disabled="disabled" >
+  <option>请选择</option>
+  <option>项目列表1</option>
+  <option>项目列表2</option>
+</select>
+<a href="###" id="hide">隐藏</a>
+<a href="###" id="show">显示</a>
+<a href="###" id="disable">禁用</a>
+<a href="###" id="enable">启用</a>
+</body>
+</html>

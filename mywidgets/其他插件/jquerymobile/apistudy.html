@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>APIstudynote</title>
+<link type="text/css" rel="stylesheet" href="jquery.mobile-1.0/jquery.mobile-1.0.min.css"/>
+</head>
+
+<body>
+<div data-role="page" data-add-back-btn="true" data-back-btn-text="go back">
+	<div data-role="header">
+    	<div data-role="button" data-icon="custom" class="ui-btn-left" data-iconpos="notext">notext</div>
+    	<h1>header</h1>
+        <div data-role="button" data-icon="custom" class="ui-btn-right" data-iconpos="right" data-iconshadow="false">custom</div>
+    </div>
+    <div data-role="content">
+    	<div data-role="collapsible" data-collapsed="false" data-content-theme="a" data-theme="b">
+        	<div data-role="button">button1</div>
+        	<div data-role="button">button2</div>
+        	<div data-role="button">button3</div>
+        </div>
+        <a data-role="button" data-rel="dialog" href="#dialogDiv" data-transition="slidedown">dialogDiv</a>
+        <div data-role="button" class="changePageBtn">changePage</div>
+        <div data-role="button" class="loadPageBtn">loadPage</div>
+        <div data-role="fieldcontain">
+            <div data-role="slider" data-track-theme="e" data-theme="a">fds</div><!--slider中参数data-track-theme为控制slider中滑杆样式data-theme主要为滑块样式-->
+        </div>
+        <ul data-role="listview" data-count-theme="e">
+        	<li>listview1</li>
+        	<li>listview2</li>
+        	<li>listview3</li>
+        </ul>
+    </div>
+    <div data-role="footer"><h4>footer</h4></div>
+</div>
+<!--dialog中参数data-overlay-theme主要控制弹出时的遮罩层主题-->
+<div data-role="page" id="dialogDiv" data-close-btn-text="closeNew" data-theme="b" data-overlay-theme="e" data-title="newDialog">
+	<div data-role="header"><h1>header</h1></div>
+    <div data-role="content">content</div>
+    <div data-role="footer"><h4>footer</h4></div>
+</div>
+</body>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript">
+	<!--mobileinit dom元素初始化时触发-->
+	$(document).bind('mobileinit',function(){
+		$('#dialogDiv').attr('testAttr','testattr') ;
+		$("#dialogDiv div:jqmData(role='footer') h4").text('hello') ;
+		$.mobile.dialog.prototype.options.closeBtnText = 'closeNew22' ; //在页面初始化的时候修改dialog关闭按钮的文本内容（该文本通过决定定位和left:-9999样式影藏）
+		$.mobile.page.prototype.options.backBtnText = "previous"; //在页面初始化的时候配置后退按钮的文
+		//$.mobile.loadingMessage='hello' ;
+		
+		//设置mobile公共配置项
+		$.mobile.ns= '' ;//定义命名空间
+		$.extend($.mobile,{
+			ns:'',//定义命名空间
+			autoInitializePage:'true',//是否自动初始化页面
+			subPageUrlKey:'ui-page',
+			activePageClass:'ui-page-active',
+			activeBtnClass:'ui-btn-active',	
+			ajaxEnabled:'true',//启用ajax加载页面和提交数据
+			linkBindingEnabled:'false',
+			hashListeningEnabled:'true',//是否自动监听location.hash的变化
+			pushStateEnabled:'true',//增强使用history.replaceState支持的浏览器
+			defaultPageTransition:'slider',//默认页面切换的效果
+			touchOverflowEnabled:'false',//是否使用设备原生区域的滚动特性
+			defaultDialogTransition:'pop',//Ajax弹窗的效果
+			minScrollBack:150,//当滚动超出所设置的高度时才会触发滚动位置记忆功能，当滚动高度没有超过时，后退到该页面滚动条会到达顶部，以此设置来减小位置记忆的数据量
+			loadingMessage:'loading',//设置页面加载时显示信息
+			pageLoadErrorMessage:'Error Loading Page'//设置页面加载失败时显示信息
+		}) ;
+	}) ;
+	$('.changePageBtn').live('click',function(){/*动态创建ajax页面跳转*/
+		alert($.mobile.gradeA) ;//浏览器是否属于A级浏览器
+		$.mobile.changePage('listview.html',{
+			transition:'flip' ,
+			reverse:'false' ,
+			showLoadMsg :'true'
+		}) ;
+	});
+	$('.loadPageBtn').live('click',function(){
+		$.mobile.loadPage('listview.html') ;
+		$.mobile.loadingMessage='aaa' ;
+		$.mobile.showPageLoadingMsg() ;
+		//alert(loadMsg) ;
+	}) ;
+</script>
+<script language="javascript" type="text/javascript" src="jquery.mobile-1.0/jquery.mobile-1.0.min.js"></script>
+</html>

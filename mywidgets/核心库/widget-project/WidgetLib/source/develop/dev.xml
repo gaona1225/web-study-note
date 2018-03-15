@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--userid:选择插件的标示,username:触发插件的元素,userfun:触发插件的方法,userdom:显示区域的dom,editdom:编辑参数的dom,-->
+<widget>
+	<userid>inputSelect</userid>
+	<userfun>userfun-inputSelect</userfun>
+	<userdom>
+		userdom-inputSelect
+	</userdom>
+	<editdom>
+		editdom-inputSelect
+	</editdom>
+	<editfun>
+		editfun-inputSelect
+	</editfun>
+</widget>
+<widget>
+	<userid>inputText</userid>
+	<userfun>userfun-inputText</userfun>
+	<userdom>
+		userdom-inputText
+	</userdom>
+	<editdom>
+		editdom-inputText
+	</editdom>
+	<editfun>
+		editfun-inputText
+	</editfun>
+</widget>
+<widget>
+	<userid>inputTextarea</userid>
+	<userfun>userfun-inputTextarea</userfun>
+	<userdom>
+		userdom-inputTextarea
+	</userdom>
+	<editdom>
+		editdom-inputTextarea
+	</editdom>
+	<editfun>
+		editfun-inputTextarea
+	</editfun>
+</widget>
+<widget>
+	<userid>buttonActive</userid>
+	<userfun>$('.buttonActive').buttonActive()</userfun>
+	<userdom>
+		<div class="showElem">
+			<input type="button" class="buttonActive" value="button4" />
+		</div>
+	</userdom>
+	<editdom>
+		<div class="editElem">
+			<label>disable</label>
+			<select id="buttonActive-disable">
+				<option>yes</option>
+				<option selected>no</option>
+			</select>
+		</div>
+	</editdom>
+	<editfun>
+		$('#buttonActive-disable').change(function(){
+			var selectedVal = $(this).find('option:selected').html() ;
+			if(selectedVal == 'yes'){
+				$('.buttonActive').buttonActive('destroy');   
+			}else{
+				$('.buttonActive').buttonActive();   
+			}
+		}) ;
+	</editfun>
+</widget>

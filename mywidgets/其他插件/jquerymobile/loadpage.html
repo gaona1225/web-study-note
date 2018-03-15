@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>APIstudynote</title>
+<link type="text/css" rel="stylesheet" href="jquery.mobile-1.0/jquery.mobile-1.0.min.css"/>
+</head>
+
+<body>
+<div data-role="page" id="loadpage">
+	<div data-role="header">
+    	<h1>header</h1>
+    </div>
+    <div data-role="content">
+       <a href="morehtml.html" data-role="button" data-ajax="false">新浪</a>
+    </div>
+    <div data-role="footer"><h4>footer</h4></div>
+</div>
+</body>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript" src="jquery.mobile-1.0/jquery.mobile-1.0.min.js"></script>
+<script language="javascript" type="text/javascript">
+	$('#loadpage').live('pageinit',function(){
+		$.mobile.loadPage("morehtml.html") ;
+	}) ;
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>storage</title>
+<script language="javascript" src="phonegap-1.3.0.js"></script>
+<script language="javascript">
+	// 等待加载PhoneGap
+	document.addEventListener("deviceready", onDeviceReady, false); 
+	
+	// PhoneGap加载完毕
+	function onDeviceReady() {		
+		var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+		db.transaction(populateDB, errorCB, successCB);
+		
+		window.localStorage.setItem("key", "value");
+		var keyname = window.localStorage.key(i);
+		//[译注:应当是var keyname = window.localStorage.key(0);]
+		// keyname的值现在是“key”
+		var value = window.localStorage.getItem("key");
+		// value的值现在是“value”
+		window.localStorage.removeItem("key");
+		window.localStorage.setItem("key2", "value2");
+		window.localStorage.clear();
+		// localStorage现在是空的
+	}
+	
+	// 填充数据库
+	function populateDB(tx) {
+		tx.executeSql('DROP TABLE DEMO IF EXISTS');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
+		tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
+		tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+	}
+	
+	// 查询数据库
+	function queryDB(tx) {
+		tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+	}
+	
+	// 查询成功后调用的回调函数
+	function querySuccess(tx, results) {
+		// 因为没有插入记录，所以返回值为空
+		console.log("Insert ID = " + results.insertId);
+		// 因为这是一条查询语句所以返回值为0
+		console.log("Rows Affected = " + results.rowAffected);
+		// 返回查询到的记录行数量
+		console.log("Insert ID = " + results.rows.length);
+		
+		var len = results.rows.length;
+		console.log("DEMO table: " + len + " rows found.");
+		for (var i=0; i<len; i++){
+			console.log("Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).data);
+		}
+	}
+	
+	
+	// 事务执行出错后调用的回调函数
+	function errorCB(tx, err) {
+		alert("Error processing SQL: "+err);
+	}
+	
+	// 事务执行成功后调用的回调函数
+	function successCB() {
+		alert("success!");
+	}
+</script>
+</head>
+
+<body>
+	<h1>Example</h1>
+	<p>Open Database</p>
+</body>
+</html>

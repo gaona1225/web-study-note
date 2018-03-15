@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="MetroJs.css" />
+<script src="jquery-1.7.2.js"></script>
+<script src="MetroJs.js"></script>
+</head>
+
+<body>
+<!-- Apply blue theme as default for all tiles -->
+<div id="tiles" class="blue"> 
+  <!-- Sliding Tile that shows 100% of the back tile every 3 seconds -->
+  <div class="live-tile" data-stops="100%" data-speed="750" data-delay="3000"> <span class="tile-title">slide tile (figure 2a)</span>
+    <div>1</div>
+    <div>2</div>
+  </div>
+  <!-- Red Flip Tile that flips every 4 seconds -->
+  <div class="red live-tile" data-mode="flip" data-delay="4000">
+    <div>3 <a class="tile-title">flip tile front (figure 2b)</a> </div>
+    <div>4 <a class="tile-title">flip tile back (figure 2b)</a> </div>
+  </div>
+  <!-- Mango Flip List that triggers every 3 seconds -->
+  <div class="mango list-tile"> <span class="tile-title">flip list (figure 2c)</span>
+    <ul class="flip-list fourTiles" data-mode="flip-list" data-delay="3000">
+      <li>
+        <div>5</div>
+        <div>6</div>
+      </li>
+      <li>
+        <div>7</div>
+        <div>8</div>
+      </li>
+      <li>
+        <div>9</div>
+        <div>10</div>
+      </li>
+      <li data-direction="horizontal">
+        <div>11</div>
+        <div>12</div>
+      </li>
+    </ul>
+  </div>
+  <!-- Green Static Tile -->
+  <div class="green live-tile exclude"> <span class="tile-title">static tile (figure 2d)</span>
+    <p>Static tiles can take advantage of theming too!</p>
+  </div>
+</div>
+<!-- Activate live tiles --> 
+<script type="text/javascript">
+    // apply regular slide universally unless .exclude class is applied 
+    // NOTE: The default options for each liveTile are being pulled from the 'data-' attributes
+	$(function(){
+		$(".live-tile, .flip-list").liveTile();
+	});
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+1.工作台：onclick="openTargetByUrl('../portlet/user-work!workShow.action','工作台','workBench');"
+2.未阅寻呼:onclick="openTargetByUrl('${ctx}/paging/call-query.action?callType=recive&isRead=2&flag=1','未阅寻呼','unReadCall');"
+3.保留寻呼:onclick="openTargetByUrl('${ctx}/paging/call!keep.action','保留寻呼','keepCall');"
+4.在线人数:onclick="openTargetByUrl('${ctx}/paging/call.action','在线人数','OnlinePerson');"
+5.个人设置:onclick="openTargetByUrl('${ctx}/adm/user!userSetRight.action','个人设置','PersonSet');"
+6.工作台设置:onclick="openTargetByUrl('${ctx}/portlet/user-work!stylePage.action','工作台设置','stylePageSet');"
+7.注销out();
+8.退出quit();
+9.锁定
+10.跳转-关闭
+11-2
+是否进一步封装
+ 

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>状态盒子</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="stateBox.js"></script>
+<script>
+$(function(){
+	$("#updata").click(function(){
+	var stateVal = $("#state").val(),
+		contentVal = $("#content").val();
+		$(window.top.document.body).stateBox({
+			state : stateVal,
+			content : contentVal,
+			corner: true
+		});
+	});
+})
+</script>
+</head>
+
+<body>
+<select id="state">
+<option value="succeed" selected="selected">成功</option>
+<option value="alert">警告</option>
+<option value="error">错误</option>
+</select>
+<input type="text" id="content" value="提示信息" />
+<input type="button" value="提交" class="buttonActive" id="updata" />
+</body>
+</html>

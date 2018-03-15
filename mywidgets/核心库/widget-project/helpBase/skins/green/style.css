@@ -1,0 +1,97 @@
+/* CSS Document */
+.help-wrap {
+	margin:10px;
+}
+.help-wrap .header {
+}
+.help-wrap .header .title {
+	padding:3px;
+}
+.help-wrap .header .title h1 {
+	font-size:20px;
+	color:#3366CC;
+	font-weight:bold;
+}
+.help-wrap .header .attribute {
+	background-color:#E1EAF7;
+	border-top:solid 1px #4879C1;
+	padding:3px;
+	color:#4879C1;
+}
+.help-wrap .content .help-mod {
+	margin:3px 0;
+}
+.help-wrap .content .help-mod .title {
+	background-color:#F7F7F7;
+	height:26px;
+	line-height:26px;
+	font-weight:bold;
+	font-size:12px;
+	color:#666;
+	padding:0 3px;
+	border-top:solid 1px #E4E4E4;
+}
+.help-wrap .content .help-mod .content {
+	padding:6px 12px;
+	color:#666666;
+	font-size:12px;
+}
+.help-item {
+	color:#333;
+}
+.help-demo {
+	min-height:20px;
+	min-width:200px;
+	background-color:#FFFFFF;
+	border:solid 1px #EBEBEB;
+	margin:3px 10px;
+	padding:10px;
+}
+.help-code {
+	color:#3366CC;
+	font-weight:bold;
+}
+/*top*/
+.top {
+	font-family: "微软雅黑", "黑体", Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	background:url(images/top_bg.png);
+}
+.bantitle {
+	font-size:28px;
+	margin-left:35px;
+	white-space:nowrap;
+}
+.author {
+	line-height:18px;
+	;
+	font-size:12px;
+	margin-left:80px;
+	float:left;
+	display:inline-block;
+	margin-top:6px;
+	white-space:nowrap;
+}
+.version {
+	float:right;
+	font-size:11px;
+	font-weight:normal;
+	line-height:18px;
+	margin-right:6px;
+	margin-top:6px;
+	color:#003300;
+	white-space:nowrap;
+	text-shadow: 1px 1px 3px #fff;
+*color:#ccff99;
+}
+/*foot*/
+#copyright {
+	border-top:solid #729d29 1px;
+	background-color:#e9f9cc;
+	height:30px;
+	font-family: "微软雅黑", "黑体", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	text-align:center;
+}

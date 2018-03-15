@@ -1,0 +1,187 @@
+/*暂时*/
+.jcm_s_c{clear:both;text-align:center;}
+/*菜单可点击*/
+.jcs_all_con .all_menu_level2 li label:hover,.jcs_all_con .all_menu_level3 li label:hover{cursor:pointer;text-decoration:underline;cursor:pointer;}
+/*暂时*/
+.jcs_m_all_con{height:413px;border:1px solid #ccc;}
+.jcs_m_all_top{height:4130px;width:117px;border:none 0;float:left;}
+.jcs_m_all_top li{font-size:12px;display:inline-block;margin-top:5px;margin-left:12px;text-indent:21px;line-height:26px;height:26px;width:95px;cursor:pointer;}
+.jcs_m_all_top li.top_active,.jcs_m_all_top li:hover{background:url("../images/jcs_m_top_active.png") no-repeat scroll transparent;}
+.jcs_m_all_list_con{height:413px;width:530px;/*510*/float:left;border:none 0;}
+.jcs_m_all_s{height:21px;width:171px;/*margin-top:9px;margin-left:11px;*/margin:8px 0 12px 11px;}
+.jcs_m_all_list{
+    height:372px;width:100%;overflow-y:auto;overflow-x:hidden;
+}
+.jcs_m_pop_h{height:33px;line-height:33px;}
+.jcs_m_pop_h h1{float:left;font-size:14px;font-weight:bold;padding-left:3px;}
+.jcs_m_pop_h div{float:right;color:#999;padding-right:4px;font-size:12px;}
+.jcs_m_pop_h div span{font-weight:bold;font-size:11px;color:#333;}
+.jcs_m_pop_s{height:400px;width:170px;/*180px;*/padding:6px 3px;overflow-y:auto;overflow-x:hidden;}
+.jcs_m_pop_s li{width:150px;/*162px;*/height:30px;line-height:30px;border:1px solid #fff;padding: 3px 0;}
+/*已选只有这一种变色,使用css实现控制*/
+.jcs_m_pop_s li:hover{border:1px solid #96aad8;background-color:#e9f2fc;}
+.jcs_m_pop_s li:hover>span{cursor:pointer;background:url(../images/jc6_menu_sub_ico.png) no-repeat transparent;display:inline-block;width:14px;height:15px;float:right;margin-top:10px;padding-right:3px;vertical-align:middle;
+*margin-top: -23px;}/** 兼容IE7  -- 黄卉  2011-11-9  **/
+/**/
+.jcs_m_pop_s li.add_hov{
+    border:1px solid #a7d093;
+    background-color:#eeffea;
+}
+.jcs_m_pop_s li.sub_hov{
+    border:1px solid #96aad8;
+    background-color:#e9f2fc;
+}
+.jcs_m_pop_s li img{vertical-align:middle;width:24px;height:24px;display:inline-block;margin:3px;}
+/*.jcs_m_pop_s*/ li.add_hov>a{
+    background:url("../images/jcs_add_ico.png");
+    width:13px;height:24px;
+    display:inline-block;
+    vertical-align:middle;
+    float:right;margin-right:3px;
+    margin-top:3px;cursor:pointer;
+    *margin-top: -27px; /** 在IE7下面，加号和减号位置不正确，需要加入改属性，同时对其他浏览器没有影响  --- 黄卉 2011-11-8 **/
+}
+/*.jcs_m_pop_s*/ li.sub_hov>a{
+	background:url("../images/jcs_sub_ico.png");
+	width:13px;height:24px;display:inline-block;
+	vertical-align:middle;float:right;margin-right:3px;
+	margin-top:4px;cursor:pointer;
+	*margin-top: -27px; /** 在IE7下面，加号和减号位置不正确，需要加入改属性，同时对其他浏览器没有影响  --- 黄卉 2011-11-8 **/
+}
+.all_menu_item{overflow:hidden;}
+.jcs_all_menu_h1{border:1px solid #ddd;line-height:28px;height:28px;
+    margin:0 7px 0 12px;
+    padding-left:10px;color:#666;font-size:13px;font-weight:bold;
+    background:url("../images/jcs_all_menu_h1.png") repeat-x scroll transparent;
+    overflow:hidden;
+}
+/**modify huanghui@2012-4-6 reset.css中关于h的标签样式已经去掉了，这个对h1标签进行重新定义。*/
+.jcs_all_menu_h1 h1{
+	float:left;
+	font-size:100%; 		
+	margin:0; 	
+	padding:0; 	
+	font-family:Arial,"宋体";
+	font-weight:normal;
+}
+.jcs_all_menu_oper{float:right;color:#003399;font-size:12px;padding-right:10px;cursor:pointer;}
+.jcs_all_menu_var{}
+.jcs_m_all_list{}
+.jcs_m_all_list,.jcs_m_all_list_index{height:372px;width:100%;
+	overflow-y:auto;overflow-x:hidden;
+	clear:both;
+}
+/*此时，加不上边框
+.jcs_all_menu_var li.add_hov{
+    border:1px solid #a7d093;
+    background-color:#eeffea;
+}
+.jcs_all_menu_var li.sub_hov{
+    border:1px solid #96aad8;
+    background-color:#e9f2fc;
+}              */
+.jcs_all_menu_var .jcs_all_menu_level2{
+    float:left;
+    padding-top:12px;
+    padding-left:26px;
+    margin-bottom:6px;
+}
+ .jcs_all_menu_var .jcs_all_menu_level2 li{
+     float:left;
+     margin-right:10px;margin-bottom:6px;
+     /*border:1px solid #a7d093;*/
+     /*background-color:#eeffea;*/
+     border:1px solid #fff;
+     height:30px;line-height:30px;width:150px;/*162px;*/
+     font-size:12px;
+ }
+
+ /*限定应用下li的宽度*/
+.jcs_m_all_list_index .jcs_all_menu_var .jcs_all_menu_level2 li{
+     float:left;
+     margin-right:10px;
+     border:1px solid #fff;
+     height:30px;line-height:30px;width:146px;
+ } 
+.jcs_all_menu_var .jcs_all_menu_level2 li.add_hov{
+    border:1px solid #a7d093;
+    background-color:#eeffea;
+}
+.jcs_all_menu_var .jcs_all_menu_level2 li.sub_hov{
+    border:1px solid #96aad8;
+    background-color:#e9f2fc;
+}
+ .jcs_all_menu_var .jcs_all_menu_level2 li>img,.jcs_all_menu_var .jcs_all_menu_level3 li>img{
+     width:24px;height:24px;
+     display:inline-block;vertical-align:middle;
+     padding:3px;
+ }
+.jcs_all_menu_var h2{
+    float:left;
+    font-size:12px;color:#333;font-weight:bold;
+    line-height:30px;height:30px;
+    display:inline-block;
+    margin-left:26px;margin-right:3px;margin-top:6px;
+    width:100%;
+}
+.jcs_all_menu_var .jcs_all_menu_level3{
+    padding-left:26px;
+    padding-top:6px;
+    margin-bottom:6px;
+}
+
+.jcs_all_menu_var .jcs_all_menu_level3 li{
+    float:left;
+    font-size:12px;
+    line-height:30px;height:30px;
+    width:150px;
+    margin-right:10px;
+    margin-bottom:6px;
+    border:1px solid #fff;
+}
+.jcs_m_all_list_index .jcs_all_menu_var .jcs_all_menu_level3 li{
+    float:left;
+    font-size:12px;
+    line-height:30px;height:30px;
+    width:146px;
+    margin-right:10px;
+    margin-bottom:6px;
+    border:1px solid #fff;
+}
+.jcs_all_menu_var .jcs_all_menu_level3 li.add_hov{
+    border:1px solid #a7d093;
+    background-color:#eeffea;
+}
+.jcs_all_menu_var .jcs_all_menu_level3 li.sub_hov{
+    border:1px solid #96aad8;
+    background-color:#e9f2fc;
+}
+/*公共*/
+.jcs_all_menu_var li>span.s_ico{
+    background:url("../images/jcs_menu_gou.png") no-repeat scroll transparent;
+    width:14px;height:24px;
+    display:inline-block;vertical-align:middle;
+    margin:3px;
+}
+/*滚动*/
+.jcs_m_scrll{
+    height:417px;width:125px;overflow-y:hidden;overflow-x:hidden;
+    float:left;
+}
+.jcs_m_scrll a.up,a.down,a.u_active,a.d_active{
+    background-image:url("../images/jcs_m_up_dow.png");
+    background-repeat:no-repeat;
+}
+.jcs_m_all_con a.up{
+    background-position: 0 -48px;
+    display:inline-block;
+    width:119px;height:14px;
+}
+.jcs_m_all_con a.down{
+    background-position: 0 -68px;
+    display:inline-block;
+    width:119px;height:14px;
+}
+/*应用正则匹配高亮ot one two th third*/
+.one_menu_s{margin-top:3px;padding:3px;background-color:#36c;color:#fff;}
+.rest_menu_s{margin-top:3px;padding:3px;background-color:#ff0;}

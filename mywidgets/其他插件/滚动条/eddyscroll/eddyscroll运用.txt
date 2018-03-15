@@ -1,0 +1,31 @@
+<script type="text/javascript" src="${ctx}/js/util/eddyScroll.js"></script>
+
+/*desc　by gaona at 2012-03-23 yScroll begin*/
+			if('ontouchstart' in document.documentElement){
+				var target = $('body')[0];//快捷菜单
+				var myScroll = new eddyScroll(target, { 
+								checkDOMChanges: true,
+								zoom:false,
+			                    hScroll: false,          //x 水平 滚动
+			                    vScroll: true,          //y 竖直 滚动
+			                    // 滚动条
+			                    hScrollbar: false,
+			                    vScrollbar: false	
+	
+			    });
+		    }
+			/*desc by gaona at 2012-03-23 yScroll end*/
+
+
+如果是输入框参数需添加如下
+,
+						            onBeforeScrollStart: function (e) {
+					                    var target = e.target;
+					                    while (target.nodeType != 1) target = target.parentNode;
+					                    if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA')
+					                        e.preventDefault();
+					                }	
+
+
+
+noScrollWin	

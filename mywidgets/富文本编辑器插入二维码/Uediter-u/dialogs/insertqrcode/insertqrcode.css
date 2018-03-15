@@ -1,0 +1,47 @@
+/*desc by gaona at 2013-02-27 insertqrcode start*/
+.qrcodeWrapper{
+	font-family:"微软雅黑","宋体","黑体" ;
+	font-size:12px ;
+	margin:10px auto;
+	overflow:hidden ;
+	position:relative;
+	width:623px;
+	zoom:1;
+}
+.qrcodeWrapper p{
+	margin:0 ;
+	padding:0 ;
+}
+textarea.qrcodeContent{
+	font-family:"微软雅黑","宋体","黑体" ;
+	width:99% ;
+}
+.qrcodeDesc{
+	float:right ;
+	font-size:12px ;
+}
+.inputNum{
+	color:#f0154d ;
+}
+.inputScore{
+	color:#ccc ;
+	margin-left:10px ;
+}
+.qrcodeclear{
+	clear:both ;
+	height:16px ;
+}
+.qrcodeView{
+	background:#fff ;
+	border:1px solid #b3b3b3 ;
+	float:left ;
+	height:200px ;
+	padding:10px ;
+	width:200px ;
+}
+.qrcodeSet{
+	float:right ;
+	margin-top:180px ;
+	width:360px ;
+}
+/*desc by gaona at 2013-02-27 insertqrcode end*/

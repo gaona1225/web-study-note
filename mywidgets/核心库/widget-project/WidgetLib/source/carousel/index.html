@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>carousel</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="carousel.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('.carousel').carousel({
+			xPos:450,
+			yPos:110,
+			buttonLeft:$('#but1'),
+			buttonRight:$('#but2'),		
+			FPS:30,
+			reflHeight:86,
+			reflGap:2,
+			yRadius:40,
+			autoRotate: 'yes',
+			autoRotateDelay: 2000,
+			speed:0.2,
+			mouseWheel:true,
+			bringToFront:true
+		});
+		$('#testBtn').click(function(){
+			$('.carousel').carousel('destroy') ;
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+	<div class="carousel" id="carousel">
+    	<a href="http://www.baidu.com" title="01" target="_new"><img class="cloudcarousel" alt="01" title="01" src="images/carousel/01.jpg" /></a>
+        <a href="http://www.baidu.com" title="02" target="_new"><img class="cloudcarousel" alt="02" title="02" src="images/carousel/02.jpg" /></a>
+        <a href="http://www.baidu.com" title="03" target="_new"><img class="cloudcarousel" alt="03" title="03" src="images/carousel/03.jpg" /></a>
+        <a href="http://www.baidu.com" title="04" target="_new"><img class="cloudcarousel" alt="04" title="04" src="images/carousel/04.jpg" /></a>
+        <a href="http://www.baidu.com" title="05" target="_new"><img class="cloudcarousel" alt="05" title="05" src="images/carousel/05.jpg" /></a>
+        <a href="http://www.baidu.com" title="06" target="_new"><img class="cloudcarousel" alt="06" title="06" src="images/carousel/06.jpg" /></a>
+        
+        <div class="carouseLeft" id="but1"></div>
+        <div class="carouselRight" id="but2"></div>
+    </div>
+    <input type="button" id="testBtn" value="testBtn" />
+</body>
+</html>

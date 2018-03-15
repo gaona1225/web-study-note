@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Photo</title>
+
+    <script type="text/javascript" charset="utf-8" src="../plugins/org.apache.cordova.loadingview/www/CyouWebViewLoadingView.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../cordova-incl.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    function onFail(message) {
+      
+    }
+    
+     function success(result) {
+      //todo 
+      
+    }
+    
+    function show() {
+        webloading.showLoading(success,onFail);
+    }
+    
+    function hide() {
+        webloading.hideLoading(success,onFail);
+    }
+    
+    </script>
+  </head>
+  <body>
+    <button onclick="show();">show</button> <br>
+     <hr color="red">
+     <button onclick="hide();">hide</button> <br>
+     <hr color="red">
+  </body>
+</html>

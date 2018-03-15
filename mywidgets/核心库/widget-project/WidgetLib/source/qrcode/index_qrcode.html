@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>二维码测试</title>
+    <style type="text/css">
+        * {padding:0;margin:0;}
+        #qrcode,#qrcode>thead>tr>td,#qrcode>tbody>tr>td {border:1px solid red; border-collapse: collapse;}
+        #qrcode>tbody>tr>td {padding:10px;}
+        input[type="button"] {width:50px;height:30px;}
+        #clearRender {width: 100px;}
+    </style>
+</head>
+<body>
+    <table id="qrcode">
+        <thead>
+            <tr>
+                <td>信息</td>
+                <td>执行渲染</td>
+                <td>table渲染输出</td>
+                <td>canvas渲染输出</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 普通字符 -->
+            <tr>
+                <td><input type="text" name="" id="" value="abcdef中文abc字符dd转换在123编码!@#$%"/> </td>
+                <td>
+                    <input type="button" value="table" />
+                    <input type="button" value="canvas" />
+                </td>
+                <td>table</td>
+                <td>canvas</td>
+            </tr>
+            <!-- 网址-->
+            <tr>
+                <td><input type="text" name="" id="" value="http://192.168.25.31:3000/"/> </td>
+                <td>
+                    <input type="button" value="table" />
+                    <input type="button" value="canvas" />
+                </td>
+                <td>table</td>
+                <td>canvas</td>
+            </tr>
+            <!-- 电话1-->
+            <tr>
+                <td><input type="text" name="" id="" value="13112345896"/> </td>
+                <td>
+                    <input type="button" value="table" />
+                    <input type="button" value="canvas" />
+                </td>
+                <td>table</td>
+                <td>canvas</td>
+            </tr>
+            <!-- 电话2-->
+            <tr>
+                <td><input type="text" name="" id="" value="tel:13112345896"/> </td>
+                <td>
+                    <input type="button" value="table" />
+                    <input type="button" value="canvas" />
+                </td>
+                <td>table</td>
+                <td>canvas</td>
+            </tr>
+            <!-- 邮箱1-->
+            <tr>
+                <td><input type="text" name="" id="" value="zhngwing@163.com"/> </td>
+                <td>
+                    <input type="button" value="table" />
+                    <input type="button" value="canvas" />
+                </td>
+                <td>table</td>
+                <td>canvas</td>
+            </tr>
+            <!-- 邮箱2-->
+            <tr>
+                <td><input type="text" name="" id="" value="mailto:zhngwing@163.com"/> </td>
+                <td>
+                    <input type="button" value="table" />
+                    <input type="button" value="canvas" />
+                </td>
+                <td>table</td>
+                <td>canvas</td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" value="清除所有" id="clearRender"/>
+
+    <!-- widget插件依赖 -->    
+    <script type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <!-- 二维码 -->
+    <script type="text/javascript" src="qrcode.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript">
+        $('#qrcode').delegate('td>:button', 'click', function () {
+            var self = $(this);
+            var $tds = self.parents('tr').find('>td');
+            var text = $.trim($tds.eq(0).find('>:text').val());
+            var $container, render;
+            if ('table' === self.val()) {
+                $container = $tds.eq(2);
+                render = 'table';
+            } else if ('canvas' === self.val()) {
+                $container = $tds.eq(3);
+                render = 'canvas';
+            }
+            $container.empty();
+
+            $container.qrcode({
+                text: text,
+                render: render
+            });
+        });
+        // 清除
+        $('#clearRender').click(function () {
+            $('#qrcode').find('>tbody>tr').find('>td:last, >td:eq(2)').empty();
+        });
+    </script>
+</body>
+</html>

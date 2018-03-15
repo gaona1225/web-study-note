@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C6演示系统-工作台</title>
+<link rel="stylesheet" href="../style/reset.css" />
+<link rel="stylesheet" href="../js/jquery/jquery-ui-1.8.11.custom.css" />
+<link rel="stylesheet" href="../style/demo2.css" />
+<script src="../js/jquery/jquery-1.5.2.min.js"></script>
+<script src="../js/jquery/jquery-ui-1.8.11.custom.min.js"></script>
+<style>
+	.desktopCen{
+		height:230px ;
+		position:absolute ;
+		top:247px ;
+		width:230px ;
+	}
+	.desktopDiv1,.desktopDiv2,.desktopDiv5,.desktopDiv6{
+		color:#000 ;
+		/*display:none ;*/
+		font-size:20px ;
+		text-align:center ;
+		height:173px ;
+		width:50% ;
+	}
+	.desktopDiv1{
+		background:#e2eff8 ;
+		float:left ;
+	}
+	.desktopDiv2{
+		background:#f6ebeb ;
+		float:left ;
+	}
+	.desktopDiv3,.desktopDiv4{
+		background:#edf1e0 ;
+		color:#000 ;
+		/*display:none ;*/
+		float:left ;
+		font-size:20px ;
+		text-align:center ;
+		height:112px ;
+		width:50% ;
+	}
+	.desktopDiv5{
+		background:#f8edda ;
+		float:right ;
+	}
+	.desktopDiv6{
+		background:#e3f8e5 ;
+		float:right ;
+	}
+	.center1,.center2,.center3,.center4{
+		color:#fff ;
+		display:none ;
+		font-size:20px ;
+		text-align:center ;
+		height:114px ;
+		width:114px ;
+	}
+	.center1{
+		background:red ;
+		border-right:1px solid #c8c8c8 ;
+		float:left ;
+	}
+	.center2{
+		background:yellow ;
+		border-bottom:1px solid #c8c8c8 ;
+		float:left ;
+	}
+	.center3{
+		background:blue ;
+		border-left:1px solid #c8c8c8 ;
+		float:right ;
+	}
+	.center4{
+		background:green ;
+		border-top:1px solid #c8c8c8 ;
+		float:right ;
+	}
+	.center5{
+		background:orange ;
+		display:none ;
+		left:72px ;
+		height:85px ;
+		position:absolute ;
+		top:72px ;
+		width:85px ;
+	}
+</style>
+<script>
+	$(function(){
+		var _wid = parseInt($(document).width()) ;
+		var _selfWid = parseInt($('.desktopCen').width()) ;
+		var _left = (_wid - _selfWid)/2;
+		$('.desktopCen').css({
+			'left' : _left 
+		}) ;
+		var count = 0 ;
+		$('.center5').fadeIn('200') ;
+		$('#btn').click(function(){
+			console.log(count) ;
+			$('.desktopCen').find('div').eq(count).show('200') ;
+			count ++ ;
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+    	<div class="top"></div>
+    	<div class="desktop">
+        	<div class="desktopDiv1">1</div>
+        	<div class="desktopDiv2">2</div>
+        	<div class="desktopDiv3">3</div>
+        	<div class="desktopDiv4">4</div>
+        	<div class="desktopDiv5">5</div>
+        	<div class="desktopDiv6">6</div>
+            <div class="desktopCen">
+    			<div class="center1">a</div>
+    			<div class="center2">b</div>
+    			<div class="center3">c</div>
+    			<div class="center4">d</div>
+                <div class="center5"></div>
+    		</div>
+            <input type="button" id="btn" value="button" />
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/**
+ * menuSingleSelect
+ */
+.ui-menuSingleSelect {
+	border:solid 1px #cccccc;
+	display:inline-block;
+	padding:2px 0;
+	position:absolute;
+	background-color:#FFFFFF;
+	display:none;
+	min-width:150px;
+	z-index:1000;
+}
+
+.ui-menuSingleSelect {
+	-moz-border-radius: 2px; /* FF1-3.6 */
+	-webkit-border-radius: 2px; /* Saf3-4, iOS 1-3.2, Android <1.6 */
+	border-radius: 2px; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-moz-box-shadow: 0px 0px 2px #cccccc; /* FF3.5+ */
+	-webkit-box-shadow: 0px 0px 2px #cccccc; /* Saf3.0+, Chrome */
+	box-shadow: 0px 0px 2px #cccccc; /* Opera 10.5, IE9, Chrome 10+ */
+}
+
+.ui-menuSingleSelect ul.ui-menuSingleSelect-ul { margin-bottom:6px; }
+
+.ui-menuSingleSelect ul li {
+	/*height:12px;*/
+	/*line-height:12px;*/
+	padding:2px 15px;
+	cursor:default;
+	overflow:hidden;
+}
+.ui-menuSingleSelect ul li input{
+    height:12px;
+    line-height:12px;
+    padding:5px 15px;
+    cursor:default;
+    overflow:hidden;
+    vertical-align:text-top;
+    margin-right: 5px;
+}
+.ui-menuSingleSelect ul li.ui-menuSingleSelect-li{
+    padding:4px 15px;
+}
+.ui-menuSingleSelect ul li a.ui-menuSingleSelect-selectUrl{
+    padding-left:10px;
+}
+
+.ui-menuSingleSelect ul li.h {
+	background-color:#6699cc;
+	color:#FFFFFF;
+}
+
+.ui-menuSingleSelect ul li.d {
+	background-color:#ffffff;
+	color:#cccccc;
+}

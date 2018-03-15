@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Widget-二维码</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/source/qrcode/qrcode.js"></script>
+    <script type="text/javascript" src="../WidgetLib/source/qrcode/jquery.qrcode.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.qrcode.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>二维码(qrcode)</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>二维码插件封装，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>qrcode.js, jQuery, jQuery ui</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code">
+				(引用相关资源文件,构建示例中的结构即可)
+			</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">render：</label>
+              （字符）参数：渲染html结构生成方式 可选值为 "table", "canvas"</p>
+            <p>
+              <label class="help-item">width：</label>
+              （数字）参数：二维码占据区域的宽</p>
+            <p>
+              <label class="help-item">height：</label>
+              （数字）参数：二维码占据区域的高</p>
+            <p>
+              <label class="help-item">typeNumber：</label>
+              （数字）参数：值为 &lt; 1时 将自动计算 由qrcode.js提供 计算模块数用</p>
+            <p>
+              <label class="help-item">background：</label>
+              （颜色值）参数：二维码区域的背景色</p>
+            <p>
+              <label class="help-item">foreground：</label>
+              （颜色值）参数：二维码颜色</p>  
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>暂无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+                <label class="help-item">描述：</label>
+                二维码
+            </p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+              <table id="qrcode">
+                <thead>
+                    <tr>
+                        <td>信息</td>
+                        <td>执行渲染</td>
+                        <td>table渲染输出</td>
+                        <td>canvas渲染输出</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 普通字符 -->
+                    <tr>
+                        <td><input type="text" name="" id="" value="abcdef中文abc字符dd转换在123编码!@#$%"/> </td>
+                        <td>
+                            <input type="button" value="table" />
+                            <input type="button" value="canvas" />
+                        </td>
+                        <td>table</td>
+                        <td>canvas</td>
+                    </tr>
+                    <!-- 网址-->
+                    <tr>
+                        <td><input type="text" name="" id="" value="http://192.168.25.31:3000/"/> </td>
+                        <td>
+                            <input type="button" value="table" />
+                            <input type="button" value="canvas" />
+                        </td>
+                        <td>table</td>
+                        <td>canvas</td>
+                    </tr>
+                    <!-- 电话1-->
+                    <tr>
+                        <td><input type="text" name="" id="" value="13112345896"/> </td>
+                        <td>
+                            <input type="button" value="table" />
+                            <input type="button" value="canvas" />
+                        </td>
+                        <td>table</td>
+                        <td>canvas</td>
+                    </tr>
+                    <!-- 电话2-->
+                    <tr>
+                        <td><input type="text" name="" id="" value="tel:13112345896"/> </td>
+                        <td>
+                            <input type="button" value="table" />
+                            <input type="button" value="canvas" />
+                        </td>
+                        <td>table</td>
+                        <td>canvas</td>
+                    </tr>
+                    <!-- 邮箱1-->
+                    <tr>
+                        <td><input type="text" name="" id="" value="zhngwing@163.com"/> </td>
+                        <td>
+                            <input type="button" value="table" />
+                            <input type="button" value="canvas" />
+                        </td>
+                        <td>table</td>
+                        <td>canvas</td>
+                    </tr>
+                    <!-- 邮箱2-->
+                    <tr>
+                        <td><input type="text" name="" id="" value="mailto:zhngwing@163.com"/> </td>
+                        <td>
+                            <input type="button" value="table" />
+                            <input type="button" value="canvas" />
+                        </td>
+                        <td>table</td>
+                        <td>canvas</td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="button" value="清除所有" id="clearRender"/>
+            <style type="text/css">
+              * {padding:0;margin:0;}
+              #qrcode,#qrcode>thead>tr>td,#qrcode>tbody>tr>td {border:1px solid red; border-collapse: collapse;}
+              #qrcode>tbody>tr>td {padding:10px;}
+              input[type="button"] {width:50px;height:30px;}
+              #clearRender {width: 100px;}
+          </style>
+            <script type="text/javascript">
+              $('#qrcode').delegate('td>:button', 'click', function () {
+                  var self = $(this);
+                  var $tds = self.parents('tr').find('>td');
+                  var text = $.trim($tds.eq(0).find('>:text').val());
+                  var $container, render;
+                  if ('table' === self.val()) {
+                      $container = $tds.eq(2);
+                      render = 'table';
+                  } else if ('canvas' === self.val()) {
+                      $container = $tds.eq(3);
+                      render = 'canvas';
+                  }
+                  $container.empty();
+
+                  $container.qrcode({
+                      text: text,
+                      render: render
+                  });
+              });
+              // 清除
+              $('#clearRender').click(function () {
+                  $('#qrcode').find('>tbody>tr').find('>td:last, >td:eq(2)').empty();
+              });
+          </script>
+			      </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+&lt;table id="qrcode">
+    &lt;thead>
+        &lt;tr>
+            &lt;td>信息&lt;/td>
+            &lt;td>执行渲染&lt;/td>
+            &lt;td>table渲染输出&lt;/td>
+            &lt;td>canvas渲染输出&lt;/td>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+        &lt;!-- 普通字符 -->
+        &lt;tr>
+            &lt;td>&lt;input type="text" name="" id="" value="abcdef中文abc字符dd转换在123编码!@#$%"/> &lt;/td>
+            &lt;td>
+                &lt;input type="button" value="table" />
+                &lt;input type="button" value="canvas" />
+            &lt;/td>
+            &lt;td>table&lt;/td>
+            &lt;td>canvas&lt;/td>
+        &lt;/tr>
+        &lt;!-- 网址-->
+        &lt;tr>
+            &lt;td>&lt;input type="text" name="" id="" value="http://192.168.25.31:3000/"/> &lt;/td>
+            &lt;td>
+                &lt;input type="button" value="table" />
+                &lt;input type="button" value="canvas" />
+            &lt;/td>
+            &lt;td>table&lt;/td>
+            &lt;td>canvas&lt;/td>
+        &lt;/tr>
+        &lt;!-- 电话1-->
+        &lt;tr>
+            &lt;td>&lt;input type="text" name="" id="" value="13112345896"/> &lt;/td>
+            &lt;td>
+                &lt;input type="button" value="table" />
+                &lt;input type="button" value="canvas" />
+            &lt;/td>
+            &lt;td>table&lt;/td>
+            &lt;td>canvas&lt;/td>
+        &lt;/tr>
+        &lt;!-- 电话2-->
+        &lt;tr>
+            &lt;td>&lt;input type="text" name="" id="" value="tel:13112345896"/> &lt;/td>
+            &lt;td>
+                &lt;input type="button" value="table" />
+                &lt;input type="button" value="canvas" />
+            &lt;/td>
+            &lt;td>table&lt;/td>
+            &lt;td>canvas&lt;/td>
+        &lt;/tr>
+        &lt;!-- 邮箱1-->
+        &lt;tr>
+            &lt;td>&lt;input type="text" name="" id="" value="zhngwing@163.com"/> &lt;/td>
+            &lt;td>
+                &lt;input type="button" value="table" />
+                &lt;input type="button" value="canvas" />
+            &lt;/td>
+            &lt;td>table&lt;/td>
+            &lt;td>canvas&lt;/td>
+        &lt;/tr>
+        &lt;!-- 邮箱2-->
+        &lt;tr>
+            &lt;td>&lt;input type="text" name="" id="" value="mailto:zhngwing@163.com"/> &lt;/td>
+            &lt;td>
+                &lt;input type="button" value="table" />
+                &lt;input type="button" value="canvas" />
+            &lt;/td>
+            &lt;td>table&lt;/td>
+            &lt;td>canvas&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+&lt;input type="button" value="清除所有" id="clearRender"/>
+&lt;style type="text/css">
+  * {padding:0;margin:0;}
+  #qrcode,#qrcode>thead>tr>td,#qrcode>tbody>tr>td {border:1px solid red; border-collapse: collapse;}
+  #qrcode>tbody>tr>td {padding:10px;}
+  input[type="button"] {width:50px;height:30px;}
+  #clearRender {width: 100px;}
+&lt;/style>
+&lt;script type="text/javascript">
+  $('#qrcode').delegate('td>:button', 'click', function () {
+      var self = $(this);
+      var $tds = self.parents('tr').find('>td');
+      var text = $.trim($tds.eq(0).find('>:text').val());
+      var $container, render;
+      if ('table' === self.val()) {
+          $container = $tds.eq(2);
+          render = 'table';
+      } else if ('canvas' === self.val()) {
+          $container = $tds.eq(3);
+          render = 'canvas';
+      }
+      $container.empty();
+
+      $container.qrcode({
+          text: text,
+          render: render
+      });
+  });
+  // 清除
+  $('#clearRender').click(function () {
+      $('#qrcode').find('>tbody>tr').find('>td:last, >td:eq(2)').empty();
+  });
+&lt;/script>
+            </pre>
+        </div>
+		</div>
+    </div>
+	</div>
+</body>
+</html>

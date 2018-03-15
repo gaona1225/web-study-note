@@ -1,0 +1,123 @@
+.ui-custion-personchoice-title{
+	height:30px;
+	width:650px;
+	background-image:url(images/ui-custom/personChoice/title.png);
+}
+
+.ui-custion-personchoice-main{
+	border-bottom:1px solid #c2d9f9;
+	border-right:1px solid #c2d9f9;
+	border-left:1px solid #c2d9f9;
+}
+
+.ui-custion-personchoice-main .header{
+	height:69px;
+	width:622px;
+	position:absolute;
+	left:13px;
+	top:13px;
+	border:1px solid #dfb96e;
+	overflow:auto;
+}
+
+.ui-custion-personchoice-main .miniser{
+	line-height:28px;
+	position:absolute;
+	left:14px;
+	top:120px;
+	height:28px;
+	width:620px;
+	margin-left:16px;
+	font-size:14px;
+	font-weight:bold;
+	margin-top: -25px;
+}
+
+.ui-custion-personchoice-main .body{
+	position:absolute;
+	left:14px;
+	top:152px;
+	height:320px;
+	width:620px;
+	border:1px solid #cccccc;
+	margin-top: -25px;
+}
+
+.ui-custion-personchoice-main .body .letter{
+	border-bottom:1px solid #cccccc;
+	height:22px;
+	width:620px;
+}
+
+.ui-custion-personchoice-main .body .letter span{
+	height:20px;
+	width:22px;
+	color:#6596e3;
+	text-align:center;
+	float:left;
+}
+
+.ui-custion-personchoice-main .body .letter span:hover{
+	cursor:pointer;
+	text-decoration:underline;
+}
+
+.ui-custion-personchoice-main .body .letter .getspanvsed{
+	cursor:pointer;
+	border:1px solid #eca725;
+	background-image:url(images/ui-custom/personChoice/ui-custom-personchoice-letter.png);
+}
+
+.ui-custion-personchoice-main .buttonpos{
+	position:absolute;
+	left:14px;
+	top:485px;
+	height:25px;
+	width:620px;
+	margin-top: -25px;
+}
+
+.ui-custion-personchoice-main .body .persons{
+	width:618px;
+	height:298px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.ui-custion-personchoice-main .body .persons span{
+	margin-left:26px;
+	line-height:24px;
+	height:24px;
+	width:180px;
+	float:left;
+}
+
+.ui-custion-personchoice-main .body .persons span:hover{
+	cursor:pointer;
+	text-decoration:underline;
+}
+
+.ui-custion-personchoice-main .body .persons .getperson{
+	color:#F00;
+	margin-left: 26px;
+}
+
+.ui-custion-personchoice-main.header.mousehover{
+	float:right; 
+	width:18px; 
+	height:18px; 
+	background-image:url(../uiBase/skins/default/images/ui-custom/personChoice/persons-delete.png); 
+	background-position:0 -18px; 
+	margin-top:3px; 
+	margin-right:3px;
+}
+
+.ui-custion-personchoice-main.header.mouselosthover{
+	float:right; 
+	width:18px; 
+	height:18px; 
+	background-image:url(../uiBase/skins/default/images/ui-custom/personChoice/persons-delete.png); 
+	background-position:0 0px; 
+	margin-top:3px; 
+	margin-right:3px;
+}

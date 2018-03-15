@@ -1,0 +1,1313 @@
+/**
+jhMenuBar 开始
+*/
+ #menuBar {
+    background: url(images/ui-custom/ui-custom-menuBar-menuBg.png) repeat-x;
+    height: 35px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+ul.ui-custom-jhMenuBar-firstClass {
+    margin: 0 70px
+}
+
+ul.ui-custom-jhMenuBar-firstClass li {
+    height: 35px;
+    line-height: 32px;
+    float: left;
+    background: url(images/ui-custom/ui-custom-menuBar-menDepart.png) right top no-repeat;
+    padding: 0 16px;
+    position: relative;
+}
+
+ul.ui-custom-jhMenuBar-firstClass li a, ul.ui-custom-jhMenuBar-firstClass li a.hover, ul.ui-custom-jhMenuBar-firstClass li a.ui-custom-jhMenuBar-currentItem {
+    padding: 0 16px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    padding: 0 16px 0 0;
+    margin-top: 4px;
+    margin-left: -3px
+}
+
+ul.ui-custom-jhMenuBar-firstClass li a.ui-custom-jhMenuBar-currentItem, ul.ui-custom-jhMenuBar-firstClass li a.hover {
+    background: url(images/ui-custom/ui-custom-menuBar-menuCurrent.png) right top no-repeat;
+}
+
+ul.ui-custom-jhMenuBar-firstClass li a.ui-custom-jhMenuBar-currentItem span, ul.ui-custom-jhMenuBar-firstClass li a.hover span, ul.ui-custom-jhMenuBar-firstClass li a span {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    background: url(images/ui-custom/ui-custom-menuBar-menuCurrent.png) left top no-repeat;
+    float: left;
+    margin-left: -3px;
+    padding-left: 16px;
+}
+
+ul.ui-custom-jhMenuBar-firstClass li a span {
+    color: #fff;
+    padding-left: 16px;
+    line-height: 26px;
+    padding-bottom: 6px;
+    background: none;
+    cursor: pointer
+}
+
+ul.ui-custom-jhMenuBar-firstClass li a img, ul.ui-custom-jhMenuBar-firstClass li a.ui-custom-jhMenuBar-currentItem img, ul.ui-custom-jhMenuBar-firstClass li a.hover img {
+    width: 10px;
+    height: 6px;
+    margin: 10px 0 0 10px;
+    background: url(images/ui-custom/ui-custom-menuBar-jhMenuArrow.png) top no-repeat
+}
+
+ul.ui-custom-jhMenuBar-firstClass li a.ui-custom-jhMenuBar-currentItem img, ul.ui-custom-jhMenuBar-firstClass li a.hover img {
+    background-position: bottom center
+}
+
+ul li div.ui-custom-jhMenuBar-moreClasic {
+    position: absolute;
+    top: 32px;
+    left: 9px;
+    height: auto;
+    width: 50px;
+    background: #fff;
+    border: 1px solid #336699;
+    border-top: 0;
+    width: auto !important;
+    width: 85px;
+    min-width: 85px;
+    line-height: 30px;
+    padding: 0;
+}
+
+ul li div.ui-custom-jhMenuBar-moreClasic p.odd, ul li div.ui-custom-jhMenuBar-moreClasic p.even {
+    line-height: 30px;
+    height: 30px;
+    background-color: #fcf9e7;/*换肤*/
+    padding: 0 7px;
+}
+
+ul li div.ui-custom-jhMenuBar-moreClasic p.even {
+    background-color: #fff;
+}
+
+ul li div.ui-custom-jhMenuBar-moreClasic p span a, ul li div.ui-custom-jhMenuBar-moreClasic p span a:hover {
+    color: #c83e3e;/*换肤*/
+    font-size: 12px;
+    float: left;
+    width: 70px;
+    line-height: 30px;
+    overflow: hidden;
+    line-height: 30px;
+    font-weight: normal;
+    padding: 0px;
+    margin: 0 2px 0 0;
+    background: none;
+}
+
+ul li div.ui-custom-jhMenuBar-moreClasic p span a.ui-custom-jhMenuBar-secondClasic {
+    color: #c83e3e;/*换肤*/
+    font-size: 12px;
+    float: left;
+    width: 70px;
+    margin: 0 5px;
+    padding: 0;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+ul li div.ui-custom-jhMenuBar-moreClasic p span a.ui-custom-jhMenuBar-secondClasic b {
+    font-weight: bold
+}
+
+ul li div.ui-custom-jhMenuBar-moreClasic p a.ui-custom-jhMenuBar-moreInfo {
+    color: #c83e3e;/*换肤*/
+    font-size: 12px;
+    font-weight: normal;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    float: right;
+}
+/**
+	论坛换肤
+**/
+/* 本版公告 */
+.theBulletin{width:100%;margin-top:5px;text-align:left;background:#fbfaf3}
+.theBulletin h2{padding:7px 0 0 13px;height:18px;border-bottom:1px solid #FFF;font-weight:bold;background:#fbfaf3}
+.theBulletin p{padding:10px 13px;/*text-indent:24px;*/line-height:22px;}
+.theBulletin p a{color:#fbfaf3}
+
+.ui-custom-topic-green{background: none repeat scroll 0 0 #fbfaf3;}
+.ui-custom-articles-bottom{line-height: 24px; border: 1px solid #fbfaf3; padding-left: 0pt; width: 99%; margin: 5px; background: none repeat scroll 0 0 #fbfaf3;}
+
+.tableContent{width:100%;;background:#fbfaf3;}
+.topicToolBar{padding:0px 9px 0 12px;height:28px;width:96%;margin:0 auto;background:url(images/topicImg/bg4.png);border:1px solid #cdcdcd;border-bottom:0;}
+.topic-bottom-color{line-height: 24px; border: 1px solid #fbfaf3;width: 100%; margin-top: 5px;background: none repeat scroll 0 0 #fbfaf3;}
+.mainContent{min-height:100px;background:#fbfaf3;}
+
+.ui-custom-topic-green{background: none repeat scroll 0 0 #fbfaf3;}
+.ui-custom-articles-bottom{line-height: 24px; border: 1px solid #cdcdcd; padding-left: 0pt; width: 99%; margin: 5px; background: none repeat scroll 0 0 #fbfaf3;}
+
+.headerRight{margin-right:0px;padding:9px 0 0 16px;background:#fbfaf3;text-align:right;padding-bottom:7px;padding-top:7px;}
+.articles{margin:0 auto 5px;border:1px solid #cdcdcd;background:#f8f5fa;}
+.articles .top h2{width:350px;float:left;padding:9px 0 0 16px;height:21px;border-bottom:1px solid #cdcdcd;text-align:left;color:#fbfaf3;word-break:keep-all; /*font-family:arial;*/}
+.articles .top .cmdbar{padding:9px 9px 0 13px;height:21px;background:#fbfaf3;text-align:right;border-bottom:1px solid #cdcdcd;}
+.articles .left .personalInfo .touxi{padding:1px;background:#fbfaf3;border:1px solid #cdcdcd;display:block;margin:0 auto 4px}
+/**内部论坛里面的热帖回复页面样式的换肤**/
+.ui-topic-sendPaging-default{
+	background:none repeat scroll 0 0 #fdf9e2;
+	border:1px solid #BFD2E1;
+	margin:0 auto 5px;
+	width:auto;
+}
+
+/**
+jhMenubar 结束
+*/
+
+/******************************         red需要换肤的样式             begin **********************************/
+/*工作任务中添加指标*/
+.ui-custom-dutyTarget-bg {overflow:auto;width:100%;height:250px;;background-color:#fdf9e2;}
+/*未阅寻呼——相关寻呼*/
+.ui-custom-call-reply .relatedCall{height: 200px; overflow-y: auto;background-color:#fdf9e2;}
+.borderLine {border-bottom:1px solid #e7e0b3;}
+.ui-custom-disk-left {height: 580px;border-right:1px solid #e2b79d;}
+.ui-custom-personnel-infoBox .ui-custom-personnel-left {
+	width:138px;
+	background-color:#fdf9e2;
+	border-right:solid 1px #e2b79d;
+	float:left;
+	margin-top:10px;
+	overflow:hidden;
+}
+.ui-custom-personnel-infoBox .ui-custom-personnel-left .infoList li {
+	margin:0 7px;
+	font-size:14px;
+	color:#c83e3e;/*换肤*/
+	padding-left:10px;
+	padding-top:8px;
+	padding-bottom:8px;
+	cursor:pointer;
+}
+.ui-custom-personnel-infoBox .ui-custom-personnel-left .infoList .active {
+	color:#FFF;
+	font-weight:bold;
+	background-color:#c83e3e;/*换肤*/
+}
+.ui-custom-knowledge-headline{
+	margin-top:10px;
+	height:13px;
+	padding-top:10px;
+	/*换肤*/
+	padding-bottom:10px;background-image:url(images/ui-custom/ui-custom-menuBar-menuBg.png);
+}
+.ui-custom-knowledge-headline2{
+	margin-top:10px;
+	height:13px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border:1px solid #6ebd79;/*换肤*/
+}
+.ui-custom-dutyplan-draft div.top div.classesSet{
+	height:130px;
+	clear:both;
+	width:100%;
+	margin-top:-1px;
+	*margin-top:0px;/*IE7下页签下面的线不显示，加上这个*/
+	background:#fdfaec;/*换肤*/
+}
+.ui-custom-dutyplan-draft div.top div.classesSet2{
+	height:130px;
+	clear:both;
+	width:100%;
+	position:relative;
+	left:0px;
+	top:-1px;
+	background:#fdfaec;/*换肤*/
+}
+.ui-custom-dutyplan-draft div.middle{
+	height:auto;
+	margin-top:10px;
+	clear:both;
+}
+.ui-custom-dutyplan-draft div.middle div.middleLeft{
+	border:1px solid #e2b79d;
+	border-right:1px dotted  black;
+	width:80%;
+	height:auto;
+	float:left;
+	background:#fdf9e2;/*换肤*/
+	word-wrap : break-word ;
+	padding-bottom:11px;
+}
+.ui-custom-dutyplan-draft div.middle div.middleRight{
+	border-top:1px solid #e2b79d;
+	border-right:1px solid #e2b79d;
+	border-bottom:1px solid #e2b79d;
+	width:19.6%;
+	height:auto;
+	float:left;
+	background:#fdf9e2;/*换肤*/
+	padding-bottom:11px;
+}
+.ui-custom-hire-resumedetail-main .rline{
+ 	width: 100%;
+	height: 1px;
+	background-color: #6ebd79;/*换肤*/
+ }
+ /*换肤*/
+.ui-custom-hire-addresume-main .leftTree{
+	width: 158px;
+	height: 100%;
+	background-color:#fdf9e2;
+	float:left;
+	overflow:auto;
+	border-right:1px solid #e2b79d;
+}
+.ui-custom-hire-addresume-main .leftTree .leftTable{
+	width: 144px;
+	height: 120px;
+	margin-left: 8px;
+	margin-top: 6px;
+	font-size: 14px;
+	color:#666666;
+}
+.ui-custom-hire-addresume-main .leftTree .leftTable tr{
+	height:35px;
+}
+.ui-custom-hire-addresume-main .leftTree .leftTable .trhover{
+	font-size:14px;
+	font-weight: bold;
+	cursor:pointer;
+	color:#c83e3e;
+}
+.ui-custom-hire-addresume-main .leftTree .leftTable .newtrhover{
+	background-color:#c83e3e;/*换肤*/
+	font-size:14px;
+	font-weight: bold;
+	color: #FFF;
+	cursor:pointer;
+}
+.ui-custom-hire-addresume-main .rline{
+	width: 100%;
+	height: 1px;
+	background-color: #c30000;/*换肤*/
+}
+.ui-custom-knowledge-myInfo{
+	margin-top:10px;
+	margin-right:10px;
+	width:180px;
+	float:left;
+	border-right:solid 1px #e2b79d;/*换肤*/
+	background-color:#fdf9e2;/*换肤*/
+}
+.ui-custom-knowledge-myInfo .infoList li {
+	margin:0 7px;
+	font-size:14px;
+	color:#c83e3e;/*换肤*/
+	padding-left:10px;
+	padding-top:8px;
+	padding-bottom:8px;
+	cursor:pointer;
+}
+.ui-custom-knowledge-myInfo .infoList .active {
+	color:#FFF;
+	font-weight:bold;
+	background-color:#c83e3e;/*换肤*/
+}
+.ui-custom-knowledge-myInfo-right1 .ui-custom-knowledge-line{
+	border-bottom:solid 1px #c30000;/*换肤*/
+	height:1px;
+}
+.ui-custom-knowledge-myInfo-right1 .ui-custom-knowledge-myInfo2{
+	border:solid 1px #e7e0b2;/*换肤*/
+	margin-top:10px;
+}
+.ui-custom-requirement-add-main-top-hl{
+	font-size:14px;
+	font-weight:bold;
+	border-bottom:solid 1px #c30000;/*换肤*/
+	padding-bottom:9px;
+	background:#fff;
+}
+/*工具div*/
+.ui-custom-personnel-archiveBox .ui-custom-personnel-line{
+    height:2px;
+    overflow:hidden;
+    background-color:#6ebd79;/*换肤*/
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+.ui-custom-personnel-archive-maintain-toolbar{
+	line-height:28px;
+	background-color:#fbfaf3;/*换肤*/
+	height:28px;
+}
+ /*换肤*/
+ .ui-custom-hire-param-config div.left{
+	float:left;
+	width:200px;
+	background:#fdf9e2;
+	border-right:1px solid #e2b79d;
+	margin-top:10px;
+	margin-left:12px;
+ }
+ .ui-custom-hire-param-config  div.left ul li a.current{
+	background:#c83e3e;/*换肤*/
+	font-weight:bold;
+	color:white;
+ }
+  .ui-custom-hire-param-config .right .hr{
+	border:1px solid #c30000;/*换肤*/
+}
+.ui-custom-dataimport-infobox .ui-custom-dataimport-title{
+	height:22px;
+	background:url("images/ui-custom/ui-custom-knowledge-skan-tab-panel.png");/*换肤*/
+	width:100%;
+	width:180px;
+	padding-left:10px;
+}
+.ui-custom-dataimport-infobox .line{
+	width:99.8%;
+	border:solid 1px #e7e0b3;/*换肤*/
+}
+.ui-custom-knowledge-myInfo-right1 .ui-custom-knowledge-myInfo2 .infoBkg{
+	border-bottom:solid 1px #e7e0b2;
+	height:29px;
+	background:url(images/ui-custom/ui-custom-knowledge-Infobg.png);
+}
+.ui-custom-knowledge-search-adderss .ui-custom-knowledge-search-img div{
+	width:80px;
+	height:30px;
+	background:url(images/ui-custom/ui-custom-knowledge-search.png);
+	cursor:pointer;
+}
+.ui-custom-knowledge-myKnowledge-right .line {
+	width:100%;
+	border-bottom:#c30000 1px solid;
+	height:1px;
+}
+.ui-custom-knowledge-integral-line{
+	margin-top:10px;
+	margin-bottom:10px;
+	border:1px solid #c30000;
+}
+.ui-custom-knowledge-search-div-mydoc .ui-custom-knowledge-search-div-line {
+	border-bottom: solid 1px #c30000;
+	heihgt:1px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+/*基础设置换肤*/
+.ui-custom-personnel-infoBox .ui-custom-personnel-left .infoList li {
+	height:30px;
+	margin:5px 0;
+	line-height:30px;
+	font-size:14px;
+	color:#c83e3e;
+	padding:0 10px;
+	cursor:pointer;
+}
+.ui-custom-personnel-infoBox .ui-custom-personnel-left .infoList .active {
+	color:#FFF;
+	font-weight:bold;
+	background-color:#c83e3e;
+}
+.ui-custom-precise-manage-main-right-line{
+	width:auto;
+	border:solid #c30000 1px;  /*换肤*/
+}
+.ui-custom-knowledge-submit-img div{
+	width:132px;
+	height:41px;
+	background:url(images/ui-custom/ui-custom-knowledge-search.png);
+	cursor:pointer;
+}
+.ui-custom-knowledge-back-img div{
+	width:132px;
+	height:41px;
+	background:url(images/ui-custom/ui-custom-knowledge-back.png);
+}
+span.ui-custom-precise-manage-main-right-font03{
+	color:#c83e3e;
+	width:900px;
+	line-height:20px;
+	margin-left:10px;
+	font-size:12px;
+	font-weight:normal;
+}
+.ui-custom-dutyplan-draft div.top span.top_bottom_bar_02{
+	height:14px;
+	display:block;
+	background:url(images/ui-custom/dutyplan/duty-plan-top_bar_02.png) repeat-x;
+	clear:both;
+	margin-top:-2px;
+	text-align:center;
+	padding-top:1px;
+}
+.ui-custom-dutyplan-draft div.top span.top_bottom_bar_02 em{
+	background:url(images/ui-custom/dutyplan/duty-plan-top_bottom_bar_up.png);
+	width:123px;
+	display:block;
+	height:11px;
+	margin:0 auto;
+	cursor:pointer;
+}
+.ui-custom-dutyplan-detail .ui-custom-dutyplan-detail-left{
+	border:1px solid #e2b79d;/*换肤*/
+    float: left;
+    height: 613px;
+    overflow: auto;
+    width: 200px;
+    background:#fdf9e2;/*换肤*/
+}
+.ui-custom-dutyplan-detail-right .ViewHead {
+	background:#fdf9e2;/*换肤*/
+    border:1px solid #e2b79d;/*换肤*/
+    font-family: Arial;
+    font-size: 12px;
+    margin-left: 10px;
+    overflow: visible;
+}
+/*日记  begin*/
+.ui-custom-diary-tree{
+    border:1px solid #e2b79d;/*换肤*/
+    margin-top:10px;
+    margin-left:12px;
+}
+.ui-custom-diary-infobg{
+	border-bottom:solid 1px #e7e0b2;/*换肤*/
+	height:29px;
+	line-height:29px;
+	background:url(images/ui-custom/ui-custom-knowledge-Infobg.png);
+}
+.ui-custom-dairy-single .topInfo .personnalInfo .line1 {
+	border:#c30000 solid 1px; /*换肤*/
+	margin-top:10px;
+}
+.ui-custom-affair-info-left{
+	border-right:1px solid #e2b79d;/*换肤*/
+	background-color:#fdf9e2;/*换肤*/
+	margin-top:10px;
+	margin-left:10px;
+	width:247px;
+}
+.jCal .left {
+	background:url(images/ui-custom/dairy/ui-custom-affair-calendar-month-left.png) center center no-repeat;
+	width:19px;
+	height:30px;
+	vertical-align:middle;
+	cursor:pointer;
+	text-align:right;
+	float:left;
+}
+/* right month navigation button - no need to change */
+.jCal .right {
+	background:url(images/ui-custom/dairy/ui-custom-affair-calendar-month-right.png) center center no-repeat;
+	width:18px;
+	height:30px;
+	vertical-align:middle;
+	cursor:pointer;
+	float:right;
+}
+/* top month display block - i.e. January */
+.jCal .month, .jCal .monthSelect, .jCal .monthName, .jCal .monthYear {
+	line-height:26px;
+	height:30px;
+	text-align:center;
+	vertical-align:bottom;
+	font-family:Tahoma;
+	font-size:16px;
+	color:white;
+	cursor:pointer;
+	float:left;
+	background:url(images/ui-custom/dairy/ui-custom-affair-calendar-month-middle.png) repeat-x;
+}
+/* day of week header specific style */
+.jCalMo .dow {
+	width:32px;
+	text-align:center;
+	line-height:27px;
+	height:24px;
+	background:url(images/ui-custom/dairy/ui-custom-affair-calendar-th.png);
+	border-bottom:0px;
+	float:left;
+}
+/* blacked-out calendar day specific style */
+.jCalMo .pday, .jCalMo .aday, .jCalMo .day, .jCalMo .invday {
+	background-image:url(images/ui-custom/dairy/ui-custom-affair-calendar-allState-red.png);
+}
+.jCalMo .invday {
+	color:#808080;
+	background-position:-31px 0;
+}
+/* selectable calendar day specific style */
+.jCalMo .day {
+	cursor:pointer;
+	background-position:0 0;
+}
+.jCalMo .schedule{
+	background-position:0 -62.5px;
+	*background-position:0 -63px;
+}
+.jCalMo .invdaySchedule{
+	background-position:-31px -62px;
+}
+/* selected day */
+.jCalMo .selectedDay {
+	background-position:0 -31.5px;
+	*background-position:0 -32px;
+}
+.jCalMo .selectedCurDay{
+	background-position:-31px -31px;
+}
+.jCalMo .selectedScheduleDay{
+	background-position:0 -93.5px;
+	*background-position:0 -94px;
+}
+.jCalMo .selectedInvScheduleDay{
+	background-position:-31px -93px;	
+}
+.jCalMo .hasDiaryDay{
+	color:#c83e3e;
+	font-weight: bold;
+}
+/*日记  end*/
+/*导航菜单 begin*/
+.ui-custom-guide-head .headline{
+	height:2px;
+	overflow:hidden;
+	background-color:#c30000;   /* 分割线 换肤 */
+	margin-top:10px;
+}
+.ui-custom-guide-picArea{
+	height:99px;
+	margin-top:12px;
+	background-image: url(images/ui-custom/ui-custom-guide-skin.png);   /* 渐变区域换肤 */
+	background-repeat: repeat-y;
+	/*margin-left:15px; 不需要
+	min-width: 810px; 不能用，否则页面有滚动条*/
+}
+/*导航菜单 end*/
+/*招聘实施子菜单   begin*/
+ul,li{list-style:none;}
+.jcs-menu_subMenu{
+    width:100%;
+    height:40px;line-height:40px;
+    padding-left:12px;
+    float:left;
+    background-color: #f3f2de;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfa), to(#f3f2de)); /* Saf4+, Chrome*/
+    background-image: -webkit-linear-gradient(top, #fdfdfa, #f3f2de); /* Chrome 10+, Saf5.1+ */
+    background-image: -moz-linear-gradient(top, #fdfdfa, #f3f2de); /*FF3.6 */
+    background-image: -ms-linear-gradient(top, #fdfdfa, #f3f2de); /*IE10*/
+    background-image: -o-linear-gradient(top, #fdfdfa, #f3f2de); /*Opera 11.10+*/
+    background-image: linear-gradient(top, #fdfdfa, #f3f2de);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#fdfdfa', EndColorStr = '#f3f2de'); /*IE6–IE9*/
+    border-right:1px solid #efeedd;border-bottom:1px solid #e6e5d1;border-left:1px solid #efeedd;
+}
+.jcs-menu_subMenu .jcs-menu_subMenu_item{
+    float:left;width:80px;height:28px;line-height:28px;
+    margin-top:6px;padding-right:12px;
+    font-size:12px;color:#666;text-align:center;cursor:pointer;
+}
+.jcs-menu_subMenu .jcs-menu_subMenu_item:hover{
+    background:url("images/ui-custom/jcs_subMenu_hover.png") no-repeat scroll transparent;
+}
+.jcs-menu_subMenu .jcs-menu_subMenu_item_click{
+    float:left;width:80px;height:28px;line-height:28px;
+    margin-top:6px;padding-right:12px;
+    font-size:12px;color:#666;text-align:center;cursor:pointer;
+    background:url("images/ui-custom/jcs_subMenu_click.png") no-repeat scroll transparent;
+    color:#000;font-weight:bold;
+}
+/*招聘实施子菜单   end*/
+/******************************         red需要换肤的样式             end   **********************************/
+body{
+	font-family: "宋体", Arial Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	background:#FFFFFF;
+	/*height: 100%;*/   /*与ui-custom.css重复*/
+	padding-left:10px;
+	padding-right:10px;
+}
+html{
+	scrollbar-arrow-color: #ffffff; /*三角箭头的颜色*/
+	scrollbar-face-color: #f5f1ce; /*立体滚动条的颜色*/
+	scrollbar-3dlight-color: #ffffff; /*立体滚动条亮边的颜色*/
+	scrollbar-highlight-color: #ffffff; /*滚动条空白部分的颜色*/
+	scrollbar-shadow-color: #ffffff; /*立体滚动条阴影的颜色*/
+	scrollbar-darkshadow-color: #ffffff; /*立体滚动条强阴影的颜色*/
+	scrollbar-track-color: #ffffff; /*立体滚动条背景颜色*/
+	scrollbar-base-color:#ffffff; /*滚动条的基本颜色*/
+}
+
+input[type="text"], input[type="password"]{
+	height: 21px;
+}
+
+/*************** toolbar ***************/
+.toolbar_button_s {
+	width: 52px;
+}
+
+.toolbar_button_l {
+	width: 76px;
+}
+/*************** toolbar end ***************/
+
+/*************** page ***************/
+.ui-page{
+	float:right;
+	margin-right:9px;
+	*margin-top: -30px;/**ie7下面的兼容问题--黄卉  2011-11-8**/
+}
+
+.page {
+	height: 28px;
+    padding-top: 2px;
+    border:0 none;
+    background:none;
+    background-color:#fcf9e7;     /*换肤*/
+}
+
+.page li {
+	float: left;
+	color: #666666;
+	font-size: 1.0em;
+	line-height: 23px;
+	padding: 0px;
+	height: 23px;
+	vertical-align: baseline;
+}
+
+.page li input {
+	width: 30px;
+	border: 1px solid #8A8A8A;
+	vertical-align: middle;
+	height: 12px;
+	margin-top: 3px;
+}
+
+/*desc by gaona at 2012-04-05 pageup begin*/
+a.first {
+	background: url(images/page/pageCtrl-sprite.png) 0px -17px no-repeat;
+	width: 19px;
+	height: 19px;
+	display: block;
+	padding-top: 2px;
+	/*filter: alpha(opacity = 70);
+	opacity: 0.7;*/
+}
+
+a.first_x {
+	background: url(images/page/pageCtrl-sprite.png) 0px 2px no-repeat;
+	width: 19px;
+	height: 19px;
+	display: block;
+	padding-top: 2px;
+	/*filter: alpha(opacity = 70);
+	opacity: 0.7;*/
+}
+
+a.first:hover {
+	background: url(images/page/pageCtrl-sprite.png) 0px -36px no-repeat;
+	/*filter: alpha(opacity = 100);
+	opacity: 1;*/
+}
+
+a.back_btn {
+	background: url(images/page/pageCtrl-sprite.png) -19px -17px no-repeat;
+	width: 19px;
+	height: 19px;
+	display: block;
+	padding-top: 2px;
+	/*filter: alpha(opacity = 70);
+	opacity: 0.7;*/
+}
+
+a.back_btn_x {
+	background: url(images/page/pageCtrl-sprite.png) -19px 2px no-repeat;
+	width: 19px;
+	height: 19px;
+	display: block;
+	padding-top: 2px;
+	/*filter: alpha(opacity = 70);
+	opacity: 0.7;*/
+}
+
+a.back_btn:hover {
+	background: url(images/page/pageCtrl-sprite.png) -19px -36px no-repeat;
+	/*filter: alpha(opacity = 100);
+	opacity: 1;*/
+}
+
+a.next {
+	background: url(images/page/pageCtrl-sprite.png) -38px -17px no-repeat;
+	width: 19px;
+	height: 19px;
+	display: block;
+	padding-top: 2px;
+	/*filter: alpha(opacity = 70);
+	opacity: 0.7;*/
+}
+
+a.next_x {
+	background: url(images/page/pageCtrl-sprite.png) -38px 2px no-repeat;
+	width: 19px;
+	height: 19px;
+	display: block;
+	padding-top: 2px;
+	/*filter: alpha(opacity = 70);
+	opacity: 0.7;*/
+}
+
+a.next:hover {
+	background: url(images/page/pageCtrl-sprite.png) -38px -36px no-repeat;
+	/*filter: alpha(opacity = 100);
+	opacity: 1;*/
+}
+
+a.last {
+	background: url(images/page/pageCtrl-sprite.png) -57px -17px no-repeat;
+	width: 19px;
+	height: 19px;
+	display: block;
+	padding-top: 2px;
+	/*filter: alpha(opacity = 70);
+	opacity: 0.7;*/
+}
+
+a.last_x {
+	background: url(images/page/pageCtrl-sprite.png) -57px 2px no-repeat;
+	width: 19px;
+	height: 19px;
+	display: block;
+	padding-top: 2px;
+	/*filter: alpha(opacity = 70);
+	opacity: 0.7;*/
+}
+
+a.last:hover {
+	background: url(images/page/pageCtrl-sprite.png) -57px -36px no-repeat;
+	/*filter: alpha(opacity = 100);
+	opacity: 1;*/
+}
+/*desc by gaona at 2012-04-05 pageup end*/
+/*************** page end ***************/
+
+/*************** search area ***************/
+.ui-search-area {
+	padding-top:10px;
+	padding-bottom: 5px;
+}
+.ui-search-area input{
+	border:1px solid #DDDDDD;
+}
+/*IE下解决checkbox样式问题*/
+.ui-search-area input[type="checkbox"]{
+	border:0;
+}
+.button_m {
+	width: 61px;
+}
+.split_line {
+	border:0px dashed #ccc; 
+	border-top: 1px dashed #ccc; 
+	width: 98%; 
+	height: 1px;
+	padding:0 5px 0 5px;
+}
+.field_td_odd{
+	padding-left:15px;
+}
+/**高级查询**/
+.advanced_query{
+	text-decoration: none;
+	cursor: pointer;
+}
+.advanced_query:hover{
+	text-decoration: none;
+	cursor: pointer;
+}
+.advanced_query img{
+	margin-left: 2px;
+	margin-bottom: -2px;
+}
+.field_name_s{
+	width: 35px;
+}
+.field_name_x{
+	width: 45px;
+}
+.field_name_m{
+	width: 60px;
+}
+.field_name_l{
+	width: 72px;
+}
+.field_name_max{
+	width: 80px;
+}
+.field_text_s{
+	width: 100px;
+}
+.field_text_l{
+	width: 210px;
+}
+.field_td_search{
+	padding-left:12px;
+	font-family: "宋体", Arial Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003399;
+}
+/*************** search area end ***************/
+
+/************** list ***************/
+.listTitle {
+	font-size:14px;
+	padding:5px 0 0px 2px;
+	font-weight:bold;
+}
+
+.ui-common-pen {
+	background: url(images/ui-common/ui-common-pen.gif) no-repeat;
+	width: 13px;
+	height: 12px;
+	display: inline-block;
+	margin-right: 5px;
+	filter: alpha(opacity = 40);
+	opacity: 0.4;
+}
+
+.ui-common-pen:hover {
+	filter: alpha(opacity = 100);
+	opacity: 1;
+}
+
+.ui-common-del {
+	background: url(images/ui-common/ui-common-del.gif) no-repeat;
+	width: 13px;
+	height: 12px;
+	display: inline-block;
+	margin-right: 5px;
+	filter: alpha(opacity = 40);
+	opacity: 0.4;
+}
+
+.ui-common-del:hover {
+	filter: alpha(opacity = 100);
+	opacity: 1;
+}
+
+.ui-common-view {
+	background: url(images/ui-common/ui-common-view.gif) no-repeat;
+	width: 13px;
+	height: 12px;
+	display: inline-block;
+	margin-right: 5px;
+	filter: alpha(opacity = 40);
+	opacity: 0.4;
+}
+
+.ui-common-view:hover {
+	filter: alpha(opacity = 100);
+	opacity: 1;
+}
+.ui-common-set {
+	background: url(images/ui-common/ui-common-set.gif) no-repeat;
+	width: 13px;
+	height: 12px;
+	display: inline-block;
+	margin-right: 5px;
+	filter: alpha(opacity = 40);
+	opacity: 0.4;
+}
+
+.ui-common-set:hover {
+	filter: alpha(opacity = 100);
+	opacity: 1;
+}
+
+/************** list end ***************/
+
+/************** form ***************/
+.ui-common-form-biserial {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+/****** table(class="grid_biserial_hidden")中超出的部分内容用...显示 edit by 黄卉  begin******/
+.ui-common-form-biserial table.grid_biserial_hidden{
+	table-layout: fixed;
+}
+table.grid_biserial_hidden tr td {
+	padding-top: 6px;
+	vertical-align: middle;
+	white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    -o-text-overflow:ellipsis;
+}
+span.ui-custom-voerflow-span{
+	width:150px;  /* 必须要固定宽度  */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    display: inline-block;   /*需与overflow:hidden;一起使用。将对象呈递为内联对象*/
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+    -o-text-overflow:ellipsis;
+}
+/****** table中超出的部分内容用...显示 edit by 黄卉   end******/ 
+
+
+table.grid_biserial tr td {
+	padding-top: 6px;
+	vertical-align: middle;
+}
+.field_td {
+	background-color: #FFFFFF;
+	width: 100px;
+	text-align: right;
+}
+.field_td_single {
+	width: 80px;
+	text-align: right;
+}
+.widget_td {
+	padding-left:6px;
+}
+.color_red {
+	color: red;
+}
+.split_line_solid {
+	border:0px solid #ccc; 
+	border-top: 1px solid #ccc; 
+	width: 98%; 
+	height: 1px;
+	padding:0 5px 0 5px;
+	margin-right: 2em;
+}
+.formTitle {
+	font-size:12px;
+	padding:5px 0 0px 2px;
+	font-weight:bold;
+}
+.register {
+	color : #999999;
+}
+.form_button_div_single {
+	text-align:left;
+	padding-top:2em;
+	margin:1em 1em 0 1em; 
+	border-top:1px solid #CCCCCC;
+	padding-left:105px;
+}
+/************** form end ***************/
+
+/************** artDialog ***************/
+
+.art_div {
+	margin: 0px auto;
+	/*height: 100%;  会引起art有多处的滚动条---huanghui   2011-11-22*/
+	width: 100%;
+}
+
+.art_pad {
+	padding: 12px 0px 5px 0px;
+}
+
+.art_button_div {
+	text-align:center;padding:14px 12px 14px 12px;
+}
+
+.art_td {
+	background-color: #FFFFFF;
+	width: 65px;
+	text-align: right;
+}
+
+.art_td_l {
+	background-color: #FFFFFF;
+	width: 80px;
+	text-align: right;
+}
+
+/************** artDialog end ***************/
+
+/************** 控件 ***************/
+.input_text_60 {
+	width: 50px;
+}
+.input_text_70 {
+	width: 72px;
+}
+.input_text_100{
+	width: 100px;
+}
+.input_text_default {
+	width: 160px;
+}
+.input_text_300 {
+	width: 298px;
+}
+.select_70 {
+	width: 72px;
+	height:23px;
+	line-height:17px; /*safari浏览器下select选择框的高度会根据line-hegiht的值改变，而IE,FF浏览器下不会*/
+}
+.select_100{
+	width:102px;
+	height:23px;
+	line-height:17px; 
+}
+.select_160{
+	width:162px;
+	height:23px;
+	line-height:17px; 
+}
+.select_200{
+	width:194px;
+	height:23px;
+	line-height:17px; 
+}
+.select_300{
+	width:302px;
+	height:23px;
+	line-height:17px; 
+}
+.textarea_default {
+	width: 278px;
+	height: 53px;
+}
+.textarea_300 {
+	width: 298px;
+	height: 77px;
+}
+.textarea_426 {
+	width: 424px;
+	height: 77px;
+}
+/************** 控件 end ***************/
+
+/**
+ *@张文钦 2011-8-23
+ *控件 树_png begin
+*/
+.odt_search{border:1px solid #9aaec1;}
+.odt_btn_bar{
+    /*树工具条换肤*/
+    background:url("images/ui-common/ui-custom-treebar-bg.png") repeat-x 0 0 ;
+    height:33px;line-height:33px;
+    padding-left:6px;/*内容左边距12px*/
+}
+.odt_btn_bar a{
+    font-size:12px;color:#c83e3e;
+    padding-left:6px;
+    padding-right:5px;
+    cursor:pointer;
+   	text-decoration: none;
+}
+.odt_btn_bar a:hover{
+	color:#333333;
+   	text-decoration: none;
+}
+.odt_item_ul{
+    margin-top:10px;
+}
+.odt_item_ul li{
+    margin:0 7px;
+	font-size:14px;
+	color:#c83e3e;/*换肤*/
+	padding-left:10px;
+	padding-top:8px;
+	padding-bottom:8px;
+	cursor:pointer;
+}
+ /*树被选中换肤*/
+.odt_item_ul li.odt_li_selected{
+    color:#FFF;
+	background-color:#c83e3e;/*换肤*/
+}
+/*日程管理部门li*/
+.odtLi {
+	padding-left:15px;
+    line-height:24px;
+    padding-top:2px;padding-bottom:2px;
+}
+ .odt_item_ul li.odt_li_active{
+     background-color:#eeeeee;
+ }
+
+/*li列表项前图标*/
+.odt_li_ico{
+    background: url("images/ui-common/ui-common-db_ico.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    margin-bottom: -2px;
+    width: 16px;
+    display:inline-block;margin-right:6px;
+}
+/*日程管理人员li*/
+.odt_li_ico_user{
+    height: 16px;
+    margin-bottom: -2px;
+    width: 16px;
+    display:inline-block;margin-right:6px;
+}
+/*按钮功能区-添加图片*/
+.odt_ico_add{
+    background: url("images/ui-common/ui-common-treebar-add.png") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    width: 16px;
+    display:inline-block;vertical-align:middle;
+    padding-right: 5px;
+}
+/*按钮功能区-修改图片*/
+.odt_ico_edit{
+    background: url("images/ui-common/ui-common-treebar-edit.png") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    width: 16px;
+    display:inline-block;vertical-align:middle;
+    margin-bottom: 2px;
+    padding-right: 5px;
+}
+/*按钮功能区-删除图片*/
+.odt_ico_del{
+    background: url("images/ui-common/ui-common-treebar-del.png") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    width: 16px;
+    display:inline-block;vertical-align:middle;
+    padding-right: 5px;
+}
+/*按钮功能区-导入图片*/
+.odt_ico_import{
+    background: url("images/ui-common/ui-common-treebar-import.png") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    width: 16px;
+    display:inline-block;vertical-align:middle;
+    padding-right: 5px;
+}
+/*竖形菜单背景颜色及右边框换肤*/
+.ui-custom-od_tree{
+	margin-left:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+    border:1px solid #e2b79d;
+    background-color:#fdf9e2;
+    width:200px;
+    position:absolute;
+}
+/*竖形菜单选中换肤*/
+.ui-custom-od_tree .selected {background:#c83e3e;color:#fff;}
+
+/*弹出框树的样式*/
+.ui-custom-artTree-border {
+	border:1px solid #e2b79d;
+	width: 100%;
+	margin-top:10px;
+}
+.ui-custom-artTree-bg {
+	overflow:auto;
+	width:100%;
+	background-color:#fdf9e2;
+}
+/**
+ *@张文钦 2011-8-23
+ *控件 树_png end
+*/
+
+
+
+
+/******************************************人员选择树**************************************************************/
+.float-right{ float:right;*margin-top:-30px;}
+.person-list dt,.person-list dd,.person-list li{ line-height:27px;}
+.person-list dd{ margin-left:1.5em;}
+.click-select{ padding-left:6px;}
+.click-select:hover{ background:#d9e8fb;}
+.click-selected{ padding-left:6px;background:#d9e8fb;}
+.min-delete{ width:12px; height:12px; margin-top:7px; margin-right:6px;background:url(../base/icon_system/12px/min-delete.png)}
+.min-tick{ width:12px; height:12px; margin-top:7px; margin-right:6px;background:url(../base/icon_system/12px/min-tick.png)}
+.min-arrowr{ width:12px; height:12px; margin-top:7px; margin-right:6px;background:url(../base/icon_system/12px/min-arrowr.png)}
+.min-none{ width:12px; height:12px; margin-top:7px; margin-right:6px;background:none}
+.cus-box{ border:1px solid #e2b79d;}/*竖形菜单换肤*/
+.cus-box-title{background:url(images/ui-custom/ui-custom-knowledge-Infobg.png) repeat-x 0 0; height:29px; line-height:29px; border-bottom:1px solid #e2b79d; padding:0 6px;}
+.fontStyle{ font-size:14px; font-weight:bold;}
+.font_color{ color:#003399;}
+.cus-toolbar{ height:24px; line-height:24px;padding:0 6px; clear:both;background:url(../default/images/ui-custom/ui-custom-knowledge-question-toolbar.png);}
+.radio-option{ margin:6px 12px; height:20px;}
+.person-list .radio-option{ margin:6px 3px;  width:70px;float:left;}
+.radio-option{overflow:hidden; white-space:nowrap}
+.user-bg {background-color:#fdf9e2;}
+/*********************************************人员选择树结束*******************************************/
+
+/*********** 寻呼提醒 ************/
+.ui-custom-jq-message{
+	border:1px solid #fff;
+	border-bottom:none;
+	width:100%;
+	height:30px;
+	font-size:12px;
+	overflow:hidden;
+	color:#1f336b;
+	background: url(images/ui-custom/ui-custom-message-head2.png);
+}
+/*超链接样式  begin*/
+a{
+  color:#c83e3e;
+  text-decoration: none;
+}
+a:hover{
+ color:#c83e3e;
+ text-decoration:underline;
+}
+/*超链接样式  end*/
+/*********** 重要文字样式 begin************/
+.imp_font{
+  color:#ff6600;
+}
+/*********** 重要文字样式 end************/
+
+/*********** 状态文字颜色 ************/
+/*红*/
+.color_font_red{color:red;}
+/*蓝*/
+.color_font_blue{color:blue;}
+/*绿*/
+.color_font_green{color:green;}
+/*紫*/
+.color_font_purple{color:purple;}
+/*粉*/
+.color_font_pink{color:pink;}
+/*容器*/
+.ui-custom-boxFont{
+	border:solid 1px #e7e0b2;
+	margin-top:10px;
+}
+.ui-custom-boxFont .infoBkg{
+	border-bottom:solid 1px #e7e0b2;
+	height:29px;
+	background:url(images/ui-custom/ui-custom-knowledge-Infobg.png);
+}
+.ui-custom-boxFont .infoBkg .fontStyle{
+	font-size:14px;
+	font-weight:bold;
+	padding-left:9px;
+}
+/*字体*/
+.boxFont {font-weight: bold;font-size:14px;}
+/*线条*/
+.boxLine {margin:5px 0;border-bottom:1px solid #c30000;}
+/*背景图*/
+.boxToolBg {border-bottom:1px solid #e7e0b2;background:url(images/ui-custom/ui-custom-knowledge-Infobg.png;}
+/*容器边框*/
+.boxBorder {border:1px solid #e7e0b2;}

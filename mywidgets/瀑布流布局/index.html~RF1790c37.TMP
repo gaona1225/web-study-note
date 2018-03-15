@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>固定列数的浮动布局</title>
+<style type="text/css">
+	ul,li{
+		list-style:none ;
+		margin:0 ;
+		padding:0 ;
+	}
+	ul{
+		
+	}
+	li{
+		float:left ;
+	}
+	li a{
+		background:#fff ;
+		border-radius:8px ;
+		box-shadow:0 0 11px #666 ;
+		display:inline-block;
+		margin:0 10px ;
+		padding:5px ;
+		position:relative ;
+		width:260px ;
+	}
+	li a img{
+		width:260px ;
+	}
+	/*.desc{
+		background:rgba(0,0,0,0.3) ;
+		bottom:8px; 
+		color:#fff ;
+		display:inline-block ;
+		height:50px ;
+		left:5px;
+		padding:5px 0 ;
+		position:absolute;
+		text-align:center ;
+		width:260px ;
+	}*/
+</style>
+</head>
+
+<body>
+	<!--
+    	固定列数的浮动布局
+    	1、设置显示的列数（比如5列）
+        2、制定列数的li标签（此处5个li）
+        3、将元素（此处为图片）分别一个个放到相应的li元素中
+        此处需要注意先一次排5个，当第6个的时候需要判断第一列是否是最好列,排放在最优列（即高度最矮的li）
+    -->
+	<ul>    
+    	<li></li>
+    	<li></li>
+        <li></li>
+    	<li></li>
+        <li></li>
+        <!--<li><a href="#"><img src="img/3.jpg" /><span class="desc">我是第3333333333个</span></a></li>
+        <li><a href="#"><img src="img/4.jpg" /><span class="desc">我是第4444444444个</span></a></li>
+        <li><a href="#"><img src="img/5.jpg" /><span class="desc">我是第5555555555个</span></a></li>
+        <li><a href="#"><img src="img/6.jpg" /><span class="desc">我是第6666666666个</span></a></li>
+        <li><a href="#"><img src="img/3.jpg" /><span class="desc">我是第7777777777个</span></a></li>
+        <li><a href="#"><img src="img/4.jpg" /><span class="desc">我是第8888888888个</span></a></li>
+        <li><a href="#"><img src="img/5.jpg" /><span class="desc">我是第9999999999个</span></a></li>
+        <li><a href="#"><img src="img/6.jpg" /><span class="desc">我是第0000000000个</span></a></li>-->
+    </ul>
+    <script language="javascript">
+    	/*waterFall = function(name){
+			this.name = name ;
+		}
+		waterFall.prototype = {
+			fun1 : function(){
+				console.log('fun1') ;
+			},
+			fun2 : function(){
+				return 'fun2' ;
+			}
+		}
+		var per = new waterFall('gg') ;
+		per.fun1() ;
+		console.log(per.fun2()) ;*/
+		
+		waterFall = function(){
+		}
+		
+		waterFall.prototype = {
+			getMinHeightCol : function(){
+			} ,
+			init : function(){
+			}
+		}
+		
+		itemElem = function(id,src,spanhtml){
+		
+		}
+		
+		var itemList = [
+			/*<a href="#"><img src="img/3.jpg" /><span class="desc">我是第3333333333个</span></a>*/
+			new itemElem('item1','img/1.jpg','我是第111111个') ,
+			new itemElem('item2','img/2.jpg','我是第222222个') ,
+			new itemElem('item3','img/3.jpg','我是第333333个') ,
+			
+			new itemElem('item4','img/4.jpg','我是第444444个') ,
+			new itemElem('item5','img/5.jpg','我是第555555个') ,
+			new itemElem('item6','img/6.jpg','我是第666666个') ,
+			
+			new itemElem('item7','img/7.jpg','我是第777777个') ,
+			new itemElem('item8','img/8.jpg','我是第888888个') ,
+			new itemElem('item9','img/9.jpg','我是第999999个') ,
+			
+			new itemElem('item0','img/0.jpg','我是第000000个')
+		] ;
+		var waterFallItem = new waterFall() ;
+    </script>
+</body>
+</html>

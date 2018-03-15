@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>carousel单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/base/reset.css" />
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="carouselTest.js"></script>
+
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+	<div class="carousel" id="carousel">
+    	<a href="http://www.baidu.com" title="01" target="_new"><img class="cloudcarousel" alt="01" title="01" src="image/carousel/01.jpg" /></a>
+        <a href="http://www.baidu.com" title="02" target="_new"><img class="cloudcarousel" alt="02" title="02" src="image/carousel/02.jpg" /></a>
+        <a href="http://www.baidu.com" title="03" target="_new"><img class="cloudcarousel" alt="03" title="03" src="image/carousel/03.jpg" /></a>
+        <a href="http://www.baidu.com" title="04" target="_new"><img class="cloudcarousel" alt="04" title="04" src="image/carousel/04.jpg" /></a>
+        <a href="http://www.baidu.com" title="05" target="_new"><img class="cloudcarousel" alt="05" title="05" src="image/carousel/05.jpg" /></a>
+        <a href="http://www.baidu.com" title="06" target="_new"><img class="cloudcarousel" alt="06" title="06" src="image/carousel/06.jpg" /></a>
+        
+        <div class="carouseLeft" id="but1"></div>
+        <div class="carouselRight" id="but2"></div>
+    </div>
+    <input type="button" id="testBtn" value="testBtn" />
+</div>
+</body>
+</html>

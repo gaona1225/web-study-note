@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/green.css" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/draggable.js"></script> 
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script type="text/javascript" src="js/wenda.js"></script>
+   <script type="text/javascript" charset="utf-8" src="../cordova-incl.js"></script>      
+
+     
+<script type="text/javascript" charset="utf-8">
+
+    var deviceReady = false;
+
+    //-------------------------------------------------------------------------
+    // Location
+    //-------------------------------------------------------------------------
+    var watchLocationId = null;
+
+    /**
+     * Start watching location
+     */
+    var watchLocation = function(geo) {
+        console.log("watchLocation()");
+
+        // Success callback
+        var success = function(p){
+              console.log('watch location success');
+              setLocationDetails(p);
+        };
+
+        // Fail callback
+        var fail = function(e){
+            console.log("watchLocation fail callback with error code "+e);
+            stopLocation(geo);
+        };
+
+        // Get location
+        watchLocationId = geo.watchPosition(success, fail, {enableHighAccuracy: true});
+        setLocationStatus("Running");
+    };
+
+    /**
+     * Stop watching the location
+     */
+    var stopLocation = function(geo) {
+        setLocationStatus("Stopped");
+        if (watchLocationId) {
+            geo.clearWatch(watchLocationId);
+            watchLocationId = null;
+        }
+    };
+
+    /**
+     * Get current location
+     */
+    var getLocation = function(geo, opts) {
+        console.log("getLocation()");
+
+        // Stop location if running
+        stopLocation(geo);
+
+        // Success callback
+        var success = function(p){
+        
+            console.log('get location success');
+            setLocationDetails(p);
+            setLocationStatus("Done");
+        };
+
+        // Fail callback
+        var fail = function(e){
+            console.log("getLocation fail callback with error code "+e.code);
+            setLocationStatus("Error: "+e.code);
+        };
+
+        // Get location
+        geo.getCurrentPosition(success, fail, opts || {enableHighAccuracy: true}); //, {timeout: 10000});
+        setLocationStatus("Retrieving location...");
+
+    };
+
+    /**
+     * Set location status
+     */
+    var setLocationStatus = function(status) {
+        document.getElementById('location_status').innerHTML = status;
+    };
+var setLocationDetails = function(p) {
+var date = (new Date(p.timestamp));
+            document.getElementById('latitude').innerHTML = p.coords.latitude;
+            document.getElementById('longitude').innerHTML = p.coords.longitude;
+            document.getElementById('altitude').innerHTML = p.coords.altitude;
+            document.getElementById('accuracy').innerHTML = p.coords.accuracy;
+            document.getElementById('heading').innerHTML = p.coords.heading;
+            document.getElementById('speed').innerHTML = p.coords.speed;
+            document.getElementById('altitude_accuracy').innerHTML = p.coords.altitudeAccuracy;
+            document.getElementById('timestamp').innerHTML =  date.toDateString() + " " + date.toTimeString();
+    }
+    
+    /**
+     * Function called when page has finished loading.
+     */
+    function init() {
+        document.addEventListener("deviceready", function() {
+                deviceReady = true;
+                console.log("Device="+device.platform+" "+device.version);
+            }, false);
+        window.setTimeout(function() {
+        	if (!deviceReady) {
+        		alert("Error: Apache Cordova did not initialize.  Demo will not run correctly.");
+        	}
+        },1000);
+    }
+
+</script>
+
+<style>
+
+</style>
+</head>
+<body>
+    <div id="location_status"></div>
+    
+    <div class="popBox" id="popBox" style="display:;">
+        <div class="evaluate_pop" >
+            <div class="evaluate_pop_msg">"最强攻略"想要取得您的位置：</div>
+            <div class="evaluate_pop_tool"><a href="javascript:;" class="left_pop_btn">不允许</a><a href="javascript:;" class="right_pop_btn" onClick="getLocation(navigator.geolocation);">好</a></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <a href="javascript:;" class="back_btn"></a>
+        <h1>百科问答</h1>
+        <a href="javascript:;" id="tool_btn" class="tool_btn"></a>
+    </header>
+    
+    <nav class="nav">
+    	<ul class="nav_ul" id="nav_ul">
+			<li class="current"> <span>最新</span> </li>
+            <li> <span>精华</span> </li>
+            <li> <span>进攻</span> </li>
+            <li> <span>防守</span> </li>
+            <li> <span>阵型</span> </li>
+            <li> <span>其他</span> </li>
+            <li> <span>同城</span> </li>
+            <li> <span>女生</span> </li>
+        </ul>
+    </nav>
+    
+    <div class="sibar" id="sibar">
+    	<div class="sibar_tit"><a href="#">?</a></div>
+        <p class="sibar_msg">我要提问</p>
+        <ul class="sibar_list" id="sibar_list">
+        	<li id="sibar_unlogin"><a href="#"><i class="sibar_unlogin"></i>点击登录</a></li>
+        	<li id="sibar_login" style="display:none;"><a href="#"><i class="sibar_login"><img src="img/tx.png" /></i>Lmayday<span class="sibar_login_msg">贡献值 100</span></a></li>
+        	<li><a href="#"><i class="sibar_myinfo"></i>我的消息<span>5</span></a></li>
+        	<li class="sibar_current"><a href="#"><i class="sibar_myques"></i>我的提问<span>25</span></a></li>
+        	<li><a href="#"><i class="sibar_myans"></i>我的回答<span>1</span></a></li>
+        	<li><a href="#"><i class="sibar_search"></i>搜索</a></li>
+        </ul>
+    </div>
+    
+    <div class="arrow_td" id="arrow_td"><i></i>下拉刷新列表 </div>
+    <div class="arrow_tr" id="arrow_tr"><i></i>松开即可刷新</div>
+    <div class="arrow_tload" id="arrow_tload"><i></i>正在努力加载 </div>
+    
+    <div class="arrow_bd" id="arrow_bd"><i></i>上拉刷新列表 </div>
+    <div class="arrow_br" id="arrow_br"><i></i>松开即可刷新</div>
+    <div class="arrow_bload" id="arrow_bload"><i></i>正在努力加载 </div>
+    
+    
+    <div  id="content"  class="content">
+        <div id="content_box" class="content_box">
+            <div class="content_list"  id="content_list0" >
+                <div class="list_box" id="list_box0">
+                     
+                </div>
+            </div>
+            
+            <div class="content_list"  id="content_list1" >
+                <div class="list_box" id="list_box1">
+                     
+                </div>
+            </div>
+            
+            <div class="content_list"  id="content_list2" >
+                 <div class="list_box" id="list_box2">
+                    
+                </div>
+            </div>
+            
+            <div class="content_list"  id="content_list3">
+                <div class="list_box" id="list_box3">
+                    
+                </div>
+            </div>
+            
+            
+            <div class="content_list"  >
+                <div class="list_box">
+                     
+                </div>
+            </div>
+            
+            <div class="content_list"  >
+                 <div class="list_box">
+                    
+                </div>
+            </div>
+            
+            <div class="content_list" >
+                <div class="list_box">
+                    
+                </div>
+            </div>
+            
+            <div class="content_list" >
+                <div class="list_box">
+                    
+                </div>
+            </div>
+            
+        </div>    
+    </div>
+    
+</body>
+</html>

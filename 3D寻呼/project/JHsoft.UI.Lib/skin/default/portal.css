@@ -1,0 +1,295 @@
+@charset "utf-8";
+
+/* CSS Document */
+html,
+body {
+	height:100%;
+	min-width:400px;
+	min-height:400px;
+}
+a {
+	color: #333333;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ba2636;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #FF0000;
+	text-decoration: none;
+}
+
+/*layout*/
+.c6ui-portal-layout {
+	width:100%;
+	margin:0 auto;
+}
+
+.c6ui-portal-layout .row-1 {
+	float:left;
+	width:33%;
+}
+
+.c6ui-portal-layout .row-2 {
+	float:left;
+	width:33%;
+}
+
+.c6ui-portal-layout .row-3 {
+	float:left;
+	width:33%;
+}
+
+/*mod_1*/
+.c6ui-portal-area-1 {
+	border:solid #aacbee 1px;
+	font-size:14px;
+	background-color:#FFFFFF;
+	margin:10px 4px;
+}
+
+.c6ui-portal-area-1 .c6ui-portal-area-title {
+	overflow:hidden;
+	border-bottom:solid #aacbee 1px;
+	height:29px;
+	line-height:29px;
+	padding:0 8px;
+	background-color: #f9fcff;
+	background-image: -moz-linear-gradient(top, #f9fcff, #e8f1f9); /* FF3.6 */
+	background-image: -ms-linear-gradient(top, #f9fcff, #e8f1f9); /* IE10 */
+	background-image: -o-linear-gradient(top, #f9fcff, #e8f1f9); /* Opera 11.10+ */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fcff), to(#e8f1f9)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #f9fcff, #e8f1f9); /* Chrome 10+, Saf5.1+ */
+	background-image: linear-gradient(top, #f9fcff, #e8f1f9);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fcff', EndColorStr='#e8f1f9'); /* IE6–IE9 */
+}
+
+.c6ui-portal-area-1 .c6ui-portal-area-title .c6ui-title {
+	color:#333638;
+	font-weight:bold;
+}
+
+.c6ui-portal-area-1 .c6ui-portal-area-title span.subTitle {
+	font-size:12px;
+	line-height:29px;
+	float:right;
+}
+.c6ui-portal-area-1 .c6ui-portal-area-title span.subTitle a {
+	margin-left:6px;
+	margin-right:6px;
+}
+.c6ui-portal-area-1 .c6ui-portal-area-content {
+	padding:6px;
+	overflow:hidden;
+}
+
+.c6ui-portal-area-1 .c6ui-portal-area-content ul {
+	width:100%;
+}
+
+.c6ui-portal-area-1 .c6ui-portal-area-content ul li {
+	width:90%;
+	padding-left:14px;
+	height:20px;
+	background:url(../../images/base-dot.gif) no-repeat left center;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.c6ui-portal-area-1 .c6ui-portal-area-content ul li a {
+	width:100%;
+	overflow:hidden;
+}
+.c6ui-portal-area-1 .c6ui-portal-area-content ul li a.visited {
+	color:#999999;
+	text-decoration: none;
+}
+.c6ui-portal-area-1 .c6ui-portal-area-content ul li a.visited:hover {
+	color: #ba2636;
+	text-decoration: underline;
+}
+.c6ui-portal-area-1 .c6ui-portal-area-content ul li span.date {
+	color:#999999;
+	font-size:12px;
+	margin-left:10px;
+	float:right;
+	margin-right:20px;
+	*margin-top:-22px;
+}
+/*mod-1*/
+/*mod_2*/
+.c6ui-portal-area-2 {
+	border:solid #aacbee 1px;
+	font-size:14px;
+	background-color:#FFFFFF;
+	margin:10px 4px 0px;
+	
+}
+.c6ui-portal-area-2 div.c6ui-portal-area-content{
+	font-size:14px;}
+/*add by duwy font-size='14px'*/
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-base-minTab_t ul li.t a{font-size:14px;color:#1f376d}
+.c6ui-portal-area-content ul li a,.c6ui-portal-area-2 .c6ui-portal-area-title a.c6ui-title{font-size:14px; line-height:24px;}
+.c6ui-portal-area-content ul li,.c6ui-portal-area-2 .c6ui-portal-area-title label{font-size:14px;}
+
+.c6ui-portal-area-2 .c6ui-portal-area-title {
+	overflow:hidden;
+	border-bottom:solid #aacbee 1px;
+	height:29px;
+	line-height:29px;
+	padding:0 8px;
+	background-color: #f9fcff;
+	background-image: -moz-linear-gradient(top, #f9fcff, #e8f1f9); /* FF3.6 */
+	background-image: -ms-linear-gradient(top, #f9fcff, #e8f1f9); /* IE10 */
+	background-image: -o-linear-gradient(top, #f9fcff, #e8f1f9); /* Opera 11.10+ */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fcff), to(#e8f1f9)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #f9fcff, #e8f1f9); /* Chrome 10+, Saf5.1+ */
+	background-image: linear-gradient(top, #f9fcff, #e8f1f9);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fcff', EndColorStr='#e8f1f9'); /* IE6–IE9 */
+}
+
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-title {
+	color:#1f376d;
+	font-weight:bold;
+}
+
+.c6ui-portal-area-2 .c6ui-portal-area-title span.subTitle {
+	font-size:12px;
+	line-height:29px;
+	float:right;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-title span.subTitle a {
+	margin-left:6px;
+	margin-right:6px;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-content {
+	padding:6px;
+	overflow:hidden;
+}
+
+.c6ui-portal-area-2 .c6ui-portal-area-content ul {
+	width:100%;
+}
+
+.c6ui-portal-area-2 .c6ui-portal-area-content ul li {
+	padding-left:14px;
+	/*height:20px;*/
+	height:24px;
+	*height:auto;
+	background:url(../../images/base-dot.gif) no-repeat left center;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-content ul li a {
+	/*modify by duwy
+	width:80%;*/
+	
+	*height:auto;
+	*line-height:21px;
+	overflow:hidden;
+	float:left;
+	width:80%;
+	display:block;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-content ul li a.visited {
+	color:#999999;
+	text-decoration: none;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-content ul li a.visited:hover {
+	color: #ba2636;
+	text-decoration: underline;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-content ul li span.date {
+	color:#999999;
+	font-size:12px;
+	margin-left:10px;
+	float:right;
+	*margin-top:-22px;
+	/*modify by duwy*/
+	width:40px;
+	display:block;
+	margin-top:0;
+}
+/*mod-2*/
+.c6ui-portal-area-2 .tabborder{ border-top:none; border-bottom:none; padding:0;}
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-base-minTab_t {
+	overflow:hidden;
+	height:29px;
+	position:relative;
+}
+
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-base-minTab_t ul {
+	_overflow:hidden;
+	width:100%;
+	padding:0 0;
+	height:28px;
+	line-height:28px;
+	position:relative;
+	border-bottom:solid #aacbee 1px;
+	white-space:nowrap;
+	background-color: #f9fcff;
+	background-image: -moz-linear-gradient(top, #f9fcff, #e8f1f9); /* FF3.6 */
+	background-image: -ms-linear-gradient(top, #f9fcff, #e8f1f9); /* IE10 */
+	background-image: -o-linear-gradient(top, #f9fcff, #e8f1f9); /* Opera 11.10+ */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fcff), to(#e8f1f9)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #f9fcff, #e8f1f9); /* Chrome 10+, Saf5.1+ */
+	background-image: linear-gradient(top, #f9fcff, #e8f1f9);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fcff', EndColorStr='#e8f1f9'); /* IE6–IE9 */
+}
+
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-base-minTab_t ul li {
+	float:left;
+	padding:0 16px;
+	position:relative;
+	height:28px;
+	line-height:27px;
+	cursor:pointer;
+	display:inline;
+	border-left:solid #aacbee 1px;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-base-minTab_t ul li.list{  font-size:12px}
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-base-minTab_t ul li.active {
+	border-right:solid #aacbee 1px;
+	border-left:solid #aacbee 1px;
+	background-color:#fff;
+	padding:0 16px;
+	height:29px;
+	_margin-bottom:-1px;
+	/*color:#ba2636;*/
+	color:#000;
+	font-weight:bold;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-base-minTab_t ul li:hover{
+	color:#ba2636;
+}
+.c6ui-portal-area-2 .c6ui-portal-area-title .c6ui-base-minTab_t ul li.t {
+	padding:0 12px;
+	height:28px;
+	font-weight:bold;
+	_margin-bottom:-1px;
+}
+.c6ui-portal-area-content .photo{ margin:0 6px; border:solid #CCCCCC 1px;}
+.c6ui-portal-area-content .txt{ height:19px; width:111px;height:21px; width:117px; font-size:12px; line-height:14px; background-color:#F3F3F3; margin:0 6px; margin-top:2px; padding:1px 3px; text-align:center;}
+.c6ui-portal-area-content .phlist li{ overflow:hidden;}
+.c6ui-portal-area-content .phlist li{
+	width:80%;
+	padding-left:14px;
+	/*height:20px;*/
+	height:24px;
+	background:url(../../images/base-dot.gif) no-repeat left center;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+
+}

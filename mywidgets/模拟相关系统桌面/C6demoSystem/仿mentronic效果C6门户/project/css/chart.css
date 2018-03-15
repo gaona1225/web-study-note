@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* CSS Document */
+/*chart css*/
+.chart{
+  height:300px;
+  overflow:hidden;
+}
+.item-list.table .percent{
+  width:30px;
+  float:right;
+  margin-right:10px;
+  margin-top:3px;
+}
+.item-list.table .title{
+  padding-top:-5px;
+}
+.chart-tooltip{
+  background-color:#736e6e !important;
+  clear:both;
+  color:#fff;
+  font-size:12px;  
+  padding:5px !important;
+  z-index:100;
+}
+.chart-tooltip .label{
+  clear:both;
+  display:block;
+  margin-bottom:2px;
+  padding:3px 6px 3px 6px;
+}
+.label-success{
+  background-color:#3cc051;
+  background-image:none !important;
+}
+.label-warning{
+  background-color:#fcb322;
+  background-image:none !important;
+}
+.label-danger{
+  background-color:#ed4e2a;
+  background-image:none !important;
+}
+.label-info{
+  background-color:#57b5e3;
+  background-image:none !important;
+}
+/*easy-pie-chart*/
+.easy-pie-chart{
+	float:left ;
+	text-align:center ;
+	width:32.6% ;
+}
+.easy-pie-chart .number{
+	height:75px ;
+	line-height:75px ;
+	margin:0 auto ;
+}
+.easy-pie-chart a.title{
+	color:#666 ;
+}
+/*sparkline*/
+.sparkline-chart{
+	float:left ;
+	text-align:center ;
+	width:32.6% ;
+}
+.sparkline-chart .number{
+	height:75px ;
+	line-height:75px ;
+	margin:0 auto ;
+}
+.sparkline-chart a.title{
+	color:#666 ;
+}
+/*fullcalendar*/
+/***
+Calendar with full calendar
+***/
+#calendar{
+	margin:10px ;
+}
+.external-event{
+  	cursor:move;
+  	display:inline-block ;
+  	margin-bottom:5px ;  
+  	margin-left:5px ;
+}
+.event-form-title{
+  	font-size:14px;
+  	font-weight:400;
+  	margin-bottom:10px;
+  	margin-top:4px;
+}
+.fc-button{
+  	-webkit-box-shadow:none ;
+    -moz-box-shadow:none ;
+    box-shadow:none ;
+  	-webkit-text-shadow:none ;
+    -moz-text-shadow:none ;
+    text-shadow:none ;
+  	background:transparent;
+  	border:0 ;
+  	border-color:#ddd;
+	border-style:none solid ;
+  	color:#fff;
+	height:1.6em !important ;
+	line-height:1.5em !important ;
+  	margin-left:2px;  
+  	padding:6px !important ;
+}
+/* begin:event element */
+.fc-event{
+  	background-color:#69a4e0;
+  	border:0px;
+  	color:#fff;
+}
+.fc-event-inner{
+  	border:0px;
+}
+.fc-event-time{
+  	color:#fff;
+  	float:left;
+  	font-size:13px;
+  	font-weight:300;
+  	text-align:left;
+}
+.fc-event-title{
+  	color:#fff;
+  	float:left;
+  	font-size:13px;
+  	font-weight:300;
+  	text-align:left;
+}
+/* end:event element */
+.fc-header-title h2{
+  	color:#111;
+  	font-size:14px ;
+  	font-weight:400;
+  	line-height:20px;
+}
+.fc-widget-header{
+  	background-color:#eee ;
+  	background-image:none ;
+  	filter:none ;
+  	font-color:#000;
+  	font-weight:300;
+  	text-transform:uppercase;
+}
+.mobile .fc-button{
+  	margin-left:2px ;
+}
+.mobile .fc-button{
+    background-color:#ddd ;
+	background-image:none;	
+    -webkit-box-shadow:none ;
+    -moz-box-shadow:none ;
+    box-shadow:none ;
+    -webkit-border-radius:0 ;
+    -moz-border-radius:0 ;
+    border-radius:0 ;
+    border:none ;
+	color:#000 ;
+    margin-left:2px ;     
+    padding:0px 6px 20px 6px ;
+    text-align:center;
+    text-shadow:none ;
+}
+.mobile .fc-state-hover,.mobile .fc-state-active{
+  	background-color:#eee ;
+}
+.mobile .fc-button-prev{
+  	margin-right:5px;
+  	margin-top:-2px;
+}
+.mobile .fc-button-next{   
+  	margin-right:-0px;
+  	margin-top:-2px;
+}
+.mobile .fc-header-space{
+	margin:0px ;
+	padding:0px ;
+	width:0px ;
+}
+.mobile .fc-state-disabled{
+  	color:#bbb ;
+}
+.mobile .fc-header-left{
+	position:absolute;
+	z-index:10;
+}
+.mobile .fc-header-right{
+	position:absolute;
+ 	z-index:9;
+}
+.mobile .fc-header-left .fc-button{ 
+	top:-2px ;
+}
+.mobile .fc-header-right{
+	position:relative;
+	right:0;
+}
+.mobile .fc-header-right .fc-button{ 
+	top:35px ;
+}
+.mobile .fc-content{
+	margin-top:53px;
+}

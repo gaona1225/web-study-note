@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>slide</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script language="javascript" src="../jquery/js/jquery-1.8.3.min.js"></script>
+<script language="javascript" src="../jquery/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" src="slide.js"></script>
+<script language="javascript">
+	$(function(){
+		$('.slideList').slide() ;
+		$('#destroyBtn').click(function(){
+			$('.slideList').slide('destroy');
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+    <ul class="slideList">
+    	<li class="slideElem"><img src="images/slide/img_main_1.jpg" height="176px" width="800px" /></li>
+    	<li class="slideElem"><img src="images/slide/img_main_2.jpg" height="176px" width="800px" /></li>
+    	<li class="slideElem"><img src="images/slide/img_main_3.jpg" height="176px" width="800px" /></li>
+    	<li class="slideElem"><img src="images/slide/img_main_4.jpg" height="176px" width="800px" /></li>
+    	<li class="slideElem"><img src="images/slide/img_main_5.jpg" height="176px" width="800px" /></li>
+    </ul>
+    <div>
+        <input type="button" id="destroyBtn" value="清除组件" />
+    </div>
+</body>
+</html>

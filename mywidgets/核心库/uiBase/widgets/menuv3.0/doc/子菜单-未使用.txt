@@ -1,0 +1,14 @@
+  <!--2.子菜单-->
+<!--<div class="ui-desktop-mt-tab-sub" id='subMenu'>-->
+    <!--<ul>-->
+        <!--<li class="active">-->
+            <!--<span>子菜单1</span>-->
+        <!--</li>-->
+        <!--<li class="">&lt;!&ndash;li:hover,li.active:hover&ndash;&gt;-->
+            <!--<span>子菜单2</span>-->
+        <!--</li>-->
+        <!--<li class="">-->
+            <!--<span>子菜单2子菜单3</span>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->

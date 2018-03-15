@@ -1,0 +1,167 @@
+/*---workflow---*/
+.ui-custom-workflow-infobox{
+	width:300px;
+	padding-top:4px;
+}
+.ui-custom-workflow-infobox .td1{
+	width:129px;
+	text-align:right;
+	height:21px;
+	padding-top:12px;
+}
+.ui-custom-workflow-infobox .td2{
+	width:100px;
+	padding-left:6px;
+	padding-top:12px;
+}
+.ui-custom-workflow-infobox .button-style{
+	padding-left:116px;
+	padding-top:12px;
+	padding-bottom:16px;
+}
+.ui-custom-workflow-read{
+	width:650px;
+	padding-left:11px;
+}
+.ui-custom-workflow-read .td1{
+	padding-left:2px;
+	text-align:left;
+	padding-top:8px;
+}
+.ui-custom-workflow-read .td2{
+	padding-left:2px;
+	text-align:left;
+	padding-top:6px;
+}
+.textarea_626{
+	width:626px;
+	height:80px;
+}
+.ui-custom-workflow-read .td3{
+	vertical-align:top ;
+	padding-top:6px;
+	width:306px;
+	/*height:414px;*/
+}
+.ui-custom-workflow-read .td4{
+	padding-top:6px;
+	padding-left:20px;
+	width:283px;
+	height:414px;
+}
+.ui-custom-workflow-read .person-list li{
+	padding-left:12px;
+	height:25px;
+	line-height:25px;
+}
+.ui-custom-workflow-read .person-list .active{
+	background-color:#e4f2fd;
+}
+.ui-custom-workflow-read .td5{
+	padding-top:15px;
+	padding-bottom:18px;
+	text-align:center;
+}
+.ui-custom-workflow-change{
+	width:650px;
+	padding-left:11px;
+}
+.ui-custom-workflow-change .td1{
+	padding-left:3px;
+	text-align:left;
+	padding-top:8px;
+}
+.ui-custom-workflow-change .td2{
+	padding-left:1px;
+	text-align:left;
+	padding-top:6px;
+}
+.ui-custom-workflow-change .td3{
+	padding-top:6px;
+	width:246px;
+	height:430px;
+}
+.ui-custom-workflow-change .td4{
+	padding-top:6px;
+	padding-left:18px;
+	width:365px;
+	height:430px;
+}
+.ui-custom-workflow-change .td5{
+	padding-top:18px;
+	padding-bottom:15px;
+	text-align:center;
+}
+.ui-custom-workflow-change .td6{
+	text-align:left;
+	padding-top:6px;
+}
+body{
+	overflow-x:hidden ;
+}
+.iframeControl{
+	border:none ;
+	/*height:100% ;*/
+	height:600px ;
+	overflow:hidden ;
+	width:100% ;
+}
+.ui-custom-workflow-read .td7{
+	padding-left:20px;
+}
+.ui-custom-workflow-read .td8{
+	padding-top:6px ;
+	text-align:right ;
+}
+.textarea_682{
+	width:682px;
+	height:80px;
+}
+.textarea_auto{
+	margin-top:6px ;
+	height:80px;
+	margin-left:1% ;
+	width:98%;
+}
+.toolbar{
+	margin:0px ;
+}
+.select_frame{
+	height:26px ;
+	margin-top:3px ;
+	width:100% ;
+}
+.frame_list{
+	background:#F5F8FD ;
+	border:1px solid #BCCCE1 ;
+	border-width:0px 1px 1px 1px ;
+	width:99% ;
+}
+.frameUL_list{
+	margin-top:12px ;
+}
+.frameUL_list li{
+	display:block ;
+	height:26px ;
+	line-height:26px ;
+}
+.frameUL_list li a:link,.frameUL_list li a:visited{
+	color:#003399 ;
+}
+.frameUL_list li a:hover{
+	color:#fff ;
+}
+.frameUL_list li.highlight{
+	background:#5483c5 ;
+}
+.frameUL_list li.highlight a{
+	color:#fff !important ;
+}
+.frameUL_list span{
+	float:right ;
+	padding-right:6px ;
+	padding-top:6px ;
+}
+.frameUL_list span img{
+	cursor:pointer ;
+}

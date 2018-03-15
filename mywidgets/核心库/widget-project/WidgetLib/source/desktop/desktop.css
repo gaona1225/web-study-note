@@ -1,0 +1,122 @@
+﻿/* CSS Document by eddy */
+html,body{ height:100%; overflow:hidden; -webkit-text-size-adjust:none;}
+.ui-desktop-loading{ position:absolute; left:0; top:0; height:100%; width:100%; background-color:#fff; z-index:9999; overflow:visible;
+  background-color: #fefefe;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#bbbbbb)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #fefefe, #bbbbbb); /* Chrome 10+, Saf5.1+ */
+  background-image:    -moz-linear-gradient(top, #fefefe, #bbbbbb); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, #fefefe, #bbbbbb); /* IE10 */
+  background-image:      -o-linear-gradient(top, #fefefe, #bbbbbb); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, #fefefe, #bbbbbb);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefefe', EndColorStr='#bbbbbb'); /* IE6–IE9 */
+}
+.ui-desktop-loading .ui-desktop-loading-info{ position:relative; width:300px; height:400px; margin:10% auto; text-align:center; font-weight:bold;}
+.ui-desktop{overflow:hidden; min-width:400px; background-image:url(images/desktop/desktop_bg_green.png);}
+.ui-desktop .ui-desktop-top{height:77px;}
+.ui-desktop .ui-desktop-top .ui-desktop-logo{height:77px; width:360px; background-image:url(images/desktop/logo.png); background-repeat:no-repeat; background-position:center;}
+.ui-desktop .ui-desktop-top .ui-desktop-system{height:77px; width:450px; float:right;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .userSystem{ height:16px; line-height:16px; padding-right:6px; margin-top:3px;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .userSystem span{ float:right; margin:1px 2px; color:#fff; cursor:pointer; padding:1px 6px;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .userSystem span:hover{ border:solid 1px #CCC; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; background-color:#BBB;  padding:0 5px;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl{ height:30px; margin-top:10px; padding:3px 12px; line-height:30px; text-align:right; color:#FFF;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl .ui-desktop-sysBtn,.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl .ui-desktop-sysBtn b{ background-image:url(images/desktop/desktop_systemBtn.png); background-repeat:no-repeat; display:inline-block; height:34px; line-height:34px; cursor:pointer;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl .ui-desktop-sysBtn b{ margin-left:4px; padding:0 14px 0 10px;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl .ui-desktop-sysBtn-hover{ background-position:0 -34px;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl .ui-desktop-sysBtn-hover b{ background-position: right -68px;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl .ui-desktop-sysBtn-active{ background-position:0 -102px;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl .ui-desktop-sysBtn-active b{ background-position: right -136px;}
+.ui-desktop .ui-desktop-top .ui-desktop-system .systemCtrl .c6ui-widget-minSearch{-webkit-box-shadow: 0px 0px 3px #ffffff; -moz-box-shadow: 0px 0px 3px #ffffff; box-shadow: 0px 0px 3px #ffffff;}
+.ui-desktop .ui-desktop-center{ overflow:hidden; padding:0; margin:0;}
+.ui-desktop .ui-desktop-bottom{ height:30px; background-image:url(images/desktop/desktop_bottomBg.png);}
+.ui-desktop .ui-desktop-bottom span{ height:18px; line-height:18px; display:inline-block; margin:6px;}
+.ui-desktop .ui-desktop-bottom .copyright{ margin-left:8px;}
+.ui-desktop .ui-desktop-bottom .info{ float:right; margin-right:8px;}
+.ui-desktop .ui-desktop-bottom .info .unitBox{ padding:1px 3px; margin:0 3px; color:#666; cursor:pointer;}
+.ui-desktop .ui-desktop-bottom .info .unitBox:hover{ padding:0 2px; border:solid 1px #999; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;}
+.ui-desktop .ui-desktop-bottom .info .unitBox img{ margin:1px 3px -3px 0;}
+.ui-desktop .ui-desktop-bottom .info .unitBox b{ display:block; font-size:10px; line-height:12px; width:12px; height:12px; background-color:#86131C; color:#FFF; font-weight:bold; float:left; text-align:center; margin-left:7px; margin-top:-2px; position:absolute; font-family:Arial, Helvetica, sans-serif; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; display:none; }
+.ui-desktop .ui-desktop-bottom .info .unitBox:hover b{ margin-top:-4px; width:14px; height:14px; font-size:11px;}
+.ui-desktop .ui-desktop-bottom .info .unitBox label{display:inline-block; height:16px; line-height:16px; vertical-align:top; cursor:pointer;}
+/* Desktopt left */
+.ui-desktop .ui-desktop-center .ui-desktop-left{ width:155px; height:100%; float:left; overflow:hidden;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-title{ background-image:url(images/desktop/desktop_left_titleBg.png); background-repeat:no-repeat; height:37px;}
+/* Desktopt left 展开的 */
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-title .ui-desktop-leftTitle{ font-size:14px; font-weight:bold; text-shadow:#333 0px 0px 2px; color:#FFF; line-height:37px; margin-left:10px; }
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-title .ui-desktop-leftCtrl{ font-size:1px; line-height:37px; height:16px; width:16px; float:right; margin:12px 22px 0 0; background-image:url(images/desktop/desktop_left_ctrl.png); cursor:pointer;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-body .appList{ margin:6px 0;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-body .appList li{ margin:6px 0; height:34px; color:#FFF; font-size:13px; cursor:default;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-body .appList li.active{ background-image:url(images/desktop/desktop_left_hover.png); background-position:3px center; background-repeat:no-repeat; font-weight:bold; color:#000;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-body .appList li img{ margin:5px 12px;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-body .appList li span{ display:inline-block; height:34px; line-height:34px; vertical-align:top;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-bottom ul li{ cursor:default;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-bottom ul li.active{ background-image:url(images/desktop/desktop_left_hover.png); background-position:3px center; background-repeat:no-repeat; font-weight:bold; color:#000;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-bottom ul li.active span{ color:#000;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-bottom ul li img{ margin:9px 12px;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-bottom ul li span{display:inline-block; height:42px; line-height:42px; vertical-align:top; color:#FFF;}
+/* Desktopt left 展开的 */
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-body{ background-image:url(images/desktop/desktop_left_bodyBg.png); background-repeat:repeat-y; overflow:hidden;}
+.ui-desktop .ui-desktop-center .ui-desktop-left .ui-desktop-left-bottom{ background-image:url(images/desktop/desktop_left_bottomBg.png); background-repeat:repeat-y; height:41px;}
+/* Desktop left mini */
+.ui-desktop .ui-desktop-center .ui-desktop-left-min{ width:55px; height:100%; float:left;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-title{ background-image:url(images/desktop/desktop_left_titleBg_min.png); background-repeat:no-repeat; height:37px;}
+/* Desktopt left 收起的 */
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-title .ui-desktop-leftTitle{ font-size:14px; font-weight:bold; color:#FFF; line-height:37px; margin-left:10px; display:none;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-title .ui-desktop-leftCtrl{ font-size:1px; line-height:37px; height:16px; width:16px; float:right; margin:12px 22px 0 0; background-image:url(images/desktop/desktop_left_ctrl.png); background-position:0 -16px; cursor:pointer;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-body .appList li{ height:34px; color:#FFF; font-size:13px; cursor:default;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-body .appList li.active{ background-image:url(images/desktop/desktop_left_min_hover.png); background-position:3px center; background-repeat:no-repeat;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-body .appList li img{ margin:5px 12px;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-body .appList li span{ display:none;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-bottom ul li.active{ background-image:url(images/desktop/desktop_left_min_hover.png); background-position:3px center; background-repeat:no-repeat; font-weight:bold; color:#000;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-bottom ul li.active span{ color:#000;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-bottom ul li img{ margin:9px 12px; }
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-bottom ul li span{ display:none;}
+/* Desktopt left 收起的 */
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-body{ background-image:url(images/desktop/desktop_left_bodyBg_min.png); background-repeat:repeat-y; overflow:hidden;}
+.ui-desktop .ui-desktop-center .ui-desktop-left-min .ui-desktop-left-bottom{ background-image:url(images/desktop/desktop_left_bottomBg_min.png); background-repeat:repeat-y; height:41px;}
+/* Desktop main */
+.ui-desktop .ui-desktop-center .ui-desktop-main{ height:100%; overflow:hidden;}/* display:none;*/
+/* Desktop main Tab */
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab{ height:34px; margin-top:3px;}/**/
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab{ height:34px; overflow:hidden; *margin-right:68px; border-left:solid 1px #999;border-right:solid 1px #999;}/*标签包裹*/
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul{height:33px; border-bottom:solid 1px #999999; min-width:4000px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li{ font-size:13px; font-weight:bold; color:#FFF; float:left; padding:4px 10px; height:25px; width:122px; margin:0; line-height:25px; background-image:url(images/desktop/desktop_main_tab.png); cursor:default;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li span{ margin-right:20px; overflow:hidden;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li a,.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li a.ui-desktop-tabClose:hover{ background-image:url(images/desktop/desktop_tabClose.png);}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li a.ui-desktop-tabClose{ display:none; color:#FFF; font-size:1px; width:16px; height:16px; float:right; margin:5px 0;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li a.ui-desktop-tabClose:hover{ background-position:0 -15px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li.hover{background-image:url(images/desktop/desktop_main_tab_hover.png); }
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li.hover a.ui-desktop-tabClose{ display:block;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li.active{background-image:url(images/desktop/desktop_main_tab_active.png); height:34px; color:#333;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab ul li.active a.ui-desktop-tabClose{ display:block;}
+/*标签控制*/
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control{ height:33px; float:right; border-bottom:solid 1px #999999; width:70px; padding-left:2px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control span{ display:inline-block; background-image:url(images/desktop/desktop_tab_ctrl.png); background-repeat:no-repeat; height:33px; width:22px; cursor:pointer;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-left{background-position:0 0;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-right{background-position:0 -33px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-more{ margin-left:2px; background-position:0 -66px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-line{ width:2px; background-position:0 -99px;}
+/*enable*/
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-left:hover{background-position: -22px 0;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-right:hover{background-position: -22px -33px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-more:hover{background-position: -22px -66px;}
+/*hover*/
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-left-hover{background-position: -44px 0;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-right-hover{background-position: -44px -33px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-tab .ui-desktop-tab-control .ui-desktop-tab-more-hover{background-position: -44px -66px;}
+
+/*二级菜单*/
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab{ height:34px; background-image:url(images/desktop/desktop_secondTabBg.png); overflow:hidden; padding:3px 10px; line-height:34px; border-left:solid 1px #999999; border-right:solid 1px #999999;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab .secondTabBox{ display:none;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li,.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li span{ background-image:url(images/desktop/desktop_secondTab_btn.png); background-repeat:no-repeat;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li{ height:28px; line-height:28px; float:left; margin:3px 4px; cursor:default;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li span{ display:inline-block; height:28px; margin-left:3px; color:#666666; padding:0 10px 0 7px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li span img{ height:16px; width:16px; margin:4px 4px -3px 0; *margin:0 4px -4px 0;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li.hover{ background-position:0 -28px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li.hover span{ background-position:right -56px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li.active{ background-position:0 -84px;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-secondTab ul li.active span{ background-position:right -112px; color:#000;}
+/*工作区*/
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-workplan{ height:500px; border-left:solid 1px #999999; border-right:solid 1px #999999; background-color:#FFF; overflow:hidden;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-workplan .ui-desktop-tabPlan{}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-workplan .ui-desktop-tabPlan .tabPlanBox{ display:none;}
+.ui-desktop .ui-desktop-center .ui-desktop-main .ui-desktop-main-workplan .ui-desktop-tabPlan .ui-desktop-tabPlanFrame{ border:0; width:100%; overflow-x:hidden; overflow-y:auto;}

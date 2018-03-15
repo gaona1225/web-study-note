@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>本地存储</title>
+    <meta charset="utf-8"/>
+    <script src="../version/version.js"></script><!-- 命名空间申明 -->
+    <script src="storage.js"></script><!--本地存储 -->
+    <style>
+        ul,li,dl,dt,dd {
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+        header {
+            height:30px;line-height:30px;
+            text-align:left;
+            width:100%;
+            -webkit-border-radius:25px;
+            border-radius:25px;
+            margin: 6px 8px 6px 0;
+            padding:3px;
+        }
+        dl {
+            clear:both;
+            width:600px;
+            height:auto;
+            border:1px solid gray;
+            margin:3px;
+        }
+        dt,dd {
+            height:26px;
+            line-height:26px;
+            font-style:italic;
+        }
+        dt {
+            text-align:center;
+            float:left;
+            width:60px;
+            background-color:#efefef;
+        }
+        dd {
+            padding-left:6px;
+            width:auto;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+<article>
+    <header>本地存储</header>
+    <section>
+        <dl id="ls">
+            <dt>Key:</dt>
+            <dd>Value</dd>
+        </dl>
+    </section>
+    <section>
+        <input type="button" value="初始化测试数据" id="init"/>
+        <dl>
+            <dt>Key:</dt>
+            <dd><input type="text" id="setKey"/></dd>
+            <dt>Value:</dt>
+            <dd>
+                <input type="text" id="setValue"/>
+            </dd>
+            <dt>操作:</dt>
+            <dd>
+                <input type="button" value="设值" id="set"/>(此种方式只能设定简单的值)
+            </dd>
+        </dl>
+        <dl>
+            <dt>Key:</dt>
+            <dd><input type="text" id="getKey"/></dd>
+            <dt>Value:</dt>
+            <dd>
+                <input type="text" id="getValue"  readonly/>
+            </dd>
+            <dt>操作:</dt>
+            <dd>
+                <input type="button" value="取值" id="get"/>
+            </dd>
+        </dl>
+        <input type="button" value="迭代" id="iterate"/>
+    </section>
+</article>	
+<script>
+function _init() {
+    window.localStorage.clear();//清楚本地存储数据
+    var inputData =
+        [
+            "zhng",
+             12,
+             new Date().getTime(),
+             [ 1, 2, 4, 5,
+                 {
+                     arr1:1,
+                     arr2:2
+                 }
+             ],
+            {
+                id: "123",
+                name: "ui",
+                children: {
+                    child1: 1,
+                    child2: 2
+                }
+            }
+        ];
+    var newObj = new Object();
+        newObj.name = "new fn";
+        newObj.obj = { id:1,name:"z"};
+    inputData[ inputData.length ] = newObj;
+
+    for ( var i=0; i<inputData.length; i++ ) {
+        ui.storage.set( i, inputData[i] );
+    }
+    _clear();
+};
+function _r( ret ) {//只判断了2层
+    var _r = "";
+    if ( ret.constructor === Array ) {
+        for ( var i in ret ) {
+            _r += ( typeof ret[ i ]  === "object" ) ? JSON.stringify( ret[ i ] ) : ret[i] + " ";
+        }
+    } else {
+        _r += typeof ret === "object" ? JSON.stringify( ret ) : ret + " ";
+    }
+    return _r;
+};
+var ls = document.getElementById( "ls" ),
+    initBtn = document.getElementById( "init" ),
+     setBtn = document.getElementById( "set" ),
+     getBtn = document.getElementById( "get" ),
+     iterateBtn = document.getElementById( "iterate" );
+//迭代
+function _iterate() {
+    var ret,dls = "<dt>Key:</dt><dd>Value</dd>";
+    ret =ui.storage.get();
+    for( var k in ret ) {
+        dls += "<dt>" + k + "</dt>" + "<dd>" + _r( ret[ k ] ) + "</dd>";
+    }
+    ls.innerHTML = dls;
+};
+//_iterate();
+initBtn.onclick = _init;
+setBtn.onclick = function() {
+    var _key = document.getElementById( "setKey" ).value;
+    var _value = document.getElementById( "setValue" ).value;
+    if ( !_key || _key == "" ) return;
+    ui.storage.set( _key, _value );
+    _iterate();
+};
+getBtn.onclick = function() {
+    var _key = document.getElementById( "getKey" ).value;
+    var _value = document.getElementById( "getValue" );
+    if ( !_key || _key == "" ) return;
+    _value.value = ui.storage.get( _key );
+};
+iterateBtn.onclick = _iterate;
+function _clear() {
+    ls.innerHTML = "<dt>Key:</dt><dd>Value</dd>";
+};	
+</script>
+</body>
+</html>

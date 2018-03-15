@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--<html style="height:100%;" debug="true">-->
+<html style="height:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>touchdrag</title>
+<script language="javascript" type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
+<script language="javascript" type="text/javascript" src="touchdrag.js"></script>
+<style type="text/css">
+	body{
+		-webkit-text-size-adjust:none;
+	}
+	.ulList{
+		background:#CCC ;
+		height:300px ;
+		padding:10px ;
+	}
+	.ulList li{
+		border:1px solid #fff ;
+		height:30px ;
+		list-style:none ;
+		line-height:30px ;
+		margin:10px ;
+		position:relative ;
+		text-align:center ;
+		top:0px ;
+		width:120px ;
+	}
+</style>
+<script language="javascript" type="text/javascript">
+$(function(){
+	var ulL = $('.ulList')[0] ;
+	ulL.addEventListener("mousedown", touchstart, true); 
+	
+	var liH = $('.ulList li').height() ;
+	var liDiff = parseInt($('.ulList li').css('margin-top')) + liH/2 ;
+	var clientDiff = parseInt($('.ulList li').css('margin-top')) + liH ;
+	var placehodlLi = '<li class="placehoder"></li>' ;
+	var len = $('li').length ;
+	var minTop = 0 ;
+	var maxTop = clientDiff*len ;
+	var moving = 'false' ;
+	var delay = 'false' ;
+	
+	 function onTouchHoldsort(){
+		 delay = 'true';
+	 }
+	
+	function touchstart(e){
+		beginY = e.clientY ;
+		setInt = setTimeout(onTouchHoldsort,400) ;
+		for(var i=0; i<len;i++){
+			if($('li').eq(i).hasClass('placehoder')){
+				$('li').eq(i).removeClass('placehoder') ;
+			}
+			var ulListElem = $('li')[i] ;
+			ulListElem.addEventListener("mousemove", touchmovesort, true); 
+			ulListElem.addEventListener("mouseup", touchendsort, true); 
+			$('li').eq(i).data('userD',i) ;/*此处i等值于以下的index，相当于li的索引值*/
+		}
+	}
+	function touchmovesort(e){
+		if(delay == 'true'){ /*长摁指定时间后触发*/
+			e.preventDefault() ;
+			var index = $(this).data('userD') ;	
+			clientY = e.clientX - (index+1)*clientDiff ; /*处理touch坐标的差值*/	
+			clientY2 = e.clientY ; /*获取当前的坐标*/
+			indexNew = parseInt(e.targetTouches[0].pageY/clientDiff) ;
+			$('li').eq(index).css('top',clientY) ;
+			moving = 'true' ;/*设置可否移动*/
+		}
+		clearTimeout(setInt) ;
+	}
+	function touchendsort(e){
+		var index = $(this).data('userD') ;	
+		var newText = $('li').eq(index).text() ;
+		if(moving == 'true'){
+			/*在列表区域内*/
+			if((clientY2>minTop)&&(clientY2<maxTop)){
+				if(beginY<clientY2){
+					$('li').eq(indexNew-1).after(placehodlLi) ;
+					$('.placehoder').text(newText) ;
+					$('.placehoder').css('position','relative') ;
+					$('li').eq(index).remove() ;
+				}else{
+					$('li').eq(index).remove() ;
+					$('li').eq(indexNew).before(placehodlLi) ;
+					$('.placehoder').text(newText) ;
+					$('.placehoder').css('position','relative') ;
+				}
+			}else if(clientY2<=0){//在低出列表最顶部很远的地方默认为第一个位置创建
+				$('li').eq(index).remove() ;
+				$('li').eq(0).before(placehodlLi) ;
+				$('.placehoder').text(newText) ;
+				$('.placehoder').css('position','relative') ;
+			}else if(clientY2>=maxTop){//在高出列表最底部很远的地方默认为最后一个位置创建
+				$('li').eq(len-1).after(placehodlLi) ;
+				$('.placehoder').text(newText) ;
+				$('.placehoder').css('position','relative') ;
+				$('li').eq(index).remove() ;
+			}
+		}else{
+			return false ;
+		}
+		moving = 'false' ;
+		delay = 'false' ;
+	} 
+}) ;
+</script>
+</head>
+
+<body>
+<ul class="ulList">
+    <li>111</li>
+	<li>222</li>
+	<li>333</li>
+	<li>444</li>
+	<li>555</li>
+	<li>666</li>
+</ul>
+indexNew:<span class="text"></span><br/>clientY2:<span class="text2"></span>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>两个div同时滚动</title>
+		<meta name="author" content="Administrator" />
+				
+		
+		<style type="text/css">
+    div{
+        overflow-x:scroll;
+        width:10%;
+        height:10%;
+        border:1px blue solid;
+        position:relative;
+    }
+</style>
+		<!-- Date: 2012-05-11 -->
+	</head>
+	<body>
+
+
+<div id="d1">
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</div>
+<div id="d2">
+    bbbbbbbbbbbbbbbbbbb
+</div>
+
+ 
+<script>
+        var div1 = document.getElementById("d1");
+        var div2 = document.getElementById("d2");
+        function a(){
+            div2.onscroll = null;
+            div2.scrollLeft = this.scrollLeft;
+            div2.onscroll = b;
+       }
+       function b(){
+            div1.onscroll = null;
+            div1.scrollLeft = this.scrollLeft;
+            div1.onscroll = a;
+       }
+ 
+       div1.onscroll = a;
+       div2.onscroll = b;
+    </script>
+	</body>
+</html>

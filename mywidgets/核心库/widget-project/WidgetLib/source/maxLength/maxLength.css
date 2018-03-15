@@ -1,0 +1,10 @@
+/**
+  * maxLength
+  */
+.ui-maxLength-statusClass{
+    color:#ccc;
+}
+.ui-maxLength-notification{
+    border:1px solid #d55b5b;
+	background-color: #ffcdcd;
+}

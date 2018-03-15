@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>myinformation</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/draggable.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="js/myinfo.js"></script>
+</head>
+<body>
+    <div class="evaluate_pop" id="popBox2">
+    	<div class="evaluate_pop_msg">是否删除这条数据？</div>
+    	<div class="evaluate_pop_tool"><a href="#" class="left_pop_btn" id="cancelBtn">取消</a><a href="#" class="right_pop_btn" id="okBtn">确定</a></div>
+    </div>
+    <div class="pop_mask" id="popMask2"></div>
+    <header class="header">
+        <a href="javascript:;" class="back_btn" id="backBtn"></a>
+        <h1>百科问答</h1>
+    </header>
+    
+    <nav class="my_nav">
+    	<ul class="my_nav_ul" id="my_nav_ul">
+			<li class="current"><span>我的消息</span></li>
+            <li><span>我的提问</span></li>
+            <li><span>我的回答</span></li>
+        </ul>
+    </nav>
+  
+    <div class="content" id="content">
+        <div class="content_box" id="content_box">
+            <div class="content_list"  >
+                <div class="list_box">    
+                </div>
+            </div>
+        
+        	<div class="content_list"  >
+                <div class="list_box">   
+                </div>
+            </div>
+        
+        	<div class="content_list"  >
+                <div class="list_box">              
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script language="javascript">
+		document.getElementById('backBtn').onclick = function(){
+			//TODO phonegap 返回
+		}
+		
+		function getDates(time){
+			var times = {}, allTime = new Date(parseInt(time)).toLocaleString().replace(/年|月/g,"-").replace(/日/g,'').replace(/:\d{1,2}$/,'');   
+			times.allTime = allTime;
+			var day = allTime.split(" ");
+			times.day = day[0];
+			times.time = day[1];
+			return times;
+		}
+		function getTimes(infoTime,nowTime){   
+			if(!infoTime){
+				return;
+			}
+			if(!nowTime){
+				nowTime = new Date().getTime();
+			}
+			var nowT = getDates(nowTime),infoT = getDates(infoTime);
+			
+			if(nowT.day == infoT.day){
+				return '今日 '+infoT.time;
+			}else{
+				return infoT.day;
+			}
+		}		
+		
+		var url=location.search; 
+		function getSearch(url){
+			var request = {}, str='',strs=[], strsSplit=[]; 
+			if(url.indexOf("?")!=-1){ 
+				str = url.substr(1);
+				strs = str.split("&"); 
+				for(var i = 0, strsLen = strs.length; i<strsLen; i++){ 
+					strsSplit = strs[i].split("=");
+					request[ strsSplit[0]] = strsSplit[1]; 
+				}
+			}
+			return request;
+		}
+		var req = getSearch(url),qid = req['qid'] ,pics = [];
+		
+		ajaxMyMes();
+		ajaxQue() ;
+		ajaxAns() ;
+
+		document.getElementById('cancelBtn').onclick = function(){
+			document.getElementById('popBox2').style.display = 'none' ;
+			document.getElementById('popMask2').style.display = 'none' ;
+		}
+		
+		//更新消息记录
+		function updateMsg(id){
+			var accessToken = 'a' ;
+			$.ajax({
+				url : 'http://10.6.210.229:8080/wiki/updateMessage?accessToken=' + accessToken + '&ids=' + id + '&status=0' ,
+				success : function(result) {					
+					console.log(result) ;
+				},
+				type : 'json'
+			});
+		}
+		function delMsg(mid){
+			document.getElementById('popBox2').style.display = 'block' ;
+			document.getElementById('popMask2').style.display = 'block' ;
+			
+			document.getElementById('okBtn').onclick = function(){
+				document.getElementById('popBox2').style.display = 'none' ;
+				document.getElementById('popMask2').style.display = 'none' ;
+				$.ajax({
+					url : 'http://10.6.210.229:8080/wiki/delMessage?id=' +mid+ '&accessToken=a' , 
+					success: function(result){
+						ajaxMyMes();
+					},
+					type : 'json' 
+				}) ;
+			}
+		}
+		
+		function delQue(mid){
+			document.getElementById('popBox2').style.display = 'block' ;
+			document.getElementById('popMask2').style.display = 'block' ;
+			
+			document.getElementById('okBtn').onclick = function(){
+				document.getElementById('popBox2').style.display = 'none' ;
+				document.getElementById('popMask2').style.display = 'none' ;
+				$.ajax({
+					url : 'http://10.6.210.229:8080/wiki/delQuestion?ids=' +mid+ '&accessToken=a' , 
+					success: function(result){
+						ajaxQue() ;
+					},
+					type : 'json' 
+				}) ;
+			}
+		}
+		
+		function delAns(mid){
+			document.getElementById('popBox2').style.display = 'block' ;
+			document.getElementById('popMask2').style.display = 'block' ;
+			
+			document.getElementById('okBtn').onclick = function(){
+				document.getElementById('popBox2').style.display = 'none' ;
+				document.getElementById('popMask2').style.display = 'none' ;
+				$.ajax({
+					url : 'http://10.6.210.229:8080/wiki/delAnswer?ids=' +mid+ '&accessToken=a' , 
+					success: function(result){
+						ajaxAns() ;
+					},
+					type : 'json' 
+				}) ;
+			}
+		}
+   		
+		function ajaxMyMes(){
+			$.ajax({
+				url : 'http://10.6.210.229:8080/wiki/findMessage?appId=1&accessToken=a' , 
+				success: function(result){
+					var nowTime = result['time'],
+						showTime = "",
+						page = result['page'],
+						pageDatas = result['page']['datas'],
+						content = "",phohosrc,isRead;
+					if (pageDatas) {
+						for ( var i = 0 ; i < pageDatas.length; i++) {				
+							showTime = getTimes(pageDatas[i]['createTime'],nowTime);
+							phohosrc = pageDatas[i]['userPic'] == '' ? 'img/tx.png' : pageDatas[i]['userPic'] ;
+							isRead = pageDatas[i]['status'] == 0 ? ' ' : '<span class="con_detail_readStatus"></span>' ;
+							content += '<section class="con_box">'
+									+ '<a class="con_head" href="javascript:;"><img src="' + phohosrc + '"/></a>'
+									+ '<a class="my_information_list" href="evaluate.html?appId=1&qid='+ pageDatas[i]['qid'] + '&aid=' + pageDatas[i]['aid'] + '&type=1&accessToken=a" onclick=updateMsg("' +  pageDatas[i]['id'] + '") target="new">'
+									+ '<dl class="con_detail my_infor_detail">'
+									+ '<dt class="con_detail_t">'
+									+ '<span class="con_detail_name">' + pageDatas[i]['userName'] + '</span>'
+									+ '<span class="con_detail_from">' + pageDatas[i]['address'] + '</span>'
+									+ '<span class="con_detail_time">' + showTime + '</span>'
+									+ isRead 
+									+ '</dt>'
+									+ '<dd class="con_detail_c">' + pageDatas[i]['content'] + '</dd>'
+									+ '</dl></a>'
+									+ '<span class="con_detail_arrow"><span class="con_tool_arrow" href="javascript:;" onclick=delMsg("' +  pageDatas[i]['id'] + '")></span></span></section>' ;
+						}
+					}					
+					document.getElementsByClassName('list_box')[0].innerHTML = content;
+				},
+				type : 'json' 
+			}) ;
+		}
+		
+		
+   		function ajaxQue(){
+			$.ajax({//isFinish 1已解决 0未解决 answerNum 是数量
+				url : 'http://10.6.210.229:8080/wiki/myQuestion?appId=1&accessToken=a' ,
+				success : function(result) {
+					var nowTime = result['time'],
+						showTime = "",
+						page = result['page'],
+						pageDatas = result['page']['datas'],
+						content = "",
+						solvedStatus,
+						solvedCon,isQue,ansNum = '' ;
+					if (pageDatas){
+						for ( var i = 0 ; i < pageDatas.length; i++) {
+							showTime = getTimes(pageDatas[i]['createTime'],nowTime);
+							if(pageDatas[i]['isFinish'] == 1){
+								solvedStatus = 'solved' ;
+								solvedCon = '已解决' ;
+							}else{
+								solvedStatus = 'unsolved' ;
+								solvedCon = '未解决' ;
+							}
+							content += '<section class="con_box">'
+									+ '<a href="question.html?appId=1&cid=' + pageDatas[i]['categoryId'] + '&qid=' + pageDatas[i]['id'] + '&accessToken=a" class="my_question">'
+									+ '<dl class="my_question_list">'
+									+ '<dd>' + pageDatas[i]['content'] + '</dd>'
+									+ '<dd><p class="my_question_stauts ' + solvedStatus + '"><i></i>' + solvedCon + '</p>'
+									+ '<p class="my_question_time">回答:' + pageDatas[i]['answerNum'] + '<span>|</span>' + showTime + '</p>'
+									+ '</dd></dl></a><span class="my_question_arrow" onclick=delQue("' +  pageDatas[i]['id'] + '")></span></section>';
+						}
+					}					
+					document.getElementsByClassName('list_box')[1].innerHTML = content;
+				},
+				type : 'json'
+			});
+		}
+		
+		function ajaxAns(){
+			$.ajax({//isFinish 1已解决 0未解决 answerNum 是数量
+				url : 'http://10.6.210.229:8080/wiki/myAnswer?appId=1&accessToken=a' ,
+				success : function(result) {
+					var nowTime = result['time'],
+						showTime = "",
+						page = result['page'],
+						pageDatas = result['page']['datas'],
+						content = "",
+						solvedStatus,
+						solvedCon,isQue,ansNum = '' ;
+					if (pageDatas){
+						for ( var i = 0 ; i < pageDatas.length; i++) {
+							showTime = getTimes(pageDatas[i]['createTime'],nowTime);
+							if(pageDatas[i]['isFinish'] == 1){
+								solvedStatus = 'solved' ;
+								solvedCon = '已解决' ;
+							}else{
+								solvedStatus = 'unsolved' ;
+								solvedCon = '未解决' ;
+							}
+							content += '<section class="con_box">'
+									+ '<a href="question.html?appId=1&qid=' + pageDatas[i]['qid'] + '&accessToken=a" class="my_question">'
+									+ '<dl class="my_question_list">'
+									+ '<dd>' + pageDatas[i]['content'] + '</dd>'
+									+ '<dd><p class="my_question_stauts ' + solvedStatus + '"><i></i>' + solvedCon + '</p>'
+									+ '<p class="my_question_time">' + showTime + '</p>'
+									+ '</dd></dl></a><span class="my_question_arrow" onclick=delAns("' +  pageDatas[i]['uuid'] + '")></span></section>';
+						}
+					}					
+					document.getElementsByClassName('list_box')[2].innerHTML = content;
+				},
+				type : 'json'
+			});
+		}
+    </script>
+</body>
+</html>

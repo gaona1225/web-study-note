@@ -1,0 +1,70 @@
+input[type="submit"],input[type="button"]{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-appearance:none;
+	-moz-appearance:none;
+}
+.pass-button-full{
+	color:#fff;
+	font-size: 16px;
+	width:100%;
+	line-height:44px;
+	background: #488ee6;
+	border: 1px solid #3f89ec;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	cursor: pointer;
+	display: block;
+	text-align: center;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+	border-radius: 2px;	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	-ms-border-radius: 2px;
+}
+
+.pass-button-full-disabled{
+	background: #a4c8f3;
+	border: 1px solid #a0c4f4;
+}
+
+.pass-button-full-active{
+	background: #448ae2;
+	border: 1px solid #3985e7;
+}
+
+.pass-button-auto{
+	display: block;
+	margin-left:10px;
+	font-size:16px;
+	color:#666;
+	line-height: 38px;
+	-webkit-appearance:none;
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+	border:1px solid #ddd;
+	background: #f7f7f7;
+	padding:0 20px;
+	cursor: pointer;
+	width:136px;
+}
+
+.pass-button-auto-active{
+	background: #eee;
+}
+
+.pass-button-disabled{
+	border: 1px solid #ebebeb;
+	background: #f7f7f7;
+	color:#666;
+}
+
+.pass-button-full-minor{
+	border: 1px solid #dddddd;
+	background: #dddddd;
+	color:#666;
+}

@@ -1,0 +1,187 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>表单-搜索框-高级搜索框</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.advancedSearch.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>高级搜索框（advancedSearch）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>高级搜索框插件，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> advancedSearch(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>advancedSearch()插件在使用时需要配置如下参数：</p>
+            <p>
+              <label class="help-item">width：</label>
+             （字符） 搜索框的宽度</p>
+            <p>
+              <label class="help-item">btnClick：</label>
+             （函数） 点击搜索按钮触发的操作</p>
+            <p>
+              <label class="help-item">onFocus：</label>
+             （函数） 焦点进入搜索框触发的操作</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>暂无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              高级搜索框</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            <script>
+			$(function(){ 
+				$(".advancedSearch").advancedSearch({
+					width:"150px",
+					btnClick:function(){},
+					onFocus:function(){}
+				});
+				$('#clearWid').click(function(){
+					$('#testClear').advancedSearch('destory') ;
+				}) ;
+			});
+			</script>
+            <input name="input" type="text" class="advancedSearch" id="testClear"   />
+ 	        <div class="jcs_common_search_advance_con" id="searchAdvanceCon" style="display:none;">
+   		    <div class="jcs_common_s_advance_item">
+   		  		<a><span class="jcs_common_s_a_all" style="padding-right:3px;"></span>search all</a>
+  		 	</div>
+   			<div class="jcs_common_s_advance_item">
+  	        	<a><span class="jcs_common_s_a_info" style="padding-right:3px;"></span>search info</a>
+ 	        </div>
+  		  	<div class="jcs_common_s_advance_item">
+      	    	<a><span class="jcs_common_s_a_know" style="padding-right:3px;"></span>search knowledge</a>
+  			</div>
+ 			<div class="jcs_common_s_advance_item">
+    			<a><span class="jcs_common_s_a_flow"  style="padding-right:3px;"></span>search disk</a>
+  			</div>
+ 			<div class="jcs_common_s_advance_item">
+   		 		<a><span class="jcs_common_s_a_xunhu" style="padding-right:3px;"></span>search xunhu</a>
+  			</div>
+			</div><br/>
+			<input type="button" class="buttonActive" value="清除插件效果" id="clearWid"/>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            &lt;script>
+			$(function(){ 
+                $(".advancedSearch").advancedSearch({
+                    width:"150px",
+                    btnClick:function(){},
+                    onFocus:function(){}
+                });
+                $('#clearWid').click(function(){
+                        $('#testClear').advancedSearch('destory') ;
+                    }) ;
+                });
+			&lt;/script>
+            &lt;input name="input" type="text" class="advancedSearch"  />
+            <!-- 高级搜索类型下拉菜单 -->
+ 			&lt;div class="jcs_common_search_advance_con" id="searchAdvanceCon" style="display:none;">
+   			&lt;div class="jcs_common_s_advance_item">
+   		    &lt;a>&lt;span class="jcs_common_s_a_all" style="padding-right:3px;">&lt;/span>search all&lt;/a>
+  		    &lt;/div>
+   			&lt;div class="jcs_common_s_advance_item">
+  	        &lt;a>&lt;span class="jcs_common_s_a_info" style="padding-right:3px;">&lt;/span>search info&lt;/a>
+ 	        &lt;/div>
+  		    &lt;div class="jcs_common_s_advance_item">
+      	    &lt;a>&lt;span class="jcs_common_s_a_know" style="padding-right:3px;">&lt;/span>search knowledge&lt;/a>
+  			&lt;/div>
+ 			&lt;div class="jcs_common_s_advance_item">
+    		&lt;a>&lt;span class="jcs_common_s_a_flow"  style="padding-right:3px;">&lt;/span>search disk&lt;/a>
+  			&lt;/div>
+ 			&lt;div class="jcs_common_s_advance_item">
+   		    &lt;a>&lt;span class="jcs_common_s_a_xunhu" style="padding-right:3px;">&lt;/span>search xunhu&lt;/a>
+  			&lt;/div>
+			&lt;/div>
+			&lt;!-- 结束  -->&lt;br/>
+			&lt;input type="button" class="buttonActive" value="清除插件效果" id="clearWid"/>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>css3列布局</title>
+<style type="text/css">
+	ul,li{
+		list-style:none ;
+		margin:0 ;
+		padding:0 ;
+	}
+	ul{
+		-webkit-column-width:260px;
+		-moz-column-width:260px;
+		-ms-column-width:260px;
+		-o-column-width:260px;
+		column-width:260px;
+	}
+	li{
+		margin:0 0 20px 0 ;
+	}
+	li a{
+		background:#fff ;
+		border-radius:8px ;
+		box-shadow:0 0 11px #666 ;
+		display:inline-block;
+		margin:0 10px ;
+		padding:5px ;
+		position:relative ;
+		width:260px ;
+	}
+	li a img{
+		width:260px ;
+	}
+	.desc{
+		background:rgba(0,0,0,0.3) ;
+		bottom:8px; 
+		color:#fff ;
+		display:inline-block ;
+		height:50px ;
+		left:5px;
+		padding:5px 0 ;
+		position:absolute;
+		text-align:center ;
+		width:260px ;
+	}
+</style>
+</head>
+
+<body>
+	<!--
+    	css3中增加了一个新的属性：column，来实现等高的列的*效果。该属性有column-width宽度，column-count数量等，并且能根据窗口自适应。
+        普通的瀑布流*样式是：横向平铺*，向下推进的方式；css3的column实现的样式是：纵向展开，向右推进的形式。
+        所以得出结论：采用css3的column属性可以达成我们要求的显示效果，但是并不能达成我们期望得到的用户体验效果。
+    -->
+	<ul>    
+    	<li><a href="#"><img src="img/1.jpg" /><span class="desc">我是第1111111111个</span></a></li>
+    	<li><a href="#"><img src="img/2.jpg" /><span class="desc">我是第2222222222个</span></a></li>
+        <li><a href="#"><img src="img/3.jpg" /><span class="desc">我是第3333333333个</span></a></li>
+        <li><a href="#"><img src="img/4.jpg" /><span class="desc">我是第4444444444个</span></a></li>
+        <li><a href="#"><img src="img/5.jpg" /><span class="desc">我是第5555555555个</span></a></li>
+        <li><a href="#"><img src="img/6.jpg" /><span class="desc">我是第6666666666个</span></a></li>
+        <li><a href="#"><img src="img/3.jpg" /><span class="desc">我是第7777777777个</span></a></li>
+        <li><a href="#"><img src="img/4.jpg" /><span class="desc">我是第8888888888个</span></a></li>
+        <li><a href="#"><img src="img/5.jpg" /><span class="desc">我是第9999999999个</span></a></li>
+        <li><a href="#"><img src="img/6.jpg" /><span class="desc">我是第0000000000个</span></a></li>
+    </ul>
+</body>
+</html>

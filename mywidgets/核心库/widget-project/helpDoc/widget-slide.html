@@ -1,0 +1,404 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Widget-图片轮播</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+        SyntaxHighlighter.all();
+    </script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+        $(function () {
+            var ver = $.fn.slide.version || "未知";//当前插件的版本信息
+            $('#ver').html(ver);
+        });
+    </script>
+</head>
+
+<body>
+<div class="help-wrap">
+<div class="header">
+    <div class="title">
+        <h1>图片轮播（slide）</h1>
+    </div>
+    <div class="attribute">
+        <p><strong>版本：
+            <label id="ver"></label>
+        </strong></p>
+    </div>
+</div>
+<div class="content">
+<!--语法段落开始-->
+<div class="help-mod">
+    <h2 class="title">概述：</h2>
+
+    <div class="content">
+        <!--语法描述-->
+        <p>图片轮播，针对版本1.0+<br/>
+            兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+    </div>
+</div>
+<!--语法段落结束-->
+<!--语法段落开始-->
+<div class="help-mod">
+    <h2 class="title">依赖：</h2>
+
+    <div class="content">
+        <!--语法描述-->
+        <p>jQuery</p>
+    </div>
+</div>
+<!--语法段落结束-->
+<!--语法段落开始-->
+<div class="help-mod">
+    <h2 class="title">调用：</h2>
+
+    <div class="content">
+        <!--语法描述-->
+        <p class="help-code">
+            (引用相关资源文件,构建示例中的结构即可)
+        </p>
+    </div>
+</div>
+<!--语法段落结束-->
+<!--语法段落开始-->
+<div class="help-mod">
+    <h2 class="title">参数：</h2>
+
+    <div class="content">
+        <!--语法描述-->
+        <p>
+            <label class="help-item">width：</label>
+            单个图片的宽，纯数字 无单位， 控制显示区的宽</p>
+        <p>
+        <p>
+            <label class="help-item">height：</label>
+            单个图片的高，纯数字 无单位， 控制显示区的高</p>
+        <p>
+        <p>
+            <label class="help-item">pagination：</label>
+            是否显示类似于1、2、3、4的控制入口 布尔型， 默认为true</p>
+        <p>
+        <p>
+            <label class="help-item">paginationClass：</label>
+            控制入口容器的class值， 默认值pagination</p>
+        <p>
+        <p>
+            <label class="help-item">currentClass：</label>
+            控制入口容器中标示当前展示图片的class值，默认值current</p>
+        <p>
+        <p>
+            <label class="help-item">duration：</label>
+            过渡动画持续时间</p>
+        <p>
+        <p>
+            <label class="help-item">index：</label>
+            默认开始显示的图片序号</p>
+        <p>
+        <p>
+            <label class="help-item">effect：</label>
+            动画效果;1,fade,淡入淡出;2,推入推出:h 水平;v 垂直;可选值: "h"; "v"; "slide";3,百叶窗 "shutter"</p>
+        <p>
+        <p>
+            <label class="help-item">shutterDir：</label>
+            effect参数配置为"shutter"时扇叶朝向 可选值 "h" "w"</p>
+        <p>
+        <p>
+            <label class="help-item">height：</label>
+            effect参数配置为"shutter"时生成的扇叶数</p>
+        <p>
+        <p>
+            <label class="help-item">dataAttributeName：</label>
+            交互响应需要是数据存放的节点属性名，默认值data-slideParamName</p>
+        <p>
+        <p>
+            <label class="help-item">eventHandler：</label>
+            构建时收集的每帧图片响应时事件响应实现</p>
+        <p>
+        <p>
+            <label class="help-item">play：</label>
+            自动播放周期(设定为大于0的数字将开启自动播放)</p>
+        <p>
+        <p>
+            <label class="help-item">pause：</label>
+            控制手动播放时停止播放. 定为大于0的数字将开启停止播放功能,数值为停止的间隙</p>
+        <p>
+    </div>
+</div>
+<!--语法段落结束-->
+<!--语法段落开始-->
+<div class="help-mod">
+    <h2 class="title">方法：</h2>
+
+    <div class="content">
+        <!--语法描述-->
+        <p>暂无</p>
+    </div>
+</div>
+<!--语法段落结束-->
+<!--语法段落开始-->
+<div class="help-mod">
+    <h2 class="title">示例-1：</h2>
+
+    <div class="content">
+        <!--语法描述-->
+        <p>
+            <label class="help-item">描述：</label>
+            图片连续播放(淡入淡出)
+        </p>
+        <label class="help-item">效果：</label>
+
+        <div class="help-demo">
+            <div id="slides">
+                <div class="slide-container" style="overflow: hidden;position: relative;display: block;">
+                    <div class="slide-controller">
+                        <a data-slideParamName="1">
+                            <img src="../WidgetLib/source/slide/images/slide/1.png"/>
+                        </a>
+                        <a href="javascript:;" data-slideParamName="2">
+                            <img src="../WidgetLib/source/slide/images/slide/2.png"/>
+                        </a>
+                        <a href="javascript:;" data-slideParamName="3">
+                            <img src="../WidgetLib/source/slide/images/slide/3.png"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $("#slides").slide({
+                    effect:"fade",
+                    paginationType:"hover",
+                    width:840,
+                    height:305,
+                    play:3000, //开启自动播放
+                    pause:1000,
+                    eventHandler:function (param) {
+                        alert("eventHandler:" + param);
+                    }
+                });
+            });
+        </script>
+        <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+&lt;div id="slides2">
+  <!--/图片轮播结构-->
+  &lt;div class="slide-container" style="overflow: hidden;position: relative;display: block;">
+    &lt;div class="slide-controller">
+      &lt;a href="http://www.baidu.com" target="_blank">
+        &lt;img src="../WidgetLib/source/slide/images/1.png"/>
+      &lt;/a>
+      &lt;a href="javascript:;" style="display: block;z-index: 0;">
+        &lt;img src="../WidgetLib/source/slide/images/2.png"/>
+      &lt;/a>
+      &lt;a href="javascript:;" style="display: block;z-index: 0;">
+        &lt;img src="../WidgetLib/source/slide/images/3.png"/>
+      &lt;/a>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+&lt;script>
+$(function () {
+    $("#slides").slide({
+        effect:"fade",
+        paginationType:"hover",
+        width:840,
+        height:305,
+        play:3000, //开启自动播放
+        pause:1000,
+        eventHandler:function(param){
+            alert("eventHandler:" + param );
+        }
+    });
+});
+&lt;/script>
+            </pre>
+    </div>
+</div>
+<!--语法段落开始-->
+<div class="help-mod">
+    <h2 class="title">示例-2：</h2>
+
+    <div class="content">
+        <!--语法描述-->
+        <p>
+            <label class="help-item">描述：</label>
+            图片连续播放(推入推出)
+        </p>
+        <label class="help-item">效果：</label>
+
+        <div class="help-demo">
+            <div id="slides2">
+                <!--/图片轮播结构-->
+                <div class="slide-container" style="overflow: hidden;position: relative;display: block;">
+                    <div class="slide-controller">
+                        <a href="http://www.baidu.com" target="_blank" data-slideParamName="1">
+                            <img src="../WidgetLib/source/slide/images/slide/1.png"/>
+                        </a>
+                        <a href="javascript:;" data-slideParamName="2">
+                            <img src="../WidgetLib/source/slide/images/slide/2.png"/>
+                        </a>
+                        <a href="javascript:;" data-slideParamName="3">
+                            <img src="../WidgetLib/source/slide/images/slide/3.png"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $("#slides2").slide({
+                    effect:"h",
+                    width:840,
+                    height:305,
+                    play:3000, //开启自动播放
+                    pause:1000,
+                    eventHandler:function (param) {
+                        alert("eventHandler:" + param);
+                    }
+                });
+            });
+        </script>
+        <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+&lt;div id="slides2">
+  <!--/图片轮播结构-->
+  &lt;div class="slide-container" style="overflow: hidden;position: relative;display: block;">
+    &lt;div class="slide-controller">
+      &lt;a href="http://www.baidu.com" target="_blank">
+        &lt;img src="../WidgetLib/source/slide/images/slide/1.png" width="438" height="350"/>
+      &lt;/a>
+      &lt;a href="javascript:;" style="display: block;z-index: 0;">
+        &lt;img src="../WidgetLib/source/slide/images/slide/2.png" width="438" height="350"/>
+      &lt;/a>
+      &lt;a href="javascript:;" style="display: block;z-index: 0;">
+        &lt;img src="../WidgetLib/source/slide/images/slide/3.png" width="438" height="350"/>
+      &lt;/a>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+&lt;script>
+$(function () {
+    $("#slides2").slide({
+        effect:"h",
+        width:840,
+        height:305,
+        play:3000, //开启自动播放
+        pause:1000,
+        eventHandler:function(param){
+            alert("eventHandler:" + param );
+        }
+    });
+});
+&lt;/script>
+            </pre>
+    </div>
+</div>
+<!--语法段落开始-->
+<div class="help-mod">
+    <h2 class="title">示例-3：</h2>
+
+    <div class="content">
+        <!--语法描述-->
+        <p>
+            <label class="help-item">描述：</label>
+            图片连续播放(百叶窗)
+        </p>
+        <label class="help-item">效果：</label>
+
+        <div class="help-demo" style="">
+            <div id="slides3">
+                <!--/图片轮播结构-->
+                <div class="slide-container" style="overflow: hidden;position: relative;display: block;">
+                    <div class="slide-controller">
+                        <a data-shutter="1">
+                            <img src="../WidgetLib/source/slide/images/slide/1.png"/>
+                        </a>
+                        <a href="javascript:;" data-shutter="2">
+                            <img src="../WidgetLib/source/slide/images/slide/2.png"/>
+                        </a>
+                        <a href="javascript:;" data-shutter="3">
+                            <img src="../WidgetLib/source/slide/images/slide/3.png"/>
+                        </a>
+                        <a href="javascript:;" data-shutter="4">
+                            <img src="../WidgetLib/source/slide/images/slide/4.png"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $("#slides3").slide({
+                    effect:"shutter",
+                    shutterDir:"h",
+                    shutterNum:4,
+                    width:840,
+                    height:305,
+                    index:0,
+                    dataAttributeName:"data-shutter",
+                    eventHandler:function (param) {
+                        alert("eventHandler:" + param);
+                    }
+                });
+            });
+        </script>
+        <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+&lt;div id="slides3">
+  <!--/图片轮播结构-->
+  &lt;div class="slide-container" style="overflow: hidden;position: relative;display: block;">
+    &lt;div class="slide-controller">
+      &lt;a href="http://www.baidu.com" target="_blank">
+        &lt;img src="../WidgetLib/source/slide/images/1.png" width="438" height="350"/>
+      &lt;/a>
+      &lt;a href="javascript:;" style="display: block;z-index: 0;">
+        &lt;img src="../WidgetLib/source/slide/images/2.png" width="438" height="350"/>
+      &lt;/a>
+      &lt;a href="javascript:;" style="display: block;z-index: 0;">
+        &lt;img src="../WidgetLib/source/slide/images/3.png" width="438" height="350"/>
+      &lt;/a>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+&lt;script>
+$(function () {
+    $("#slides3").slide({
+        effect:"shutter",
+        shutterDir:"h",
+        shutterNum:4,
+        width:840,
+        height:305,
+        index:0,
+        dataAttributeName:"data-shutter",
+        eventHandler:function(param){
+            alert("eventHandler:" + param );
+        }
+    });
+});
+&lt;/script>
+            </pre>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

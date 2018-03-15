@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>diarycomp</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<link type="text/css" rel="stylesheet" href="../My97DatePicker/skin/default/datepicker.css" />
+<link type="text/css" rel="stylesheet" href="diarycom.css"/>
+<script language="javascript" type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../buttonActive/buttonActive.js"></script>
+<script language="javascript" type="text/javascript" src="../buttonPro/buttonPro.js"></script>
+<!--<script language="javascript" type="text/javascript" src="../scrollBar/scrollBar.js"></script>-->
+<script language="javascript" type="text/javascript" src="jscroll.js"></script>
+<script language="javascript" type="text/javascript" src="jscrollTouch.js"></script>
+<script language="javascript" type="text/javascript" src="diarycom.js"></script>
+<script>
+$(function(){
+	if(!('ontouchstart' in document.documentElement)){
+		$('#sortable').sortable({
+			 items: '.diarycompElem',
+			 handle : '.diarycompElemTit'
+		});
+		$('#sortable .diarycompElemAddPer').disableSelection() ;
+	}
+
+	if('ontouchstart' in document.documentElement){
+		$('.diarycompElemMsg').jScrollTouch() ;
+	}else{
+		$('.diarycompElemMsg').jscroll({
+			W:'7px',
+			Bg:'#fff',
+			Bar:{
+				Bd:{Out:'#ccc',Hover:'#ccc'},
+				Bg:{Out:'#666',Hover:'#666',Focus:"#666"}
+			},
+			Btn:{
+				btn:false
+			}
+		});
+	}
+});
+</script>
+</head>
+
+<body>
+<div class="diarycomp"  id="sortable">
+	<div class="diarycompElem">
+    	<div class="diarycompElemTit">
+        	<div class="diarycompElemTime">
+            	<img src="left.png"/>
+            	<input type="text" onFocus="WdatePicker()" value="2012-05-03" readonly/>
+                <img src="right.png"/>
+            </div>
+            <div class="diarycompElemClose"><img src="close.gif" alt="关闭"/></div>
+        </div>
+        <div class="diarycompElemPer">
+        	<div class="diarycompElemPerPic"><img src="default_head_picture.png" alt="对比人员头像"/></div>
+            <div class="diarycompElemPerMsg">
+            	<a href="#">王芳</a>
+                <img src="diarycompchangePer.png" alt="切换人员"/>
+            </div>
+        </div>
+        <div class="diarycompElemMsg">
+            <p class="pTitle">11111111111111今日工作：</p>
+            <p class="pMsg">修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；</p>
+            <p class="pTitle paddTitle">明日计划：</p>
+            <p class="pMsg">与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文22222222222222222</p>
+        </div>
+        <div class="diarycompElemOpe">
+        	<input type="button" class="buttonActive" value="批示"/>
+        </div>
+    </div>
+    <div class="diarycompElem">
+    	<div class="diarycompElemTit">
+        	<div class="diarycompElemTime">
+            	<img src="left.png"/>
+            	<input type="text" onFocus="WdatePicker()" value="2012-05-03" readonly/>
+                <img src="right.png"/>
+            </div>
+            <div class="diarycompElemClose"><img src="close.gif" alt="关闭"/></div>
+        </div>
+        <div class="diarycompElemPer">
+        	<div class="diarycompElemPerPic"><img src="default_head_picture.png" alt="对比人员头像"/></div>
+            <div class="diarycompElemPerMsg">
+            	<a href="#">王芳</a>
+                <img src="diarycompchangePer.png" alt="切换人员"/>
+            </div>
+        </div>
+        <div class="diarycompElemMsg">
+            <p class="pTitle">11111111111111今日工作：</p>
+            <p class="pMsg">修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；</p>
+            <p class="pTitle paddTitle">明日计划：</p>
+            <p class="pMsg">与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文22222222222222222</p>
+        </div>
+        <div class="diarycompElemOpe">
+        	<input type="button" class="buttonActive" value="批示"/>
+        </div>
+    </div>
+    <div class="diarycompElem">
+    	<div class="diarycompElemTit">
+        	<div class="diarycompElemTime">
+            	<img src="left.png"/>
+            	<input type="text" onFocus="WdatePicker()" value="2012-05-03" readonly/>
+                <img src="right.png"/>
+            </div>
+            <div class="diarycompElemClose"><img src="close.gif" alt="关闭"/></div>
+        </div>
+        <div class="diarycompElemPer">
+        	<div class="diarycompElemPerPic"><img src="default_head_picture.png" alt="对比人员头像"/></div>
+            <div class="diarycompElemPerMsg">
+            	<a href="#">王芳</a>
+                <img src="diarycompchangePer.png" alt="切换人员"/>
+            </div>
+        </div>
+        <div class="diarycompElemMsg">
+            <p class="pTitle">11111111111111今日工作：</p>
+            <p class="pMsg">修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；</p>
+            <p class="pTitle paddTitle">明日计划：</p>
+            <p class="pMsg">与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文管理任务进度的制定与武汉同事讨论确定jcs3.1公文22222222222222222</p>
+        </div>
+        <div class="diarycompElemOpe">
+        	<input type="button" class="buttonActive" value="批示"/>
+        </div>
+    </div>
+    <div class="diarycompElem">
+    	<div class="diarycompElemTit">
+        	<div class="diarycompElemTime">
+            	<img src="left.png"/>
+            	<input type="text" onFocus="WdatePicker()" value="2012-05-03" readonly/>
+                <img src="right.png"/>
+            </div>
+            <div class="diarycompElemClose"><img src="close.gif" alt="关闭"/></div>
+        </div>
+        <div class="diarycompElemPer">
+        	<div class="diarycompElemPerPic"><img src="default_head_picture.png" alt="对比人员头像"/></div>
+            <div class="diarycompElemPerMsg">
+            	<a href="#">王芳</a>
+                <img src="diarycompchangePer.png" alt="切换人员"/>
+            </div>
+        </div>
+        <div class="diarycompElemMsg">
+        	<p class="pTitle">今日工作：</p>
+            <p class="pMsg">修改手机端视角与服务器不一致，新发寻呼和流程体系的不及时问题；</p>
+            <p class="pTitle paddTitle">明日计划：</p>
+            <p class="pMsg">与武汉同事讨论确定jcs3.1公文管理任务进度的制定</p>
+        </div>
+        <div class="diarycompElemOpe">
+        	<input type="button" class="buttonActive" value="批示"/>
+        </div>
+    </div>
+    <div class="diarycompElemAddPer">
+    	<div class="diarycompElemTit">
+        	<span>选择对比人员</span>
+        </div>
+        <div class="diarycompElemAdd"><img src="diary-addcomPer.png" alt="添加人员"/></div>
+        <div class="diarycompElemOpe"></div>
+    </div>
+</div>
+</body>
+</html>

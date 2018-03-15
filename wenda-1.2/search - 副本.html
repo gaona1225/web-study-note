@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>search</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script> 
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="javascript:;" class="back_btn"></a>
+        <h1>百科问答</h1>
+    </header>
+   	
+    <div class="search">
+        <div class="search_input">
+        	<input type="text" placeholder="搜索答案" id="input_text"/>
+            <i class="input_close"></i>
+        </div>
+        <div class="search_btn"><span></span></div>
+    </div>
+    <div class="search_record_con">
+    	<ul class="search_record">
+          
+        </ul>
+        <div class="search_clear" id="clearSearch"><a href="#"><i></i>清除搜索记录</a></div>
+    </div>
+    <div class="search_con">
+    	<!--<section class="search_list">
+            <h3>新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</h3>
+            <a href="question.html">不知道您说的是不是5.0里面更新的那个新兵种，据我所知，游戏里面的衣服现实世界是没有销售的</a>
+            <p class="section_tag"><span>赤炎の贵族</span><span>来自北京</span><span class="tag_time">2014-02-17</span></p>
+        </section>
+        <section class="search_list">
+            <h3>新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</h3>
+            <a href="question.html">不知道您说的是不是5.0里面更新的那个新兵种，据我所知，游戏里面的衣服现实世界是没有销售的</a>
+            <p class="section_tag"><span>赤炎の贵族</span><span>来自北京</span><span class="tag_time">2014-02-17</span></p>
+        </section>
+        <section class="search_list">
+            <h3>新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</h3>
+            <a href="question.html">不知道您说的是不是5.0里面更新的那个新兵种，据我所知，游戏里面的衣服现实世界是没有销售的</a>
+            <p class="section_tag"><span>赤炎の贵族</span><span>来自北京</span><span class="tag_time">2014-02-17</span></p>
+        </section>
+        <section class="search_list">
+            <h3>新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</h3>
+            <a href="question.html">不知道您说的是不是5.0里面更新的那个新兵种，据我所知，游戏里面的衣服现实世界是没有销售的</a>
+            <p class="section_tag"><span>赤炎の贵族</span><span>来自北京</span><span class="tag_time">2014-02-17</span></p>
+        </section>
+        <section class="search_list">
+            <h3>新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</h3>
+            <a href="question.html">不知道您说的是不是5.0里面更新的那个新兵种，据我所知，游戏里面的衣服现实世界是没有销售的</a>
+            <p class="section_tag"><span>赤炎の贵族</span><span>来自北京</span><span class="tag_time">2014-02-17</span></p>
+        </section>
+        <section class="search_list">
+            <h3>新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</h3>
+            <a href="question.html">不知道您说的是不是5.0里面更新的那个新兵种，据我所知，游戏里面的衣服现实世界是没有销售的</a>
+            <p class="section_tag"><span>赤炎の贵族</span><span>来自北京</span><span class="tag_time">2014-02-17</span></p>
+        </section>-->
+    </div>
+    <script language="javascript">
+    	//ajaxload('8本',document.getElementsByClassName('search_con')[0]) ;
+		//searchajax('女巫');
+		
+		var _inputSea = document.getElementById('input_text') ;
+		var _inputClose = document.getElementsByClassName('input_close')[0] ;
+		var _touchEnd = ('ontouchstart' in document.documentElement) ? 'blur' : 'keyup' ;
+		var _searchResult = document.getElementsByClassName('search_result')[0] ;
+		var _searchBtn = document.getElementsByClassName('search_btn')[0] ;
+		if(_searchBtn){
+			_searchBtn.onclick = function(){
+				window.location = 'searchlist.html' ;
+			}
+		}
+		if(_inputSea){
+			_inputSea.onclick = function(){
+				_inputClose.style.visibility = 'visible' ;	
+			}
+			//_inputSea.addEventListener(_touchEnd, touchEndFun, false) ;
+		}
+		function touchEndFun(){
+			var _placeholder = _inputSea.getAttribute('placeholder') ;
+			if(this.value != _placeholder && this.value != ''){	
+				searchajax(this.value) ;
+			}else{
+				_inputClose.style.visibility = 'hidden' ;	
+				_searchResult.style.height = '0px' ;		
+				//TODO 自动搜索
+			}
+		}
+		if(_searchResult){
+			_searchResult.onclick = function(e){
+				var _target = e.target ;
+				this.style.visibility = 'hidden' ;
+				//TODO
+			}
+		}
+		if(_inputClose){
+			_inputClose.onclick = function(){
+				_inputSea.value = '' ;
+				this.style.visibility = 'hidden' ;
+				_searchResult.style.visibility = 'hidden' ;
+			}
+		}
+		
+		function ajaxload(keys,obj){
+			$.ajax({
+				url : "http://10.6.210.229:8080/wiki/indexByCid?appId=1&cid=1&key=" + keys,
+				success : function(result) {
+					var page = result['page'];
+					var pageDatas = result['page']['datas'];
+					var content = "";
+					if (pageDatas) {
+						for ( var i = 0 ; i < pageDatas.length; i++) {
+							console.log(pageDatas[i]['createTime']) ;
+							var con = pageDatas[i]['content'] ;
+							var tit = con.replace(eval('/'+keys+'/gi'),'<span>'+keys+'</span>') ;							
+							content += '<section class="search_list">'
+									+ '<h3>' + tit + '</h3>'
+									+ '<a href="question.html">' + pageDatas[i]['content'] + '</a>'
+									+ '<p class="section_tag"><span>' + pageDatas[i]['userName'] + '</span><span>来自' + pageDatas[i]['address'] + '</span><span class="tag_time">' + getLocalTime(pageDatas[i]['createTime'].substring(0,10)) + '</span></p>'
+									+ '</section>';							
+						}
+					}				
+					obj.innerHTML = content;
+				},
+				type : 'json'
+			});
+		}
+		
+		function searchajax(keys){
+			$.ajax({
+					url : "http://10.6.210.229:8080/wiki/indexByCid?appId=1&cid=1&key=" + keys,
+					success : function(result) {
+						var page = result['page'];
+						var pageDatas = result['page']['datas'];
+						var content = "";
+						if (pageDatas) {
+							for ( var i = 0 ; i < pageDatas.length; i++) {
+								var con = pageDatas[i]['content'] ;
+								var tit = con.replace(eval('/'+keys+'/gi'),'<span>'+keys+'</span>') ;
+								content += '<li><a href="#">' + tit + '</a></li>';							
+							}
+						}				
+						_searchResult.innerHTML = content;
+						_inputClose.style.visibility = 'visible' ;
+						_searchResult.style.height = 'auto' ;
+					},
+					type : 'json'
+				});
+		}
+		/*时间戳转换--只显示年月日*/
+		function getLocalTime(nS){
+			return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ").substr(0,10);
+		}
+    </script>
+</body>
+</html>

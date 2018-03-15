@@ -1,0 +1,57 @@
+/**
+ *buttonActive
+ */
+.ui-buttonActive,
+.ui-buttonActive span,
+.ui-buttonActive-h,
+.ui-buttonActive-h span,
+.ui-buttonActive-a,
+.ui-buttonActive-a span {
+	background-image:url(images/buttonActive/buttonActive.png);
+	background-repeat:no-repeat;
+}
+
+.ui-buttonActive {
+	height:24px;
+	display:inline-block;
+	margin:2px;
+	overflow-y:hidden;
+}
+
+.ui-buttonActive span {
+	background-position:right -24px;
+	height:24px;
+	display:inline-block;
+	padding-right:3px;
+	margin-left:2px; /**margin-left:3px;ipad上面有一个小缺口*/
+}
+
+.ui-buttonActive span button,
+.ui-buttonActive span input{
+	margin:0;
+	padding:0;
+	border:0;
+	background:none;
+	font-size:12px;
+	height:24px;
+	line-height:24px;
+	padding:0 3px;
+	display:inline-block;
+	color:#ffffff;
+	overflow:hidden;
+}
+
+.ui-buttonActive span .standard { width:62px; }
+
+.ui-buttonActive-h { background-position:0 -48px }
+
+.ui-buttonActive-h span { background-position:right -72px; }
+
+.ui-buttonActive-a { background-position:0 -96px }
+
+.ui-buttonActive-a span { background-position:right -120px; }
+
+.ui-buttonActive-d {
+    filter : progid:DXImageTransform.Microsoft.Alpha(style=0, opacity=25, finishOpacity=0);
+	opacity: 0.25;
+}

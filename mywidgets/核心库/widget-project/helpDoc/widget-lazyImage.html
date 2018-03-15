@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>lazyImage</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <style type="text/css">
+        div.test_item {margin: auto auto 150px 30px;display: block;outline: 1px dashed red;width: 200px;height: 280px;}
+    </style>
+    <script>
+    $(function(){
+		var ver = $.ui.lazyImage.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>图片懒加载效果（lazyImage）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>图片懒加载效果，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox等浏览器</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> $('selector').lazyImage({....}); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">isCtx：</label>
+              （布尔型类型）参数：true 表示只处理当前上下文下的符合条件的img; false 则根据属性值来获取需要懒加载的图片 默认 true</p>
+            <p>
+              <label class="help-item">isHungry：</label>
+              （布尔型类型）参数：true 初始化时插件自动绑定加载事件事件 false 手动调用load方法进行</p>
+            <p>
+              <label class="help-item">lazyAttr：</label>
+              （字符串类型）参数：限定标识要懒加载处理的图片 默认 data-lazyImg</p>
+            <p>
+              <label class="help-item">placeHolder：</label>
+              （字符串类型）参数：懒加载图片的占位图片路径</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content">
+            <p>无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              懒加载功能(1,自动绑定;2,手动绑定)</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+      					$(function(){
+                  function _init(ctxSelector, isHungry) {
+                      var baseUrl = '.';
+                      var img = [
+                          '/images/lazyImage/1.jpg',
+                          '/images/lazyImage/2.png'
+                      ];
+                      var i, len;
+                      var domHtml = '';
+                      for (i = 0, len = img.length; i < len; i++) {
+                          domHtml += '<div class="test_item">' +
+                                          '<img data-original="' + baseUrl + img[i] + '" data-lazyImg="true" data-x="' +
+                                          ctxSelector + i + '"/>' +
+                                      '</div>';
+                      }
+                      $(ctxSelector).append(domHtml).lazyImage({
+                          placeHolder: 'images/lazyImage/blank.gif',
+                          // 是否自动绑定事件
+                          isHungry: isHungry
+                      });
+                  }
+                  _init('#imgCon', true);
+                  _init('#imgCon2', false);
+                  $('#triggerLoad').bind('click', function() {
+                    // 手动绑定事件
+                    $('#imgCon2').lazyImage('load');
+                  });
+      					}) ;
+      				</script>
+    			    <div id="imgCon"></div>  
+              <div id="imgCon2">
+                  <input type="button" id="triggerLoad" value="手动绑定加载"/>
+              </div>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                $(function(){
+                  function _init(ctxSelector, isHungry) {
+                      var baseUrl = '.';
+                      var img = [
+                          '/images/lazyImage/1.jpg',
+                          '/images/lazyImage/2.png'
+                      ];
+                      var i, len;
+                      var domHtml = '';
+                      for (i = 0, len = img.length; i &lt; len; i++) {
+                          domHtml += '&lt;div class="test_item">' +
+                                          '&lt;img data-original="' + baseUrl + img[i] + '" data-lazyImg="true" data-x="' +
+                                          ctxSelector + i + '"/>' +
+                                      '&lt;/div>';
+                      }
+                      $(ctxSelector).append(domHtml).lazyImage({
+                          placeHolder: 'images/lazyImage/blank.gif',
+                          // 是否自动绑定事件
+                          isHungry: isHungry
+                      });
+                  }
+                  _init('#imgCon', true);
+                  _init('#imgCon2', false);
+                  $('#triggerLoad').bind('click', function() {
+                    // 手动绑定事件
+                    $('#imgCon2').lazyImage('load');
+                  });
+                }) ;
+              &lt;/script>
+              &lt;div id="imgCon">&lt;/div>  
+              &lt;div id="imgCon2">
+                  &lt;input type="button" id="triggerLoad" value="手动绑定加载"/>
+              &lt;/div>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

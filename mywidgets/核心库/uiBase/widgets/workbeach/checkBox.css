@@ -1,0 +1,46 @@
+/*check*/
+.c6ui-checkbox {
+	background:url(./images/base_checkbox.png) 0 0 scroll no-repeat;
+	width:16px;
+	height:16px;
+	display:inline-block;
+	zoom:1;
+}
+
+.c6ui-checkbox-normal { background-position:0 0px; }
+
+.c6ui-checkbox-normal-checked { background-position:0 -16px; }
+
+.c6ui-checkbox-normal-half { background-position:0 -32px; }
+
+.c6ui-checkbox-disabled { background-position:0 -48px; }
+
+.c6ui-checkbox-disabled-checked { background-position:0 -64px; }
+
+.c6ui-checkbox-disabled-half { background-position:0 -80px; }
+
+.c6ui-checkbox-active { background-position:0 -96px; }
+
+.c6ui-checkbox-active-checked { background-position:0 -112px; }
+
+.c6ui-checkbox-active-half { background-position:0 -128px; }
+
+.c6ui-radio {
+	background:url(./images/base_radio.png) 0 0 scroll no-repeat;
+	width:16px;
+	height:16px;
+	display:inline-block;
+	zoom:1;
+}
+
+.c6ui-radio-normal { background-position:0 0; }
+
+.c6ui-radio-normal-checked { background-position:0 -16px; }
+
+.c6ui-radio-disabled { background-position:0 -32px; }
+
+.c6ui-radio-disabled-checked { background-position:0 -48px; }
+
+.c6ui-radio-active { background-position:0 -64px; }
+
+.c6ui-radio-active-checked { background-position:0 -80px; }

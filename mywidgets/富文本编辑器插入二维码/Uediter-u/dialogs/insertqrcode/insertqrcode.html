@@ -1,0 +1,86 @@
+<!---///desc by gaona at 2013-02-28 insert qrcode-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>insertqrcode</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<link rel="stylesheet" href="jquery-ui-1.8.11.custom/css/smoothness/jquery-ui-1.8.11.custom.css" />
+    <link rel="stylesheet" href="insertqrcode.css" type="text/css" />
+    <script type="text/javascript" src="../internal.js"></script>
+    <script type="text/javascript" src="c6-base.js"></script>
+	<script src="jquery-ui-1.8.11.custom/js/jquery-ui-1.8.11.custom.min.js"></script>
+	<script type="text/javascript" src="qrcode.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+</head>
+<body>
+    <div class="qrcodeWrapper">
+    	<p><textarea class="qrcodeContent" rows="6"></textarea></p>
+        <p class="qrcodeDesc">您已经输入了<span class="inputNum">0</span>字<span class="inputScore">(推荐140字以内，更容易辩识)</span>。</p>
+        <div class="qrcodeclear"></div>
+        <div class="qrcodeView">
+        	<img src="image/liantu.gif" alt="预览二维码" />
+        </div>
+        <div class="qrcodeSet">
+            <label><button class="viewBtn">生成二维码</button><span>(请先生成二维码在确定)</span></label>
+        </div>
+        <div class="setQrcode" style="clear:both ;display:none ;"></div>
+    </div>
+    <script type="text/javascript">
+    	$(function(){
+			var canvasNew = document.createElement('canvas');
+			var CanvasSupport = canvasNew.getContext && canvasNew.getContext('2d');
+			var renderMode ;
+			var isSetQrcode = false ;
+			if(CanvasSupport){
+				renderMode = 'canvas' ;
+			}else{
+				renderMode = 'table' ;
+				$('.qrcodeWrapper').html('您的浏览器不支持此功能') ;
+			}
+			$('textarea.qrcodeContent').keyup(function(){
+				var len = $('textarea.qrcodeContent').val().length ;
+				$('.qrcodeDesc span.inputNum').html(len) ;
+			}) ;
+			$('.viewBtn').click(function(){
+				var txt = $('textarea.qrcodeContent').val() ;
+				if(txt.length>0){
+					if($('.setQrcode').find('canvas').length>0){
+						$('.setQrcode canvas').remove() ;
+					}else if($('.setQrcode').find('table').length>0){
+						$('.setQrcode table').remove() ;
+					}
+					
+					$('.setQrcode').qrcode({
+						render:renderMode,
+						width:200,
+						height:200,
+						text:txt
+					});
+					$('.qrcodeSet span').css('color','#646464') ;
+					var dataURL = $('.setQrcode canvas')[0].toDataURL() ;
+					if(CanvasSupport){
+						$('.qrcodeView img').attr('src',dataURL) ;
+						isSetQrcode = true ;
+					}
+				}
+			}) ;
+			
+			dialog.onok = function(){
+				var qrcodeHtm = $('textarea.qrcodeContent').val() ;
+				if(qrcodeHtm.length>0 && isSetQrcode){
+					$('.qrcodeSet span').css('color','#646464') ;
+					var dataURL = $('.qrcodeView img').attr('src') ;
+					editor.execCommand('insertqrcode',dataURL,qrcodeHtm);
+				}else if(qrcodeHtm.length>0 && !isSetQrcode){
+					$('.qrcodeSet span').css('color','red') ;
+					return false ;
+				}else{					
+					dialog.close() ;
+				}
+			};
+						
+		}) ;
+    </script>
+</body>
+</html>

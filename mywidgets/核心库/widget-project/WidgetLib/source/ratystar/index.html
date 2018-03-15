@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ratystar</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="ratystar.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('.exampleObj').ratystar();
+		$('#disablebtn').click(function(){
+			$('.exampleObj').ratystar('disable') ;
+		}) ;
+		$('#enablebtn').click(function(){
+			$('.exampleObj').ratystar('enable') ;
+		}) ;
+		$('#getbtn').click(function(){
+			$('#showvalue').val($('.exampleObj').ratystar('getStar')) ;
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+
+</body>
+<div class="exampleObj"></div>
+<input type="button" id="getbtn" value="获取星级" />
+<label>星级评定结果</label><input type="text" id="showvalue" />
+<input type="button" id="disablebtn" value="禁用星级设置" />
+<input type="button" id="enablebtn" value="启用星级设置" />
+</body>
+</html>

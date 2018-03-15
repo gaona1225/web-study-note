@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>compass-watchHeadingFilter</title>
+<script language="javascript" src="phonegap-1.3.0.js"></script>
+<script language="javascript">
+	// watchID是当前 “watchHeading” 的引用
+	var watchID = null;
+	
+	// 等待加载PhoneGap
+	document.addEventListener("deviceready", onDeviceReady, false);
+	
+	// PhoneGap加载完毕
+	function onDeviceReady() {
+		startWatch();
+	}
+	
+	// 开始监视罗盘
+	function startWatch() {
+	   
+		// 当罗盘的方向改变大于或等于10度时获取通知
+		var options = { filter: 10 };
+
+		watchID = navigator.compass.watchHeadingFilter(onSuccess, onError, options);
+	}
+	
+	// 停止监视罗盘
+	function stopWatch() {
+		if (watchID) {
+			navigator.compass.clearWatchFilter(watchID);
+			watchID = null;
+		}
+	}
+	
+	// onSuccess: 返回罗盘的当前朝向
+	function onSuccess(heading) {
+		var element = document.getElementById('heading');
+		element.innerHTML = 'Heading: ' + heading.magneticHeading;
+	}
+	
+	// onError: 获取罗盘朝向失败
+	function onError(compassError) {
+		alert('Compass error: ' + compassError.code);
+	}
+</script>
+</head>
+
+<body>
+	<div id="heading">Waiting for heading...</div>
+	<button onclick="startWatch();">Start Watching</button>
+	<button onclick="stopWatch();">Stop Watching</button>
+</body>
+</html>

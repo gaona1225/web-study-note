@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<title>插入二维码</title>
+<script type="text/javascript" charset="utf-8" src="../editor_config.js"></script>
+<!--使用版-->
+<!--<script type="text/javascript" charset="utf-8" src="../editor_all.js"></script>-->
+<!--开发版-->
+<script type="text/javascript" charset="utf-8" src="editor_api.js"></script>
+</head>
+<body>
+    <div id="editor_iframe_holder" ></div>
+    <script type="text/javascript" charset="utf-8">
+        function $(id){
+            return document.getElementById(id);
+        }
+        //实例化一个不带ui的编辑器,注意此处的实例化对象是baidu.editor下的Editor，而非baidu.editor.ui下的Editor
+		<!--desc by gaona at 2013-02-26 自定义富文本编辑器及插入二维码图标 start-->
+        var myeditor = UE.getEditor('editor_iframe_holder',{
+            toolbars:[['undo','redo','|','insertunorderedlist','insertorderedlist','justifyleft','justifycenter','justifyright','justifyjustify','indent','|','link','unlink','|','insertqrcode','insertimage','scrawl','map','emotion','horizontal','|','bold','italic','underline','forecolor','fontfamily','fontsize']],
+            initialContent:'初始化内容',//初始化编辑器的内容
+            initialFrameWidth:'100%',
+			elementPathEnabled:false,
+			labelMap:{
+				'insertqrcode':'插入二维码'
+			}
+			<!--desc by gaona at 2013-02-26 自定义富文本编辑器及插入二维码图标 end-->
+        });
+    </script>
+</body>
+</html>

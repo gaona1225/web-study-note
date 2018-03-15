@@ -1,0 +1,46 @@
+/*
+ *作    者: 张勇辉 
+ *版    本: 1.0 
+ *完成时间: 2011-07-14 
+ *描    述: minSearch
+ *关联文件: reset.css|jquery-ui.css 
+ */ 
+.c6ui-widget-minSearch, .c6ui-widget-minSearch .minSearchInput, .c6ui-widget-minSearch a.minSearchBtn {
+	background-image: url(images/minSearch/minSearch.png);
+}
+.c6ui-widget-minSearch {
+	background-position:0 0;
+	background-repeat:no-repeat;
+	display:inline-block;
+	height:22px;
+	position:relative;
+	clear:both;
+}
+.c6ui-widget-minSearch .minSearchInput {
+	background-position:0 -22px;
+	height:22px;
+	margin-right:24px;
+	margin-left:3px;
+}
+.c6ui-widget-minSearch .minSearchInput input {
+	background:none;
+	width:98%;
+	_width:70%;
+	height:22px;
+	line-height:20px;
+	_height:18px;
+	border:none;
+	padding:0 3px;
+}
+.c6ui-widget-minSearch a.minSearchBtn {
+	background-position:0 -44px;
+	height:22px;
+	width:24px;
+	display:block;
+	position:absolute;
+	top:0;
+	right:0;
+}
+.c6ui-widget-minSearch a.minSearchBtn:hover {
+	background-position:0 -66px;
+}

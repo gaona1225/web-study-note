@@ -1,0 +1,1550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--userid,name:人员姓名,photo:人员照片链接地址,duty:人员岗位,mobi:人员手机,phone:人员座机-->
+<person>
+	<userid>1</userid>
+	<deskid>desk-1</deskid>
+	<name>赵海深</name>
+	<photo>../upload/1.gif</photo>
+	<duty>产品中心总监</duty>
+	<mobi>18911666996</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>2</userid>
+	<deskid>desk-2</deskid>
+	<name>王建斌</name>
+	<photo>../upload/2.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666957</mobi>
+	<phone>0105869856-8097</phone>
+</person>
+<person>
+	<userid>3</userid>
+	<deskid>desk-3</deskid>
+	<name>陈耀泉</name>
+	<photo>../upload/3.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666985</mobi>
+	<phone>0105869856-8437</phone>
+</person>
+<person>
+	<userid>4</userid>
+	<deskid>desk-4</deskid>
+	<name>吕明</name>
+	<photo>../upload/4.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666889</mobi>
+	<phone>0105869856-8313</phone>
+</person>
+<person>
+	<userid>5</userid>
+	<deskid>desk-5</deskid>
+	<name>孙珺</name>
+	<photo>../upload/5.gif</photo>
+	<duty>产品市场推广顾问</duty>
+	<mobi>15811498878</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>6</userid>
+	<deskid>desk-6</deskid>
+	<name>姚坤</name>
+	<photo>../upload/6.gif</photo>
+	<duty>产品市场推广顾问</duty>
+	<mobi>13718399038</mobi>
+	<phone>0105869856-8076</phone>
+</person>
+<person>
+	<userid>7</userid>
+	<deskid>desk-7</deskid>
+	<name>张艳丽</name>
+	<photo>../upload/7.gif</photo>
+	<duty>产品需求分析顾问</duty>
+	<mobi>18911666703</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>8</userid>
+	<deskid>desk-8</deskid>
+	<name>宁小丹</name>
+	<photo>../upload/8.gif</photo>
+	<duty>文档工程师</duty>
+	<mobi>18710166167</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>9</userid>
+	<deskid>desk-9</deskid>
+	<name>申卫红</name>
+	<photo>../upload/9.gif</photo>
+	<duty>文档工程师</duty>
+	<mobi>13581990948</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>10</userid>
+	<deskid>desk-10</deskid>
+	<name>刘庆威</name>
+	<photo>../upload/10.gif</photo>
+	<duty>产品推广工程师</duty>
+	<mobi>13661380490</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>11</userid>
+	<deskid>desk-11</deskid>
+	<name>陶坚</name>
+	<photo>../upload/11.gif</photo>
+	<duty>产品推广工程师</duty>
+	<mobi>18210918517</mobi>
+	<phone>0105869856-8318</phone>
+</person>
+<person>
+	<userid>12</userid>
+	<deskid>desk-12</deskid>
+	<name>王旭文</name>
+	<photo>../upload/12.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13651322534</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>13</userid>
+	<deskid>desk-13</deskid>
+	<name>王谦</name>
+	<photo>../upload/13.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13581686130</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>14</userid>
+	<deskid>desk-14</deskid>
+	<name>杨钊斌</name>
+	<photo>../upload/14.gif</photo>
+	<duty>助理咨询顾问</duty>
+	<mobi>18001390716</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>15</userid>
+	<deskid>desk-15</deskid>
+	<name>金姗姗</name>
+	<photo>../upload/15.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13810223316</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>16</userid>
+	<deskid>desk-16</deskid>
+	<name>高超</name>
+	<photo>../upload/16.gif</photo>
+	<duty>产品定义部经理</duty>
+	<mobi>18911666710</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>17</userid>
+	<deskid>desk-17</deskid>
+	<name>任永琪</name>
+	<photo>../upload/17.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>13552410787</mobi>
+	<phone>0105869856-8080</phone>
+</person>
+<person>
+	<userid>18</userid>
+	<deskid>desk-18</deskid>
+	<name>胡德九</name>
+	<photo>../upload/18.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>18600026436</mobi>
+	<phone>0105869856-8085</phone>
+</person>
+<person>
+	<userid>19</userid>
+	<deskid>desk-19</deskid>
+	<name>朱新岩</name>
+	<photo>../upload/19.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>15011059006</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>20</userid>
+	<deskid>desk-20</deskid>
+	<name>蒋立为</name>
+	<photo>../upload/20.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>13718383397</mobi>
+	<phone>0105869856-8085</phone>
+</person>
+<person>
+	<userid>21</userid>
+	<deskid>desk-21</deskid>
+	<name>崔倩</name>
+	<photo>../upload/1.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901217091</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>22</userid>
+	<deskid>desk-22</deskid>
+	<name>张勇辉</name>
+	<photo>../upload/2.gif</photo>
+	<duty>WEB前端工程师</duty>
+	<mobi>13683689460</mobi>
+	<phone>0105869856-8362</phone>
+</person>
+<person>
+	<userid>23</userid>
+	<deskid>desk-23</deskid>
+	<name>郑永广</name>
+	<photo>../upload/3.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>15801360259</mobi>
+	<phone>0105869856-8088</phone>
+</person>
+<person>
+	<userid>24</userid>
+	<deskid>desk-24</deskid>
+	<name>王礼</name>
+	<photo>../upload/4.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901076814</mobi>
+	<phone>0105869856-8098</phone>
+</person>
+<person>
+	<userid>25</userid>
+	<deskid>desk-25</deskid>
+	<name>李星军</name>
+	<photo>../upload/5.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>13371739010</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>26</userid>
+	<deskid>desk-26</deskid>
+	<name>陈婷婷</name>
+	<photo>../upload/6.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15010471205</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>27</userid>
+	<deskid>desk-27</deskid>
+	<name>沈繁荣</name>
+	<photo>../upload/7.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>13811697991</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>28</userid>
+	<deskid>desk-28</deskid>
+	<name>李国兴</name>
+	<photo>../upload/8.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>13439570829</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>29</userid>
+	<deskid>desk-29</deskid>
+	<name>姜少辉</name>
+	<photo>../upload/9.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>15910948264</mobi>
+	<phone>0105869856-8046</phone>
+</person>
+<person>
+	<userid>30</userid>
+	<deskid>desk-30</deskid>
+	<name>李高峰</name>
+	<photo>../upload/10.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18701697873</mobi>
+	<phone>0105869856-8439</phone>
+</person>
+<person>
+	<userid>31</userid>
+	<deskid>desk-31</deskid>
+	<name>韩兆行</name>
+	<photo>../upload/11.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18610295432</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>32</userid>
+	<deskid>desk-32</deskid>
+	<name>田瑞</name>
+	<photo>../upload/12.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>15011411203</mobi>
+	<phone>0105869856-8053</phone>
+</person>
+<person>
+	<userid>33</userid>
+	<deskid>desk-33</deskid>
+	<name>罗佐林</name>
+	<photo>../upload/13.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>13691265624</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>34</userid>
+	<deskid>desk-34</deskid>
+	<name>王曙光</name>
+	<photo>../upload/14.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18601274672</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>35</userid>
+	<deskid>desk-35</deskid>
+	<name>霍立海</name>
+	<photo>../upload/15.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18801333290</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>36</userid>
+	<deskid>desk-36</deskid>
+	<name>王一竹</name>
+	<photo>../upload/16.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>13693215974</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>37</userid>
+	<deskid>desk-37</deskid>
+	<name>曹鹏</name>
+	<photo>../upload/17.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>15811122861</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>38</userid>
+	<deskid>desk-38</deskid>
+	<name>赵金平</name>
+	<photo>../upload/18.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>15801493645</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>39</userid>
+	<deskid>desk-39</deskid>
+	<name>向保昌</name>
+	<photo>../upload/19.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18611346276</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>40</userid>
+	<deskid>desk-40</deskid>
+	<name>张洪锋</name>
+	<photo>../upload/20.gif</photo>
+	<duty>技术支持部经理</duty>
+	<mobi>18911666903</mobi>
+	<phone>0105869856-8016</phone>
+</person>
+<person>
+	<userid>41</userid>
+	<deskid>desk-41</deskid>
+	<name>皎海军</name>
+	<photo>../upload/1.gif</photo>
+	<duty>JC6产品部经理</duty>
+	<mobi>18911666896</mobi>
+	<phone>0105869856-8019</phone>
+</person>
+<person>
+	<userid>42</userid>
+	<deskid>desk-42</deskid>
+	<name>杨贺林</name>
+	<photo>../upload/2.gif</photo>
+	<duty>项目经理</duty>
+	<mobi>15901280513</mobi>
+	<phone>0105869856-8069</phone>
+</person>
+<person>
+	<userid>43</userid>
+	<deskid>desk-43</deskid>
+	<name>杨志强</name>
+	<photo>../upload/3.gif</photo>
+	<duty>项目经理</duty>
+	<mobi>13810522720</mobi>
+	<phone>0105869856-8070</phone>
+</person>
+<person>
+	<userid>44</userid>
+	<deskid>desk-44</deskid>
+	<name>李洪根</name>
+	<photo>../upload/4.gif</photo>
+	<duty>JC6设计工程师</duty>
+	<mobi>15811059447</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>45</userid>
+	<deskid>desk-45</deskid>
+	<name>杜英利</name>
+	<photo>../upload/5.gif</photo>
+	<duty>JC6设计工程师</duty>
+	<mobi>13699159087</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>46</userid>
+	<deskid>desk-46</deskid>
+	<name>李美佳</name>
+	<photo>../upload/6.gif</photo>
+	<duty>JC6开发工程师</duty>
+	<mobi>15210882137</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>47</userid>
+	<deskid>desk-47</deskid>
+	<name>龙准</name>
+	<photo>../upload/7.gif</photo>
+	<duty>JC6开发工程师</duty>
+	<mobi>15210719851</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>48</userid>
+	<deskid>desk-48</deskid>
+	<name>李庆飞</name>
+	<photo>../upload/8.gif</photo>
+	<duty>JC6开发工程师</duty>
+	<mobi>18210706858</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>49</userid>
+	<deskid>desk-49</deskid>
+	<name>徐洋</name>
+	<photo>../upload/9.gif</photo>
+	<duty>JC6开发工程师</duty>
+	<mobi>18605836089</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>50</userid>
+	<deskid>desk-50</deskid>
+	<name>赵海深</name>
+	<photo>../upload/1.gif</photo>
+	<duty>产品中心总监</duty>
+	<mobi>18911666996</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>51</userid>
+	<deskid>desk-51</deskid>
+	<name>王建斌</name>
+	<photo>../upload/2.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666957</mobi>
+	<phone>0105869856-8097</phone>
+</person>
+<person>
+	<userid>52</userid>
+	<deskid>desk-52</deskid>
+	<name>陈耀泉</name>
+	<photo>../upload/3.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666985</mobi>
+	<phone>0105869856-8437</phone>
+</person>
+<person>
+	<userid>53</userid>
+	<deskid>desk-53</deskid>
+	<name>吕明</name>
+	<photo>../upload/4.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666889</mobi>
+	<phone>0105869856-8313</phone>
+</person>
+<person>
+	<userid>54</userid>
+	<deskid>desk-54</deskid>
+	<name>孙珺</name>
+	<photo>../upload/5.gif</photo>
+	<duty>产品市场推广顾问</duty>
+	<mobi>15811498878</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>55</userid>
+	<deskid>desk-55</deskid>
+	<name>姚坤</name>
+	<photo>../upload/6.gif</photo>
+	<duty>产品市场推广顾问</duty>
+	<mobi>13718399038</mobi>
+	<phone>0105869856-8076</phone>
+</person>
+<person>
+	<userid>56</userid>
+	<deskid>desk-56</deskid>
+	<name>张艳丽</name>
+	<photo>../upload/7.gif</photo>
+	<duty>产品需求分析顾问</duty>
+	<mobi>18911666703</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>57</userid>
+	<deskid>desk-57</deskid>
+	<name>宁小丹</name>
+	<photo>../upload/8.gif</photo>
+	<duty>文档工程师</duty>
+	<mobi>18710166167</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>58</userid>
+	<deskid>desk-58</deskid>
+	<name>申卫红</name>
+	<photo>../upload/9.gif</photo>
+	<duty>文档工程师</duty>
+	<mobi>13581990948</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>59</userid>
+	<deskid>desk-59</deskid>
+	<name>刘庆威</name>
+	<photo>../upload/10.gif</photo>
+	<duty>产品推广工程师</duty>
+	<mobi>13661380490</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>60</userid>
+	<deskid>desk-60</deskid>
+	<name>陶坚</name>
+	<photo>../upload/11.gif</photo>
+	<duty>产品推广工程师</duty>
+	<mobi>18210918517</mobi>
+	<phone>0105869856-8318</phone>
+</person>
+<person>
+	<userid>61</userid>
+	<deskid>desk-61</deskid>
+	<name>王旭文</name>
+	<photo>../upload/12.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13651322534</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>62</userid>
+	<deskid>desk-62</deskid>
+	<name>王谦</name>
+	<photo>../upload/13.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13581686130</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>63</userid>
+	<deskid>desk-63</deskid>
+	<name>杨钊斌</name>
+	<photo>../upload/14.gif</photo>
+	<duty>助理咨询顾问</duty>
+	<mobi>18001390716</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>64</userid>
+	<deskid>desk-64</deskid>
+	<name>金姗姗</name>
+	<photo>../upload/15.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13810223316</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>65</userid>
+	<deskid>desk-65</deskid>
+	<name>高超</name>
+	<photo>../upload/16.gif</photo>
+	<duty>产品定义部经理</duty>
+	<mobi>18911666710</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>66</userid>
+	<deskid>desk-66</deskid>
+	<name>任永琪</name>
+	<photo>../upload/17.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>13552410787</mobi>
+	<phone>0105869856-8080</phone>
+</person>
+<person>
+	<userid>67</userid>
+	<deskid>desk-67</deskid>
+	<name>胡德九</name>
+	<photo>../upload/18.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>18600026436</mobi>
+	<phone>0105869856-8085</phone>
+</person>
+<person>
+	<userid>68</userid>
+	<deskid>desk-68</deskid>
+	<name>朱新岩</name>
+	<photo>../upload/19.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>15011059006</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>69</userid>
+	<deskid>desk-69</deskid>
+	<name>蒋立为</name>
+	<photo>../upload/20.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>13718383397</mobi>
+	<phone>0105869856-8085</phone>
+</person>
+<person>
+	<userid>70</userid>
+	<deskid>desk-70</deskid>
+	<name>崔倩</name>
+	<photo>../upload/1.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901217091</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>71</userid>
+	<deskid>desk-71</deskid>
+	<name>张勇辉</name>
+	<photo>../upload/2.gif</photo>
+	<duty>WEB前端工程师</duty>
+	<mobi>13683689460</mobi>
+	<phone>0105869856-8362</phone>
+</person>
+<person>
+	<userid>72</userid>
+	<deskid>desk-72</deskid>
+	<name>郑永广</name>
+	<photo>../upload/3.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>15801360259</mobi>
+	<phone>0105869856-8088</phone>
+</person>
+<person>
+	<userid>73</userid>
+	<deskid>desk-73</deskid>
+	<name>王礼</name>
+	<photo>../upload/4.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901076814</mobi>
+	<phone>0105869856-8098</phone>
+</person>
+<person>
+	<userid>74</userid>
+	<deskid>desk-74</deskid>
+	<name>李星军</name>
+	<photo>../upload/5.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>13371739010</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>75</userid>
+	<deskid>desk-75</deskid>
+	<name>陈婷婷</name>
+	<photo>../upload/6.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15010471205</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>76</userid>
+	<deskid>desk-76</deskid>
+	<name>沈繁荣</name>
+	<photo>../upload/7.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>13811697991</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>77</userid>
+	<deskid>desk-77</deskid>
+	<name>李国兴</name>
+	<photo>../upload/8.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>13439570829</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>78</userid>
+	<deskid>desk-78</deskid>
+	<name>姜少辉</name>
+	<photo>../upload/9.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>15910948264</mobi>
+	<phone>0105869856-8046</phone>
+</person>
+<person>
+	<userid>79</userid>
+	<deskid>desk-79</deskid>
+	<name>李高峰</name>
+	<photo>../upload/10.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18701697873</mobi>
+	<phone>0105869856-8439</phone>
+</person>
+<person>
+	<userid>80</userid>
+	<deskid>desk-80</deskid>
+	<name>韩兆行</name>
+	<photo>../upload/11.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18610295432</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>81</userid>
+	<deskid>desk-81</deskid>
+	<name>田瑞</name>
+	<photo>../upload/12.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>15011411203</mobi>
+	<phone>0105869856-8053</phone>
+</person>
+<person>
+	<userid>82</userid>
+	<deskid>desk-82</deskid>
+	<name>罗佐林</name>
+	<photo>../upload/13.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>13691265624</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>83</userid>
+	<deskid>desk-83</deskid>
+	<name>王曙光</name>
+	<photo>../upload/14.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18601274672</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>84</userid>
+	<deskid>desk-84</deskid>
+	<name>霍立海</name>
+	<photo>../upload/15.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18801333290</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>85</userid>
+	<deskid>desk-85</deskid>
+	<name>王一竹</name>
+	<photo>../upload/16.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>13693215974</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>86</userid>
+	<deskid>desk-86</deskid>
+	<name>曹鹏</name>
+	<photo>../upload/17.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>15811122861</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>87</userid>
+	<deskid>desk-87</deskid>
+	<name>赵金平</name>
+	<photo>../upload/18.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>15801493645</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>88</userid>
+	<deskid>desk-88</deskid>
+	<name>向保昌</name>
+	<photo>../upload/19.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18611346276</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>89</userid>
+	<deskid>desk-89</deskid>
+	<name>张洪锋</name>
+	<photo>../upload/20.gif</photo>
+	<duty>技术支持部经理</duty>
+	<mobi>18911666903</mobi>
+	<phone>0105869856-8016</phone>
+</person>
+<person>
+	<userid>90</userid>
+	<deskid>desk-90</deskid>
+	<name>皎海军</name>
+	<photo>../upload/1.gif</photo>
+	<duty>JC6产品部经理</duty>
+	<mobi>18911666896</mobi>
+	<phone>0105869856-8019</phone>
+</person>
+<person>
+	<userid>91</userid>
+	<deskid>desk-91</deskid>
+	<name>杨贺林</name>
+	<photo>../upload/2.gif</photo>
+	<duty>项目经理</duty>
+	<mobi>15901280513</mobi>
+	<phone>0105869856-8069</phone>
+</person>
+<person>
+	<userid>92</userid>
+	<deskid>desk-92</deskid>
+	<name>杨志强</name>
+	<photo>../upload/3.gif</photo>
+	<duty>项目经理</duty>
+	<mobi>13810522720</mobi>
+	<phone>0105869856-8070</phone>
+</person>
+<person>
+	<userid>93</userid>
+	<deskid>desk-93</deskid>
+	<name>李洪根</name>
+	<photo>../upload/4.gif</photo>
+	<duty>JC6设计工程师</duty>
+	<mobi>15811059447</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>94</userid>
+	<deskid>desk-94</deskid>
+	<name>杜英利</name>
+	<photo>../upload/5.gif</photo>
+	<duty>JC6设计工程师</duty>
+	<mobi>13699159087</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>95</userid>
+	<deskid>desk-95</deskid>
+	<name>李美佳</name>
+	<photo>../upload/6.gif</photo>
+	<duty>JC6开发工程师</duty>
+	<mobi>15210882137</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>96</userid>
+	<deskid>desk-96</deskid>
+	<name>龙准</name>
+	<photo>../upload/7.gif</photo>
+	<duty>JC6开发工程师</duty>
+	<mobi>15210719851</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>97</userid>
+	<deskid>desk-97</deskid>
+	<name>李庆飞</name>
+	<photo>../upload/8.gif</photo>
+	<duty>JC6开发工程师</duty>
+	<mobi>18210706858</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>98</userid>
+	<deskid>desk-98</deskid>
+	<name>徐洋</name>
+	<photo>../upload/9.gif</photo>
+	<duty>JC6开发工程师</duty>
+	<mobi>18605836089</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>99</userid>
+	<deskid>desk-99</deskid>
+	<name>赵海深</name>
+	<photo>../upload/1.gif</photo>
+	<duty>产品中心总监</duty>
+	<mobi>18911666996</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>100</userid>
+	<deskid>desk-100</deskid>
+	<name>王建斌</name>
+	<photo>../upload/2.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666957</mobi>
+	<phone>0105869856-8097</phone>
+</person>
+<person>
+	<userid>101</userid>
+	<deskid>desk-101</deskid>
+	<name>陈耀泉</name>
+	<photo>../upload/3.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666985</mobi>
+	<phone>0105869856-8437</phone>
+</person>
+<person>
+	<userid>102</userid>
+	<deskid>desk-102</deskid>
+	<name>吕明</name>
+	<photo>../upload/4.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666889</mobi>
+	<phone>0105869856-8313</phone>
+</person>
+<person>
+	<userid>103</userid>
+	<deskid>desk-103</deskid>
+	<name>孙珺</name>
+	<photo>../upload/5.gif</photo>
+	<duty>产品市场推广顾问</duty>
+	<mobi>15811498878</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>104</userid>
+	<deskid>desk-104</deskid>
+	<name>姚坤</name>
+	<photo>../upload/6.gif</photo>
+	<duty>产品市场推广顾问</duty>
+	<mobi>13718399038</mobi>
+	<phone>0105869856-8076</phone>
+</person>
+<person>
+	<userid>105</userid>
+	<deskid>desk-105</deskid>
+	<name>张艳丽</name>
+	<photo>../upload/7.gif</photo>
+	<duty>产品需求分析顾问</duty>
+	<mobi>18911666703</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>106</userid>
+	<deskid>desk-106</deskid>
+	<name>宁小丹</name>
+	<photo>../upload/8.gif</photo>
+	<duty>文档工程师</duty>
+	<mobi>18710166167</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>107</userid>
+	<deskid>desk-107</deskid>
+	<name>申卫红</name>
+	<photo>../upload/9.gif</photo>
+	<duty>文档工程师</duty>
+	<mobi>13581990948</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>108</userid>
+	<deskid>desk-108</deskid>
+	<name>刘庆威</name>
+	<photo>../upload/10.gif</photo>
+	<duty>产品推广工程师</duty>
+	<mobi>13661380490</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>109</userid>
+	<deskid>desk-109</deskid>
+	<name>陶坚</name>
+	<photo>../upload/11.gif</photo>
+	<duty>产品推广工程师</duty>
+	<mobi>18210918517</mobi>
+	<phone>0105869856-8318</phone>
+</person>
+<person>
+	<userid>110</userid>
+	<deskid>desk-110</deskid>
+	<name>王旭文</name>
+	<photo>../upload/12.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13651322534</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>111</userid>
+	<deskid>desk-111</deskid>
+	<name>王谦</name>
+	<photo>../upload/13.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13581686130</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>112</userid>
+	<deskid>desk-112</deskid>
+	<name>杨钊斌</name>
+	<photo>../upload/14.gif</photo>
+	<duty>助理咨询顾问</duty>
+	<mobi>18001390716</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>113</userid>
+	<deskid>desk-113</deskid>
+	<name>金姗姗</name>
+	<photo>../upload/15.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13810223316</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>114</userid>
+	<deskid>desk-114</deskid>
+	<name>高超</name>
+	<photo>../upload/16.gif</photo>
+	<duty>产品定义部经理</duty>
+	<mobi>18911666710</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>115</userid>
+	<deskid>desk-115</deskid>
+	<name>任永琪</name>
+	<photo>../upload/17.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>13552410787</mobi>
+	<phone>0105869856-8080</phone>
+</person>
+<person>
+	<userid>116</userid>
+	<deskid>desk-116</deskid>
+	<name>胡德九</name>
+	<photo>../upload/18.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>18600026436</mobi>
+	<phone>0105869856-8085</phone>
+</person>
+<person>
+	<userid>117</userid>
+	<deskid>desk-117</deskid>
+	<name>朱新岩</name>
+	<photo>../upload/19.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>15011059006</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>118</userid>
+	<deskid>desk-118</deskid>
+	<name>蒋立为</name>
+	<photo>../upload/20.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>13718383397</mobi>
+	<phone>0105869856-8085</phone>
+</person>
+<person>
+	<userid>119</userid>
+	<deskid>desk-119</deskid>
+	<name>崔倩</name>
+	<photo>../upload/1.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901217091</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>120</userid>
+	<deskid>desk-120</deskid>
+	<name>张勇辉</name>
+	<photo>../upload/2.gif</photo>
+	<duty>WEB前端工程师</duty>
+	<mobi>13683689460</mobi>
+	<phone>0105869856-8362</phone>
+</person>
+<person>
+	<userid>121</userid>
+	<deskid>desk-121</deskid>
+	<name>郑永广</name>
+	<photo>../upload/3.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>15801360259</mobi>
+	<phone>0105869856-8088</phone>
+</person>
+<person>
+	<userid>122</userid>
+	<deskid>desk-122</deskid>
+	<name>王礼</name>
+	<photo>../upload/4.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901076814</mobi>
+	<phone>0105869856-8098</phone>
+</person>
+<person>
+	<userid>123</userid>
+	<deskid>desk-123</deskid>
+	<name>李星军</name>
+	<photo>../upload/5.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>13371739010</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>124</userid>
+	<deskid>desk-124</deskid>
+	<name>陈婷婷</name>
+	<photo>../upload/6.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15010471205</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>125</userid>
+	<deskid>desk-125</deskid>
+	<name>沈繁荣</name>
+	<photo>../upload/7.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>13811697991</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>126</userid>
+	<deskid>desk-126</deskid>
+	<name>李国兴</name>
+	<photo>../upload/8.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>13439570829</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>127</userid>
+	<deskid>desk-127</deskid>
+	<name>姜少辉</name>
+	<photo>../upload/9.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>15910948264</mobi>
+	<phone>0105869856-8046</phone>
+</person>
+<person>
+	<userid>128</userid>
+	<deskid>desk-128</deskid>
+	<name>李高峰</name>
+	<photo>../upload/10.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18701697873</mobi>
+	<phone>0105869856-8439</phone>
+</person>
+<person>
+	<userid>129</userid>
+	<deskid>desk-129</deskid>
+	<name>王礼</name>
+	<photo>../upload/4.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901076814</mobi>
+	<phone>0105869856-8098</phone>
+</person>
+<person>
+	<userid>130</userid>
+	<deskid>desk-130</deskid>
+	<name>李星军</name>
+	<photo>../upload/5.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>13371739010</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>131</userid>
+	<deskid>desk-131</deskid>
+	<name>陈婷婷</name>
+	<photo>../upload/6.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15010471205</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>132</userid>
+	<deskid>desk-132</deskid>
+	<name>沈繁荣</name>
+	<photo>../upload/7.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>13811697991</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>133</userid>
+	<deskid>desk-133</deskid>
+	<name>李国兴</name>
+	<photo>../upload/8.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>13439570829</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>134</userid>
+	<deskid>desk-134</deskid>
+	<name>姜少辉</name>
+	<photo>../upload/9.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>15910948264</mobi>
+	<phone>0105869856-8046</phone>
+</person>
+<person>
+	<userid>135</userid>
+	<deskid>desk-135</deskid>
+	<name>李高峰</name>
+	<photo>../upload/10.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18701697873</mobi>
+	<phone>0105869856-8439</phone>
+</person>
+<person>
+	<userid>136</userid>
+	<deskid>desk-136</deskid>
+	<name>赵海深</name>
+	<photo>../upload/1.gif</photo>
+	<duty>产品中心总监</duty>
+	<mobi>18911666996</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>137</userid>
+	<deskid>desk-137</deskid>
+	<name>王建斌</name>
+	<photo>../upload/2.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666957</mobi>
+	<phone>0105869856-8097</phone>
+</person>
+<person>
+	<userid>138</userid>
+	<deskid>desk-138</deskid>
+	<name>陈耀泉</name>
+	<photo>../upload/3.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666985</mobi>
+	<phone>0105869856-8437</phone>
+</person>
+<person>
+	<userid>139</userid>
+	<deskid>desk-139</deskid>
+	<name>吕明</name>
+	<photo>../upload/4.gif</photo>
+	<duty>产品中心副总监</duty>
+	<mobi>18911666889</mobi>
+	<phone>0105869856-8313</phone>
+</person>
+<person>
+	<userid>140</userid>
+	<deskid>desk-140</deskid>
+	<name>孙珺</name>
+	<photo>../upload/5.gif</photo>
+	<duty>产品市场推广顾问</duty>
+	<mobi>15811498878</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>141</userid>
+	<deskid>desk-141</deskid>
+	<name>姚坤</name>
+	<photo>../upload/6.gif</photo>
+	<duty>产品市场推广顾问</duty>
+	<mobi>13718399038</mobi>
+	<phone>0105869856-8076</phone>
+</person>
+<person>
+	<userid>142</userid>
+	<deskid>desk-142</deskid>
+	<name>张艳丽</name>
+	<photo>../upload/7.gif</photo>
+	<duty>产品需求分析顾问</duty>
+	<mobi>18911666703</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>143</userid>
+	<deskid>desk-143</deskid>
+	<name>宁小丹</name>
+	<photo>../upload/8.gif</photo>
+	<duty>文档工程师</duty>
+	<mobi>18710166167</mobi>
+	<phone>0105869856-8078</phone>
+</person>
+<person>
+	<userid>144</userid>
+	<deskid>desk-144</deskid>
+	<name>申卫红</name>
+	<photo>../upload/9.gif</photo>
+	<duty>文档工程师</duty>
+	<mobi>13581990948</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>145</userid>
+	<deskid>desk-145</deskid>
+	<name>刘庆威</name>
+	<photo>../upload/10.gif</photo>
+	<duty>产品推广工程师</duty>
+	<mobi>13661380490</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>146</userid>
+	<deskid>desk-146</deskid>
+	<name>陶坚</name>
+	<photo>../upload/11.gif</photo>
+	<duty>产品推广工程师</duty>
+	<mobi>18210918517</mobi>
+	<phone>0105869856-8318</phone>
+</person>
+<person>
+	<userid>147</userid>
+	<deskid>desk-147</deskid>
+	<name>王旭文</name>
+	<photo>../upload/12.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13651322534</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>148</userid>
+	<deskid>desk-148</deskid>
+	<name>王谦</name>
+	<photo>../upload/13.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13581686130</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>149</userid>
+	<deskid>desk-149</deskid>
+	<name>杨钊斌</name>
+	<photo>../upload/14.gif</photo>
+	<duty>助理咨询顾问</duty>
+	<mobi>18001390716</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>150</userid>
+	<deskid>desk-150</deskid>
+	<name>金姗姗</name>
+	<photo>../upload/15.gif</photo>
+	<duty>管理咨询顾问</duty>
+	<mobi>13810223316</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>151</userid>
+	<deskid>desk-151</deskid>
+	<name>高超</name>
+	<photo>../upload/16.gif</photo>
+	<duty>产品定义部经理</duty>
+	<mobi>18911666710</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>152</userid>
+	<deskid>desk-152</deskid>
+	<name>任永琪</name>
+	<photo>../upload/17.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>13552410787</mobi>
+	<phone>0105869856-8080</phone>
+</person>
+<person>
+	<userid>153</userid>
+	<deskid>desk-153</deskid>
+	<name>胡德九</name>
+	<photo>../upload/18.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>18600026436</mobi>
+	<phone>0105869856-8085</phone>
+</person>
+<person>
+	<userid>154</userid>
+	<deskid>desk-154</deskid>
+	<name>朱新岩</name>
+	<photo>../upload/19.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>15011059006</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>155</userid>
+	<deskid>desk-155</deskid>
+	<name>蒋立为</name>
+	<photo>../upload/20.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>13718383397</mobi>
+	<phone>0105869856-8085</phone>
+</person>
+<person>
+	<userid>156</userid>
+	<deskid>desk-156</deskid>
+	<name>崔倩</name>
+	<photo>../upload/1.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901217091</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>157</userid>
+	<deskid>desk-157</deskid>
+	<name>张勇辉</name>
+	<photo>../upload/2.gif</photo>
+	<duty>WEB前端工程师</duty>
+	<mobi>13683689460</mobi>
+	<phone>0105869856-8362</phone>
+</person>
+<person>
+	<userid>158</userid>
+	<deskid>desk-158</deskid>
+	<name>郑永广</name>
+	<photo>../upload/3.gif</photo>
+	<duty>产品经理</duty>
+	<mobi>15801360259</mobi>
+	<phone>0105869856-8088</phone>
+</person>
+<person>
+	<userid>159</userid>
+	<deskid>desk-159</deskid>
+	<name>王礼</name>
+	<photo>../upload/4.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901076814</mobi>
+	<phone>0105869856-8098</phone>
+</person>
+<person>
+	<userid>160</userid>
+	<deskid>desk-160</deskid>
+	<name>李星军</name>
+	<photo>../upload/5.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>13371739010</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>161</userid>
+	<deskid>desk-161</deskid>
+	<name>陈婷婷</name>
+	<photo>../upload/6.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15010471205</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>162</userid>
+	<deskid>desk-162</deskid>
+	<name>沈繁荣</name>
+	<photo>../upload/7.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>13811697991</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>163</userid>
+	<deskid>desk-163</deskid>
+	<name>李国兴</name>
+	<photo>../upload/8.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>13439570829</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>164</userid>
+	<deskid>desk-164</deskid>
+	<name>姜少辉</name>
+	<photo>../upload/9.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>15910948264</mobi>
+	<phone>0105869856-8046</phone>
+</person>
+<person>
+	<userid>165</userid>
+	<deskid>desk-165</deskid>
+	<name>李高峰</name>
+	<photo>../upload/10.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18701697873</mobi>
+	<phone>0105869856-8439</phone>
+</person>
+<person>
+	<userid>166</userid>
+	<deskid>desk-166</deskid>
+	<name>王礼</name>
+	<photo>../upload/4.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15901076814</mobi>
+	<phone>0105869856-8098</phone>
+</person>
+<person>
+	<userid>167</userid>
+	<deskid>desk-167<deskid>
+	<name>李星军</name>
+	<photo>../upload/5.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>13371739010</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>168</userid>
+	<deskid>desk-168</deskid>
+	<name>陈婷婷</name>
+	<photo>../upload/6.gif</photo>
+	<duty>UI设计师</duty>
+	<mobi>15010471205</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>169</userid>
+	<deskid>desk-169</deskid>
+	<name>沈繁荣</name>
+	<photo>../upload/7.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>13811697991</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>170</userid>
+	<deskid>desk-170</deskid>
+	<name>李国兴</name>
+	<photo>../upload/8.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>13439570829</mobi>
+	<phone>0105869856-8058</phone>
+</person>
+<person>
+	<userid>171</userid>
+	<deskid>desk-171</deskid>
+	<name>姜少辉</name>
+	<photo>../upload/9.gif</photo>
+	<duty>C6高级开发工程师</duty>
+	<mobi>15910948264</mobi>
+	<phone>0105869856-8046</phone>
+</person>
+<person>
+	<userid>172</userid>
+	<deskid>desk-172</deskid>
+	<name>李高峰</name>
+	<photo>../upload/10.gif</photo>
+	<duty>C6开发工程师</duty>
+	<mobi>18701697873</mobi>
+	<phone>0105869856-8439</phone>
+</person>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scroll</title>
+<script language="javascript" src="jquery-1.4.2.min.js"></script>
+<style>
+	.wrap{
+		height:300px ;
+		overflow:hidden ;
+		width:400px ;
+	}
+	.image-wrap{
+		display:block ;
+		margin:0px ;
+		margin-left:0px ;
+		padding:0px ;
+	}
+	.image-wrap li{
+		float:left ;
+		list-style:none ;
+		width:400px ;
+	}
+	.image-wrap li img{
+		border:none ;
+	}
+</style>
+<script>
+	$(function(){
+		var len = $('.image-wrap li').length ;
+		var wid = (len + 1) * $('.image-wrap li').width() ;
+		var scrollTag = 0 - $('.image-wrap li').width() + 'px' ;
+		var count = 0 ;
+		var createElem = false ;
+		$('.image-wrap').width(wid) ;
+		setInterval(scrollImg,3000) ;
+		function scrollImg(){
+			if(createElem == false){
+				var tarLi = '<li>' + $('.image-wrap li').eq(0).html() + '</li>' ;
+				createElem = true ;
+			}
+			console.log(count) ;
+			var marLeft = $('.image-wrap').css('margin-left') ;
+			var tarLeft = parseInt(marLeft) - $('.image-wrap li').width()  ;
+			$('.image-wrap').append(tarLi) ;
+			if(count == len){
+				$('.image-wrap').css('margin-left',scrollTag) ;
+				count = 1 ;
+			}else{
+				$('.image-wrap').animate({
+					'margin-left' : tarLeft + 'px'
+				},1000) ;
+				count ++ ;			
+			}
+		}
+	}) ;
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<ul class="image-wrap">
+    	<li><img src="001.jpg" /></li>
+        <li><img src="002.jpg" /></li>
+        <li><img src="003.jpg" /></li>
+    </ul>
+</div>
+</body>
+</html>

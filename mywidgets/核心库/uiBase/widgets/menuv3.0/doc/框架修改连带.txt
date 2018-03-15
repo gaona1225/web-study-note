@@ -1,0 +1,3 @@
+由于取消了portal_index.jsp中的iframe,集合了portal_index.jsp;portal_content.jsp;之前定位到portal_content.jsp的方式需要相应的变动
+*************************************************************************************************************************
+1.知识地图 var frameProperty = window.top.document.getElementById("iframeContent").contentWindow.document.getElementById("popMenu");

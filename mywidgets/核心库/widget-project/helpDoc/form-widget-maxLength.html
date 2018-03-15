@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>表单-扩展-数字控制</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.maxLength.version || "未知";//当前插件的版本信息
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>标准菜单列表（maxLength）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>标准菜单列表，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> maxLength(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">maxCharacters：</label>
+            字数最大限制，默认为10</p>
+            <p>
+              <label class="help-item">intercept：</label>
+            当超出最大值时，是否截取，默认为false</p>
+            <p>
+              <label class="help-item">status：</label>
+            是否显示提示信息，默认为true</p>
+			<p>
+              <label class="help-item">statusClass：</label>
+            提示信息的class名 ，默认为"ui-maxLength-statusClass"</p>
+			<p>
+              <label class="help-item">statusText：</label>
+            提示信息里面text值，默认为"您可以输入的字符个数为："</p>
+			<p>
+              <label class="help-item">notificationClass：</label>
+            当超出最大值时，文本框的样式class名，默认为"ui-maxLength-notification"</p>
+			<p>
+              <label class="help-item">showAlert：</label>
+            当超出最大值时，是否显示alert提示信息，默认为false</p>
+			<p>
+              <label class="help-item">alertText：</label>
+           当超出最大值时，alert提示信息所提示的内容 ，默认为"您输入的字数太多了！"</p>
+		   <p>
+              <label class="help-item">slider：</label>
+           提示信息是否获得焦点时显示，失去焦点后隐藏，默认为false</p>
+		   <p>
+              <label class="help-item">events：</label>
+           事件绑定，默认为‘keyup’事件</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+             <p>暂无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-1：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+            input</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+              <input type="text" name="input_1" id="input_1"/>
+             <script>
+             $(function(){
+				$('#input_1').maxLength({ maxCharacters:5});
+				});
+             </script>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            &lt;input type="text" name="input_1" id="input_1"/>
+             &lt;script>
+             $(function(){
+				 $('#input_1').maxLength({ maxCharacters:5});
+				});
+             &lt;/script>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束-->
+		 <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-2：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+            textarea</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+              <textarea cols="50" rows="5" name="textarea_2" id="textarea_2"></textarea>
+             <script>
+             $(function(){
+				$('#textarea_2').maxLength({
+					maxCharacters:15,
+					intercept:true,
+					status:true,
+					statusClass:"aaa",
+					statusText:"不要输入超过了以下字数：",
+					notificationClass:"noClass",
+					showAlert:true,
+					alertText:'少写点字！',
+					slider:true,
+					events : ['keyup']
+				});
+			});
+             </script>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            &lt;textarea cols="50" rows="5" name="textarea_2" id="textarea_2">&lt;/textarea>
+             &lt;script>
+             $(function(){
+				 $('#textarea_2').maxLength({
+					maxCharacters:15,
+					intercept:true,
+					status:true,
+					statusClass:"aaa",
+					statusText:"不要输入超过了以下字数：",
+					notificationClass:"noClass",
+					showAlert:true,
+					alertText:'少写点字！',
+					slider:true,
+					events : ['keyup']
+				});
+			 });
+             &lt;/script>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束-->
+		<!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-3：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+            设置contentEditable='true'后，div,table,p,span,body等等可编辑元素(以div和span为例)</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+              <div name="div_3" id="div_3" contentEditable="true" style="height:50px;width:200px;border:1px solid #ccc">12</div>
+             <span  name="span_4" id="span_4" contentEditable="true" style="display:block;height:50px;width:200px;border:1px solid #ccc">span</span>	
+             <script>
+             $(function(){
+				$('#div_3').maxLength({ maxCharacters:5});
+				$('#span_4').maxLength({ maxCharacters:5});
+			});
+             </script>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            &lt;div name="div_3" id="div_3" contentEditable="true" style="height:50px;width:200px;border:1px solid #ccc">12&lt;/div>
+            &lt;span name="span_4" id="span_4" contentEditable="true" style="display:block;height:50px;width:200px;border:1px solid #ccc">12&lt;/span>
+             &lt;script>
+             $(function(){
+				 $('#div_3').maxLength({ maxCharacters:5});
+				 $('#span_4').maxLength({ maxCharacters:5});
+			 });
+             &lt;/script>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束-->
+      </div>
+    </div>
+</body>
+</html>

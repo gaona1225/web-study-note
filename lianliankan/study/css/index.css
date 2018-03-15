@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,li{
+	font-family:"Microsoft Yahei";
+	margin:0;
+	padding:0;
+}
+ul,li{list-style:none;}
+#main{
+	background:url(../images/bg_4.gif) no-repeat top;
+	border:2px solid #c33cc7;
+	height:560px;
+	margin:0 auto;
+	width:760px;
+}
+#box{
+	background:#0f0;
+	border:2px solid #c33cc7;
+	height:18px;
+	line-height:18px;
+	margin-left:108px;
+	margin-top:78px;
+	padding:2px 0;
+	position:absolute;
+	text-align:center;
+	width:396px;
+}
+#diff{
+	margin-left:108px;
+	margin-top:108px;
+	overflow:hidden;
+	position:absolute;
+	width:400px;
+}
+#diff li{
+	float:left;
+	padding-left:30px;
+	width:100px;
+}
+#diff li img{
+	border:none;
+	height:30px;
+	width:30px; 
+}
+#tbox{
+	height:380px;
+	margin-top:168px;
+	position:absolute;
+	text-align:center;
+	width:480px;
+}
+.easy-table{
+	margin-left:128px;
+}
+.common-table{
+	margin-left:88px;
+}
+.hard-table{
+	margin-left:58px;
+}
+#tab{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+#tab td{
+	border:1px solid #ccc;
+	height:36px;
+	padding:0;
+	text-align:center;
+	width:36px;
+}
+#tab td img{
+	cursor:pointer;
+	height:28px;
+	width:28px;
+}
+img.click{
+	border:2px solid #f22;
+}
+#menu{
+	margin-left:600px;
+	overflow:hidden;
+	position:absolute;
+	top:60px;
+	width:132px;
+}
+.menu-list,.count-list{
+	background:url(../images/menuebg.png) no-repeat center;
+	cursor:pointer;
+	font-size:16px;
+	height:30px;
+	line-height:30px;
+	margin-bottom:20px;
+	text-align:center;
+	width:132px;
+}
+.count-list{
+	background:url(../images/numbg.png) no-repeat center;
+}
+.menu-list:hover{
+	background:url(../images/menuebghover.png) no-repeat center;
+}
+#rule{
+	background:url(../images/rulebg.png) no-repeat center;
+	display:none;
+	font-size:12px;
+	height:110px;
+	line-height:20px;
+	padding:10px 20px 0;
+	position:absolute;
+	margin-left:560px;
+	top:280px;
+	width:120px;
+}
+

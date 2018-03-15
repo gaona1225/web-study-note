@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>sort</title>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		var len = $('tbody tr').length ;	
+		var reverseBol = 1 ;
+		$('.num').click(function(){
+			if(reverseBol>0){
+				sortTr() ;
+			}else{
+				reverseTr() ;
+			}
+			reverseBol = -reverseBol ;
+		}) ;
+		
+		function sortTr(){
+			for(var i=0; i<len; i++){
+				for(var j=len-1; j>i; j--){
+					var frontTrTxt = $('tbody tr').eq(j-1).children('td:first').html() ;
+					var backTrTxt = $('tbody tr').eq(j).children('td:first').html() ;
+					if(parseInt(frontTrTxt)>parseInt(backTrTxt)){
+						var temp = $('tbody tr').eq(j-1).html() ;
+						$('tbody tr').eq(j-1).html($('tbody tr').eq(j).html()) ;
+						$('tbody tr').eq(j).html(temp) ;
+					}
+				}
+			}
+		}
+		
+		function reverseTr(){
+			for(var i=0; i<len; i++){
+				for(var j=len-1; j>i; j--){
+					var frontTrTxt = $('tbody tr').eq(j-1).children('td:first').html() ;
+					var backTrTxt = $('tbody tr').eq(j).children('td:first').html() ;
+					if(parseInt(frontTrTxt)<parseInt(backTrTxt)){
+						var temp = $('tbody tr').eq(j-1).html() ;
+						$('tbody tr').eq(j-1).html($('tbody tr').eq(j).html()) ;
+						$('tbody tr').eq(j).html(temp) ;
+					}
+				}
+			}
+		}
+	}) ;
+</script>
+</head>
+
+<body>
+	<table cellpadding="0" cellpadding="0" border="1" width="200px">
+    	<thead>
+        	<tr>
+            	<td class="num">序号</td>
+                <td>姓名</td>
+            </tr>
+        </thead>
+        <tbody>
+        	 <tr>
+            	<td>3</td>
+                <td>zhangsan3</td>
+            </tr>
+        	<tr>
+            	<td>5</td>
+                <td>zhangsan5</td>
+            </tr>
+            <tr>
+            	<td>1</td>
+                <td>zhangsan1</td>
+            </tr>
+            <tr>
+            	<td>2</td>
+                <td>zhangsan2</td>
+            </tr>
+            <tr>
+            	<td>4</td>
+                <td>zhangsan4</td>
+            </tr>
+            <tr>
+            	<td>8</td>
+                <td>zhangsan8</td>
+            </tr>
+        	<tr>
+            	<td>10</td>
+                <td>zhangsan10</td>
+            </tr>
+            
+            <tr>
+            	<td>6</td>
+                <td>zhangsan6</td>
+            </tr>
+            <tr>
+            	<td>7</td>
+                <td>zhangsan7</td>
+            </tr>
+            <tr>
+            	<td>9</td>
+                <td>zhangsan9</td>
+            </tr>
+            <tr>
+            	<td>15</td>
+                <td>zhangsan15</td>
+            </tr>
+            <tr>
+            	<td>19</td>
+                <td>zhangsan19</td>
+            </tr>
+            <tr>
+            	<td>0</td>
+                <td>zhangsan0</td>
+            </tr>
+            <tr>
+            	<td>1</td>
+                <td>zhangsan1</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

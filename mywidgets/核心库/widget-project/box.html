@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>前端插件库</title>
+<link rel="stylesheet" type="text/css" href="helpBase/base/reset.css">
+<link rel="stylesheet" type="text/css" href="helpBase/skins/default/style.css">
+<link rel="stylesheet" type="text/css" href="helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+<script src="helpBase/base/jquery-1.5.2.min.js"></script>
+<script src="helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="helpBase/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script src="helpBase/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="helpBase/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script>
+$(function(){
+	$("a").fancybox({
+				'width'				: '75%',
+				'height'			: '75%',
+				'autoScale'			: true,
+				'transitionIn'		: 'elastic',
+				'transitionOut'		: 'elastic',
+				'type'				: 'iframe'
+			});
+});
+</script>
+</head>
+
+<body>
+<a href="helpDoc/form-buttons-buttonActive.html">推荐按钮（buttonActive）</a> 
+<a href="helpDoc/form-buttons-buttonPro.html">标准按钮（buttonPro）</a>
+</body>
+</html>

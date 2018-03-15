@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="../button/button.js"></script>
+<script src="userinfo.js"></script>
+<script src="../initialize/initialize.js"></script>
+<script>
+$(function(){
+$(".q").mouseover(function(){
+	var offset = $(this).offset();
+	$(document).userInfo({
+			x:offset.left,//横向 
+			y:offset.top,//纵向 
+			name:"张勇辉",//姓名
+			photo:"images/userinfo/user.png",//照片 
+			org:"金和软件",//机构 
+			duty:"前端架构",//职位 
+			mobi:"1368368946x",//手机 
+			phone:"0105869856",//电话 
+			btnFn:function(){
+					top.location="http://www.uedcool.com/";
+			},//寻呼事件 
+			hand:"lb",//箭头方向，可选参数:lb rb lt rt l r
+			status:"images/userinfo/evection.png",//状态图标 
+			statusTxt:"出差"//状态文字 
+		});
+	});
+ });
+</script>
+</head>
+<body>
+
+<div style="position:absolute; top:100px; left:100px; background-color:#009900" class="q">aaaaaaaaaaaa</div>
+<div style="position:absolute; top:100px; left:500px; background-color:#009900" class="q">aaaaaaaaaaaa</div>
+<div style="position:absolute; top:500px; left:100px; background-color:#009900" class="q">aaaaaaaaaaaa</div>
+<div style="position:absolute; top:500px; left:500px; background-color:#009900" class="q">aaaaaaaaaaaa</div>
+<div style="position:absolute; top:300px; left:300px; background-color:#009900" class="q">aaaaaaaaaaaa</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollBar</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="scrollBar.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('.ui-scrollBar').scrollBar({
+		});	
+		$('#clearWid').click(function(){
+			$('#testClear').scrollBar('destory') ;
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+<input type="button" value="清除插件" class="buttonActive" id="clearWid" /><br/>
+<ul class="ui-scrollBar">
+    <li>aaaaaaaaaaaa</li>
+    <li>bbbbbbbbbbbb</li>
+    <li>cccccccccccc</li>
+    <li>dddddddddddd</li>
+    <li>eeeeeeeeeeee</li>
+    <li>ffffffffffff</li>
+    <li>gggggggggggg</li>
+    <li>hhhhhhhhhhhh</li>
+    <li>iiiiiiiiiiii</li>
+    <li>jjjjjjjjjjjj</li>
+    <li>kkkkkkkkkkkk</li>
+    <li>llllllllllll</li>
+    <li>mmmmmmmmmmmm</li>
+    <li>nnnnnnnnnnnn</li>
+    <li>oooooooooooo</li>
+    <li>pppppppppppp</li>
+    <li>qqqqqqqqqqqq</li>
+    <li>rrrrrrrrrrrr</li>
+    <li>ssssssssssss</li>
+    <li>tttttttttttt</li>
+    <li>uuuuuuuuuuuu</li>
+    <li>vvvvvvvvvvvv</li>
+    <li>wwwwwwwwwwww</li>
+    <li>xxxxxxxxxxxx</li>
+    <li>yyyyyyyyyyyy</li>
+    <li>zzzzzzzzzzzz</li>
+    <li>aaaaaaaaaaaa</li>
+    <li>bbbbbbbbbbbb</li>
+    <li>cccccccccccc</li>
+    <li>dddddddddddd</li>
+    <li>eeeeeeeeeeee</li>
+    <li>ffffffffffff</li>
+    <li>111111111111</li>
+</ul>
+<ul class="ui-scrollBar" id="testClear">
+    <li>aaaaaaaaaaaa</li>
+    <li>bbbbbbbbbbbb</li>
+    <li>cccccccccccc</li>
+    <li>dddddddddddd</li>
+    <li>eeeeeeeeeeee</li>
+    <li>ffffffffffff</li>
+    <li>gggggggggggg</li>
+    <li>hhhhhhhhhhhh</li>
+    <li>iiiiiiiiiiii</li>
+    <li>jjjjjjjjjjjj</li>
+    <li>kkkkkkkkkkkk</li>
+    <li>llllllllllll</li>
+    <li>mmmmmmmmmmmm</li>
+    <li>nnnnnnnnnnnn</li>
+    <li>oooooooooooo</li>
+    <li>pppppppppppp</li>
+    <li>qqqqqqqqqqqq</li>
+    <li>rrrrrrrrrrrr</li>
+    <li>ssssssssssss</li>
+    <li>tttttttttttt</li>
+    <li>uuuuuuuuuuuu</li>
+    <li>vvvvvvvvvvvv</li>
+    <li>wwwwwwwwwwww</li>
+    <li>xxxxxxxxxxxx</li>
+    <li>yyyyyyyyyyyy</li>
+    <li>zzzzzzzzzzzz</li>
+    <li>aaaaaaaaaaaa</li>
+    <li>bbbbbbbbbbbb</li>
+    <li>cccccccccccc</li>
+    <li>dddddddddddd</li>
+    <li>eeeeeeeeeeee</li>
+    <li>ffffffffffff</li>
+    <li>222222222222</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Photo</title>
+
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+    
+     function success() {
+      //todo 
+    }
+    
+    function goBack() {
+      webViewApi.goBack(success,onFail);
+    }
+    
+    function goForward() {
+      webViewApi.goForward(success,onFail);
+    }
+    
+    function goForward() {
+      webViewApi.goForward(success,onFail);
+    }
+    
+    function reload() {
+      webViewApi.reload(success,onFail);
+    }
+    
+    function exitActivity() {
+      webViewApi.exitActivity(success,onFail);
+    }
+
+    </script>
+  </head>
+  <body>
+    <button onclick="goBack();">goBack</button> <br>
+     <hr color="red"> 
+    <button onclick="exitActivity();">exitActivity</button> <br>
+     <hr color="red"> 
+    <button onclick="reload();">reload[refresh]</button> <br>
+  </body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>answerque</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+
+
+
+
+
+<script>
+var url=location.search;  
+
+function getSearch(url){
+	var request = {}, str='',strs=[], strsSplit=[]; 
+	if(url.indexOf("?")!=-1){ 
+		str = url.substr(1) //去掉?号 
+		strs = str.split("&"); 
+		for(var i = 0, strsLen = strs.length; i<strsLen; i++){ 
+			strsSplit = strs[i].split("=");
+			request[ strsSplit[0]] = strsSplit[1]; 
+		}
+	}
+	return request;
+}
+var req = getSearch(url),qid = req['qid'];
+
+function webBack(){
+	if(u.indexOf('Android') > -1){
+		webViewApi.goBack(success,onFail);
+	}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+	 	webContrl.goBack(nativePluginResultHandler, nativePluginErrorHandler);
+	}
+}
+
+//android返回回调
+function onFail(message) {
+      alert('Failed because: ' + message);
+}
+    
+function success() {
+      //todo 
+}
+
+//返回方法回调
+function nativePluginResultHandler (result) {
+    
+}
+
+function nativePluginErrorHandler (error) {
+    
+}
+
+window.addEventListener('load',function(){
+	document.getElementById('back_btn').addEventListener('click',function(){
+		//todo
+		//phonegap 程序
+		//功能： 页面回退到question.html
+		webBack();
+	},false);
+	
+	answerqueLoad(qid);
+},false)
+
+function answerqueLoad(qid){
+	$.ajax({
+		url : "http://10.6.210.229:8080/wiki/findQuestion?appId=1&qid="+ qid +"&accessToken=a",
+		success : function(result) {
+			
+			var question = result['question'];
+			if (question['userName']) {
+				document.getElementById("header_h1").innerHTML =  question['userName'] + "的提问" ;
+			}
+			if (question['content']) {
+				document.getElementById("question_content").innerHTML =  question['content'] ;
+			}
+			
+			var pic, pics = [];
+			for(var i=1; i < 4; i+=1){
+				if(question['pic'+i]){
+					pics.push(question['pic'+i]);
+					pic = document.createElement("img");
+					pic.setAttribute('src',pics[i-1]);
+					document.getElementById("question_imgBox").appendChild(pic);
+				}
+			}
+			if (question['userName']) {
+				document.getElementById("question_time").innerHTML =  question['createTime'] ;
+			}
+			
+			 
+			
+		},
+		type : 'json'
+	});
+};
+
+</script>
+</head>
+<body>
+    <header class="header">
+        <a href="javascript:;" class="back_btn" id="back_btn"></a>
+        <h1 id="header_h1">百科问答</h1>
+    </header>
+   <div class="answerque_wrap">
+        <article class="question">
+            <p id="question_content"></p>
+            <div class="question_imgBox" id="question_imgBox"></div>
+            <div class="question_time" id="question_time"></div>
+        </article>
+        
+        <dl class="answer_list">
+            <dd class="info-tx">
+                <a href="#"><img src="img/tx.png" /></a>
+            </dd>
+            <dd class="info-tit">
+                <a href="#">赤炎の贵族</a>
+                <span>来自福州</span>
+                <span>今日12：30</span>
+            </dd>
+            <dd class="info-new"></dd>
+            <dd class="info-text"></dd>
+            <dd class="info-mes">不知道您说的是不是5.0里面更新的那个新兵种，据我 所知，游戏里面的衣服现实世界是没有销售的 </dd>
+        </dl>
+        <dl class="answer_list">
+            <dd class="info-tx">
+                <a href="#"><img src="img/tx.png" /></a>
+            </dd>
+            <dd class="info-tit">
+                <a href="#">赤炎の贵族</a>
+                <span>来自福州</span>
+                <span>今日12：30</span>
+            </dd>
+            <dd class="info-mes">不知道您说的是不是5.0里面更新的那个新兵种，据我 所知，游戏里面的衣服现实世界是没有销售的 </dd>
+        </dl>
+        <dl class="answer_list">
+            <dd class="info-tx">
+                <a href="#"><img src="img/tx.png" /></a>
+            </dd>
+            <dd class="info-tit">
+                <a href="#">赤炎の贵族</a>
+                <span>来自福州</span>
+                <span>今日12：30</span>
+            </dd>
+            <dd class="info-mes">不知道您说的是不是5.0里面更新的那个新兵种，据我 所知，游戏里面的衣服现实世界是没有销售的 </dd>
+        </dl>
+        <dl class="answer_list">
+            <dd class="info-tx">
+                <a href="#"><img src="img/tx.png" /></a>
+            </dd>
+            <dd class="info-tit">
+                <a href="#">赤炎の贵族</a>
+                <span>来自福州</span>
+                <span>今日12：30</span>
+            </dd>
+            <dd class="info-mes">不知道您说的是不是5.0里面更新的那个新兵种，据我 所知，游戏里面的衣服现实世界是没有销售的 </dd>
+        </dl>
+        <dl class="answer_list">
+            <dd class="info-tx">
+                <a href="#"><img src="img/tx.png" /></a>
+            </dd>
+            <dd class="info-tit">
+                <a href="#">赤炎の贵族</a>
+                <span>来自福州</span>
+                <span>今日12：30</span>
+            </dd>
+            <dd class="info-mes">不知道您说的是不是5.0里面更新的那个新兵种，据我 所知，游戏里面的衣服现实世界是没有销售的 </dd>
+        </dl>
+        <dl class="answer_list">
+            <dd class="info-tx">
+                <a href="#"><img src="img/tx.png" /></a>
+            </dd>
+            <dd class="info-tit">
+                <a href="#">赤炎の贵族</a>
+                <span>来自福州</span>
+                <span>今日12：30</span>
+            </dd>
+            <dd class="info-mes">不知道您说的是不是5.0里面更新的那个新兵种，据我 所知，游戏里面的衣服现实世界是没有销售的 </dd>
+        </dl>
+        <div class="tool"><a href="#"><i></i><input type="button" value="点击回答问题" /></a></div>
+        <div class="answer_input">
+        	<a href="#" class="camera" id="questionCamera"><i></i></a>
+            <div class="ans_input"><textarea placeholder="在此输入回答" onFocus="return fasle ;"></textarea></div>
+        	<a href="#" class="ans"><i></i></a>
+        </div>
+   </div>
+   <div><img style="display:none;" id="largeImage" src="" /></div>
+    <div id="image-options"></div>
+    <div id="info" style="white-space: pre-wrap;">
+        <b style="display:none;">Status:</b> <div id="camera_status" style="display:none;"></div>
+        <img width="100" id="camera_image">
+            <canvas id="canvas" width="1" height="1"></canvas>
+    </div>
+    <script language="javascript">
+		
+		var u = navigator.userAgent ;
+		if(u.indexOf('Android') > -1){	
+			function onSuccessCallBack(imageURI){
+				alert("iamge url:"+imageURI);
+				//TODO
+				var img = document.getElementById('largeImage') ;
+				img.src = imageURI ;
+				img.style.display = 'block' ;
+			}
+			
+			document.write("<script lanague=\"javascript\" src=\"www/android/www/cordova.js\"><\/scri"+"pt>") 
+			document.getElementById('questionCamera').onclick = function(){
+				navigator.upload.uploadImage(onSuccessCallBack)
+			}
+		}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+			// alert('ios') ;
+			document.write("<script lanague=\"javascript\" src=\"www/ios/www/cordova-incl.js\"><\/scri"+"pt>") ;
+			// document.write("<script lanague=\"javascript\" src=\"www/ios/www/main.js\"><\/scri"+"pt>") ;
+			// document.write("<script lanague=\"javascript\" src=\"www/ios/www/plugins/org.apache.cordova.webviewapi/www/CyouWebViewApi.js\"><\/scri"+"pt>") ;
+			var deviceReady = false;
+			var platformId = null;
+			var CameraPopoverOptions = null;
+			var pictureUrl = null;
+			var fileObj = null;
+			var fileEntry = null;
+			var pageStartTime = +new Date();
+			
+			//default camera options
+		
+			//-------------------------------------------------------------------------
+			// Camera
+			//-------------------------------------------------------------------------
+		
+		    function log(value) {
+		        console.log(value);
+		        document.getElementById('camera_status').textContent += (new Date() - pageStartTime) / 1000 + ': ' + value + '\n';
+		    }
+		
+			//
+			function onGetPictureError(e) {
+				log('Error getting picture: ' + e.code);
+			}
+		
+			//服务器图片url地址回调
+			function getImageUrl(data){
+				
+				log('--url'+data.pic);
+				alert("iamge url:"+data.pic);
+				//TODO
+				var img = document.getElementById('camera_image') ;
+				img.src = data.pic ;
+				img.style.display = 'block' ;
+			}
+		
+		
+			function getPicture() {
+		
+				var popoverHandle = navigator.camera.getPicture(getImageUrl, onGetPictureError);
+			}
+		
+			function logCallback(apiName, success) {
+				return function() {
+					log('Call to ' + apiName + (success ? ' success: ' : ' failed: ') + JSON.stringify([].slice.call(arguments)));
+				};
+			}
+		
+			/**
+			 * Function called when page has finished loading.
+			 */
+			function init() {
+				document.addEventListener("deviceready", function() {
+					deviceReady = true;
+					platformId = cordova.require('cordova/platform').id;
+					CameraPopoverOptions = cordova.require('org.apache.cordova.camera.CameraPopoverOptions');
+					console.log("Device="+device.platform+" "+device.version);
+								  
+				}, false);
+				window.setTimeout(function() {
+					if (!deviceReady) {
+						alert("Error: Apache Cordova did not initialize.  Demo will not run correctly.");
+					}
+				},1000);
+			};
+			init();
+			document.getElementById('questionCamera').onclick = function(){
+				alert('click') ;
+				getPicture() ;
+			}
+		}
+	
+    </script>
+</body>
+</html>

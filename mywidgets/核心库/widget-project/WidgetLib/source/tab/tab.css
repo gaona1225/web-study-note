@@ -1,0 +1,188 @@
+/*
+ *作    者: 张文钦
+ *作    者: 万莎
+ *版    本: 1.0
+ *完成时间: 2011-10-18
+ *描    述: tab
+ *关联文件: reset.css|jquery-ui.css
+ */
+.ui-tab>dt {
+	float: left;
+	margin-right: 5px;
+	font-size: 12px;
+}
+/*
+ *  修改@zhng,2012-5-3
+	选项卡 iframe切换loading
+	使用:(脚本自动追加)
+		<div class="tab-iframe-module"></div>
+*/
+.tab-iframe-module {
+	overflow: hidden;
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+	filter: alpha(style=0, opacity=10);
+	-moz-opacity: .1;
+	opacity: .1;
+	z-index: 9
+}
+.ui-tabMin {
+	clear: both;
+	display: block;
+	border-bottom: 1px solid #acacac;
+	height: 27px;
+	line-height: 27px;
+	font-size: 12px;
+	font-family: "宋体", Arial Helvetica, sans-serif;
+}
+.ui-tabMin>dt {
+	cursor: pointer;
+	float: left;
+	height: 26px;
+	line-height: 26px;
+	margin-right: 5px;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: none;
+	min-width: 75px;
+	padding: 0 5px;
+}
+.ui-tabMin>dt.normal {
+	background-color: #e4e4e4;
+	border-left: 1px solid #d1d1d1;
+	border-right: 1px solid #d1d1d1;
+	border-top: 1px solid #d1d1d1;
+	color: #666;
+}
+.ui-tabMin>dt.active {
+	border-color: #cdcdcd #cdcdcd #fff;
+	border-style: solid;
+	border-width: 1px;
+	font-weight: bold;
+}
+/**
+ * tabPro
+*/
+.ui-tabPro {
+	clear: both;
+	margin-top: 10px;
+	height: 26px;
+	border-bottom: 1px solid #b2d0ea;
+}
+.ui-tabPro>dt {
+	text-decoration: none;
+	width: 90px;
+	height: 25px;
+	line-height: 25px;
+	margin-right: 5px;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+}
+.ui-tabPro>dt.active {
+	border-top: 1px solid #b2d0ea;
+	border-right: 1px solid #b2d0ea;
+	border-left: 1px solid #b2d0ea;
+	border-bottom: 1px solid #ffffff;
+	color: #000000;
+}
+.ui-tabPro>dt.normal {
+	border-top: 1px solid #b2d0ea;
+	border-right: 1px solid #b2d0ea;
+	border-left: 1px solid #b2d0ea;
+	background: url("images/tabPro/tabPro.png");
+	color: #003399;
+}
+/*竖直-左*/
+.ui-tabMin-rl {
+	float: left;
+	display: inline-block;
+	width: 31px;
+	border-right: 1px solid #acacac;
+	font-size: 12px;
+	font-family: "宋体", Arial Helvetica, sans-serif;
+}
+.ui-tabMin-rl>dt {
+	clear: left;
+	cursor: pointer;
+	width: 20px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 18px;
+	height: 40px;
+	vertical-align: middle;
+	padding: 0 5px;
+	write-mode: tb-rl;
+}
+.ui-tabMin-rl>dt.normal {
+	background-color: #e4e4e4;
+	border-top: 1px solid #d1d1d1;
+	border-bottom: 1px solid #d1d1d1;
+	border-left: 1px solid #d1d1d1;
+	color: #666;
+}
+.ui-tabMin-rl>dt.active {
+	border-color: #cdcdcd #fff #cdcdcd #cdcdcd;
+	border-style: solid;
+	border-width: 1px;
+	font-weight: bold;
+}
+/**
+ * @descript tabMenu菜单选项卡
+ * @author huanghui	
+ * @date 2012-12-7
+ */
+.ui-tabMenu {
+	clear: both;
+	margin-top: 10px;
+	height: 32px;
+	border-bottom: 1px solid #bbbbbb;
+	/*background-image:url(images/tabPro/tabMenu-bg.png);*/
+	font-size:14px;
+	background-color:#fefefe;/**换肤*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f1f1f1)); /* Safari 4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #fefefe, #f1f1f1); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(top, #fefefe, #f1f1f1); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(top, #fefefe, #f1f1f1); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(to bottom, #fefefe, #f1f1f1); /* Firefox 16+, IE10, Opera 12.50+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefefe', EndColorStr='#f1f1f1');  /*IE6–IE9 */
+
+}
+.ui-tabMenu>dt {
+	text-decoration: none;
+	width: 90px;
+	height: 28px;
+	line-height: 28px;
+	margin-right: 0px;
+	float: left;
+	font-size:14px;
+	text-align: center;
+	margin:0 2px;
+	cursor: pointer;
+	padding-right:2px;
+	border-right:1px solid #ddd;	
+}
+.ui-tabMenu>dt.normal {
+	color: #000;
+}
+.ui-tabMenu>dt.active ,.ui-tabMenu>dt:hover{
+	color: #fff;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	background-color: #1f609d;/**换肤*/
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#1f609d), to(#4d94e3)); /* Safari 4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #1f609d, #4d94e3); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+	background-image: -moz-linear-gradient(top, #1f609d, #4d94e3); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(top, #1f609d, #4d94e3); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(to bottom, #1f609d, #4d94e3); /* Firefox 16+, IE10, Opera 12.50+ */
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#1f609d', EndColorStr='#4d94e3');  IE6–IE9 */
+}
+

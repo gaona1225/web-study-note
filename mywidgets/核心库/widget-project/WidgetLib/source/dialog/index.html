@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>浮动容器插件API</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="dialog.css"/>
+    <!--testCase-->
+    <style>
+        #testCase {
+            margin: 300px 0 0 450px;
+            margin-left: 1000px;
+            margin-top: 100px;
+            max-width: 168px;
+            border: 1px solid red;
+            background-color: #f1f2f3;
+            padding: 12px; /*测试鼠标移入移出事件执行*/
+        }
+
+        ul, li {
+            list-style-type: none;
+            line-height: 35px;
+        }
+
+        #testCase li:nth-child(2n) {
+            background-color: #f1f1d1;
+        }
+
+        #testCase li:nth-child(2n+1) {
+            background-color: #d1e1f1;
+        }
+
+        #testCase li {
+            margin: 14px 0;
+        }
+    </style>
+    <!--<script src="../../jquery/jquery-1.5.2.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="dialog.js"></script>
+</head>
+<body>
+<!--/测试代码-->
+<ul id="testCase">
+    <li>@zhng</li>
+    <li>@zhngwing</li>
+    <li>@zhangwq</li>
+    <li id="liChild">尖角处</li>
+</ul>
+<script>
+    var $testCase = $("#testCase");
+//    $testCase.dialog({
+//        event:"customEvent",
+//        type:"iframe",
+//        url:"readme.md"
+//    });
+//    $testCase.dialog({
+//        fixSize:false,
+//        width:"200px",
+//        height:"300px",
+//        event:"hover",
+//        type:"ajax",
+//        url:"readme.md",
+//        ajaxCallBack:function(){
+//            console.log("ajaxCallback");
+//        },
+//        lifecycle:0
+//    });
+//        $testCase.dialog({
+//            event:"hover"
+//        });
+//    $testCase.dialog({
+//        event:"focus"
+//    });
+    $testCase.dialog({
+        event:"customEvent"
+    });
+    setInterval(function(){
+        $testCase.trigger("customEvent");
+    },3000);
+</script>
+</body>
+</html>

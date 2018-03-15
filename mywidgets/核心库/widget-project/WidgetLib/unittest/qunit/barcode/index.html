@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>barcode单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/base/reset.css" />
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="jquery-barcode-2.0.1.js"></script>
+<script language="javascript" src="barcodeTest.js"></script>
+<style type="text/css">
+	fieldset {margin: 10px auto;padding: 10px;}
+	select {width:150px;}
+	dl {line-height: 150%;}
+	dl dt, dl dd {height:21px;line-height:23px;}
+	dl dt {float:left;padding-right:8px;width:90px;text-align:right;}
+	input[type="button"] {height:30px;width:81px;}
+</style>
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+    <fieldset>
+        <legend>(0)待编码的数字</legend>
+        <dl>
+            <dt>数字</dt>
+            <dd><input type="text" name="" id="codeNum" value="123456789"/></dd>
+        </dl>
+    </fieldset>
+    <fieldset>
+        <legend>(1)编码格式</legend>
+        <dl>
+            <dt>type</dt>
+            <dd>
+                <select name="" id="type">
+                    <option value="ean8">EAN 8</option>
+                    <option value="ean13">EAN 13</option>
+                    <option value="std25">standard 2 of 5(industrial)</option>
+                    <option value="int25">interleaved 2 of 5</option>
+                    <option value="code11">code 11</option>
+                    <option value="code39">code 39</option>
+                    <option value="code93">code 93</option>
+                    <option value="code128">code 128</option>
+                    <option value="codabar">codabar</option>
+                    <option value="msi">MSI</option>
+                    <option value="datamatrix">Data Matrix</option>
+                </select>
+            </dd>
+        </dl>
+    </fieldset>
+    <fieldset>
+        <legend>(2)显示控制参数</legend>
+        <dl>
+            <dt>barWidth</dt>
+            <dd>
+                <input type="text" name="" id="barWidth" value="1"/>条码竖杠的宽
+            </dd>
+            <dt>barHeight</dt>
+            <dd>
+                <input type="text" name="" id="barHeight" value="50"/>条码竖杠的高
+            </dd>
+            <dt>moduleSize</dt>
+            <dd>
+                <input type="text" name="" id="moduleSize" value="5"/>
+            </dd>
+            <dt>showHRI</dt>
+            <dd>
+                <select name="" id="showHRI">
+                    <option value="-1">是否显示编码的数字</option>
+                    <option value="true" selected="selected">显示</option>
+                    <option value="false">不显示</option>
+                </select>
+            </dd>
+            <dt>bgColor</dt>
+            <dd>
+                <input type="text" name="" id="bgColor" value="#FFFFFF"/>条码背景色
+            </dd>
+            <dt>color</dt>
+            <dd>
+                <input type="text" name="" id="color" value="#000000"/>条码色
+            </dd>
+            <dt>fontSize</dt>
+            <dd>
+                <input type="text" name="" id="fontSize" value="10"/>条码字体大小
+            </dd>
+            <dt>posX</dt>
+            <dd>
+                <input type="text" name="" id="posX" value="0"/>在canvas画布下的坐标x
+            </dd>
+            <dt>posY</dt>
+            <dd>
+                <input type="text" name="" id="posY" value="0"/>在canvas画布下的坐标y
+            </dd>
+        </dl>
+    </fieldset>
+    <fieldset>
+        <legend>(3)渲染方式</legend>
+        <dl>
+            <dt>output</dt>
+            <dd>
+                <select name="" id="output">
+                    <option value="css" selected="selected">css</option>
+                    <option value="svg">svg</option>
+                    <option value="bmp">bmp</option>
+                    <option value="canvas">canvas</option>
+                </select>
+                ie只有css方式支持
+            </dd>
+        </dl>
+    </fieldset>
+    <input type="button" value="执行生成" id="generate"/>
+    <div id="result"></div>
+</div>
+</body>
+</html>

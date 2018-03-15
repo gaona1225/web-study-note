@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Widget类插件-进度条-微型进度条</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.minProgressBar.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>微型进度条插件（minProgressBar）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>微型进度条插件，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> minProgressBar(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+			<p>
+			  <label class="help-item">class：</label>
+			 （字符） 参数："minProgressBar"</p>
+			<p>
+              <label class="help-item">value：</label>
+             （字符） 百分比数字，不包含"%"</p>
+			<p>
+			  <label class="help-item">data-color：</label>
+			 （字符） 进度条填充颜色："gray","blue","red","purple","yellow","green"</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+             <p><label class="help-item">destroy()：</label>
+             用于销毁该插件，使输入框恢复为原生的状态。</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+            微型进度条</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">         
+				<input id="bar" name="" type="text" value="50.0" class="minProgressBar" data-color="blue"/>            
+			</div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">           
+			&lt;input id="bar" name="" type="text" value="50.0" class="minProgressBar" data-color="blue"/> 
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

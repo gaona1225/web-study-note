@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>touch view demo index</title>
+    <style type="text/css">
+        * {padding:0;margin:0;}
+        ul, li{list-style:none;}
+        .clearfix {clear:both;}
+        .touch_view {}
+        .touch_view .nav {overflow:hidden;background-color:rgb(243, 243, 243);color:rgb(81, 81, 81);font-weight:bold;}
+        /*.touch_view .nav:after {content:'',display:block;clear:both;}*/
+        .touch_view .nav ul {}
+        .touch_view .nav ul li {float:left;width:25%;height:40px;line-height:40px;text-align:center;}
+        .touch_view .nav ul li>div {display:inline-block;position:relative;}
+        .touch_view .nav ul li>div>span {}
+        .touch_view .nav ul li>div>div.nav_hint {position:absolute;bottom:1px;height:2px;width:100%;}
+        .touch_view .nav ul li.current {color:rgb(186, 38, 54);}
+        .touch_view .nav ul li.current>div>div.nav_hint {background-color:rgb(186, 38, 54);}
+
+        .touch_view .content {overflow:hidden;}
+        .touch_view .content ul {}
+        .touch_view .content ul li {float:left;height:220px;}
+        .touch_view .content ul li:nth-child(2n) {background-color:red;}
+        .touch_view .content ul li:nth-child(2n+1) {background-color:green;}
+    </style>
+</head>
+<body>
+    <!-- div.touch_view>(div.nav>ul>(li>div>span{标题$}+div.nav_hint)*4)+(div.clearfix.content>ul>(li>div.page[data-page=$]{视图$})*4) -->
+    <div class="touch_view" id="slide1">
+        <div class="nav">
+            <ul>
+                <li data-nid="nid1" data-nurl="ajaxData.json" data-page="0" data-loaded="false">
+                    <div>
+                        <span>标题1</span>
+                        <div class="nav_hint"></div>
+                    </div>
+                </li>
+                <li data-nid="nid2" data-nurl="ajaxData.json" data-page="1" data-loaded="false">
+                    <div>
+                        <span>标题2</span>
+                        <div class="nav_hint"></div>
+                    </div>
+                </li>
+                <li data-nid="nid3" data-nurl="ajaxData.json" data-page="2" data-loaded="false">
+                    <div>
+                        <span>标题3</span>
+                        <div class="nav_hint"></div>
+                    </div>
+                </li>
+                <li data-nid="nid4" data-nurl="ajaxData.json" data-page="3" data-loaded="false">
+                    <div>
+                        <span>标题4</span>
+                        <div class="nav_hint"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix content">
+            <ul>
+                <li>
+                    <div class="page" data-page="0">视图1</div>
+                </li>
+                <li>
+                    <div class="page" data-page="1">视图2</div>
+                </li>
+                <li>
+                    <div class="page" data-page="2">视图3</div>
+                </li>
+                <li>
+                    <div class="page" data-page="3">视图4</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="touch_view" id="slide2">
+        <div class="nav">
+            <ul>
+                <li data-nid="nid1" data-nurl="ajaxData.json" data-page="0" data-loaded="false">
+                    <div>
+                        <span>标题1</span>
+                        <div class="nav_hint"></div>
+                    </div>
+                </li>
+                <li data-nid="nid2" data-nurl="ajaxData.json" data-page="1" data-loaded="false">
+                    <div>
+                        <span>标题2</span>
+                        <div class="nav_hint"></div>
+                    </div>
+                </li>
+                <li data-nid="nid3" data-nurl="ajaxData.json" data-page="2" data-loaded="false">
+                    <div>
+                        <span>标题3</span>
+                        <div class="nav_hint"></div>
+                    </div>
+                </li>
+                <li data-nid="nid4" data-nurl="ajaxData.json" data-page="3" data-loaded="false">
+                    <div>
+                        <span>标题4</span>
+                        <div class="nav_hint"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix content">
+            <ul>
+                <li>
+                    <div class="page" data-page="0">视图1</div>
+                </li>
+                <li>
+                    <div class="page" data-page="1">视图2</div>
+                </li>
+                <li>
+                    <div class="page" data-page="2">视图3</div>
+                </li>
+                <li>
+                    <div class="page" data-page="3">视图4</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="https://raw.github.com/jquery/jquery-ui/master/ui/jquery.ui.core.js"></script>
+<script type="text/javascript" src="https://raw.github.com/jquery/jquery-ui/master/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript">
+    (!window.jQuery || !window.$) && document.write('<script type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"><\/script>');
+    (!jQuery.ui && document.write('<script type="text/javascript" src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"><\/script>'));
+</script> 
+<script type="text/javascript" src="touchView.js"></script>
+<script type="text/javascript">
+    (function () {
+        // jquery ui each?
+        $('div.touch_view>div.content').touchView({
+            // 更新导航标识
+            // 需要时加载数据
+            onTouchEnd: function (e, currentPage, prePage) {
+                if (currentPage === prePage) return;
+                var slideContext = this,
+                    navHolder = slideContext.navHolder,
+                    prevLi = navHolder.children[prePage],
+                    currentLi = navHolder.children[currentPage];
+                prevLi.className = '';
+                currentLi.className = 'current';
+                _dataload(currentLi, slideContext);   
+            },
+            onInit: function () {
+                //var $firstLi = $(this.navHolder).find('>li:first');
+                var slideContext = this;
+                var navHolder = this.navHolder;
+                var li = navHolder.firstElementChild;
+                li.className = 'current';
+                _dataload(li, slideContext);
+                // 初始化navHolder的点击事件
+                $(navHolder).delegate('li', 'click', function (e) {
+                    // 方式1
+                    // var $li = $(e.target).parents('li');
+                    // if ($li.is('.current')) return;
+                    // $li.attr('class', 'current').siblings('.current').removeAttr('class');
+                    // _dataload($li[0], slideContext);
+                    // slideContext.slideToPage($li.attr('data-page'), 0.5);
+                    // 方式2
+                    var target = e.target;
+                    while (target.nodeType === 3 || target.nodeName !== 'LI') target = target.parentNode;
+                    if (target.className === 'current') return;
+                    var _page = target.getAttribute('data-page');
+                    slideContext.navHolder.children[slideContext.currentPage].className = '';
+                    target.className = 'current';
+                    _dataload(target, slideContext);
+                    slideContext.slideToPage(_page, 0.5); 
+                });
+            }
+        });
+        // 工具:加载数据
+        function _dataload(liElem, context) {
+            // 如果未部署到服务器中 则不进行ajax处理  测试用
+            if (!/^http(s)?:\/\//.test(location.href)) return;
+            var $li = $(liElem);
+            var _loadedFlag = $li.attr('data-loaded') === 'true';
+            var _nid = $li.attr('data-nid');
+            var _nurl = $li.attr('data-nurl');
+            var _html = null;
+            if (!_loadedFlag) {
+                $.getJSON(_nurl, function (data) {
+                    $li.attr('data-loaded', 'true');
+                    _html = data[_nid];
+                    $(context.wrapper).find('div[data-page="'+$li.attr('data-page')+'"]').html(_html);
+                });
+            }
+        }
+    })();
+</script>
+</body>
+</html>

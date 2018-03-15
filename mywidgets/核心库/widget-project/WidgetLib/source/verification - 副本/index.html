@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>verification</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../bubble/bubble.js"></script>
+<script language="javascript" type="text/javascript" src="verification.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('#testBtn').click(function(){
+			$('#test').verification('vermobile');
+		}) ;
+		$('#testBtnString').click(function(){
+			$('#testString').verification('verstring');
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+手机号：<input type="text" class="verInput" data-verif="verMobile"/>
+<br/>字母串：<input type="text" class="verInput" data-verif="verString"/>
+<br/>无范围数字串：<input type="text" class="verInput" data-verif="verNumber"/>
+<br/>大于10小于100整数串：<input type="text" class="verInput" data-verif="verNumber" data-range="10,100"/>
+<br/>大于10小于100整数串：<input type="text" class="verInput" data-verif="verNumber" data-range="10,100,integer"/>
+<br/>大于10小于100百分数串：<input type="text" class="verInput" data-verif="verNumber" data-range="10,100,percentage"/>
+<br/>大于10小于100小数串：<input type="text" class="verInput" data-verif="verNumber" data-range="10,100,float"/>
+<br/>座机：<input type="text" class="verInput" data-verif="verPhone" data-range="10,50,float"/>
+<br/>email：<input type="text" class="verInput" data-verif="verEmail"/>
+<br/>url：<input type="text" class="verInput" data-verif="verUrl"/>
+<br/>IP：<input type="text" class="verInput" data-verif="verIP"/>
+<br/>时间：<input type="text" class="verInput" data-verif="verTime"/>
+<br/>待修改验证-手机号：<input type="text" class="verInput" id="test"  />
+<input type="button" value="修改验证" id="testBtn"/>
+<br/>待修改验证-字符串：<input type="text" class="verInput" id="testString"  />
+<input type="button" value="修改验证" id="testBtnString"/>
+</body>
+</html>

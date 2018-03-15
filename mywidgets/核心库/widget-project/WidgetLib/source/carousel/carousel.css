@@ -1,0 +1,27 @@
+/**
+*carousel
+*/
+.carousel{
+	margin:0 auto ;
+	overflow:hidden ;
+	position:relative ;
+}
+.carousel img{
+	border:1px solid #000 ;
+}
+.carousel .carouseLeft,.carousel .carouselRight{
+	bottom:20px ;
+	cursor:pointer ;
+	height:25px ;
+	overflow:hidden ;
+	position:absolute ;
+	width:29px ;
+}
+.carousel .carouseLeft{
+	background:url(images/carousel/button-right.png) no-repeat ;
+	right:20px ;
+}
+.carousel .carouselRight{
+	background:url(images/carousel/button-left.png) no-repeat ;
+	right:48px ;
+}

@@ -1,0 +1,6 @@
+@charset "utf-8";
+.ui-breadcrumb {overflow: hidden;float: left;background-color: white;}
+.ui-breadcrumb li {display: inline-block;float: left;height: 30px;line-height: 30px;vertical-align: middle;}
+.ui-breadcrumb li a {color: black;font-weight: normal;display: inline;}
+.ui-breadcrumb li .arrow{background:url("images/breadcrumb/ui-breadcrumb.png") no-repeat right center;display: inline-block;height: 5px;width: 3px;margin: 0 4px 2px;zoom:1;}
+.ui-breadcrumb li.last-child,.ui-breadcrumb li.last-child>a/*,.ui-breadcrumb li:last-child,.ui-breadcrumb li:last-child>a*/{font-weight: bold;}

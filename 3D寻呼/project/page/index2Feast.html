@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../JHsoft.UI.Lib/css/reset.css"/>
+<link rel="stylesheet" href="../JHsoft.UI.Lib/js/jquery-ui-1.8.11.custom/css/smoothness/jquery-ui-1.8.11.custom.css" />
+<link rel="stylesheet" href="../JHsoft.UI.Lib/skin/default/skin.css" />
+<script language="javascript" type="text/javascript" src="../js/jquery-1.4.1.min.js"></script>
+<script src="../JHsoft.UI.Lib/js/jquery-ui-1.8.11.custom/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="../JHsoft.UI.Lib/js/c6ui/c6ui.system.js"></script>
+<script language="javascript" type="text/javascript" src="../js/sha1.js"></script>
+<link type="text/css" rel="stylesheet" href="../skin/default/style/3dmodel22.css" />
+<script language="javascript" type="text/javascript" src="../js/org.js"></script>
+<script language="javascript" type="text/javascript" src="../js/3dmodel2.js"></script>
+<title>无标题文档</title>
+</head>
+
+<body><span class="addDesc">所属位置：2#east</span>
+	<div class="wrap">
+    	<div class="content">
+        	<script language="javascript" type="text/javascript">
+			$(function(){
+				deskCreate(-360,0,-60,-90,4,7) ;
+				deskCreate(350,0,-60,-90,3,3) ;
+				deskCreate(350,0,-660,-90,3,3) ;
+				pillarCreate(100,140,200,1) ;
+				pillarCreate(400,140,200,1) ;
+				pillarCreate(700,140,200,1) ;
+				pillarCreate(1000,140,200,1) ;
+				$('.desk').click(function(){
+					createPerMsg(this) ;
+				}) ;	
+				
+				//调用地址
+				var userLen = data.UserList.length ;
+				for(var i=0; i<userLen;i++){
+					//给桌子添加相关属性
+				//		$('.desk').eq(i).attr({'id':xmldeskID.eq(i).text(),'userphoto':xmlphoto.eq(i).text(),'userduty':xmlduty.eq(i).text(),'usermobi':xmlmobi.eq(i).text(),'userphone':xmlphone.eq(i).text()}) ;
+					$('.desk-per').eq(i).append('<input type="checkbox" id="' + data.UserList[i].UserId+ '" />'+data.UserList[i].UserName);
+					if(i%13==0){
+						$('.desk-per').eq(i).addClass('desk-per-girl') ;
+					}
+				}
+			}) ;
+		</script>
+        <div class="ground"><div class="Lground1"></div></div>
+        </div>
+    </div>
+</body>
+</html>

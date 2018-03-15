@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>question</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/draggable.js"></script> 
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+<script>
+var u = navigator.userAgent ;
+
+//url  search获取;
+var url=location.search;  
+function getSearch(url){
+	var request = {}, str='',strs=[], strsSplit=[]; 
+	if(url.indexOf("?")!=-1){ 
+		str = url.substr(1);
+		strs = str.split("&"); 
+		for(var i = 0, strsLen = strs.length; i<strsLen; i++){ 
+			strsSplit = strs[i].split("=");
+			request[ strsSplit[0]] = strsSplit[1]; 
+		}
+	}
+	return request;
+}
+var req = getSearch(url),qid = req['qid'] ,pics = [];
+
+//显示日期时间的处理函数;
+function getDates(time){
+	var times = {}, allTime = new Date(parseInt(time)).toLocaleString().replace(/年|月/g,"-").replace(/日/g,'').replace(/:\d{1,2}$/,'');   
+	times.allTime = allTime;
+	var day = allTime.split(" ");
+	times.day = day[0];
+	times.time = day[1];
+	return times;
+}
+function getTimes(infoTime,nowTime){   
+	if(!infoTime){
+		return;
+	}
+	if(!nowTime){
+		nowTime = new Date().getTime();
+	}
+	var nowT = getDates(nowTime),infoT = getDates(infoTime);
+	
+	if(nowT.day == infoT.day){
+		return '今日 '+infoT.time;
+	}else{
+		return infoT.day;
+	}
+}
+
+//问题加载的ajax;
+function answerqueLoad(qid){
+	$.ajax({
+		url : "http://10.6.210.229:8080/wiki/findQuestion?appId=1&qid="+ qid +"&accessToken=a",
+		success : function(result) {
+			
+			var question = result['question'] , questionTime = question['createTime'] , nowTime = result['time'] ,showQuestionTime = getTimes(questionTime,nowTime);
+			if (question['userName']) {
+				document.getElementById("header_h1").innerHTML =  question['userName'] + "的提问" ;
+			}
+			if (question['content']) {
+				document.getElementById("question_content").innerHTML =  question['content'] ;
+			}
+			
+			var pic,fullContent = '',browserWidth  = parseInt(document.documentElement.clientWidth,10) ;
+			for(var i=1; i < 4; i+=1){
+				if(question['pic'+i]){
+					pics.push(question['pic'+i]);
+					pic = document.createElement("img");
+					pic.setAttribute('src',pics[i-1]);
+					document.getElementById("question_imgBox").appendChild(pic);
+					fullContent += '<div class="content_list"><a href="question.html?appId=1&cid='+req['cid']+'&qid='+qid+'&accessToken=a" class="full_screen"><img src="'+ pics[i-1] +'"/></a></div>' ;
+					(function(j){	
+						pic.onclick = function(){
+							document.getElementById('photoView').style.display = 'block' ;
+							$_contentBox[0].style.webkitTransition = 'margin-left 0.3s linear';
+							$_contentBox[0].style.marginLeft = -(j-1)*browserWidth+"px";
+						}
+					})(i)
+				}
+			}
+			document.getElementById('content_box').innerHTML = fullContent ;
+			if (question['userName']) {
+				document.getElementById("question_time").innerHTML =  showQuestionTime;
+			}
+			
+			var answer = question["answer"] , content = "" ,showTime ='' ;
+			
+			for(var i=0 ,len = answer.length; i < len; i+=1){
+				
+				content = "";
+				if(!answer[i]['userPic']){
+					answer[i]['userPic'] = 'img/tx.png';
+				}
+				
+				if(answer[i]['isBest']){
+					// isBest
+				}
+				showTime = getTimes(answer[i]['createTime'],nowTime);
+				content += '<a target="_blank" class="answer_lista" href="answercon.html?appId=1&qid='+ qid +'&accessToken=a">'
+				 		 + '<dl class="answer_list">'
+						 + '<dd class="info-tx">'
+						 + '<img src="'+ answer[i]['userPic'] +'" />'
+						 + '</dd>'
+						 + '<dd class="info-tit">'
+						 + '<span>'+ answer[i]['userName'] +'</span>'
+						 + '<span>'+ answer[i]['address'] +'</span>'
+						 + '<span>'+ showTime +'</span>'
+						 + '</dd>'
+						 + '<dd class="info-new"></dd>'
+						 + '<dd class="info-text"></dd>'
+						 + '<dd class="info-mes">'+ answer[i]['content'] +'</dd>'
+						 + '</dl>'
+						 + '</a>';
+				var section = document.createElement("section");
+				section.innerHTML = content;
+				document.getElementById("answer_listBox").appendChild(section) ;
+			}
+		},
+		type : 'json'
+	});
+};
+
+window.addEventListener('load',function(){
+
+	var answerQueUrl  = "evaluate.html?appId=1&qid="+ qid + "&cid="+ req['cid'] +"&type=1&accessToken=a" ;   
+	document.getElementById("answer_que").setAttribute("href",answerQueUrl) ;
+
+	answerqueLoad(qid);
+	
+	function showFullPic(){
+	}
+	
+	var browserWidth  = parseInt(document.documentElement.clientWidth,10),
+			iframeHeight  = parseInt(document.documentElement.clientHeight,10) + "px" ;
+			$_contentBox = $("#content_box");
+		$("#content").css("height",iframeHeight);
+		$(".photo_view").css("height",iframeHeight);
+		
+		var top = "none", bottom = "none";
+		
+		$_contentBox.bind("webkitTransitionEnd", function(){$("#content_box")[0].style.webkitTransition = "";} );
+		$_contentBox.dragMargin({
+			start: function(event,position){
+				console.log('ff') ;
+				event.stopPropagation();
+				position.left = position.endX;
+			},
+			drag: function(event,position){
+				event.stopPropagation();
+			},
+			
+			dragContentY : function(event,position,y){
+				event.stopPropagation();
+				
+			},
+			
+			dragContentYend : function(event,position,y){
+						
+			},
+			
+			end: function(event,position,dom){
+				var startX = position.left, //拖拽前的X值
+					endX = position.endX, //拖拽后的X值
+					length = endX - startX; //拖拽前 - 拖拽后  =  拖拽方向 和 拖拽距离
+				
+				count = Math.floor(endX / browserWidth);
+				 
+				//right -->
+				if(length>0){
+					if(length < 40 || (length > 40 && count == 0)){
+						dom.style.webkitTransition = 'margin-left 0.3s linear';
+						dom.style.marginLeft = startX+"px";
+					}else{
+						count = count+1;
+						
+						dom.style.webkitTransition = 'margin-left 0.3s linear';
+						dom.style.marginLeft = count*browserWidth + "px";			
+					}
+				}
+				//left <--
+				if(length<0){
+					if(length > -40){
+						dom.style.webkitTransition = 'margin-left 0.3s linear';
+						dom.style.marginLeft =  startX+"px";
+						count = count +1 ;
+					}
+					else{
+						dom.style.webkitTransition = 'margin-left 0.3s linear';
+						if(count< -2 ){
+							dom.style.marginLeft =  -2*browserWidth+"px" ;
+							count = -2;
+						}else{
+							dom.style.marginLeft = count*browserWidth+"px";
+						}
+					}
+				}
+			}	
+		});
+},false)
+</script>
+</head>
+<body>
+   <header class="header">
+        <a href="javascript:;" class="back_btn" id='back_btn'></a>
+        <h1 id="header_h1">百科问答</h1>
+    </header>
+   <div class="answerque_wrap">
+        <article class="question">
+            <p id="question_content"></p>
+            <div class="question_imgBox" id="question_imgBox"></div>
+            <div class="question_time" id="question_time"></div>
+        </article>
+        <section class="answer_listBox" id="answer_listBox">
+             
+        </section>
+        <div class="tool"><a href="" id="answer_que"><i></i><input type="button" value="点击回答问题" /></a></div>
+   </div>
+   <div class="photo_view" id="photoView">
+   		<div class="content" id="content">
+            <div class="content_box" id="content_box">
+            </div>    
+        </div>
+   </div>
+<script>
+if(u.indexOf('Android') > -1){
+	document.write("<script lanague=\"javascript\" src=\"www/android/www/cordova.js\"><\/scri"+"pt>") 
+	
+}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+
+	document.write("<script lanague=\"javascript\" src=\"www/ios/www/cordova-incl.js\"><\/scri"+"pt>") ;
+}
+
+function webBack(){
+	if(u.indexOf('Android') > -1){
+		webViewApi.goBack(success,onFail);
+	}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+	 	webContrl.goBack(nativePluginResultHandler, nativePluginErrorHandler);
+	}
+}
+//android返回回调
+function onFail(message) {
+      alert('Failed because: ' + message);
+}
+    
+function success() {
+      //todo 
+}
+
+//返回方法回调
+function nativePluginResultHandler (result) {
+    
+}
+
+function nativePluginErrorHandler (error) {
+    
+}
+document.getElementById('back_btn').addEventListener('click',function(){
+	//todo
+	//phonegap 程序
+	//功能： 页面回退到首页
+	webBack();
+
+},false);
+
+</script>
+</body>
+</html>

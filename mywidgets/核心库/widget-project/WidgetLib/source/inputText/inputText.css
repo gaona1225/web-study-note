@@ -1,0 +1,29 @@
+/**
+ * inputText
+ * modify huanghui 2012-10-10 
+ * description ：v1.3版本，添加圆角和边框阴影效果
+*/
+.ui-inputText {
+	border: 1px solid #c5c5c5;
+	padding: 1px;
+	height: 20px;
+	line-height: 20px;
+	background-color: #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.ui-inputText-active {
+	border: 1px solid #3399ff;
+	border-color: rgba(82, 168, 236, 0.8);
+	outline: 0;
+	outline: thin dotted \9;
+	/* IE6-9 */
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+.ui-inputText[disabled="disabled"] {
+	border: 1px solid #dddddd;
+	background-color: #FFF;
+}

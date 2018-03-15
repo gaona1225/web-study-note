@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+<script src="jquery-1.5.2.min.js"></script>
+<script src="../jquery.cycle.all.js"></script>
+<!--<script src="../jquery.cycle.lite.js"></script>-->
+<script>
+	$(function(){
+		$('#s1,#s2').cycle({
+			fx: "turnUp",
+			 timeout:1000,
+			 delay: 1000
+		});
+	}) ;
+</script>
+<style>
+.pics {  
+    height:  121px;  
+    width:   164px;  
+    padding: 0;  
+    margin:  0;  
+	overflow:hidden ;
+} 
+ 
+.pics img {  
+    padding: 15px;  
+    border:  1px solid #ccc;  
+    background-color: #eee;  
+    width:  134px; 
+    height: 91px; 
+    top:  0; 
+    left: 0 ;
+} 
+.pics2 {  
+    height:  121px;  
+    width:   164px;  
+    padding: 0;  
+    margin:  0;  
+	overflow:hidden ;
+} 
+.pics2 .divElem {  
+    padding: 15px;  
+    border:  1px solid #ccc;  
+    background-color: #eee;  
+    width:  134px; 
+    height: 91px; 
+    top:  0; 
+    left: 200 
+} 
+</style>
+</head>
+
+<body>
+<div class="pics" id="s1"> 
+    <img src="1.jpg" /> 
+    <img src="2.jpg" /> 
+    <img src="3.jpg" /> 
+</div> <br/><br/>
+<div class="pics2" id="s2"> 
+    <div class="divElem" style="background:red ;"><a href="http://www.baidu.com">aaaa</a></div>
+    <div class="divElem" style="background:yellow ;"><a href="http://www.baidu.com">aaaa</a></div>
+    <div class="divElem" style="background:blue ;"><a href="http://www.baidu.com">aaaa</a></div>
+</div> 
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>putquestioninput</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+<script>
+var url=location.search;  
+
+function getSearch(url){
+	var request = {}, str='',strs=[], strsSplit=[]; 
+	if(url.indexOf("?")!=-1){ 
+		str = url.substr(1);
+		strs = str.split("&"); 
+		for(var i = 0, strsLen = strs.length; i<strsLen; i++){ 
+			strsSplit = strs[i].split("=");
+			request[ strsSplit[0]] = strsSplit[1]; 
+		}
+	}
+	return request;
+}
+var req = getSearch(url);
+
+
+var appId = 1;
+var cid = req["cid"];
+var accessToken = "a";
+var content = "";
+var validate = ""; //认证码
+var cookies = "";
+
+window.addEventListener('load',function(){
+	cookies = document.cookie ; 
+},false);
+
+
+function addQue(){
+	content =  document.getElementById("question_textarea").value ;
+	if(!content){
+		popBox.style.display = 'block';
+	}else if(content.length > 0 && content.length < 6){
+		pop_msg.innerHTML = "请输入至少6个字!";
+		popBox.style.display = 'block';
+	}else if(!validate){
+		document.getElementById("popyzm").style.display = 'block';
+	}else{
+		$.ajax({
+			method:'POST',
+			data:{
+				appId:1,
+				cid: cid ,
+				content: content ,
+				accessToken: "a",
+				cookie :  encodeURIComponent("WIKI_VALIDATE_SHA_CODE=36e0d3ff6f24e0f8d643dfeccc67315172926c82") ,  //8L88  假的cookie，真的cookie需在真实的服务器平台获取。
+				validate: '8L88'   //假的验证码。
+			},
+			url : "http://10.6.210.229:8080/wiki/addQuestion",
+			success : function(result) {
+				console.log(result);
+			},
+			type : 'json'
+		});
+	}
+};
+window.addEventListener('load',function(){
+	var popBox = document.getElementById("popBox"),
+	 	pop_btn = document.getElementById("pop_btn"),
+		pop_msg = document.getElementById("pop_msg");
+	pop_btn.addEventListener('click',function(){
+		popBox.style.display = 'none';
+	},false);
+	document.getElementById("addQuestionBut").addEventListener('click',addQue,false);
+},false)
+</script>
+</head>
+<body>
+     <div class="popBox" id="popBox">
+        <div class="evaluate_pop" style="display:block;">
+            <div class="evaluate_pop_msg" id='pop_msg'>请输入问题内容</div>
+            <div class="evaluate_pop_tool" ><a href="javascript:;" id="pop_btn">知道了</a></div>
+        </div>
+    </div>
+    <div class="pop_mask"></div>
+    <header class="header">
+        <a href="javascript:;" class="back_btn"></a>
+        <h1>我要提问</h1>
+    </header>
+    <div class="question_input_wrap">
+    	<div class="question_input_main">
+        	<textarea id="question_textarea" placeholder="简明清晰地描述您的提问问题，可以帮您更快获得解答"></textarea>
+            <div class="question_input_camera" id="questionCamera"><i></i>照片选取界面</div>
+        </div>
+        <div class="question_tool"><a href="javascript:;" id="addQuestionBut" class="question_input_tool">点击提交问题</a></div>
+    </div>
+    <div><img style="display:none;" id="largeImage" src="" /></div>
+    <div id="info" style="white-space: pre-wrap;">
+        <b style="display:none;">Status:</b> <div id="camera_status" style="display:none;"></div>
+        <img width="100" id="camera_image">
+            <canvas id="canvas" width="1" height="1"></canvas>
+    </div>
+    
+<style>
+.popyzm{ display:none;  position:absolute; top:0; left:0; z-index:900; width:100%; height:600px; background: #d5d5d5 ; }
+</style>
+    <section class="popyzm" id="popyzm">
+        <header class="header">
+            <a href="javascript:;" class="back_btn"></a>
+            <h1>我要提问</h1>
+        </header>
+        <div class="yzm_wrap">
+            <div class="yzm"><input id="yzm_value" type="text" value="" placeholder="" /><img src="http://10.6.210.229:8080/wiki/validateImage" /></div>
+            <div class="question_input_tool" id="yzm_submitBut"   >点击提交验证码</div>
+        </div>
+    </section>
+
+<script>
+document.getElementById("yzm_submitBut").addEventListener('click',function(){
+	var yzm_value = document.getElementById("yzm_value").value ;
+	
+	if(!yzm_value){
+		
+	}else{
+		validate = yzm_value;
+		document.getElementById("popyzm").style.display = 'none';
+	}	
+},false);
+
+</script>
+
+   
+</body>
+</html>

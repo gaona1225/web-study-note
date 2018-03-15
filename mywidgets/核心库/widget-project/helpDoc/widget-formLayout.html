@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>form表单布局</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.formLayout.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>form表单布局（formLayout）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>form表单布局，针对版本1.2+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> formLayout(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数：'ui-formLayout'，form表单的class名</p>
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数：'ui-formLayoutInput'，可操作的元素（表单元素）class名</p>
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数：'ui-forminput-check'， 复选框、单选框input class名</p>
+            <p>
+              <label class="help-item">form-elem-title：</label>
+              （字符）参数：'姓名'，设置当前表单元素的字段名</p>
+            <p>
+              <label class="help-item">must-fill：</label>
+              （字符）参数：'true'，form表单项是否必填,参数可以不设置，设置为'true','false'</p>
+            <p>
+              <label class="help-item">placeholder：</label>
+              （字符）参数：'请输入姓名'，当前表单元素的占位符</p>
+            <p>
+              <label class="help-item">form_layout：</label>
+              （数字）参数：2， 布局展示，表示排列的栏目数，默认值可为1、2、3..栏,和form_width只需要设置一个</p>            
+            <p>
+              <label class="help-item">form_label_pos：</label>
+              （字符）参数：'top'，字段名针对文本输入域显示的位置，参考值为top/left/right/bottom(上、左、右、下)</p>            
+            <p>
+              <label class="help-item">form_label_textalign：</label>
+              （字符）参数：'left'， 字段名对齐方式，参考值left/right(居左/居右)</p>            
+            <p>
+              <label class="help-item">form_width：</label>
+              （数字）参数：600，form表单参考宽度</p>    
+            <p>
+              <label class="help-item">form_wordcard：</label>
+              （字符）参数：':'，字段名后面的通配符，可选参数-、：、等</p>
+            <p>
+              <label class="help-item">form_colspan：</label>
+              （数字）参数：1， 跨列的值</p>
+            <p>
+              <label class="help-item">form_elem_width：</label>
+              （数字）参数：300， form表单输入区域宽度最大限制</p>
+            <p>
+              <label class="help-item">form_textarea_height：</label>
+              （数字）参数：60， form表单文本域高度</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+             <p>
+              <label class="help-item">setDisable(obj)：</label>
+              （方法）参数：禁用某个表单元素，参数为指定表单元素的标识,必填</p>
+            <p>
+              <label class="help-item">setEnable(obj)：</label>
+              （方法）参数：禁用某个表单元素，参数为指定表单元素的标识,必填</p>
+            <p>
+              <label class="help-item">removeElem(obj)：</label>
+              （方法）参数：删除某个表单元素及1其字段，参数为指定表单元素的标识,必填</p>
+            <!--<p>
+              <label class="help-item">dragLeaveDiv：</label>
+              （方法）参数：{}，dragLeaveDiv时操作</p>-->
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              form表单布局</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+					$(function(){
+						$('.ui-formLayout').eq(0).formLayout({
+							form_label_pos:'left' ,
+							form_layout:3
+						});
+						$('#testDisable').click(function(){
+							$('#testRadio').attr('disabled',true) ;
+							setDisable($('#testRadio')) ;
+						}) ;
+						$('#testEnable').click(function(){
+							$('#testCheckbox').attr('disabled',false) ;
+							setEnable($('#testCheckbox')) ;
+						}) ;
+						$('#testHide').click(function(){
+							setHide('testRemoveInput') ;
+						}) ;
+						$('#testShow').click(function(){
+							setShow('testRemoveInput') ;
+						}) ;
+					}) ;
+				</script>
+                <form class="ui-formLayout">
+                    <input form-elem-title="姓名" must-fill="true" placeholder="请输入姓名" type="text" class="ui-formLayoutInput" disabled/>
+                    <input form-elem-title="职务" must-fill="true" placeholder="请输入职务" type="text" class="ui-formLayoutInput"/>
+                    <input form-elem-title="年龄" type="text" class="ui-formLayoutInput"/>
+                    <input form-elem-title="性别" type="text" class="ui-formLayoutInput" id="testRemoveInput"/>
+                    <input form-elem-title="民族" type="text" class="ui-formLayoutInput"/>
+                    <select form-elem-title="学历" class="ui-formLayoutInput">
+                        <option>专科</option>
+                        <option>本科</option>
+                        <option>硕士</option>
+                        <option>博士</option>
+                    </select>
+                    <textarea form-elem-title="个人评价" form-colspan="3" class="ui-formLayoutInput" disabled></textarea>
+                    <div form-elem-title="兴趣" form-colspan="3" class="ui-formLayoutInput">
+                        <input type="checkbox" name="interest" class="ui-forminput-check" value="看电影ddd" disabled/>看电影ddd
+                        <input type="checkbox" name="interest" class="ui-forminput-check" value="看电影22222" disabled checked id="testCheckbox"/>看电影22222
+                        <input type="checkbox" name="interest" class="ui-forminput-check" value="看电影55555" onclick="javascript:alert(this.value)"/>看电影55555
+                    </div>
+                    <div form-elem-title="国籍" form-colspan="3" class="ui-formLayoutInput">
+                        <input type="radio" name="nation2" class="ui-forminput-check" value="中国" id="testRadio"/>中国
+                        <input type="radio" name="nation2" class="ui-forminput-check" value="英国"/>英国
+                        <input type="radio" name="nation2" class="ui-forminput-check" value="美国"/>美国
+                    </div>
+                </form>
+                <input class="buttonActive" id="testDisable" type="button" value="禁用中国选项"  />
+				<input class="buttonActive" id="testEnable" type="button" value="启用看电影22222"  />
+				<input class="buttonActive" id="testHide" type="button" value="影藏性别"  />
+				<input class="buttonActive" id="testShow" type="button" value="显示性别"  />
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){ 
+                        $('.ui-formLayout').eq(0).formLayout({
+							form_label_pos:'left' ,
+							form_layout:3
+						});
+						$('#testDisable').click(function(){
+							$('#testRadio').attr('disabled',true) ;
+							setDisable($('#testRadio')) ;
+						}) ;
+						$('#testEnable').click(function(){
+							$('#testCheckbox').attr('disabled',false) ;
+							setEnable($('#testCheckbox')) ;
+						}) ;
+						$('#testHide').click(function(){
+							setHide('testRemoveInput') ;
+						}) ;
+						$('#testShow').click(function(){
+							setShow('testRemoveInput') ;
+						}) ;
+                    });
+			   &lt;/script>
+               &lt;form class="ui-formLayout">
+                    &lt;input form-elem-title="姓名" must-fill="true" placeholder="请输入姓名" type="text" class="ui-formLayoutInput" disabled/>
+                    &lt;input form-elem-title="职务" must-fill="true" placeholder="请输入职务" type="text" class="ui-formLayoutInput"/>
+                    &lt;input form-elem-title="年龄" type="text" class="ui-formLayoutInput"/>
+                    &lt;input form-elem-title="性别" type="text" class="ui-formLayoutInput"/>
+                    &lt;input form-elem-title="民族" type="text" class="ui-formLayoutInput"/>
+                    &lt;select form-elem-title="学历" class="ui-formLayoutInput">
+                        &lt;option>专科&lt;/option>
+                        &lt;option>本科&lt;/option>
+                        &lt;option>硕士&lt;/option>
+                        &lt;option>博士&lt;/option>
+                    &lt;/select>
+                    &lt;textarea form-elem-title="个人评价" form-colspan="3" class="ui-formLayoutInput" disabled>&lt;/textarea>
+                    &lt;div form-elem-title="兴趣" form-colspan="3" class="ui-formLayoutInput">
+                        &lt;input type="checkbox" name="interest" class="ui-forminput-check" value="看电影ddd" disabled/>看电影ddd
+                        &lt;input type="checkbox" name="interest" class="ui-forminput-check" value="看电影22222" disabled checked id="testCheckbox"/>看电影22222
+                        &lt;input type="checkbox" name="interest" class="ui-forminput-check" value="看电影55555" id="testRemoveInput" onclick="javascript:alert(this.value)"/>看电影55555
+                    &lt;/div>
+                    &lt;div form-elem-title="国籍" form-colspan="3" class="ui-formLayoutInput">
+                        &lt;input type="radio" name="nation2" class="ui-forminput-check" value="中国" id="testRadio"/>中国
+                        &lt;input type="radio" name="nation2" class="ui-forminput-check" value="英国"/>英国
+                        &lt;input type="radio" name="nation2" class="ui-forminput-check" value="美国"/>美国
+                    &lt;/div>
+                &lt;/form>
+                &lt;input class="buttonActive" id="testDisable" type="button" value="禁用中国选项"  />
+				&lt;input class="buttonActive" id="testEnable" type="button" value="启用看电影22222"  />
+				&lt;input class="buttonActive" id="testHide" type="button" value="影藏性别"  />
+				&lt;input class="buttonActive" id="testShow" type="button" value="显示性别"  />
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

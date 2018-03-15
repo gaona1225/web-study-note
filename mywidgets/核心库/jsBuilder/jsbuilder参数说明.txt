@@ -1,0 +1,11 @@
+projectName--为项目名称，可以根据情况自己定义
+deployDir--为项目根路径名称
+liceseText--为授权信息
+pkgs--为构建部署是包配置说明，很重要。它的值为数组，每个数组有是一个JSON对象，用于配置部署信息。
+pkgs中的name--为JSON数据的说明信息
+pkgs中的file--生产js文件的路径信息，即生产的js文件叫啥，存放在哪个目录。
+pkg中的isDebug--是否为调试模式，如果是会生产一个调试文件，类似ext-all-debug.加上
+pkg中的fileIncludes--配置生产的部署文件保护哪些代码文件，也为数组配置格式，有两个属性，-text包含文档js文件名，-path此js的父目录
+pkg中的pkgDeps--依赖包配置
+pkg中的includeDeps：是否启用依赖，为布尔值
+resources--为配置资源信息配置。

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>sort</title>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		var strX = 11 ;
+		var newStrX = strX.toString() ;
+		for(var i=0; i<newStrX.length;i++){
+			alert(newStrX.charCodeAt(i)) ;
+		}
+		var strY = 'abnms' ;
+		for(var i=0; i<strY.length;i++){
+			alert(strY.charCodeAt(i)) ;
+		}
+		
+		var len = $('tbody tr').length ;	
+		var reverseBol = 1 ;
+		$('.num').click(function(){
+			if(reverseBol>0){
+				sortTr() ;
+			}else{
+				reverseTr() ;
+			}
+			reverseBol = -reverseBol ;
+		}) ;
+		
+		function sortTr(){
+			for(var i=0; i<len; i++){
+				for(var j=len-1; j>i; j--){
+					var frontTrTxt = $('tbody tr').eq(j-1).children('td:first').html() ;
+					var backTrTxt = $('tbody tr').eq(j).children('td:first').html() ;
+					var ret = compare(frontTrTxt,backTrTxt) ;
+					if(ret>=0){
+						var temp = $('tbody tr').eq(j-1).html() ;
+						$('tbody tr').eq(j-1).html($('tbody tr').eq(j).html()) ;
+						$('tbody tr').eq(j).html(temp) ;
+					}
+				}
+			}
+		}
+		
+		function reverseTr(){
+			for(var i=0; i<len; i++){
+				for(var j=len-1; j>i; j--){
+					var frontTrTxt = $('tbody tr').eq(j-1).children('td:first').html() ;
+					var backTrTxt = $('tbody tr').eq(j).children('td:first').html() ;
+					var ret = compare(frontTrTxt,backTrTxt) ;
+					if(ret<=0){
+						var temp = $('tbody tr').eq(j-1).html() ;
+						$('tbody tr').eq(j-1).html($('tbody tr').eq(j).html()) ;
+						$('tbody tr').eq(j).html(temp) ;
+					}
+				}
+			}
+		}
+		
+		function compare(frontTr,backTr){
+			if(frontTr>backTr){
+				return 1 ;
+			}else if(frontTr<backTr){
+				return -1 ;
+			}else{
+				return 0 ;
+			}
+		}
+	}) ;
+</script>
+</head>
+
+<body>
+	<table cellpadding="0" cellpadding="0" border="1" width="200px">
+    	<thead>
+        	<tr>
+            	<td class="num">序号</td>
+                <td>姓名</td>
+            </tr>
+        </thead>
+        <tbody>
+        	 <tr>
+            	<td>bab</td>
+                <td>zhangsanA</td>
+            </tr>
+        	<tr>
+            	<td>abc</td>
+                <td>zhangsanB</td>
+            </tr>
+            <tr>
+            	<td>v</td>
+                <td>zhangsanB</td>
+            </tr>
+    </table>
+</body>
+</html>

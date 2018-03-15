@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>qunit</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<link rel="stylesheet" href="qunit.css" />
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="qunit.js"></script>
+<script language="javascript" type="text/javascript" src="../version/version.js"></script>
+<script language="javascript" type="text/javascript" src="type.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){		
+		//定义测试模块
+		module( "module测试fnType" );
+		var json = [
+			[123,10,true] ,
+			['2012-07-004','2012-07-02',false] ,
+			['abcdef','430072',false] ,
+			['13236524235','+8613136362563',true]
+		] ;
+		
+		//开始单元测试
+		test('fn.type', function() {
+			$.each(json, function(idx, item){
+				equal(ui.fn.isInteger(item[0]),ui.fn.isInteger(item[1])&&item[2],'isInteger(' + item[0] + ')') ;
+				equal(ui.fn.isDateTime(item[0]),ui.fn.isDateTime(item[1])&&item[2],'isDateTime(' + item[0] + ')') ;
+				equal(ui.fn.isIdCard(item[0]),ui.fn.isIdCard(item[1])&&item[2],'isIdCard(' + item[0] + ')') ;
+				equal(ui.fn.isPhone(item[0]),ui.fn.isPhone(item[1])&&item[2],'isPhone(' + item[0] + ')') ;
+				equal(ui.fn.isZipcode(item[0]),ui.fn.isZipcode(item[1])&&item[2],'isZipcode(' + item[0] + ')') ;
+			});
+		});
+		/*module( "module测试fnType" );
+		var json = [123,2012-07-04,afsafs,aUndefined] ;
+		
+		//开始单元测试
+		test('fn.type', function() {
+			equal(ui.fn.isInteger(json[0]),true) ;
+			equal(ui.fn.isDateTime(json[0]),false) ;
+			equal(ui.fn.isIdCard(json[0]),true) ;
+			equal(ui.fn.isZipcode(json[0]),true) ;
+			
+			equal(ui.fn.isInteger(json[1]),false) ;
+			equal(ui.fn.isDateTime(json[1]),true) ;
+			equal(ui.fn.isIdCard(json[1]),false) ;
+			equal(ui.fn.isZipcode(json[1]),false) ;
+			
+			equal(ui.fn.isInteger(json[2]),true) ;
+			equal(ui.fn.isDateTime(json[2]),false) ;
+			equal(ui.fn.isIdCard(json[2]),true) ;
+			equal(ui.fn.isZipcode(json[2]),true) ;
+			
+			equal(ui.fn.isInteger(json[3]),false) ;
+			equal(ui.fn.isDateTime(json[3]),true) ;
+			equal(ui.fn.isIdCard(json[3]),false) ;
+			equal(ui.fn.isZipcode(json[3]),false) ;
+		});*/
+	}) ;
+</script>
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/*
+ *作    者: 张文钦
+ *版    本: 1.0
+ *完成时间: 2011-10-18
+ *描    述: rtSearch
+ *关联文件: reset.css|jquery-ui.css
+ */
+.jh-widgets-rtSearch{clear:both;border:1px solid #9aaec1;width:200px;height:20px;}
+.jh-widgets-rtSearch>.rt-search-ico{background:url("images/rtSearch/rt-search.png") no-repeat scroll transparent;width:16px;height:16px;display:inline-block;margin-left:3px;margin-right:3px;vertical-align:middle;}
+.jh-widgets-rtSearch>.rtSearch{border:0 none;height:18px;line-height:18px;}
+.highlight{background-color:#36c;color:#fff;}
+.jh-widgets-rtSearch>.rt-clear-ico{
+	background:url("images/rtSearch/rt-clear.png") no-repeat scroll transparent;
+	cursor:pointer ;
+	display:inline-block;
+	height:16px;
+	margin-left:3px;
+	margin-right:3px;
+	vertical-align:middle;
+	width:16px;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<title>formLayout</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<link type="text/css" rel="stylesheet" href="formLayout.css"/>
+<script language="javascript" type="text/javascript" src="../buttonActive/buttonActive.js"></script>
+<script language="javascript" type="text/javascript" src="formLayout.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('.ui-formLayout').eq(0).formLayout({
+			form_title:'我的基本信息' ,
+			form_label_pos:'left' ,
+			form_layout:3
+		});		
+		$('.ui-formLayout').eq(1).formLayout({
+			form_title:'我的联系方式' ,
+			form_label_pos:'top' ,
+			form_layout:1 
+		});	
+		$('.ui-formLayout').eq(2).formLayout({
+			form_title:'我的工作信息' ,
+			form_label_pos:'left' ,
+			form_label_textalign:'right' ,
+			form_layout:2 
+		});
+		$('#testDisable').click(function(){
+			$('#testRadio').attr('disabled',true) ;
+			setDisable($('#testRadio')) ;
+		}) ;
+		$('#testEnable').click(function(){
+			$('#testCheckbox').attr('disabled',false) ;
+			setEnable($('#testCheckbox')) ;
+		}) ;
+		$('#testHide').click(function(){
+			setHide($('#testRemoveInput')) ;
+		}) ;
+		$('#testShow').click(function(){
+			setShow($('#testRemoveInput')) ;
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+<form class="ui-formLayout">
+	<input form-elem-title="姓名" must-fill="true" placeholder="请输入姓名" type="text" class="ui-formLayoutInput" disabled/>
+	<input form-elem-title="职务" must-fill="true" placeholder="请输入职务" type="text" class="ui-formLayoutInput"/>
+	<input form-elem-title="年龄" type="text" class="ui-formLayoutInput"/>
+    <input form-elem-title="性别" type="text" class="ui-formLayoutInput"/>
+    <input form-elem-title="民族" type="text" class="ui-formLayoutInput"/>
+    <select form-elem-title="学历" class="ui-formLayoutInput">
+    	<option>专科</option>
+    	<option>本科</option>
+    	<option>硕士</option>
+    	<option>博士</option>
+    </select>
+    <textarea form-elem-title="个人评价" id="aaa" form-colspan="3" class="ui-formLayoutInput" disabled></textarea>
+    <div form-elem-title="兴趣" form-colspan="3" class="ui-formLayoutInput">
+        <input type="checkbox" name="interest" class="ui-forminput-check" disabled/>
+        <label  class="ui-formCambo">看电影ddd</label>
+        <input type="checkbox" name="interest" class="ui-forminput-check" disabled checked id="testCheckbox"/>
+        <label for="interest-2" class="ui-formCambo">看电影22222</label>
+        <input type="checkbox" name="interest" class="ui-forminput-check" id="testRemoveInput"/>
+        <label for="interest-3" class="ui-formCambo">看电影55555</label>
+    </div>
+    <div form-elem-title="国籍" form-colspan="3" class="ui-formLayoutInput">
+        <input type="radio" name="nation2" class="ui-forminput-check" id="testRadio"/>
+        <label class="ui-formCambo">中国</label>
+        <input type="radio" name="nation2" class="ui-forminput-check"/>
+        <label class="ui-formCambo">英国</label>
+        <input type="radio" name="nation2" class="ui-forminput-check"/>
+        <label class="ui-formCambo">美国</label>
+    </div>
+</form>
+<form class="ui-formLayout">
+	<input form-elem-title="手机号" must-fill="true" placeholder="请输入手机号" type="text" class="ui-formLayoutInput"/>
+	<input form-elem-title="电话" must-fill="true" placeholder="请输入电话" type="text" class="ui-formLayoutInput"/>
+	<input form-elem-title="联系地址" placeholder="请输入地址" type="text" class="ui-formLayoutInput"/>
+    <div form-elem-title="兴趣" class="ui-formLayoutInput">
+        <input type="checkbox" name="interest" class="ui-forminput-check"/>
+        <label  class="ui-formCambo">看电影ddd</label>
+        <input type="checkbox" name="interest" class="ui-forminput-check"/>
+        <label for="interest-2" class="ui-formCambo">看电影22222</label>
+        <input type="checkbox" name="interest" class="ui-forminput-check"/>
+        <label for="interest-3" class="ui-formCambo">看电影55555</label>
+    </div>
+    <div form-elem-title="国籍" class="ui-formLayoutInput">
+        <input type="radio" name="nation" class="ui-forminput-check"/>
+        <label class="ui-formCambo">中国</label>
+        <input type="radio" name="nation" class="ui-forminput-check"/>
+        <label class="ui-formCambo">英国</label>
+        <input type="radio" name="nation" class="ui-forminput-check"/>
+        <label class="ui-formCambo">美国</label>
+    </div>
+    <div form-elem-title="国籍" class="ui-formLayoutInput">
+        <input type="radio" name="nation2" class="ui-forminput-check"/>
+        <label class="ui-formCambo">中国</label>
+        <input type="radio" name="nation2" class="ui-forminput-check"/>
+        <label class="ui-formCambo">英国</label>
+        <input type="radio" name="nation2" class="ui-forminput-check"/>
+        <label class="ui-formCambo">美国</label>
+    </div>
+</form>
+<form class="ui-formLayout">
+	<input form-elem-title="部门" placeholder="请输入年龄" type="text" class="ui-formLayoutInput"/>
+	<input form-elem-title="岗位" placeholder="请输入岗位" type="text" class="ui-formLayoutInput"/> 
+	<input form-elem-title="公司名称" form-colspan="2" must-fill="true" placeholder="请输入公司名" type="text" class="ui-formLayoutInput"/>
+    <div form-elem-title="兴趣" form-colspan="2" class="ui-formLayoutInput">
+        <input type="checkbox" name="interest" class="ui-forminput-check"/>
+        <label class="ui-formCambo">看电影ddd</label>
+        <input type="checkbox" name="interest" class="ui-forminput-check"/>
+        <label for="interest-2" class="ui-formCambo">看电影22222</label>
+        <input type="checkbox" name="interest" class="ui-forminput-check"/>
+        <label for="interest-3" class="ui-formCambo">看电影55555</label>
+    </div>
+    <div form-elem-title="国籍" form-colspan="2" class="ui-formLayoutInput">
+        <input type="radio" name="nation" class="ui-forminput-check"/>
+        <label class="ui-formCambo">中国</label>
+        <input type="radio" name="nation" class="ui-forminput-check"/>
+        <label class="ui-formCambo">英国</label>
+        <input type="radio" name="nation" class="ui-forminput-check"/>
+        <label class="ui-formCambo">美国</label>
+    </div>
+</form>
+<input class="buttonActive" id="testDisable" type="button" value="禁用我的基本信息国籍-中国选项"  />
+<input class="buttonActive" id="testEnable" type="button" value="启用我的基本信息国籍-看电影22222"  />
+<input class="buttonActive" id="testHide" type="button" value="影藏我的基本信息国籍-性别"  />
+<input class="buttonActive" id="testShow" type="button" value="显示我的基本信息国籍-性别"  />
+</body>
+</html>

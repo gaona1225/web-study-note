@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>模拟桌面效果</title>
+<script language="javascript" type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		var hei = $(window).height() ;
+		$('.frameContent,.left,.main iframe').height(hei - 60) ;
+		$('.left li a').click(function(){
+			var newSrc = $(this).attr('data-src') ;
+			$('#tarMain').attr('src',newSrc) ;
+		}) ;
+	}) ;
+</script>
+<style type="text/css">
+	.frameContent{
+		overflow:hidden ;
+		width:100% ;
+	}
+	ul,li{
+		list-style:none outside none ;
+		margin:0 ;
+		padding:0 ;
+	}
+	a{
+		font-family:"微软雅黑","宋体","黑体" ;
+		text-decoration:none ;
+	}
+	.left{
+		border:1px solid #CCC ;
+		float:left ;
+		overflow:auto ;
+		width:20% ;
+	}
+	.left li a{
+		background:#fff ;
+		color:#000 ;
+		display:block ;
+		height:26px ;
+		line-height:26px ;
+		padding-left:6px ;
+	}
+	.left li a:hover{
+		background:#CCCCCC ;
+	}
+	.main{
+		border:1px solid #CCC ;
+		float:left ;
+		height:100% ;
+		width:76% ;
+	}
+</style>
+</head>
+
+<body>
+	<div class="frameContent">
+        <ul class="left">
+        	<li><a href="###" data-src="C6demoSystem/project/page/desktop.html">metro工作台</a></li>
+            <li><a href="###" data-src="C6demoSystem/project/page/portal.html">metro门户</a></li>
+            <li><a href="###" data-src="C6demoSystem/project/page/setting.html">metro设置</a></li>
+        	<li><a href="###" data-src="C6demoSystem/project3/page/desktop.html">metro工作台2</a></li>
+        	<li><a href="###" data-src="C6demoSystem/project4/page/desktop.html">metro工作台3</a></li>
+            
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+            <li><a href="###"></a></li>
+        </ul>
+        <div class="main">
+            <iframe id="tarMain" src="C6demoSystem/project/page/desktop.html" width="100%" height="100%" frameborder="0" scrolling="auto" />
+        </div>
+    </div>
+</body>
+</html>

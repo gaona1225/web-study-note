@@ -1,0 +1,26 @@
+/**
+*ratystar
+*/
+.ratystar-starul{
+	background:url(images/ratystar/start.gif) repeat-x left bottom ;
+	float:left ;
+	height:22px ;
+	overflow:hidden ;
+}
+.ratystar-starul li{
+	float:left ;
+	height:22px ;
+	width:23px ;
+}
+.ratystar-starul li.ratystar-starli-active{
+	background:url(images/ratystar/start.gif) repeat-x left top ;
+}
+.ratystar-p{
+	float:left ;
+	height:22px ;
+	line-height:22px ;
+	margin-left:6px ;
+}
+.ratystar-clear{
+	clear:both ;
+}

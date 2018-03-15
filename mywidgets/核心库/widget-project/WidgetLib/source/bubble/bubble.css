@@ -1,0 +1,95 @@
+/**
+ * 作    者: 张勇辉 
+ * 版    本: 1.0 
+ * 完成时间: 2011-07-14 
+ * 描    述: Bubble 
+ * 关联文件: reset.css|jquery-ui.css  
+ */
+.c6ui-bubble {
+	display:inline;
+	position:absolute;
+	display:none;
+	cursor:default;
+}
+.c6ui-bubble-layout {
+	margin:7px 0;
+}
+.c6ui-bubble-layout .t, .c6ui-bubble-layout .lt, .c6ui-bubble-layout .rt, .c6ui-bubble-layout .lb, .c6ui-bubble-layout .b, .c6ui-bubble-layout .rb, .c6ui-bubble .corner {
+	background:url(images/bubble/bubble_bg.png) repeat-x;
+}
+.c6ui-bubble-layout .r, .c6ui-bubble-layout .l {
+	background:url(images/bubble/bubble_bg_v.png) repeat-y;
+}
+.c6ui-bubble-layout .con {
+	padding:6px;
+	color:#9b6912;
+	background-color: #fffbe6;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fffbe6), to(#f9eda8)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #fffbe6, #f9eda8); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #fffbe6, #f9eda8); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #fffbe6, #f9eda8); /* IE10 */
+	background-image:      -o-linear-gradient(top, #fffbe6, #f9eda8); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #fffbe6, #f9eda8);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fffbe6', EndColorStr='#f9eda8'); /* IE6–IE9 */
+}
+.c6ui-bubble-layout .t {
+	background-position:0 -4px;
+}
+.c6ui-bubble-layout .b {
+	background-position:0 -6px;
+}
+.c6ui-bubble-layout .l {
+	background-position:0 0;
+}
+.c6ui-bubble-layout .r {
+	background-position:-2px 0;
+}
+.c6ui-bubble-layout .lt {
+	width:2px;
+	height:2px;
+	background-position:0 0;
+}
+.c6ui-bubble-layout .rt {
+	background-position:-2px 0;
+}
+.c6ui-bubble-layout .rb {
+	width:2px;
+	height:2px;
+	background-position:-2px -2px;
+}
+.c6ui-bubble-layout .lb {
+	background-position:0 -2px;
+}
+.c6ui-bubble .corner {
+	width:11px;
+	height:8px;
+}
+.c6ui-bubble .leftTop {
+	position:absolute;
+	left:10px;
+	top:1px;
+	background-position:0 -10px;
+}
+.c6ui-bubble .rightTop {
+	position:absolute;
+	right:10px;
+	top:1px;
+	background-position:0 -10px;
+}
+.c6ui-bubble .leftBottom {
+	position:absolute;
+	left:10px;
+	bottom:1px;
+	_bottom:-6px;
+	background-position:-15px -10px;
+}
+.c6ui-bubble .rightBottom {
+	position:absolute;
+	right:10px;
+	bottom:1px;
+	_bottom:-6px;
+	background-position:-15px -10px;
+}
+.c6ui-bubble .none {
+	display:none;
+}

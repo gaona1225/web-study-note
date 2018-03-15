@@ -1,0 +1,190 @@
+@charset "utf-8";
+/* CSS Document */
+.addDesc{
+	font-family:"微软雅黑" ;
+	font-size:14px ;
+	color: #000;
+	-webkit-text-shadow: 0 1px 1px #fff;
+}
+.wrap{
+	-webkit-perspective:1000 ;
+}
+.content{
+	cursor:url(../../base/image/openhand.cur),auto ;
+	height:300px ;
+	margin:10% ;
+	text-align:center ;
+	width:100% ;
+	-webkit-transform-origin:50% 50% 0px ;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition:ease-in ;
+	-webkit-animation-name:myrotate ;
+	-webkit-animation-duration:20s;
+	-webkit-animation-iteration-count:infinite ;
+	-webkit-animation-timing-function:linear ;
+	/*-webkit-transform:rotateX(-30deg) rotateY(5deg) ;*/
+}
+/*办公桌*/
+.deskgroup{
+	bottom:-55px ;
+	left:0px ;
+	position:absolute ;
+	width:110px ;
+	-webkit-transform-style: preserve-3d;
+}
+.deskgroupRotate{
+	-webkit-transform:rotateY(-90deg) ;
+}
+.desk{
+	cursor:pointer !important ;
+	float:left ;
+	height:32px ;
+	margin:20% auto 0px;
+	margin-left:-1px ;
+	width:110px ;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform-origin:50% 50% 0px;
+}
+.deskgrounpback{
+	-webkit-transform:rotateY(180deg) translateY(-54px) translateZ(33px) ;
+}
+.desk div{
+	color:#ffffff;
+	font-size:12px ;
+	font-weight:bold ;
+	height:32px ;
+	position:absolute ;
+	text-align:center ;
+}
+.desk .desk-top{
+	background:url(../image/desktop.png) no-repeat ;
+	width:110px ;
+	-webkit-transform:rotateX(90deg) translateZ(16px) ;
+}
+.desk .d-drawer-left{
+	background:url(../image/deskdrawer.png) no-repeat  ;
+	width:32px ;
+	-webkit-transform:rotateY(-90deg) translateZ(16px) ;
+}
+.desk .d-drawer-front{
+	background:url(../image/deskdrawerfront.png) no-repeat  ;
+	width:110px ;
+	-webkit-transform:translateZ(16px)
+}
+.desk .d-drawer-right{
+	background:url(../image/deskdrawer.png) no-repeat  ;
+	width:32px ;
+	-webkit-transform:rotateY(90deg) translateZ(8px) ;
+}
+.desk .desk-right{
+	background:url(../image/deskdrawer.png) no-repeat  ;
+	width:32px ;
+	-webkit-transform:rotateY(90deg) translateZ(94px) ;		
+}
+.desk .desk-back{
+	background:url(../image/deskback.png) no-repeat ;
+	width:110px;
+	-webkit-transform:rotateX(-180deg) translateZ(16px);
+}
+.desk .desk-mask{
+	background:url(../image/clapboard.png) center no-repeat ;
+	height:12px ;
+	width:110px ;
+	-webkit-transform:translateY(-12px) translateZ(-12px) ;
+}
+.desk .desk-per{
+	background:url(../../base/image/user.png) no-repeat ;
+	color:#434343 ;
+	font-weight:normal ;
+	height:16px ;
+	padding-left:16px ;
+	text-align:left ;
+	width:100px ;
+	-webkit-transform:translateX(10px) translateY(-16px) ;
+}
+.desk .desk-per-girl{
+	background:url(../../base/image/user_female.png) no-repeat ;
+}
+/*天花板*/
+.ceiling{
+	background:url(../image/ceiling.jpg) repeat ;
+	height:1200px ;
+	width:1200px ;
+	-webkit-transform: rotateX(90deg) translateZ(500px) ;
+}
+/*地板*/
+.ground{
+	height:2400px ;
+	width:2400px ;
+	-webkit-transform-style: preserve-3d;
+}
+.ground div{
+	position:absolute ;
+}
+.Lground1{
+	background:url(../image/roof1.jpg) repeat ;
+	height:1200px ;
+	width:1200px ;
+	-webkit-transform: rotateX(90deg) translateY(0px) translateZ(280px) ;
+}
+.Lground2{
+	background:url(../image/roof1.jpg) repeat ;
+	height:800px ;
+	width:1200px ;
+	-webkit-transform:rotateX(90deg) translateX(1200px) translateY(-200px) translateZ(80px);
+}
+/*柱子*/
+.pillar{
+	height:180px ;
+	position:absolute ;
+	width:30px ;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform-origin:50% 50% 50px;
+}
+.pillar div{
+	color:#ffffff;
+	font-size:20px ;
+	font-weight:bold ;
+	height:180px ;
+	position:absolute ;
+	text-align:center ;
+	width:30px ;
+}
+.pillar .pil-front{
+	background:url(../image/pillar.png) no-repeat bottom ;
+}
+.pillar .pil-left{
+	background:url(../image/pillar.png) no-repeat bottom ;
+	-webkit-transform:rotateY(-90deg) translateX(-14px) translateZ(15px) ;
+}
+.pillar .pil-right{
+	background:url(../image/pillar.png) no-repeat bottom ;
+	-webkit-transform:rotateY(90deg) translateX(15px) translateZ(15px) ;
+}
+.pillar .pll-back{
+	background:url(../image/pillar.png) no-repeat bottom ;
+	-webkit-transform:rotateY(180deg) translateZ(30px) ;
+}
+.pillar .pll-top{
+	background:url(../image/pillar.png) no-repeat ;
+	height:30px ;
+	-webkit-transform:rotateX(-90deg) translateY(15px) translateZ(-15px) ;
+}
+/*.inputDiv{float:right ;}
+#left,#right{
+	background:none ;
+	border:none ;
+	cursor:pointer ;
+	height:128px ;
+	width:128px ;
+}
+#left{
+	background:url(../../base/image/left.png) no-repeat ;
+}
+#right{
+	background:url(../../base/image/right.png) no-repeat ;
+}*/
+/*@-webkit-keyframes myrotate{
+	from{-webkit-transform: rotateY(0); }
+	to{-webkit-transform: rotateY(360deg); }
+}*/

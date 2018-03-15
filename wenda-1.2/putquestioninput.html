@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>putquestioninput</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+<script>
+var url=location.search;  
+
+function getSearch(url){
+	var request = {}, str='',strs=[], strsSplit=[]; 
+	if(url.indexOf("?")!=-1){ 
+		str = url.substr(1);
+		strs = str.split("&"); 
+		for(var i = 0, strsLen = strs.length; i<strsLen; i++){ 
+			strsSplit = strs[i].split("=");
+			request[ strsSplit[0]] = strsSplit[1]; 
+		}
+	}
+	return request;
+}
+var req = getSearch(url);
+var appId = 1;
+var cid = req["cid"];
+var accessToken = "a";
+var content = "";
+var validate = ""; //认证码
+var cookies = "";
+//todo
+//phonegap 程序
+//功能：  提交问题时没有上传图片picStatus = 0；  正在传图片 一开始执行的图片上传函数时将picStatus = 1； 上传完成且将上传后的url付给变量pic后  回调函数中，picStatus = 2；
+var picStatus = 0;
+//todo
+//phonegap 程序
+//功能：  phonegap上传图片完成的回调函数，要将得到的图片url赋值给变量pic
+var pic = '';
+
+function addQue(){
+	content =  document.getElementById("question_textarea").value ;
+	if(!content){
+		popBox.style.display = 'block';
+	}else if(content.length > 0 && content.length < 6){
+		pop_msg.innerHTML = "请输入至少6个字!";
+		popBox.style.display = 'block';
+	}else if(!validate){
+		document.getElementById("popyzm").style.display = 'block';
+	}else{
+		if(content.length > 200){
+			content = content.slice(0,200);
+			console.log(content);
+		}
+		
+		var ajaxData = {
+			appId:1,
+			cid: cid ,
+			content: content ,
+			accessToken: "a",
+			cookie :  encodeURIComponent("WIKI_VALIDATE_SHA_CODE=36e0d3ff6f24e0f8d643dfeccc67315172926c82") ,  //8L88  假的cookie，真的cookie需在真实的服务器平台获取。
+			validate: '8L88'   //假的验证码。
+		};
+		
+		if(picStatus == 0){
+			$.ajax({
+				method:'POST',
+				data : ajaxData ,
+				url : "http://10.6.210.229:8080/wiki/addQuestion",
+				success : function(result) {
+					if(result['status'] == 0){
+						setTimeout(
+							function(){window.location.href = "index.html";},10000
+						);
+					}
+				},
+				type : 'json'
+			});
+		}else if(picStatus == 1){
+			 document.getElementById("loadBox").style.display = 'block';
+			 //todo
+			//phonegap 程序
+			//功能：  页面等待框弹出，图片正在上传，所以问题提交的ajax请求没有提交，这样需要在图片上传的回调函数里面在此调用一下问题提交函数addQue；
+		}else if(picStatus == 2){
+			if(pic){
+				ajaxData.pic1 = pic;
+			}
+			$.ajax({
+				method:'POST',
+				data : ajaxData ,
+				url : "http://10.6.210.229:8080/wiki/addQuestion",
+				success : function(result) {
+					if(result['status'] == 0){
+						setTimeout(
+							function(){window.location.href = "index.html";},10000
+						);
+					}
+				},
+				type : 'json'
+			});
+		}
+	}
+};
+
+function webBack(){
+	if(u.indexOf('Android') > -1){
+		webViewApi.goBack(success,onFail);
+	}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+	 	webContrl.goBack(nativePluginResultHandler, nativePluginErrorHandler);
+	}
+}
+//android返回回调
+function onFail(message) {
+      alert('Failed because: ' + message);
+}
+    
+function success() {
+      //todo 
+}
+
+//返回方法回调
+function nativePluginResultHandler (result) {
+    
+}
+
+function nativePluginErrorHandler (error) {
+    
+}
+
+window.addEventListener('load',function(){
+	
+	cookies = document.cookie ; 
+	document.getElementById('back_btn').addEventListener('click',function(){
+		//todo
+		//phonegap 程序
+		//功能： 页面回退到putquestion页面
+		webBack();
+	},false);
+	
+	var popBox = document.getElementById("popBox"),
+	 	pop_btn = document.getElementById("pop_btn"),
+		pop_msg = document.getElementById("pop_msg");
+	pop_btn.addEventListener('click',function(){
+		popBox.style.display = 'none';
+	},false);
+	document.getElementById("addQuestionBut").addEventListener('click',addQue,false);
+	document.getElementById("yzm_submitBut").addEventListener('click',function(){
+		var yzm_value = document.getElementById("yzm_value").value ;
+		
+		if(!yzm_value){
+			
+		}else{
+			validate = yzm_value;
+			document.getElementById("popyzm").style.display = 'none';
+		}	
+	},false);
+	
+},false)
+</script>
+</head>
+<body>
+  
+    <!--提示框-->
+    <div class="popBox" id="popBox">
+        <div class="evaluate_pop" style="display:block;">
+            <div class="evaluate_pop_msg" id='pop_msg'>请输入问题内容</div>
+            <div class="evaluate_pop_tool" ><a href="javascript:;" id="pop_btn">知道了</a></div>
+        </div>
+    </div>
+    
+    <!--等待框-->
+    <div class="popBox" id="loadBox">
+        <div class="loading" style="display:block;">
+        </div>
+    </div>
+    
+    <!--验证码弹出框-->
+    <section class="popyzm" id="popyzm">
+        <header class="header">
+            <a href="javascript:;" class="back_btn"></a>
+            <h1>我要提问</h1>
+        </header>
+        <div class="yzm_wrap">
+            <div class="yzm"><input id="yzm_value" type="text" value="" placeholder="" /><img src="http://10.6.210.229:8080/wiki/validateImage" /></div>
+            <div class="question_input_tool" id="yzm_submitBut"   >点击提交验证码</div>
+        </div>
+    </section>
+    
+    <header class="header">
+        <a href="javascript:;" class="back_btn" id="back_btn"></a>
+        <h1>我要提问</h1>
+    </header>
+    <div class="question_input_wrap">
+    	<div class="question_input_main">
+        	<textarea id="question_textarea" placeholder="简明清晰地描述您的提问问题，可以帮您更快获得解答"></textarea>
+            <div class="question_input_camera" id="questionCamera"><i></i>照片选取界面</div>
+        </div>
+        <div class="question_tool"><a href="javascript:;" id="addQuestionBut" class="question_input_tool">点击提交问题</a></div>
+    </div>
+    <div><img style="display:none;" id="largeImage" src="" /></div>
+    <div id="image-options"></div>
+    <div id="info" style="white-space: pre-wrap;">
+        <b style="display:none;">Status:</b> <div id="camera_status" style="display:none;"></div>
+        <img width="100" id="camera_image">
+            <canvas id="canvas" width="1" height="1"></canvas>
+    </div>
+    
+    
+    <!--<script language="javascript" src="js/cordova-incl.js"></script>
+    <script type="text/javascript" charset="utf-8" src="www/android/www/cordova.js"></script>
+    -->
+    
+    
+    
+    <script language="javascript">
+		
+		var u = navigator.userAgent ;
+		if(u.indexOf('Android') > -1){
+			function onSuccessCallBack(imageURI){
+				alert("iamge url:"+imageURI);
+				//TODO
+				var img = document.getElementById('largeImage') ;
+				img.src = imageURI ;
+				img.style.display = 'block' ;
+			}
+			
+			document.write("<script lanague=\"javascript\" src=\"www/android/www/cordova.js\"><\/scri"+"pt>") 
+			document.getElementById('questionCamera').onclick = function(){
+				navigator.upload.uploadImage(onSuccessCallBack)
+			}
+			
+		}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+			alert('ios') ;
+			document.write("<script lanague=\"javascript\" src=\"www/ios/www/cordova-incl.js\"><\/scri"+"pt>") ;
+			document.write("<script lanague=\"javascript\" src=\"www/ios/www/main.js\"><\/scri"+"pt>") ;
+			var deviceReady = false;
+			var platformId = null;
+			var CameraPopoverOptions = null;
+			var pictureUrl = null;
+			var fileObj = null;
+			var fileEntry = null;
+			var pageStartTime = +new Date();
+		
+		    function log(value) {
+		        console.log(value);
+		        document.getElementById('camera_status').textContent += (new Date() - pageStartTime) / 1000 + ': ' + value + '\n';
+		    }
+		
+			//
+			function onGetPictureError(e) {
+				picStatus = 0;
+				log('Error getting picture: ' + e.code);
+			}
+
+			function onGetPictureSuccess(data) {
+				picStatus = 1;
+				var uploadHandle = navigator.camera.uploadPicture(getImageUrl, onGetPictureError, data);
+			}
+		
+			//服务器图片url地址回调
+			function getImageUrl(data){
+				
+				log('--url'+data.pic);
+				alert("iamge url:"+data.pic);
+				//TODO
+				var img = document.getElementById('camera_image') ;
+				img.src = data.pic ;
+				img.style.display = 'block' ;
+				picStatus = 2;
+			}
+		
+		
+			function getPicture() {
+		
+				var popoverHandle = navigator.camera.getPicture(onGetPictureSuccess, onGetPictureError);
+			}
+		
+			function logCallback(apiName, success) {
+				return function() {
+					log('Call to ' + apiName + (success ? ' success: ' : ' failed: ') + JSON.stringify([].slice.call(arguments)));
+				};
+			}
+		
+			/**
+			 * Function called when page has finished loading.
+			 */
+			function init() {
+				document.addEventListener("deviceready", function() {
+					deviceReady = true;
+					platformId = cordova.require('cordova/platform').id;
+					CameraPopoverOptions = cordova.require('org.apache.cordova.camera.CameraPopoverOptions');
+					console.log("Device="+device.platform+" "+device.version);
+								  
+				}, false);
+				window.setTimeout(function() {
+					if (!deviceReady) {
+						alert("Error: Apache Cordova did not initialize.  Demo will not run correctly.");
+					}
+				},1000);
+			};
+			init();
+			document.getElementById('questionCamera').onclick = function(){
+				getPicture() ;
+			}
+		}	
+    </script>
+</body>
+</html>

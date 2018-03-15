@@ -1,0 +1,5 @@
+移动前端开发大体上比如前端制作（Dreamweaver cs5及以上版本可以和jquery mobile很好的配合）+Fireworks(切图软件)+safari浏览器（最好是安装了firebug工具），这是最基本的配置。然后看你以后的开发方向是哪里，如果是进入后台开发，则需要配合使用程序开发的软件，比如Microsoft Visual Studio等。如果是打包成客户端。则需要使用phonegap(phonegap build)、appcan等软件。 
+
+
+PhoneGap Build的使用:
+http://blog.sina.com.cn/s/blog_82ac67c10100zx7c.html

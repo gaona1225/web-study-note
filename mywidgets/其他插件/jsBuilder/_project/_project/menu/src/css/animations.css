@@ -1,0 +1,52 @@
+/*
+ * 动画和变形
+ * zhng<zhangwen77@qq.com> 2012-03-01
+ * 暂只给webkit浏览器提供,可使用js给为webkit浏览器相应节点添加标识,添加动画变形
+ * --------------------------------
+ *  			标识        意义   
+ *		      popNav   		快捷菜单
+ * 		 add_use_div		添加入口
+ *  jcs_all_menu_val 		应用
+ *		selectedMenu 		已选快捷
+ *	     add_use_div		添加应用
+ *		       d_jcs		JCS图标
+ * --------------------------------
+ */
+@-webkit-keyframes rotatein {
+	  0% { -webkit-transform: rotate(0); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes rotateout {
+	  0% { -webkit-transform: rotate(0); }
+	100% { -webkit-transform: rotate(-360deg); }
+}
+
+#popNav>ul>li:hover img,
+.jcs_all_menu_var>ul>li:hover img,
+#selectedMenu>ul>li:hover img,
+#add_use_div>a:hover img,
+#d_jcs:hover{
+	-webkit-animation: rotatein 1s ease-in-out;
+}
+/*
+#popNav>ul>li img,
+.jcs_all_menu_var>ul>li img,
+#selectedMenu>ul>li img,
+#add_use_div>a img {
+	-webkit-transition: -webkit-transform 1s ease-in-out;
+	-moz-transition: -moz-transform 1s ease-in-out;
+	-ms-transition: -moz-transform 1s ease-in-out;
+	-o-transition: -o-transform 1s ease-in-out;
+	transition: transform 1s ease-in-out;
+}
+#popNav>ul>li:hover img,
+.jcs_all_menu_var>ul>li:hover img,
+#selectedMenu>ul>li:hover img,
+#add_use_div>a:hover img{
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+*/

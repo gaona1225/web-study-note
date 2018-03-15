@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>maxLength单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="maxLengthTest.js"></script>
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+<div>
+    <h2>1、input</h2>
+    <input type="text" name="input_1" id="input_1" value=""/>
+</div>
+<div>
+    <h2>2、Textarea</h2>
+	<textarea cols="50" rows="5" name="textarea_2" id="textarea_2"></textarea>
+</div>
+<input type="button" id="testBtn" value="测试多行文本框限长功能" />
+<div>
+    <h2>3、超过字数input</h2>
+    <input type="text" name="input_3" id="input_3" value="0123456789"/>
+</div>
+</div>
+</body>
+</html>

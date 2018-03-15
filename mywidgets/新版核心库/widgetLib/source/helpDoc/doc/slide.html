@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>slide</title>
+<link rel="stylesheet" href="../../css/ui-all.css" />
+<link rel="stylesheet" href="../css/doc.css" />
+<link rel="stylesheet" href="../syntaxhighlighter/styles/shCore.css" />
+<link rel="stylesheet" href="../syntaxhighlighter/styles/shThemeDefault.css" />
+<script type="text/javascript" src="../../jquery/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../jquery/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
+<script language="javascript" src="../../slide/slide.js"></script>
+</head>
+
+<body>
+    <div class="help-wrap">
+    	<div class="help-header">
+        	<h1>轮播(slide)</h1>
+        </div>
+        <div class="help-ver">
+        	当前版本：1.0
+        </div>
+        <hr class="help-tit" />
+        <div class="help-contain">
+        	<div>
+            	<h2>概述：</h2>
+                <p>轮播功能<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera等浏览器</p>
+            </div>
+            <div>
+            	<h2>依赖：</h2>
+                <p>jQuery;jQueryUI</p>
+            </div>
+            <div>
+            	<h2>调用：</h2>
+                <p>$(obj).slide()</p>
+            </div>
+            <div>
+            	<h2>参数配置：</h2>
+                <ul class="help-list">
+                	<li><label>width：</label>(数字)，参数：800，包裹展示区域的宽度。</li>
+                	<li><label>height：</label>(数字)，参数：176，包裹展示区域的高度。</li>
+                	<li><label>effect：</label>(字符串)，参数：'slide-x'，轮播效果,'fade'(淡入淡出),'slide-y'(y方向上滑动),'slide-x'(x方向上滑动)。</li>
+                	<li><label>speed：</label>(数字)，参数：200，手动切换动画延续时间。</li>
+                	<li><label>autoSpeed：</label>(数字)，参数：1000，自动切换动画延续时间。</li>
+                	<li><label>autoSlide：</label>(布尔)，参数：false，是否自动轮播。</li>
+                	<li><label>showNum：</label>(布尔)，参数：true，是否显示切换焦点。</li>
+                	<li><label>numPos：</label>(字符串)，参数：'left'，切换焦点左下角显示还是右下角显示'left'/'right'(仅在切换焦点显示的情况下配置)。</li>
+                	<li><label>showBtn：</label>(布尔)，参数：true，是否显示切换按钮。</li>
+                	<li><label>fn：</label>(函数)，参数：{}，预留自定义方法。</li>
+                	<li><label>numClick：</label>(函数)，参数：{}，点击切换焦点预留自定义方法。</li>
+                	<li><label>btnPrevClick：</label>(函数)，参数：{}，点击向前切换按钮预留自定义方法。</li>
+                	<li><label>btnNextClick：</label>(函数)，参数：{}，点击向后切换按钮预留自定义方法。</li>
+                </ul>
+            </div>
+            <div>
+            	<h2>方法：</h2>
+                <ul class="help-list">                
+                	<li><label>destroy：</label>(方法)，清除轮播组件。</li>
+                </ul>
+            </div>
+            <div>
+            	<h2>示例-1：</h2>
+                <p><label>描述：</label>默认配置，横向轮播</p>
+                <p><label>效果：</label></p>
+                <div class="help-dome">
+                	<script language="javascript">
+						$(function(){
+							$('.slideList1').slide() ;
+							$('#destroyBtn1').click(function(){
+								$('.slideList1').slide('destroy');
+							}) ;
+						}) ;
+					</script>
+                    <ul class="slideList slideList1">
+                        <li class="slideElem"><img src="../images/slide/img_main_1.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_2.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_3.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_4.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_5.jpg" height="176px" width="800px" /></li>
+                    </ul>
+                    <div>
+                        <input type="button" id="destroyBtn1" value="清除组件" />
+                    </div>
+                </div>
+                <p><label>代码：</label></p>
+                <pre class="brush: js; html-script: true; highlight: 0">
+                &lt;script language="javascript">
+                    $(function(){
+                        $('.slideList1').slide() ;
+                        $('#destroyBtn1').click(function(){
+                            $('.slideList1').slide('destroy');
+                        }) ;
+                    }) ;
+                &lt;/script>
+                &lt;ul class="slideList slideList1">
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_1.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_2.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_3.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_4.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_5.jpg" height="176px" width="800px" />&lt;/li>
+                &lt;/ul>
+                &lt;div>
+                    &lt;input type="button" id="destroyBtn1" value="清除组件" />
+                &lt;/div>
+                </pre>
+            </div>
+            <div>
+            	<h2>示例-2：</h2>
+                <p><label>描述：</label>默认配置，纵向轮播+自动轮播</p>
+                <p><label>效果：</label></p>
+                <div class="help-dome">
+                	<script language="javascript">
+						$(function(){
+							$('.slideList2').slide({
+								'effect' : 'slide-y' ,
+								'autoSlide' : true
+							}) ;
+							$('#destroyBtn2').click(function(){
+								$('.slideList2').slide('destroy');
+							}) ;
+						}) ;
+					</script>
+                    <ul class="slideList slideList2">
+                        <li class="slideElem"><img src="../images/slide/img_main_1.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_2.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_3.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_4.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_5.jpg" height="176px" width="800px" /></li>
+                    </ul>
+                    <div>
+                        <input type="button" id="destroyBtn2" value="清除组件" />
+                    </div>
+                </div>
+                <p><label>代码：</label></p>
+                <pre class="brush: js; html-script: true; highlight: 0">
+                &lt;script language="javascript">
+                    $(function(){
+                        $('.slideList2').slide({
+                            'effect' : 'slide-y' ,
+							'autoSlide' : true
+                        }) ;
+                        $('#destroyBtn2').click(function(){
+                            $('.slideList2').slide('destroy');
+                        }) ;
+                    }) ;
+                &lt;/script>
+                &lt;ul class="slideList slideList2">
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_1.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_2.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_3.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_4.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_5.jpg" height="176px" width="800px" />&lt;/li>
+                &lt;/ul>
+                &lt;div>
+                    &lt;input type="button" id="destroyBtn2" value="清除组件" />
+                &lt;/div>
+                </pre>
+            </div>
+            <div>
+            	<h2>示例-3：</h2>
+                <p><label>描述：</label>默认配置，淡入淡出+自动切换</p>
+                <p><label>效果：</label></p>
+                <div class="help-dome">
+                	<script language="javascript">
+						$(function(){
+							$('.slideList3').slide({
+								'effect' : 'fade' ,
+								'autoSlide' : true
+							}) ;
+							$('#destroyBtn3').click(function(){
+								$('.slideList3').slide('destroy');
+							}) ;
+						}) ;
+					</script>
+                    <ul class="slideList slideList3">
+                        <li class="slideElem"><img src="../images/slide/img_main_1.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_2.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_3.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_4.jpg" height="176px" width="800px" /></li>
+                        <li class="slideElem"><img src="../images/slide/img_main_5.jpg" height="176px" width="800px" /></li>
+                    </ul>
+                    <div>
+                        <input type="button" id="destroyBtn3" value="清除组件" />
+                    </div>
+                </div>
+                <p><label>代码：</label></p>
+                <pre class="brush: js; html-script: true; highlight: 0">
+                &lt;script language="javascript">
+                    $(function(){
+                        $('.slideList3').slide({
+                            'effect' : 'fade' ,
+							'autoSlide' : true
+                        }) ;
+                        $('#destroyBtn3').click(function(){
+                            $('.slideList3').slide('destroy');
+                        }) ;
+                    }) ;
+                &lt;/script>
+                &lt;ul class="slideList slideList3">
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_1.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_2.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_3.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_4.jpg" height="176px" width="800px" />&lt;/li>
+                    &lt;li class="slideElem">&lt;img src="../images/slide/img_main_5.jpg" height="176px" width="800px" />&lt;/li>
+                &lt;/ul>
+                &lt;div>
+                    &lt;input type="button" id="destroyBtn3" value="清除组件" />
+                &lt;/div>
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

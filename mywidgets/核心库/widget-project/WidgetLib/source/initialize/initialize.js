@@ -1,0 +1,4 @@
+﻿// Initialize the widget
+$(function(){
+	
+});

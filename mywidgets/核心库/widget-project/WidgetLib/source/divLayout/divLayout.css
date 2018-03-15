@@ -1,0 +1,112 @@
+@charset "utf-8";
+/* CSS Document */
+.divLayout{
+	margin:0 auto ;
+	overflow:hidden ;
+	text-align:left ;
+	width:100% ;
+}
+.divLay-header{
+	background:#E1E1E1 ;
+	height:80px ;
+	padding:10px ;
+}
+.divLay-content{
+	overflow:hidden ;
+}
+.divLay-left{
+	background:#D2D2D2 ;
+	float:left ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:26% ;
+}
+.divLay-right{
+	background:#F0F0F0 ;
+	float:right ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:69% ;
+}
+.divLay-footer{
+	background:#E1E1E1 ;
+	height:80px ;
+	padding:10px ;
+}
+/*1-3-1*/
+.divLay-left-3{
+	background:#D2D2D2 ;
+	float:left ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:24% ;
+}
+.divLay-middle-3{
+	background:#F0F0F0 ;
+	float:left ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:45% ;
+}
+.divLay-right-3{
+	background:#D2D2D2 ;
+	float:right ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:24% ;
+}
+/*属性设置*/
+.attr-div,.showHTML{
+	background:#E0E0E0 ;
+	border-radius:6px ;
+	box-shadow:1px 1px 3px #666 ;
+	display:none ;
+	left:32% ;
+	padding:10px ;
+	position:absolute ;
+	top:23% ;
+	width:400px ;
+}
+.attr-div p,.showHTML p{
+	color:#B43054 ;
+	font-size:12px ;
+	margin:0px ;
+	padding:3px 0px ;
+}
+.attr-div td{
+	padding:6px 2px ;
+}
+.attr-div input{
+	width:200px ;
+}
+input#setAtt,input#closeAtt{
+	width:auto ;
+}
+.showCSS{
+	background:#fff ;
+	border:1px solid #C3C3C3 ;
+	box-shadow:1px 1px 3px #C3C3C3 ;
+	height:200px ;
+	overflow-y:auto ;
+	padding:10px ;
+	width:380px ;
+}
+.showDiv{
+	background:#fff ;
+	border:1px solid #C3C3C3 ;
+	box-shadow:1px 1px 3px #C3C3C3 ;
+	height:200px ;
+	overflow-y:auto ;
+	padding:10px ;
+	width:380px ;
+}
+.showhtmlBtn{
+	margin-top:10px ;
+	text-align:right ;
+	width:100% ;
+}

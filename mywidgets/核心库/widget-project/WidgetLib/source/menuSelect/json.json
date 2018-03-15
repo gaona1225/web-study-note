@@ -1,0 +1,6 @@
+﻿[{"id":"1","menuSelect":"添加数据-1"},
+{"id":"2","menuSelect":"添加数据-2",
+     "DeptOrUser":"menuSelectDepts"},
+{"id":"3","menuSelect":"添加数据-3",
+    "DeptOrUser":"menuSelectUsers"}
+]

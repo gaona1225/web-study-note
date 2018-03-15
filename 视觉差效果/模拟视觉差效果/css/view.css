@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,li,p{
+	font-family:"Microsoft yahei","Arail","Times New Roman", Times, serif ;
+	margin:0 ;
+	/*overflow:hidden ;*/
+	padding:0 ;
+}
+.part{
+	height:1000px ;
+	left:0 ;
+	overflow:hidden ;
+	position:relative ;
+	width:100% ;
+}
+.content-bg{
+	height:100% ;
+	left:50% ;
+	margin-left:-1000px ;
+	position:absolute ;
+	top:0 ;
+	width:2000px ;
+}
+/*part1*/
+.part1{
+	background:url(../images/bgn1.jpg) no-repeat center ;
+}
+.part1 .ball{
+	background:url(../images/ball.png) no-repeat center ;
+	height:870px ;
+	top:100px ;
+}
+.part1 .text{
+	background:url(../images/1_text.png) no-repeat center ;
+	height:491px ;
+	top:180px ;
+}
+.part1 .st1{
+	background:url(../images/1st.png) no-repeat center ;
+	height:1300px ;
+	top:0 ;
+}
+.part1 .st2{
+	background:url(../images/2nd.png) no-repeat center ;
+	height:760px ;
+	top:0 ;
+}
+.part1 .st3{
+	background:url(../images/3rd.png) no-repeat center ;
+	height:1000px ;
+	top:0 ;
+}
+
+/*part2*/
+.content2-bg1{
+	background:url(../images/bg2.0.jpg) no-repeat center ;
+}
+.content2-bg2{
+	background:url(../images/bg2.1.jpg) no-repeat center ;
+}
+.content2-bg3{
+	background:url(../images/bg2.2.jpg) no-repeat center ;
+}
+
+/*part3*/
+.part3{
+	background:url(../images/bg3.1.jpg) no-repeat center ;
+}
+.soldier{
+	height:878px ;
+	overflow:hidden ;
+	opacity:0 ;
+	filter:alpha(opacity=0) ;
+	position:absolute ;
+	top:122px ;
+	width:2000px ;
+	z-index:5 ;
+}
+.soldier3-1{
+	background:url(../images/zs.png) no-repeat ;
+	opacity:1 ;
+	right:-1200px ;
+}
+.soldier3-2{
+	background:url(../images/zs2.png) no-repeat ;
+	right:-200px ;
+}
+.soldier3-3{
+	background:url(../images/zs3.png) no-repeat ;
+	right:-200px ;
+}
+.soldier3-4{
+	background:url(../images/zs4.png) no-repeat ;
+	right:-200px ;
+}
+
+/*part4*/
+.part4{
+	background:url(../images/bg4.jpg) no-repeat center ;
+}
+.missile{
+	height:365px ;
+	left:150px ;
+	position:absolute ;
+	top:-400px ;
+	width:373px ;
+}
+.missile img{
+	height:127px ;
+	width:130px ;
+}
+.stone{
+	background:url(../images/stone.png) no-repeat center ;
+	height:897px ;
+	margin-left:1250px ;
+	position:absolute ;
+	top:10px ;
+	width:100% ;
+	z-index:5 ;
+}
+
+/*part5*/
+.part5{
+	background:url(../images/bg5.jpg) no-repeat center ;
+}
+.home{
+	background:url(../images/home.png) no-repeat center ;
+	height:116px ;
+	margin-left:-85px ;
+	position:absolute ;
+	top:516px ;
+	width:100% ;
+	z-index:5 ;
+}
+
+/*part6*/
+.part6{
+	background:url(../images/bg6.jpg) no-repeat center ;
+}
+.head{
+	background:url(../images/header.png) no-repeat center ;
+	height:916px ;
+	left:50% ;
+	margin-left:-960px ;
+	position:absolute ;
+	top:1000px ;
+	width:1920px ;
+	z-index:5 ;
+}
+
+/*part7*/
+.part7{
+	background:url(../images/bg7.jpg) no-repeat center ;
+}
+.gs1{
+	background:url(../images/gs1.png) no-repeat center ;
+	height:1000px ;
+	left:-600px ;
+	position:absolute ;
+	top:200px ;
+	width:100% ;
+	z-index:5 ;
+}
+.gs2{
+	background:url(../images/gs2.png) no-repeat center ;
+	height:1000px ;
+	left:600px ;
+	position:absolute ;
+	top:450px ;
+	width:100% ;
+	z-index:10 ;
+}
+.gs3{
+	background:url(../images/gs3.png) no-repeat center ;
+	height:1000px ;
+	left:900px ;
+	position:absolute ;
+	top:-350px ;
+	width:100% ;
+	z-index:5 ;
+}

@@ -1,0 +1,208 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>表单-按钮-推荐按钮</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.minSearch.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>实时搜索框（rtSearch）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>实时搜索框插件，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> rtSearch(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>rtSearch()插件在使用时需要配置如下参数：</p>
+            <p>
+              <label class="help-item">width：</label>
+             （字符） 搜索框的宽度</p>
+            <p>
+              <label class="help-item">timeout：</label>
+             （数字） 响应自定义函数的间隙时间</p>
+            <p>
+              <label class="help-item">searchHandler：</label>
+             （函数） 自定义处理搜索的方法</p>
+            <p>
+              <label class="help-item">onFocus：</label>
+             （函数） 焦点进入搜索框触发的操作</p>
+            <p>
+              <label class="help-item">onBlur：</label>
+             （函数） 焦点离开搜索框触发的操作</p>
+            <p>
+              <label class="help-item">search_mode：</label>
+             （数字） 搜索的方式默认值为2，可选值为0:严格搜索,1普通搜索,2自定义搜索方式</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>暂无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例(页面内容实时搜索)：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+            实时搜索框插件</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            <script>
+			$(function(){
+		var $rsSearch = $(".rtSearch");
+		$rsSearch.rtSearch({
+			searchHandler:function(){
+				rtSearchDemo($.trim($rsSearch.val()));
+			},
+			search_mode : 2 ,
+			width:"300px"
+	});
+	$('#clearWid').click(function(){
+		$('#testClear').rtSearch('destory') ;
+	}) ;
+});
+/*使用示例(页面内容实时搜索)-自定义搜索响应函数(此示例响应函数只适用于搜索区域中不含html标签的情况)*/
+function rtSearchDemo(keyword){
+	var $searchCon = $('#searchCon');
+	/*清空*/
+	$searchCon.find('span[class^="highlight"]').each(function(index){
+		$(this).replaceWith($(this).text());
+	});
+	/*匹配高亮*/
+	if(keyword != null && keyword != ''){
+	   var _regexp = new RegExp('('+keyword+')','g');
+	   var _text = $searchCon.text();
+	   if(_regexp.test(_text)){
+		   $searchCon.html(_text.replace(_regexp,'<span class="highlight">$1</span>'));
+	   }
+	}
+};
+			</script>
+				<input type="text" class="rtSearch"/><br/>
+				<input type="text" class="rtSearch" id="testClear"/>
+				<!-- 测试用-->
+				<div id="searchCon" style="margin: 20px 0 ;">
+				 <p>搜索第一个我们的搜索方式简洁实时高级搜索我们的第二个哈哈的呀我们第三个我们的第四个</p>
+				</div>
+				<input type="button" class="buttonActive" value="清除插件效果" id="clearWid"/>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+ &lt;script>
+	$(function(){
+		var $rsSearch = $(".rtSearch");
+		$rsSearch.rtSearch({
+			searchHandler:function(){
+				rtSearchDemo($.trim($rsSearch.val()));
+			},
+            search_mode : 2 ,
+			width:"300px"
+		});
+        $('#clearWid').click(function(){
+		$('#testClear').rtSearch('destory') ;
+	}) ;
+	});
+	/*使用示例(页面内容实时搜索)-自定义搜索响应函数*/
+	function rtSearchDemo(keyword){
+		var $searchCon = $('#searchCon');
+		/*清空*/
+		$searchCon.find('span[class^="highlight"]').each(function(index){
+			$(this).replaceWith($(this).text());
+		});
+		/*匹配高亮*/
+		if(keyword != null && keyword != ''){
+		   var _regexp = new RegExp('('+keyword+')','g');
+		   var _text = $searchCon.text();
+		   if(_regexp.test(_text)){
+			   $searchCon.html(_text.replace(_regexp,'&lt;span class="highlight">$1&lt;/span>'));
+		   }
+		}
+	};
+&lt;script>
+&lt;input type="text" class="rtSearch"/><br/>
+&lt;input type="text" class="rtSearch" id="testClear"/>
+<!-- 测试用-->
+&lt;div id="searchCon" style="margin:60px;">
+ &lt;p>搜索第一个我们的搜索方式简洁实时高级搜索我们的第二个哈哈的呀我们第三个我们的第四个</p>
+&lt;/div>
+&lt;input type="button" class="buttonActive" value="清除插件效果" id="clearWid"/>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

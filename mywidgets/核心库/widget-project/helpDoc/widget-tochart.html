@@ -1,0 +1,808 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>tochart</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.tochart.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>表格转图表（tochart）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>文本裁剪控件，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox等浏览器</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> tochart(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->            
+            <p>
+              <label class="help-item">type：</label>
+              （字符串类型）参数：'bar'，转换的图表形式，可选值有：'bar'-柱状图,'area'-区域图,'pie'-饼状图,'line'-线性图</p>
+           <p>
+              <label class="help-item">width：</label>
+              （数字类型）参数：null，转换的图表宽度,当未手动设置宽度或设置值为null,取表格的宽度。</p>
+            <p>
+              <label class="help-item">height：</label>
+              （数字类型）参数：null，转换的图表高度,当未手动设置高度或设置值为null,取表格的高度。</p>
+            <p>
+              <label class="help-item">appendTitle：</label>
+              （布尔类型）参数：true，转换的图表是否显示表格的标题</p>
+            <p>
+              <label class="help-item">title：</label>
+              （字符串类型）参数：null，转换的图表显示的标题</p>
+            <p>
+              <label class="help-item">rowFilter：</label>
+              （字符串类型）参数：'*'，转换的图表行过滤条件设置</p>
+            <p>
+              <label class="help-item">colFilter：</label>
+              （字符串类型）参数：'*'，转换的图表列过滤条件设置</p>
+            <p>
+              <label class="help-item">colors：</label>
+              （数组类型）参数：['#be1e2d','#666699','#92d5ea','#ee8310','#8d10ee','#5a3b16','#26a4ed','#f45a90','#e9e744']，转换的图表中显示是颜色块</p>
+            <p>
+              <label class="help-item">textColors：</label>
+              （数组类型）参数：[]，转换的饼图中提示数据文本颜色，只有饼图有。</p>
+            <p>
+              <label class="help-item">parseDirection：</label>
+              （字符串类型）参数：'x'，解析表格数据的方向，可选参数为'x','y'，被解析的字段必须放到th标签里面。</p>
+            <p>
+              <label class="help-item">pieMargin：</label>
+              （数字类型）参数：20，转换的饼图的外边距，只有饼状图有。</p>
+            <p>
+              <label class="help-item">pieLabelPos：</label>
+              （字符串类型）参数：'inside'，转换的饼图的提示数据在饼图的位置，可选参数'inside','outside',只有饼图有。</p>
+            <p>
+              <label class="help-item">lineWeight：</label>
+              （数字类型）参数：4，转换的线性图和区域图的线的宽度，只有线性图和区域图有。</p>
+            <p>
+              <label class="help-item">barGroupMargin：</label>
+              （数字类型）参数：10，转换的柱状图中每组数据之间的间距，只有柱状图有。</p>
+            <p>
+              <label class="help-item">barMargin：</label>
+              （数字类型）参数：1，转换的柱状图中每组数据内柱子之间的间距，只有柱状图有。</p>
+            <p>
+              <label class="help-item">yLabelInterval：</label>
+              （数字类型）参数：30，转换的图表参考坐标的间距</p>
+            <p>
+              <label class="help-item">customFn：</label>
+              （函数类型）参数：{}：，自定义函数</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content">          	
+            <p>
+              <label class="help-item">destroy()：</label>
+              （方法）表格转图表控件</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              文本裁剪控件</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<style>
+                	.tochart{
+						height:200px ;
+						margin:20px 0px ;
+						text-align:center ;
+						width:500px ;
+					}
+					.tochart caption{
+						font-weight:bold ;
+						height:26px ;
+						text-align:center ;
+					}
+					.tochart th{
+						background:#f4f4f4 ;
+						border:1px solid #ddd ;
+						font-weight:bold ;
+						text-align:center ;
+					}
+					.tochart td{
+						border:1px solid #ddd ;
+					}
+                </style>
+            	<script>
+					$(function(){
+						$('.tochart').eq(0).tochart({}) ;
+						$('.tochart').eq(1).tochart({
+							type : 'area' 
+						}) ;
+						$('.tochart').eq(2).tochart({
+							type : 'line' ,
+							rowFilter: ':not(:last)',
+							colFilter: ':not(:last-child)'
+						}) ;
+						$('.tochart').eq(3).tochart({
+							type : 'pie' , 
+							pieMargin : 10 , 
+							title : '2009 Total Sales by Individual'
+						}) ;
+						$('#btn3').click(function(){
+							$('.tochart').eq(0).tochart({type:'pie'}) ;
+						}) ;
+						$('#btn1').click(function(){
+							$('.tochart').eq(1).tochart({type:'line'}) ;
+						}) ;
+						$('#btn2').click(function(){
+							$('.tochart').eq(2).tochart('destroy') ;
+						}) ;
+					}) ;
+				</script>
+			    <input type="button" id="btn1" value="createbutton" />
+                <input type="button" id="btn2" value="destorybutton" />
+                <input type="button" id="btn3" value="updatebutton" />
+                <table class="tochart">
+                    <caption>2009 Employee Sales by Department</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col">food</th>
+                            <th scope="col">auto</th>
+                            <th scope="col">household</th>
+                            <th scope="col">furniture</th>
+                            <th scope="col">kitchen</th>
+                            <th scope="col">bath</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Mary</th>
+                            <td>190</td>
+                            <td>160</td>
+                            <td>40</td>
+                            <td>120</td>
+                            <td>30</td>
+                            <td>70</td>
+                            <td>610</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tom</th>
+                            <td>3</td>
+                            <td>40</td>
+                            <td>30</td>
+                            <td>45</td>
+                            <td>35</td>
+                            <td>49</td>
+                            <td>202</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Brad</th>
+                            <td>10</td>
+                            <td>180</td>
+                            <td>10</td>
+                            <td>85</td>
+                            <td>25</td>
+                            <td>79</td>
+                            <td>389</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kate</th>
+                            <td>40</td>
+                            <td>80</td>
+                            <td>90</td>
+                            <td>25</td>
+                            <td>15</td>
+                            <td>119</td>
+                            <td>369</td>
+                        </tr>		
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td>243</td>
+                            <td>460</td>
+                            <td>170</td>
+                            <td>275</td>
+                            <td>105</td>
+                            <td>317</td>
+                            <td>1570</td>
+                        </tr>
+                    </tbody>
+                </table>	
+                <table class="tochart">
+                    <caption>2009 Employee Sales by Department</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col">food</th>
+                            <th scope="col">auto</th>
+                            <th scope="col">household</th>
+                            <th scope="col">furniture</th>
+                            <th scope="col">kitchen</th>
+                            <th scope="col">bath</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Mary</th>
+                            <td>190</td>
+                            <td>160</td>
+                            <td>40</td>
+                            <td>120</td>
+                            <td>30</td>
+                            <td>70</td>
+                            <td>610</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tom</th>
+                            <td>3</td>
+                            <td>40</td>
+                            <td>30</td>
+                            <td>45</td>
+                            <td>35</td>
+                            <td>49</td>
+                            <td>202</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Brad</th>
+                            <td>10</td>
+                            <td>180</td>
+                            <td>10</td>
+                            <td>85</td>
+                            <td>25</td>
+                            <td>79</td>
+                            <td>389</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kate</th>
+                            <td>40</td>
+                            <td>80</td>
+                            <td>90</td>
+                            <td>25</td>
+                            <td>15</td>
+                            <td>119</td>
+                            <td>369</td>
+                        </tr>		
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td>243</td>
+                            <td>460</td>
+                            <td>170</td>
+                            <td>275</td>
+                            <td>105</td>
+                            <td>317</td>
+                            <td>1570</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tochart">
+                    <caption>2009 Employee Sales by Department</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col">food</th>
+                            <th scope="col">auto</th>
+                            <th scope="col">household</th>
+                            <th scope="col">furniture</th>
+                            <th scope="col">kitchen</th>
+                            <th scope="col">bath</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Mary</th>
+                            <td>190</td>
+                            <td>160</td>
+                            <td>40</td>
+                            <td>120</td>
+                            <td>30</td>
+                            <td>70</td>
+                            <td>610</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tom</th>
+                            <td>3</td>
+                            <td>40</td>
+                            <td>30</td>
+                            <td>45</td>
+                            <td>35</td>
+                            <td>49</td>
+                            <td>202</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Brad</th>
+                            <td>10</td>
+                            <td>180</td>
+                            <td>10</td>
+                            <td>85</td>
+                            <td>25</td>
+                            <td>79</td>
+                            <td>389</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kate</th>
+                            <td>40</td>
+                            <td>80</td>
+                            <td>90</td>
+                            <td>25</td>
+                            <td>15</td>
+                            <td>119</td>
+                            <td>369</td>
+                        </tr>		
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td>243</td>
+                            <td>460</td>
+                            <td>170</td>
+                            <td>275</td>
+                            <td>105</td>
+                            <td>317</td>
+                            <td>1570</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tochart">
+                    <caption>2009 Employee Sales by Department</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col">food</th>
+                            <th scope="col">auto</th>
+                            <th scope="col">household</th>
+                            <th scope="col">furniture</th>
+                            <th scope="col">kitchen</th>
+                            <th scope="col">bath</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Mary</th>
+                            <td>190</td>
+                            <td>160</td>
+                            <td>40</td>
+                            <td>120</td>
+                            <td>30</td>
+                            <td>70</td>
+                            <td>610</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tom</th>
+                            <td>3</td>
+                            <td>40</td>
+                            <td>30</td>
+                            <td>45</td>
+                            <td>35</td>
+                            <td>49</td>
+                            <td>202</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Brad</th>
+                            <td>10</td>
+                            <td>180</td>
+                            <td>10</td>
+                            <td>85</td>
+                            <td>25</td>
+                            <td>79</td>
+                            <td>389</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Kate</th>
+                            <td>40</td>
+                            <td>80</td>
+                            <td>90</td>
+                            <td>25</td>
+                            <td>15</td>
+                            <td>119</td>
+                            <td>369</td>
+                        </tr>		
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td>243</td>
+                            <td>460</td>
+                            <td>170</td>
+                            <td>275</td>
+                            <td>105</td>
+                            <td>317</td>
+                            <td>1570</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;style>
+                	.tochart{
+                        height:200px ;
+                        margin:20px 0px ;
+                        text-align:center ;
+                        width:500px ;
+                    }
+                    .tochart caption{
+                        font-weight:bold ;
+                        height:26px ;
+                        text-align:center ;
+                    }
+                    .tochart th{
+                        background:#f4f4f4 ;
+                        border:1px solid #ddd ;
+                        font-weight:bold ;
+                        text-align:center ;
+                    }
+                    .tochart td{
+                        border:1px solid #ddd ;
+                    }
+                &lt;/style>
+            	&lt;script>
+                    $(function(){
+						$('.tochart').eq(0).tochart({}) ;
+                        $('.tochart').eq(1).tochart({
+                            type : 'area' 
+                        }) ;
+                        $('.tochart').eq(2).tochart({
+                            type : 'line' ,
+                            rowFilter: ':not(:last)',
+							colFilter: ':not(:last-child)'
+                        }) ;
+                        $('.tochart').eq(3).tochart({
+                            type : 'pie' , 
+                            pieMargin : 10 , 
+                            title : '2009 Total Sales by Individual'
+                        }) ;
+                        $('#btn3').click(function(){
+                            $('.tochart').eq(0).tochart({type:'pie'}) ;
+                        }) ;
+                        $('#btn1').click(function(){
+                            $('.tochart').eq(1).tochart({type:'line'}) ;
+                        }) ;
+                        $('#btn2').click(function(){
+                            $('.tochart').eq(2).tochart('destroy') ;
+                        }) ;
+					}) ;
+			   &lt;/script>
+			    &lt;input type="button" id="btn1" value="createbutton" />
+                &lt;input type="button" id="btn2" value="destorybutton" />
+                &lt;input type="button" id="btn3" value="updatebutton" />
+                &lt;table class="tochart">
+                    &lt;caption>2009 Employee Sales by Department&lt;/caption>
+                    &lt;thead>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;th scope="col">food&lt;/th>
+                            &lt;th scope="col">auto&lt;/th>
+                            &lt;th scope="col">household&lt;/th>
+                            &lt;th scope="col">furniture&lt;/th>
+                            &lt;th scope="col">kitchen&lt;/th>
+                            &lt;th scope="col">bath&lt;/th>
+                            &lt;th scope="col">Total&lt;/th>
+                        &lt;/tr>
+                    &lt;/thead>
+                    &lt;tbody>
+                        &lt;tr>
+                            &lt;th scope="row">Mary&lt;/th>
+                            &lt;td>190&lt;/td>
+                            &lt;td>160&lt;/td>
+                            &lt;td>40&lt;/td>
+                            &lt;td>120&lt;/td>
+                            &lt;td>30&lt;/td>
+                            &lt;td>70&lt;/td>
+                            &lt;td>610&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Tom&lt;/th>
+                            &lt;td>3&lt;/td>
+                            &lt;td>40&lt;/td>
+                            &lt;td>30&lt;/td>
+                            &lt;td>45&lt;/td>
+                            &lt;td>35&lt;/td>
+                            &lt;td>49&lt;/td>
+                            &lt;td>202&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Brad&lt;/th>
+                            &lt;td>10&lt;/td>
+                            &lt;td>180&lt;/td>
+                            &lt;td>10&lt;/td>
+                            &lt;td>85&lt;/td>
+                            &lt;td>25&lt;/td>
+                            &lt;td>79&lt;/td>
+                            &lt;td>389&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Kate&lt;/th>
+                            &lt;td>40&lt;/td>
+                            &lt;td>80&lt;/td>
+                            &lt;td>90&lt;/td>
+                            &lt;td>25&lt;/td>
+                            &lt;td>15&lt;/td>
+                            &lt;td>119&lt;/td>
+                            &lt;td>369&lt;/td>
+                        &lt;/tr>		
+                        &lt;tr>
+                            &lt;th scope="row">Total&lt;/th>
+                            &lt;td>243&lt;/td>
+                            &lt;td>460&lt;/td>
+                            &lt;td>170&lt;/td>
+                            &lt;td>275&lt;/td>
+                            &lt;td>105&lt;/td>
+                            &lt;td>317&lt;/td>
+                            &lt;td>1570&lt;/td>
+                        &lt;/tr>
+                    &lt;/tbody>
+                &lt;/table>	
+                &lt;table class="tochart">
+                    &lt;caption>2009 Employee Sales by Department&lt;/caption>
+                    &lt;thead>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;th scope="col">food&lt;/th>
+                            &lt;th scope="col">auto&lt;/th>
+                            &lt;th scope="col">household&lt;/th>
+                            &lt;th scope="col">furniture&lt;/th>
+                            &lt;th scope="col">kitchen&lt;/th>
+                            &lt;th scope="col">bath&lt;/th>
+                            &lt;th scope="col">Total&lt;/th>
+                        &lt;/tr>
+                    &lt;/thead>
+                    &lt;tbody>
+                        &lt;tr>
+                            &lt;th scope="row">Mary&lt;/th>
+                            &lt;td>190&lt;/td>
+                            &lt;td>160&lt;/td>
+                            &lt;td>40&lt;/td>
+                            &lt;td>120&lt;/td>
+                            &lt;td>30&lt;/td>
+                            &lt;td>70&lt;/td>
+                            &lt;td>610&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Tom&lt;/th>
+                            &lt;td>3&lt;/td>
+                            &lt;td>40&lt;/td>
+                            &lt;td>30&lt;/td>
+                            &lt;td>45&lt;/td>
+                            &lt;td>35&lt;/td>
+                            &lt;td>49&lt;/td>
+                            &lt;td>202&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Brad&lt;/th>
+                            &lt;td>10&lt;/td>
+                            &lt;td>180&lt;/td>
+                            &lt;td>10&lt;/td>
+                            &lt;td>85&lt;/td>
+                            &lt;td>25&lt;/td>
+                            &lt;td>79&lt;/td>
+                            &lt;td>389&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Kate&lt;/th>
+                            &lt;td>40&lt;/td>
+                            &lt;td>80&lt;/td>
+                            &lt;td>90&lt;/td>
+                            &lt;td>25&lt;/td>
+                            &lt;td>15&lt;/td>
+                            &lt;td>119&lt;/td>
+                            &lt;td>369&lt;/td>
+                        &lt;/tr>		
+                        &lt;tr>
+                            &lt;th scope="row">Total&lt;/th>
+                            &lt;td>243&lt;/td>
+                            &lt;td>460&lt;/td>
+                            &lt;td>170&lt;/td>
+                            &lt;td>275&lt;/td>
+                            &lt;td>105&lt;/td>
+                            &lt;td>317&lt;/td>
+                            &lt;td>1570&lt;/td>
+                        &lt;/tr>
+                    &lt;/tbody>
+                &lt;/table>
+                &lt;table class="tochart">
+                    &lt;caption>2009 Employee Sales by Department&lt;/caption>
+                    &lt;thead>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;th scope="col">food&lt;/th>
+                            &lt;th scope="col">auto&lt;/th>
+                            &lt;th scope="col">household&lt;/th>
+                            &lt;th scope="col">furniture&lt;/th>
+                            &lt;th scope="col">kitchen&lt;/th>
+                            &lt;th scope="col">bath&lt;/th>
+                            &lt;th scope="col">Total&lt;/th>
+                        &lt;/tr>
+                    &lt;/thead>
+                    &lt;tbody>
+                        &lt;tr>
+                            &lt;th scope="row">Mary&lt;/th>
+                            &lt;td>190&lt;/td>
+                            &lt;td>160&lt;/td>
+                            &lt;td>40&lt;/td>
+                            &lt;td>120&lt;/td>
+                            &lt;td>30&lt;/td>
+                            &lt;td>70&lt;/td>
+                            &lt;td>610&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Tom&lt;/th>
+                            &lt;td>3&lt;/td>
+                            &lt;td>40&lt;/td>
+                            &lt;td>30&lt;/td>
+                            &lt;td>45&lt;/td>
+                            &lt;td>35&lt;/td>
+                            &lt;td>49&lt;/td>
+                            &lt;td>202&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Brad&lt;/th>
+                            &lt;td>10&lt;/td>
+                            &lt;td>180&lt;/td>
+                            &lt;td>10&lt;/td>
+                            &lt;td>85&lt;/td>
+                            &lt;td>25&lt;/td>
+                            &lt;td>79&lt;/td>
+                            &lt;td>389&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Kate&lt;/th>
+                            &lt;td>40&lt;/td>
+                            &lt;td>80&lt;/td>
+                            &lt;td>90&lt;/td>
+                            &lt;td>25&lt;/td>
+                            &lt;td>15&lt;/td>
+                            &lt;td>119&lt;/td>
+                            &lt;td>369&lt;/td>
+                        &lt;/tr>		
+                        &lt;tr>
+                            &lt;th scope="row">Total&lt;/th>
+                            &lt;td>243&lt;/td>
+                            &lt;td>460&lt;/td>
+                            &lt;td>170&lt;/td>
+                            &lt;td>275&lt;/td>
+                            &lt;td>105&lt;/td>
+                            &lt;td>317&lt;/td>
+                            &lt;td>1570&lt;/td>
+                        &lt;/tr>
+                    &lt;/tbody>
+                &lt;/table>
+                &lt;table class="tochart">
+                    &lt;caption>2009 Employee Sales by Department&lt;/caption>
+                    &lt;thead>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;th scope="col">food&lt;/th>
+                            &lt;th scope="col">auto&lt;/th>
+                            &lt;th scope="col">household&lt;/th>
+                            &lt;th scope="col">furniture&lt;/th>
+                            &lt;th scope="col">kitchen&lt;/th>
+                            &lt;th scope="col">bath&lt;/th>
+                            &lt;th scope="col">Total&lt;/th>
+                        &lt;/tr>
+                    &lt;/thead>
+                    &lt;tbody>
+                        &lt;tr>
+                            &lt;th scope="row">Mary&lt;/th>
+                            &lt;td>190&lt;/td>
+                            &lt;td>160&lt;/td>
+                            &lt;td>40&lt;/td>
+                            &lt;td>120&lt;/td>
+                            &lt;td>30&lt;/td>
+                            &lt;td>70&lt;/td>
+                            &lt;td>610&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Tom&lt;/th>
+                            &lt;td>3&lt;/td>
+                            &lt;td>40&lt;/td>
+                            &lt;td>30&lt;/td>
+                            &lt;td>45&lt;/td>
+                            &lt;td>35&lt;/td>
+                            &lt;td>49&lt;/td>
+                            &lt;td>202&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Brad&lt;/th>
+                            &lt;td>10&lt;/td>
+                            &lt;td>180&lt;/td>
+                            &lt;td>10&lt;/td>
+                            &lt;td>85&lt;/td>
+                            &lt;td>25&lt;/td>
+                            &lt;td>79&lt;/td>
+                            &lt;td>389&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;th scope="row">Kate&lt;/th>
+                            &lt;td>40&lt;/td>
+                            &lt;td>80&lt;/td>
+                            &lt;td>90&lt;/td>
+                            &lt;td>25&lt;/td>
+                            &lt;td>15&lt;/td>
+                            &lt;td>119&lt;/td>
+                            &lt;td>369&lt;/td>
+                        &lt;/tr>		
+                        &lt;tr>
+                            &lt;th scope="row">Total&lt;/th>
+                            &lt;td>243&lt;/td>
+                            &lt;td>460&lt;/td>
+                            &lt;td>170&lt;/td>
+                            &lt;td>275&lt;/td>
+                            &lt;td>105&lt;/td>
+                            &lt;td>317&lt;/td>
+                            &lt;td>1570&lt;/td>
+                        &lt;/tr>
+                    &lt;/tbody>
+                &lt;/table>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

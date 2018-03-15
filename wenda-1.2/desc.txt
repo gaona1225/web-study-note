@@ -1,0 +1,38 @@
+index.html -- 百科问答主页
+searchlist.html -- 搜索列表页
+search.html -- 搜索页面
+question.html -- 问题界面
+answercon.html -- 个人详细回答内容界面
+answerque.html -- 回答问题界面（ios/android）
+signin.html--登录界面
+fullscreen.html--图片全屏界面
+404.html--404界面
+putquestion.html--提问界面
+putquestioninput.html--提问输入界面
+yanzm.html--验证码界面  
+myindex.html--我的主页
+myinformation.html--我的信息
+evaluate.html -- 评价界面
+myquestion.html--我的提问
+myanswer.html--我的回答
+questionfinish.html--提问结束界面
+
+
+register.html--注册界面  （暂时跳过）
+
+
+
+添加图片功能
+<div id="info" style="white-space: pre-wrap;display:none;">
+        <b>Status:</b> <div id="camera_status"></div>
+        img: <img width="100" id="camera_image">
+            canvas: <canvas id="canvas" width="1" height="1"></canvas>
+    </div>
+	
+	
+	http://10.6.210.229:8080/wiki/index?appId=1&cid=0&pageNo=8
+
+	
+	
+	
+

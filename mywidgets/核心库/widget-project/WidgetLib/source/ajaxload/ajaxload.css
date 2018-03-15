@@ -1,0 +1,43 @@
+/**
+*ajaxload
+*/
+.ajaxMain{
+	width:auto ;
+}
+.ajaxMask{
+	background:#000000 ;
+	left:0px ;	
+	opacity:0.4;
+	*filter:alpha(opacity=40);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=40)";
+	position:absolute ;
+	top:0px ;
+	z-index:100 ;
+}
+.ajaxContent{
+	overflow:hidden ;
+	position:relative ;
+}
+.ajaxPic{
+	float:left ;
+}
+.bigSize{
+	background:url(images/ajaxload/loadingB.gif) no-repeat center ;
+	height:32px ;
+	width:32px ;
+}
+.midSize{
+	background:url(images/ajaxload/loadingM.gif) no-repeat center ;
+	height:24px ;
+	width:24px ;
+}
+.smallSize{
+	background:url(images/ajaxload/loadingS.gif) no-repeat center ;
+	height:16px ;
+	width:16px ;
+}
+.ajaxMsg{
+	color:#fff ;
+	float:left ;
+	margin-left:6px ;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all3.css">
+<link rel="stylesheet" href="metro.css" />
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="jqueryeffect/jquery.effects.blind.js"></script>
+<script src="jqueryeffect/jquery.effects.bounce.js"></script>
+<script src="jqueryeffect/jquery.effects.clip.js"></script>
+<script src="jqueryeffect/jquery.effects.core.js"></script>
+<script src="jqueryeffect/jquery.effects.drop.js"></script>
+<script src="jqueryeffect/jquery.effects.explode.js"></script>
+<script src="jqueryeffect/jquery.effects.fade.js"></script>
+<script src="jqueryeffect/jquery.effects.fold.js"></script>
+<script src="jqueryeffect/jquery.effects.highlight.js"></script>
+<script src="jqueryeffect/jquery.effects.pulsate.js"></script>
+<script src="jqueryeffect/jquery.effects.scale.js"></script>
+<script src="jqueryeffect/jquery.effects.shake.js"></script>
+<script src="jqueryeffect/jquery.effects.slide.js"></script>
+<script src="jqueryeffect/jquery.effects.transfer.js"></script>
+<script language="javascript" src="metro.js"></script>
+<script language="javascript">
+	$(function() {
+		// run the currently selected effect
+		function runEffect() {
+			// get effect type from 
+			var selectedEffect = $( "#effectTypes" ).val();
+			
+			// most effect types need no options passed by default
+			var options = {};
+			// some effects have required parameters
+			if ( selectedEffect === "scale" ) {
+				options = { percent: 0 };
+			} else if ( selectedEffect === "transfer" ) {
+				options = { to: "#button", className: "ui-effects-transfer" };
+			} else if ( selectedEffect === "size" ) {
+				options = { to: { width: 200, height: 60 } };
+			}
+
+			// run the effect
+			$( "#effect" ).effect( selectedEffect, options, 500, callback );
+		};
+
+		// callback function to bring a hidden box back
+		function callback() {
+			setTimeout(function() {
+				$( "#effect" ).removeAttr( "style" ).hide().fadeIn();
+			}, 1000 );
+		};
+
+		runEffect();
+	});
+</script>
+<style>
+.toggler { width: 500px; height: 200px; position: relative; }
+#button { padding: .5em 1em; text-decoration: none; }
+#effect { width: 240px; height: 135px; padding: 0.4em; position: relative; }
+#effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+.ui-effects-transfer { border: 2px dotted gray; } 
+</style>
+</head>
+
+<body>
+<div class="toggler">
+	<div id="effect" class="ui-widget-content ui-corner-all">
+		<h3 class="ui-widget-header ui-corner-all">Effect</h3>
+		<p>
+			Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.
+		</p>
+	</div>
+</div>
+</body>
+</html>

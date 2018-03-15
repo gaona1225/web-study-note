@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>视觉差效果</title>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<style>
+	*{
+		margin:0 ;
+		padding:0 ;
+	}
+	body{
+		background:url(images/bg.jpg) repeat ;
+	}
+	.wrap{
+		background:url(images/para.png) repeat ;
+		height:2000px ;
+		position:absolute ;
+		width:100% ;
+	}
+</style>
+<script>
+	$(function(){
+		$(window).scroll(function(){
+			var _top = parseInt($(window).scrollTop()) ;
+			console.log(_top + '====' + $('.wrap').css('top')) ;
+			$('.wrap').animate({
+				'top':_top
+			},400) ;
+			$('#img').animate({
+				'top':_top*1.5
+			},400) ;
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+    	<img src="images/asscirc.png" id="img" />
+    </div>
+</body>
+</html>

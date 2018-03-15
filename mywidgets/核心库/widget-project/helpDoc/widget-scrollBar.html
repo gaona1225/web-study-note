@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>模拟滚动条</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.formLayout.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    <style type="text/css">
+    </style>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>模拟滚动条（scrollBar）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>模拟滚动条，针对版本1.2+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> scrollBar(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数：'ui-scrollBar'，模拟滚动条区域的class名</p>
+            <p>
+              <label class="help-item">scroll_width：</label>
+              （数字）参数：7，滚动条宽度</p>
+            <p>
+              <label class="help-item">scroll_speed：</label>
+              （数字）参数：400，滑块滑动的速度</p>
+            <p>
+              <label class="help-item">scroll_times：</label>
+              （数字）参数：5，目标完成滚动的次数</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+             <p>
+              <label class="help-item">destory：</label>
+              （方法）参数：将目标destory</p>
+              <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              模拟滚动条</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo" style="overflow:hidden ;">
+            	<script>
+					$(function(){
+						$('.ui-scrollBar').scrollBar({
+						});	
+						$('#clearWid').click(function(){
+							$('#testClear').scrollBar('destory') ;
+						}) ;
+					}) ;
+				</script>
+                <input type="button" value="清除插件" class="buttonActive" id="clearWid" /><br/>
+                <ul class="ui-scrollBar" id="testClear">
+                    <li>aaaaaaaaaaaa</li>
+                    <li>bbbbbbbbbbbb</li>
+                    <li>cccccccccccc</li>
+                    <li>dddddddddddd</li>
+                    <li>eeeeeeeeeeee</li>
+                    <li>ffffffffffff</li>
+                    <li>gggggggggggg</li>
+                    <li>hhhhhhhhhhhh</li>
+                    <li>iiiiiiiiiiii</li>
+                    <li>jjjjjjjjjjjj</li>
+                    <li>kkkkkkkkkkkk</li>
+                    <li>llllllllllll</li>
+                    <li>mmmmmmmmmmmm</li>
+                    <li>nnnnnnnnnnnn</li>
+                    <li>oooooooooooo</li>
+                    <li>pppppppppppp</li>
+                    <li>qqqqqqqqqqqq</li>
+                    <li>rrrrrrrrrrrr</li>
+                    <li>ssssssssssss</li>
+                    <li>tttttttttttt</li>
+                    <li>uuuuuuuuuuuu</li>
+                    <li>vvvvvvvvvvvv</li>
+                    <li>wwwwwwwwwwww</li>
+                    <li>xxxxxxxxxxxx</li>
+                    <li>yyyyyyyyyyyy</li>
+                    <li>zzzzzzzzzzzz</li>
+                    <li>aaaaaaaaaaaa</li>
+                    <li>bbbbbbbbbbbb</li>
+                    <li>cccccccccccc</li>
+                    <li>dddddddddddd</li>
+                    <li>eeeeeeeeeeee</li>
+                    <li>ffffffffffff</li>
+                    <li>111111111111</li>
+                </ul>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){
+						$('.ui-scrollBar').scrollBar({
+						});	
+						$('#clearWid').click(function(){
+							$('#testClear').scrollBar('destory') ;
+						}) ;
+					}) ;
+			   &lt;/script>
+               &lt;input type="button" value="清除插件" class="buttonActive" id="clearWid" />&lt;br/>
+               &lt;ul class="ui-scrollBar" id="testClear">
+                    &lt;li>aaaaaaaaaaaa&lt;/li>
+                    &lt;li>bbbbbbbbbbbb&lt;/li>
+                    &lt;li>cccccccccccc&lt;/li>
+                    &lt;li>dddddddddddd&lt;/li>
+                    &lt;li>eeeeeeeeeeee&lt;/li>
+                    &lt;li>ffffffffffff&lt;/li>
+                    &lt;li>gggggggggggg&lt;/li>
+                    &lt;li>hhhhhhhhhhhh&lt;/li>
+                    &lt;li>iiiiiiiiiiii&lt;/li>
+                    &lt;li>jjjjjjjjjjjj&lt;/li>
+                    &lt;li>kkkkkkkkkkkk&lt;/li>
+                    &lt;li>llllllllllll&lt;/li>
+                    &lt;li>mmmmmmmmmmmm&lt;/li>
+                    &lt;li>nnnnnnnnnnnn&lt;/li>
+                    &lt;li>oooooooooooo&lt;/li>
+                    &lt;li>pppppppppppp&lt;/li>
+                    &lt;li>qqqqqqqqqqqq&lt;/li>
+                    &lt;li>rrrrrrrrrrrr&lt;/li>
+                    &lt;li>ssssssssssss&lt;/li>
+                    &lt;li>tttttttttttt&lt;/li>
+                    &lt;li>uuuuuuuuuuuu&lt;/li>
+                    &lt;li>vvvvvvvvvvvv&lt;/li>
+                    &lt;li>wwwwwwwwwwww&lt;/li>
+                    &lt;li>xxxxxxxxxxxx&lt;/li>
+                    &lt;li>yyyyyyyyyyyy&lt;/li>
+                    &lt;li>zzzzzzzzzzzz&lt;/li>
+                    &lt;li>aaaaaaaaaaaa&lt;/li>
+                    &lt;li>bbbbbbbbbbbb&lt;/li>
+                    &lt;li>cccccccccccc&lt;/li>
+                    &lt;li>dddddddddddd&lt;/li>
+                    &lt;li>eeeeeeeeeeee&lt;/li>
+                    &lt;li>ffffffffffff&lt;/li>
+                    &lt;li>111111111111&lt;/li>
+               &lt;/ul>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

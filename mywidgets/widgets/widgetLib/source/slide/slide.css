@@ -1,0 +1,89 @@
+/**
+*slide
+*/
+ul,li{
+	list-style:none ;
+	margin:0 ;
+	padding:0 ;
+}
+.slideWrap{
+	margin:60px auto ;
+	width:800px ;
+}
+.slide{
+	border-top:1px solid #d7d7d7 ;
+	height:100% ;
+	margin:0 auto ;
+	overflow:hidden ;
+	position:relative ;
+	width:100% ;
+}
+.slideList{
+	left:0 ;
+	overflow:visible ;
+	position:absolute ;
+	top:0 ;
+}
+.slideElem{
+	left:0px ;
+	position:absolute ;
+}
+.btn_prev,.btn_next{
+	display:none ;
+	height:74px ;
+	margin-top:-30px ;
+	position:absolute ;
+	top:50% ;
+	width:73px ;
+	z-index:1111 ;
+}
+.btn_prev{
+	background:url(images/slide/hover_left.png) no-repeat left top ;
+	left:50px ;
+}
+.btn_next{
+	background:url(images/slide/hover_right.png) no-repeat right top ;
+	right:50px ;
+}
+.btn_up{
+	background:url(images/slide/hover_top.png) no-repeat left top ;
+	left:50px ;
+}
+.btn_down{
+	background:url(images/slide/hover_bottom.png) no-repeat right top ;
+	right:50px ;
+}
+/*切换焦点样式*/
+.num_con{
+	margin:0 auto ;
+	position:relative ;
+}
+.num_inner{
+	float:left ;
+	height:21px ;
+	margin-left:16px ;
+	margin-top:-26px ;
+	z-index:999 ;
+}
+.num_inner.num_left{
+	float:left ;
+	margin-left:16px ;
+}
+.num_inner.num_right{
+	float:right ;
+	margin-right:16px ;
+}
+.num_inner a{
+	background:url(images/slide/btn_main_img.png) 0 0 no-repeat ;
+	display:block ;
+	float:left ;
+	height:21px ;
+	margin:0 ;
+	padding:0 ;
+	text-decoration:none ;
+	text-indent:-999px ;
+	width:21px ;
+}
+.num_inner a.num_on{
+	background-position:0 -21px ;
+}

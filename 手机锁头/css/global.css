@@ -1,0 +1,105 @@
+*:focus {
+	outline:0;
+}
+
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+
+.tright{
+	text-align: right;
+}
+
+.tcenter{
+	text-align: center;
+}
+
+.hide {
+	display:none;
+}
+
+.inlineBlock {
+	display:inline-block;
+	zoom:1;
+}
+.inline {
+	display:inline;
+}
+
+button {
+	cursor:pointer;
+}
+
+.block,article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+	display:block;
+}
+
+.ps{
+	position: relative;
+}
+
+.clearfix:after {
+	content:'\20';
+	display:block;
+	height:0;
+	clear:both;
+	overflow:hidden;
+	visibility: hidden;
+}
+
+.clearfix {
+	zoom:1;
+}
+
+.clear {
+	clear:both;
+}
+
+.wordwrap {
+	word-break:break-all;
+	word-wrap:break-word;
+}
+
+.gray{
+	color: #969696;
+}
+
+.blue{
+	color:#3f89ec;
+}
+
+.f14{
+	font-size: 14px;
+}
+
+.fb{
+	font-weight: bold;
+}
+
+.m-t05{
+	margin-top:-5px;
+}
+
+.m-t10{
+    margin-top: 10px;
+}
+
+
+.m-t20{
+	margin-top: 20px;
+} 
+
+.m-t25{
+	margin-top: 25px;
+}
+
+.m-b10{
+	margin-bottom: 10px;
+}
+
+.p-lr10{
+	padding: 0 10px;	
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>表单-按钮-推荐按钮</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.buttonLight.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>轻量级按钮（buttonLight）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>轻量级按钮插件，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> buttonLight(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">type：</label>
+              （字符）参数："button"</p>
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数："buttonLight"</p>
+            <p>
+              <label class="help-item">data-width：</label>
+              （字符）可选， 标签元素中的扩展属性，允许自定义按钮的宽度。如果没有设定此属性，宽度将会自适应内容。可选参数："standard"、"数字"。</p>
+            <p>
+            <label class="help-item">data-type：</label>
+              （字符） 可选，参数："menu"，下拉菜单形态。</p>
+              <p>
+            <label class="help-item">data-img：</label>
+              （字符） 可选，参数：Url，设置按钮中需要显示的图标的路径。</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-code">disable()：</label>
+              使按钮转换为禁用状态。</p>
+              <p>
+              <label class="help-code">enable()：</label>
+              使按钮转换为可用状态。</p>
+              <p>
+              <label class="help-code">hide()：</label>
+              隐藏按钮。</p>
+              <p>
+              <label class="help-code">show()：</label>
+              显示按钮。</p>
+            <p>
+              <label class="help-code">destroy()：</label>
+              用于销毁该插件，使按钮恢复为原生的状态。</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              带有图标的轻量级按钮，可控制按钮的状态。</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo" style="background-color:#EAF1FD;"> 
+              <script>
+            	$(function(){
+					$('#disable').click(function(){
+						$('#btnDemo').buttonLight('disable');
+					});
+					$('#enable').click(function(){
+						$('#btnDemo').buttonLight('enable');
+					});
+					$('#hide').click(function(){
+						$('#btnDemo').buttonLight('hide');
+					});
+					$('#show').click(function(){
+						$('#btnDemo').buttonLight('show');
+					});
+				});
+            </script>
+              <input id="btnDemo" class="buttonLight" type="button" value="按钮" data-img="../WidgetLib/uiBase/skins/base/icon_system/16px/menu.png" />
+              <a href="###" id="disable">禁用</a> <a href="###" id="enable">启用</a> <a href="###" id="hide">隐藏</a> <a href="###" id="show">显示</a></div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+                 &lt;script>
+                    $(function(){
+                        $('#disable').click(function(){
+                            $('#btnDemo').buttonLight('disable');
+                        });
+                        $('#enable').click(function(){
+                            $('#btnDemo').buttonLight('enable');
+                        });
+                        $('#hide').click(function(){
+                            $('#btnDemo').buttonLight('hide');
+                        });
+                        $('#show').click(function(){
+                            $('#btnDemo').buttonLight('show');
+                        });
+                    });
+                &lt;/script>
+                &lt;input id="btnDemo" class="buttonLight" type="button" value="按钮" data-img="../WidgetLib/uiBase/skins/base/icon_system/16px/menu.png" />
+                &lt;a href="###" id="disable">禁用&lt;/a> 
+                &lt;a href="###" id="enable">启用&lt;/a>
+                &lt;a href="###" id="hide">隐藏&lt;/a> 
+                &lt;a href="###" id="show">显示&lt;/a>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

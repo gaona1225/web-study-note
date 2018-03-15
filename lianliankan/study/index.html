@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>连连看</title>
+<link rel="stylesheet" href="css/index.css" />
+<!--<script language="javascript" type="text/javascript" src="list.json"></script>-->
+</head>
+
+<body>
+<div id="main">
+	<div id="box">剩余时间100%</div>
+	<ul id="diff">
+		<li><img src="images/diffbg.gif" alt="简单" id="easy" />简单</li>
+		<li><img src="images/diffbghover.gif" alt="普通" id="common" />普通</li>
+		<li><img src="images/diffbghover.gif" alt="困难" id="hard" />困难</li>
+	</ul>
+	<div id="tbox">
+		<table id="tab"></table>
+	</div>
+	<canvas id="tempCanvas"></canvas>
+	<ul id="menu">
+		<li class="menu-list" id="fruits">水果连连看</li>
+		<li class="menu-list" id="flower">花朵连连看</li>
+		<li class="menu-list" id="animal">动物连连看</li>
+		<li class="menu-list" id="carico">车标连连看</li>
+		<li class="count-list" id="numli">当前第<span id="num">1</span>关</li>
+		<li class="count-list" id="scoreli">得分<span id="score">0</span></li>
+	</ul>
+	<div id="rule">将所有成对的图标消灭完就算过关，只要有没消完或者任意两点间已经无法再连通都算输</div>
+</div>
+<script language="javascript" type="text/javascript">
+	function lianliankan(option){
+		this.option = option;
+		this.mode = option.mode;
+		this.type = option.type;
+		this.initElem(this.mode,this.type) ;
+	}
+	
+	lianliankan.TEMPCANVAS = document.getElementById('tempCanvas') ; //提取tempCanvas
+	
+	//初始化列
+	lianliankan.prototype.getCol = function(mode){
+		var cols;
+		switch(mode){
+			case 'easy' : cols=10; break;
+			case 'common' : cols=12; break;
+			case 'hard' : cols=15; break;
+		}
+		return cols ;
+	}
+	
+	//初始化行
+	lianliankan.prototype.getRow = function(mode){
+		var rows;
+		switch(mode){
+			case 'easy' : rows=10; break;
+			case 'common' : rows=12; break;
+			case 'hard' : rows=12; break;
+		}
+		return rows ;
+	}
+	
+	//随机图片
+	lianliankan.prototype.randomPath = function(){
+		var randomPath = parseInt(Math.random()*(30-1+1)+1);
+		return randomPath ;
+	}
+	
+	//初始化元素
+	lianliankan.prototype.initElem = function(mode,type){
+		lianliankan.TEMPCANVAS.setAttribute('gameMode',mode);
+		lianliankan.TEMPCANVAS.setAttribute('gameType',type);
+		var className = mode + '-table' ;
+		document.getElementById('tbox').setAttribute('class',className) ;
+		var tTable = document.getElementById('tab') ;
+		for(var i=0;i<this.getRow(mode);i++){
+			var tr = tTable.insertRow() ;
+			for(var j=0;j<this.getCol(mode);j++){
+				var td = tr.insertCell();
+				td.innerHTML = '<img src="' + type + '/i_' + this.randomPath() + '.jpg" />' ;
+			}
+		}
+		this.clickImg() ;
+	}
+	
+	//核心操作点击图片进行消除
+	lianliankan.prototype.clickImg = function(){
+		var imgElem = document.getElementById('tab').getElementsByTagName('img') ;
+		var len = imgElem.length;
+		var flagClick = true ;
+		for(var i=0;i<len;i++){
+			(function(j){
+				imgElem[j].onclick = function(){
+					console.log('fff') ;
+					if(flagClick){
+						this.setAttribute('class','click') ;
+					}else{
+						this.setAttribute('class',' ') ;
+					}
+					flagClick = !flagClick;
+				}
+			})(i)
+		}
+	}
+	
+	//样式定义
+	lianliankan.prototype.setStyle = function(){
+		
+	}
+	
+	//绘制背景
+	lianliankan.prototype.drawBack = function(){
+	}
+	
+	//核心算法 - 判断两个目标元素是否可消除
+	lianliankan.prototype.isMatching = function(){
+	}
+	
+	//绘制连接线
+	/*参数说明:
+		id：绘制连接线存放的目标容器；
+		sx:第一次有效点击元素中心点的横坐标；
+		sy:第一次有效点击元素中心点的纵坐标；
+		ex:第二次有效点击并且匹配可消除元素中心点的横坐标；
+		ey:第二次有效点击并且匹配可消除元素中心点的纵坐标；	
+		
+		调用示例：game.drawLine('tempCanvas',10,10,50,30);
+		*/
+	lianliankan.prototype.drawLine = function(id,sx,sy,ex,ey){
+		var canvas = document.getElementById(id);
+		var cxt = canvas.getContext('2d');
+		cxt.beginPath();
+		cxt.moveTo(sx,sy);
+		cxt.lineTo(sx,0);
+		cxt.lineTo(ex,0);
+		cxt.lineTo(ex,ey);
+		cxt.stroke();
+	}
+	
+	//消除目标元素
+	lianliankan.prototype.removeElem = function(img1,img2){
+		img1.style.visibility = 'hidden' ;
+		img2.style.visibility = 'hidden' ;
+	}
+	
+	//改变难道模式
+	lianliankan.prototype.changeInit = function(modeid,typeid){
+		var newGame = new lianliankan({
+			'mode' : modeid ,
+			'type' : typeid
+		});
+		newGame.initElem(modeid,typeid) ;
+	}
+	
+	//重新开始
+	lianliankan.prototype.resetGame = function(){
+	}
+	
+	//分数统计(消除一对匹配的得分20分)
+	lianliankan.prototype.setScore = function(){
+	}
+	
+	//时间统计(完成所费时间)
+	lianliankan.prototype.getAllTime = function(){
+	}
+	
+	//帮助--重新排列(重新随机排列剩余元素)
+	lianliankan.prototype.helpChange = function(){
+	}
+	
+	//帮助--提醒(高亮显示两个科消除的元素)
+	lianliankan.prototype.helpTip = function(){
+	}
+	
+	//帮助--炸弹（消除指定两个一样的元素）
+	lianliankan.prototype.helpBomb = function(){
+	}
+	
+	//创建目标对象
+	var game = new lianliankan({
+		'mode' : 'easy',
+		'type' : 'fruits'
+	});
+	
+	//操作区
+	document.getElementById('easy').onclick = function(){
+		game.changeInit(this.id,lianliankan.TEMPCANVAS.getAttribute('gameType'));
+	}	
+	document.getElementById('common').onclick = function(){
+		game.changeInit(this.id,lianliankan.TEMPCANVAS.getAttribute('gameType'));
+	}	
+	document.getElementById('hard').onclick = function(){
+		game.changeInit(this.id,lianliankan.TEMPCANVAS.getAttribute('gameType'));
+	}
+	document.getElementById('fruits').onclick = function(){
+		game.changeInit(lianliankan.TEMPCANVAS.getAttribute('gameMode'),this.id);
+	}
+	document.getElementById('flower').onclick = function(){
+		game.changeInit(lianliankan.TEMPCANVAS.getAttribute('gameMode'),this.id);
+	}
+	document.getElementById('animal').onclick = function(){
+		game.changeInit(lianliankan.TEMPCANVAS.getAttribute('gameMode'),this.id);
+	}
+	document.getElementById('carico').onclick = function(){
+		game.changeInit(lianliankan.TEMPCANVAS.getAttribute('gameMode'),this.id);
+	}
+</script>
+</body>
+</html>

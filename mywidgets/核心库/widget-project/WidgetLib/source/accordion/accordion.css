@@ -1,0 +1,29 @@
+/**
+*accordion
+*/
+.accor-wrap{
+	border:1px solid #C6C6C6 ;
+	overflow:hidden ;
+	position:relative ;
+}
+.accor-elem{
+	background:#000 ;
+	position:absolute ;
+}
+.accor-elem a{
+	display:block ;
+}
+.accor-wrap .accor-elem img{
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+.accor-wrap .accor-current img{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+li.accor-border-left img{
+	border-left:1px solid #DBDBDB ;
+}
+li.accor-border-top img{
+	border-top:1px solid #DBDBDB ;
+}

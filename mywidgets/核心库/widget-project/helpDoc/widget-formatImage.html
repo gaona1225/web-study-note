@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>图片自定义大小插件formatImage</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.formatImage.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+		var author = $.ui.formatImage.author ;
+		$('#author').html(author);
+	});
+    </script>
+    <style type="text/css">
+    </style>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>图片自定义大小（formatImage）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+		 <p><strong>作者：
+            <label id="author"></label>
+            </strong></p>	
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>图片自定义大小插件，根据显示大小图片自动自适应于目标显示区域，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> $(".ui-formatImage").formatImage(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">width：</label>
+              （数字）默认参数：“150px”，实际显示的宽度，只用填写数字，不用加入单位</p>
+            <p>
+              <label class="help-item">height：</label>
+              （数字）默认参数“100px”，实际显示的高度，只用填写数字，不用加入单位</p>
+            <p>
+              <label class="help-item">position：</label>
+              （字符）默认参数“center”，从什么地方开始剪切图片，'top'左上角，'center'中间，'bottom'右下角</p>          
+          </div>
+        </div>
+        <!--语法段落结束--> 
+		<!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">预定义参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">data-formatImage-width：</label>
+              （数字）无默认值，实际显示的宽度，只用填写数字，不用加入单位</p>
+            <p>
+              <label class="help-item">data-formatImage-height：</label>
+              （数字）默无认值，实际显示的高度，只用填写数字，不用加入单位</p>
+            <p>
+              <label class="help-item">data-formatImage-position：</label>
+              （字符）无默认值，从什么地方开始剪切图片，'top'左上角，'center'中间，'bottom'右下角</p>          
+          </div>
+        </div>
+        <!--语法段落结束-->
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+             <p>
+              <label class="help-code">destroy()：</label>
+              用于销毁该插件，使按钮恢复为原生的状态。</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-1：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              默认自定义滚动条，及其销毁方法调用</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo" style="overflow:hidden ;">
+            	<script>
+					$(function(){
+						$('#clearWid').click(function(){
+							$('#imgId1').formatImage('destroy');
+						}) ;
+						$('#initWid').click(function(){
+							$('#imgId1').formatImage();
+						}) ;
+					}) ;
+				</script>
+                <input type="button" value="清除插件" class="buttonActive" id="clearWid" />
+				<br/>
+                <img src="images/formatImage/1.jpg" id='imgId1'  class='ui-formatImage'/>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){
+						$('#clearWid').click(function(){
+							$('#imgId1').formatImage('destroy');
+						}) ;
+					}) ;
+			   &lt;/script>
+               &lt;input type="button" value="清除插件" class="buttonActive" id="clearWid" />&lt;br/>
+               &lt;img src="images/formatImage/1.jpg"  id='imgId1'  class='ui-formatImage'/>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+		<!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-2：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+           预定义方式重新定义图片显示，预定义参数覆盖默认参数</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+				<img src="images/formatImage/2.jpg" class='ui-formatImage' data-formatImage-width='300' data-formatImage-height='300' data-formatImage-position='top'/>
+			</div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+			 	&lt;img src="images/formatImage/2.jpg" class='ui-formatImage' style='width:50px;height:50px;' data-formatImage-width='300' data-formatImage-height='300' data-formatImage-position='top'/>
+			</pre>
+          </div>
+        </div>
+        <!--语法段落结束-->
+		<!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-3：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+           js重新定义图片显示，js参数覆盖预定义参数</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+				<script>
+					$(function(){
+						$('#imgId3').formatImage({
+							width:200,
+							height:200,
+							position:'bottom'	
+						});	
+					});
+				</script>
+				<img src="images/formatImage/3.jpg" id='imgId3' class='ui-formatImage' data-formatImage-width='300' data-formatImage-height='300' data-formatImage-position='top'/>
+			</div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+				&lt;script>
+					$(function(){
+						$('#imgId3').formatImage({
+							width:200,
+							height:200,
+							position:'bottom'	
+						});	
+					});
+				&lt;/script>
+			 	&lt;img src="images/formatImage/3.jpg" id='imgId3' class='ui-formatImage' style='width:50px;height:50px;' data-formatImage-width='300' data-formatImage-height='300' data-formatImage-position='top'/>
+			</pre>
+          </div>
+        </div>
+        <!--语法段落结束-->
+      </div>
+    </div>
+</body>
+</html>

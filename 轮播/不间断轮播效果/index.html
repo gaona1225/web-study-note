@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>不间断轮播效果</title>
+<script language="javascript" src="jquery-1.10.2.js"></script>
+<style type="text/css">
+*{
+	list-style:none ;
+	margin:0px ;
+	padding:0px ;
+}
+.main_visual{
+	margin:60px auto ;
+	width:800px ;
+}
+.flicking_con{
+	margin:0 auto ;
+	position:relative ;
+}
+.flicking_inner{
+	height:21px ;
+	left:90px ;
+	position:absolute ;
+	top:146px ;
+	width:300px ;
+	z-index:999 ;
+}
+.flicking_inner a{
+	background:url(img/btn_main_img.png) 0 0 no-repeat ;
+	display:block ;
+	float:left ;
+	height:21px ;
+	margin:0 ;
+	padding:0 ;
+	text-decoration:none ;
+	text-indent:-999px ;
+	width:21px ;
+}
+.flicking_inner a.on{
+	background-position:0 -21px ;
+}
+.main_image{
+	border-top:1px solid #d7d7d7 ;
+	height:176px ;
+	margin:0 auto ;
+	overflow:hidden ;
+	position:relative ;
+	width:100% ;
+}
+.main_image ul{
+	height:176px ;
+	left:0 ;
+	/*overflow:hidden ;*/
+	overflow:visible ;
+	position:absolute ;
+	top:0 ;
+	/*width:4000px ;*/
+	width:800px ;
+}
+.main_image ul li{
+	/*float:left ;*/
+	left:0px ;
+	height:176px ;
+	position:absolute ;
+	width:800px ;
+}
+.main_image ul li a{
+	display:block ;
+	height:176px ;
+	width:100% ;	
+}
+.main_image ul li a img{
+	height:176px ;
+	width:800px ;
+}
+#btn_prev,#btn_next{
+	display:none ;
+	height:74px ;
+	margin-top:-30px ;
+	position:absolute ;
+	top:50% ;
+	width:73px ;
+	z-index:1111 ;
+}
+#btn_prev{
+	background:url(img/hover_left.png) no-repeat left top ;
+	left:50px ;
+}
+#btn_next{
+	background:url(img/hover_right.png) no-repeat right top ;
+	right:50px ;
+}
+</style>
+<script language="javascript">
+	$(function(){
+		$('.main_visual').hover(function(){
+			//clearInterval(setInt) ;
+			$('#btn_prev,#btn_next').fadeIn() ;
+		},function(){
+			//setInt = setInterval(autoPlay,1000) ;
+			$('#btn_prev,#btn_next').fadeOut() ;
+		}) ;
+		
+		var speed = 200 ;
+		var $liElem = $('.ullist li') ;
+		var liLen = $liElem.length ;
+		var liWid = $liElem.width() ;
+		var maxLeft = (liLen-1) * liWid ;
+		var dir ;
+		var isClick = true ;
+		var setInt ;
+		var autoCount = 0 ;
+		var count = 0 ;
+		
+		$liElem.each(function(i){
+			$liElem.eq(i).css({
+				'left':liWid*i + 'px' 
+			}) ;
+			$liElem.eq(i).attr('data-left',liWid*i) ;
+		}) ;
+		
+		$('#btn_prev').click(function(){
+			if(isClick){
+				goLi(-1,true) ;
+				isClick = false ;
+			}
+		}) ;
+		
+		$('#btn_next').click(function(){
+			if(isClick){
+				goLi(1,true) ;
+				isClick = false ;
+			}
+		}) ;
+		
+		//setInt = setInterval(autoPlay,1000) ;
+		function autoPlay(){
+			goLi(1,true) ;
+			autoCount ++ ;
+		}
+		
+		$('.flicking_inner a').click(function(){
+			var lastIndex = parseInt($('a.on').index()) ;
+			var nowIndex = parseInt($(this).index()) ;
+			if(lastIndex>nowIndex){
+				for(var j=0; j<lastIndex-nowIndex;j++){
+					goLi(-1,false) ;
+				}
+			}else if(lastIndex<nowIndex){
+				for(var j=0; j<nowIndex-lastIndex;j++){
+					goLi(1,false) ;
+				}
+			}	
+		}) ;
+		
+		function goLi(dir,flag){
+			for(var i=0; i<liLen; i++){
+				if(parseInt($liElem.eq(i).attr('data-left')) == (-dir*maxLeft)){
+					$liElem.eq(i).css('left',dir*liWid) ;
+					$liElem.eq(i).attr('data-left',dir*liWid) ;
+				}						
+				var newLeft = parseInt($liElem.eq(i).attr('data-left')) - dir*liWid ;
+				$liElem.eq(i).attr('data-left',newLeft) ;
+				$liElem.eq(i).stop().animate({
+					'left':newLeft
+				},speed,function(){
+					isClick = true ;
+					setCur() ;
+				}) ;
+			}
+		}
+		function setCur(){
+			for(var i = liLen-1; i>=0; i--){
+				if(parseInt($liElem.eq(i).attr('data-left')) == 0){
+					$('.flicking_inner a').eq(i).addClass('on') ;
+				}else{
+					$('.flicking_inner a').eq(i).removeClass('on') ;
+				}
+			}
+		}
+	}) ;
+</script>
+</head>
+
+<body>
+	<div class="main_visual">
+        <div class="flicking_con">
+            <div class="flicking_inner">
+                <a href="javascript:;" class="on">1</a>
+                <a href="javascript:;">2</a>
+                <a href="javascript:;">3</a>
+                <a href="javascript:;" >4</a>
+                <a href="javascript:;">5</a>
+             </div>
+        </div>
+        <div class="main_image">
+            <ul class="ullist">			
+                <li><a href="#"><img src="img/img_main_1.jpg" /></a></li>
+                <li><a href="#"><img src="img/img_main_2.jpg" /></a></li>
+                <li><a href="#"><img src="img/img_main_3.jpg" /></a></li>
+                <li><a href="#"><img src="img/img_main_4.jpg" /></a></li>
+                <li><a href="#"><img src="img/img_main_5.jpg" /></a></li>
+            </ul>
+            <a href="javascript:;" id="btn_prev"></a>
+            <a href="javascript:;" id="btn_next"></a>
+        </div>
+    </div>
+</body>
+</html>

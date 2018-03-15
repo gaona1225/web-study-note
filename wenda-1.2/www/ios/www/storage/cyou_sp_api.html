@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Photo</title>
+
+    <script type="text/javascript" charset="utf-8" src="../plugins/org.apache.cordova.spapi/www/CyouSPApi.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../cordova-incl.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    function onFail(message) {
+      
+    }
+    
+     function success(result) {
+      //todo 
+      
+    }
+    
+    function saveString() {
+      spApi.saveString(success,onFail);
+    }
+    
+    function gettString() {
+      spApi.getString(success,onFail);
+    }
+    
+    function saveobject() {
+//demo:
+        
+        var token = "test_token_string";
+        var expiresTime = 100000000;
+        var socialid = "socialid";
+        var type = "type";
+        
+        var args = [token,expiresTime,socialid,type];
+        spApi.saveAccessObject(success,onFail, args);
+    }
+    
+    function getobject() {
+        spApi.getAccessObject(success,onFail);
+    }
+    
+    function islogin() {
+        spApi.isLogin(success,onFail);
+    }
+    
+    function saveToken() {
+        spApi.saveToken(success,onFail,"save_token_aa")
+    }
+    
+    function cleartoken () {
+        spApi.clearToken(success,onFail);
+    }
+    
+    function clearAccessData(){
+        spApi.clearAccessData(success,onFail);
+    }
+    
+    </script>
+  </head>
+  <body>
+    <button onclick="saveString();">saveString</button> <br>
+     <hr color="red"> 
+     <button onclick="gettString();">gettString</button> <br>
+     <hr color="red">
+     <button onclick="saveobject();">saveobject</button> <br>
+     <hr color="red">
+     <button onclick="getobject();">getobject</button> <br>
+     <hr color="red">
+     <button onclick="islogin();">islogin</button> <br>
+     <hr color="red">
+     <button onclick="saveToken();">saveToken</button> <br>
+     <hr color="red">
+     <button onclick="cleartoken();">cleartoken</button> <br>
+     <hr color="red">
+     <button onclick="clearAccessData();">clearAccessData</button> <br>
+     <hr color="red">
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>onscroll</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="onscroll.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		var text1 = $('#scroll1 p').html() ;
+		var text2 = $('#scroll2 p').html() ;
+		var text3 = $('#scroll3 p').html() ;
+		var text4 = $('#scroll4 p').html() ;
+		$('#scroll1').onscroll({
+			inTar:function(){
+				console.log('你现在进入id为scroll1的区域内=====' + text1) ;
+			} ,
+			outTar:function(){
+				console.log('你现在离开了id为scroll1的区域===' + text1) ;
+			}
+		});
+		$('#scroll2').onscroll({
+			inTar:function(){
+				console.log('你现在进入id为scroll2的区域内========' + text2) ;
+			} ,
+			outTar:function(){
+				console.log('你现在离开了id为scroll2的区域=======' + text2) ;
+			}
+		});
+		$('#scroll3').onscroll({
+			inTar:function(){
+				console.log('你现在进入id为scroll3的区域内=====' + text3) ;
+			} ,
+			outTar:function(){
+				console.log('你现在离开了id为scroll3的区域===' + text3) ;
+			}
+		});
+		$('#scroll4').onscroll({
+			inTar:function(){
+				console.log('你现在进入id为scroll4的区域内========' + text4) ;
+			} ,
+			outTar:function(){
+				console.log('你现在离开了id为scroll4的区域=======' + text4) ;
+			}
+		});
+	}) ;
+</script>
+<style type="text/css">
+	body{
+		width:2000px ;
+	}
+	p.textp{
+		background:#EBEBEB ;
+		height:300px ;
+		width:100% ;
+	}
+	#scroll1{
+		background:#CCCCCC ;
+		height:400px ;
+		margin-left:60px ;
+		width:300px ;
+	}
+	#scroll1 p,#scroll2 p,#scroll3 p,#scroll4 p{
+		padding:20px ;
+	}
+	#scroll2{
+		background:#6CF ;
+		height:300px ;
+		margin-left:260px ;
+		width:200px ;
+	}
+	#scroll3{
+		background:#6CF ;
+		height:300px ;
+		margin-left:460px ;
+		position:relative ;
+		width:200px ;
+	}
+	#scroll4{
+		background:#f00 ;
+		height:300px ;
+		margin-left:600px ;
+		position:absolute ;
+		left:0 ;
+		top:1600px ;
+		width:200px ;
+	}
+</style>
+</head>
+
+<body>
+
+</body>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多</p>
+<div id="scroll1">
+	<p>1111111111111111</p>
+</div>
+<p class="textp">以下大部分demo明河在以前的html5demo推荐中都有提到过，这篇算是集大成者，html5的大部分特性在这些demo</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多信息，请参考HTML5:http://diveintohtml</p>
+<div id="scroll2">
+	<p>222222222222222</p>
+</div>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多信息，请参考HTML5:http://diveintohtml5</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多信息，请参考HTML5:http://diveintohtml</p>
+<div id="scroll3">
+	<p>3333333</p>
+</div>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多信息，请参考HTML5:http://diveintohtml</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多信息，请参考HTML5:http://diveintohtml</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多信息，请参考HTML5:http://diveintohtml</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多信息，请参考HTML5:http://diveintohtml</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多信息，请参考HTML5:http://diveintohtml</p>
+<div id="scroll4">
+	<p>44444444</p>
+</div>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的构</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多典型的游戏类结构</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的构</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多典型的游戏类结构</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的构</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多典型的游戏类结构</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的构</p>
+<p class="textp">这篇文章不打算覆盖所有的HTML5规范，有关HTML5的更多典型的游戏类结构</p>
+</body>
+</html>

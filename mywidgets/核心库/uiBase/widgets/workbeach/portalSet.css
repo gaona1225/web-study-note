@@ -1,0 +1,51 @@
+.ui-port-headdiv {
+	width:980px;
+	height:230px;
+	margin-top:0px;
+}
+.ui-port-imgdiv {
+	width:980px;
+	height:230px;
+	overflow:hidden;
+	float:left;
+	z-index:997;
+}
+.ui-port-imgdiv ul li{
+	float: left;
+}
+.ui-port-moveleft {
+	margin-left:6px;
+	cursor: hand;
+	float: left;
+	margin-top: 95px;
+	z-index: 998;
+	width: 980px;
+	position: absolute;
+	display: none;
+}
+.ui-port-moveright {
+	margin-left: 935px;
+	cursor: hand;
+	float: left;
+	margin-top: 95px;
+	z-index: 998;
+	width: 980px;
+	position: absolute;
+	display: none;
+}
+.ui-workbench-left{
+	float:left;
+	width:24px;
+	height:27px;
+	background:url(images/workbench-left.jpg) no-repeat transparent;
+	cursor:pointer;
+	display:inline-block;
+}
+.ui-workbench-right{
+	float:right;
+	width:24px;
+	height:27px;
+	background:url(images/workbench-right.jpg) no-repeat transparent;
+	cursor:pointer;
+	display:inline-block;
+}

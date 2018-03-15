@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document table.css */
+*{
+	font-family:"微软雅黑" ;
+	font-size:12px ;
+}
+a:link,a:visited{
+	color:#f00 ;
+	text-decoration:none ;
+}
+a:hover{
+	color:#0099FF ;
+	text-decoration:none ;
+}
+.table{
+	border-collapse:collapse ;
+	width:500px ;
+}
+.table td{
+	border:1px solid #fff ;
+	padding-left:3px ;
+	text-align:left ;
+}
+.table thead td{
+	background:url(image/funtitle.gif) bottom repeat-x ;
+	color:#242424 ;
+	height:25px ;
+	text-align:center ;
+}
+.table tbody td{
+	background:#EAEAEA ;
+}
+.table tbody td:first-child,.table tbody td:nth-child(2),.table tbody td:last-child{
+	padding-left:0px ;
+	text-align:center ;
+}
+.table tfoot td{
+	background:url(image/funtitle.gif) top repeat-x ;
+	height:25px ;
+	padding-right:8px ;
+	text-align:right ;
+}
+.table tfoot td span,.table tfoot td span a{
+	margin-left:8px ;
+}
+.table tfoot td input{
+	height:12px ;
+	width:20px ;
+}
+.table tbody tr.odd td{
+	background:#CFE2E1 !important;
+}
+.table tbody tr.highlight{
+	background:#D7E6EB ;
+}
+

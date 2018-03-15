@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html style="height:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>testwidgets</title>
+<script language="javascript" type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="dragable2.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('#dragableDiv1').dragable({
+			//div_rangle_show:'none'
+		}) ;
+		$('#dragableDiv2').dragable({
+			//div_rangle_show:'none'
+		}) ;
+	}) ;
+</script>
+<style type="text/css">
+.dragableDiv{
+	float:left ;
+	margin-left:10px ;
+}
+.dragableRangle{
+	background:#C4FBF8 ;
+	clear:both ;
+	font-size:20px ;
+	position:absolute ;
+	text-align:center ;
+	z-index:-1 ;
+}
+</style>
+</head>
+
+<body>
+<div class="dragableDiv" id="dragableDiv1"></div>
+<div class="dragableDiv" id="dragableDiv2"></div>
+left:<span class="test"></span><br/>top:<span class="testTop"></span>
+<div class="dragableRangle">未进入碰撞区域</div>
+</body>
+</html>

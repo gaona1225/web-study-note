@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>朋友网右侧块的滚动条</title>
+		<meta name="author" content="Administrator" />		
+		<script src="jquery-1.6.4.js" type="text/javascript"></script> 
+		<script src="jquery.wadata.shell.js" type="text/javascript"></script> 
+		<script type="text/javascript">
+
+		$(function(){
+				$(".chatList").rhmShell();
+				
+	
+		});
+		window.onload = function(){
+			var oChat = document.getElementById("chartBodyUlObj");
+			
+			oChat.onscroll = function(){
+
+				$(".user").css("top",-this.scrollTop);
+				$(".chatScrolling").css("margin-top",this.scrollTop)
+			}
+			
+		}
+			
+		</script>
+		<style>
+			*{ margin:0; padding: 0; font-size:12px;}
+			.chatList{ width:64px; float:right }
+			.chatList .title{ background: #33373d; color:#fff; text-align: center; line-height:34px; height:34px;}
+			.chatBody{ border:1px solid #bdbdbd; border-top:none; background: #f3f3f3;position:relative;  }
+			ul.user{ margin-right:-17px}
+
+
+			.chatScroll{ position:absolute; background: #dedfe0; width:3px; right:0; top:0; height:100%}
+			.chatScrolling{ background:#6e737b}
+			.chartBodyUl{overflow:hidden; overflow-y:scroll; width:80px;}
+			.user{ position: absolute; top: 0;}
+			.user div{ padding:5px 13px}
+			.bottom{ background:#eaeaea; heigth:30px; line-height:30px; text-align:center; border:1px solid #bdbdbd; border-top:none}
+		</style>
+		<!-- Date: 2012-05-11 -->
+	</head>
+	<body>
+		<div class="chatList">
+				<div class="title">聊天</div>
+				<div class="chatBody">
+					<div class="chartBodyUl" id="chartBodyUlObj" style=" position: relative">
+						<div class="user" style="top:-80px">
+							<div><img src="user.png" /></div>
+							<div><img src="user.png" /></div>
+							<div><img src="user.png" /></div>
+							<div><img src="user01.png" /></div>
+							<div><img src="user01.png" /></div>
+							<div><img src="user.png" /></div>
+							<div><img src="user.png" /></div>
+							<div><img src="user.png" /></div>
+							<div><img src="user.png" /></div>
+							<div><img src="user01.png" /></div>
+							<div><img src="user01.png" /></div>
+							<div><img src="user01.png" /></div>
+						</div>
+					</div>
+					<div class="chatScroll">
+						<div class="chatScrolling" ></div>
+					</div>
+				</div>
+				<div class="bottom">搜索</div>
+
+		</div>
+	</body>
+</html>

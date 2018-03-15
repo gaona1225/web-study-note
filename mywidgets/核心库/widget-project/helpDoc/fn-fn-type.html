@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>浏览器类别-数据类别-类型判断</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <style type="text/css">
+    		ul,li,dl,dt,dd {
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+        header {
+            height:30px;line-height:30px;
+            text-align:left;
+            width:100%;
+            -webkit-border-radius:25px;
+            border-radius:25px;
+            margin: 6px 8px 6px 0;
+            padding:3px;
+        }
+        dl {
+            clear:both;
+            width:600px;
+            height:auto;
+            border:1px solid gray;
+            margin:3px;
+        }
+        dt,dd {
+            height:26px;
+            line-height:26px;
+            font-style:italic;
+        }
+        dt {
+            text-align:center;
+            float:left;
+            width:60px;
+            background-color:#efefef;
+        }
+        dd {
+            padding-left:6px;
+            width:auto;
+            overflow:hidden;
+        }
+    </style>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver =  "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>浏览器类别-数据类别-类型判断(fn.type）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>提供本地存储操作的简单封装，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>version.js</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> 是否IE浏览器;&nbsp;ui.fn.isIE()</p>
+            <p class="help-code"> 是否IE7浏览器;&nbsp;ui.fn.isIE("7")</p>
+		    <p class="help-code"> 是否IE8浏览器;&nbsp;ui.fn.isIE("8")</p>
+			<p class="help-code"> 是否IE9浏览器;&nbsp;ui.fn.isIE("9")</p>
+			<p class="help-code"> 是否谷歌浏览器;&nbsp;ui.fn.isChrome()</p>
+			<p class="help-code"> 是否苹果浏览器;&nbsp;ui.fn.isSafari()</p>
+			<p class="help-code"> 是否火狐浏览器;&nbsp;ui.fn.isFx()</p>
+			<p class="help-code"> 是否未定义;&nbsp;ui.fn.isUndefined()</p>
+			<p class="help-code"> 是否Null;&nbsp;ui.fn.isNull()</p>
+			<p class="help-code"> 是否函数;&nbsp;ui.fn.isFn( obj )</p>
+			<p class="help-code"> 是否由非空字符组成;&nbsp;ui.fn.isNotEmpty( obj )</p>
+			<p class="help-code"> 是否数字;&nbsp;ui.fn.isNum( obj )</p>	
+			<p class="help-code"> 是否整数;&nbsp;ui.fn.isInteger( obj )</p>	
+			<p class="help-code"> 是否浮点数;&nbsp;ui.fn.isDecimal( obj )</p>	
+			<p class="help-code"> 是否ip;&nbsp;ui.fn.isIp( obj )</p>
+			<p class="help-code"> 是否链接;&nbsp;ui.fn.isUrl( obj )</p>
+			<p class="help-code"> 是否合法年月日格式;&nbsp;ui.fn.isDateTime( obj )</p>
+			<p class="help-code"> 是否邮箱地址;&nbsp;ui.fn.isEmail( obj )</p>
+			<p class="help-code"> 是否电话号码;&nbsp;ui.fn.isTel( obj )</p>
+			<p class="help-code"> 是否手机号码;&nbsp;ui.fn.isPhone( obj )</p>
+			<p class="help-code"> 是否邮政编码;&nbsp;ui.fn.isZipcode( obj )</p>
+			<p class="help-code"> 是否身份证号码;&nbsp;ui.fn.isIdCard( obj )</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>暂无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>暂无</p>
+			</div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+             浏览器类别-数据类别-类型判断</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+				<div id="result"></div>
+<script>
+	//浏览器判别
+	var _result = document.getElementById( "result" );
+	var isIE = ui.isIE();
+	var isIE7 = ui.isIE("7");
+	var isIE8 = ui.isIE("8");
+	var isIE9 = ui.isIE("9");
+	var isFx = ui.isFx();
+	var isSafari = ui.isSafari();
+	var isChrome = ui.isChrome();
+	var isOpera = ui.isOpera();
+	if ( isIE ) {
+		if ( isIE7 ) {
+			_result.innerHTML = "<h2>你当前使用的浏览器是: IE7</h2>";
+		}  else if ( isIE8 ) {
+			_result.innerHTML = "<h2>你当前使用的浏览器是: IE8</h2>";
+		}  else if ( isIE9 ) {
+			_result.innerHTML = "<h2>你当前使用的浏览器是: IE9</h2>";
+		}
+	} else if ( isChrome ) {
+		_result.innerHTML = "<h2>你当前使用的浏览器是: 谷歌浏览器</h2>";
+	} else if ( isSafari ) {
+		_result.innerHTML = "<h2>你当前使用的浏览器是: 苹果浏览器</h2>";
+	} else if ( isFx ) {
+		_result.innerHTML = "<h2>你当前使用的浏览器是: 火狐浏览器</h2>";
+	} else if ( isOpera ) {
+		_result.innerHTML = "<h2>你当前使用的浏览器是: opera浏览器</h2>";
+	}
+    var a = undefined;
+	_result.innerHTML += "<p>变量a未定义：" + ui.isUndefined( a ) + "</p>";
+    a = null;
+    _result.innerHTML += "<p>变量a是null值：" + ui.isNull( a ) + "</p>";
+    a = "|ab|";
+    _result.innerHTML += "<p>变量a有值："+a+"不是空的:" + ui.isNotEmpty( a ) + "</p>";
+    a = 123.45;
+    _result.innerHTML += "<p>变量a有值："+a+"是数字:" + ui.isNum( a ) + "</p>";
+    a = 100;
+	 _result.innerHTML += "<p>变量a有值："+a+"是整数:" + ui.isInteger( a ) + "</p>";
+    a = -0.1;
+	_result.innerHTML += "<p>变量a有值："+a+"是浮点数:" + ui.isDecimal( a ) + "</p>";
+	//IP
+    a = "192.168.25.39";
+	_result.innerHTML += "<p>变量a有值："+a+"是ip:" + ui.isIp( a ) + "</p>";
+    //URL
+    a = "http://wh-zhangwq.whjh.com:8081/jw/_julyPlan/src/fn.dataFormat/";
+	_result.innerHTML += "<p>变量a有值："+a+"是url:" + ui.isUrl( a ) + "</p>";
+    //DATATIME
+    a = "2012-07-03";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法日期格式:" + ui.isDateTime( a ) + "</p>";
+    a = "2012/07/03";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法日期格式:" + ui.isDateTime( a ) + "</p>";
+    a = "2012.07.03";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法日期格式:" + ui.isDateTime( a ) + "</p>";
+    //EMAIL
+    a = "zhngjob@163.com";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法email地址:" + ui.isEmail( a ) + "</p>";
+    //座机
+    a = "027-56987411";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法座机号码:" + ui.isTel( a ) + "</p>";
+    //手机号
+    a = "13136366666";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法手机号码:" + ui.isPhone( a ) + "</p>";
+    //邮编
+    a = "430072";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法邮编:" + ui.isZipcode( a ) + "</p>";
+    //身份证
+    a = "34150119850424149X";
+    _result.innerHTML += "<p>变量a有值："+a+"是合法身份证号码:" + ui.isIdCard( a ) + "</p>";
+</script>			    
+            </div>
+            <label class="help-item">代码：</label>
+<pre class="brush: js; html-script: true; highlight: 0">
+&lt;div id="result">&lt;/div>
+&lt;script>
+	//浏览器判别
+        var _result = document.getElementById( "result" );
+        var isIE = ui.isIE();
+        var isIE7 = ui.isIE("7");
+        var isIE8 = ui.isIE("8");
+        var isIE9 = ui.isIE("9");
+        var isFx = ui.isFx();
+        var isSafari = ui.isSafari();
+        var isChrome = ui.isChrome();
+        var isOpera = ui.isOpera();
+        if ( isIE ) {
+            if ( isIE7 ) {
+                _result.innerHTML = "<h2>你当前使用的浏览器是: IE7</h2>";
+            }  else if ( isIE8 ) {
+                _result.innerHTML = "<h2>你当前使用的浏览器是: IE8</h2>";
+            }  else if ( isIE9 ) {
+                _result.innerHTML = "<h2>你当前使用的浏览器是: IE9</h2>";
+            }
+        } else if ( isChrome ) {
+            _result.innerHTML = "<h2>你当前使用的浏览器是: 谷歌浏览器</h2>";
+        } else if ( isSafari ) {
+            _result.innerHTML = "<h2>你当前使用的浏览器是: 苹果浏览器</h2>";
+        } else if ( isFx ) {
+            _result.innerHTML = "<h2>你当前使用的浏览器是: 火狐浏览器</h2>";
+        } else if ( isOpera ) {
+            _result.innerHTML = "<h2>你当前使用的浏览器是: opera浏览器</h2>";
+        }
+    var a = undefined;
+	_result.innerHTML += "<p>变量a未定义：" + ui.isUndefined( a ) + "</p>";
+    a = null;
+    _result.innerHTML += "<p>变量a是null值：" + ui.isNull( a ) + "</p>";
+    a = "|ab|";
+    _result.innerHTML += "<p>变量a有值："+a+"不是空的:" + ui.isNotEmpty( a ) + "</p>";
+    a = 123.45;
+    _result.innerHTML += "<p>变量a有值："+a+"是数字:" + ui.isNum( a ) + "</p>";
+    a = 100;
+	 _result.innerHTML += "<p>变量a有值："+a+"是整数:" + ui.isInteger( a ) + "</p>";
+    a = -0.1;
+	_result.innerHTML += "<p>变量a有值："+a+"是浮点数:" + ui.isDecimal( a ) + "</p>";
+	//IP
+    a = "192.168.25.39";
+	_result.innerHTML += "<p>变量a有值："+a+"是ip:" + ui.isIp( a ) + "</p>";
+    //URL
+    a = "http://wh-zhangwq.whjh.com:8081/jw/_julyPlan/src/fn.dataFormat/";
+	_result.innerHTML += "<p>变量a有值："+a+"是url:" + ui.isUrl( a ) + "</p>";
+    //DATATIME
+    a = "2012-07-03";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法日期格式:" + ui.isDateTime( a ) + "</p>";
+    a = "2012/07/03";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法日期格式:" + ui.isDateTime( a ) + "</p>";
+    a = "2012.07.03";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法日期格式:" + ui.isDateTime( a ) + "</p>";
+    //EMAIL
+    a = "zhngjob@163.com";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法email地址:" + ui.isEmail( a ) + "</p>";
+    //座机
+    a = "027-56987411";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法座机号码:" + ui.isTel( a ) + "</p>";
+    //手机号
+    a = "13136366666";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法手机号码:" + ui.isPhone( a ) + "</p>";
+    //邮编
+    a = "430072";
+	_result.innerHTML += "<p>变量a有值："+a+"是合法邮编:" + ui.isZipcode( a ) + "</p>";
+    //身份证
+    a = "34150119850424149X";
+    _result.innerHTML += "<p>变量a有值："+a+"是合法身份证号码:" + ui.isIdCard( a ) + "</p>";
+&lt;/script>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

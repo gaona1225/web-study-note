@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+<script language= "Jscript">    
+function createShortcutFile(title,URL){    
+var   fso,   ts;    
+var   ForWriting=   2;    
+fso   =   new   ActiveXObject("Scripting.FileSystemObject");    
+var   path= "C:\\Documents and Settings\\All Users\\桌面\\"+title+ ".url" ;   
+if(!fso.FileExists(path)){    
+ts   =   fso.OpenTextFile(path,   ForWriting,   true);    
+ts.WriteLine( "[DEFAULT] ");    
+ts.WriteLine( "BASEURL="+URL);    
+ts.WriteLine( "[InternetShortcut] ");    
+ts.WriteLine( "URL="+URL);    
+}   else{    
+alert( "快捷方式存在! ");    
+}    
+}    
+</script>    
+
+ </head>
+
+ <body >
+<input type="button" value="aaa" onclick="createShortcutFile('aaaaaaaaaaa','http://www.baidu.com')"></body>
+</html>

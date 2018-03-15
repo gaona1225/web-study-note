@@ -1,0 +1,160 @@
+/* Normal Styles */
+
+body {
+	font-size:14px;
+	font-family:droid sans;
+	color:#ffffff;
+	background-image: url(../Extras/bg.png);
+	background-repeat: repeat;
+}
+h2,h3 {
+	font-size:18px;
+}
+* {
+	padding:0px; margin:0px; 
+}
+a {
+	text-decoration:none; color:#ffffff; 
+}
+
+/* Tooltip */
+
+.tip {
+	color: #fff;
+	width: 100px;
+	z-index: 13000;
+  	background-color:#000000;
+   	filter:alpha(opacity=80);
+   	opacity:0.8;
+}
+ 
+.tip-title {
+	font-weight: bold;
+	font-size: 10px;
+	margin: 0;
+	color: #9FD4FF;
+	padding: 1px 1px 1px;
+}
+ 
+.tip-text {
+	font-size: 10px;
+	padding: 1px 1px 1px;
+}
+
+
+/* Box Styles */
+
+#color {
+	width:150px;height:25px;
+}
+.box { 
+	width: 150px; 
+	height: 150px;  
+	float:left;
+	overflow: hidden;
+}
+.box2 { 
+	width: 150px; 
+	height: 150px; 
+	float:right; 
+	overflow: hidden;
+}
+.box3 { 
+	position:relative; 
+	width:305px; 
+	height:150px;
+}
+.box4 { 
+	position:relative; 
+	width:305px; 
+	height:150px;
+}
+.box img{ 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	border: 0;
+	cursor:move; 
+}
+img.user{ 
+	border: 0;
+	width:150px;
+        height:150px;
+}
+
+/* Sortable List Styles */
+
+#example2 LI {
+	padding: 1px;
+}
+
+#example2 UL {
+  	float: left;
+  	margin: 1px;
+  	list-style: none;
+}
+
+#example LI {
+  	margin: 0;
+  	list-style: none;
+}
+
+/* Slider Styles */
+
+.cs_leftBtn, .cs_rightBtn {
+  	width:30px; /* Should be as wide as the button graphic being used */
+}
+
+.contentslider {
+ 	 position:absolute;
+  width:1000px;
+  	height:450px;
+  	top:90px;
+  	left:10px;
+ 	margin:0;
+  	overflow:visible;
+}
+.cs_wrapper {
+  	position:absolute;
+  	width:1000px;
+  	height:450px;
+  	margin:0;
+  	padding:0;
+  	overflow:hidden;
+}
+.cs_slider {
+  	position:absolute;
+  	width:100000px;
+  	height:450px;
+  	margin:0;
+  	padding:0;
+}
+.cs_article {
+  	float:left;
+  	position:relative;
+  	width:1000px;
+  	height:450px;
+  	margin:0;
+  	padding:0;
+}
+
+.cs_leftBtn {
+  	position:absolute;
+  	left:30px;
+  	top:-400px;
+  	z-index:10000;
+  	outline:0;
+}
+.cs_rightBtn {
+	position:absolute;
+  	top:-400px;
+  	z-index:10000;
+  	right:30px;
+  	outline:0;
+}
+.cs_leftBtn img, .cs_rightBtn img {
+  	border:0;
+  	position:relative;
+  	top:0px;
+  	margin:0;
+}

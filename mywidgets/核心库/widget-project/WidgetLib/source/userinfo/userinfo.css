@@ -1,0 +1,105 @@
+﻿/**
+ * 作    者: 张勇辉 
+ * 版    本: 1.0 
+ * 完成时间: 2011-07-12 
+ * 描    述: userInfo 
+ * 关联文件: reset.css|jquery-ui.css 
+ */ 
+.c6ui-userInfo {
+	position:absolute;
+	height:141px;
+	width:283px;
+	background-color:#fff;
+	background-image:url(images/userinfo/userinfoBg.png);
+	background-repeat:repeat-x;
+	border:solid 2px #45adf0;
+	-moz-border-radius: 2px; /* FF1-3.6 */
+	-webkit-border-radius: 2px; /* Saf3-4, iOS 1-3.2, Android <1.6 */
+	border-radius: 2px; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+}
+.c6ui-userInfo .photoBox {
+	float:left;
+	margin:8px;
+	padding:2px;
+	display:inline-block;
+	_display:inline;
+	border:solid #E6E6E6 1px;
+	-moz-box-shadow: 0px 0px 4px #e9e9e9; /* FF3.5+ */
+	-webkit-box-shadow: 0px 0px 4px #e9e9e9; /* Saf3.0+, Chrome */
+	box-shadow: 0px 0px 4px #e9e9e9; /* Opera 10.5, IE9, Chrome 10+ */
+	-moz-border-radius: 2px; /* FF1-3.6 */
+	-webkit-border-radius: 2px; /* Saf3-4, iOS 1-3.2, Android <1.6 */
+	border-radius: 2px; /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+	position:relative;
+}
+.c6ui-userInfo .photoBox .status {
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+.c6ui-userInfo .InfoTxt {
+	margin:8px;
+	color:#999999;
+	line-height:16px;
+}
+.c6ui-userInfo .InfoTxt .name {
+	font-size:14px;
+	font-weight:bold;
+	margin:3px 0;
+	color:#333333;
+	line-height:1.5;
+}
+.c6ui-userInfo .bottom {
+	height:29px;
+	_height:32px;
+	background-color:#edf2f6;
+	bottom:0;
+	text-align:right;
+	padding-right:10px;
+	padding-top:8px;
+}
+.c6ui-userInfo .tria {
+	background-image:url(images/userinfo/tria.gif);
+	height:10px;
+	width:10px;
+	position:absolute;
+	font-size:0;
+	overflow:hidden;
+	line-height:0;
+}
+.c6ui-userInfo .lb {
+	height:5px;
+	background-position: left bottom;
+	bottom:-7px;
+	left:10px;
+}
+.c6ui-userInfo .rb {
+	height:5px;
+	background-position: left bottom;
+	bottom:-7px;
+	right:10px;
+}
+.c6ui-userInfo .lt {
+	height:5px;
+	background-position: left top;
+	top:-7px;
+	left:10px;
+}
+.c6ui-userInfo .rt {
+	height:5px;
+	background-position: left top;
+	top:-7px;
+	right:10px;
+}
+.c6ui-userInfo .l {
+	width:5px;
+	background-position: left top;
+	top:10px;
+	left:-7px;
+}
+.c6ui-userInfo .r {
+	width:5px;
+	background-position: right top;
+	top:10px;
+	right:-7px;
+}

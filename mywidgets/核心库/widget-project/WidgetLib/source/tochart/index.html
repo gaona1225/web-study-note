@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tochart</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="tochart.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('.tochart').eq(0).tochart({}) ;
+		$('.tochart').eq(1).tochart({
+			type : 'area' 
+		}) ;
+		$('.tochart').eq(2).tochart({
+			type : 'line' ,
+			rowFilter: ':not(:last)',
+			colFilter: ':not(:last-child)'
+		}) ;
+		$('.tochart').eq(3).tochart({
+			type : 'pie' , 
+			pieMargin : 10 , 
+			title : '2009 Total Sales by Individual'
+		}) ;
+		$('#btn3').click(function(){
+			$('.tochart').eq(0).tochart({type:'pie'}) ;
+		}) ;
+		$('#btn1').click(function(){
+			$('.tochart').eq(1).tochart({type:'line'}) ;
+		}) ;
+		$('#btn2').click(function(){
+			$('.tochart').eq(2).tochart('destroy') ;
+		}) ;
+	}) ;
+</script>
+<style type="text/css">
+	.tochart{
+		height:200px ;
+		margin:20px 0px ;
+		text-align:center ;
+		width:500px ;
+	}
+	.tochart caption{
+		font-weight:bold ;
+		height:26px ;
+		text-align:center ;
+	}
+	.tochart th{
+		background:#f4f4f4 ;
+		border:1px solid #ddd ;
+		font-weight:bold ;
+		text-align:center ;
+	}
+	.tochart td{
+		border:1px solid #ddd ;
+	}
+</style>
+</head>
+
+<body style="padding:30px ;">
+	<input type="button" id="btn1" value="createbutton" />
+    <input type="button" id="btn2" value="destorybutton" />
+    <input type="button" id="btn3" value="updatebutton" />
+	<table class="tochart">
+        <caption>2009 Employee Sales by Department</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <th scope="col">food</th>
+                <th scope="col">auto</th>
+                <th scope="col">household</th>
+                <th scope="col">furniture</th>
+                <th scope="col">kitchen</th>
+                <th scope="col">bath</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Mary</th>
+                <td>190</td>
+                <td>160</td>
+                <td>40</td>
+                <td>120</td>
+                <td>30</td>
+                <td>70</td>
+                <td>610</td>
+            </tr>
+            <tr>
+                <th scope="row">Tom</th>
+                <td>3</td>
+                <td>40</td>
+                <td>30</td>
+                <td>45</td>
+                <td>35</td>
+                <td>49</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <th scope="row">Brad</th>
+                <td>10</td>
+                <td>180</td>
+                <td>10</td>
+                <td>85</td>
+                <td>25</td>
+                <td>79</td>
+                <td>389</td>
+            </tr>
+            <tr>
+                <th scope="row">Kate</th>
+                <td>40</td>
+                <td>80</td>
+                <td>90</td>
+                <td>25</td>
+                <td>15</td>
+                <td>119</td>
+                <td>369</td>
+            </tr>		
+            <tr>
+                <th scope="row">Total</th>
+                <td>243</td>
+                <td>460</td>
+                <td>170</td>
+                <td>275</td>
+                <td>105</td>
+                <td>317</td>
+                <td>1570</td>
+            </tr>
+        </tbody>
+    </table>	
+    <table class="tochart">
+        <caption>2009 Employee Sales by Department</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <th scope="col">food</th>
+                <th scope="col">auto</th>
+                <th scope="col">household</th>
+                <th scope="col">furniture</th>
+                <th scope="col">kitchen</th>
+                <th scope="col">bath</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Mary</th>
+                <td>190</td>
+                <td>160</td>
+                <td>40</td>
+                <td>120</td>
+                <td>30</td>
+                <td>70</td>
+                <td>610</td>
+            </tr>
+            <tr>
+                <th scope="row">Tom</th>
+                <td>3</td>
+                <td>40</td>
+                <td>30</td>
+                <td>45</td>
+                <td>35</td>
+                <td>49</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <th scope="row">Brad</th>
+                <td>10</td>
+                <td>180</td>
+                <td>10</td>
+                <td>85</td>
+                <td>25</td>
+                <td>79</td>
+                <td>389</td>
+            </tr>
+            <tr>
+                <th scope="row">Kate</th>
+                <td>40</td>
+                <td>80</td>
+                <td>90</td>
+                <td>25</td>
+                <td>15</td>
+                <td>119</td>
+                <td>369</td>
+            </tr>		
+            <tr>
+                <th scope="row">Total</th>
+                <td>243</td>
+                <td>460</td>
+                <td>170</td>
+                <td>275</td>
+                <td>105</td>
+                <td>317</td>
+                <td>1570</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="tochart">
+        <caption>2009 Employee Sales by Department</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <th scope="col">food</th>
+                <th scope="col">auto</th>
+                <th scope="col">household</th>
+                <th scope="col">furniture</th>
+                <th scope="col">kitchen</th>
+                <th scope="col">bath</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Mary</th>
+                <td>190</td>
+                <td>160</td>
+                <td>40</td>
+                <td>120</td>
+                <td>30</td>
+                <td>70</td>
+                <td>610</td>
+            </tr>
+            <tr>
+                <th scope="row">Tom</th>
+                <td>3</td>
+                <td>40</td>
+                <td>30</td>
+                <td>45</td>
+                <td>35</td>
+                <td>49</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <th scope="row">Brad</th>
+                <td>10</td>
+                <td>180</td>
+                <td>10</td>
+                <td>85</td>
+                <td>25</td>
+                <td>79</td>
+                <td>389</td>
+            </tr>
+            <tr>
+                <th scope="row">Kate</th>
+                <td>40</td>
+                <td>80</td>
+                <td>90</td>
+                <td>25</td>
+                <td>15</td>
+                <td>119</td>
+                <td>369</td>
+            </tr>		
+            <tr>
+                <th scope="row">Total</th>
+                <td>243</td>
+                <td>460</td>
+                <td>170</td>
+                <td>275</td>
+                <td>105</td>
+                <td>317</td>
+                <td>1570</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="tochart">
+        <caption>2009 Employee Sales by Department</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <th scope="col">food</th>
+                <th scope="col">auto</th>
+                <th scope="col">household</th>
+                <th scope="col">furniture</th>
+                <th scope="col">kitchen</th>
+                <th scope="col">bath</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Mary</th>
+                <td>190</td>
+                <td>160</td>
+                <td>40</td>
+                <td>120</td>
+                <td>30</td>
+                <td>70</td>
+                <td>610</td>
+            </tr>
+            <tr>
+                <th scope="row">Tom</th>
+                <td>3</td>
+                <td>40</td>
+                <td>30</td>
+                <td>45</td>
+                <td>35</td>
+                <td>49</td>
+                <td>202</td>
+            </tr>
+            <tr>
+                <th scope="row">Brad</th>
+                <td>10</td>
+                <td>180</td>
+                <td>10</td>
+                <td>85</td>
+                <td>25</td>
+                <td>79</td>
+                <td>389</td>
+            </tr>
+            <tr>
+                <th scope="row">Kate</th>
+                <td>40</td>
+                <td>80</td>
+                <td>90</td>
+                <td>25</td>
+                <td>15</td>
+                <td>119</td>
+                <td>369</td>
+            </tr>		
+            <tr>
+                <th scope="row">Total</th>
+                <td>243</td>
+                <td>460</td>
+                <td>170</td>
+                <td>275</td>
+                <td>105</td>
+                <td>317</td>
+                <td>1570</td>
+            </tr>
+        </tbody>
+    </table>		
+</body>
+</html>

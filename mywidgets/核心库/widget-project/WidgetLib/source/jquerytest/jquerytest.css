@@ -1,0 +1,13 @@
+/**
+*jquerytest
+*/
+.jquerytest-wrap{
+	background:#fff ;
+	border:1px solid #CCC ;
+	height:3px ;
+	width:200px ;
+}
+.jquerytest1,.jquerytest2{
+	background:#87E250 ;
+	height:3px ;
+}

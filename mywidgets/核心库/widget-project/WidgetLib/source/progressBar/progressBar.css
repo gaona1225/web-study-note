@@ -1,0 +1,24 @@
+/*widget ProgressBar*/
+.ui-progressBar, .ui-progressBar span, .ui-progressBar span b {
+	height:15px;
+	background-image: url(images/progressBar/progressBar.png);
+	background-repeat: repeat-x;
+}
+.ui-progressBar {
+	background-position:0 0;
+	width:100%;
+	font-size:0;
+	display:inline-block;
+	margin:4px 0;
+	overflow:hidden;
+}
+.ui-progressBar span {
+	background-position:0 -15px;
+	display:block;
+	margin:0 1px;
+}
+.ui-progressBar span b {
+	width:0;
+	background-position:0 -30px;
+	display:block;
+}

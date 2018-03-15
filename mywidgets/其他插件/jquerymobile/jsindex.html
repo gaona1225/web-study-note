@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jsindex</title>
+<link type="text/css" rel="stylesheet" href="jquery.mobile-1.0/jquery.mobile-1.0.min.css"/>
+</head>
+
+<body>
+<div data-role="page">
+	<div data-role="header">
+    	<div data-role="button" data-icon="home" class="ui-btn-left">home</div>
+    	<h1>header</h1>
+        <a href="index.html" data-role="button" data-icon="delete" data-inline="true" class="ui-btn-right" style="margin-right:80px ;">Cancel</a>
+		<a href="index.html" data-role="button" data-icon="check" data-inline="true" class="ui-btn-right">Save</a>
+    </div>
+    <div data-role="content">
+    	<div data-role="fieldcontain" id="pageId">
+        	<!--button-->
+            <div data-role="button" data-corners="false">button</div>
+            <!--color-->
+            <label for="color">My color:</label>
+            <input type="color" name="colorName" id="color" value="" />
+        	<!--input域-->
+        	<label for="name">My name:</label>
+            <input type="text" name="inputName" id="name" value="" />
+            <!--文本域-->
+            <label for="textarea">About Myself</label>
+            <textarea cols="40" rows="8" name="textareaName" id="textarea"></textarea>
+            <!--滑块-->
+            <label for="slider">My slider</label>
+            <input type="range" name="sliderName" id="slider" value="50" min="0" max="100"/>
+            <!--选项--><br/>
+            <label for="option">My option</label>
+            <select name="optionName" id="option" data-role="slider">
+            	<option value="on">on</option>
+                <option value="off">off</option>
+            </select>
+            <!--选择器--><br/>
+            <label for="select">My select</label>
+            <select name="selectName" id="select" data-inset="true">
+            	<option value="select1">select1</option>
+                <option value="select2">select2</option>
+                <option value="select3">select3</option>
+            </select>
+            <!--搜索-->
+            <label for="search">My search</label>
+            <input type="search" name="searchName" id="search"/>
+            <ul data-role="listview" data-inset="true" id="searchresult"></ul>
+            <!--list各情况--><br/>
+            <label for="listview">listview</label>
+            <ul data-role="listview" data-inset="true">
+            	<li>listview1</li>
+            	<li>listview2</li>
+            	<li>listview3</li>
+            </ul>
+            <ul data-role="listview" data-filter="true" data-inset="true">
+				<li data-role="list-divider">A</li>
+				<li>Adam Kinkaid</li>
+				<li>Alex Wickerham</li>
+				<li>Avery Johnson</li>
+				<li data-role="list-divider">B</li>
+				<li>Bob Cabot</li>
+				<li data-role="list-divider">C</li>
+				<li>Caleb Booth</li>
+				<li>Christopher Adams</li>
+			</ul>		
+            <!--组合-->
+            <div data-role="controlgroup" data-type="horizontal">
+            	<label for="groupbtn">My buttons</label>
+                <div data-role="button">button1</div>
+                <div data-role="button">button2</div>
+                <div data-role="button" class="adBtn">button3</div>
+            </div>
+            
+            <div class="dBtn">addnewbtn</div>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed"><h4>footer</h4></div>
+</div>
+<div data-role="page" id="twitter_page" data-theme="b">
+	<div data-role="header"><h1>Simple twitter example</h1></div>
+    <div data-role="content"><div id="twi_list"></div></div>
+    <div data-role="footer"></div>
+</div>
+</body>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript" src="jquery.mobile-1.0/jquery.mobile-1.0.js"></script>
+<!--<script language="javascript" type="text/javascript" src="http://platform.twitter.com/anywhere.js?id=key_value&v=1"></script>-->
+<!--<script language="javascript" type="text/javascript">
+$('#search').keyup(function(){
+	var res = shuffle(monthes) ;
+	var list = '' ;
+	$.each(res,function(index,value){
+		list += '<li role="option" tabindex = "0" data-theme = "a" class="ui-btn ui-li ui-btn-up-a"><div class="ui-btn-inner"><div class="ui-btn-text">'+value+'</div><span class="ui-icon ui-icon-arrow-r"></span></div></li>' ;
+	}) ;
+	$('#searchresult').html(list) ;
+}) ;
+var shuffle = function(o){
+	for(var j,x,i=o.lenght;j=parseInt(Math.radom(),x=o[--i],o[i]=o[j],o[j]=x);){
+		return o ;
+	}
+} ;
+$('#twitter_page').live('pageshow',function(event,ui){
+	twttr.anywhere(function(T){
+		$.mobile.pageLoading() ;
+		var j=0 ;
+		T.User.find('andrebrov').timeline().first(20).each(function(status){
+			$('div#twi_list').append('<p>'+status.user.name+':'+status.text+'</p>') ;
+			j++ ;
+			if(j==1){
+				$.mobile.pageLoading(true) ;
+			}
+		}) ;
+	}) ;
+}) ;
+</script>-->
+<script language="javascript" type="text/javascript">
+$(function(){
+	$('.adBtn').live('click',function(){
+		if(($('.dBtn').attr('data-role') == undefined)||($('.dBtn').attr('data-role') == '')){
+			$('.dBtn').attr('data-role','button') ;
+			$('#pageId').trigger('create') ;
+		}
+	}) ;
+}) ;
+</script>
+</html>

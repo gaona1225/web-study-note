@@ -1,0 +1,198 @@
+.ui-custom-guide-infobox{
+	padding-top:21px;
+	padding-bottom: 20px;
+	padding-left:10px;
+	padding-right:10px;
+}
+/*用车管理*/
+.ui-custom-usecar-infobox{
+	padding-top:21px;
+	padding-bottom: 20px;
+	padding-left:10px;
+	padding-right:10px;
+}
+/*会议管理*/
+.ui-custom-meet-infobox{
+	padding-top:21px;
+	/*padding-bottom: 20px;  这个高度不需要，页面里面有一个高度，下面有边距*/
+	padding-left:10px;
+	padding-right:10px;
+}
+.guideLogo{
+	background:url(images/ui-custom/ui-costom-guide-logobg-nomarl.png) no-repeat;
+	width:81px;
+	height:82px;
+	cursor:pointer;
+}
+.guideLogo:hover{
+	background:url(images/ui-custom/ui-costom-guide-logobg-active.png) no-repeat;
+	width:81px;
+	height:82px;
+	cursor:pointer;
+}
+.guideLogo:linked{
+	background:url(images/ui-custom/ui-costom-guide-logobg-onclick.png) no-repeat;
+	width:81px;
+	height:82px;
+	cursor:pointer;
+}
+.guideLogo .logoImg{
+	padding-left:29px;
+	padding-top:13px;
+}
+.guideLogo .logoText{
+	padding-left:12px;
+	padding-top:5px;
+	text-align:center;
+	font-size:14px;
+	text-align:center;
+	white-space:normal; 
+	width:60px;
+}
+.guideLogo .logoText1{
+	padding-left:12px;
+	padding-top:5px;
+	text-align:center;
+	font-size:14px;
+	text-align:center;
+	white-space:normal; 
+	width:55px;
+}
+.guideLogo .logoText2{
+	padding-left:5px;
+	padding-top:5px;
+	text-align:center;
+	font-size:14px;
+	text-align:center;
+	white-space:normal; 
+	width:70px;
+}
+.noUseLogo{
+	background:url(images/ui-custom/ui-costom-guide-logobg-noUse.png) no-repeat;
+	width:81px;
+	height:82px;
+	cursor:pointer;
+}
+.noUseLogo .logoImg{
+	padding-left:29px;
+	padding-top:13px;
+}
+.noUseLogo .logoText{
+	color:#cccccc;
+	padding-left:12px;
+	padding-top:5px;
+	text-align:center;
+	font-size:14px;
+	text-align:center;
+	white-space:normal; 
+	width:60px;
+}
+.noUseLogo .logoText1{
+	color:#cccccc;
+	padding-left:12px;
+	padding-top:5px;
+	text-align:center;
+	font-size:14px;
+	text-align:center;
+	white-space:normal; 
+	width:55px;
+}
+.noUseLogo .logoText2{
+	color:#cccccc;
+	padding-left:5px;
+	padding-top:5px;
+	text-align:center;
+	font-size:14px;
+	text-align:center;
+	white-space:normal; 
+	width:70px;
+}
+.ui-custom-target-infobox{
+	padding-top:47px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.ui-custom-target-infobox .table1{
+	width:384px;
+	height:269px;
+	border:solid 1px #d7d7d7;
+	background-color:#f5fafe;
+}
+.ui-custom-target-infobox .table2{
+	width:384px;
+	height:144px;
+	border:solid 1px #d7d7d7;
+	background-color:#f5fafe;
+}
+.ui-custom-target-infobox .table2 .td1{
+	padding-top:31px;
+}
+.ui-custom-target-infobox .table3{
+	width:143px;
+	height:464px;
+	border:solid 1px #d7d7d7;
+	background-color:#f5fafe;
+}
+/*费用管理*/
+.ui-custom-expense-guide {
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom: 20px;
+}
+.ui-custom-expense-guide .table1 {margin-left:30px;margin-right:50px;}
+.ui-custom-expense-guide .table2 {margin-left:30px;margin-right:50px;margin-top:33px;}
+
+/*资产管理*/
+.ui-custom-assets-guide {
+	padding-top:30px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.ui-custom-assets-guide .fontStyle {font-weight:bold;height:42px;line-height:42px;margin-top:10px;}
+
+/*head统一样式*/
+.ui-custom-guide-head{
+	padding-top:10px;/**30px  高度不需要那么高
+	padding-left:15px;这个左边距也不需要
+	padding-right:15px; 右边不需要右边距   */
+}
+.ui-custom-guide-head .headname{
+	font-size:14px;
+}
+.ui-custom-guide-head .headsearch{
+	float:right;
+	color:#01359a;
+}
+.ui-custom-guide-picArea .imgexpense{
+	width:65px;
+	height:99px;
+	/*margin-left:27px;不需要*/
+	background-image: url(images/ui-custom-guide/ui-custom-guide-expense.png);
+}
+.ui-custom-guide-picArea .imgmeeting{
+	width:65px;
+	height:99px;
+	margin-left:27px;
+	background-image: url(images/ui-custom-guide/ui-custom-guide-meeting.png);
+}
+.ui-custom-guide-picArea .imgcar{
+	width:65px;
+	height:99px;
+	margin-left:27px;
+	background-image: url(images/ui-custom-guide/ui-custom-guide-car.png);
+}
+.ui-custom-guide-picArea .imgassets{
+	width:65px;
+	height:99px;
+	margin-left:27px;
+	background-image: url(images/ui-custom-guide/ui-custom-guide-assets.png);
+}
+.ui-custom-guide-picArea .imgprecise{
+	width:65px;
+	height:99px;
+	margin-left:27px;
+	background-image: url(images/ui-custom-guide/ui-custom-guide-precise.png);
+}
+.ui-custom-manager-guide-but1{margin-top:10px;margin-left:1px;text-align:center;line-height:33px;height:33px;width:111px;background:url(../uiBase/skins/default/images/ui-custom/ui-costom-manage-guide-button.png) no-repeat;}
+.ui-custom-manager-guide-but2{margin-left:1px;text-align:center;line-height:33px;height:33px;width:111px;background:url(../uiBase/skins/default/images/ui-custom/ui-costom-manage-guide-button.png) no-repeat;}
+.ui-custom-manage-guide-containner{background:url(images/ui-custom/ui-costom-manage-guide-arrow7.png);width:100%;height:206px;}

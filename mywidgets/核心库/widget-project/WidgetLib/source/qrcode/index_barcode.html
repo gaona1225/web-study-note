@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>条码</title>
+    <style type="text/css">
+        * {padding:0;margin:0;}
+        fieldset {margin: 10px auto;padding: 10px;}
+        select {width:150px;}
+        dl {line-height: 150%;}
+        dl dt, dl dd {height:21px;line-height:23px;}
+        dl dt {float:left;padding-right:8px;width:90px;text-align:right;}
+        input[type="button"] {height:30px;width:81px;}
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>(0)待编码的数字</legend>
+        <dl>
+            <dt>数字</dt>
+            <dd><input type="text" name="" id="codeNum" value="123456789"/></dd>
+        </dl>
+    </fieldset>
+    <fieldset>
+        <legend>(1)编码格式</legend>
+        <dl>
+            <dt>type</dt>
+            <dd>
+                <select name="" id="type">
+                    <option value="-1">请选择</option>
+                    <option value="ean8">EAN 8</option>
+                    <option value="ean13">EAN 13</option>
+                    <option value="std25">standard 2 of 5(industrial)</option>
+                    <option value="int25">interleaved 2 of 5</option>
+                    <option value="code11">code 11</option>
+                    <option value="code39">code 39</option>
+                    <option value="code93">code 93</option>
+                    <option value="code128">code 128</option>
+                    <option value="codabar">codabar</option>
+                    <option value="msi">MSI</option>
+                    <option value="datamatrix">Data Matrix</option>
+                </select>
+            </dd>
+        </dl>
+    </fieldset>
+    <fieldset>
+        <legend>(2)显示控制参数</legend>
+        <dl>
+            <dt>barWidth</dt>
+            <dd>
+                <input type="text" name="" id="barWidth" value="1"/>条码竖杠的宽
+            </dd>
+            <dt>barHeight</dt>
+            <dd>
+                <input type="text" name="" id="barHeight" value="50"/>条码竖杠的高
+            </dd>
+            <dt>moduleSize</dt>
+            <dd>
+                <input type="text" name="" id="moduleSize" value="5"/>
+            </dd>
+            <dt>showHRI</dt>
+            <dd>
+                <select name="" id="showHRI">
+                    <option value="-1">是否显示编码的数字</option>
+                    <option value="true" selected="selected">显示</option>
+                    <option value="false">不显示</option>
+                </select>
+            </dd>
+            <dt>bgColor</dt>
+            <dd>
+                <input type="text" name="" id="bgColor" value="#FFFFFF"/>条码背景色
+            </dd>
+            <dt>color</dt>
+            <dd>
+                <input type="text" name="" id="color" value="#000000"/>条码色
+            </dd>
+            <dt>fontSize</dt>
+            <dd>
+                <input type="text" name="" id="fontSize" value="10"/>条码字体大小
+            </dd>
+            <dt>posX</dt>
+            <dd>
+                <input type="text" name="" id="posX" value="0"/>在canvas画布下的坐标x
+            </dd>
+            <dt>posY</dt>
+            <dd>
+                <input type="text" name="" id="posY" value="0"/>在canvas画布下的坐标y
+            </dd>
+        </dl>
+    </fieldset>
+    <fieldset>
+        <legend>(3)渲染方式</legend>
+        <dl>
+            <dt>output</dt>
+            <dd>
+                <select name="" id="output">
+                    <option value="css" selected="selected">css</option>
+                    <option value="svg">svg</option>
+                    <option value="bmp">bmp</option>
+                    <option value="canvas">canvas</option>
+                </select>
+                ie只有css方式支持
+            </dd>
+        </dl>
+    </fieldset>
+    <input type="button" value="执行生成" id="generate"/>
+    <div id="result"></div>
+    <!-- / 结果 -->
+    <!--
+    <script type="text/javascript" src="/javascripts/jquery-1.7.1.js"></script>
+    -->
+    <script type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="jquery-barcode-2.0.1.js"></script>
+    <script type="text/javascript">
+        var $codeNum = $('#codeNum');
+        var $type = $('#type'); // select
+        var $barWidth = $('#barWidth');
+        var $barHeight = $('#barHeight'); 
+        var $moduleSize = $('#moduleSize'); 
+        var $showHRI = $('#showHRI'); // select
+        var $bgColor = $('#bgColor');
+        var $color = $('#color');
+        var $fontSize = $('#fontSize');
+        var $posX = $('#posX');
+        var $posY = $('#posY');
+        var $output = $('#output'); // select
+
+        var $result = $('#result');
+        var option = {};
+        $('#generate').click(function () {
+            // 清空已有
+            $result.empty();
+            if ($type.val() === '-1') {
+                alert('请选择编码类型');
+                $type.focus();
+                return;
+            }
+            if ($showHRI.val() === '-1') {
+                alert('请选择是否显示编码的数字');
+                $showHRI.focus();
+                return;   
+            }
+            // 获取最新参数
+            option = {
+                barWidth: $barWidth.val(),
+                barHeight: $barHeight.val(),
+                moduleSize: $moduleSize.val(),
+                showHRI: $showHRI.val() === 'true',
+                bgColor: $bgColor.val(),
+                color: $color.val(),
+                fontSize: $fontSize.val(),
+                posX: $posX.val(),
+                posY: $posY.val(),
+                output: $output.val()
+            };
+            $result.barcode(
+                $codeNum.val(),
+                $type.val(),
+                option
+            );
+        });
+    </script>
+</body>
+</html>

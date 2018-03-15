@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="../skin/base/reset.css" />
+<link type="text/css" rel="stylesheet" href="../skin/default/style/3dmodel.css" />
+<title>无标题文档</title>
+<style type="text/css">
+	.wrap{
+		-webkit-perspective:1000 ;
+	}
+	.content{
+		text-align:center ;
+		height:300px ;
+		width:1200px ;
+		-webkit-transform-origin:50% 50% 50px ;
+        -webkit-transform-style: preserve-3d;
+		-webkit-animation-name:myrotate ;
+		-webkit-animation-duration:10s;
+		-webkit-animation-iteration-count:infinite ;
+		-webkit-animation-timing-function:linear ;
+	}
+	.desk{
+		float:left ;
+		height:160px ;
+		margin:20% auto 0px;
+		width:550px ;
+        -webkit-transform-style: preserve-3d;
+		-webkit-transform:translateZ(-100px) ;
+		-webkit-transform-origin:50% 50% 50px;
+	}
+	.desk div{
+		color:#ffffff;
+		font-size:130px ;
+		font-weight:bold ;
+		height:160px ;
+		position:absolute ;
+		text-align:center ;
+	}
+	.desk-top{
+		background:rgba(0,255,255,0.7) ;
+		width:550px ;
+		-webkit-transform:rotateX(90deg) translateZ(80px) ;
+	}
+	.d-drawer-left{
+		background:rgba(128,128,0,0.7) ;
+		width:160px ;
+		-webkit-transform:rotateY(-90deg) translateZ(80px) ;
+	}
+	.d-drawer-front{
+		background:rgba(255,0,0,0.7) ;
+		width:120px ;
+		-webkit-transform:translateZ(80px)
+	}
+	.d-drawer-right{
+		background:rgba(0,0,255,0.7) ;
+		width:160px ;
+		-webkit-transform:rotateY(90deg) translateZ(40px) ;
+	}
+	.desk-right{
+		background:rgba(255,0,255,0.7) ;
+		width:160px ;
+		-webkit-transform:rotateY(90deg) translateZ(470px) ;		
+	}
+	.desk-back{
+		background:rgba(255,128,0,0.7);
+		width:550px;
+		-webkit-transform:rotateX(-180deg) translateZ(80px);
+	}
+	.ground{
+		background:url(../skin/default/image/roof1.jpg) repeat ;
+		height:160px ;
+		-webkit-transform: rotateX(90deg) translateZ(80px) ;
+	}
+	@-webkit-keyframes myrotate{
+		from{-webkit-transform: rotateY(0) rotateX(0); }
+		to{-webkit-transform: rotateY(360deg) rotateX(360deg); }
+	} 
+</style>
+</head>
+
+<body>
+	<div class="wrap">
+    	<div class="content">
+            <div class="desk">
+                <!--<div class="desk-top">桌子上面</div>
+                <div class="d-drawer-left">抽屉左面</div>
+                <div class="d-drawer-front">抽屉正面</div>
+                <div class="d-drawer-right">抽屉右面</div>
+                <div class="desk-right">桌子右面</div>
+                <div class="desk-back">桌子后面</div>-->
+                
+                <div class="desk-top">1</div>
+                <div class="d-drawer-left">2</div>
+                <div class="d-drawer-front">3</div>
+                <div class="d-drawer-right">0</div>
+                <div class="desk-right">4</div>
+                <div class="desk-back">5</div>
+            </div>
+            <div class="desk">
+                <!--<div class="desk-top">桌子上面</div>
+                <div class="d-drawer-left">抽屉左面</div>
+                <div class="d-drawer-front">抽屉正面</div>
+                <div class="d-drawer-right">抽屉右面</div>
+                <div class="desk-right">桌子右面</div>
+                <div class="desk-back">桌子后面</div>-->
+                
+                <div class="desk-top">1</div>
+                <div class="d-drawer-left">2</div>
+                <div class="d-drawer-front">3</div>
+                <div class="d-drawer-right">0</div>
+                <div class="desk-right">4</div>
+                <div class="desk-back">5</div>
+            </div>
+            <!--<div class="ground"></div>-->
+        </div>
+    </div>
+</body>
+</html>

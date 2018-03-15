@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript" src="eddyScroll.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		var target = $('#scrollId')[0];//快捷菜单
+		var myScroll = new eddyScroll(target, { 
+						checkDOMChanges: true,
+						zoom:false,
+						hScroll: false,          //x 水平 滚动
+						vScroll: true,          //y 竖直 滚动
+						// 滚动条
+						hScrollbar: false,
+						vScrollbar: true		
+		});	
+	}) ;
+</script>
+</head>
+
+<body>
+<div id="scrollId" style="background:#CCCCCC ; height:160px ; overflow:hidden ;">
+	<ul style="height:auto ;">
+    	<li>aaaaaaaaaaaa</li>
+        <li>bbbbbbbbbbbb</li>
+        <li>cccccccccccc</li>
+        <li>dddddddddddd</li>
+        <li>eeeeeeeeeeee</li>
+        <li>ffffffffffff</li>
+        <li>gggggggggggg</li>
+        <li>hhhhhhhhhhhh</li>
+        <li>iiiiiiiiiiii</li>
+        <li>jjjjjjjjjjjj</li>
+        <li>kkkkkkkkkkkk</li>
+        <li>llllllllllll</li>
+        <li>mmmmmmmmmmmm</li>
+        <li>nnnnnnnnnnnn</li>
+        <li>oooooooooooo</li>
+        <li>pppppppppppp</li>
+        <li>qqqqqqqqqqqq</li>
+        <li>rrrrrrrrrrrr</li>
+        <li>ssssssssssss</li>
+        <li>tttttttttttt</li>
+        <li>uuuuuuuuuuuu</li>
+        <li>vvvvvvvvvvvv</li>
+        <li>wwwwwwwwwwww</li>
+        <li>xxxxxxxxxxxx</li>
+        <li>yyyyyyyyyyyy</li>
+        <li>zzzzzzzzzzzz</li>
+        <li>aaaaaaaaaaaa</li>
+        <li>bbbbbbbbbbbb</li>
+        <li>cccccccccccc</li>
+        <li>dddddddddddd</li>
+        <li>eeeeeeeeeeee</li>
+        <li>ffffffffffff</li>
+        <li>111111111111</li>
+    </ul>
+</div>
+</body>
+</html>

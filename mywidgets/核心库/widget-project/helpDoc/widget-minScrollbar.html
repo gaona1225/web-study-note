@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>自定义滚动条</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.minScrollbar.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+		$('#author').html($.ui.minScrollbar.author || "未知");
+	});
+    </script>
+    <style type="text/css">
+    </style>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>自定义滚动条（minScrollbar）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+		 <p><strong>作者：
+            <label id="author"></label>
+            </strong></p>	
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>模拟滚动条，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera<br/>
+				兼容跨设备：PC电脑、Android/IOS平板电脑pad、Android/IOS手机设备等</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> minScrollbar(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">hScroll：</label>
+              （布尔值）默认参数：true，是否启用用横向滚动</p>
+            <p>
+              <label class="help-item">vScroll：</label>
+              （布尔值）默认参数：true，是否启用用垂直滚动</p>
+            <p>
+              <label class="help-item">height：</label>
+              （字符）默认参数“10px”，当hScroll为true时，滚动条的高度，取值范围：5-20</p>
+            <p>
+              <label class="help-item">width：</label>
+              （字符）默认参数“10px”，当vScroll为true时，滚动条的高度，取值范围：5-20</p>
+			 <p>
+              <label class="help-item">bgColor：</label>
+              （字符）默认参数“#000”黑色，滚动条的背景色</p>
+			 <p>
+              <label class="help-item">viewHeight：</label>
+              （字符）默认参数“200px”，可视区域的高度值</p>
+			 <p>
+              <label class="help-item">viewWidth：</label>
+              （字符）默认参数“200px”，可视区域的高度值</p>
+          
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+             <p>
+              <label class="help-code">destroy()：</label>
+              用于销毁该插件，使按钮恢复为原生的状态。</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-1：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              默认自定义滚动条，及其销毁方法调用</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo" style="overflow:hidden ;">
+            	<script>
+					$(function(){
+						
+						$('#clearWid').click(function(){
+							$('#testClear').minScrollbar('destroy');
+						}) ;
+						$('#initWid').click(function(){
+							$('#testClear').minScrollbar();
+						}) ;
+						
+					}) ;
+					
+				</script>
+                <input type="button" value="清除插件" class="buttonActive" id="clearWid" />
+				<br/>
+                <ul class="ui-minScrollbar" id="testClear">
+                    <li>aaaaaaaaaaaa这是个自定义滚动条插件这是个自定义滚动条插件这是个自定义滚动条插件</li>
+                    <li>bbbbbbbbbbbb这是个自定义滚动条插件这是个自定义滚动条插件这是个自定义滚动条插件这是个自定义滚动条插件</li>
+                    <li>cccccccccccc</li>
+                    <li>dddddddddddd</li>
+                    <li>eeeeeeeeeeee</li>
+                    <li>ffffffffffff</li>
+                    <li>gggggggggggg</li>
+                    <li>hhhhhhhhhhhh</li>
+                    <li>iiiiiiiiiiii</li>
+                    <li>jjjjjjjjjjjj</li>
+                    <li>kkkkkkkkkkkk</li>
+                    <li>llllllllllll</li>
+                    <li>mmmmmmmmmmmm</li>
+                    <li>nnnnnnnnnnnn</li>
+                    <li>oooooooooooo</li>
+                    <li>pppppppppppp</li>
+                    <li>qqqqqqqqqqqq</li>
+                    <li>rrrrrrrrrrrr</li>
+                    <li>ssssssssssss</li>
+                    <li>tttttttttttt</li>
+                    <li>uuuuuuuuuuuu</li>
+                    <li>vvvvvvvvvvvv</li>
+                    <li>wwwwwwwwwwww</li>
+                </ul>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){
+						$('#clearWid').click(function(){
+							$('#testClear').minScrollbar('destroy');
+						}) ;
+					}) ;
+			   &lt;/script>
+               &lt;input type="button" value="清除插件" class="buttonActive" id="clearWid" />&lt;br/>
+               &lt;ul class="ui-scrollBar" id="testClear">
+                    &lt;li>aaaaaaaaaaaa&lt;/li>
+                    &lt;li>bbbbbbbbbbbb&lt;/li>
+                    &lt;li>cccccccccccc&lt;/li>
+                    &lt;li>dddddddddddd&lt;/li>
+                    &lt;li>eeeeeeeeeeee&lt;/li>
+                    &lt;li>ffffffffffff&lt;/li>
+                    &lt;li>gggggggggggg&lt;/li>
+                    &lt;li>hhhhhhhhhhhh&lt;/li>
+                    &lt;li>iiiiiiiiiiii&lt;/li>
+                    &lt;li>jjjjjjjjjjjj&lt;/li>
+                    &lt;li>kkkkkkkkkkkk&lt;/li>
+                    &lt;li>llllllllllll&lt;/li>
+                    &lt;li>mmmmmmmmmmmm&lt;/li>
+                    &lt;li>nnnnnnnnnnnn&lt;/li>
+                    &lt;li>oooooooooooo&lt;/li>
+                    &lt;li>pppppppppppp&lt;/li>
+                    &lt;li>qqqqqqqqqqqq&lt;/li>
+                    &lt;li>rrrrrrrrrrrr&lt;/li>
+                    &lt;li>ssssssssssss&lt;/li>
+                    &lt;li>tttttttttttt&lt;/li>
+                    &lt;li>uuuuuuuuuuuu&lt;/li>
+                    &lt;li>vvvvvvvvvvvv&lt;/li>
+                    &lt;li>wwwwwwwwwwww&lt;/li>
+               &lt;/ul>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+		<!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-2：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+           参数设置重新定义滚动条</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+				<div  id='divID' class='ui-minScrollbar'>
+					123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345dsfa23432432东风公司打工地方vbcvbv
+				</div> 
+				<script>
+				 $(function(){
+					$("#divID").minScrollbar({
+						hScroll:true,
+						vScroll:true,
+						width:'15px',
+						height:'15px',
+						viewWidth:'150px',
+						viewHeight:'150px',
+						bgColor:'red'			
+					});
+				});
+				 </script>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+			  &lt;div  id='divID' class='ui-minScrollbar'>
+					123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345123456678990erxcvzxcvfdgdfshg豆腐干豆腐干风格豆腐干风格而提高儿童而她35345dsfa23432432东风公司打工地方vbcvbv
+			 &lt;/div> 
+             &lt;script>
+             $(function(){
+				 $('#divID').minScrollbar({
+					hScroll:true,
+					vScroll:true,
+					width:'10px',
+					height:'10px',
+					viewWidth:'150px',
+					viewHeight:'150px',
+					bgColor:'red'		
+				 
+				 });
+			 });
+             &lt;/script>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束-->
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<title>divLayout</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<link type="text/css" rel="stylesheet" href="divLayout.css"/>
+<script language="javascript" type="text/javascript" src="../buttonPro/buttonPro.js"></script>
+<script language="javascript" type="text/javascript" src="divLayout.js"></script>
+<script language="javascript" type="text/javascript" src="getcolor/getcolor/liehuo.net/color.js"></script>
+<style type="text/css">
+.divLayout{
+	margin:0 auto ;
+	overflow:hidden ;
+	text-align:left ;
+	width:100% ;
+}
+.divLay-header{
+	background:#E1E1E1 ;
+	height:80px ;
+	padding:10px ;
+}
+.divLay-content{
+	overflow:hidden ;
+}
+.divLay-left{
+	background:#D2D2D2 ;
+	float:left ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:26% ;
+}
+.divLay-right{
+	background:#F0F0F0 ;
+	float:right ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:69% ;
+}
+.divLay-footer{
+	background:#E1E1E1 ;
+	height:80px ;
+	padding:10px ;
+}
+/*1-3-1*/
+.divLay-left-3{
+	background:#D2D2D2 ;
+	float:left ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:24% ;
+}
+.divLay-middle-3{
+	background:#F0F0F0 ;
+	float:left ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:45% ;
+}
+.divLay-right-3{
+	background:#D2D2D2 ;
+	float:right ;
+	height:600px ;
+	overflow:hidden ;
+	padding:1% ;
+	width:24% ;
+}
+/*属性设置*/
+.attr-div,.showHTML{
+	background:#E0E0E0 ;
+	border-radius:6px ;
+	box-shadow:1px 1px 3px #666 ;
+	display:none ;
+	left:32% ;
+	padding:10px ;
+	position:absolute ;
+	top:23% ;
+	width:400px ;
+}
+.attr-div p{
+	color:#B43054 ;
+	font-size:12px ;
+	margin:0px ;
+	padding-bottom:6px ;
+}
+.attr-div td{
+	padding:6px 2px ;
+}
+.attr-div input{
+	width:200px ;
+}
+input#setAtt,input#closeAtt{
+	width:auto ;
+}
+.showCSS{
+	background:#fff ;
+	border:1px solid #C3C3C3 ;
+	box-shadow:1px 1px 3px #C3C3C3 ;
+	height:200px ;
+	overflow:auto ;
+	padding:10px ;
+	width:380px ;
+}
+.showDiv{
+	background:#fff ;
+	border:1px solid #C3C3C3 ;
+	box-shadow:1px 1px 3px #C3C3C3 ;
+	height:200px ;
+	overflow:auto ;
+	padding:10px ;
+	width:380px ;
+}
+.showhtmlBtn{
+	margin-top:10px ;
+	text-align:right ;
+	width:100% ;
+}
+</style>
+</head>
+
+<body>
+<select id="choiceLayout">
+    <option value="12">1-2布局</option>
+    <option value="121">1-2-1布局</option>
+    <option value="13">1-3布局</option>
+    <option value="131">1-3-1布局</option>
+    <option value="datauser">自定义布局</option>
+</select>
+<input type="button" value="生成HTML" class="buttonPro" id="setHTML"/>
+<div class="divLayout">
+    <div class="divLay-header">header</div>
+    <div class="divLay-content">
+    	<div class="divLay-left">left</div>
+    	<div class="divLay-right">right</div>
+    </div>
+</div>
+<div class="attr-div">
+	<p>以下内容可为空，如果设置为空使用默认效果</p>
+	<table>
+    	<tr>
+        	<td>背景色</td>
+            <td data-flag="background-color"><input type="text" onclick="Jcolor(this).color()"/></td>
+            <td>用十六进制或是英文单词</td>
+        </tr>
+        <tr>
+        	<td>浮动</td>
+            <td data-flag="float"><input type="text"/></td>
+            <td>输入left,right,none</td>
+        </tr>
+        <tr>
+        	<td>高度</td>
+            <td data-flag="height"><input type="text"/></td>
+            <td>整数或是auto或是百分数</td>
+        </tr>
+        <tr>
+        	<td>宽度</td>
+            <td data-flag="width"><input type="text"/></td>
+            <td>整数或是auto或是百分数</td>
+        </tr>
+        <tr>
+        	<td style="text-align:center;" colspan="3"><input type="button" value="确定" class="buttonPro" id="setAtt"/><input type="button" value="关闭" class="buttonPro" id="closeAtt"/></td>
+        </tr>
+    </table>
+</div>
+<div class="showHTML">
+	<p>模板的css代码</p>
+    <div class="showCSS"></div>
+	<p>模板的HTML代码</p>
+	<div class="showDiv"></div>
+    <div class="showhtmlBtn">
+    	<input type="button" value="确定" class="buttonPro" id="closeHTML"/>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="../skins/base/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../skins/default/skin.css"/>
+<link rel="stylesheet" type="text/css" href="../skins/default/ui-custom.css"/>
+<link rel="stylesheet" type="text/css" href="../skins/default/ui-common.css"/>
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="../widgets/datepicker/WdatePicker.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/ui-custom.js"></script>
+<script type="text/javascript">
+ $(document).ready(function(){
+			
+	    	$("#showDiv").hide();
+	    	
+	    	$("#showTable").toggle(
+				function(){
+					$("#showDiv").show();
+					$("#showTable").attr("src", "../skins/default/images/ui-common/panle_arrow_u.png");
+				},
+				function(){
+					$("#showDiv").hide();
+					$("#showTable").attr("src", "../skins/default/images/ui-common/panle_arrow.png");
+				}
+			);
+	    	
+		});
+		</script>
+</head>
+<body>
+		<form method="post" name="form1">
+			
+				<div class="ui-search-area">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="field_td_odd field_name_s">
+								两字:
+							</td>
+							<td class="field_text_s">
+								<input type="text" class="input_text_100" name="userName" id="userName" />
+							</td>
+							<td class="field_td_odd field_name_s">
+								两字:
+							</td>
+							<td class="field_text_s">
+								<input type="text" class="input_text_100" name="userAccounts" id="userAccounts"/>
+							</td>
+							<td class="field_td_odd field_name_l">
+								<input name="search_button" type="button" class="buttonPro button_m" value="查询"/>
+							</td>
+							<td class="field_td_search">
+								高级查询&nbsp;<img id="showTable" src="../skins/default/images/ui-common/panle_arrow.png" style="cursor: pointer;"></img>
+							</td>
+						</tr>
+					</table>
+					
+					<div id="showDiv"><!-- 高级查询 BEGIN 注意不要在此处写style='display:none;'的样式-->
+						<hr class="split_line"/><!-- 我是一条悠愁的分隔线 -->
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="field_td_odd field_name_x">
+									三个字:
+								</td>
+								<td class="field_text_s">
+									<input type="text" id="deptName2" name="deptName"  
+										class="input_text_100"/>
+								</td>
+								<td class="field_td_odd field_name_m">
+									四个字啊:
+								</td>
+								<td class="field_text_s">
+									<input type="text" id="deptName" name="deptName"  
+										class="input_text_100" />
+								</td>
+								<td class="field_td_odd">
+									<input type="checkbox" id="commRecordIdenty" value="${commRecordIdenty}" style="border:none;"/>已启用
+								</td>
+							</tr>
+						</table>
+						<table style="margin-top:6px;">
+							<tr>
+								<td class="field_td_odd field_name_s">
+									日期:
+								</td>
+								<td>
+									<input type="text" id="effectDate" name="userEffectDate"
+								class="input_text_70" 
+								onfocus="WdatePicker({lang:'zh-cn'})"/>&nbsp;-
+								<input type="text" id="effectDate2" name="userEffectDate"
+								class="input_text_70"
+								onfocus="WdatePicker({lang:'zh-cn'})"/>
+								</td>
+								<td class="field_td_odd field_name_l">
+									五个字样式:
+								</td>
+								<td >
+									<input type="text" id="deptName2" name="deptName"  
+										class="input_text_100" />
+								</td>
+							</tr>
+						</table>
+					</div><!-- 高级查询 END -->
+				</div>
+				</form>
+				</body>
+</html>

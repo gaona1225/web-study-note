@@ -1,0 +1,6 @@
+/**
+ * 三种附加事件的方式 http://www.jb51.net/article/26552.htm
+ * 1.在元素上使用onclick on+event
+ * 2.获取元素对象 on+event = func
+ * 3.事件监听
+  */

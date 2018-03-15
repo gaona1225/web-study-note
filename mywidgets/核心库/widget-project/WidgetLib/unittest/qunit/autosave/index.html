@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>autosave单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="autosaveTest.js"></script>
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+<form class="exampleObj"><br/>
+姓名：<input type="text" /><br/><br/>
+密码：<input type="password" /><br/><br/>
+邮箱：<input type="hidden" /><br/><br/>
+<textarea rows="4" cols="10"></textarea><br/><br/>
+邮箱：<input type="text" /><br/><br/>
+国籍：
+<select>
+	<option value="111">111a</option>
+	<option value="222">222a</option>
+	<option value="333">333a</option>
+</select><br/><br/>
+电话：<input type="text" /><br/><br/>
+性别<input type="radio" name="sex"/>111<input type="radio" name="sex"/>222<br/><br/>
+<input type="checkbox" />兴趣<br/><br/>
+<textarea rows="4" cols="10"></textarea><br/><br/>
+性别<input type="radio" name="aaa"/>111<input type="radio" name="aaa"/>222<br/><br/>
+<input type="checkbox" />兴趣<br/><br/>
+<select>
+	<option value="111">111q</option>
+	<option value="222">222q</option>
+	<option value="333">333q</option>
+</select><br/><br/>
+</form>
+<input type="button" id="testBtn" value="为表单设置值之后测试" />
+</div>
+</body>
+</html>

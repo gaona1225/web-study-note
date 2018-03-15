@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="morehtmla1.css"/>
+<script language="javascript" type="text/javascript" src="morehtmla1.js"></script>
+<title>test</title>
+
+</head>
+
+<body>
+<div data-role="page">
+	<div data-role="header"><h1>header</h1></div>
+    <div data-role="content" class="testClass">
+    	<div class="morehtmla">aaa</div>
+        <a href="morehtmlb.html" id="file11" data-role="button" data-transition="flip">morehtmlb</a>
+        <a href="morehtml.html" id="file11" data-role="button" data-transition="flip">morehtml</a>
+        <div data-role="button" class="button">button0</div>
+    </div>
+    <script language="javascript" type="text/javascript">	
+		$('.button').live('click',function(){
+			var newClass = 'addBtn' ;
+			var newNum = Math.random()*9+1 ;
+			//var newBtn = $('.testClass').html() + '<div data-role="button" class="button">button'+parseInt(newNum)+'</div>' ;
+			var newBtn = '<div data-role="button" class="button">button'+parseInt(newNum)+'</div>' ;
+			//$('.testClass').html(newBtn).trigger('create');  
+			$('.testClass').append(newBtn).trigger('create');  
+		});
+	</script>
+    <div data-role="footer"><h4>footer</h4></div>
+</div>
+</body>
+</html>

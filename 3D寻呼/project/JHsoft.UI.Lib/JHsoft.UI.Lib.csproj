@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA0BDD51-A3DF-4844-8632-9C3529C884CE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JHsoft.UI.Lib</RootNamespace>
+    <AssemblyName>JHsoft.UI.Lib</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Content Include="css\reset.css" />
+    <Content Include="images\base-a-hover.png" />
+    <Content Include="images\base-dot.gif" />
+    <Content Include="images\base-searchbar-bg.png" />
+    <Content Include="images\base-system-close.png" />
+    <Content Include="images\base-triangle-down.png" />
+    <Content Include="images\footer_arrow_left.png" />
+    <Content Include="images\footer_arrow_left_no.png" />
+    <Content Include="images\footer_arrow_right.png" />
+    <Content Include="images\footer_arrow_right_no.png" />
+    <Content Include="images\footer_close.png" />
+    <Content Include="images\footer_close_bg.png" />
+    <Content Include="images\footer_open.png" />
+    <Content Include="images\header-goCollapse.png" />
+    <Content Include="images\header-goExpanded.png" />
+    <Content Include="images\icons.16\balloon-ellipsis.png" />
+    <Content Include="images\icons.16\clock.png" />
+    <Content Include="images\icons.16\home.png" />
+    <Content Include="images\icons.16\t-shirt.png" />
+    <Content Include="images\icons.16\ui-scroll-pane-list.png" />
+    <Content Include="images\icons.quickMenu\diary.png" />
+    <Content Include="images\icons.quickMenu\home.png" />
+    <Content Include="images\icons.quickMenu\memorandum.png" />
+    <Content Include="images\icons.quickMenu\netcall.png" />
+    <Content Include="images\icons.quickMenu\portal.png" />
+    <Content Include="images\icons.quickMenu\schedule.png" />
+    <Content Include="images\icons.quickMenu\setting.png" />
+    <Content Include="images\icons.quickMenu\task.png" />
+    <Content Include="images\icons.quickMenu\to_do.png" />
+    <Content Include="images\icons.quickMenu\to_read.png" />
+    <Content Include="images\icons.quickMenu\workflow.png" />
+    <Content Include="images\quick_menu_bg.png" />
+    <Content Include="images\tabs_bg.png" />
+    <Content Include="images\tab_arrow_bg.png" />
+    <Content Include="images\tab_arrow_left.png" />
+    <Content Include="images\tab_arrow_right.png" />
+    <Content Include="images\tab_close.png" />
+    <Content Include="images\tab_close_bg.png" />
+    <Content Include="js\artDialog3.0.5\artDialog.min.js" />
+    <Content Include="js\artDialog3.0.5\core\art.dialog.css" />
+    <Content Include="js\artDialog3.0.5\core\art.dialog[sound_code].css" />
+    <Content Include="js\artDialog3.0.5\core\shadow.gif" />
+    <Content Include="js\artDialog3.0.5\core\shadow.png" />
+    <Content Include="js\artDialog3.0.5\core\temp.png" />
+    <Content Include="js\artDialog3.0.5\core\transparent.gif" />
+    <Content Include="js\artDialog3.0.5\skin\aero.css" />
+    <Content Include="js\artDialog3.0.5\skin\aero\aero_s.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\aero_s2.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\btns.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\icons.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_bottom.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_close.hover.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_close.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_left.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_left_bottom.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_left_top.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_right.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_right_bottom.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_right_top.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_title_icon.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\ie6\aui_top.png" />
+    <Content Include="js\artDialog3.0.5\skin\aero\loading.gif" />
+    <Content Include="js\artDialog3.0.5\skin\default.css" />
+    <Content Include="js\artDialog3.0.5\skin\default\30.png" />
+    <Content Include="js\artDialog3.0.5\skin\default\50.png" />
+    <Content Include="js\artDialog3.0.5\skin\default\icons.png" />
+    <Content Include="js\c6ui\c6ui.system.js" />
+    <Content Include="js\external\DD_belatedPNG_0.0.8a-min.js" />
+    <Content Include="js\external\jquery.bgiframe-2.1.1.js" />
+    <Content Include="js\external\jquery.cookie.js" />
+    <Content Include="js\external\jquery.metadata.js" />
+    <Content Include="js\external\qunit.css" />
+    <Content Include="js\external\qunit.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\css\smoothness\jquery-ui-1.8.11.custom.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\AUTHORS.txt" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\addClass\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\addClass\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\animate\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\animate\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\demos.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\constrain-movement.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\cursor-style.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\delay-start.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\events.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\handle.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\revert.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\scroll.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\snap-to.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\sortable.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\draggable\visual-feedback.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\accepted-elements.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\images\high_tatras.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\images\high_tatras2.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\images\high_tatras2_min.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\images\high_tatras3.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\images\high_tatras3_min.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\images\high_tatras4.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\images\high_tatras4_min.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\images\high_tatras_min.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\photo-manager.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\propagation.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\revert.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\shopping-cart.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\droppable\visual-feedback.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\effect\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\effect\easing.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\effect\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\hide\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\hide\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\images\calendar.gif" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\images\demo-config-on-tile.gif" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\images\demo-config-on.gif" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\images\demo-spindown-closed.gif" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\images\demo-spindown-open.gif" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\images\icon-docs-info.gif" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\images\pbar-ani.gif" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\position\cycler.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\position\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\position\images\earth.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\position\images\flight.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\position\images\rocket.jpg" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\position\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\removeClass\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\removeClass\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\animate.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\aspect-ratio.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\constrain-area.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\delay-start.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\helper.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\max-min.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\snap-to-grid.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\synchronous-resize.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\textarea.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\resizable\visual-feedback.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\selectable\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\selectable\display-grid.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\selectable\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\selectable\serialize.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\show\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\show\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\connect-lists-through-tabs.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\connect-lists.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\delay-start.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\display-grid.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\empty-lists.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\items.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\placeholder.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\sortable\portlets.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\switchClass\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\switchClass\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\toggleClass\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\toggleClass\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\toggle\default.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\demos\toggle\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\addClass.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\animate.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\draggable.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\droppable.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\effect.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\hide.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\position.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\removeClass.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\resizable.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\selectable.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\show.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\sortable.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\switchClass.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\toggle.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\docs\toggleClass.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\external\jquery.bgiframe-2.1.2.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\external\jquery.cookie.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\external\jquery.metadata.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\external\qunit.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\external\qunit.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\GPL-LICENSE.txt" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\jquery-1.5.1.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\MIT-LICENSE.txt" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\jquery.ui.all.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\jquery.ui.base.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\jquery.ui.core.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\jquery.ui.resizable.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\jquery.ui.selectable.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\base\jquery.ui.theme.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\jquery-ui-1.8.11.custom.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\jquery.ui.all.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\jquery.ui.base.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\jquery.ui.core.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\jquery.ui.resizable.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\jquery.ui.selectable.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\themes\smoothness\jquery.ui.theme.css" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery-ui-1.8.11.custom.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.blind.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.bounce.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.clip.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.core.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.drop.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.explode.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.fade.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.fold.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.highlight.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.pulsate.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.scale.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.shake.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.slide.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.effects.transfer.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.core.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.draggable.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.droppable.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.mouse.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.position.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.resizable.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.selectable.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.sortable.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\jquery.ui.widget.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.blind.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.bounce.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.clip.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.core.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.drop.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.explode.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.fade.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.fold.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.highlight.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.pulsate.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.scale.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.shake.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.slide.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.effects.transfer.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.core.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.draggable.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.droppable.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.mouse.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.position.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.resizable.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.selectable.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.sortable.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\ui\minified\jquery.ui.widget.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\development-bundle\version.txt" />
+    <Content Include="js\jquery-ui-1.8.11.custom\index.html" />
+    <Content Include="js\jquery-ui-1.8.11.custom\js\jquery-1.5.2.min.js" />
+    <Content Include="js\jquery-ui-1.8.11.custom\js\jquery-ui-1.8.11.custom.min.js" />
+    <Content Include="skin\default\images\base_btn\base_btn.png" />
+    <Content Include="skin\default\images\base_btn\btn_icon_book.png" />
+    <Content Include="skin\default\images\base_btn\btn_icon_magnifier.png" />
+    <Content Include="skin\default\images\base_btn\btn_icon_menu.png" />
+    <Content Include="skin\default\images\base_btn\btn_icon_setting.png" />
+    <Content Include="skin\default\images\base_tab\base_tab_bottom.png" />
+    <Content Include="skin\default\images\base_tab\base_tab_portrait_left.png" />
+    <Content Include="skin\default\images\base_tab\base_tab_portrait_right.png" />
+    <Content Include="skin\default\images\base_tab\base_tab_top.png" />
+    <Content Include="skin\default\images\c6ui_header_bannerBg.png" />
+    <Content Include="skin\default\images\menu_png\menu_bottom.png" />
+    <Content Include="skin\default\images\menu_png\menu_bottom_left.png" />
+    <Content Include="skin\default\images\menu_png\menu_bottom_right.png" />
+    <Content Include="skin\default\images\menu_png\menu_button.png" />
+    <Content Include="skin\default\images\menu_png\menu_icon_arrow.png" />
+    <Content Include="skin\default\images\menu_png\menu_icon_arrow_b.png" />
+    <Content Include="skin\default\images\menu_png\menu_icon_arrow_t.png" />
+    <Content Include="skin\default\images\menu_png\menu_icon_blank.png" />
+    <Content Include="skin\default\images\menu_png\menu_icon_loginout.png" />
+    <Content Include="skin\default\images\menu_png\menu_icon_setting.png" />
+    <Content Include="skin\default\images\menu_png\menu_left.png" />
+    <Content Include="skin\default\images\menu_png\menu_list_active_bg.png" />
+    <Content Include="skin\default\images\menu_png\menu_list_bg.png" />
+    <Content Include="skin\default\images\menu_png\menu_pin_off.png" />
+    <Content Include="skin\default\images\menu_png\menu_pin_on.png" />
+    <Content Include="skin\default\images\menu_png\menu_right.png" />
+    <Content Include="skin\default\images\menu_png\menu_roll.png" />
+    <Content Include="skin\default\images\menu_png\menu_top.png" />
+    <Content Include="skin\default\images\menu_png\menu_top_left.png" />
+    <Content Include="skin\default\images\menu_png\menu_top_right.png" />
+    <Content Include="skin\default\portal.css" />
+    <Content Include="skin\default\Preview.jpg" />
+    <Content Include="skin\default\preview.xml" />
+    <Content Include="skin\default\skin.css" />
+    <Content Include="skin\default\skin.xml" />
+    <Content Include="skin\landscape\preview.xml" />
+    <Content Include="skin\landscape\skin.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="skin\default\portal\" />
+    <Folder Include="skin\landscape\images\" />
+  </ItemGroup>
+</Project>

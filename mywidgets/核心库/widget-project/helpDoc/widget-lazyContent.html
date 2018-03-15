@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>lazyContent</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <style type="text/css">
+    ul.lazy_content {
+      list-style: none;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+    ul.lazy_content li {
+        width: 200px;
+        height: 150px;  
+        float: left;
+        margin: 10px 30px;
+        outline: 1px dashed red;
+    }
+    .item_con {
+        margin: 10px;
+        outline: 1px dashed black;
+        height: 130px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .nav_content {
+        position: relative;
+        outline: 1px dashed red;
+        height: 340px;
+        width: 349px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+    <script>
+    $(function(){
+		var ver = $.ui.lazyContent.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>内容懒加载(lazyContetn)</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>内容懒加载效果，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox等浏览器</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> $('selector').lazyContent({...}); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">mode：</label>
+              （字符串类型）设定内容格式: 
+                        '1' 表示多个平行区 类似于工作台面板及内容; 
+                        '0' 多个导航 1个显示区容器</p>
+            <p>
+              <label class="help-item">el：</label>
+              （字符串型）选择器或者对应jQuery对象, 待加载所需参数存放的上下文</p>
+            <p>
+              <label class="help-item">dataTmpl：</label>
+              （字符串类型）存放返回数据的容器元素的结构</p>
+            <p>
+              <label class="help-item">dataElem：</label>
+              （数字类型）css 选择器 存放请求数据的所需参数的元素</p>
+            <p>
+              <label class="help-item">timeout：</label>
+              （数字类型）延迟加载的毫秒数 默认 350</p>
+            <p>
+              <label class="help-item">loading：</label>
+              （字符串类型）加载中图标的路径</p>
+            <p>
+              <label class="help-item">event：</label>
+              （字符串类型）触发加载内容的事件 默认 click</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content">
+            <p>无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              1个显示区+多个导航</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+      					$(function() {
+                  $('#navCon2').lazyContent({
+                    mode: '0',
+                    el: '#con2',
+                    dataElem: ':button',
+                    loading: 'images/lazyContent/loading.gif'
+                  });
+                });
+      				</script>
+    			    <div class="btn-group btn-group-vertical" id="navCon2">
+                <input type="button" class="btn" 
+                    value="li#0" data-url="data/lazyContent/data1.txt"
+                    data-param="text"/>
+                <input type="button" class="btn" 
+                    value="li#1" data-url="data/lazyContent/data2.txt"
+                    data-param="text"/>
+                <input type="button" class="btn" 
+                    value="li#2" data-url="data/lazyContent/data2.txt"
+                    data-param="text"/>
+                <input type="button" class="btn" 
+                    value="li#3" data-url="data/lazyContent/data3.txt"
+                    data-param="text"/>        
+              </div>
+              <div class="nav_content" id="con2"></div>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+              &lt;script>
+                $(function() {
+                  $('#navCon2').lazyContent({
+                    mode: '0',
+                    el: '#con2',
+                    dataElem: ':button',
+                    loading: 'images/lazyContent/loading.gif'
+                  });
+                });
+              &lt;/script>
+              &lt;div class="btn-group btn-group-vertical" id="navCon2">
+                &lt;input type="button" class="btn" 
+                    value="li#0" data-url="data.txt"
+                    data-param="text"/>
+                &lt;input type="button" class="btn" 
+                    value="li#1" data-url="data.txt"
+                    data-param="text"/>
+                &lt;input type="button" class="btn" 
+                    value="li#2" data-url="data.txt"
+                    data-param="text"/>
+                &lt;input type="button" class="btn" 
+                    value="li#3" data-url="data.txt"
+                    data-param="text"/>        
+              &lt;/div>
+              &lt;div class="nav_content" id="con2"></div>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              多个平行ajax块</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+              <script>
+                $(function() {
+                  //测试加载多个平行待加载项目
+                  $('#nav2>li').lazyContent({
+                    el: '.item_con',
+                    timeout: 200,
+                    event: 'customeName',
+                    loading: 'images/lazyContent/loading.gif'
+                  });
+                  var psedoTimer = 0;
+                  $('#loadAjax2').bind('click',function() {
+                    var $targetLi = $('#nav2>li');
+                    var len = $targetLi.length;
+                    if (psedoTimer < 12 && psedoTimer >= 0) {
+                      $targetLi.eq(psedoTimer++).trigger('customeName');
+                    } else {
+                      psedoTimer = 0;
+                    }
+                  });  
+                });
+              </script>
+              <input type="button" value="去加载" id="loadAjax2" class="btn"/>
+              <ul class="lazy_content" id="nav2">
+                  <li data-url="data/lazyContent/data1.txt"
+                      data-param="text">
+                      <div class="item_con">li#0</div>
+                  </li>
+                  <li data-url="data/lazyContent/data2.txt"
+                      data-param="text">
+                      <div class="item_con">li#1</div>
+                  </li>
+                  <li data-url="data/lazyContent/data3.txt"
+                      data-param="text">
+                      <div class="item_con">li#2</div>
+                  </li>
+                  <li data-url="data/lazyContent/data4.txt"
+                      data-param="text">
+                      <div class="item_con">li#3</div>
+                  </li>
+              </ul>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+              &lt;script>
+                $(function() {
+                  //测试加载多个平行待加载项目
+                  $('#nav2>li').lazyContent({
+                    el: '.item_con',
+                    timeout: 200,
+                    event: 'customeName',
+                    loading: 'images/lazyContent/loading.gif'
+                  });
+                  var psedoTimer = 0;
+                  $('#loadAjax2').bind('click',function() {
+                    var $targetLi = $('#nav2>li');
+                    var len = $targetLi.length;
+                    if (psedoTimer &lt; 12 &amp;&amp; psedoTimer >= 0) {
+                      $targetLi.eq(psedoTimer++).trigger('customeName');
+                    } else {
+                      psedoTimer = 0;
+                    }
+                });
+              &lt;/script>
+              &lt;input type="button" value="去加载" id="loadAjax2" class="btn"/>
+              &lt;ul class="lazy_content" id="nav2">
+                  &lt;li data-url="data/lazyContent/data1.txt"
+                      data-param="text">
+                      &lt;div class="item_con">li#0&lt;/div>
+                  &lt;/li>
+                  &lt;li data-url="data/lazyContent/data2.txt"
+                      data-param="text">
+                      &lt;div class="item_con">li#1&lt;/div>
+                  &lt;/li>
+                  &lt;li data-url="data/lazyContent/data3.txt"
+                      data-param="text">
+                      &lt;div class="item_con">li#2&lt;/div>
+                  &lt;/li>
+                  &lt;li data-url="data/lazyContent/data4.txt"
+                      data-param="text">
+                      &lt;div class="item_con">li#3&lt;/div>
+                  &lt;/li>
+              &lt;/ul>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

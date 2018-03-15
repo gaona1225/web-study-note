@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>APIstudynote</title>
+<link type="text/css" rel="stylesheet" href="jquery.mobile-1.0/jquery.mobile-1.0.min.css"/>
+</head>
+
+<body>
+<div data-role="page" data-add-back-btn="true" data-back-btn-text="go back">
+	<div data-role="header">
+    	<div data-role="button" data-icon="custom" class="ui-btn-left" data-iconpos="notext">notext</div>
+    	<h1>header</h1>
+        <div data-role="button" data-icon="custom" class="ui-btn-right" data-iconpos="right" data-iconshadow="false">custom</div>
+    </div>
+    <div data-role="content">
+        <div data-role="button" class="tap">tap</div>
+        <div data-role="button" class="taphold">taphold</div>
+        <div data-role="button" class="swipe">swipe</div>
+        <div data-role="button" class="swipeLeft">swipeLeft</div>
+        <div data-role="button" class="swipeRight">swipeRight</div>
+        <div data-role="button" class="vmouseover">vmouseover</div>
+        <div data-role="button" class="vmousedown">vmousedown</div>
+        <div data-role="button" class="vmousemove">vmousemove</div>
+        <div data-role="button" class="vmouseup">vmouseup</div>
+        <div data-role="button" class="vclick">vclick</div>
+        <div data-role="button" class="pagebeforeload">pagebeforeload</div>
+        <a href="#dialogDiv" data-role="button" class="pagebeforecreate">pagebeforecreate</a>
+        <a href="#dialogDiv" data-role="button" class="updatelayout">updatelayout</a>
+    </div>
+    <div data-role="footer"><h4>footer</h4></div>
+</div>
+<!--dialog中参数data-overlay-theme主要控制弹出时的遮罩层主题-->
+<div data-role="page" id="dialogDiv" data-close-btn-text="closeNew" data-theme="b" data-overlay-theme="e" data-title="newDialog">
+	<div data-role="header"><h1>header</h1></div>
+    <div data-role="content">content</div>
+    <div data-role="footer"><h4>footer</h4></div>
+</div>
+</body>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript" src="jquery.mobile-1.0/jquery.mobile-1.0.min.js"></script>
+<script language="javascript" type="text/javascript">
+	$('.tap').live('tap',function(){
+		alert('tap') ;
+	}) ;
+	$('.taphold').bind('taphold',function(){
+		alert('taphold more than one second') ;
+	}) ;
+	$('.swipe').live('swipe',function(){
+		alert('swipe x more than 30 and y less than 20') ;
+	});
+	$('.swipeLeft').live('swipeleft',function(){
+		alert('swipeleft') ;
+	}) ;
+	$('.swipeRight').live('swiperight',function(){
+		alert('swiperight') ;
+	}) ;
+	//vmouseover --> touch events or mouseover events
+	$('.vmouseover').live('vmouseover',function(){
+		alert('vmouseover') ;
+	}) ;
+	//vmousedown -->touchstart events or mousedown events
+	$('.vmousedown').live('vmousedown',function(){
+		alert('vmousedown') ;
+	}) ;
+	//vmousemove --> touchmove events or mousemove events
+	$('.vmousemove').live('vmousemove',function(){
+		alert('vmousemove') ;
+	}) ;
+	//vmouseup -->touchend events or mouseup events
+	$('.vmouseup').live('vmouseup',function(){
+		alert('vmouseup') ;
+	}) ;
+	//vclick --> touch events or mouse click events
+	$('.vclick').live('vclick',function(){
+		alert('vclick') ;	
+		return false ;
+	}) ;
+	/*orientationchange 窗口改变时触发相当于resize*/
+	$(window).bind('orientationchange',function(e){
+		alert('orientationchange')　;
+	}) ;
+	$(window).bind('scrollstart',function(){
+		//alert('scrollstart') ;
+	}).bind('scrollstop',function(){
+	//	alert('scrollstop') ;
+	}) ;
+	$('.pagebeforeload').live('click',function(){
+		$(document).bind('pagebeforeload',function(){
+			alert('pagebeforeload') ;
+		}) ;
+		$.mobile.loadPage('apistudy.html') ;
+		$.mobile.showPageLoadingMsg() ;
+	}) ;
+	$('#dialogDiv').live('pagebeforecreate',function(){
+		alert('pagebeforecreate') ;
+	}).live('pagebeforeshow',function(){
+		alert('pagebeforeshow') ;
+	}).live('pageshow',function(){
+		alert('pageshow') ;
+	}).live('pagecreate',function(){
+		alert('pagecreate') ;
+	}).live('pageinit',function(){
+		alert('pageinit') ;
+	}).live('pageremove',function(){
+		alert('pageremove') ;
+	}) ;
+	//updatelayout 动态显示/隐藏内容的组成部分
+	//$('#dialogDiv').show().trigger('updatelayout') ;
+	$('.updatelayout').live('click',function(){
+		$('#dialogDiv').hide().trigger('updatelayout') ;
+	}) ;
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript" src="../jquery-1.5.2.min.js"></script>
+<title>eidtDiv</title>
+<style type="text/css">
+body,input{font-family:'微软雅黑';font-size:14px;}
+.eidtDiv,.textView{
+	border:1px solid #3C3C3C ;
+	height:202px; 
+	margin-top:6px ;
+	width:402px ;
+}
+.editOpe b,.editOpe i,.editOpe u{
+	border:1px solid #DDD ;
+	cursor:pointer ;
+	display:inline-block ;
+	height:20px ;
+	line-height:20px ;
+	text-align:center ;
+	width:20px ;
+}
+.btn{
+	background:#D7D7D7 ;
+	cursor:pointer ;
+	height:20px ;
+	line-height:20px ;
+	padding:0px 5px ;
+	border-radius:5px ;
+}
+.editText{
+	border:none ;
+	height:200px ;
+	width:400px ;
+	overflow:auto ;
+}
+.textB{font-weight:bold ;}
+.textI{font-style:italic ;}
+.textU{text-decoration:underline ;}
+</style>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('.editText').mouseup(function(){
+			//var word = document.selection.createRange().text ;
+			var selectedText; 
+			if(window.getSelection){ 
+				alert(document.body.createTextRange()) ;
+				selectedText = window.getSelection(); 
+				alert('1:'+ selectedText) ;
+			}else if(document.selection){ 
+				selectedText = document.selection.createRange().text;  
+				alert('2:'+ selectedText) ;
+			}
+		}) ;
+		$('.textB').click(function(){
+			//doEdit(this); 
+		}) ;
+		
+		function doEdit(obj){
+			
+		}
+	}) ;
+</script>
+</head>
+
+<body>
+<div contenteditable="true" class="eidtDiv">可编辑</div><br/><br/>
+<div class="editOpe"><b class="textB">B</b>&nbsp;&nbsp;<i class="textI">I</i>&nbsp;&nbsp;<u class="textU">U</u>&nbsp;&nbsp;<span class="btn">预览</span>&nbsp;&nbsp;<span class="btn">确定</span></div>
+<div class="textView"><textarea class="editText">fdsafdsa</textarea></div>
+</body>
+</html>

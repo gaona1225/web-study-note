@@ -1,0 +1,51 @@
+//http://www.cnblogs.com/likejs/archive/2011/05/05/2037194.html
+这个是官方说明:
+JSB2 File Format is a JSON encoded configuration file for managing JS & CSS project builds.
+JSB2格式是用JSON编码配置的
+The top-level keys are:
+关键的Keys设置 
+- projectName:  【String】 describing the project
+项目名称 : 【字符串】 使用描述项目
+- deployDir: 【String】 specifying directory to create within the homeDir specified on the commandline
+部署目录 : 【字符串】 将生成的文件部署在根目录的指定目录中 
+- licenseText: 【String】 specifying the header of all .js and .css, use \n for newlines.
+版权信息 : 【字符串】 会输出在所有文件的头部 可以使用\n换行
+- pkgs: An array of package descriptors
+文件包 : 【数组】 用一个数组来描述输出的文件包与包的信息. 
+- resources: An array of resource descriptors
+资源 : 【数组】 用一个数组来描述需要用到的相关文件 
+Package Descriptors:
+包描述详细介绍 归属于pkgs
+ - name: 【String】 describing the package
+名称 : 【字符串】 包的描述 
+- file: 【String】 specifying the file to create
+文件 : 【字符串】 输出的文件名称 如: output.js 
+- isDebug: 【Boolean】 describing whether to generate debug builds  This configuration is currently UNUSED. Debug and compressed  versions will ALWAYS be generated.
+是否输出Debug文件 : 【布尔】确定是否另外输出一个用于调试的只合并但不压缩的文件. 
+- fileIncludes: An array of files descriptors which need to be included in this package.
+包含文件列表 : 【数组】用来描述都有那些文件被打包到这个包中(按顺序压缩).
+- pkgDeps: An array of the package descriptor file strings that this package depends on. The behavior of this configuration relies on the includeDeps configuration.
+包的依赖描述 : 【数组】 每个数组成员为一个该包依赖的文件,这个配置依赖于includeDesps的配置.(这个我尝试了一下,但是没尝试出到底有什么用途.)
+- includeDeps: 【Boolean】 describing whether or not to include dependencies in the outputted file. Defaults to false. 
+是否开启依赖 : 【布尔】 说明是否包括输出文件的依赖关系,默认为false. 
+File Descriptors:
+文件描述 归属于fileIncludes
+- text: 【String】 describing the file to be included
+文件名 : 【字符串】 列入包的文件名
+- path: 【String】 describing the directory of file to be included
+路径 : 【字符串】 描述这个文件放置的路径
+Resource Descriptors:
+资源描述 归属于 resource
+ - src: 【String】 describing the folder to move resources from
+资源目录 : 【字符串】 描述要移动的资源的来源目录 
+- dest: 【String】 describing the folder to move resources to
+ 
+目标目录 : 【字符串】 描述要将资源移动到指定的目录 
+- filters: 【String】 to create a RegEx which specifies how to filter the files which are copied from src to dest. All .svn and hidden files will automatically be excluded. Note that all \'s must be encoded \\.
+资源的过滤规则 : 【字符串】 创建一个正则指定移动资源的过程中的筛选.svn和隐藏的文件将自动被排除在外。请注意，所有\ 必须被编码为\\。
+Filter Examples:
+过滤文件配置演示 
+- ".*" A filter to copy all files
+ 移动所有的文件
+- ".*[\\.js|\\.css]" A filter to copy all js and css files.
+移动所有的.js或.css文件

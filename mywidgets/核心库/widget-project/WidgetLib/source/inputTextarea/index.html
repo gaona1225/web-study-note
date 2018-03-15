@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>表单多行文本框--inputTextarea</title>
+	<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+	<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+	<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+	<script src="inputTextarea.js"></script>
+	<script type='text/javascript'>
+	$(function(){
+		$('#hide').click(function(){$('#textfield').inputTextarea('hide');});
+		$('#show').click(function(){$('#textfield').inputTextarea('show');});
+		$('#disable').click(function(){$('#textfield').inputTextarea('disable');});
+		$('#enable').click(function(){$('#textfield').inputTextarea('enable');});
+	});
+	</script>
+</head>
+
+<body style="padding:20px;">
+多行文本框（inputTextarea）：
+<textarea name="" class="input_text_default" id="textfield" ></textarea>
+<textarea name="" disabled="disabled" class="input_text_default"></textarea>
+<a href="###" id="hide">隐藏</a>
+<a href="###" id="show">显示</a>
+<a href="###" id="disable">禁用</a>
+<a href="###" id="enable">启用</a>
+</body>
+</html>

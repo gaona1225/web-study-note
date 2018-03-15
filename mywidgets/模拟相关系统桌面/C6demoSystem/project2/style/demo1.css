@@ -1,0 +1,158 @@
+/*工作台样式开始*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td{
+	font-family:"微软雅黑",Arial,"宋体" ;
+}
+body{
+	line-height:1 !important;
+}
+a{
+	color:#fff ;
+	padding-bottom:2px ;
+}
+a:hover span{
+	background:url(../image/whiteLine.png) bottom repeat-x ;
+}
+.clear{
+	clear:both ;
+}
+.wrap{
+	background:url(../image/wrap.png) no-repeat ;
+	margin:0 auto ;
+	overflow:hidden ;
+	padding-bottom:36px ;
+	width:1002px ;
+}
+.top{
+	height:132px ;
+	width:100% ;
+}
+.desktop{
+	background:url(../image/desktop.png) no-repeat top ;
+	height:558px ;
+	padding:56px 80px 0px 80px ;
+}
+.leftBtn{
+	float:left ;
+}
+.leftBtn a{
+	background:url(../image/leftbtnl.png) no-repeat ;
+	display:block ;
+	height:56px ;
+	margin-top:139px ;
+	width:56px ;
+}
+.leftBtn a:link{
+	background:url(../image/leftbtnl.png) no-repeat ;
+}
+.leftBtn a:hover{
+	background:url(../image/leftbtnh.png) no-repeat ;
+}
+.leftBtn a.disable{
+	background:url(../image/leftbtnd.png) no-repeat ;
+	cursor:default ;
+}
+.rightBtn{
+	float:left ;
+}
+.rightBtn a{
+	background:url(../image/rightbtnl.png) no-repeat ;
+	display:block ;
+	height:56px ;
+	margin-top:139px ;
+	width:56px ;
+}
+.rightBtn a:link{
+	background:url(../image/rightbtnl.png) no-repeat ;
+}
+.rightBtn a:hover{
+	background:url(../image/rightbtnh.png) no-repeat ;
+}
+.rightBtn a.disable{
+	background:url(../image/rightbtnd.png) no-repeat ;
+	cursor:default ;
+}
+.main{
+	float:left ;
+	height:334px ;
+	margin-left:20px ;
+	margin-right:20px ;
+	overflow:hidden ;
+	width:676px ;
+}
+.mainWrap{
+	height:334px ;
+}
+.mainElem{
+	color:#000 ;
+	float:left ;
+	height:334px ;
+	width:676px ;
+}
+.buttomBtn{
+	height:3px ;
+	margin:22px auto 0px ;
+	width:220px ;
+}
+.buttomBtn li{
+	float:left ;
+	margin-right:15px ;
+}
+.buttomBtn li a{
+	background:#7cc0ff ;
+	display:block ;
+	height:3px ;
+	padding:0px ;
+	width:54px ;
+}
+.buttomBtn li a:link{
+	background:#7cc0ff ;
+}
+.buttomBtn li a:hover,.buttomBtn li.btnCurrent a:hover{
+	background:#cfa339 ;
+}
+.buttomBtn li.btnCurrent a{
+	background:#034787 ;
+}
+.mainMetro{
+	float:left ;
+	margin:0px 7px 7px 0px ;	
+	position:relative ;
+	z-index:1 ;	
+	-webkit-perspective:800px ;
+	-moz-perspective:800px ;
+	perspective:800px ;
+}
+.metroElem{
+	cursor:pointer ;
+	height:100% ;
+	font-size:24px ;
+	width:100% ;	
+}
+.mainMetro .metroFront{
+	position:absolute ;
+	z-index:100 ;
+}
+.mainMetro .metroBack{
+	opacity:0 ;
+	position:absolute ;
+	z-index:1 ;	
+}
+.flipped .metroFront{
+	opacity:0;
+}
+.flipped .metroBack{	
+	opacity:1;
+}
+.background1{
+	background:#41b1ec ;
+}
+.background2{
+	background:#398ecf ;
+}
+.background3{
+	background:#2e98c0 ;
+}
+.mainBlock1{
+	height:106px ;
+	width:107px ;
+}

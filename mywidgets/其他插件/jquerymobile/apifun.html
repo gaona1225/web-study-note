@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>APIstudynote</title>
+<link type="text/css" rel="stylesheet" href="jquery.mobile-1.0/jquery.mobile-1.0.min.css"/>
+</head>
+
+<body>
+<div data-role="page" data-add-back-btn="true" data-back-btn-text="go back">
+	<div data-role="header">
+    	<div data-role="button" data-icon="custom" class="ui-btn-left" data-iconpos="notext">notext</div>
+    	<h1>header</h1>
+        <div data-role="button" data-icon="custom" class="ui-btn-right" data-iconpos="right" data-iconshadow="false">custom</div>
+    </div>
+    <div data-role="content">
+        <a href="#dialogDiv" data-role="button" class="showPageLoadingMsg">showPageLoadingMsg</a>
+        <div data-role="button" class="fixedToolBarshide">fixedToolBarshide</div>
+        <div data-role="button" class="fixedToolBarsshow">fixedToolBarsshow</div>
+        <div data-role="button" class="pathParseUrl">pathParseUrl</div>
+        <div class="pathParseUrlMsg">ddd</div>
+        <div data-role="button" class="makePath">makePath</div>
+        <div data-role="button" class="silentScroll">silentScroll</div>
+        <p>随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。[随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。[随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。[随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。[随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。[随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。[随着移动互联世界的到来，目前已发展到多种移动操作系统割据的局面，而开发者则急需要能运用原有的开发知识和技能，快速方便地构建移动应用程序，并期望能运行在不同的手机操作平台上，比如Android,iOS,黑莓等。[</p>
+    </div>
+    <div data-role="footer" data-position="fixed"><h4>footer</h4></div>
+</div>
+<!--dialog中参数data-overlay-theme主要控制弹出时的遮罩层主题-->
+<div data-role="page" id="dialogDiv" data-close-btn-text="closeNew" data-theme="b" data-overlay-theme="e" data-title="newDialog">
+	<div data-role="header"><h1>header</h1></div>
+    <div data-role="content">content</div>
+    <div data-role="footer"><h4>footer</h4></div>
+</div>
+</body>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript" src="jquery.mobile-1.0/jquery.mobile-1.0.min.js"></script>
+<script language="javascript" type="text/javascript">
+	$('.showPageLoadingMsg').live('click',function(){
+		$.mobile.loadingMessage = 'hello' ;
+		$.mobile.showPageLoadingMsg() ;
+	}) ;
+	$('#dialogDiv').live('pageshow',function(){
+		alert('It is time to hidePageLoadingMsg') ;
+		$.mobile.hidePageLoadingMsg() ;
+	}) ;
+	$('.fixedToolBarshide').live('click',function(){
+		$.mobile.fixedToolbars.hide(true) ;//是否显示在最底下,不设置参数则有动画效果。
+	}) ;
+	$('.fixedToolBarsshow').live('click',function(){
+		$.mobile.fixedToolbars.show() ;
+	}) ;
+	$('.pathParseUrl').live('click',function(){
+		var obj = $.mobile.path.parseUrl("http://jblas:password@mycompany.com:8080/mail/inbox?msg=1234#hashMsg");
+		var pathParseUrlMsg = 'urlAllmessage:http://jblas:password@mycompany.com:8080/mail/inbox?msg=1234#hashMsg' +  '<br/>hash:' + obj.hash + ' <br/> host:' + obj.host + '<br/>hostname:'+obj.hostname + '<br/>href:' + obj.href + '<br/>pastname:' + obj.pastname + '<br/>port:' + obj.port + '<br/>portcol:' + obj.portcol + '<br/>search:' + obj.search + '<br/>authority:' + obj.authority + '<br/>directory:' + obj.directory + '<br/>domain:' + obj.domain + '<br/>filename:' + obj.filename + '<br/>hrefNoHash:' + obj.hrefNoHash + '<br/>hrefNoSearch:' + obj.hrefNoSearch + '<br/>password:' + obj.password + '<br/>username:' + obj.username ;
+		$('.pathParseUrlMsg').html(pathParseUrlMsg) ;
+	}) ;
+	$('.silentScroll').live('click',function(){
+		//scroll to Y 100px 
+		$.mobile.silentScroll(150) ;
+	}) ;
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <div id="ajax_com"></div>
+    <input type="button" value="ajax获取内容" onClick="getAjax()" />
+    <script language="javascript">		
+		var xmlHttp ;
+		var ajaxCom = document.getElementById('ajax_com') ;
+		function createXMLHttpRequest(){
+			xmlHttp = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttpRequest() ;
+		}
+		
+		function getAjax(){
+			var host = 'g1.htm' ;
+			createXMLHttpRequest() ;
+			xmlHttp.open('GET',host,true) ;
+			xmlHttp.onreadystatechange = function(){
+				if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+					ajaxCom.innerHTML = xmlHttp.responseText ; 
+				}
+			}
+			xmlHttp.send('') ;
+		}
+    </script>
+</body>
+</html>

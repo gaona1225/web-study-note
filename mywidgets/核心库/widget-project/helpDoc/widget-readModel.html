@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>阅读模式插件readModel</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.readModel.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+		var author = $.ui.readModel.author ;
+		$('#author').html(author);
+	});
+    </script>
+    <style type="text/css">
+    </style>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>阅读模式（readModel）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+		 <p><strong>作者：
+            <label id="author"></label>
+            </strong></p>	
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>阅读模式插件，类似视频网站的关灯效果，突出页面中的指定区域，
+				并读取页面中指定的区域内容以弹出层的方式显示，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> $(".ui-readModel").readModel(); </p>
+          	注：目标div中不能有基于jqueryUI的插件，在调用hide方法时，jqueryUI会将调用所有widget插件的destroy方法
+		  </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">width：</label>
+              （数字/字符串）无默认参数，实际显示的宽度</p>
+            <p>
+              <label class="help-item">height：</label>
+              （数字/字符串）无默认参数，实际显示的高度</p>
+            <p>
+              <label class="help-item">model：</label>
+              （字符串）默认参数“default”，显示在窗口的中间位置，参数：'default'（原来的位置）；'center'（窗口中间位置）</p>          
+          	 <p>
+              <label class="help-item">iframe：</label>
+              （布尔值）默认参数false，是否跨iframe显示，注：最外层是否为frameset，若为frameset则没有body元素，不能实现跨iframe显示功能。</p>          
+         
+		  </div>
+        </div>
+        <!--语法段落结束--> 
+		<!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+             <p>
+              <label class="help-code">show()：</label>
+              用于开灯效果，使目标对象显示为突显状态。</p>
+          </div>
+		  <div class="content"> 
+             <p>
+              <label class="help-code">hide()：</label>
+              用于关灯效果，使目标对象恢复为原生状态。</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-1：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              默认阅读模式，及其开灯效果、关灯效果调用</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo" style="overflow:hidden ;">
+            	<script>
+					$(function(){
+						$('#btn1').click(function(e) {
+							$('#targetId').readModel('show');
+						});
+					}) ;					
+				</script>
+				<input type='button' value='开灯' id='btn1' class='buttonActive'/>
+                <div class='ui-readModel' id='targetId' style='background-color:#ccc;'>
+					<p>
+						readModel-阅读模式，类似视频网站的关灯效果
+						1、突出页面中的指定区域，
+						2、读取页面中指定的区域内容以弹出层的方式显示。
+					</p>
+				</div>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                   $(function(){
+						$('#btn1').click(function(e) {
+							$('#targetId').readModel('show');
+						});
+					}) ;	
+			   &lt;/script>
+			   &lt;input type='button' value='开灯' id='btn1' class='buttonActive'/>
+               &lt;div class='ui-readModel' id='targetId' style='background-color:#ccc;'>
+					&lt;p>
+						readModel-阅读模式，类似视频网站的关灯效果
+						1、突出页面中的指定区域，
+						2、读取页面中指定的区域内容以弹出层的方式显示。
+					&lt;/p>
+				&lt;/div>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+		<!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-2：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+           js重新定义图片显示，js参数覆盖默认定义效果</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+				<script>
+					$(function(){
+						$('#divID').readModel({
+							height:400,
+							width:400,
+							model:'center',
+							iframe:true
+						});
+						$('#btn2').click(function(e) {
+							$('#divID').readModel('show');
+						});
+					});
+				</script>
+				<input type='button' value='开灯' id='btn2' class='buttonActive'/>
+				<div class='ui-readModel' id='divID' style='width:200px;height:200px;background-color:#ccc;'>
+					<p>
+						readModel-阅读模式，类似视频网站的关灯效果
+						1、突出页面中的指定区域，
+						2、读取页面中指定的区域内容以弹出层的方式显示。
+					</p>
+				</div>
+			</div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+				&lt;script>
+					$(function(){
+						$('#divID').readModel({
+							height:400,
+							width:400,
+							model:'center',
+							iframe:true	
+						});
+						$('#btn2').click(function(e) {
+							$('#divID').readModel('show');
+						});
+					});
+				&lt;/script>
+				&lt;input type='button' value='开灯' id='btn2' class='buttonActive'/>
+			 	&lt;div class='ui-readModel' id='divID' style='width:200px;height:200px;background-color:#ccc;'>
+					&lt;p>
+						readModel-阅读模式，类似视频网站的关灯效果
+						1、突出页面中的指定区域，
+						2、读取页面中指定的区域内容以弹出层的方式显示。
+					&lt;/p>
+				&lt;/div>
+			</pre>
+          </div>
+        </div>
+        <!--语法段落结束-->
+      </div>
+    </div>
+</body>
+</html>

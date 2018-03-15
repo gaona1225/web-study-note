@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>scrollBar</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="jscrollpane.mousewheel.js"></script>
+<script src="jscrollpane.js"></script>
+<style>
+.scroll-pane{
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+}
+.horizontal-only{
+	height: auto;
+	max-height: 200px;
+}
+</style>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('.btn').click(function(){
+			var html = '<p>Vestibulum dictum consectetur magna eu egestas. Praesent molestie dapibus erat, sit amet sodaleslectus congue ut. Nam adipiscing, tortor ac blandit egestas, lorem ligula posuere ipsum, necfaucibus nisl enim eu purus. Quisque bibendum diam quis nunc eleifend at molestie libero tincidunt.Quisque tincidunt sapien a sapien pellentesque consequat. Mauris adipiscing venenatis augue uttempor. Donec auctor mattis quam quis aliquam. Nullam ultrices erat in dolor pharetra bibendum.Suspendisse eget odio ut libero imperdiet rhoncus. Curabitur aliquet, ipsum sit amet aliquet varius,est urna ullamcorper magna, sed eleifend libero nunc non erat. Vivamus semper turpis ac turpisvolutpat non cursus velit aliquam. Fusce id tortor id sapien porta egestas. Nulla venenatis luctuslibero et suscipit. Sed sed purus risus. Donec auctor, leo nec eleifend vehicula, lacus felissollicitudin est, vitae lacinia lectus urna nec libero. Aliquam pellentesque, arcu condimentumpharetra vestibulum, lectus felis malesuada felis, vel fringilla dolor dui tempus nisi. In hac habitasse platea dictumst. Ut imperdiet mauris vitae eros varius eget accumsan lectus adipiscing.</p>' ;
+			$('.scroll-pane p').after(html) ;
+		}) ;
+		var settings = {
+			showArrows: false,
+			arrowScrollOnHover: true
+		};
+		var pane = $('.scroll-pane') ;
+		pane.jScrollPane(settings);
+		var api = pane.data('jsp');
+		var i = 1;
+		setInterval(function(){api.reinitialise();},100) ;
+	}) ;
+</script>
+</head>
+
+<body>
+<input type="button" value="button" class="btn" />
+<div class="scroll-pane">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem tristique ultrices
+        eget id neque. Duis enim turpis, tempus at accumsan vitae, lobortis id sapien. Pellentesque nec orci
+        mi, in pharetra ligula. Nulla facilisi. Nulla facilisi. Mauris convallis venenatis massa, quis
+        consectetur felis ornare quis. Sed aliquet nunc ac ante molestie ultricies. Nam pulvinar ultricies
+        bibendum. Vivamus diam leo, faucibus et vehicula eu, molestie sit amet dui. Proin nec orci et elit
+        semper ultrices. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+        mus. Sed quis urna mi, ac dignissim mauris. Quisque mollis ornare mauris, sed laoreet diam malesuada
+        quis. Proin vel elementum ante. Donec hendrerit arcu ac odio tincidunt posuere. Vestibulum nec risus
+        eu lacus semper viverra.
+    </p>
+</div>
+</body>
+</html>

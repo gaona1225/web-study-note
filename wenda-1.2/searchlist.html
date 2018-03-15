@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>searchlist</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script> 
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+</head>
+<body>
+	<div class="evaluate_pop" id="searchPopBox">
+    	<div class="evaluate_pop_msg">确定要删除此图片？</div>
+    	<div class="evaluate_pop_tool"><a href="#" class="left_pop_btn" id="searchCancle">不允许</a><a href="#" id="searchOk">好</a></div>
+    </div>
+    <div class="pop_mask" id="searchPopMask"></div>
+    <header class="header">
+        <a href="javascript:;" class="back_btn"></a>
+        <h1>百科问答</h1>
+    </header>
+   	
+    <div class="search">
+        <div class="search_input">
+        	<input type="text" placeholder="搜索答案" id="input_text"/>
+            <i class="input_close"></i>
+        </div>
+        <div class="search_btn"><span></span></div>
+    </div>
+    <ul class="search_result">
+        <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+        <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+    </ul>
+    <div class="search_record_con">
+    	<ul class="search_record">
+           <!--<li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>
+            <li><a href="#">新加兵种<span>女巫</span>的衣服好性感，哪里有卖？</a></li>-->
+        </ul>
+        <div class="search_clear" id="clearSearch"><a href="#"><i></i>清除搜索记录</a></div>
+    </div>
+	<script type="text/javascript" src="js/pandora.js"></script>
+    <script type="text/javascript" src="js/dom.js"></script>
+    <script type="text/javascript" src="js/event.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script language="javascript">
+    	/*搜索交互*/
+		var _searchRecord = document.getElementsByClassName('search_record')[0] ;
+		var _clearSearch = document.getElementById('clearSearch') ;
+		var _popBox = document.getElementById('searchPopBox') ;
+		var _popMask = document.getElementById('searchPopMask') ;
+		ajaxload() ;
+		if(_clearSearch){
+			_clearSearch.onclick = function(){
+				_popBox.style.display = 'block' ;
+				_popMask.style.display = 'block' ;
+			}
+		}
+		document.getElementById('searchOk').onclick = function(){
+			_searchRecord.innerHTML = '';
+			_popBox.style.display = 'none' ;
+			_popMask.style.display = 'none' ;
+		}
+		document.getElementById('searchCancle').onclick = function(){
+			_popBox.style.display = 'none' ;
+			_popMask.style.display = 'none' ;
+		}
+		function ajaxload(){	
+			$.ajax({
+				url : "http://10.6.210.229:8080/wiki/indexByCid?appId=1&cid=1",
+				success : function(result) {
+					var page = result['page'];
+					var pageDatas = result['page']['datas'];
+					var content = "";
+					if (pageDatas) {
+						for ( var i = 0 ; i < pageDatas.length; i++) {
+							content += '<li>'
+									+ '<a href="search.html">' + pageDatas[i]['content'] + '</a>'
+									+ '</li>';
+						}
+					}				
+					_searchRecord.innerHTML = content;
+				},
+				type : 'json'
+			});
+		}
+    </script>
+</body>
+</html>

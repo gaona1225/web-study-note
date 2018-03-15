@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>capture-captureVideo</title>
+<script language="javascript" src="phonegap-1.3.0.js"></script>
+<script language="javascript">
+	// 采集操作成功完成后的回调函数
+	function captureSuccess(mediaFiles) { 
+		var i, len; 
+		for (i = 0, len = mediaFiles.length; i < len; i += 1) { 
+			uploadFile(mediaFiles[i]); 
+		}        
+	} 
+
+	// 采集操作出错后的回调函数 
+	function captureError(error) { 
+		var msg = 'An error occurred during capture: ' + error.code; 
+		navigator.notification.alert(msg, null, 'Uh oh!'); 
+	} 
+ 
+	// “Capture Video”按钮点击事件触发函数
+	function captureVideo() {  
+		// 启动设备的视频录制应用程序,
+		// 允许用户最多采集2个视频剪辑 
+		navigator.device.capture.captureVideo(captureSuccess, captureError, {limit: 2}); 
+	} 
+
+	// 上传文件到服务器
+	function uploadFile(mediaFile) { 
+		var ft = new FileTransfer(), 
+			path = mediaFile.fullPath, 
+			name = mediaFile.name; 
+
+		ft.upload(path,"http://my.domain.com/upload.php", 
+			function(result) { 
+				console.log('Upload success: ' + result.responseCode); 
+				console.log(result.bytesSent + ' bytes sent'); 
+			}, 
+			function(error) { 
+				console.log('Error uploading file ' + path + ': ' + error.code); 
+			}, 
+			{ fileName: name });    
+	}  
+</script>
+</head>
+
+<body>
+	<button onclick="captureVideo();">Capture Video</button>
+</body>
+</html>

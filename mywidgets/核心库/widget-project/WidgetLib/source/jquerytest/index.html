@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jquerytest</title>
+<link rel="stylesheet" type="text/css" href="jquerytest.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" src="jquerytest.js"></script>
+<script language="javascript">
+	$(function(){
+		//调用一
+		$('.jquerytest1').jquerytest({
+			value : 20 
+		});
+		alert($('.jquerytest1').jquerytest('value')) ;
+		$('.jquerytest1').jquerytest('value',50) ;
+		alert($('.jquerytest1').jquerytest('value')) ;
+		
+		//调用二
+		$('.jquerytest2').jquerytest({
+			complete : function(event,data){
+				alert('callbacks are great!') ;
+			}
+		}).bind('jquerytestcomplete',function(event,data){
+			 alert("Events bubble and support many handlers for extreme flexibility.");
+       	     alert("The progress bar value is " + data.value);
+		});
+		$('.jquerytest2').jquerytest('option','value',100) ;
+	}) ;
+</script>
+</head>
+
+<body>
+<div class="jquerytest-wrap">
+	<div class="jquerytest1"></div>
+</div>
+<br/>
+<div class="jquerytest-wrap">
+	<div class="jquerytest2"></div>
+</div>
+</body>
+</html>

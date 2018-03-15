@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Socket.io Test</title>
+	<script type="text/javascript" charset="utf-8" src="http://localhost:8081/socket.io/socket.io.js"></script>
+</head>
+<body>
+<script>
+	/*
+	 * huanghui@2012-5-18 webSocket+nodejs+socket.io 
+	 * 简单例子:控制连接、断开连接、发送消息等
+	 * 1、如果直接点击index2.html，则会看到效果。
+	 * 2、如果访问‘http://localhost:8000/index2.html’，可以也看到效果。（safari和operta不可用）
+	 */
+	var socket;
+	var firstconnect = true;	 
+	function connect() {
+		if(firstconnect) {
+			socket = io.connect("localhost",{port:'8081'}); 
+			socket.on('message', function(data){ message(data); });
+			socket.on('connect', function(){ status_update("Connected to Server"); });
+			socket.on('disconnect', function(){ status_update("Disconnected from Server"); });
+			socket.on('reconnect', function(){ status_update("Reconnected to Server"); });
+			socket.on('reconnecting', function( nextRetry ){
+				status_update("Reconnecting in "+ nextRetry + " seconds"); 
+			});
+			socket.on('reconnect_failed', function(){ 
+				message("Reconnect Failed"); 
+			});
+	 
+			firstconnect = false;
+		} else {
+			socket.socket.reconnect();
+		}
+	}
+	 
+	function disconnect() {
+		socket.disconnect();
+	}
+	 
+	function message(data) {
+		document.getElementById('message').innerHTML = "Server says: " + data;
+	}
+	 
+	function status_update(txt){
+		document.getElementById('status').innerHTML = txt;
+	}
+	 
+	function esc(msg){
+		return msg.replace(/</g, '<').replace(/>/g, '>');
+	}
+	 
+	function send() {
+		var name = document.querySelector("input[name=inputName]").value;
+		socket.send(name);
+		console.log(name);
+	};
+</script>
+ 
+<h1>Socket.io Test</h1>
+<div><p id="status">Waiting for input</p>
+	<input type="text" id="inputId" name="inputName" value=""/>
+</div>
+<div><p id="message" style="color: red"></p></div>
+<button id="connect" onClick='connect()'/>Connect</button>
+<button id="disconnect" onClick='disconnect()'>Disconnect</button>
+<button id="send" onClick='send()'/>Send Message</button>
+</body>
+</html>

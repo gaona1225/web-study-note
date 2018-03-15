@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>aaa</title>
+</head>
+
+<body>
+<div id="aDiv">我是a页面aaaaa</div>
+<iframe src="b.html" style="width:100% ; height:300px ;" id="iframe" name="iframeName"></iframe>
+<script language="javascript">
+	window.onload = function(){		
+		document.getElementById('aDiv').onclick = function(){
+			var _iframe = document.getElementById('iframe').contentWindow;  
+			var _div =_iframe.document.getElementById('bDiv');  
+			_div.style.backgroundColor = '#00f';  
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>示例列表</title>
+<link rel="stylesheet" type="text/css" href="uiBase/skins/base/reset.css"/>
+<link rel="stylesheet" type="text/css" href="uiBase/jquery-ui/css/base/jquery-ui-1.8.11.custom.css"/>
+<link rel="stylesheet" type="text/css" href="uiBase/skins/default/skin.css"/>
+<script src="uiBase/jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="uiBase/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="uiBase/js/ui-min.js"></script>
+<style>
+.demo {
+	margin:20px;
+}
+</style>
+<script>
+$(function(){ 
+	//搜索
+	$(".minSearch").minSearch({
+		width:"100%",
+		btnClick:function(){alert("开始搜索")},
+		onFocus:function(){},
+		onBlur:function(){}
+	});
+});
+</script>
+</head>
+
+<body>
+<!--按钮-->
+<div class="demo">
+  <input id="dialog" type="button" class="buttonActive" value="确定" data-width="standard" />
+  <input class="buttonPro" type="button" value="取消" data-width="standard" />
+</div>
+<!--工具条1-->
+<div class="demo">
+  <div class="toolbar" data-type="top">
+    <input class="buttonPro" id="hi" type="button" value="文件" data-img="../uiBase/skins/base/icon_system/16px/menu.png" />
+    <input class="buttonPro" id="hi" type="button" value="编辑" data-img="../uiBase/skins/base/icon_system/16px/menu.png" />
+    <input class="buttonPro" id="hi" type="button" value="关于" data-img="../uiBase/skins/base/icon_system/16px/menu.png" />
+    <label>工具条风格-1</label>
+  </div>
+</div>
+<!--工具条2-->
+<div class="demo">
+  <div class="toolbar" data-type="bottom">
+    <input type="button" id="timeDisabled" class="buttonLight" value="文件" data-img="../uiBase/skins/base/icon_system/16px/menu.png" />
+    <input type="button" id="timeDisabled" class="buttonLight" value="编辑" data-img="../uiBase/skins/base/icon_system/16px/menu.png" />
+    <input type="button" id="timeDisabled" class="buttonLight" value="关于" data-img="../uiBase/skins/base/icon_system/16px/menu.png" />
+    <label>工具条风格-2</label>
+  <label><a href="javascript:void(0);" style="color:#009">更多&#8250;&#8250;</a></label>
+  </div>
+</div>
+<!--搜索-->
+<div class="demo">
+  <input name="input" type="text" class="minSearch"  />
+</div>
+<!--进度-->
+<div class="demo">
+<input id="bar" name="" type="text" value="30" class="progressBar" />
+</div>
+<!--文本框-->
+<div class="demo">
+<label>用户名:</label> <input name="" type="text" value="" /><br/><br/>
+<label>密&nbsp;&nbsp;&nbsp;&nbsp;码:</label> <input name="" type="password" value="" /><br/><br/>
+<label>禁&nbsp;&nbsp;&nbsp;&nbsp;用:</label> <input name="" type="text" value="" disabled="disabled" />
+</div>
+<!--文本域-->
+<div class="demo">
+<label>签&nbsp;&nbsp;&nbsp;&nbsp;名:</label>
+<textarea name="" cols="60" rows="4"></textarea>
+<br/><br/>
+<label>备&nbsp;&nbsp;&nbsp;&nbsp;注:</label>
+<textarea name="" cols="60" rows="4"></textarea>
+<br/><br/>
+<label>说&nbsp;&nbsp;&nbsp;&nbsp;明:</label>
+<textarea name="" cols="60" rows="4" disabled="disabled"></textarea>
+</div>
+<!--文本域-->
+<div class="demo">
+<label>其&nbsp;&nbsp;&nbsp;&nbsp;他:</label>
+<select name="" >
+  <option>请选择</option>
+  <option>项目列表1</option>
+  <option>项目列表2</option>
+</select>
+</div>
+</body>
+</html>

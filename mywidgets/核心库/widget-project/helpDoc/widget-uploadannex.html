@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>上传附件</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.uploadannex.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>上传附件（uploadannex）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>上传附件功能，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox等浏览器</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> uploadannex(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">height：</label>
+              （数字）参数：180，上传文件列表区域高度</p>
+            <p>
+              <label class="help-item">able：</label>
+              （数组类型）参数：['jpg','gif','png','jpeg','doc','docx','xls','xlsx','txt','html','rar','zip','asp','ppt','pptx','avi','exe','swf','fla','js','xml','htm','jsp','mp3','mp4','css']：，可上传文件格式(如果设置有值表示除设置的几种文件格式其他在备选数组中的文件格式均不可上传)</p>
+            <p>
+              <label class="help-item">disable：</label>
+              （数组类型）参数：[]：不可上传文件格式(如果设置有值表示除设置的几种文件格式其他在备选数组中的文件格式均可上传)</p>
+            <p>
+              <label class="help-item">contain：</label>
+              （数组类型）参数：[]：，备选的文件格式</p>
+            <p>
+              <label class="help-item">fnFile：</label>
+              （函数类型）参数：{}：，通过浏览按钮上传自定义方法</p>
+            <p>
+              <label class="help-item">fn：</label>
+              （函数类型）参数：{}：，预留定义函数</p>
+            <p>
+              <label class="help-item">fnDel：</label>
+              （函数类型）参数：{}：，删除附件自定义方法</p>
+            <p>
+              <label class="help-item">dragEnterDiv：</label>
+              （函数类型）参数：{}：，dragEnter时操作</p>
+            <p>
+              <label class="help-item">dragOverDiv：</label>
+              （函数类型）参数：{}：，dragOver时操作</p>
+            <p>
+              <label class="help-item">dragDropDiv：</label>
+              （函数类型）参数：{}：，dragDrop时操作</p>
+            <p>
+              <label class="help-item">dragLeaveDiv：</label>
+              （函数类型）参数：{}：，dragLeave时操作</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content">
+            <p>
+              <label class="help-item">destroy()：</label>
+              （方法）清除上传附件</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              上传附件功能</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+					$(function(){
+						$('.upload-files').uploadannex();						
+						$('.btn').click(function(){
+							var uploadlist = $('.upload-files-list') ;
+							var len = $('.upload-files-list').length ;
+							for(var i=0; i<len ; i++){
+								uploadlist.eq(i).attr('id',i) ;
+							}
+							setProgress('0',80,false) ;
+						}) ;
+					}) ;
+				</script>
+			    <div class="upload-wrap">
+                    <p class="upload-content">浏览并选择文件，或者将文件拖放到该区域来上传文件。</p>
+                    <p class="upload-input"><input type="file" /></p>
+                    <div class="upload-files"></div>
+                    <hr class="upload-hr"/>
+                    <div class="upload-btn"><input class="buttonActive" type="button" value="确定" data-width="standard"/></div>
+                </div>
+                <input type="button" class="btn" value="设置进度">
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){
+						$('.upload-files').uploadannex();						
+						$('.btn').click(function(){
+							var uploadlist = $('.upload-files-list') ;
+							var len = $('.upload-files-list').length ;
+							for(var i=0; i&lt;len ; i++){
+								uploadlist.eq(i).attr('id',i) ;
+							}
+							setProgress('0',80,false) ;
+						}) ;
+					}) ;
+			   &lt;/script>
+			   &lt;div class="upload-wrap">
+                    &lt;p class="upload-content">浏览并选择文件，或者将文件拖放到该区域来上传文件。&lt;/p>
+                    &lt;p class="upload-input">&lt;input type="file" />&lt;/p>
+                    &lt;div class="upload-files">&lt;/div>
+                    &lt;hr class="upload-hr"/>
+                    &lt;div class="upload-btn">&lt;input class="buttonActive" type="button" value="确定" data-width="standard"/>&lt;/div>
+                &lt;/div>
+                &lt;input type="button" class="btn" value="设置进度">
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

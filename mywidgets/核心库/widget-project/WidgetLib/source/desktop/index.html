@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的桌面</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="desktop.js"></script>
+<script src="../../uiBase/js/ui-min.js"></script>
+</head>
+<body class="ui-desktop">
+<div class="ui-desktop-loading">
+  <div class="ui-desktop-loading-info">
+  <img src="images/desktop/logo_loading.png" width="300" height="300" />	<span>应用加载中，马上就好 ^_^</span>
+  <img src="images/desktop/desktop_loading.gif" />
+  </div>
+</div>
+<div class="ui-desktop-top">
+	<div class="ui-desktop-system">
+    	<div class="userSystem">
+        	<span>注销</span>
+            <span>锁定</span>
+            <span>换肤<font style="font-size:9px"> ▼</font></span>
+            <span>设置</span>
+            <span>EddyZhang&nbsp;&nbsp;前端开发工程师</span>
+        </div>
+        <div class="systemCtrl">
+        <span class="ui-desktop-sysBtn"><b>工作台</b></span>
+        <span class="ui-desktop-sysBtn"><b>门户<font style="font-size:9px"> ▼</font></b></span>
+        <span class="ui-desktop-sysBtn"><b>发寻呼</b></span>
+        <input id="mainSearch" name="input" type="text" class="minSearch"  />
+        </div>
+    </div>
+    <div class="ui-desktop-logo"></div>
+</div>
+
+<div class="ui-desktop-center">
+  <div class="ui-desktop-left">
+    <div class="ui-desktop-left-title"> <span class="ui-desktop-leftCtrl"></span> <span class="ui-desktop-leftTitle">应用</span> </div>
+    <div class="ui-desktop-left-body">
+      <ul class="appList">
+      	<!--应用列表堆栈 begin-->
+        <li><img src="images/desktop/icon/icon1.png" width="24" height="24" title="工作台" /> <span>工作台</span></li>
+        <li><img src="images/desktop/icon/icon1.png" width="24" height="24" title="网络寻呼" /> <span>网络寻呼</span></li>
+        <li><img src="images/desktop/icon/icon1.png" width="24" height="24" title="工作日程" /> <span>工作日程</span></li>
+        <li><img src="images/desktop/icon/icon1.png" width="24" height="24" title="我的日记" /> <span>我的日记</span></li>
+        <li><img src="images/desktop/icon/icon1.png" width="24" height="24" title="系统管理" /> <span>系统管理</span></li>
+        <li><img src="images/desktop/icon/icon1.png" width="24" height="24" title="项目管控" /> <span>项目管控</span></li>
+        <!--应用列表堆栈 end-->
+      </ul>
+    </div>
+    <div class="ui-desktop-left-bottom">
+      <ul>
+        <li><img src="images/desktop/add_btn.png" width="22" height="22" /><span>添加应用</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ui-desktop-main">
+    <div class="ui-desktop-main-tab">
+      <div class="ui-desktop-tab-control"><span class="ui-desktop-tab-left"></span><span class="ui-desktop-tab-line"></span><span class="ui-desktop-tab-right"></span><span class="ui-desktop-tab-more"></span></div>
+      <div class="ui-desktop-tab">
+        <ul>
+		  <!--框架标签堆栈 begin-->
+          <li><a class="ui-desktop-tabClose" href="javascript:void(0);"></a><span>工作台</span></li>
+          <!--框架标签堆栈 end-->
+        </ul>
+      </div>
+    </div>
+    <div class="ui-desktop-secondTab">
+      <!--子应用堆栈 begin-->
+      <ul class="secondTabBox" style="display:block;">
+        <li><span><img src="../uiBase/skins/base/icon_system/16px/balloon-ellipsis.png" width="16" height="16" />寻呼发布</span></li>
+        <li><span>未阅寻呼 [ 2 ]</span></li>
+        <li><span>保留寻呼 [ 2 ]</span></li>
+      </ul>
+      <ul class="secondTabBox">
+        <li><span><img src="../uiBase/skins/base/icon_system/16px/balloon-ellipsis.png" width="16" height="16" />寻呼发布</span></li>
+        <li><span>未阅寻呼 [ 2 ]</span></li>
+        <li><span>保留寻呼 [ 2 ]</span></li>
+      </ul>
+      <ul class="secondTabBox">
+        <li><span><img src="../uiBase/skins/base/icon_system/16px/balloon-ellipsis.png" width="16" height="16" />寻呼发布</span></li>
+        <li><span>未阅寻呼 [ 2 ]</span></li>
+        <li><span>保留寻呼 [ 2 ]</span></li>
+      </ul>
+      <!--子应用堆栈 end-->
+    </div>
+    <div class="ui-desktop-main-workplan">
+      <div class="ui-desktop-tabPlan">
+      	<!--工作区堆栈 begin-->
+        <iframe class="ui-desktop-tabPlanFrame" src="../../index.html" scrolling="auto" frameborder="0" style="display:block;"></iframe>
+<!--        <iframe class="ui-desktop-tabPlanFrame" src="../../index.html" scrolling="auto" frameborder="0"></iframe>
+        <iframe class="ui-desktop-tabPlanFrame" src="../../index.html" scrolling="auto" frameborder="0"></iframe>
+        <iframe class="ui-desktop-tabPlanFrame" src="../../index.html" scrolling="auto" frameborder="0"></iframe>
+        <iframe class="ui-desktop-tabPlanFrame" src="../../index.html" scrolling="auto" frameborder="0"></iframe>-->
+        <!--工作区堆栈 end-->
+      </div>
+      <div class="ui-desktop-tabPlan"></div>
+    </div>
+  </div>
+</div>
+
+<div class="ui-desktop-bottom">
+    <span class="info">
+        <!--信息按钮堆栈 begin-->
+        <span class="unitBox"><b style="display:block;">2</b><img src="../uiBase/skins/base/icon_system/16px/email.png" width="16" height="16" />
+        <label>消息</label>
+        </span>
+        <span class="unitBox"><b style="display:block;">9</b><img src="../uiBase/skins/base/icon_system/16px/email.png" width="16" height="16" />
+        <label>邮件</label>
+        </span>
+        <span class="unitBox"><b>N</b><img src="../uiBase/skins/base/icon_system/16px/email.png" width="16" height="16" />
+        <label>在线500人</label>
+        </span>
+        <!--信息按钮堆栈 end-->
+    </span>
+  <span class="copyright">金和软件股份有限公司</span></div>
+</body>
+</html>

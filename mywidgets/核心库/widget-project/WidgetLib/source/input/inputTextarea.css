@@ -1,0 +1,6 @@
+﻿/**
+ * inputTextarea
+*/
+.ui-inputTextarea{ border:1px solid #c5c5c5; padding:1px; background-color:#FFF; overflow:auto; vertical-align:text-top;}
+.ui-inputTextarea-active{ border:1px solid #3399ff;}
+.ui-inputTextarea[disabled="disabled"]{border:1px solid #dddddd; background-color:#FFF;}

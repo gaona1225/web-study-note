@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>连连看</title>
+<style type="text/css">
+	img{
+		background:#efefef ;
+		border:1px solid #ccc ;
+		border-radius:8px ;
+		height:60px;
+		width:60px;
+	}
+	img.hightlight{
+		background:#a4eee7 ;
+		border:2px solid #5463e7 ;
+	}
+</style>
+
+</head>
+
+<body>
+<canvas id="canvas"></canvas>
+<script language="javascript" type="text/javascript">
+	var canvas = document.getElementById('canvas') ;
+	var cxt = canvas.getContext('2d') ;
+	cxt.beginPath() ;
+	cxt.moveTo(10,10) ;
+	cxt.lineTo(10,30) ;
+	cxt.lineTo(50,30) ;
+	cxt.lineTo(50,10) ;
+	cxt.stroke() ;
+</script>
+</body>
+</html>

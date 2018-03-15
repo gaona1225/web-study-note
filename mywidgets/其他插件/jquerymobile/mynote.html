@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mynote</title>
+<link type="text/css" rel="stylesheet" href="jquery.mobile-1.0/jquery.mobile-1.0.min.css"/>
+<script language="javascript" type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<script language="javascript" type="text/javascript" src="jquery.mobile-1.0/jquery.mobile-1.0.min.js"></script>
+<script language="javascript" type="text/javascript">
+$(function(){
+	var className = $('#listTitle li').attr('class') ;
+	var date = new Date() ;
+	
+	getliDate() ;	
+	function setliDate(){
+		var len = $('#listviewId li').length ;
+		window.localStorage.clear() ;
+		for(var i=0; i<len; i++){
+			var dateKey = 'dateKey'+i ;
+			var timeKey = 'timeKey'+i ;
+			var dateCon = $('#listviewId li .listMsg').eq(i).html() ;
+			var timeCon = $('#listviewId li .timeMod').eq(i).html() ;
+			window.localStorage.setItem(dateKey,dateCon) ; 
+			window.localStorage.setItem(timeKey,timeCon) ;
+		} ;	
+	}
+	
+	function getliDate(){
+		var getLen = parseInt(window.localStorage.length/2) ;
+		var liMsg = '<li class="'+className+'"><span class="listMsg"></span><span class="timeMod"></span></li>' ;
+		for(var i=0; i<getLen; i++){
+			var dateKey = 'dateKey'+i ;
+			var timeKey = 'timeKey'+i ;
+			$('#listviewId').append(liMsg) ;
+			$('#listviewId li .listMsg').eq(i).html(window.localStorage.getItem(dateKey)) ;
+			$('#listviewId li .timeMod').eq(i).html(window.localStorage.getItem(timeKey)) ;
+		}
+	}
+	
+	$('#addList').live('click',function(){
+		today = (date.getMonth()+1) + '月' + date.getDate() + '日' + date.getHours() + '时' + date.getMinutes() + '分' ;
+		textareaMsg = $('#textarea').val() ;
+		liNew = '<li class="'+className+'"><span class="listMsg">'+textareaMsg+'</span><span class ="timeMod">'+today+'</span></li>' ;
+		$('#listviewId').append(liNew).trigger('create') ; 
+		setliDate() ;
+	}) ;
+	
+	$('#delList').live('click',function(){
+		$('#listviewId').empty() ;
+		window.localStorage.clear() ;
+	}) ;
+	
+	$('#listviewId li').live('click',function(){
+		var texttime = $(this).children('.timeMod').html() ;
+		var textmsg = $(this).children('.listMsg').html() ;
+		var $this = $(this) ;
+		$.mobile.changePage('#showListMsg',{transition:'pop'}) ;
+		$('#showListMsg input').val(texttime) ;
+		$('#showListMsg textarea').val(textmsg) ;
+		$('#updateList').live('click',function(){
+			today = (date.getMonth()+1) + '月' + date.getDate() + '日' + date.getHours() + '时' + date.getMinutes() + '分' ;
+			textareaMsg = $('#textareaMod').val() ;
+			$this.children('.timeMod').html(today) ;
+			$this.children('.listMsg').html(textareaMsg) ;
+			setliDate() ;
+		}) ;
+		$('#deloneList').live('click',function(){
+			$this.remove() ;
+			setliDate() ;
+		}) ;
+	}) ;
+}) ;
+</script>
+<style type="text/css">
+.timeMod{
+	float:right ;
+	text-align:right ;
+	width:20% ;
+}
+.listMsg{
+	float:left ;
+	overflow:hidden ;
+	text-align:left ;
+	text-overflow:ellipsis ;
+	white-space:nowrap ;
+	width:79% ;
+}
+#listviewId{margin-top:14px ;}
+#listTitle li,#listviewId li{overflow:hidden ;}
+</style>
+
+</head>
+
+<body>
+<div data-role="page" id="notepage">
+	<div data-role="header">
+        <h1>备忘信息</h1>
+    	<a href="#addListMsg" data-role="button" class="ui-btn-right" data-icon="plus">添加</a>
+        <div data-role="button" class="ui-btn-left" data-icon="minus" id="delList">全部删除</div>
+    </div>
+    <div data-role="content">
+    	<ul data-role="listview" id="listTitle">
+        	<li><span class="listMsg">备忘录信息</span><span class="timeMod">修改时间</span></li>
+        </ul>
+        <ul data-role="listview" id="listviewId">
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed"><h4>备忘录</h4></div>
+</div>
+<div data-role="page" id="addListMsg">
+	<div data-role="header"><h1>添加备忘信息</h1></div>
+    <div data-role="content">
+    	<label for="textarea">写备忘</label>
+        <textarea id="textarea" name="textarea">listview6</textarea>
+        <a href="#notepage" data-role="button" id="addList">添加</a>
+    </div>
+</div>
+<div data-role="page" id="showListMsg">
+	<div data-role="header"><h1 style="display:inline ; float:left; margin:16px;">详细信息</h1>
+    	<div data-role="controlgroup" data-type="horizontal" style="float:right; display:inline">
+            <a href="#notepage" data-role="button" id="updateList" data-icon="check">修改</a>
+            <a href="#notepage" data-role="button" data-icon="back">返回</a>
+            <a href="#notepage" data-role="button" id="deloneList" data-icon="delete">删除</a>
+        </div>
+    </div>
+    <div data-role="content">    	
+        <label for="input">修改时间</label>
+        <input id="input" name="input" disabled/>
+    	<label for="textarea">备忘录</label>
+        <!--<textarea id="textarea" name="textarea" disabled></textarea>-->
+        <textarea id="textareaMod"  name="textarea"></textarea>
+    </div>
+</div>
+</body>
+</html>

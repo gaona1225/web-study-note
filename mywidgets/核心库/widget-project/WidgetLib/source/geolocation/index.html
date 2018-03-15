@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>geolocation</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+<script language="javascript" type="text/javascript" src="geolocation.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('body').geolocation() ;
+		$('#getBtn').click(function(){
+			$('#getxBtn').val($('body').geolocation('getX')) ;
+			$('#getyBtn').val($('body').geolocation('getY')) ;
+			$('#getAddBtn').val($('body').geolocation('getAddress')) ;
+		}) ;
+	}) ;
+</script>
+</head>
+
+<body>
+<input type="button" value="获取地理位置信息" id="getBtn"/>
+纬度：<input type="text" id="getxBtn" />
+经度：<input type="text" id="getyBtn" />
+详细地址：<input type="text" id="getAddBtn" />
+</body>
+</html>

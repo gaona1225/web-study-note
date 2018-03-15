@@ -1,0 +1,57 @@
+/**
+ *formLayout
+ */
+.ui-formLayout{
+	margin:10px ;
+}
+.ui-formLayoutCon{
+	height:auto ;
+	_height:300px ;
+	overflow:hidden ;
+	padding:6px ;
+}
+.ui-formLayoutItem{
+	float:left ;
+	margin-bottom:6px ;
+}
+.ui-formLayoutLabel{
+	float:left;
+	padding:3px 0 0 0;
+	position:relative;
+}
+.ui-formLayoutLabel-top{
+	clear:both ;
+	display:block ;
+	float:none ;
+}
+.ui-formLayoutLabel-left{
+	padding-right:5px ;
+}
+.ui-formLayoutValue{
+	float:left;
+	padding:3px 6px 0 0;
+	position:relative;
+}
+.ui-formLayoutInput{
+}
+.ui-formLayoutInput-active{
+	border:1px solid #7eadd9;
+}
+.ui-formLayoutInput[disabled="disabled"]{
+	border:1px solid #dddddd; 
+}
+.ui-formLayoutFill{
+	color:red ;
+	font-size:18px ;
+	font-weight:bold ;
+	line-height:50% ;
+}
+.ui-formLayout textarea.ui-formLayoutInput{
+	overflow-y:auto ;
+}
+
+/*checkbox radio样式*/
+div.ui-formLayoutInput{
+	background:none ;
+	border:none ;
+}

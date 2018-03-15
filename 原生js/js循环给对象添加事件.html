@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js循环给对象添加事件</title>
+</head>
+
+<body>
+	<ul>
+    	<li>111</li>
+    	<li>222</li>
+    	<li>333</li>
+    	<li>444</li>
+    	<li>555</li>
+    	<li>666</li>
+    </ul>
+    <script language="javascript">
+    	var _li = document.getElementsByTagName('li') ;
+		var _len = _li.length ; //长度为6
+		//方法一
+		/*	错误写法
+			错误原因：
+			在click事件中的参数i是外部for中的变量。在for循环中反复给变量i进行赋值直达i的值等于_len-1情况下才停止对i进行赋值。即闭包,内部函数访问外部函数的变量,这里访问的是外部函数执行完之后的最终变量
+			
+		*/
+		/*for(var i=0; i<_len; i++){
+			_li[i].onclick = function(){				
+				console.log(i) ;  //输出6.而不是点第一个输出0，第二个输出1...
+				return function(){
+					console.log('22=='+i) ; //输出6.而不是点第一个输出0，第二个输出1...
+				}(i) ;
+			}
+		}*/
+		//正确写法
+		for(var i=0; i<_len; i++){			
+			(function(j){ //j在此作为一个形式参数
+				_li[j].onclick = function(){
+					console.log(j) ;
+				}
+			})(i)
+		}
+		
+		//方法二 将事件绑定到外部元素上（使用事件委托完成事件绑定）
+		/*优点：
+			1.页面监听事件的标签元素减少，有效提高性能问题; 
+			2.减少使用for循环绑定事件，同样提高了性能；
+			
+		*/
+		/*var _ul = document.getElementsByTagName('ul')[0] ;
+		
+		_ul.onclick = function(e){
+			var _target = e.target ;
+			if(_target.nodeType == 1 && _target.tagName.toLowerCase() == 'li'){
+				console.log(_target.innerHTML) ;
+			}
+		}*/
+		
+		//方法三
+		/*for(var i=0; i<_len; i++){
+			_li[i].onclick = function(){
+				clickFun(this) ;
+			}
+		}
+		function clickFun(obj){
+			console.log(getIndex(obj)) ;
+		}*/
+		
+		function getIndex(obj){
+		  var aAry = [] ;
+		  var preObj = obj.previousSibling ;
+		  while(preObj){
+		   if(preObj.nodeType === 1){
+			aAry.push(preObj) ;
+		   }
+		   preObj = preObj.previousSibling ;
+		  }
+		  return aAry.length ;
+		 }
+    </script>
+</body>
+</html>

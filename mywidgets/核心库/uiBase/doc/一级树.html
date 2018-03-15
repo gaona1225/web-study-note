@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>一级树.html</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../skins/default/ui-common.css"/> <!--通用部分-->
+    <link rel="stylesheet" type="text/css" href="../skins/base/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../skins/default/skin.css"/>
+    <script type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+  </head>
+  <script type="text/javascript">
+  		$(function(){
+  			/*实例：这里定义一个变量，存储选中某li时，li的id属性值，在使用时，可根据自己的需求更改*/
+  			var odt_li_id = null;
+  			$("#od_tree input.minSearch").minSearch();
+  			/*查找到ul，对其中的li注册鼠标移入、移出、点击事件*/
+  			$("#od_tree ul.odt_item_ul").mouseover(function(e){
+  				$(e.target).addClass("odt_li_active");
+  			}).mouseout(function(e){
+  				$(e.target).removeClass("odt_li_active");
+  			}).click(function(e){
+  				$(this).find("li").removeClass("odt_li_selected");/*移除选中li的样式*/
+  				var $li = $(e.target);/*点击的li，此时，包装成了jquery对象*/
+  				$li.addClass("odt_li_selected");/*添加点击选中时li的样式*/
+  				/*处理业务事件
+  					(1)存储选中li的属性(可自行处理)
+  					(2)一般为响应点击，在列表中展示该项目下所有
+  				*/
+  				odt_li_id = $li.attr("id");
+  			});
+  			$("#btnBar a").click(function(e){
+  				var aid = $(e.target).attr("id");
+  				if(aid != undefined){
+  					if("add" == aid){
+  						alert("-->添加");
+  					}else if("edit" == aid){
+  						if(odt_li_id != null && odt_li_id != ""){
+	  						alert("-->修改"+odt_li_id);
+  						}else{
+  							alert("没有选中");
+  						}
+  					}else if("del" == aid){
+  						if(odt_li_id != null && odt_li_id != ""){
+	  						alert("-->删除"+odt_li_id);
+  						}else{
+  							alert("没有选中");
+  						}
+  					}
+  				}	
+  			});
+  		});	
+  		/*动态构建树*/
+  		$(function(){
+  		 /**
+             * 根据json格式数据，拼接li，换成odt树(one dimension tree)
+             * @param jsonData [{"id":"li的id值","name","在页面展示的名称"}]
+             */
+            var jsonLi = function(jsonData){
+                var lis = "";
+                for(var i=0;i<jsonData.length;i++){
+                    lis += "<li id=\""+jsonData[i].id+"\"><span class=\"odt_li_ico\"></span>"+jsonData[i].name+"</li>";
+                }
+                return lis;
+            }
+            var jsonData = [{"id":"sys","name":"系统管理"},
+                            {"id":"module","name":"模块管理"},
+                            {"id":"info","name":"信息管理"},
+                            {"id":"doc","name":"资料管理"},
+                            {"id":"gov","name":"行政管理"},
+                            {"id":"per","name":"个人事务"}];
+            /*alert(jsonLi(jsonData));*/
+            $("#od_tree .odt_item_ul").append($(jsonLi(jsonData)));
+  		});	
+  </script>
+  <body>
+  	<div id="od_tree" style="width:220px;border:2px solid red;height:100%;"><!-- 一级树区域 one dimension tree，此id可以按个人想法命名，用于jquery中定位元素 -->
+  		<!-- (1)搜索input区域 -->
+  		<div id="d_search" class="odt_search">
+            <input type="text" class="minSearch"/><!--ui库,使用时必须在$(function(){});中注册-->
+        </div>
+  		<!-- (2)按钮功能区域--> 
+  		<div id="btnBar" class="odt_btn_bar"><!-- 类名称必须的 -->
+  			<a id="add" name="add"><span class="odt_ico_add"></span>添加</a>
+            <a id="edit" name="edit"><span class="odt_ico_edit"></span>修改</a>
+            <a id="del" name="del"><span class="odt_ico_del"></span>删除</a>
+  		</div>
+  		<!-- (3)树体区域 -->
+  		<ul class="odt_item_ul"><!-- 类名称必须的 -->
+  		<!-- 使用时动态添加li
+  			格式为：
+  			(1)固定部分
+  			<li><span class="odt_li_ico"><span>[在页面中展示的值]</li>
+  			(2)点击选中某项li，在按钮功能区对该选中项进行相应的操作,可以将需要的值，作为li的属性
+  			这里，将对应的id赋予li的id
+  			<li id="sys"><span class="odt_li_ico"></span>系统管理</li>
+            <li id="module"><span class="odt_li_ico"></span>模块管理</li>
+            <li id="res"><span class="odt_li_ico"></span>资源管理</li>
+            <li id="gov"><span class="odt_li_ico"></span>行政管理</li>
+            <li id="info"><span class="odt_li_ico"></span>信息交流</li>
+            <li id="doc"><span class="odt_li_ico"></span>资料管理</li>
+         -->   
+        </ul>
+  	</div>
+  </body>
+</html>

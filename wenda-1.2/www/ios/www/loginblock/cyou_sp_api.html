@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Photo</title>
+
+    <script type="text/javascript" charset="utf-8" src="../plugins/org.apache.cordova.partRefresh/www/CyouPartRefreshApi.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../cordova-incl.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    function onFail(message) {
+      
+    }
+    
+     function success(result) {
+      //todo 
+      
+    }
+    
+    function loginCallBack() {
+      partRefreshApi.refresh(success,onFail, "asdasas");
+    }
+    
+    </script>
+  </head>
+  <body>
+    <button onclick="loginCallBack();">callback</button> <br>
+     <hr color="red">
+  </body>
+</html>

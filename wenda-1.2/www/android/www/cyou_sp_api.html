@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>save data</title>
+
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+    
+    function success(result) {
+      //todo 
+      alert('get result: ' + result);
+    }
+    
+    function saveString() {
+     var key = "test_save_key";
+     var value = "save test data";
+     var args = [key,value];//参数1：key    参数2：value
+     spApi.saveString(success,onFail,args);
+    }
+    
+    function getString() {
+      var key = "test_save_key";
+      var args = [key];
+      spApi.getString(success,onFail,args);
+    }
+    
+    function saveAccessObject() {
+    //参数的顺序不能改变
+	 var token = "test_token_string";
+     var expiresTime = 100000000;
+     var socialid = "socialid";
+     var type = "type";
+    
+     var args = [token,expiresTime,socialid,type];
+      spApi.saveAccessObject(success,onFail,args);
+    }
+    
+	function getAccessObject() {
+      spApi.getAccessObject(success,onFail,[]);
+    }
+    
+    function isLogin() {
+      spApi.isLogin(success,onFail);
+    }
+    
+    function clearToken() {
+      spApi.clearToken(success,onFail);
+    }
+    
+     function clearAccessData() {
+      spApi.clearAccessData(success,onFail);
+    }
+    
+     function getAccessToken() {
+      spApi.getAccessToken(success,onFail);
+    }
+    
+    </script>
+  </head>
+  <body>
+    <button onclick="saveString();">saveString</button> <br>
+     <hr color="red"> 
+     <button onclick="getString();">getString</button> <br>
+     <hr color="red"> 
+      <button onclick="saveAccessObject();">saveAccessObject</button> <br>
+     <hr color="red"> 
+      <button onclick="getAccessObject();">getAccessObject</button> <br>
+     <hr color="red"> 
+     <button onclick="getAccessToken();">getAccessToken</button> <br>
+     <hr color="red"> 
+     <button onclick="isLogin();">isLogin</button> <br>
+     <hr color="red"> 
+     <button onclick="clearToken();">clearToken</button> <br>
+     <hr color="red"> 
+      <button onclick="clearAccessData();">clearAccessData</button> <br>
+     <hr color="red"> 
+  </body>
+</html>

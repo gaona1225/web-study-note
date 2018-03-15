@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document help.css */
+#helpCon {
+	height: 0;
+	width: 0;
+	overflow: visible;
+	display:none;
+}
+.help-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .6;
+	filter: Alpha(Opacity=60);
+}
+.help-1, .help-2, .help-3, .help-4, .help-5, .help-skip {
+	position: absolute;
+	background:url(../image/help.png) no-repeat ;
+	cursor: pointer;
+}
+.help-1 {
+	height: 146px;
+	width: 572px;
+	background-position: 0 0;
+	margin: 0 38%;
+	top:0px ;
+}
+.help-2 {
+	height: 148px;
+	width: 572px;
+	background-position: 0 -143px;
+	margin: 0 38%;
+	top:0px ;
+}
+.help-3 {
+	height: 154px;
+	width: 572px;
+	background-position: 0 -296px;
+	margin: 80px 20%;
+	top:0px ;
+}
+.help-4 {
+	height: 190px;
+	width: 572px;
+	background-position: 0 -444px;
+	margin: 0 38%;
+	top:0px ;
+}
+.help-5 {
+	height: 246px;
+	width: 572px;
+	background-position: 0 -647px;
+	margin: 0 30%;
+	bottom:20px;
+}
+.help-skip {
+	background-position: 0 -902px;
+	height: 50px;
+	width: 100px;
+	bottom: 20px;
+	right: 20px;
+	position: fixed;
+}
+#showHelp{ height:21px; width:21px; background-image:url(../image/helpIco.png); position:absolute; top:20px; right:20px; text-indent:-9999px;}
+.notificationInfo{ height:50px; width:240px; background-color:#FCFDCA; color:#360; position:absolute; left:200px; top:2px; line-height:16px; font-weight:bold; padding:10px;}

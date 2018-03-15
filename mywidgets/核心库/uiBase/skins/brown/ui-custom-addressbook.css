@@ -1,0 +1,389 @@
+@CHARSET "UTF-8";
+/*
+* 通讯录
+* author limj
+* date 2011-11-08
+*/
+
+/*组列表*/
+.ui-custom-addressgrouplist{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+    border-right:1px solid #D1B699;/*换肤元素*/
+    width:172px;
+    position:absolute;
+    background-color:#F7EEE5;/*换肤元素*/
+    padding:12px 8px;
+    color:#69420F;/*换肤元素*/
+}
+.ui-custom-addressgrouplist hr{
+	border-top: 1px solid #D1B699;/*换肤元素*/
+	width:	177px;
+	margin-left:-3px;
+}
+.ui-custom-addressgrouplist li{
+	height:25px;
+	width:145px;
+	cursor:pointer;
+}
+.ui-custom-addressgroup-title{			
+	color:#333333;
+	height:25px;
+	font-size:14px;
+	font-weight:bold;
+	padding-left:2px;
+}		
+#mylinkman li{
+	padding-left:20px;
+	width:127px;
+}
+.commonlinkman{
+	font-size:14px;
+	font-weight:bold;
+}	
+.li_selected{
+	color:#FFFFFF;/*换肤元素*/
+	background-color:#9E7B5E;/*换肤元素*/
+}
+/************** end ***************/	
+/*组添加*/
+.ui-custom-addressgroup-add{
+    height: 25px;
+    width: 70px;
+    display:inline-block;
+    vertical-align:middle;
+    padding-left:20px;
+    cursor:pointer;
+}
+.ui-custom-addressgroup-splitline {
+	border-top: 2px solid #D1B699;/*换肤元素*/
+	width: 99%;
+	padding: 0 5px 0 5px;
+	margin-right: 2em;
+}
+.field_text_300 {
+	width: 306px;
+	height: 23px;
+	line-height: 23px;
+}
+.ui-custom-addressgroup-buttondiv {
+	text-align: left;
+	margin-top: 1.5em;
+	padding-left: 105px;
+}
+.ui-custom-addressgroup-linkmanbox {
+	width: 308px;
+	height: 360px;
+	border: 1px solid #D1B699;/*换肤元素*/
+	float: left;
+	overflow: auto;
+}
+#mylinkmanbox li{
+	padding:4px 6px;
+}
+.grouplinkman li a{
+	color:#848484;
+	margin-left:8px;
+}
+#myman li{
+	padding:4px 6px;
+}
+.ui-custom-addressgroup-linkman-moveright{
+	float:right;
+	cursor:pointer;
+}
+/************** end ***************/	
+/*列表展示*/
+.ui-custom-addressbook-listhead td{
+	background: url(images/ui-custom/addressbook/ui-custom-addressbook-listhead.png) repeat-x; 
+	height:23px;
+	line-height:23px;
+	color:#333333;
+	border-bottom:1px solid #DDDDDD;
+}
+.nameStyle{color:#666666;font-weight:bold;margin-right:8px;}
+.infoStyle{color:#999999;}
+.maindiv{
+	margin:10px;
+}
+.ui-custom-addressbook-title{
+	padding-top:10px;
+}
+.collectImg{
+	cursor:pointer;
+}
+.nocollectImg{
+	cursor:pointer;
+}
+.ui-custom-addressbook-info{
+	margin:6px;
+}
+.ui-custom-addressbook-list{
+	width:100%;
+}
+#addressbookleft{
+	width:30%;
+	border-right:1px solid #D1B699;/*换肤元素*/
+	float:left;
+}
+#addressbookright{
+	width:69.5%;
+	float:left;
+	height:99%;
+}
+.ui-custom-addressBook-search{
+	background-color:#FAF9F5;/*换肤元素*/
+	height:28px;
+	line-height:28px;
+	width:100%;
+	border-bottom:1px solid #DAD5C2;/*换肤元素*/
+}
+.ui-custom-addressBook-search a{margin-right:6px;}
+/************** end ***************/	
+/*列表展示详细信息*/
+.ui-custom-addressbook-splitline {
+	border-top: 1px solid #CCCCCC;
+	padding: 0 10px 0 10px;
+	width:98%;
+}
+.addressbook_field_name{
+	width: 85px;
+	text-align: right;
+}
+.ui-custom-addressbook-table{
+	width:100%;
+}
+.ui-custom-addressbook-table tr {
+	height:30px;
+	line-height:30px;
+}
+.ui-custom-addressbook-table td {
+	padding-left:6px;
+}
+.ui-custom-addressbook-detailinfo{
+	height:100%;
+	overflow:auto;
+}
+/************** end ***************/	
+/*卡片展示详细信息*/
+.ui-custom-addressbook-card{
+	padding-left:5px;
+	padding-bottom:10px;
+}
+.personList{ overflow:hidden;}
+.personList li{ 
+	float:left;
+	padding-right:10px; 
+	padding-top:10px; 
+	width:242px; 
+	height:114px;
+}
+.personList li .personPreview{ 
+	width:240px;
+	height:112px;
+	border:1px solid #cccccc;
+}
+.personList li .active{ 
+	background-color:#ffffe1;
+}
+.personList li .clickStyle{ 
+	background-color:#ffffca;
+}
+.ui-custom-addressbook-card .personPreview table td.td1{
+	padding-left:16px;
+	height:26px;
+	font-size:14px;
+	font-weight:bold;
+}
+.ui-custom-addressbook-card .personPreview table td.td2{
+	padding-left:16px;
+	height:26px;
+	color:#999999;
+	vertical-align:top;
+}
+.ui-custom-addressbook-card .personPreview table td.td3{
+	padding-left:16px;
+	height:30px;
+	width:20px;
+	color:#999999;
+}
+.ui-custom-addressbook-card-name{
+	color:#333333;
+	cursor:pointer;
+}
+/************** end ***************/
+#addressbook-body{
+	background-color:#FAF9F5;/*换肤元素*/
+}	
+.ui-custom-addressbook-letter {
+	color:#999999;
+}
+.ui-custom-addressbook-letter-select {
+	color:#69420F;/*换肤元素*/
+}
+/*导入联系人*/
+.ui-custom-addressbook-input{
+	width: 475px;
+	height: 225px;
+	border: 1px solid #dad5c2;/*换肤元素*/
+	margin: 100px auto;
+}
+.ui-custom-addressbook-input-title{
+	width: 475px;
+	height: 28px;
+	line-height:28px;
+	background-color: #fbf8f3;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fbf8f3), to(#f8f1e7)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #fbf8f3, #f8f1e7); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #fbf8f3, #f8f1e7); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #fbf8f3, #f8f1e7); /* IE10 */
+	background-image:      -o-linear-gradient(top, #fbf8f3, #f8f1e7); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #fbf8f3, #f8f1e7);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbf8f3', EndColorStr='#f8f1e7'); /* IE6鈥揑E9 */
+	overflow:hidden;
+	border-bottom: 1px solid #dad5c2;/*换肤元素*/
+}
+.ui-custom-addressbook-input-td{
+	width: 150px;
+	text-align:right;
+	color: #333333;
+}
+
+/**公共联系人设置*/
+.ui-custom-addressbook--titletr td .ui-custom-addressbook-add-title{
+	font-weight:bold;
+	padding-left:10px;
+	line-height:18px;
+	padding-bottom:1px;
+}
+.ui-custom-addressbook--titletr{
+	border-bottom:1px solid #CCCCCC;
+}
+.ui-custom-addressbook--titletr td{
+	vertical-align: bottom;
+}
+.ui-custom-addressbook--titletr td span{
+	line-height:21px;
+	padding:3px 10px;
+	margin:0px 2px;
+}
+.publicset{
+	cursor: pointer;
+	line-height:20px;
+	padding:3px 5px;
+	margin:0px 2px;
+	color:#666666;
+}
+.publicset:hover{
+	border:1px solid #999999;
+	background: url(images/ui-custom/addressbook/ui-custom-addressbook-set-buttonbg.jpg) repeat-x; 
+	height:23px;
+	line-height:23px;
+}
+.publicset_select{
+	border:1px solid #999999;
+	background: url(images/ui-custom/addressbook/ui-custom-addressbook-set-buttonbg.jpg) repeat-x; 
+	height:23px;
+	line-height:23px;
+}
+.ui-custom-addressbook-set{
+	padding:10px;
+	color:#666666;
+}
+.ui-custom-addressbook-set li{
+	line-height:1;
+}
+.ui-custom-addressbook-set input{
+	height:18px;
+	line-height:18px;
+	vertical-align:middle;
+	padding-right:6px;
+}
+.ui-custom-addressbook-set-userdefined{
+	padding:3px 0px 0px 15px;
+}
+.ui-custom-addressbook-set-userdefined li{
+	height:18px;
+}
+.ui-custom-addressbook-resetBtn{
+	background: url(images/ui-custom/addressbook/ui-custom-addressbook-resetbg.jpg) repeat-x; 
+	display:inline-block;
+	height:22px;
+	line-height:24px;
+	border:1px solid #cccccc;
+	padding:0 3px;
+	cursor:pointer;
+}
+/*部门人员和部分部门的详细信息显示*/
+.ui-custom-addressbook-showusers{
+	color:#003399;
+}
+.ui-custom-addressbook-showdepts{
+	color:#003399;
+}
+#divDetail{
+	background-color:#ffffed;
+	border:1px solid #d8bf8d;
+	max-width:210px;
+	max-height:100px;
+	position:absolute;
+	display:none;
+	z-index:9999;
+	overflow:auto;
+}
+/*聊天*/
+.linkman-chat-listtit{
+	background: url(images/ui-custom/addressbook/ui-custom-addressbook-chat-tit.png) repeat-x; 
+	height:25px;
+	line-height:25px;
+	color:#666666;
+	border:1px solid #cdcdcd;
+	font:12px Arial, Helvetica, "宋体", sans-serif;
+}
+.linkman-chat-listtit-lf{
+	float:left;
+	position:relative;
+	line-height:25px;
+	padding-top:2px;
+	padding-left:6px;
+}
+.linkman-chat-listtit-rt{
+	float:right;
+	line-height:25px;
+	padding-right:2px;
+}
+.listhead-icon-mini{
+	text-decoration:none;
+	cursor:pointer;
+	display:block;
+}
+.linkman-chat-listbox{
+	background-color:#ffffff;
+	width:198px;
+	border:1px solid #cdcdcd;
+}
+.linkman-chat-noman{
+	text-align:center;
+	color:#666666;
+	font:12px Arial, Helvetica, "宋体", sans-serif;
+	height:102px;
+	line-height:102px;
+}
+.linkman-chat-list{
+	height:337px;
+	font:12px Arial, Helvetica, "宋体", sans-serif;
+	color:#666666;
+}
+.linkman-chat-list > a
+	color:#666666;
+	text-decoration:none;
+	cursor:pointer;
+	line-height:30px;
+	padding-left:6px;
+}
+.linkman-chat-list li{
+	height:25px;
+	line-height:25px;
+	margin-left:10px;
+}

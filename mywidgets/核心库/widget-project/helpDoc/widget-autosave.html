@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>表单自动保存功能</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.autosave.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>表单自动保存功能（autosave）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>表单自动保存功能，针对版本1.2+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox等浏览器</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> autosave(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">saveTime：</label>
+              （数字）参数：5000，自动保存的时间间隔</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <p>
+              <label class="help-item">destroy()：</label>
+              （方法）清除表单自动保存缓存</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              表单自动保存功能</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+					$(function(){
+						$('.exampleObj').autosave();
+					}) ;
+				</script>
+			   <form class="exampleObj"><br/>
+                    姓名：<input type="text" /><br/><br/>
+                    密码：<input type="password" /><br/><br/>
+                    邮箱：<input type="hidden" /><br/><br/>
+                    <textarea rows="4" cols="10"></textarea><br/><br/>
+                    邮箱：<input type="text" /><br/><br/>
+                    国籍：
+                    <select>
+                        <option value="111">111a</option>
+                        <option value="222">222a</option>
+                        <option value="333">333a</option>
+                    </select><br/><br/>
+                    电话：<input type="text" /><br/><br/>
+                    性别<input type="radio" name="sex"/>111<input type="radio" name="sex"/>222<br/><br/>
+                    <input type="checkbox" />兴趣<br/><br/>
+                    <textarea rows="4" cols="10"></textarea><br/><br/>
+                    性别<input type="radio" name="aaa"/>111<input type="radio" name="aaa"/>222<br/><br/>
+                    <input type="checkbox" />兴趣<br/><br/>
+                    <select>
+                        <option value="111">111q</option>
+                        <option value="222">222q</option>
+                        <option value="333">333q</option>
+                    </select><br/><br/>
+                </form>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){
+						$('.exampleObj').autosave();
+						$('#clearCook').click(function(){
+							$('.exampleObj').autosave('destroy');
+						}) ;
+					}) ;
+			   &lt;/script>
+			   &lt;form class="exampleObj">&lt;br/>
+                    姓名：&lt;input type="text" />&lt;br/>&lt;br/>
+                    密码：&lt;input type="password" />&lt;br/>&lt;br/>
+                    邮箱：&lt;input type="hidden" />&lt;br/>&lt;br/>
+                    &lt;textarea rows="4" cols="10">&lt;/textarea>&lt;br/>&lt;br/>
+                    邮箱：&lt;input type="text" />&lt;br/>&lt;br/>
+                    国籍：
+                    &lt;select>
+                        &lt;option value="111">111a&lt;/option>
+                        &lt;option value="222">222a&lt;/option>
+                        &lt;option value="333">333a&lt;/option>
+                    &lt;/select>&lt;br/>&lt;br/>
+                    电话：&lt;input type="text" />&lt;br/>&lt;br/>
+                    性别&lt;input type="radio" name="sex"/>111&lt;input type="radio" name="sex"/>222&lt;br/>&lt;br/>
+                    &lt;input type="checkbox" />兴趣&lt;br/>&lt;br/>
+                    &lt;textarea rows="4" cols="10">&lt;/textarea>&lt;br/>&lt;br/>
+                    性别&lt;input type="radio" name="aaa"/>111&lt;input type="radio" name="aaa"/>222&lt;br/>&lt;br/>
+                    &lt;input type="checkbox" />兴趣&lt;br/>&lt;br/>
+                    &lt;select>
+                        &lt;option value="111">111q&lt;/option>
+                        &lt;option value="222">222q&lt;/option>
+                        &lt;option value="333">333q&lt;/option>
+                    &lt;/select>&lt;br/>&lt;br/>
+                &lt;/form>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

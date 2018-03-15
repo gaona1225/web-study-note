@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tochart单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/base/reset.css" />
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="tochartTest.js"></script>
+<style type="text/css">
+	.tochart{
+		height:200px ;
+		margin:20px 0px ;
+		text-align:center ;
+		width:500px ;
+	}
+	.tochart caption{
+		font-weight:bold ;
+		height:26px ;
+		text-align:center ;
+	}
+	.tochart th{
+		background:#f4f4f4 ;
+		border:1px solid #ddd ;
+		font-weight:bold ;
+		text-align:center ;
+	}
+	.tochart td{
+		border:1px solid #ddd ;
+	}
+</style>
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+	<input type="button" id="createbutton" value="createbutton" />
+    <input type="button" id="destorybutton" value="destorybutton" />
+    <input type="button" id="updatebutton" value="updatebutton" />
+	<table class="tochart">
+		<caption>2009 Employee Sales by Department</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <th>food</th>
+                <th>auto</th>
+                <th>household</th>
+                <th>furniture</th>
+                <th>kitchen</th>
+                <th>bath</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Mary</th>
+                <td>190</td>
+                <td>0</td>
+                <td>40</td>
+                <td>120</td>
+                <td>30</td>
+                <td>-70</td>
+            </tr>
+            <tr>
+                <th>Tom</th>
+                <td>-3</td>
+                <td>40</td>
+                <td>30</td>
+                <td>45</td>
+                <td>35</td>
+                <td>49</td>
+            </tr>
+            <tr>
+                <th>Brad</th>
+                <td>10</td>
+                <td>180</td>
+                <td>10</td>
+                <td>85</td>
+                <td>25</td>
+                <td>79</td>
+            </tr>
+            <tr>
+                <th>Kate</th>
+                <td>40</td>
+                <td>80</td>
+                <td>90</td>
+                <td>25</td>
+                <td>15</td>
+                <td>119</td>
+            </tr>		
+        </tbody>
+    </table>
+    <table class="tochart">
+		<caption>2009 Employee Sales by Department</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <th>food</th>
+                <th>auto</th>
+                <th>household</th>
+                <th>furniture</th>
+                <th>kitchen</th>
+                <th>bath</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Mary</th>
+                <td>190</td>
+                <td>0</td>
+                <td>40</td>
+                <td>120</td>
+                <td>30</td>
+                <td>-70</td>
+            </tr>
+            <tr>
+                <th>Tom</th>
+                <td>-3</td>
+                <td>40</td>
+                <td>30</td>
+                <td>45</td>
+                <td>35</td>
+                <td>49</td>
+            </tr>
+            <tr>
+                <th>Brad</th>
+                <td>10</td>
+                <td>180</td>
+                <td>10</td>
+                <td>85</td>
+                <td>25</td>
+                <td>79</td>
+            </tr>
+            <tr>
+                <th>Kate</th>
+                <td>40</td>
+                <td>80</td>
+                <td>90</td>
+                <td>25</td>
+                <td>15</td>
+                <td>119</td>
+            </tr>		
+        </tbody>
+    </table>
+    <table class="tochart">
+		<caption>2009 Employee Sales by Department</caption>
+        <thead>
+            <tr>
+                <td></td>
+                <th>food</th>
+                <th>auto</th>
+                <th>household</th>
+                <th>furniture</th>
+                <th>kitchen</th>
+                <th>bath</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Mary</th>
+                <td>190</td>
+                <td>0</td>
+                <td>40</td>
+                <td>120</td>
+                <td>30</td>
+                <td>-70</td>
+            </tr>
+            <tr>
+                <th>Tom</th>
+                <td>-3</td>
+                <td>40</td>
+                <td>30</td>
+                <td>45</td>
+                <td>35</td>
+                <td>49</td>
+            </tr>
+            <tr>
+                <th>Brad</th>
+                <td>10</td>
+                <td>180</td>
+                <td>10</td>
+                <td>85</td>
+                <td>25</td>
+                <td>79</td>
+            </tr>
+            <tr>
+                <th>Kate</th>
+                <td>40</td>
+                <td>80</td>
+                <td>90</td>
+                <td>25</td>
+                <td>15</td>
+                <td>119</td>
+            </tr>		
+        </tbody>
+    </table>
+    <table class="tochart">
+		<caption>2009 Employee Sales by Department</caption>
+        <thead>
+            <tr>
+                <th>food</th>
+                <th>auto</th>
+                <th>household</th>
+                <th>furniture</th>
+                <th>kitchen</th>
+                <th>bath</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>190</td>
+                <td>0</td>
+                <td>40</td>
+                <td>120</td>
+                <td>30</td>
+                <td>-70</td>
+            </tr>
+            <tr>
+                <td>-3</td>
+                <td>40</td>
+                <td>30</td>
+                <td>45</td>
+                <td>35</td>
+                <td>49</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>180</td>
+                <td>10</td>
+                <td>85</td>
+                <td>25</td>
+                <td>79</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>80</td>
+                <td>90</td>
+                <td>25</td>
+                <td>15</td>
+                <td>119</td>
+            </tr>		
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>HTML5插件</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.dragUpload.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>HTML5拖拽上传插件（dragUpload）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>基于html5的拖拽上传，针对版本1.2+<br/>
+                兼容浏览器：IE10+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> dragUpload(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数："draguploadMsg"，相关提示信息输入区域和清空按钮区域</p>
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数："clearBtn"，清空按钮class名</p>
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数：draguploadDiv， 拖拽区域主体class名</p>
+            <p>
+              <label class="help-item">display_width：</label>
+              （数字）参数：380， 拖拽区域主体宽度</p>            
+            <p>
+              <label class="help-item">display_height：</label>
+              （数字）参数：300， 拖拽区域主体高度</p>            
+            <p>
+              <label class="help-item">display_form：</label>
+              （数字）参数：1， 上传文件展示形式</p>            
+            <p>
+              <label class="help-item">upload_able：</label>
+              （数组）参数：[]，只能上传的文件格式</p>            
+            <p>
+              <label class="help-item">upload_disable：</label>
+              （数组）参数：[]， 不能上传的文件格式</p>
+            <p>
+              <label class="help-item">filescontain：</label>
+              （数组）参数：['jpg','gif','png']， 可上传的文件格式容器</p>
+            <p>
+              <label class="help-item">files_size：</label>
+              （数字）参数：1024000， 上传文件大小（最大值）</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+             <p>
+              <label class="help-item">dragEnterDiv：</label>
+              （方法）参数：dragenter时操作</p>
+            <p>
+              <label class="help-item">dragOverDiv：</label>
+              （方法）参数：dragOverDiv时操作</p>
+            <p>
+              <label class="help-item">dragDropDiv：</label>
+              （方法）参数：dragDropDiv时操作</p>
+            <p>
+              <label class="help-item">dragLeaveDiv：</label>
+              （方法）参数：dragLeaveDiv时操作</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              HTML5拖拽上传插件</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+					$(function(){ 
+						$('.draguploadDiv').dragUpload({
+							upload_disable : ['exe','avi'] ,
+							display_form : 1 ,
+							dragEnterDiv : function(){//alert('dragenter') ;
+							}
+						});	
+					});
+				</script>
+                <p class="draguploadMsg"><input type="button" class="buttonActive clearBtn" value="清空" data-width="standard"/>把您的文件拖到下面的容器内：(文件格式.gif,.jpg,.png)</p>
+    			<div class="draguploadDiv"></div>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){ 
+                        $('.draguploadDiv').dragUpload({
+							upload_disable : ['exe','avi'] ,
+							display_form : 1 ,
+							dragEnterDiv : function(){//alert('dragenter') ;
+							}
+						});	
+                    });
+			   &lt;/script>
+            	&lt;p class="draguploadMsg">
+                	&lt;input type="button" class="buttonActive clearBtn" value="清空" data-width="standard"/>把您的文件拖到下面的容器内：(文件格式.gif,.jpg,.png)
+                &lt;/p>
+    			&lt;div class="draguploadDiv"></div>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

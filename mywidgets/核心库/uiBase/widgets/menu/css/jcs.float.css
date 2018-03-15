@@ -1,0 +1,135 @@
+/*css doc by zhng*/
+@charset "utf-8";
+
+/***门户下拉****/
+.jcs_common_door{clear:both;width:150px;height:auto;position:absolute;border:1px solid #cccccc;font-size:12px;background-color:white;z-index:1987;overflow-y:auto;}
+.jcs_common_door ul{}
+.jcs_common_door>ul>li{height:28px;line-height:28px;padding-left:28px;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:122px;}
+.jcs_common_door>ul>li:hover{background-color:#6799cc;color:#000;font-weight:bold;}
+.jc6ui-jcs-lock{
+    background:url(../images/jcs_common_lock.png) no-repeat scroll;
+    width:24px;height:24px;
+    display:inline-block;
+    padding-right:14px;margin-left:16px;
+    vertical-align:middle;
+}
+.jc6ui-jcs-set{
+    background:url(../images/jcs_common_set.png) no-repeat scroll;
+    width:24px;height:24px;
+    display:inline-block;
+    padding-right:14px;margin-left:16px;
+    vertical-align:middle;
+}
+.jc6ui-jcs-help{
+    background:url(../images/jcs_common_help.png) no-repeat scroll;
+    width:24px;height:24px;
+    display:inline-block;
+     padding-right:14px;margin-left:16px;
+     vertical-align:middle;
+}
+.jc6ui-jcs-logout{
+    background:url(../images/jcs_common_key.png) no-repeat scroll;
+    width:24px;height:24px;
+    display:inline-block;
+    padding-right:14px;margin-left:16px;
+    vertical-align:middle;
+}
+.jc6ui-jcs-quit{
+    background:url(../images/jcs_common_quit.png) no-repeat scroll;
+    width:24px;height:24px;
+    display:inline-block;
+    padding-right:14px;margin-left:16px;
+ vertical-align:middle;
+}
+.jc6ui-user-info{
+    width:171px;height:76px;
+}
+.jc6ui-jcs{
+    border:1px solid #ccc;
+    width:171px;height:280px;
+    background-color:#fff;
+    /*圆角*/
+    -moz-border-radius: 3px 2px / 3px 2px;
+    border-radius: 3px 2px / 3px 2px;
+}
+.jc6ui-jcs a{
+	color:#333;
+}
+/*修改-登陆用户信息*/
+.jc6ui-jcs .jc6ui-user{
+    padding-top:8px;padding-left:6px;
+}
+.jc6ui-jcs .jc6ui-user .jcs_user_pic {float:left;border:1px solid #ccc;width:50px;height:50px;margin-bottom: 6px;margin-right: 12px;}
+.jc6ui-jcs .jc6ui-user .jcs_user_info_d{padding-top:1%;}
+.jc6ui-jcs .jc6ui-user .jcs_user_info_d p{
+	font-size:12px;
+}
+.jc6ui-jcs .jc6ui-user .jcs_user_info_d p.p_userName{font-weight:bold;}
+/*修改-登陆用户信息*/
+.jc6ui-user-img{
+    border:1px solid #ccc;
+    width:54px;height:54px;
+    float:left;
+}
+.jc6ui-jcs .jc6ui-user ul.jc6ui-user-info{
+    padding-top:13px;padding-left:10px;
+}
+.jc6ui-jcs .jc6ui-jcs-line{clear:both;height:1px;border-bottom:1px solid #ccc;}
+.jc6ui-jcs .jc6ui-jcs-oper ul>li{line-height:36px;height:36px;}
+.jc6ui-jcs .jc6ui-jcs-oper ul>li,.jc6ui-jcs .jc6ui-jcs-oper ul>li>a,ul.jc6-jcs-oper-more>li{font-size:12px;}
+.jc6ui-jcs .jc6ui-jcs-oper>ul>li:hover{background-color:#6699cc;}
+.jc6ui-jcs .jc6ui-jcs-oper>ul>li.hover{background-color:#6699cc;}
+.jc6ui-jcs .jc6ui-jcs-oper li:hover span.jc6ui-jcs-set{
+    /*background:url(../images/jc6ui-set.hover.png) no-repeat scroll;*/
+}
+.jc6ui-jcs .jc6ui-jcs-oper span.gt{
+	/*
+	width:14px;height:14px;display:inline-block;
+    float:right;
+    padding-right:11px;*/
+    float:right;
+    background:url(../images/jcs_common_more.png) no-repeat scroll;
+    width:24px;height:24px;
+    display:inline-block;
+    margin-top: 12px;*margin-top:-21px;/*ie7下错位的问题*/
+    vertical-align:middle;
+}
+/*设置、帮助-二级子菜单*/
+.jc6-jcs-oper-more{
+    border:1px solid #ccc;
+    width:129px;
+    line-height:24px;
+     -moz-border-radius: 3px 2px / 3px 2px;
+    border-radius: 3px 2px / 3px 2px;
+    background-color: #fff;
+}
+.jc6-jcs-oper-more-per{
+	 background:url(../images/jcs_common_m_set.png) no-repeat scroll;
+	 display:inline-block;
+	 width:16px;height:16px;
+	 margin-right:6px;margin-left:7px;
+	 vertical-align:middle;
+}
+.jc6-jcs-oper-more-gzt{
+	background:url(../images/jcs_common_m_wb.png) no-repeat scroll;
+	display:inline-block;
+	width:16px;height:16px;
+	margin-right:6px;margin-left:7px;
+	vertical-align:middle;
+}
+.jc6-jcs-oper-morehelp-a{
+	 background:url(../images/jc6ui-more-help-about.png) no-repeat scroll;
+	 display:inline-block;
+	 width:16px;height:16px;
+	 margin-right:6px;margin-left:7px;
+	 vertical-align:middle;
+}
+.jc6-jcs-oper-morehelp-o{
+	background:url(../images/jc6ui-more-help-online.png) no-repeat scroll;
+	display:inline-block;
+	width:16px;height:16px;
+	margin-right:6px;margin-left:7px;
+	vertical-align:middle;
+}
+ul.jc6-jcs-oper-more li:hover{background-color:#6699cc;}
+.jc6-jcs-li-hover{background-color:#6699cc;}

@@ -1,0 +1,27 @@
+{
+    "projectName" : "Demo",
+    "deployDir" : "demo",
+    "licenseText" : "my first example",
+    "pkgs" : [
+        {
+            name : "All JS",
+            file : "dest/demo.js",
+            isDebug : true,
+            fileIncludes : [
+                {
+                    text : "display.js",
+                    path : "demo/src/js"
+                },
+                {
+                    text : "hello.js",
+                    path : "demo/src/js"
+                }
+            ]
+        }
+    ],
+    resources : [{
+            src : "demo/src/image",
+            dest : "dest/image",
+            filters : ".*"
+        }]
+}

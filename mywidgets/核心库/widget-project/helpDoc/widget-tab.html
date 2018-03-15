@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Widget-选项卡</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.tab.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>选项卡（tab）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>选项卡插件，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery，jqueryui</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code">
+				(引用相关资源文件,构建示例中的结构即可)
+			</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+			<p class="help-code"> $(".ui-tab").tab(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">data-tabType：</label>
+              （字符串）选项卡类型。min：简洁选项卡；pro：一般选项卡；tabMenu：菜单选项卡</p>
+            <p>
+			 <p>
+              <label class="help-item">data-targetId：</label>
+              （字符串）选项卡区域为div或iframe的id。div：选项卡内容为div切换方式；mainframe：选项卡为iframe切换方式时，iframe的id</p>
+            <p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例-1：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+                <label class="help-item">描述：</label>
+                选项卡-简洁
+            </p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+				<!--选项卡-->
+				<div class="ui-tab" data-tabType="min" data-targetId="div"><!--div-->
+					<dt data-targetId="d1" class="normal">tabName1</dt>
+					<dt data-targetId="d2" class="normal">tabName2</dt>
+					<dt data-targetId="d3" class="normal">tabName3</dt>
+				</div>
+				<!--内容区-->
+				<div id="d1" style="display:none;width:100%;height:30px;">1</div>
+				<div id="d2" style="display:none;width:100%;height:30px;">2</div>
+				<div id="d3" style="display:none;width:100%;height:30px;">3</div>
+			</div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+			<!--选项卡-->
+			&lt;div class="ui-tab" data-tabType="min" data-targetId="div"><!--div-->
+				&lt;dt data-targetId="d1" class="normal">tabName1&lt;/dt>
+				&lt;dt data-targetId="d2" class="normal">tabName2&lt;/dt>
+				&lt;dt data-targetId="d3" class="normal">tabName3&lt;/dt>
+			&lt;/div>
+			<!--内容区-->
+			&lt;div id="d1" style="display:none;width:100%;height:30px;">1&lt;/div>
+			&lt;div id="d2" style="display:none;width:100%;height:30px;">2&lt;/div>
+			&lt;div id="d3" style="display:none;width:100%;height:30px;">3&lt;/div>
+            </pre>
+        </div>
+		</div>
+		<div class="help-mod">
+		<h2 class="title">示例-2：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+            选项卡-内容为iframe切换方式</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+			<!--选项卡-->
+			<div class="ui-tab" data-tabType="pro" data-targetId="mainframe">
+				<dt	data-tabUrl="${ctx }/expense/expense-subject!mainFrame.action">费用科目</dt>
+				<dt data-tabUrl="${ctx }/expense/expense-period.action">费用期间</dt>
+				<dt data-tabUrl="${ctx }/expense/expense-param!edit.action">参数设置</dt>
+				<dt data-tabUrl="${ctx }/expense/expense-budget-dept!prepareAdd.action">预算部门</dt>
+				<dt data-tabUrl="${ctx }/expense/expense-project.action">项目维护</dt>
+			</div>
+			<!--内容区-->
+			<iframe id="mainframe" width="100%" height="20px" name="mainframe" src="" frameborder="0" scrolling="auto"></iframe>
+			</div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            <!--选项卡-->
+			&lt;div class="ui-tab" data-tabType="pro" data-targetId="mainframe">
+				&lt;dt	data-tabUrl="${ctx }/expense/expense-subject!mainFrame.action">费用科目&lt;/dt>
+				&lt;dt data-tabUrl="${ctx }/expense/expense-period.action">费用期间&lt;/dt>
+				&lt;dt data-tabUrl="${ctx }/expense/expense-param!edit.action">参数设置&lt;/dt>
+				&lt;dt data-tabUrl="${ctx }/expense/expense-budget-dept!prepareAdd.action">预算部门&lt;/dt>
+				&lt;dt data-tabUrl="${ctx }/expense/expense-project.action">项目维护&lt;/dt>
+			&lt;/div>
+			<!--内容区-->
+			&lt;iframe id="mainframe" width="100%" height="20px" name="mainframe" src="" frameborder="0" scrolling="auto">&lt;/iframe>
+            </pre>
+          </div>
+		</div>
+		<div class="help-mod">
+		<h2 class="title">示例-3：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+            选项卡-内容为div切换方式</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+			<!--选项卡-->
+			<div class="ui-tab" data-tabType="pro" data-targetId="div"><!--div-->
+				<dt data-targetId="d11" class="normal">tabName1</dt>
+				<dt data-targetId="d21" class="normal">tabName2</dt>
+				<dt data-targetId="d31" class="normal">tabName3</dt>
+			</div>
+			<!--内容区-->
+			<div id="d11" style="display:none;width:100%;height:30px;">1</div>
+			<div id="d21" style="display:none;width:100%;height:30px;">2</div>
+			<div id="d31" style="display:none;width:100%;height:30px;">3</div>
+			</div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+			<!--选项卡-->
+			&lt;div class="ui-tab" data-tabType="pro" data-targetId="div"><!--div-->
+				&lt;dt data-targetId="d11" class="normal">tabName1&lt;/dt>
+				&lt;dt data-targetId="d21" class="normal">tabName2&lt;/dt>
+				&lt;dt data-targetId="d31" class="normal">tabName3&lt;/dt>
+			&lt;/div>
+			<!--内容区-->
+			&lt;div id="d11" style="display:none;width:100%;height:30px;">1&lt;/div>
+			&lt;div id="d21" style="display:none;width:100%;height:30px;">2&lt;/div>
+			&lt;div id="d31" style="display:none;width:100%;height:30px;">3&lt;/div>
+            </pre>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+	  <div class="help-mod">
+		<h2 class="title">示例-4：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+            选项卡-菜单选项卡tabMenu</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+			<!--选项卡-->
+			<div class="ui-tab" data-tabType="tabMenu" data-targetId="div"><!--div-->
+				<dt data-targetId="d12" class="normal">tabName1</dt>
+				<dt data-targetId="d22" class="normal">tabName2</dt>
+				<dt data-targetId="d32" class="normal">tabName3</dt>
+			</div>
+			<!--内容区-->
+			<div id="d12" style="display:none;width:100%;height:30px;">d12</div>
+			<div id="d22" style="display:none;width:100%;height:30px;">d22</div>
+			<div id="d32" style="display:none;width:100%;height:30px;">d32</div>
+			</div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+			<!--选项卡-->
+			&lt;div class="ui-tab" data-tabType="tabMenu" data-targetId="div"><!--div-->
+				&lt;dt data-targetId="d12" class="normal">tabName1&lt;/dt>
+				&lt;dt data-targetId="d22" class="normal">tabName2&lt;/dt>
+				&lt;dt data-targetId="d32" class="normal">tabName3&lt;/dt>
+			&lt;/div>
+			<!--内容区-->
+			&lt;div id="d12" style="display:none;width:100%;height:30px;">d12&lt;/div>
+			&lt;div id="d22" style="display:none;width:100%;height:30px;">d22&lt;/div>
+			&lt;div id="d32" style="display:none;width:100%;height:30px;">d32&lt;/div>
+            </pre>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+	</div>
+</body>
+</html>

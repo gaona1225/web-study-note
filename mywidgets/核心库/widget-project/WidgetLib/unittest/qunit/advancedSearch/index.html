@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>advancedSearch单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="advancedSearchTest.js"></script>
+
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+	<input name="input" type="text" class="advancedSearch" x-webkit-speech="" id="testInput" />
+    <div class="jcs_common_search_advance_con" id="searchAdvanceCon" style="display:none;">
+       <div class="jcs_common_s_advance_item">
+           <a><span class="jcs_common_s_a_all" style="padding-right:3px;"></span>search all</a>
+       </div>
+       <div class="jcs_common_s_advance_item">
+           <a><span class="jcs_common_s_a_info" style="padding-right:3px;"></span>search info</a>
+       </div>
+       <div class="jcs_common_s_advance_item">
+           <a><span class="jcs_common_s_a_know" style="padding-right:3px;"></span>search knowledge</a>
+       </div>
+       <div class="jcs_common_s_advance_item">
+           <a><span class="jcs_common_s_a_flow"  style="padding-right:3px;"></span>search disk</a>
+       </div>
+       <div class="jcs_common_s_advance_item">
+           <a><span class="jcs_common_s_a_xunhu" style="padding-right:3px;"></span>search xunhu</a>
+       </div>
+    </div><br/>
+	<input type="button" class="buttonActive" value="清除插件效果" id="clearWid"/>
+</div>
+</body>
+</html>

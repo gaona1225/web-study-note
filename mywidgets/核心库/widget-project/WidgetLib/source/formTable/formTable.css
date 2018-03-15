@@ -1,0 +1,38 @@
+/* formTable*/
+.formTable {
+	border-left:solid #999999 1px;
+	border-bottom:solid #999999 1px;
+}
+
+.formTable tbody tr td,
+.formTable thead tr td {
+	border-top:solid #999999 1px;
+	border-right:solid #999999 1px;
+	height:20px;
+	line-height:20px;
+	padding:2px;
+	background-color:#FFFFFF;
+	vertical-align:middle;
+}
+.formTable tbody tr td.noborder,
+.formTable thead tr td.noborder {
+	border-right:none;
+}
+.formTable tbody tr td.textright,
+.formTable thead tr td.textright,
+.formTable thead tr td.textright input,
+.formTable tbody tr td.textright input
+{
+text-align:right;
+}
+.formTable tbody tr td.note,
+.formTable thead tr td.note
+{
+color:#CCCCCC;
+}
+.formTable tbody tr td.title,
+.formTable thead tr td.title { background-color:#E0ECE8; text-align:center; }
+.formTable tbody tr td input,.formTable tbody tr td select,.formTable thead tr td input,.formTable thead tr td select{ border:0; background-color:#FFFFFF; width:95%; height:20px; margin:0 3px; line-height:20px;}
+.formTable tbody tr td input:focus,.formTable tbody tr td select:focus,.formTable thead tr td input:focus,.formTable thead tr td select:focus{ border:0; background-color:#FFFFFF; width:95%; height:20px; margin:0 3px; border-bottom:dashed 1px #CC3300;}
+.formTable tbody tr td input.auto,.formTable tbody tr td select.auto,.formTable thead tr td input.auto,.formTable thead tr td select.auto{ border:0; background-color:#FFFFFF; width:auto; height:20px;}
+.red{ color:#FF0000;}

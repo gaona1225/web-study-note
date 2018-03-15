@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>uploadannex</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" src="uploadannex.js"></script>
+<script language="javascript" src="../buttonActive/buttonActive.js"></script>
+<script language="javascript">
+	$(function(){
+		$('.upload-files').uploadannex(
+		);
+		
+		//方法调用
+		$('.btn').click(function(){
+			var uploadlist = $('.upload-files-list') ;
+			var len = $('.upload-files-list').length ;
+			for(var i=0; i<len ; i++){
+				uploadlist.eq(i).attr('id',i) ;
+			}
+			setProgress('0',80,false) ;
+			/*setProgress('uploadID1',100,false) ;
+			setProgress('uploadID2',80,true) ;*/
+		}) ;
+		
+	}) ;
+</script>
+</head>
+
+<body>
+	<div class="upload-wrap">
+    	<p class="upload-content">浏览并选择文件，或者将文件拖放到该区域来上传文件。</p>
+        <p class="upload-input"><input type="file" /></p>
+    	<div class="upload-files"></div>
+        <hr class="upload-hr"/>
+        <div class="upload-btn"><input class="buttonActive" type="button" value="确定" data-width="standard"/></div>
+    </div>
+	<input type="button" class="btn" value="设置进度">
+</body>
+</body>
+</html>

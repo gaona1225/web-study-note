@@ -1,0 +1,10 @@
+百度富文本编辑器插入二维码修改：
+Call\Uediter-u\themes\default\images 修改图片icon.png/icon.gif
+Call\Uediter-u\themes\default\css 修改
+Call\Uediter-u\_src\plugins 下添加insertqrcode.js文件
+Call\Uediter-u\_examples\editor_api.js 修改
+Call\Uediter-u\editor_all.js 修改
+Call\Uediter-u\_examples\myTest.html 修改
+Call\Uediter-u\_src\ui\editorui.js修改
+Call\Uediter-u\_src\ui\editor.js修改
+Call\Uediter-u\dialogs\insertqrcode 添加

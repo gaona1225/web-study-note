@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>signin</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/draggable.js"></script> 
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101021452" data-redirecturi="http://www.shouyou.com/" data-callback="true" charset="utf-8"></script> 
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1544007481"  type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background:#f4f4f4;">
+
+<script>
+var url=location.search;  
+
+function getSearch(url){
+	var request = {}, str='',strs=[], strsSplit=[]; 
+	if(url.indexOf("?")!=-1){ 
+		str = url.substr(1);
+		strs = str.split("&"); 
+		for(var i = 0, strsLen = strs.length; i<strsLen; i++){ 
+			strsSplit = strs[i].split("=");
+			request[ strsSplit[0]] = strsSplit[1]; 
+		}
+	}
+	return request;
+}
+var req = getSearch(url),backUrl = req['backUrl'];
+
+
+
+
+WB2.anyWhere(function(W){
+	
+	var msg = document.getElementById('some-msg');
+	W.widget.connectButton({
+		id: "wb_connect_btn",	
+		type:'1,1',
+		callback : {
+			login:function(o){	//登录后的回调函数
+				console.log(o);
+				//alert(WB2.checkLogin());
+				var sex = 1;
+				if( o['gender'] != 'm' ){
+					sex = 0;
+				} 
+				
+				var id = o['id'] ,sourcetype = 's' ,nick_name = o['screen_name'],gender  = sex;
+				 
+				$.ajax({
+					url : "http://10.6.210.229:8080/wiki/pushUser?id="+ id +"&sourcetype="+sourcetype+"&nick_name="+nick_name+"&gender="+gender,
+					success : function(result) {
+						console.log(result);
+						var accessToken = result['accessToken'];
+						document.cookie = "accessToken=" + accessToken;
+						console.log(document.cookie);
+						if(backUrl){
+							window.location.href = decodeURIComponent(backUrl);
+						}
+					},
+					type : 'json'
+				});							
+			},
+			logout:function(){	//退出后的回调函数
+				//alert('logout');
+				document.cookie = "accessToken=";
+			}
+		}
+	});
+});
+</script>
+
+<script type="text/javascript">
+   //调用QC.Login方法，指定btnId参数将按钮绑定在容器节点中
+   QC.Login({
+       //btnId：插入按钮的节点id，必选
+       btnId:"qqLoginBtn",	
+       //用户需要确认的scope授权项，可选，默认all
+       scope:"all",
+       //按钮尺寸，可用值[A_XL| A_L| A_M| A_S|  B_M| B_S| C_S]，可选，默认B_S
+       size: "A_XL"
+   }, function(reqData, opts){//登录成功
+       //根据返回数据，更换按钮显示状态方法
+       var dom = document.getElementById(opts['btnId']),
+       _logoutTemplate=[
+            //头像
+            '<span><img src="{figureurl}" class="{size_key}"/></span>',
+            //昵称
+            '<span>{nickname}</span>',
+            //退出
+            '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'	
+                     ].join("");
+       dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {
+           nickname : QC.String.escHTML(reqData.nickname),
+           figureurl : reqData.figureurl
+              }));
+   }, function(opts){//注销成功
+alert('QQ登录 注销成功');
+                     }
+);
+</script>
+    <header class="header">
+        <a href="javascript:;" class="back_btn"></a>
+        <h1>百科问答</h1>
+    </header>
+   <ul class="login_methods">
+        <li class="sina_li">
+            <div id="wb_connect_btn"></div>
+            <pre id='some-msg'></pre>
+        </li>
+        <li class="qq_li">
+       	 	<span id="qqLoginBtn"></span>
+        </li>
+    </ul>
+<style>
+.user_atten{ display:none !important;}
+.info_pic{ display:none !important;}
+</style>
+</body>
+</html>

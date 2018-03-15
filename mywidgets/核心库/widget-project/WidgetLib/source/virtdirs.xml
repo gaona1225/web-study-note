@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<VIRTUAL_DIRECTORIES ÃèÊö="Quick 'n Easy Web Server ÐéÄâÄ¿Â¼" >
+	<VIRTUAL_DIRECTORY>
+		<ALIAS>source</ALIAS>
+		<PATH>C:\Users\gaona\Desktop\work\minestudy\&#186;&#203;&#208;&#196;&#191;&#226;\widget-project\WidgetLib\source</PATH>
+		<ENABLE_AUTHENTICATION>0</ENABLE_AUTHENTICATION>
+	</VIRTUAL_DIRECTORY>
+	<HOME_DIRECTORY>
+	</HOME_DIRECTORY>
+</VIRTUAL_DIRECTORIES>

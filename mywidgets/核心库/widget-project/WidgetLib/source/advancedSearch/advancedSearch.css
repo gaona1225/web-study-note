@@ -1,0 +1,143 @@
+/**
+* advancedSearch
+*/
+.jcs_common_search_con{
+    width:587px;/*(1)200px;*/
+    height:26px;line-height:26px;
+    border-radius:6px;
+    margin-top:3px;
+}
+.jcs_common_search_con input {
+    border: 0 none;
+	border-radius:0px ;
+    background-image: url(images/advancedSearch/advancedSearch.png);
+	background-position:0 -27px;
+    width:116px;
+	height:26px;
+	line-height:26px;
+    float:left;display:inline-block;
+    font-size:12px;
+	margin-left:-9px;
+	padding:0px  ;
+}
+.jcs_common_search{
+    background-image: url(images/advancedSearch/advancedSearch.png);
+	background-repeat:no-repeat;
+	background-position:right -54px;
+    width:10px;
+	height:26px;
+	position:absolute;
+}
+.jcs_common_search_con a{
+    background-image: url(images/advancedSearch/advancedSearch.png);
+	background-repeat:no-repeat;
+	background-position:0 0;
+    width:32px;height:26px;
+    display:inline-block;
+    float:left;
+    padding-left:3px;
+    cursor:pointer;
+}
+.jcs_common_search_con .jcs_common_s_ico{
+    background-image: url(images/advancedSearch/advancedSearch.png); no-repeat scroll transparent;
+	background-position:0 -83px;
+    width:20px;height:16px;
+    /*padding-right:1px;*/
+    margin-left:-5px;
+	margin-top:5px;
+    display:inline-block;
+    vertical-align:middle;
+    float:left;
+    cursor:pointer;
+}
+.jcs_common_search_con .jcs_common_s_mei{
+    background-image: url(images/advancedSearch/advancedSearch.png); no-repeat scroll transparent;
+	background-position:0 -216px;
+    width:16px;height:16px;
+    display:inline-block;
+    /*padding-right:3px;*/
+    vertical-align:middle;
+    margin-top:8px;
+	margin-left:-8px;
+    float:left;
+    cursor:pointer;
+}
+.jcs_common_search_advance_con{
+    clear:both;
+    border:1px solid #d6d6d6;
+    background-color:#fff;
+    width:170px;height:114px;
+    font-size:12px;
+    /*box-shadow: 2px 2px 3px #ccc;
+    border-radius:3px;*/
+}
+.jcs_common_search_advance_con .jcs_common_s_advance_item{
+    line-height:21px;height:22px;
+    padding-left:6px;
+    cursor:pointer;
+}
+.jcs_common_search_advance_con .jcs_common_s_advance_item a{text-decoration:none;color:#000;}
+.jcs_common_search_advance_con .jcs_common_s_advance_item:hover{
+    background-color:#6699cc;
+}
+.jcs_common_search_advance_con .jcs_common_s_advance_item:hover a{color:#fff;/*文字反白*/}
+.jcs_common_s_a_all{
+    background-image: url(images/advancedSearch/advancedSearch.png); no-repeat scroll transparent;
+	background-position:0 -83px;
+    width:20px;height:16px;
+    /*padding-right:1px;*/
+    margin-left:-5px;
+	margin-top:5px;
+    display:inline-block;
+    vertical-align:middle;
+    float:left;
+    cursor:pointer;
+}
+.jcs_common_s_a_flow{
+    background-image: url(images/advancedSearch/advancedSearch.png); no-repeat scroll transparent;
+	background-position:0 -191px;
+    width:20px;height:16px;
+    /*padding-right:1px;*/
+    margin-left:-5px;
+	margin-top:5px;
+    display:inline-block;
+    vertical-align:middle;
+    float:left;
+    cursor:pointer;
+}
+.jcs_common_s_a_info{
+    background-image: url(images/advancedSearch/advancedSearch.png); no-repeat scroll transparent;
+	background-position:0 -110px;
+    width:20px;height:16px;
+    /*padding-right:1px;*/
+    margin-left:-5px;
+	margin-top:5px;
+    display:inline-block;
+    vertical-align:middle;
+    float:left;
+    cursor:pointer;
+}
+.jcs_common_s_a_know{
+    background-image: url(images/advancedSearch/advancedSearch.png); no-repeat scroll transparent;
+	background-position:0 -137px;
+    width:20px;height:16px;
+    /*padding-right:1px;*/
+    margin-left:-5px;
+	margin-top:5px;
+    display:inline-block;
+    vertical-align:middle;
+    float:left;
+    cursor:pointer;
+}
+.jcs_common_s_a_xunhu{
+    background-image: url(images/advancedSearch/advancedSearch.png); no-repeat scroll transparent;
+	background-position:0 -164px;
+    width:20px;height:16px;
+    /*padding-right:1px;*/
+    margin-left:-5px;
+	margin-top:5px;
+    display:inline-block;
+    vertical-align:middle;
+    float:left;
+    cursor:pointer;
+}

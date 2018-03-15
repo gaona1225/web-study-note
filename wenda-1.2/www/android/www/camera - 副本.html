@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Photo</title>
+
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    var pictureSource;  
+    var destinationType; 
+    
+
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    
+    function onDeviceReady() {
+        pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
+    }
+
+    function onPhotoDataSuccess(imageData) {
+      // base64 encoded image data
+      var smallImage = document.getElementById('smallImage');
+
+      smallImage.style.display = 'block';
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+      alert('imageURI: ' + imageURI);
+    }
+
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoURISuccess(imageURI) {
+      // image file URI 
+      var largeImage = document.getElementById('largeImage');
+      largeImage.style.display = 'block';
+      largeImage.src = imageURI;
+      alert('imageURI: ' + imageURI);
+    }
+
+    function capturePhoto() {
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL,
+        isNeedCrop: true });
+    }
+    
+    function capturePhoto2() {
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
+    }
+    
+    function capturePhotoHaveCrop() {
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL ,allowEdit: true});
+    }
+
+    function capturePhotoEdit() {
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+        destinationType: destinationType.DATA_URL });
+    }
+    
+    function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+        destinationType: destinationType.FILE_URI,
+        sourceType: source,
+        allowEdit: true,
+        isNeedCrop: true});
+    }
+    
+     function getPhotoNoCrop(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+        destinationType: destinationType.FILE_URI,
+        sourceType: source,
+        allowEdit: false,
+        isNeedCrop: false});
+    }
+    
+    function getPhoto2(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+        destinationType: destinationType.FILE_URI,
+        sourceType: source,
+        isNeedCrop: false});
+    }
+
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+    
+    //upload 
+    
+    function uploadPhoto(imageURI) { 
+		var options = new FileUploadOptions(); 
+		options.fileKey="pic"; 
+		options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1); 
+		options.mimeType="image/jpeg"; 
+
+		var params = new Object(); 
+		params.value1 = "test"; 
+		params.value2 = "param";  
+
+		options.params = params;  
+
+		var ft = new FileTransfer(); 
+		ft.upload(imageURI, "http://10.6.210.229:8080/wiki/upload", win, fail, options);
+	} 
+
+	function win(r) { 
+		console.log("Code = " + r.responseCode);
+		console.log("Response = " + r.response); 
+		console.log("Sent = " + r.bytesSent); 
+	} 
+
+	function fail(error) { 
+		alert("An error has occurred: Code = " = error.code);
+	}  
+	
+	function getAccessToken() {
+      spApi.getAccessToken(success,onFail);
+    }
+    
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+    
+    function success(result) {
+      //todo 
+      alert('get result: ' + result);
+    }
+    
+    function selectorDialogCallback(result) {
+      if(result == 1){//照相
+        //从照相机拍照			
+		navigator.camera.getPicture(uploadPhoto, 
+									function(message) { alert('get picture failed'); },
+		 							{ quality: 50,
+        							destinationType: navigator.camera.DestinationType.DATA_URL,
+        							sourceType: navigator.camera.PictureSourceType.CAMERA,
+        							isNeedCrop: true }
+        							);
+      }else if(result == 2){//图库
+         // 从指定来源检索图像文件位置
+		navigator.camera.getPicture(uploadPhoto, 
+									function(message) { alert('get picture failed'); }, 
+									{ quality: 50,  
+									destinationType: navigator.camera.DestinationType.FILE_URI, 
+									sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
+									isNeedCrop: true}
+									);	
+      }
+    }
+    
+    function uploadImage() {
+    //  if("Android" == device.platform){
+      	window.FileTransfer.photoSelector(selectorDialogCallback,onFail);
+     // }
+      
+    }
+    
+    //end 
+    
+
+    </script>
+  </head>
+  <body>
+  
+
+  	
+    <button onclick="capturePhoto();">Capture Photo</button> <br>
+    <button onclick="capturePhoto2();">Capture Photo not crop</button> <br>
+    <button onclick="capturePhotoHaveCrop();">Capture Photo have crop</button> <br>
+    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+    <button onclick="getPhotoNoCrop(pictureSource.PHOTOLIBRARY);">From Photo Library not crop</button><br>
+    <button onclick="getPhoto2(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+    <button id="test">uploadImage</button><br>
+    <button onClick="uploadImage()">uploadImage</button><br>
+    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+    <img style="display:none;" id="largeImage" src="" />
+    <script language="javascript">
+   		var u = navigator.userAgent ;
+		if(u.indexOf('Android') > -1){
+			alert('android') ;
+			document.getElementById('test').onclick = function(){
+				alert('ff') ;
+				uploadImage();
+			}
+		}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+			alert('ios') ;
+		}else{
+			alert('other') ;
+		}
+   </script>  
+  </body>
+</html>

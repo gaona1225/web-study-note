@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>answercon</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script> 
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+<script>
+var u = navigator.userAgent ;
+var url=location.search;  
+
+function getSearch(url){
+	var request = {}, str='',strs=[], strsSplit=[]; 
+	if(url.indexOf("?")!=-1){ 
+		str = url.substr(1);
+		strs = str.split("&"); 
+		for(var i = 0, strsLen = strs.length; i<strsLen; i++){ 
+			strsSplit = strs[i].split("=");
+			request[ strsSplit[0]] = strsSplit[1]; 
+		}
+	}
+	return request;
+}
+var req = getSearch(url),qid = req['qid'] ,pics = [];
+//显示日期时间的处理函数;
+function getDates(time){
+	var times = {}, allTime = new Date(parseInt(time)).toLocaleString().replace(/年|月/g,"-").replace(/日/g,'').replace(/:\d{1,2}$/,'');   
+	times.allTime = allTime;
+	var day = allTime.split(" ");
+	times.day = day[0];
+	times.time = day[1];
+	return times;
+}
+function getTimes(infoTime,nowTime){   
+	if(!infoTime){
+		return;
+	}
+	if(!nowTime){
+		nowTime = new Date().getTime();
+	}
+	var nowT = getDates(nowTime),infoT = getDates(infoTime);
+	
+	if(nowT.day == infoT.day){
+		return '今日 '+infoT.time;
+	}else{
+		return infoT.day;
+	}
+}
+//ajax
+function answerconLoad(qid){
+	$.ajax({
+		url : "http://10.6.210.229:8080/wiki/findQuestion?appId=1&qid="+ qid +"&accessToken=a",
+		success : function(result) {
+			
+			var question = result['question'];
+			var answer = question["answer"] , content = "",nowTime = result['time'],showTime,isFin = question['isFinish'],isBest = question['isBest'] ;
+			showTime = getTimes(question['createTime'],nowTime);
+			if(!question['userPic']){
+				question['userPic'] = 'img/tx.png';
+			}
+			content += '<dl class="inner_left">'
+					+'<dd class="answer_tx"><img src="'+ question['userPic'] +'" /></dd>'
+					+'<dd class="answer_msg">'
+					+'<span>问：</span>'+ question['content']
+					+'</dd>'
+					+'<dd class="answer_time">'+ showTime +'</dd>'
+					+'</dl>';
+			var section = document.createElement("section");
+				section.innerHTML = content;
+				document.getElementById("answercon_list").appendChild(section) ;
+			if(isFin == 1){
+				document.getElementById('evaluate').style.display = 'none' ;	
+			}
+			
+			for(var i=0 ,len = answer.length; i < len; i+=1){
+				
+				content = "";
+				if(!answer[i]['userPic']){
+					answer[i]['userPic'] = 'img/tx.png';
+				}
+				showTime = getTimes(answer[i]['createTime'],nowTime);
+				if(answer[i]['type'] == 1){
+					content += '<dl class="inner_right">';
+					 
+				}else if(answer[i]['type'] == 2){
+					content += '<dl class="inner_left">';
+				}
+				
+				content += '<dd class="answer_tx"><img src="'+ answer[i]['userPic'] +'" /></dd>'
+					+'<dd class="answer_msg">'
+					+'<span>问：</span>'+ answer[i]['content']
+					+'</dd>'
+					+'<dd class="answer_time">'+ showTime +'</dd>'
+					+'</dl>';
+			var section = document.createElement("section");
+				section.innerHTML = content;
+				document.getElementById("answercon_list").appendChild(section) ;
+			}
+			if(isBest == 2){
+				var newCon = '' ;					
+				newCon += '<dl class="inner_right"><dd class="answer_tx"><img src="'+ question['userPic'] +'" /></dd>'
+					+'<dd class="answer_msg">'
+					+'<span>答：</span>太给力了，您的回答已经完美的解决了我的问题！</dd>'
+					+'<dd class="answer_time">'+ showAnswerTime +'</dd>'
+					+'</dl>';
+				var section2 = document.createElement("section");
+				section2.innerHTML = newCon;
+				document.getElementById("answercon_list").appendChild(section2) ;
+			}
+			quesFix(qid,question['userPic'],showTime) ;
+		},
+		type : 'json'
+	});
+};
+
+if(u.indexOf('Android') > -1){
+    document.write("<script lanague=\"javascript\" src=\"www/android/www/cordova.js\"><\/scri"+"pt>") 
+
+}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+	document.write("<script lanague=\"javascript\" src=\"www/ios/www/cordova-incl.js\"><\/scri"+"pt>") ;
+}
+
+function webBack(){
+	if(u.indexOf('Android') > -1){
+		webViewApi.goBack(success,onFail);
+	}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+	 	webContrl.goBack(nativePluginResultHandler, nativePluginErrorHandler);
+	}
+}
+
+//返回方法回调
+function nativePluginResultHandler (result) {
+
+}	
+
+function nativePluginErrorHandler (error) {
+
+}
+
+//android返回回调
+function onFail(message) {
+      alert('Failed because: ' + message);
+}
+    
+function success() {
+      //todo 
+}
+
+window.addEventListener('load',function(){ 
+	
+	document.getElementById('back_btn').addEventListener('click',function(){
+		//todo
+		//phonegap 程序
+		//功能： 页面回退到question.html
+		webBack();
+	},false);
+	var _evaluateBtn = document.getElementById('evaluate') ;
+	var _popTool = document.getElementById('popTool') ;
+	if(_evaluateBtn){
+		_evaluateBtn.onclick = function(){
+			document.getElementById('popBox').style.display = 'block' ;
+			document.getElementById('popMask').style.display = 'block' ;
+		}
+	}
+	if(_popTool){
+		_popTool.onclick = function(){
+			document.getElementById('popBox').style.display = 'none' ;
+			document.getElementById('popMask').style.display = 'none' ;
+		}
+	}
+	answerconLoad(qid);
+},false);
+
+function quesFix(qid,userPic,time){
+	document.getElementById("evaluteSolved").onclick = function(){
+		document.getElementById('popBox').style.display = 'none' ;
+		document.getElementById('popMask').style.display = 'none' ;
+		var newCon = '' ;					
+		newCon += '<dl class="inner_right"><dd class="answer_tx"><img src="'+ userPic +'" /></dd>'
+			+'<dd class="answer_msg">'
+			+'<span>答：</span>太给力了，您的回答已经完美的解决了我的问题！</dd>'
+			+'<dd class="answer_time">'+ time +'</dd>'
+			+'</dl>';
+		var section2 = document.createElement("section");
+		section2.innerHTML = newCon;
+		$.ajax({
+			url : 'http://10.6.210.229:8080/wiki/fixQuestion?appId=1&qid=' + qid + '&aid=' + req['aid'] + '&accessToken=a' ,
+			//url : 'http://10.6.210.229:8080/wiki/fixQuestion?appId=1&qid=5326a9c8154d860afc733fe1&aid=afdasfasfasdfasdfasdfdfdeeee&accessToken=a' ,
+			success : function(result){
+				//answerconLoad(qid);
+				document.getElementById("answercon_list").appendChild(section2) ;
+				document.getElementById('evaluate').style.display = 'none' ;	
+			}
+		}) ;		
+	}
+}
+</script> 
+
+</head>
+<body>
+    <div class="evaluate_pop" id="popBox">
+    	<div class="evaluate_pop_con">
+        	<a href="javascript:;" id="evaluteSolved"><i class="evalute_solved"><img src="img/solved.png" /></i>完美解决问题</a>
+            <!--<a href="" id="evaluteUnsolved"><i class="evalute_unsolved"><img src="img/solved.png" /></i>问题没有解决</a>-->
+        </div>
+    	<div class="evaluate_pop_tool" id="popTool">关闭</div>
+    </div>
+    <div class="pop_mask" id="popMask"></div>
+    <header class="header">
+        <a href="javascript:;" class="back_btn" id="back_btn"></a>
+        <h1>百科问答</h1>
+        <a href="javascript:;" class="log_off" id="evaluate">评价</a>
+    </header>
+    
+   <div class="answer_wrap"  id="answercon_list" >
+   </div>
+</body>
+</html>

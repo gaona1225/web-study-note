@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>idnex3.html（两边对话）</title>
+	<script type="text/javascript" charset="utf-8" 
+		src="http://192.168.1.70:8082/socket.io/socket.io.js"></script>
+	<script type="text/javascript" charset="utf-8" >
+	/*
+	 * huanghui@2012-5-18 webSocket+nodejs+socket.io 
+	 * 简单例子:在线聊天，可用多台电脑同时访问相互聊天。
+	 * 1、如果直接点击index3.html，则会看到效果。
+	 * 2、如果访问‘http://192.168.1.70:8082/index3.htm’，可以也看到效果。
+		（safari和operta不可用）
+	 **/
+	 var socket = io.connect("192.168.1.70",{port:'8082'});
+	 socket.on("connect", function(){ 
+		 console.log("connected2");
+		 $('chat-box').innerHTML = '连接上了......<br/>';
+	 });
+	var audioElement = document.createElement('audio');
+	socket.on("message", function(data){ 
+		var chatBox = $('chat-box');
+		chatBox.innerHTML = chatBox.innerHTML+data+'<br/>';
+	});
+	function send(){
+		var talk = $('talk');
+		var nike = $('nike');		
+		socket.send('<strong style="color:red">'+nike.value+':</strong>'+talk.value);
+	}
+	function $(id){
+		return document.getElementById(id);
+	}
+	</script>
+</head>
+
+<body>
+	<div id="chat-box"  
+		style="border:1px solid #000; width:400px; height:200px;overflow:auto;">
+	</div>
+	Name:<input type="text" id="nike"/><br/>
+	Say :<input type="text" id="talk"/>
+	<input type="button" id="send" onClick="send();" value="SEND"/>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document skin-blue*/
+.header{background:#305fbe ;color:#fff ;}
+.sibar{background:#eee ;}
+.nav ul{background:#f4f4f4 ;}
+.nav ul li{border-bottom:2px solid #f4f4f4 ;}
+.nav li.current,.nav li:hover{border-bottom:2px solid #3664c0 ;}
+.nav ul li a{color:#333 ;}
+.nav ul li.current span{color: #305fbe; border-bottom: 2px solid #3664c0;}
+.list_box section{border-bottom:1px solid #d9d9d9 ;}
+.con_detail_t,.con_detail_d{color:#999 ;}
+.con_detail_dm{color:#305fbe ;}
+.popBox{background-color: rgba(14,0,0,0.2)}
+.popBoxP{color:#f44564;}
+.current_box{background:#f0f0f0;}
+/*侧栏*/
+.sibar_tit a{background:#305fbe;}
+.sibar_list li.sibar_current a span{background:#305fbe;}
+.sibar_list li.sibar_current a span.sibar_login_msg{background:none;}
+.sibar_list li.sibar_current{background:#262130;}
+.sibar_list li.sibar_current i.sibar_unlogin{background:url(../img/sprite2.png) no-repeat -219px -221px; }
+.sibar_list li.sibar_current i.sibar_myinfo{background:url(../img/sprite2.png) no-repeat -7px -221px;}
+.sibar_list li.sibar_current i.sibar_myques{background:url(../img/sprite2.png) no-repeat -64px -221px;}
+.sibar_list li.sibar_current i.sibar_myans{background:url(../img/sprite2.png) no-repeat -163px -221px; }
+.sibar_list li.sibar_current i.sibar_search{background:url(../img/sprite2.png) no-repeat -118px -221px;}
+i.sibar_login img{border:3px solid #305fbe;}
+/* 搜索页 */
+.search{background:#f4f4f4;}
+	.search_input{border:1px solid #999;}
+		.search_input i{background:url(../img/sprite.png) no-repeat -82px -50px #c41c1c;}
+	.search_btn{background:#305fbe;}
+.search_result li span{color:#305fbe;}
+.search_con{background:#d5d5d5;}
+	.search_list h3 span{color:#305fbe;}
+	.section_tag{color:#aaa ;}
+	
+/*问题页*/
+dd.info-new{border-color:#305fbe transparent}
+.info-tit a:hover{color:#305fbe ;}
+.tool a{background:none ;background:#305fbe ;}
+
+/*回答内容页*/
+.inner_left .answer_msg{background:#fff;box-shadow:inset -1px -1px 5px 0px rgba(0,0,0,0.4) ;}
+.inner_right .answer_msg{background:#c0e4fc;box-shadow:inset 0px -1px 5px -1px rgba(0,0,0,0.4) ;}
+.inner_left .answer_msg:before{border-color:transparent #fff transparent transparent;}
+.inner_right .answer_msg:after{border-color:transparent transparent transparent #c0e4fc;}
+
+/*回答问题页*/
+.answer_input{background:#d5d5d5;}
+.camera,.ans{background:#305fbe;}
+
+/*提问界面*/
+.question_type{color:#305fbe;}
+.question_type i{background:url(../img/sprite2.png) no-repeat -163px -221px;}
+
+/*我的主页*/
+.my_msg_nophoto i{background:url(../img/defaultTX.png) no-repeat -120px -4px ;}
+
+/*提问输入界面*/
+.question_input_tool{background:#305fbe;}
+
+/*我的主页*/
+.my_msg{background:#305fbe;background-image:-webkit-gradient(linear,left top,left bottom,from(#305fbe),to(#3567cc)) ;}
+
+/*我的消息*/
+.my_nav_ul{background:#f4f4f4 ;}
+.my_nav_ul li{border-bottom:2px solid #f4f4f4 ;}
+.my_nav_ul li.current,.my_nav_ul li:hover{border-bottom:2px solid #3664c0 ;}
+.my_nav_ul li a{color:#333 ;}
+.my_nav_ul li.current span{color: #305fbe; border-bottom: 2px solid #3664c0;}
+
+/*我的提问*/
+.unsolved{color:#c41c1c;}
+.unsolved i{background:url(../img/sprite2.png) no-repeat -205px 0;}
+.solved{color:#77be30;}
+.solved i{background:url(../img/sprite2.png) no-repeat -242px 0;}
+
+/*评价页面弹窗*/
+.evaluate_pop_tool{color:#007aff;}
+.evalute_solved{background:#77be30;}
+.evalute_solved span{background:url(../img/sprite2.png) no-repeat -103px -60px ;}
+.evalute_unsolved{background:#c41c1c;}
+.evalute_unsolved span{background:url(../img/sprite2.png) no-repeat -7px -60px ;}
+.evaluate_pop_tool a{color:#007aff;}

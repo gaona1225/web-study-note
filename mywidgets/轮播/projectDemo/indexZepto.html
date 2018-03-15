@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />-->
+<title>index</title>
+<style>
+	body{
+		font-family:"microsoft yahei" ;
+		margin:0 ;
+		padding:0 ;
+	}
+	a{
+		text-decoration:none ;
+	}
+	ul,li,dl,dd{
+		list-style:none ;
+		margin:0 ;
+		padding:0 ;
+	}
+	header{
+		background:#5e87b0 ;
+		border:1px solid #456f9a ;
+		background-image:-webkit-gradient(linear,left top,left bottom,from(#81a8ce),to(#5e87b0)) ;
+		background-image:-webkit-linear-gradient(#81a8ce,#5e87b0) ;
+		background-image:-moz-linear-gradient(#81a8ce,#5e87b0) ;
+		background-image:-ms-linear-gradient(#81a8ce,#5e87b0) ;
+		background-image:-o-linear-gradient(#81a8ce,#5e87b0) ;
+		background-image:linear-gradient(#81a8ce,#5e87b0) ;
+		
+		color:#fff ;
+		padding:8px 0 ;
+		text-align:center ;
+	}	
+	header h1{
+		display:inline-block ;
+		font-size:24px ;
+		font-weight:normal ;
+		margin:0 ;
+		padding:0 ;
+	}	
+	.graybtn{
+		background:#eee ;
+		border:1px solid #ccc ;
+		border-radius:5px ;
+		background-image:-webkit-gradient(linear,left top,left bottom,from(#fdfdfd),to(#eee)) ;
+		background-image:-webkit-linear-gradient(#fdfdfd,#eee) ;
+		background-image:-moz-linear-gradient(#fdfdfd,#eee) ;
+		background-image:-ms-linear-gradient(#fdfdfd,#eee) ;
+		background-image:-o-linear-gradient(#fdfdfd,#eee) ;
+		background-image:linear-gradient(#fdfdfd,#eee) ;
+		
+		color:#444 ;
+		padding:4px 8px ;
+		text-shadow:0 1px 1px #f6f6f6 ;
+	}
+	.back_btn,.next_btn{
+		display:inline-block ;
+		position:absolute ;
+		top:10px ;
+	}
+	.back_btn{
+		left:4px ;
+	}
+	.next_btn{
+		right:4px ;
+	}
+	nav{
+		overflow:hidden ;
+		padding:6px 0 0 ;
+		position:relative ;
+		width:100% ;
+	}
+	nav ul{
+		border-bottom:1px solid #ccc ;
+		height:29px ;
+		width:1000px ;
+	}
+	nav li{
+		float:left ;
+		margin-left:6px ;
+		text-align:center ;
+		width:50px ;
+	}
+	nav li a{
+		color:#444 ;
+		display:inline-block ;
+		font-size:18px ;
+		padding-bottom:6px ;
+		position:relative ;
+	}
+	.arrow:before{
+		border:10px solid #fff ;
+		border-color:transparent transparent #81a8ce transparent ;
+		border-width:6px 10px ;
+		content:'' ;
+		display:block ;
+		height:0 ;
+		left:6px ;
+		margin-top:6px ;
+		position:absolute ;
+		top:12px ;
+		width:0 ;
+		z-index:9 ;
+	}
+	.arrow:after{
+		border:10px solid #fff ;
+		border-color:transparent transparent #fff transparent ;
+		border-width:5px 9px ;
+		content:'' ;
+		display:block ;
+		height:0 ;
+		left:7px ;
+		margin-top:6px ;
+		position:absolute ;
+		top:14px ;
+		width:0 ;
+		z-index:10 ;
+	}
+	.detail_list{
+		width:100% ;
+	}
+	.detail_list dl{
+		border-bottom:1px solid #ccc ;
+		padding:10px 16px 10px 76px ;
+		position:relative ;
+	}
+	.detail_list dd{
+		display:block ;
+		margin-bottom:6px ;
+		position:relative ;
+		right:0px ;
+	}
+	.detail_list dd.info-tx{
+		left:6px ;
+		position:absolute ;
+	}
+	.info-tx img{
+		border-radius:10px ;
+		height:60px ;
+		width:60px ;
+	}
+	.info-tit{
+		color:#ccc ;
+		text-align:right ;
+	}
+	.info-tit a:link,.info-tit a:visited{
+		color:#ccc ;
+		float:left ;
+	}
+	.info-tit a:hover{
+		color:#81a8ce ;
+	}
+	.detail_list dd.info-new{
+		background:red ;
+		border-radius:20px ;
+		height:20px ;
+		position:absolute ;
+		right:6px ;
+		top:10px ;
+		width:20px ;
+	}
+	@media all and (min-width:0px) and (max-width:320px){
+		.detail_list dl{
+			padding-left:36px ;
+		}
+		.info-tx img{
+			height:24px ;
+			width:24px ;
+		}
+	}
+</style>
+</head>
+
+<body>
+<header>
+	<a href="#" class="graybtn back_btn">返回</a>
+	<h1>百科问答</h1>
+	<a href="#" class="graybtn next_btn">图标</a>
+</header>
+<nav>
+    <ul id="nav">
+        <li><a href="#" class="arrow">最新</a></li>
+        <li><a href="#">精华</a></li>
+        <li><a href="#">进攻</a></li>
+        <li><a href="#">防守</a></li>
+        <li><a href="#">阵型</a></li>
+        <li><a href="#">其他</a></li>
+        <li><a href="#">同城</a></li>
+        <li><a href="#">女生</a></li>
+    </ul>
+</nav>
+<div class="detail_list">
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">赤炎の贵族</a>
+            <span>来自福州</span>
+            <span>今日12：30</span>
+        </dd>
+        <dd class="info-new"></dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">0个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">托尼托尼乔巴</a>
+            <span>来自火星</span>
+            <span>2013-12-10</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">5个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">赤炎の贵族</a>
+            <span>来自福州</span>
+            <span>今日12：30</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">0个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">托尼托尼乔巴</a>
+            <span>来自火星</span>
+            <span>2013-12-10</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">5个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">赤炎の贵族</a>
+            <span>来自福州</span>
+            <span>今日12：30</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">0个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">托尼托尼乔巴</a>
+            <span>来自火星</span>
+            <span>2013-12-10</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">5个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">赤炎の贵族</a>
+            <span>来自福州</span>
+            <span>今日12：30</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">0个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">托尼托尼乔巴</a>
+            <span>来自火星</span>
+            <span>2013-12-10</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">5个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">赤炎の贵族</a>
+            <span>来自福州</span>
+            <span>今日12：30</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">0个答案</dd>
+    </dl>
+    <dl>
+        <dd class="info-tx">
+            <a href="#"><img src="img/tx.png" /></a>
+        </dd>
+        <dd class="info-tit">
+            <a href="#">托尼托尼乔巴</a>
+            <span>来自火星</span>
+            <span>2013-12-10</span>
+        </dd>
+        <dd class="info-mes">升了4本之后，应该注意什么，感觉金钱和水越来越难抢啊...</dd>
+        <dd class="info-ans">5个答案</dd>
+    </dl>
+</div>
+<script language="javascript" src="js/zepto.js"></script>
+<script language="javascript" src="js/touch.js"></script>
+<script language="javascript">
+	$(function(){
+		//点击切换菜单交互
+		$('nav li').on('tap',function(){
+			$(this).find('a').addClass('arrow') ;
+			$(this).siblings('li').find('a').removeClass('arrow') ;
+		}) ;
+		//滚到滚动条交互
+		$(window).scroll(function(){
+			var _wrapHei = $(this).height() ; //包裹层(屏幕可视区域)高度
+			var _conHei = $('body').height() ; //内容区域高度
+			var _scrTop = $(this).scrollTop() ;
+			if(_scrTop + _wrapHei >= _conHei){
+				console.log('到底了，向下加载数据...') ;
+			}else if(_scrTop == 0){
+				console.log('到顶了，向上加载数据...') ;
+			}
+		}) ;
+		//滑动内容交互
+		$('.detail_list').on('swipeLeft',function(){
+			alert('left') ;
+		}) ;
+		$('.detail_list').on('swipeRight',function(){
+			alert('right') ;
+		}) ;
+	}) ;
+</script>
+</body>
+</html>

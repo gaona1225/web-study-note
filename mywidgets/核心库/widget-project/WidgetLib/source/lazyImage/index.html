@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>图片栏加载</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="lazyImage.js"></script>
+    <style type="text/css">
+        div.test_item {margin: 120px 30px;display: block;outline: 1px dashed red;min-width: 150px; width: auto;height: 349px;}
+    </style>
+</head>
+<body>
+<div id="imgCon"></div>  
+<div id="imgCon2">
+    <input type="button" id="triggerLoad" value="手动绑定加载"/>
+</div>
+<script type="text/javascript">
+    function _init(ctxSelector, isHungry) {
+        var baseUrl = '.';
+        var img = [
+            '/images/lazyImage/1.jpg',
+            '/images/lazyImage/2.png'
+        ];
+        var i, len;
+        var domHtml = '';
+        for (i = 0, len = img.length; i < len; i++) {
+            domHtml += '<div class="test_item">' +
+                            '<img data-original="' + baseUrl + img[i] + '" data-lazyImg="true" data-x="' +
+                            ctxSelector + i + '"/>' +
+                        '</div>';
+        }
+        $(ctxSelector).append(domHtml).lazyImage({
+            placeHolder: 'images/lazyImage/blank.gif',
+            isHungry: isHungry
+        });
+    }
+    _init('#imgCon', true);
+    _init('#imgCon2', false);
+    $('#triggerLoad').bind('click', function() {$('#imgCon2').lazyImage('load');});
+        
+
+    // function _initDom() {
+    //     var baseUrl = '.';
+    //     var img = [
+    //         '/images/lazyImage/1.jpg',
+    //         '/images/lazyImage/2.png'
+    //     ];
+    //     var i, len;
+    //     var domHtml = '';
+    //     for (i = 0, len = img.length; i < len; i++) {
+    //         domHtml += '<div class="test_item">' +
+    //                         '<img data-original="' + baseUrl + img[i] + '" data-lazyImg="true" data-x="' + i + '"/>' +
+    //                     '</div>';
+    //     }
+    //     return domHtml;
+    // }
+    // //0. dom html
+    // var domHtml = _initDom();
+    // //1. auto bind
+    // $('#imgCon').html(domHtml).lazyImage({
+    //         placeHolder: 'images/lazyImage/blank.gif',
+    //         isHungry: true
+    // });
+    // // 2. bind handly
+    // $('#imgCon2').append(domHtml).lazyImage({
+    //         placeHolder: 'images/lazyImage/blank.gif',
+    //         isHungry: false
+    // });
+    // //$('#triggerLoad').bind('click', $('#imgCon2').lazyImage('load'));
+    // //# 注意回调方法
+    // $('#triggerLoad').bind('click', function(){
+    //     $('#imgCon2').lazyImage('load');
+    // });
+</script>
+</body>
+</html>

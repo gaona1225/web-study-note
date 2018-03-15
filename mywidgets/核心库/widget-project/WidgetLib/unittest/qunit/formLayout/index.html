@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>formLayout单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/base/reset.css" />
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="formLayoutTest.js"></script>
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+<form class="ui-formLayout">
+    <input form-elem-title="姓名" must-fill="true" placeholder="请输入姓名" type="text" class="ui-formLayoutInput" disabled id="testInput"/>
+    <input form-elem-title="职务" must-fill="true" placeholder="请输入职务" type="text" class="ui-formLayoutInput"/>
+    <input form-elem-title="年龄" type="text" class="ui-formLayoutInput"/>
+    <input form-elem-title="性别" type="text" class="ui-formLayoutInput" id="testRemoveInput"/>
+    <input form-elem-title="民族" type="text" class="ui-formLayoutInput"/>
+    <select form-elem-title="学历" class="ui-formLayoutInput">
+        <option>专科</option>
+        <option>本科</option>
+        <option>硕士</option>
+        <option>博士</option>
+    </select>
+    <textarea form-elem-title="个人评价" form-colspan="3" class="ui-formLayoutInput" disabled></textarea>
+    <div form-elem-title="兴趣" form-colspan="3" class="ui-formLayoutInput">
+        <input type="checkbox" name="interest" class="ui-forminput-check" value="看电影ddd" disabled/>看电影ddd
+        <input type="checkbox" name="interest" class="ui-forminput-check" value="看电影22222" disabled checked id="testCheckbox"/>看电影22222
+        <input type="checkbox" name="interest" class="ui-forminput-check" value="看电影55555" onclick="javascript:alert(this.value)"/>看电影55555
+    </div>
+    <div form-elem-title="国籍" form-colspan="3" class="ui-formLayoutInput">
+        <input type="radio" name="nation2" class="ui-forminput-check" value="中国" id="testRadio"/>中国
+        <input type="radio" name="nation2" class="ui-forminput-check" value="英国"/>英国
+        <input type="radio" name="nation2" class="ui-forminput-check" value="美国"/>美国
+    </div>
+</form>
+<input class="buttonActive" id="testHide" type="button" value="影藏性别"  />
+<input class="buttonActive" id="testShow" type="button" value="显示性别"  />
+</div>
+</body>
+</html>

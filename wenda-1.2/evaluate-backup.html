@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0;">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>evaluate</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="" id="skinCss" />
+<script type="text/javascript" src="js/pandora.js"></script>
+<script type="text/javascript" src="js/dom.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="js/base.js"></script>
+<script>
+//url  search获取;
+var url=location.search;  
+function getSearch(url){
+	var request = {}, str='',strs=[], strsSplit=[]; 
+	if(url.indexOf("?")!=-1){ 
+		str = url.substr(1);
+		strs = str.split("&"); 
+		for(var i = 0, strsLen = strs.length; i<strsLen; i++){ 
+			strsSplit = strs[i].split("=");
+			request[ strsSplit[0]] = strsSplit[1]; 
+		}
+	}
+	return request;
+}
+var req = getSearch(url),qid = req['qid'] ,pics = [];
+//todo
+//phonegap 程序
+//功能：  提交问题时没有上传图片picStatus = 0；  正在传图片 一开始执行的图片上传函数时将picStatus = 1； 上传完成且将上传后的url付给变量pic后  回调函数中，picStatus = 2；
+var picStatus = 0;
+//todo
+//phonegap 程序
+//功能：  phonegap上传图片完成的回调函数，要将得到的图片url赋值给变量pic
+var pic = '';
+//显示日期时间的处理函数;
+function getDates(time){
+	var times = {}, allTime = new Date(parseInt(time)).toLocaleString().replace(/年|月/g,"-").replace(/日/g,'').replace(/:\d{1,2}$/,'');   
+	times.allTime = allTime;
+	var day = allTime.split(" ");
+	times.day = day[0];
+	times.time = day[1];
+	return times;
+}
+function getTimes(infoTime,nowTime){   
+	if(!infoTime){
+		return;
+	}
+	if(!nowTime){
+		nowTime = new Date().getTime();
+	}
+	var nowT = getDates(nowTime),infoT = getDates(infoTime);
+	
+	if(nowT.day == infoT.day){
+		return '今日 '+infoT.time;
+	}else{
+		return infoT.day;
+	}
+}
+
+//问题详细内容加载的ajax;
+function answerconLoad(qid){
+	$.ajax({
+		url : "http://10.6.210.229:8080/wiki/findQuestion?appId=1&qid="+ qid +"&accessToken=a",
+		success : function(result) {
+			
+			var question = result['question'];
+			var answer = question["answer"] , content = "",answerTime,nowTime = result['time'],showAnswerTime,isFin = question['isFinish'],isBest = question['isBest'];
+			
+			showAnswerTime = getTimes(question['createTime'],nowTime);
+			if(!question['userPic']){
+				question['userPic'] = 'img/tx.png';
+			}
+			content += '<dl class="inner_left">'
+					+'<dd class="answer_tx"><img src="'+ question['userPic'] +'" /></dd>'
+					+'<dd class="answer_msg">'
+					+'<span>问：</span>'+ question['content']
+					+'</dd>'
+					+'<dd class="answer_time">'+ showAnswerTime +'</dd>'
+					+'</dl>';
+			var section = document.createElement("section");
+				section.innerHTML = content;
+				document.getElementById("answercon_list").appendChild(section) ;
+			if(isFin == 1){
+				//document.getElementById('evaluate').style.display = 'none' ;	
+			}
+			
+			
+			for(var i=0 ,len = answer.length; i < len; i+=1){
+				content = "";
+				answerTime = answer[i]['createTime'];
+				showAnswerTime = getTimes(answerTime,nowTime);
+				if(answer[i]['type'] == 1){
+					content += '<dl class="inner_right">';
+					 
+				}else if(answer[i]['type'] == 2){
+					content += '<dl class="inner_left">';
+				}
+				if(!answer[i]['userPic']){
+					answer[i]['userPic'] = 'img/tx.png';
+				}
+				content += '<dd class="answer_tx"><img src="'+ answer[i]['userPic'] +'" /></dd>'
+					+'<dd class="answer_msg">'
+					+'<span>问：</span>'+ answer[i]['content']
+					+'</dd>'
+					+'<dd class="answer_time">'+ showAnswerTime +'</dd>'
+					+'</dl>';
+			var section = document.createElement("section");
+				section.innerHTML = content;
+				document.getElementById("answercon_list").appendChild(section) ;
+			}
+			if(isBest == 2){
+				var newCon = '' ;					
+				newCon += '<dl class="inner_right"><dd class="answer_tx"><img src="'+ question['userPic'] +'" /></dd>'
+					+'<dd class="answer_msg">'
+					+'<span>答：</span>太给力了，您的回答已经完美的解决了我的问题！</dd>'
+					/*+'<dd class="answer_time">'+ showAnswerTime +'</dd>'*/
+					+'</dl>';
+				var section2 = document.createElement("section");
+				section2.innerHTML = newCon;
+				document.getElementById("answercon_list").appendChild(section2) ;
+			}
+		},
+		type : 'json'
+	});
+};
+
+window.addEventListener('load',function(){
+	document.getElementById('back_btn').addEventListener('click',function(){
+		//todo
+		//phonegap 程序
+		//功能： 页面回退到question.html
+	},false);
+	answerconLoad(qid);
+	quesFix(qid) ;
+},false);
+
+function quesFix(qid){
+	var solvedUrl  = "evaluate.html?appId=1&qid="+ qid + "&cid="+ req['cid'] +"&type=1&accessToken=a" ;
+	document.getElementById("evaluteSolved").onclick = function(){
+		document.getElementById('popBox').style.display = 'none' ;
+		document.getElementById('popMask').style.display = 'none' ;
+		$.ajax({
+			url : 'http://10.6.210.229:8080/wiki/fixQuestion?appId=1&qid=' + qid + '&aid=' + req['aid'] + '&accessToken=a' ,
+			//url : 'http://10.6.210.229:8080/wiki/fixQuestion?appId=1&qid=5326a9c8154d860afc733fe1&aid=afdasfasfasdfasdfasdfdfdeeee&accessToken=a' ,
+			success : function(result){
+				answerconLoad(qid);
+				document.getElementById('evaluate').style.display = 'none' ;	
+			}
+		}) ;		
+	}
+}
+</script>  
+</head>
+<body>
+	<!--等待框-->
+    <div class="popBox" id="loadBox">
+        <div class="loading" style="display:block;">
+        </div>
+    </div>
+	<div class="evaluate_pop" id="popBox">
+    	<div class="evaluate_pop_con">
+        	<a href="javascript:;" id="evaluteSolved"><i class="evalute_solved"><img src="img/solved.png" /></i>完美解决问题</a>
+            <!--<a href="" id="evaluteUnsolved"><i class="evalute_unsolved"><img src="img/solved.png" /></i>问题没有解决</a>-->
+        </div>
+    	<div class="evaluate_pop_tool" id="popTool">关闭</div>
+    </div>
+    <div class="pop_mask" id="popMask"></div>
+    <header class="header">
+        <a href="javascript:;" class="back_btn" id="back_btn"></a>
+        <h1>百科问答</h1>
+        <a href="javascript:;" class="log_off" id="evaluate">评价</a>
+    </header>
+    
+   <div class="answer_wrap" id="answercon_list">
+   	
+   </div>
+    <div class="answer_input">
+        <a href="javascript:;" class="camera" id="questionCamera"><i></i></a>
+        <div class="ans_input"><textarea id="answer_content" placeholder="在此输入回答"  onFocus="return false ;"></textarea></div>
+        <a href="javascript:;" class="ans" onClick="submitAnswer()"><i></i></a>
+    </div>
+   <div><img style="display:none;" id="largeImage" src="" /></div>
+    <div id="image-options"></div>
+    <div id="info" style="white-space: pre-wrap;">
+        <b style="display:none;">Status:</b> <div id="camera_status" style="display:none;"></div>
+        <img width="100" id="camera_image">
+            <canvas id="canvas" width="1" height="1"></canvas>
+    </div>
+    <script language="javascript">
+		var _evaluateBtn = document.getElementById('evaluate') ;
+		var _popTool = document.getElementById('popTool') ;
+		if(_evaluateBtn){
+			_evaluateBtn.onclick = function(){
+				document.getElementById('popBox').style.display = 'block' ;
+				document.getElementById('popMask').style.display = 'block' ;
+			}
+		}
+		if(_popTool){
+			_popTool.onclick = function(){
+				document.getElementById('popBox').style.display = 'none' ;
+				document.getElementById('popMask').style.display = 'none' ;
+			}
+		}
+		
+		function submitAnswer(){	
+			var appId = 1 ,
+				cid = req['cid'],
+				accessToken = "a" ,
+				content =  encodeURIComponent( document.getElementById("answer_content").value ),
+				qid = req['qid'],
+				type = req['type'] ,
+				pic1 =  encodeURIComponent('ascac');
+			var ajaxData = {
+				appId:1,
+				cid: cid ,
+				content: content ,
+				accessToken: "a",
+				qid:qid
+			};
+		if(picStatus == 0){
+			$.ajax({
+				method:'POST',
+				data : ajaxData ,
+				url : "http://10.6.210.229:8080/wiki/answer",
+				success : function(result) {
+					if(result['status'] == 0){
+						setTimeout(
+							function(){window.location.href = "question.html"+url;},3000
+						);
+					}
+				},
+				type : 'json'
+			});
+		}else if(picStatus == 1){
+			 document.getElementById("loadBox").style.display = 'block';
+			 //todo
+			//phonegap 程序
+			//功能：  页面等待框弹出，图片正在上传，所以问题提交的ajax请求没有提交，这样需要在图片上传的回调函数里面在此调用一下问题提交函数addQue；
+		}else if(picStatus == 2){
+			if(pic){
+				ajaxData.pic1 = pic;
+			}
+			$.ajax({
+				method:'POST',
+				data : ajaxData ,
+				url : "http://10.6.210.229:8080/wiki/answer",
+				success : function(result) {
+					if(result['status'] == 0){
+						setTimeout(
+							function(){window.location.href = "question.html"+url;},3000
+						);
+					}
+				},
+				type : 'json'
+			});
+		}
+			/*$.ajax({
+				url : "http://10.6.210.229:8080/wiki/answer?appId=1&qid="+ qid +"&cid="+ cid +"&content="+ content+"&pic1="+ pic1+"&accessToken=a",
+				success : function(result) {
+					if(result['status'] == 0){
+						window.location.href = "question.html"+url;
+					}
+				},
+				type : 'json'
+			});*/
+		}
+    </script>
+    <script language="javascript">
+			
+		var u = navigator.userAgent ;
+		if(u.indexOf('Android') > -1){
+			alert('android') ;
+			
+			function onSuccessCallBack(imageURI){
+				alert("iamge url:"+imageURI);
+				//TODO
+				var img = document.getElementById('largeImage') ;
+				img.src = imageURI ;
+				img.style.display = 'block' ;
+			}
+			
+			document.write("<script lanague=\"javascript\" src=\"www/android/www/cordova.js\"><\/scri"+"pt>") 
+			document.getElementById('questionCamera').onclick = function(){
+				navigator.upload.uploadImage(onSuccessCallBack)
+			}
+		}else if(!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+			alert('ios') ;
+			document.write("<script lanague=\"javascript\" src=\"www/ios/www/cordova-incl.js\"><\/scri"+"pt>") ;
+			document.write("<script lanague=\"javascript\" src=\"www/ios/www/main.js\"><\/scri"+"pt>") ;
+			var deviceReady = false;
+			var platformId = null;
+			var CameraPopoverOptions = null;
+			var pictureUrl = null;
+			var fileObj = null;
+			var fileEntry = null;
+			var pageStartTime = +new Date();
+			
+			//default camera options
+		
+			//-------------------------------------------------------------------------
+			// Camera
+			//-------------------------------------------------------------------------
+		
+		    function log(value) {
+		        console.log(value);
+		        document.getElementById('camera_status').textContent += (new Date() - pageStartTime) / 1000 + ': ' + value + '\n';
+		    }
+		
+			//
+			function onGetPictureError(e) {
+				log('Error getting picture: ' + e.code);
+			}
+		
+			//服务器图片url地址回调
+			function getImageUrl(data){
+				
+				log('--url'+data.pic);
+				alert("iamge url:"+data.pic);
+				//TODO
+				var img = document.getElementById('camera_image') ;
+				img.src = data.pic ;
+				img.style.display = 'block' ;
+			}
+		
+		
+			function getPicture() {
+		
+				var popoverHandle = navigator.camera.getPicture(getImageUrl, onGetPictureError);
+			}
+		
+			function logCallback(apiName, success) {
+				return function() {
+					log('Call to ' + apiName + (success ? ' success: ' : ' failed: ') + JSON.stringify([].slice.call(arguments)));
+				};
+			}
+		
+			/**
+			 * Function called when page has finished loading.
+			 */
+			function init() {
+				document.addEventListener("deviceready", function() {
+					deviceReady = true;
+					platformId = cordova.require('cordova/platform').id;
+					CameraPopoverOptions = cordova.require('org.apache.cordova.camera.CameraPopoverOptions');
+					console.log("Device="+device.platform+" "+device.version);
+								  
+				}, false);
+				window.setTimeout(function() {
+					if (!deviceReady) {
+						alert("Error: Apache Cordova did not initialize.  Demo will not run correctly.");
+					}
+				},1000);
+			};
+			init();
+			document.getElementById('questionCamera').onclick = function(){
+				alert('click') ;
+				getPicture() ;
+			}
+		}
+	
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document media css */
+@media all and (min-width:768px) and (max-width:991px){
+	.header-sidebar-fold{
+		visibility:visible ;
+	}
+	.navSide{
+		display:none ;
+	}
+	.mainCon{
+		margin-left:0px ;
+	}
+	.mainCell{
+		margin-bottom:25px ;
+		width:48.5% ;
+	}
+	.portletCon{
+		width:60% ;
+	}
+}
+
+@media all and (min-width:480px) and (max-width:767px){
+	.header-sidebar-fold{
+		visibility:visible ;
+	}
+	.navSide{
+		display:none ;
+	}
+	.mainCon{
+		margin-left:0px ;
+	}
+	.mainCell{
+		margin-bottom:25px ;
+		width:100% ;
+	}
+	.mainSep{
+		display:none ;
+	}
+	.mainCell2{
+		width:100% ;
+	}
+}
+
+@media all and (min-width:320px) and (max-width:479px){
+	.header-sidebar-fold{
+		visibility:visible ;
+	}
+	.navSide{
+		display:none ;
+	}
+	.mainCon{
+		margin-left:0px ;
+	}
+	.mainCell{
+		margin-bottom:25px ;
+		width:100% ;
+	}
+	.mainSep{
+		display:none ;
+	}
+	.mainCell2{
+		width:100% ;
+	}
+	.portletCon{
+		width:60% ;
+	}
+}

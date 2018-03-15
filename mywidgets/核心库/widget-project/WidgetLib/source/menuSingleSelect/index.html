@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>下拉单选菜单列表</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="menuSingleSelect.js"></script>
+<script type="text/javascript">
+$(function(){
+     var data="[{'id':'id1','menuSingleSelect':'机构','menuSelect':[{'selectId':'id11','selectData':'本机构'},{'selectId':'id12','selectData':'子机构'}]}"
+            +",{'id':'id2','menuSingleSelect':'部门','menuSelect':[{'selectId':'id21','selectData':'本部门'},{'selectId':'id22','selectData':'子部门'},{'selectId':'id23','selectData':'其他部门','selectUrl':'deptId'}]}"
+            +",{'id':'id3','menuSingleSelect':'其他人员','DeptOrUser':'userId'}]";
+ //     $("#li1").click(function(){
+//       $(this).menuSingleSelect({data:data,listId:"liId1"});
+//    });
+    $("#li1").menuSingleSelect({data:data,listId:"liId1",defaultClick:false});
+    
+});
+    function getDepts(){
+        alert("getDepts");
+    }
+    function getUsers(){
+        alert("getUsers");
+    }
+
+
+</script>
+
+</head>
+
+<body style="overflow:auto;">
+<div style="width:300px; height:100px; margin:0 auto;margin-top:200px;">
+    <a id="li1" href="javaScript:void(0)" name="menuSelect" style="width:150px; color:#000000; display:block;">下拉单选链接菜单▼</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+安装使用node.js（v0.6.18）的说明：
+1、nodejs的安装文件，直接点击即可安装。
+	默认安装目录为“C:\Program Files\nodejs”。
+2、每次执行node命令时，需要在cmd里面将其切换到server.js的目录下。
+	然后执行‘node server.js’。（server.js为目标服务器js，名字可以自己定义，
+	可写在自己定义的随意目录下。）
+3、nodejs目录下的node_modules是存放nodejs相关的插件，
+	如socket.io、websocket-server等
+4、这些插件可在‘https://github.com/’ 网站搜索相关插件的安装文件，
+	解压后放到node_modules目录下。也可在nodejs目录下执行	
+	‘npm install socket.io’	或者‘npm install websocket-server’
+	命令即可。
+
+/***
+ * 使用后写的说明文档，可能各个版本有所不同，
+ * 也可能以后再使用中会发现更好的方法，故只做参考使用。
+ * huanghui@2012-5-18
+ */
+

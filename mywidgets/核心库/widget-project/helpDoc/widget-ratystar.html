@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>星级评定</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.ratystar.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>星级评定（ratystar）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>星级评定功能，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox等浏览器</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> ratystar(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">total：</label>
+              （数字）参数：5，显示最多星星个数</p>
+            <p>
+              <label class="help-item">value：</label>
+              （数字）参数：2：，每个星星表示的分值</p>
+            <p>
+              <label class="help-item">stardefault：</label>
+              （数字）参数：2：，默认显示星级,这个需要和每个星星表示的分值相除，所以建议设置值和每个星星分值成整数倍。</p>
+            <p>
+              <label class="help-item">disable：</label>
+              （布尔类型）参数：false：，是否禁用手动设置星级</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+          	<p>
+              <label class="help-item">disable()：</label>
+              （方法）禁用设置星级</p>
+            <p>
+              <label class="help-item">enable()：</label>
+              （方法）启用设置星级</p>
+          	<p>
+              <label class="help-item">getStar()：</label>
+              （方法）获取星级评定结果</p>
+            <p>
+              <label class="help-item">destroy()：</label>
+              （方法）清除星级评定</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              星级评定功能</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+					$(function(){
+						$('.exampleObj').ratystar();
+						$('#disablebtn').click(function(){
+							$('.exampleObj').ratystar('disable') ;
+						}) ;
+						$('#enablebtn').click(function(){
+							$('.exampleObj').ratystar('enable') ;
+						}) ;
+						$('#getbtn').click(function(){
+							$('#showvalue').val($('.exampleObj').ratystar('getStar')) ;
+						}) ;
+					}) ;
+				</script>
+			    <div class="exampleObj"></div>
+                <input type="button" id="getbtn" value="获取星级" />
+                <label>星级评定结果</label><input type="text" id="showvalue" />
+                <input type="button" id="disablebtn" value="禁用星级设置" />
+                <input type="button" id="enablebtn" value="启用星级设置" />
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){
+						$('.exampleObj').ratystar();
+						$('#disablebtn').click(function(){
+							$('.exampleObj').ratystar('disable') ;
+						}) ;
+						$('#enablebtn').click(function(){
+							$('.exampleObj').ratystar('enable') ;
+						}) ;
+						$('#getbtn').click(function(){
+							$('#showvalue').val($('.exampleObj').ratystar('getStar')) ;
+						}) ;
+					}) ;
+			   &lt;/script>
+			   &lt;div class="exampleObj">&lt;/div>
+               &lt;input type="button" id="getbtn" value="获取星级" />
+               &lt;label>星级评定结果&lt;/label>&lt;input type="text" id="showvalue" />
+               &lt;input type="button" id="disablebtn" value="禁用星级设置" />
+               &lt;input type="button" id="enablebtn" value="启用星级设置" />
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+/**
+ * @个人学习情况.png;课程情况.png login.png begin
+ * @zhangwq
+ * @2011-10-25
+ */
+.ui-custom-selflearn--mystudy-infoBox {
+	clear: both;
+	width: 100%;
+	height: 150px;
+}
+.ui-custom-selflearn--mystudy-infoBox>.headImg{
+	float:left;
+	width:140px;
+	height:140px;
+	padding:1px 2px;
+	border:1px solid #e9e9e9;
+	border-radius:1px;
+	margin-right:12px;
+}
+.ui-custom-selflearn--mystudy-infoBox>.headImg>img{
+	display:block;
+	text-align:center;
+}
+.ui-custom-selflearn--mystudy-infoBox>.personInfo{
+	padding-top:6px;overflow:hidden;
+}
+.ui-custom-selflearn--mystudy-infoBox>.personInfo>h2{
+	color:#5fa207;
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:3px;
+}
+.ui-custom-selflearn--mystudy-infoBox>.personInfo>.line{
+	height:1px;
+	border-top:1px dotted #666;
+	margin-top:6px;margin-bottom:12px;
+
+}
+.ui-custom-selflearn--mystudy-infoBox>.personInfo>p.item{
+	color:#666;font-size:12px;
+}
+.ui-custom-selflearn--mystudy-infoBox>.personInfo>p.item>span{
+	color:#000;font-weight:bold;
+}
+.ui-custom-selflearn--mystudy-infoBox>.personInfo>.filterBox{
+	margin-top:3px;
+}
+.ui-custom-selflearn--mystudy-infoBox>.personInfo>.filterBox>span{
+	background-color:#f5f8fd;color:#003399;
+	border:1px solid #c0cfe2;
+	padding:6px 8px;
+	line-height:28px;height:28px;
+	text-align:center;font-size:12px;
+	margin-right:12px;
+}
+.ui-custom-selflearn--course-infoBox {
+	clear: both;
+	width: 100%;
+	height: 180px;
+	margin-bottom:8px;
+}
+.ui-custom-selflearn--course-infoBox>.courseCon{
+	float:left;
+	width:240px;
+	height:180px;
+	margin-right:12px;
+	background-color:#000;
+}
+.ui-custom-selflearn--course-infoBox>.courseInfo{
+	padding-top:6px;overflow:hidden;
+}
+.ui-custom-selflearn--course-infoBox>.courseInfo>h2{
+	color:#000;
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:6px;
+}
+.ui-custom-selflearn--course-infoBox>.courseInfo>.line{
+	height:1px;
+	border-top:1px dotted #666;
+	margin-top:6px;margin-bottom:6px;
+
+}
+.ui-custom-selflearn--course-infoBox>.courseInfo>p.item{
+	color:#666;font-size:12px;
+}
+.ui-custom-selflearn--course-infoBox>.courseInfo>p.margint8{
+	margin-top:8px;
+}
+.ui-custom-selflearn--course-infoBox>.courseInfo>p.item>span{
+	color:#000;font-weight:bold;
+}
+.ui-custom-selflearn--course-infoBox>.courseInfo>.filterBox{
+	margin-top:3px;
+}
+.ui-custom-selflearn--course-infoBox>.courseInfo>.filterBox>span{
+	background-color:#f5f8fd;color:#003399;
+	border:1px solid #c0cfe2;
+	padding:6px 8px;
+	line-height:28px;height:28px;
+	text-align:center;font-size:12px;
+	margin-right:12px;
+}
+.ui-custom-selflearn-mystudy-title{
+	color:#003399;font-size:14px;font-weight:bold;
+	display:block;
+}
+.ui-custom-selflearn-mystudy-td-69{
+	color:#999;font-size:12px;
+	display:block;
+}
+.ui-custom-selflearn-mystudy-td-69-2{
+	color:#999;font-size:12px;display:inline;margin-left:-2px;
+}
+.ui-custom-selflearn-mystudy-td-bold{
+	color:#000;font-size:12px;font-weight:bold;
+	display:inline;
+}
+/**************login.png*******************************/
+.ui-custom-selflearn-login-zone{
+	clear:both;
+	background:url("images/ui-custom-selflearn/selflearn_loginzone_bg.png") no-repeat scroll transparent;
+	width:557px;height:275px;
+	display:block;
+	overflow:hidden;
+	position:absolute;
+	left:390px;top:240px;
+}
+.ui-custom-selflearn-login-zone>h2{
+	clear:both;width:100%;overflow:hidden;
+	color:#eef9fd;font-size:23px;font-weight:bold;text-align:center;
+	margin-top:12px;
+}
+.ui-custom-selflearn-login-zone>.ui-custom-selflearn-form-zone{
+	padding-left:225px;
+	display:block;
+	margin-top:16px;
+}
+ .ui-custom-selflearn-login-zone>.ui-custom-selflearn-form-zone label{
+	 font-size:14px;color:#fff;
+ }
+.ui-custom-selflearn-form-zone label.rememberPwd{
+	margin-left:8px;top:-1px;
+}
+.ui-custom-selflearn-login-zone>.ui-custom-selflearn-form-zone>table>tbody>tr{
+	height:40px;line-height:40px;
+	vertical-align:middle;
+}
+.ui-custom-selflearn-login-zone>.ui-custom-selflearn-form-zone>table>tbody>tr>td.odd{
+	text-align:right;
+}
+.ui-custom-selflearn-login-zone .loginInput{
+	width:185px;
+	border:1px solid #ccc;
+}
+.ui-custom-selflearn-login-zone>.ui-custom-selflearn-login-set-zone{
+	position:absolute;
+	left:16px;top:246px;
+	color:#99ccff;
+}
+.ui-custom-selflearn-login-zone>.ui-custom-selflearn-login-set-zone>span{
+	margin-right:12px;cursor:pointer;
+}
+ .ui-custom-selflearn-login-zone>.ui-custom-selflearn-login-set-zone>span>span.more-ico{
+	 background:url("images/ui-custom-selflearn/login_type_select_ico.png");
+	 display:inline-block;
+	 vertical-align:middle;
+	 width:7px;height:4px;
+	 color:#99ccff;
+ }
+.ui-custom-selflearn-login-zone>.ui-custom-selflearn-login-btn{
+	background:url("images/ui-custom-selflearn/login_btn.png") no-repeat scroll transparent;
+	width:133px;height:39px;
+	position:absolute;left:304px;top:214px;
+	cursor:pointer;
+}
+/**
+ * @个人学习情况.png;课程情况.png login.png end
+ * @zhangwq
+ * @2011-10-25
+ */
+ /**
+ * @课程学习.png;课程授权.png;课程统计.png
+ * @2011-10-25
+ */
+ .ui-custom-selflearn-learnInfo{
+	width:300px;
+	border:1px solid #aacbee;
+	height:83px;
+	background-color:#f6fafe;
+}
+.ui-custom-selflearn-learnInfo table tr td.td1{
+	width:63px;
+	text-align:right;
+	line-height:21px;
+}
+.ui-custom-selflearn-learnInfo table tr td.td2{
+	width:172px;
+	text-indent:6px;
+	line-height:21px;
+}
+.ui-custom-boxFont table tr td.td3{
+	text-indent:2px;
+	text-align:right;
+	line-height:21px;
+	color:#666666;
+}
+.ui-custom-boxFont table tr td.td4{
+	text-indent:6px;
+	line-height:21px;
+	color:#666666;
+}
+.ui-custom-boxFont .line{
+	border-top:1px solid #e5e5e5;
+	margin-top:10px;
+}
+.ui-custom-selflearn-content{
+	padding:10px 1px;
+	color:#666666;
+}
+.ui-custom-selflearn-detail{
+	margin-left:240px;
+	margin-bottom:4px;
+}
+
+
+/**
+*	我的课程
+*/
+.ui-custom-selflearn-myclass-chose{
+			border:1px solid #eeeeee;
+			margin-left:35px;
+			margin-top:10px;
+		}
+		.ui-custom-selflearn-myclass-chosetop{
+			padding-top:10px;
+			padding-bottom:10px;
+			padding-left:20px;
+			padding-right:20px;
+			background-color:#f9f9f9;
+		}
+		.ui-custom-selflearn-myclass-chosebottom{
+			padding-top:10px;
+			padding-bottom:10px;
+			padding-left:20px;
+			padding-right:20px;
+			background-color:#f5f8fd;
+		}
+		.ui-custom-selflearn-myclass-select{
+			margin-top:20px;
+			margin-bottom:20px;
+		}
+		.ui-custom-selflearn-myclass-avi{
+			border:1px solid #ccc;
+			width:100%;
+			height:auto;
+		}
+		.ui-custom-selflearn-myclass-avicontent{
+			width:100px;
+			height:70px;
+			background-color:#000000;
+			margin-left:10px;
+		}
+		.ui-custom-selflearn-myclass-avicontent1{
+			margin-left:10px;
+			margin-top:5px;
+			color:#003399
+		}
+		.ui-custom-selflearn-myclass-avicontent2{
+			margin-left:12px;
+			margin-top:6px;
+			color:#999999
+		}
+		.ui-custom-selflearn-myclass-avicontent3{
+			margin-left:12px;
+			color:#999999;
+		}
+		/* CSS Document */
+		.videoList{ overflow:hidden;}
+		.videoList li{ float:left; margin:1px 6px; padding:8px; width:86px; height:140px;}
+		.videoList li .videoPreview{ padding:1px; border:1px #CCCCCC solid; display:inline-block; margin:0 auto; background-color:#FFF; cursor:pointer; margin:1px 1px 3px;}
+		.videoList li .videoPreview:hover{border:2px #F0A415 solid; margin:0 0 2px;}
+		.videoList li .videoTit{ color:#0066CC; overflow:hidden; max-height:34px;}
+		.videoList li .videoInfo{ color:#999999;}
+		
+		.ui-custom-selflearn-myclass-search1{
+			color:#003399;
+			cursor:pointer;
+		}
+		.ui-custom-selflearn-myclass-search2{
+			color:#000000;
+			font-weight:bold;
+			cursor:pointer;
+		}

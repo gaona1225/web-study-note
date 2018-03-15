@@ -1,0 +1,18 @@
+<files>
+	<linkFile id="file1">
+		<link>morehtmla1.css</link>
+		<script>morehtmla1.js</script>
+	</linkFile>
+	<linkFile id="file11">
+		<link>morehtmlb1.css</link>
+		<link>morehtmlb2.css</link>
+		<script>morehtmlb1.js</script>
+		<script>morehtmlb2.js</script>
+	</linkFile>
+	<linkFile id="file2">
+		<link>morehtmlb1.css</link>
+		<link>morehtmlb2.css</link>
+		<script>morehtmlb1.js</script>
+		<script>morehtmlb2.js</script>
+	</linkFile>
+</files>

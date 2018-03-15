@@ -1,0 +1,46 @@
+.mod-dialog{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: #000;
+    opacity: 0.4;
+}
+.mod-dialog-body{
+   width:80%;
+   position: absolute;
+   top:0;
+   left:50%;
+   overflow-y:auto;
+   border-radius: 4px;	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;	
+	transition: top .3s linear;
+	-webkit-transition: top .3s linear;
+	-moz-transition: top .3s linear;
+	-o-transition: top .3s linear;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+}
+.mod-dialog-content{
+	background: #fff;
+    padding: 15px;
+
+}
+
+
+.dialog-content-btn{
+    margin:20px 0 10px;
+}
+
+.dialog-content-btn input{
+    display: inline-block;
+    width:90px;
+    margin-left: 0;
+    margin:0 8px;
+}

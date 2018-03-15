@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用canvas来实现图片的旋转</title>
+<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+</head>
+
+<body onload="test()">
+<canvas id="result"></canvas>
+<img src="001.jpg" alt="001" id="img" />
+<script language="javascript">
+	function test(){
+		var canvas = document.getElementById('result') ;
+		var oImg = document.getElementById('img') ;
+		canvas.width = 200 ;
+		canvas.height = 300 ;
+		var context = canvas.getContext('2d') ;
+		context.save() ;
+		context.translate(200,0) ; //旋转画布的坐标
+		context.rotate(Math.PI/3) ;
+		context.drawImage(oImg,0,0,300,200) ; 
+		context.restore() ;
+		oImg.style.display = 'none' ; //隐藏原始图片
+	}
+</script>
+</body>
+</html>

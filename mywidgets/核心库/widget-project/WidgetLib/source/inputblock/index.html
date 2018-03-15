@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>inputblock</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" src="inputblock.js"></script>
+<script language="javascript">
+	$(function(){
+		$('.inputblock-input').inputblock({
+			list : ['111','222','333','444','555','666'] ,
+			fnClick : function(){
+				return ['张三','六六']  ;
+			}
+		});
+		$('#btn1').click(function(){
+			$('#testInput').inputblock('setVal',['黄黄','张张','菲菲']) ;
+		}) ;
+		$('#btn2').click(function(){			
+			var elems = $('#testInput').inputblock('getVal') ;
+			var testHtml = '' ;
+			for(var i=0; i<elems.length;i++){
+				testHtml += elems[i] + ',' ;
+			}
+			$('#showElem').html(testHtml) ;
+		}) ;
+		
+	}) ;
+</script>
+</head>
+
+<body>
+	<input type="text" class="inputblock-input"/>
+	<input type="text" class="inputblock-input" id="testInput"/>
+    <input type="button" value="注入人员" id="btn1" />
+    <input type="button" value="获取人员" id="btn2" /><span id="showElem"></span>
+</body>
+</html>

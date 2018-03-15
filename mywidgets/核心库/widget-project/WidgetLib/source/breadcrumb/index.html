@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>面包屑数据导航</title>
+    <meta charset="utf-8"/>
+    <style>
+        * {padding: 0;margin: 0;}
+        body {font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
+        a:link,a:visited{color:#222;text-decoration: none;}
+        a:hover{text-decoration: underline;}
+    </style>
+    <style media="print">/*屏蔽*/
+        .ui-breadcrumb {overflow: hidden;float: left;background-color: white;}
+        .ui-breadcrumb li {display: inline-block;float: left;height: 30px;line-height: 30px;vertical-align: middle;}
+        .ui-breadcrumb li a {color: black;font-weight: normal;display: inline;}
+        .ui-breadcrumb li .arrow{background:url("images/ui-breadcrumb.png") no-repeat right center;display: inline-block;height: 5px;width: 3px;margin: 0 4px 2px;zoom:1;}
+        .ui-breadcrumb li.last-child,.ui-breadcrumb li.last-child>a/*,.ui-breadcrumb li:last-child,.ui-breadcrumb li:last-child>a*/{font-weight: bold;}
+    </style>
+    <link href="breadcrumb.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="breadcrumb">
+       <!-- <ul class="ui-breadcrumb">
+            <li>
+                <a href="#">层级1</a>
+            </li>
+            <li>
+                <span class="arrow"></span>
+                <a href="#">层级1.1</a>
+            </li>
+            <li>
+                <span class="arrow"></span>
+                <a href="#">层级1.1.1</a>
+            </li>
+            <li class="last-child">
+                <span class="arrow"></span>
+                层级1.1.1.1
+            </li>
+        </ul>-->
+    </div>
+<script src="http://code.jquery.com/jquery-1.8.0.js"></script>
+<script src="breadcrumb.js"></script>
+<script>
+var data = [
+    {
+        name:"层级1",
+        url:"#"
+    },
+    {
+        name:"层级1.1",
+        url:"#"
+    },
+    {
+        name:"层级1.1.1",
+        url:"#"
+    },
+    {
+        name:"层级1.1.1.1",
+        url:"#"
+    },
+    {
+        name:"层级1.1.1.1.1",
+        url:"#"
+    }
+];
+//data.length = 2;
+$("#breadcrumb").breadcrumb({bread:data});
+</script>
+</body>
+</html>

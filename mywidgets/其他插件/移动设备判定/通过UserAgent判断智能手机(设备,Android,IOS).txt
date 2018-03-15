@@ -1,0 +1,115 @@
+通过UserAgent判断智能手机(设备,Android,IOS)
+
+最近一直在升级公司的手机站点，出了个触屏版专用的，做好后，就尝试通过 Agent 来判断相应的智能手机设备，然后跳转到新的手机站点
+经过不懈的努力，终于搜集了比较全的 智能设备 的 Agent，然后又写了程序，直接上代码吧，希望能帮助到你
+ 
+
+  　　///<summary>
+    /// 根据 Agent 判断是否是智能手机
+    ///</summary>
+    ///<returns></returns>
+    public static bool CheckAgent()
+    {
+        bool flag = false;
+
+        string agent = HttpContext.Current.Request.UserAgent;
+        string[] keywords = { "Android", "iPhone", "iPod", "iPad", "Windows Phone", "MQQBrowser" };
+
+           //排除 Windows 桌面系统
+            if (!agent.Contains("Windows NT") || (agent.Contains("Windows NT") && agent.Contains("compatible; MSIE 9.0;")))
+            {
+                //排除 苹果桌面系统
+                if (!agent.Contains("Windows NT") && !agent.Contains("Macintosh"))
+                {
+                    foreach (string item in keywords)
+                    {
+                        if (agent.Contains(item))
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
+                }
+            }
+  
+        return flag;
+    }
+
+
+
+代码解释：
+
+1. !agent.Contains("Windows NT") && !agent.Contains("Macintosh") 排除Window 桌面系统 和 苹果桌面系统
+2. "Android", "iPhone", "iPod", "iPad", "Windows Phone", "MQQBrowser" 这些是判断智能设备Agent中的关键词
+3. MQQBrowser 为 QQ 手机浏览器，QQ 手机的Agent 比较特殊，所以单独判断
+ 
+下面搜集的一些Agent，话说找到这么多的智能设备，好不容易啊：
+
+Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_2 like Mac OS X; zh-cn) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
+Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; zh-cn) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
+MQQBrowser/25 (Linux; U; 2.3.3; zh-cn; HTC Desire S Build/GRI40;480*800)
+Mozilla/5.0 (Linux; U; Android 2.3.3; zh-cn; HTC_DesireS_S510e Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+Mozilla/5.0 (SymbianOS/9.3; U; Series60/3.2 NokiaE75-1 /110.48.125 Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (KHTML, like Gecko) Safari/413
+Mozilla/5.0 (iPad; U; CPU OS 4_3_3 like Mac OS X; zh-cn) AppleWebKit/533.17.9 (KHTML, like Gecko) Mobile/8J2
+Mozilla/5.0 (Windows NT 5.2) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.122 Safari/534.30
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22
+Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A5313e Safari/7534.48.3
+Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A5313e Safari/7534.48.3
+Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A5313e Safari/7534.48.3
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1
+Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0; SAMSUNG; OMNIA7)　　　　　　----SAMSUNG MP7
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; XBLWP7; ZuneWP7)  　　　　　　　　----HTC MP7
+
+
+改写为JS
+/**
+ * 验证是否为智能手机
+ */
+ $.checkMobile = function(){
+     var flag = false;  
+    var agent = navigator.userAgent.toLowerCase();  
+    var keywords = [ "android", "iphone", "ipod", "ipad", "windows phone", "mqqbrowser" ];  
+    
+    //排除 Windows 桌面系统  
+    if (!(agent.indexOf("windows nt") > -1) || (agent.indexOf("windows nt") > -1 && agent.indexOf("compatible; msie 9.0;") > -1)) {  
+        //排除苹果桌面系统  
+        if (!(agent.indexOf("windows nt") > -1) && !agent.indexOf("macintosh") > -1 ) {  
+            for (var item in keywords) {  
+                if (agent.indexOf(item) > -1 ) {  
+                    flag = true;  
+                    break;  
+                }  
+            }  
+        }  
+    }  
+    return flag;
+ }
+
+window PC
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0   ---FF
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.162 Safari/53  ---Chrome
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.52.7 (KHTML, like Gecko) Version/4.0.5 Safari/531.22.7  ----safari
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; MDDS; InfoPath.2; Alexa Toolbar)   ----IE
+Opera/9.80 (Windows NT 6.1; WOW64; U; zh-cn) Presto/2.10.229 Version/11.64  ---opera
+
+
+
+navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPad/i)-判断是否是平板
+
+
+谷歌Android：
+chrome.exe --user-agent="Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+
+苹果iPhone：
+chrome.exe --user-agent="Mozilla/5.0 (iPad; U; CPU OS 3_2_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B500 Safari/531.21.10"
+
+诺基亚N97：
+chrome.exe --user-agent="Mozilla/5.0 (SymbianOS/9.4; Series60/5.0 NokiaN97-1/20.0.019; Profile/MIDP-2.1 Configuration/CLDC-1.1) AppleWebKit/525 (KHTML, like Gecko) BrowserNG/7.1.18124"
+
+iphone3gs
+自带的Safari浏览器
+Mozilla/5.0 (iPhone:U;CPU iPhone OS 4_1 like Mac OS X;zh-cn) AppleWebKit/532.9(KHTML,like Gecko)Version/4.0.5 Mobile/8B117 Safari/6531.22.7
+
+QQ浏览器
+MQQBrowser/2801 Mozilla/5.0 (iPhone:U;CPU iPhone OS 4_1 like Mac OS X;zh-cn) AppleWebKit/532.9(KHTML,like Gecko)Version/4.0.5 Mobile/8B117 Safari/6531.22.7

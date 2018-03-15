@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>拖动行测试</title>
+<script language="javascript">
+            var beginMoving=false;
+            function MouseDownToMove(obj){
+                obj.style.zIndex=1;
+                obj.mouseDownY=event.clientY;
+                obj.mouseDownX=event.clientX;
+                beginMoving=true;
+                obj.setCapture();
+            }
+
+            function MouseMoveToMove(obj){
+                if(!beginMoving) return false;
+                obj.style.top = (event.clientY-obj.mouseDownY);
+                obj.style.left = (event.clientX-obj.mouseDownX);
+            }
+            
+            function MouseUpToMove(obj){
+                if(!beginMoving) return false;
+                obj.releaseCapture();
+                obj.style.top=0;
+                obj.style.left=0;
+                obj.style.zIndex=0;
+                beginMoving=false;
+                var tempTop=event.clientY-obj.mouseDownY;
+                var tempRowIndex=(tempTop-tempTop%25)/25;
+                if(tempRowIndex+obj.rowIndex <0 )tempRowIndex=-1;
+                else tempRowIndex=tempRowIndex+obj.rowIndex;
+                if(tempRowIndex >= obj.parentElement.rows.length-1) tempRowIndex = obj.parentElement.rows.length-1;
+                obj.parentElement.moveRow(obj.rowIndex,tempRowIndex);
+           }
+        </script>
+</head>
+<body>
+<table id="filelistTab" cellspacing="0" cellpadding="2" border=1>
+<tr>
+    <td class="gridtitle" style="WIDTH: 40px">列一</td>
+    <td class="gridtitle" style="WIDTH: 100px">列二</td>
+    <td class="gridtitle" style="WIDTH: 110px">列三</td>
+</tr>
+<tr id="1" title="拖动行可以进行排序" style="cursor:move ;position:relative;" onmousedown='MouseDownToMove(this)' onmousemove='MouseMoveToMove(this)' onmouseup='MouseUpToMove(this);'>
+    <td class="gridtitle"><input class="text" id="group1" style="WIDTH: 30px" type="text" readonly value="1" /></td>
+    <td class="gridtitle"> 11111111111111111111 </td>
+    <td class="gridtitle"><input class="text" id="fn1" readOnly type="text" style="width:100px" value="11111111111111111111" /></td>
+</tr>
+<tr id="2" title="拖动行可以进行排序" style="cursor:move ;position:relative;" onmousedown='MouseDownToMove(this)' onmousemove='MouseMoveToMove(this)' onmouseup='MouseUpToMove(this);'>
+    <td class="gridtitle"><input class="text" id="group2" style="WIDTH: 30px" type="text" readonly value="2" /></td>
+    <td class="gridtitle"> 222222222222222222222 </td>
+    <td class="gridtitle"><input class="text" id="fn2" readOnly type="text" style="width:100px" value="22222222222222222222222" /></td>
+</tr>
+<tr id="3" title="拖动行可以进行排序" style="cursor:move ;position:relative;" onmousedown='MouseDownToMove(this)' onmousemove='MouseMoveToMove(this)' onmouseup='MouseUpToMove(this);'>
+    <td class="gridtitle"><input class="text" id="group3" style="WIDTH: 30px" type="text" readonly value="3" /></td>
+    <td class="gridtitle"> 3333333333333333333333 </td>
+    <td class="gridtitle"><input class="text" id="fn3" readOnly type="text" style="width:100px" value="333333333333333" /></td>
+</tr>
+<tr id="4" title="拖动行可以进行排序" style="cursor:move ;position:relative;" onmousedown='MouseDownToMove(this)' onmousemove='MouseMoveToMove(this)' onmouseup='MouseUpToMove(this);'>
+    <td class="gridtitle"><input class="text" id="group4" style="WIDTH: 30px" type="text" readonly value="4" /></td>
+    <td class="gridtitle"> 444444444444444444444 </td>
+    <td class="gridtitle"><input class="text" id="fn4" readOnly type="text" style="width:100px" value="4444444444444444444444444444" /></td>
+</tr>
+<tr id="5" title="拖动行可以进行排序" style="cursor:move ;position:relative;" onmousedown='MouseDownToMove(this)' onmousemove='MouseMoveToMove(this)' onmouseup='MouseUpToMove(this);'>
+    <td class="gridtitle"><input class="text" id="group5" style="WIDTH: 30px" type="text" readonly value="5" /></td>
+    <td class="gridtitle"> 55555555555555555555555 </td>
+    <td class="gridtitle"><input class="text" id="fn5" readOnly type="text" style="width:100px" value="555555555555555555555" /></td>
+</tr>
+<tr id="6" title="拖动行可以进行排序" style="cursor:move ;position:relative;" onmousedown='MouseDownToMove(this)' onmousemove='MouseMoveToMove(this)' onmouseup='MouseUpToMove(this);'>
+    <td class="gridtitle"><input class="text" id="group6" style="WIDTH: 30px" type="text" readonly value="6" /></td>
+    <td class="gridtitle"> 6666666666666666666666666 </td>
+    <td class="gridtitle"><input class="text" id="fn6" readOnly type="text" style="width:100px" value="666666666666666666666" /></td>
+</tr>
+</table>
+</body>
+</html>

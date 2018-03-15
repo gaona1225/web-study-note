@@ -1,0 +1,56 @@
+/**
+ *scrollBar
+ */
+.ui-scrollBarDiv{
+	-moz-user-select:none ;
+	-khtml-user-select:none ;
+	background:#CCC ;
+	background:-webkit-gradient(linear, 0 0, left bottom, from(rgb(232, 234, 237)), to(rgb(191, 195, 203)));
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#E8EAED', endColorstr='#BFC3CB');
+	background:-moz-linear-gradient(top, rgb(232, 234, 237), rgb(191, 195, 203));
+	background:-webkit-gradient(linear, 0 0, left bottom, from(rgb(232, 234, 237)), to(rgb(191, 195, 203)));
+	cursor:pointer ;
+	display:block ;
+	float:left ;
+	margin-left:20px ;
+	margin-top:20px ;
+	overflow:hidden ;
+	position:relative ;
+}
+.ui-scrollBar{
+	display:block ;
+	list-style:none ;
+	width:200px ;
+}
+.ui-scrollBar li{
+	border-bottom:1px solid #CCC ;
+	border-top: 1px solid rgba(255, 255, 255, 0.4);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+	display:block ;
+	height:42px ;
+	line-height:42px ;
+	padding:0 10px 0 30px ;
+}
+.ui-scrollBarDiv .ui-scroll{
+	height:100% ;
+	position:absolute ;
+	right:0px ;
+	top:0px ;
+	width:7px ;
+	z-index:10 ;
+}
+.ui-scrollBarDiv .ui-scroll .ui-scrollSlide{
+	background:#999 ;
+	-webkit-background:rgba(0,0,0,0.5) ;
+	-moz-background:rgba(0,0,0,0.5) ;
+	border:1px solid #fff ;
+	-webkit-border:1px solid rgb(255,255,255,0.8) ;
+	-moz-border:1px solid rgb(255,255,255,0.8) ;
+	-webkit-border-radius:3px ;
+	-moz-border-radius:3px ;
+	border-radius:3px ;
+	position:absolute ;
+	top:0px ;
+	width:5px ;
+	z-index:100 ;
+}

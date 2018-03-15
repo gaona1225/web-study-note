@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html style="height:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>testwidgets</title>
+<script language="javascript" type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="testwidgets.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		//$('.testDiv').data('testData','qqq') ;
+		//alert($('.testDiv').data('testData')) ;
+		$('.testDiv').hilight({
+			//foreground:'red' 
+		}) ;
+		$('.hilight').hilight({
+			//foreground:'red' 
+		}) ;
+	}) ;
+</script>
+
+</head>
+
+<body>
+<div class="testDiv">testDiv</div>
+<div class="testDiv">testDiv</div>
+<div class="hilight{background:'red',foreground:'white'}">Have a nice day!</div>
+<div class="hilight{foreground:'orange'}">Have a nice day!</div>
+
+<div class="hilight{background:'green'}">Have a nice day!</div>
+
+</body>
+</html>

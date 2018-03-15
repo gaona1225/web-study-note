@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>metro</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<link rel="stylesheet" href="metro.css" />
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="jqueryeffect/jquery.effects.blind.js"></script>
+<script src="jqueryeffect/jquery.effects.bounce.js"></script>
+<script src="jqueryeffect/jquery.effects.clip.js"></script>
+<script src="jqueryeffect/jquery.effects.core.js"></script>
+<script src="jqueryeffect/jquery.effects.drop.js"></script>
+<script src="jqueryeffect/jquery.effects.explode.js"></script>
+<script src="jqueryeffect/jquery.effects.fade.js"></script>
+<script src="jqueryeffect/jquery.effects.fold.js"></script>
+<script src="jqueryeffect/jquery.effects.highlight.js"></script>
+<script src="jqueryeffect/jquery.effects.pulsate.js"></script>
+<script src="jqueryeffect/jquery.effects.scale.js"></script>
+<script src="jqueryeffect/jquery.effects.shake.js"></script>
+<script src="jqueryeffect/jquery.effects.slide.js"></script>
+<script src="jqueryeffect/jquery.effects.transfer.js"></script>
+<script src="jquery.quickflip.source.js"></script>
+<script language="javascript" src="metro.js"></script>
+</head>
+
+<body>
+<div class="metro-wrap">
+    <h3>向左翻转</h3>
+    <div class="flip-left-wrap flip-wrap">
+        <div class="flip-left-front flip-elem"><a href="http://www.google.com.cn" target="_blank" class="flip-a">This is front-google</a></div>
+        <div class="flip-left-black flip-elem"><a href="http://www.baidu.com" target="_blank" class="flip-a">This is black-baidu</a></div>
+    </div>
+</div>
+<div class="metro-wrap">
+    <h3>向右翻转</h3>
+    <div class="flip-right-wrap flip-wrap">
+        <div class="flip-right-front flip-elem"><a href="http://www.google.com.cn" target="_blank" class="flip-a">This is front-google</a></div>
+        <div class="flip-right-black flip-elem"><a href="http://www.baidu.com" target="_blank" class="flip-a">This is black-baidu</a></div>
+    </div>
+</div>
+<div class="metro-wrap">
+    <h3>向上翻转</h3>
+    <div class="flip-top-wrap flip-wrap">
+        <div class="flip-top-front flip-elem"><a href="http://www.google.com.cn" target="_blank" class="flip-a">This is front-google</a></div>
+        <div class="flip-top-black flip-elem"><a href="http://www.baidu.com" target="_blank" class="flip-a">This is black-baidu</a></div>
+    </div>
+</div>
+<div class="metro-wrap">
+    <h3>向下翻转</h3>
+    <div class="flip-bottom-wrap flip-wrap">
+        <div class="flip-bottom-front flip-elem"><a href="http://www.google.com.cn" target="_blank" class="flip-a">This is front-google</a></div>
+        <div class="flip-bottom-black flip-elem"><a href="http://www.baidu.com" target="_blank" class="flip-a">This is black-baidu</a></div>
+    </div>
+</div>
+<br/>
+<div class="metro-wrap-slide">
+    <div class="slide-x-wrap slide-wrap">
+        <div class="slide-x-first slide-elem">
+        	<a href="#" data-goto="0" class="goto-a current">First</a><a href="#" data-goto="2" class="goto-a">Second</a><a href="#" data-goto="3" class="goto-a">Third</a>
+        	<a href="http://www.google.com.cn" target="_blank" class="slide-a">This is front-google-x方向滑动</a>
+        </div>
+        <div class="slide-x-second slide-elem">
+        	<a href="#" data-goto="1" class="goto-a">First</a><a href="#" data-goto="0" class="goto-a current">Second</a><a href="#" data-goto="3" class="goto-a">Third</a>
+        	<a href="http://www.baidu.com" target="_blank" class="slide-a">This is black-baidu-x方向滑动</a>
+        </div>
+        <div class="slide-x-third slide-elem">
+        	<a href="#" data-goto="1" class="goto-a">First</a><a href="#" data-goto="2" class="goto-a">Second</a><a href="#" data-goto="0" class="goto-a current">Third</a>
+        	<a href="http://www.baidu.com" target="_blank" class="slide-a">This is black-baidu-x方向滑动</a>
+        </div>
+    </div>
+</div>
+<div class="metro-wrap-slide">
+    <div class="slide-y-wrap slide-wrap">
+        <div class="slide-y-first slide-elem">
+        	<a href="#" data-goto="0" class="goto-a current">First</a><a href="#" data-goto="2" class="goto-a">Second</a><a href="#" data-goto="3" class="goto-a">Third</a>
+        	<a href="http://www.google.com.cn" target="_blank" class="slide-a">This is front-google-y方向滑动</a>
+        </div>
+        <div class="slide-y-second slide-elem">
+        	<a href="#" data-goto="1" class="goto-a">First</a><a href="#" data-goto="0" class="goto-a current">Second</a><a href="#" data-goto="3" class="goto-a">Third</a>
+        	<a href="http://www.baidu.com" target="_blank" class="slide-a">This is black-baidu-y方向滑动</a>
+        </div>
+        <div class="slide-y-third slide-elem">
+        	<a href="#" data-goto="1" class="goto-a">First</a><a href="#" data-goto="2" class="goto-a">Second</a><a href="#" data-goto="0" class="goto-a current">Third</a>
+        	<a href="http://www.baidu.com" target="_blank" class="slide-a">This is black-baidu-y方向滑动</a>
+        </div>
+    </div>
+</div>
+<div class="metro-wrap-slide">
+    <div class="slideAuto-x-wrap slideAuto-wrap">
+        <div class="slideAuto-x-first slideAuto-elem">
+        	<a href="http://www.google.com.cn" target="_blank">This is front-111-x方向auto滑动</a>
+        </div>
+        <div class="slideAuto-x-second slideAuto-elem">
+        	<a href="http://www.baidu.com" target="_blank">This is black-222-x方向auto滑动</a>
+        </div>
+        <div class="slideAuto-x-third slideAuto-elem">
+        	<a href="http://www.baidu.com" target="_blank">This is black-333-x方向auto滑动</a>
+        </div>
+    </div>
+</div>
+<div class="metro-wrap-slide">
+    <div class="slideAuto-y-wrap slideAuto-wrap">
+        <div class="slideAuto-y-first slideAuto-elem">
+        	<a href="http://www.google.com.cn" target="_blank">This is front-111-y方向auto滑动</a>
+        </div>
+        <div class="slideAuto-y-second slideAuto-elem">
+        	<a href="http://www.baidu.com" target="_blank">This is black-222-y方向auto滑动</a>
+        </div>
+        <div class="slideAuto-y-third slideAuto-elem">
+        	<a href="http://www.baidu.com" target="_blank">This is black-333-y方向auto滑动</a>
+        </div>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectblind" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">blind</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectbounce" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">bounce</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectclip" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">clip</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectcore" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">core</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectdrop" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">drop</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectexplode" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">explode</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectfade" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">fade</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectfold" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">fold</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effecthighlight" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">highlight</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectpulsate" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">pulsate</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectscale" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">scale</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectshake" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">shake</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effectslide" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">slide</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+<div class="metro-wrap-effect">
+	<div id="effecttransfer" class="ui-widget-content ui-corner-all jquery-effect">
+    	<h2 class="ui-widget-header ui-corner-all">transfer</h2>
+        <p>Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.</p>
+    </div>
+</div>
+</body>
+</html>

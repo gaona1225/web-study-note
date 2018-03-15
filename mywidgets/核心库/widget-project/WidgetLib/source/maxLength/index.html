@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>maxlength</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css"/>
+<script type="text/javascript" src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript"  src="../inputText/inputText.js"></script>
+<script type="text/javascript"  src="../inputTextarea/inputTextarea.js"></script>
+<script type="text/javascript" src="maxLength.js"></script>
+<style type="text/css">
+.noClass{border:1px solid red};
+</style>
+<script type="text/javascript">
+$(function(){
+    $('#input_1').maxLength({ maxCharacters:5});
+    $('#textarea_2').maxLength({
+        maxCharacters:15,
+        intercept:true,
+        status:true,
+        statusClass:"aaa",
+        statusText:"不要输入超过了以下字数：",
+        notificationClass:"noClass",
+        showAlert:true,
+        alertText:'少写点字！',
+        slider:true,
+        events : ['keyup']
+    });
+   $('#div_3').maxLength({ maxCharacters:5});
+   $('#span_4').maxLength({ maxCharacters:5});
+});
+</script>
+
+</head>
+<body>
+<div style="padding:20px;">
+    <div>
+        <h2>1、input</h2>
+        <input type="text" name="input_1" id="input_1" value="123"/>
+    </div>
+    <div>
+        <h2>2、Textarea</h2>
+		<textarea cols="50" rows="5" name="textarea_2" id="textarea_2"></textarea>
+    </div>
+    <div>
+        <h2>3、div</h2>
+        <div  name="div_3" id="div_3" contentEditable="true" style="height:50px;width:200px;border:1px solid #ccc">div</div>
+    </div>
+    <div>
+        <h2>4、span</h2>
+        <span  name="span_4" id="span_4" contentEditable="true" style="display:block;height:50px;width:200px;border:1px solid #ccc">span</span>
+    </div>
+</div>
+</body>
+</body>
+</html>

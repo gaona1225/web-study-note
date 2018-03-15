@@ -1,0 +1,36 @@
+.bildhover {
+	width: 100px; height: 50px; background-image: url("content/blog/meinbild.jpg"); background-repeat: no-repeat;
+}
+.bildhover2 {
+	width: 100px; height: 50px; background-image: url("content/blog/meinbild.jpg"); background-repeat: no-repeat;
+}
+.bildhover2:hover {
+	background-image: url("content/blog/meinbild2.jpg");
+}
+.formular input {
+	border: 1px solid black; width: 350px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);
+}
+.formular textarea {
+	border: 1px solid black; width: 350px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);
+}
+.formular input[type='submit'] {
+	width: 200px;
+}
+.formular input:hover {
+	border: 1px solid red;
+}
+.formular input:focus {
+	border: 1px solid red;
+}
+.formular textarea:hover {
+	border: 1px solid red;
+}
+.formular textarea:focus {
+	border: 1px solid red;
+}
+.formular label:hover {
+	color: red;
+}
+.formular label {
+	color: black;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>实时搜索</title>
+<meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="rtSearch.js"></script>
+<script type="text/javascript">
+$(function(){
+	var $rsSearch = $(".rtSearch");
+	$rsSearch.rtSearch({
+		searchHandler:function(){
+			//rtSearchDemo($.trim($rsSearch.val()));
+		},
+		search_mode : 1 ,
+		width:"300px"
+	});
+	$('#clearWid').click(function(){
+		$('#testClear').rtSearch('destory') ;
+	}) ;
+});
+	/*使用示例(页面内容实时搜索)-自定义搜索响应函数
+	这个响应示例函数只适用于搜索容器中不含html标签的情况
+	*/
+	function rtSearchDemo(keyword){
+		var $searchCon = $('#searchCon>p');
+		/*清空*/
+		$searchCon.find('span[class^="highlight"]').each(function(index){
+			$(this).replaceWith($(this).text());
+		});
+		/*匹配高亮*/
+		if(keyword != null && keyword != ''){
+		   var _regexp = new RegExp('('+keyword+')','g');
+		   var _text = $searchCon.text();
+		   if(_regexp.test(_text)){
+			   $searchCon.html(_text.replace(_regexp,'<span class="highlight">$1</span>'));
+		   }
+		}
+	};
+</script>
+</head>
+<body style="padding:30px;">
+<input type="text" class="rtSearch"/><br/>
+<input type="text" class="rtSearch" id="testClear"/>
+<!-- 测试用-->
+<div id="searchCon" style="margin:60px;">
+	<p>搜索第一个我们的搜索方式简洁实时高级搜索我们的第二个哈哈的呀我们第三个我们的第四个</p>
+</div>
+<input type="button" class="buttonActive" value="清除插件效果" id="clearWid"/>
+</body>
+</html>

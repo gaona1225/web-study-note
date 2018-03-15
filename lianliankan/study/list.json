@@ -1,0 +1,29 @@
+var data = [
+	{
+		'background':[{
+			'backId' : 'back0' ,
+			'backGround' : 'bg0.jpg'
+		}],
+		'elemImgs' : [{
+			'elemStyle' : [(60,60),(72,72),(80,80),(96,96)] ,
+			'elemLists' : [{
+				'elemId' : 'elem0' ,
+				'elemSrc' : 'sb001.ico' ,
+				'elemPos' : [1,1] // 放于第1，1个位置
+			},{
+				'elemId' : 'elem1' ,
+				'elemSrc' : 'sb002.ico' ,
+				'elemPos' : [1,1] // 放于第1，1个位置
+			},{
+				'elemId' : 'elem2' ,
+				'elemSrc' : 'sb001.ico' ,
+				'elemPos' : [1,1] // 放于第1，1个位置
+			},{
+				'elemId' : 'elem3' ,
+				'elemSrc' : 'sb002.ico' ,
+				'elemPos' : [1,1] // 放于第1，1个位置
+			}]
+		}]
+	},
+	{}
+]

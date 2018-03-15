@@ -1,0 +1,523 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>HTML5获取地理位置信息</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <script type="text/javascript" src="../WidgetLib/source/touchView/touchView.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.touchView.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>触控操作的多视图切换组件</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>触控操作的多视图切换组件1.3+<br/>
+                开始操作、操作结束、视图序列等事件集合，视图尺寸，被动视图切换，被动切换事件
+                需要支持transition, transform, touch等
+              </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jquery-1.5.2+, jquery.ui.core, jquery.ui.widget</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> $jqObj.touchView(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时可配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">enabled：</label>
+              （布尔型）启用标识 默认值true</p>
+            <p>
+              <label class="help-item">autoInit：</label>
+              （布尔型）是否自动初始化标识 true为真</p>
+            <p>
+              <label class="help-item">autoSize：</label>
+              （布尔值）是否自动设置尺寸标识 true为真</p>
+            <p>
+              <label class="help-item">bounce：</label>
+              （布尔值）非loop下在首尾端滑动时反弹 true为真</p>
+            <p>
+              <label class="help-item">varyHeight：</label>
+              （布尔值）是否根据滑片高度调整容器高 true为真 默认值false</p>
+            <p>
+              <label class="help-item">loop：</label>
+              （布尔值）是否根据滑片高度调整容器高 true为真</p>
+            <p>
+              <label class="help-item">wrapperW：</label>
+              （数字）滑动容器、滑片宽</p>
+            <p>
+              <label class="help-item">sliderW：</label>
+              （数字）计算maxScrollX最大可滑动距离用</p>
+            <p>
+              <label class="help-item">threshold：</label>
+              （数字）滑动灵敏度控制 阀值 正数 默认值 50</p>
+            <p></p>
+            <p>
+              <label class="help-item">onBeforeSlideStart：</label>
+              （函数）滑动前回调方法 默认 function (e) { e.preventDefault(); }</p>
+            <p></p>
+            <p>
+              <label class="help-item">onSlideStart：</label>
+              （函数）滑动开始时回调方法</p>
+            <p></p>
+            <p>
+              <label class="help-item">onBeforeSlideMove：</label>
+              （函数）滑动时回调方法</p>
+            <p></p>
+            <p>
+              <label class="help-item">onSliding：</label>
+              （函数）滑动时回调方法</p>
+            <p></p>
+            <p>
+              <label class="help-item">onTouchEnd：</label>
+              （函数）滑动时回调方法 滑动完毕 translateX更新完毕后执行的回调方法</p>
+            <p></p>
+            <p>
+              <label class="help-item">onInit：</label>
+              （函数）初始化额外操作</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+          	<p>
+              <label class="help-item">slideToPage(index, time, isTriggerEnd)：<br/></label>
+              （方法）滑动到特定页<br/>
+              （参数）数字 index 目标页游标<br/>
+              （参数）数字 time 延迟秒数 设置显示容器的高<br/>
+              （参数）布尔型 isTriggerEnd 是否触发onTouchEnd事件 true为真
+            </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              导航和内容</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<div class="touch_view" id="slide1">
+                <div class="nav">
+                    <ul>
+                        <li data-nid="nid1" data-nurl="ajaxData.json" data-page="0" data-loaded="false">
+                            <div>
+                                <span>标题1</span>
+                                <div class="nav_hint"></div>
+                            </div>
+                        </li>
+                        <li data-nid="nid2" data-nurl="ajaxData.json" data-page="1" data-loaded="false">
+                            <div>
+                                <span>标题2</span>
+                                <div class="nav_hint"></div>
+                            </div>
+                        </li>
+                        <li data-nid="nid3" data-nurl="ajaxData.json" data-page="2" data-loaded="false">
+                            <div>
+                                <span>标题3</span>
+                                <div class="nav_hint"></div>
+                            </div>
+                        </li>
+                        <li data-nid="nid4" data-nurl="ajaxData.json" data-page="3" data-loaded="false">
+                            <div>
+                                <span>标题4</span>
+                                <div class="nav_hint"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix content" style="padding:0;margin:0;">
+                    <ul>
+                        <li>
+                            <div class="page" data-page="0">视图1</div>
+                        </li>
+                        <li>
+                            <div class="page" data-page="1">视图2</div>
+                        </li>
+                        <li>
+                            <div class="page" data-page="2">视图3</div>
+                        </li>
+                        <li>
+                            <div class="page" data-page="3">视图4</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="touch_view" id="slide2">
+                <div class="nav">
+                    <ul>
+                        <li data-nid="nid1" data-nurl="ajaxData.json" data-page="0" data-loaded="false">
+                            <div>
+                                <span>标题1</span>
+                                <div class="nav_hint"></div>
+                            </div>
+                        </li>
+                        <li data-nid="nid2" data-nurl="ajaxData.json" data-page="1" data-loaded="false">
+                            <div>
+                                <span>标题2</span>
+                                <div class="nav_hint"></div>
+                            </div>
+                        </li>
+                        <li data-nid="nid3" data-nurl="ajaxData.json" data-page="2" data-loaded="false">
+                            <div>
+                                <span>标题3</span>
+                                <div class="nav_hint"></div>
+                            </div>
+                        </li>
+                        <li data-nid="nid4" data-nurl="ajaxData.json" data-page="3" data-loaded="false">
+                            <div>
+                                <span>标题4</span>
+                                <div class="nav_hint"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix content" style="padding:0;margin:0;">
+                    <ul>
+                        <li>
+                            <div class="page" data-page="0">视图1</div>
+                        </li>
+                        <li>
+                            <div class="page" data-page="1">视图2</div>
+                        </li>
+                        <li>
+                            <div class="page" data-page="2">视图3</div>
+                        </li>
+                        <li>
+                            <div class="page" data-page="3">视图4</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <style type="text/css">
+              ul, li{list-style:none;}
+              .clearfix {clear:both;}
+              .touch_view {}
+              .touch_view .nav {overflow:hidden;background-color:rgb(243, 243, 243);color:rgb(81, 81, 81);font-weight:bold;}
+              /*.touch_view .nav:after {content:'',display:block;clear:both;}*/
+              .touch_view .nav ul {}
+              .touch_view .nav ul li {float:left;width:25%;height:40px;line-height:40px;text-align:center;}
+              .touch_view .nav ul li>div {display:inline-block;position:relative;}
+              .touch_view .nav ul li>div>span {}
+              .touch_view .nav ul li>div>div.nav_hint {position:absolute;bottom:1px;height:2px;width:100%;}
+              .touch_view .nav ul li.current {color:rgb(186, 38, 54);}
+              .touch_view .nav ul li.current>div>div.nav_hint {background-color:rgb(186, 38, 54);}
+
+              .touch_view .content {overflow:hidden;padding:0;margin:0;}
+              .touch_view .content ul {}
+              .touch_view .content ul li {float:left;height:220px;}
+              .touch_view .content ul li:nth-child(2n) {background-color:red;}
+              .touch_view .content ul li:nth-child(2n+1) {background-color:green;}
+          </style>
+            <script type="text/javascript">
+                (function () {
+                    // jquery ui each?
+                    $('div.touch_view>div.content').touchView({
+                        wrapperW: 600,
+                        // 更新导航标识
+                        // 需要时加载数据
+                        onTouchEnd: function (e, currentPage, prePage) {
+                            if (currentPage === prePage) return;
+                            var slideContext = this,
+                                navHolder = slideContext.navHolder,
+                                prevLi = navHolder.children[prePage],
+                                currentLi = navHolder.children[currentPage];
+                            prevLi.className = '';
+                            currentLi.className = 'current';
+                            _dataload(currentLi, slideContext);   
+                        },
+                        onInit: function () {
+                            //var $firstLi = $(this.navHolder).find('>li:first');
+                            var slideContext = this;
+                            var navHolder = this.navHolder;
+                            var li = navHolder.firstElementChild;
+                            li.className = 'current';
+                            _dataload(li, slideContext);
+                            // 初始化navHolder的点击事件
+                            $(navHolder).delegate('li', 'click', function (e) {
+                                // 方式1
+                                // var $li = $(e.target).parents('li');
+                                // if ($li.is('.current')) return;
+                                // $li.attr('class', 'current').siblings('.current').removeAttr('class');
+                                // _dataload($li[0], slideContext);
+                                // slideContext.slideToPage($li.attr('data-page'), 0.5);
+                                // 方式2
+                                var target = e.target;
+                                while (target.nodeType === 3 || target.nodeName !== 'LI') target = target.parentNode;
+                                if (target.className === 'current') return;
+                                var _page = target.getAttribute('data-page');
+                                slideContext.navHolder.children[slideContext.currentPage].className = '';
+                                target.className = 'current';
+                                _dataload(target, slideContext);
+                                slideContext.slideToPage(_page, 0.5); 
+                            });
+                        }
+                    });
+                    // 工具:加载数据
+                    function _dataload(liElem, context) {
+                        // 如果未部署到服务器中 则不进行ajax处理  测试用
+                        if (!/^http(s)?:\/\//.test(location.href)) return;
+                        var $li = $(liElem);
+                        var _loadedFlag = $li.attr('data-loaded') === 'true';
+                        var _nid = $li.attr('data-nid');
+                        var _nurl = $li.attr('data-nurl');
+                        var _html = null;
+                        if (!_loadedFlag) {
+                            $.getJSON(_nurl, function (data) {
+                                $li.attr('data-loaded', 'true');
+                                _html = data[_nid];
+                                $(context.wrapper).find('div[data-page="'+$li.attr('data-page')+'"]').html(_html);
+                            });
+                        }
+                    }
+                })();
+            </script>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+&lt;div class="touch_view" id="slide1">
+  &lt;div class="nav">
+      &lt;ul>
+          &lt;li data-nid="nid1" data-nurl="ajaxData.json" data-page="0" data-loaded="false">
+              &lt;div>
+                  &lt;span>标题1&lt;/span>
+                  &lt;div class="nav_hint">&lt;/div>
+              &lt;/div>
+          &lt;/li>
+          &lt;li data-nid="nid2" data-nurl="ajaxData.json" data-page="1" data-loaded="false">
+              &lt;div>
+                  &lt;span>标题2&lt;/span>
+                  &lt;div class="nav_hint">&lt;/div>
+              &lt;/div>
+          &lt;/li>
+          &lt;li data-nid="nid3" data-nurl="ajaxData.json" data-page="2" data-loaded="false">
+              &lt;div>
+                  &lt;span>标题3&lt;/span>
+                  &lt;div class="nav_hint">&lt;/div>
+              &lt;/div>
+          &lt;/li>
+          &lt;li data-nid="nid4" data-nurl="ajaxData.json" data-page="3" data-loaded="false">
+              &lt;div>
+                  &lt;span>标题4&lt;/span>
+                  &lt;div class="nav_hint">&lt;/div>
+              &lt;/div>
+          &lt;/li>
+      &lt;/ul>
+  &lt;/div>
+  &lt;div class="clearfix content" style="padding:0;margin:0;">
+      &lt;ul>
+          &lt;li>
+              &lt;div class="page" data-page="0">视图1&lt;/div>
+          &lt;/li>
+          &lt;li>
+              &lt;div class="page" data-page="1">视图2&lt;/div>
+          &lt;/li>
+          &lt;li>
+              &lt;div class="page" data-page="2">视图3&lt;/div>
+          &lt;/li>
+          &lt;li>
+              &lt;div class="page" data-page="3">视图4&lt;/div>
+          &lt;/li>
+      &lt;/ul>
+  &lt;/div>
+&lt;/div>
+&lt;div class="touch_view" id="slide2">
+    &lt;div class="nav">
+        &lt;ul>
+            &lt;li data-nid="nid1" data-nurl="ajaxData.json" data-page="0" data-loaded="false">
+                &lt;div>
+                    &lt;span>标题1&lt;/span>
+                    &lt;div class="nav_hint">&lt;/div>
+                &lt;/div>
+            &lt;/li>
+            &lt;li data-nid="nid2" data-nurl="ajaxData.json" data-page="1" data-loaded="false">
+                &lt;div>
+                    &lt;span>标题2&lt;/span>
+                    &lt;div class="nav_hint">&lt;/div>
+                &lt;/div>
+            &lt;/li>
+            &lt;li data-nid="nid3" data-nurl="ajaxData.json" data-page="2" data-loaded="false">
+                &lt;div>
+                    &lt;span>标题3&lt;/span>
+                    &lt;div class="nav_hint">&lt;/div>
+                &lt;/div>
+            &lt;/li>
+            &lt;li data-nid="nid4" data-nurl="ajaxData.json" data-page="3" data-loaded="false">
+                &lt;div>
+                    &lt;span>标题4&lt;/span>
+                    &lt;div class="nav_hint">&lt;/div>
+                &lt;/div>
+            &lt;/li>
+        &lt;/ul>
+    &lt;/div>
+    &lt;div class="clearfix content" style="padding:0;margin:0;">
+        &lt;ul>
+            &lt;li>
+                &lt;div class="page" data-page="0">视图1&lt;/div>
+            &lt;/li>
+            &lt;li>
+                &lt;div class="page" data-page="1">视图2&lt;/div>
+            &lt;/li>
+            &lt;li>
+                &lt;div class="page" data-page="2">视图3&lt;/div>
+            &lt;/li>
+            &lt;li>
+                &lt;div class="page" data-page="3">视图4&lt;/div>
+            &lt;/li>
+        &lt;/ul>
+    &lt;/div>
+&lt;/div>
+&lt;style type="text/css">
+  ul, li{list-style:none;}
+  .clearfix {clear:both;}
+  .touch_view {}
+  .touch_view .nav {overflow:hidden;background-color:rgb(243, 243, 243);color:rgb(81, 81, 81);font-weight:bold;}
+  /*.touch_view .nav:after {content:'',display:block;clear:both;}*/
+  .touch_view .nav ul {}
+  .touch_view .nav ul li {float:left;width:25%;height:40px;line-height:40px;text-align:center;}
+  .touch_view .nav ul li>div {display:inline-block;position:relative;}
+  .touch_view .nav ul li>div>span {}
+  .touch_view .nav ul li>div>div.nav_hint {position:absolute;bottom:1px;height:2px;width:100%;}
+  .touch_view .nav ul li.current {color:rgb(186, 38, 54);}
+  .touch_view .nav ul li.current>div>div.nav_hint {background-color:rgb(186, 38, 54);}
+
+  .touch_view .content {overflow:hidden;padding:0;margin:0;}
+  .touch_view .content ul {}
+  .touch_view .content ul li {float:left;height:220px;}
+  .touch_view .content ul li:nth-child(2n) {background-color:red;}
+  .touch_view .content ul li:nth-child(2n+1) {background-color:green;}
+&lt;/style>
+&lt;script type="text/javascript">
+    (function () {
+        // jquery ui each?
+        $('div.touch_view>div.content').touchView({
+            wrapperW: 600,
+            // 更新导航标识
+            // 需要时加载数据
+            onTouchEnd: function (e, currentPage, prePage) {
+                if (currentPage === prePage) return;
+                var slideContext = this,
+                    navHolder = slideContext.navHolder,
+                    prevLi = navHolder.children[prePage],
+                    currentLi = navHolder.children[currentPage];
+                prevLi.className = '';
+                currentLi.className = 'current';
+                _dataload(currentLi, slideContext);   
+            },
+            onInit: function () {
+                //var $firstLi = $(this.navHolder).find('>li:first');
+                var slideContext = this;
+                var navHolder = this.navHolder;
+                var li = navHolder.firstElementChild;
+                li.className = 'current';
+                _dataload(li, slideContext);
+                // 初始化navHolder的点击事件
+                $(navHolder).delegate('li', 'click', function (e) {
+                    // 方式1
+                    // var $li = $(e.target).parents('li');
+                    // if ($li.is('.current')) return;
+                    // $li.attr('class', 'current').siblings('.current').removeAttr('class');
+                    // _dataload($li[0], slideContext);
+                    // slideContext.slideToPage($li.attr('data-page'), 0.5);
+                    // 方式2
+                    var target = e.target;
+                    while (target.nodeType === 3 || target.nodeName !== 'LI') target = target.parentNode;
+                    if (target.className === 'current') return;
+                    var _page = target.getAttribute('data-page');
+                    slideContext.navHolder.children[slideContext.currentPage].className = '';
+                    target.className = 'current';
+                    _dataload(target, slideContext);
+                    slideContext.slideToPage(_page, 0.5); 
+                });
+            }
+        });
+        // 工具:加载数据
+        function _dataload(liElem, context) {
+            // 如果未部署到服务器中 则不进行ajax处理  测试用
+            if (!/^http(s)?:\/\//.test(location.href)) return;
+            var $li = $(liElem);
+            var _loadedFlag = $li.attr('data-loaded') === 'true';
+            var _nid = $li.attr('data-nid');
+            var _nurl = $li.attr('data-nurl');
+            var _html = null;
+            if (!_loadedFlag) {
+                $.getJSON(_nurl, function (data) {
+                    $li.attr('data-loaded', 'true');
+                    _html = data[_nid];
+                    $(context.wrapper).find('div[data-page="'+$li.attr('data-page')+'"]').html(_html);
+                });
+            }
+        }
+    })();
+&lt;/script>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

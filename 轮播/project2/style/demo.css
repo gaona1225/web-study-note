@@ -1,0 +1,84 @@
+.leftBtn{
+	float:left ;
+}
+.leftBtn a{
+	background:url(../image/leftbtnl.png) no-repeat ;
+	display:block ;
+	height:56px ;
+	margin-top:139px ;
+	width:56px ;
+}
+.leftBtn a:link{
+	background:url(../image/leftbtnl.png) no-repeat ;
+}
+.leftBtn a:hover{
+	background:url(../image/leftbtnh.png) no-repeat ;
+}
+/*去除不可点击按钮效果*/
+/*.leftBtn a.disable{
+	background:url(../image/leftbtnd.png) no-repeat ;
+	cursor:default ;
+}*/
+.rightBtn{
+	float:left ;
+}
+.rightBtn a{
+	background:url(../image/rightbtnl.png) no-repeat ;
+	display:block ;
+	height:56px ;
+	margin-top:139px ;
+	width:56px ;
+}
+.rightBtn a:link{
+	background:url(../image/rightbtnl.png) no-repeat ;
+}
+.rightBtn a:hover{
+	background:url(../image/rightbtnh.png) no-repeat ;
+}
+.rightBtn a.disable{
+	background:url(../image/rightbtnd.png) no-repeat ;
+	cursor:default ;
+}
+.main{
+	float:left ;
+	height:334px ;
+	margin-left:20px ;
+	margin-right:20px ;
+	overflow:hidden ;
+	position:relative ;
+	width:686px ;
+}
+.mainWrap{
+	height:334px ;
+}
+.mainElem{
+	color:#000 ;
+	float:left ;
+	height:334px ;
+	width:686px ;
+}
+.buttomBtn{
+	height:3px ;
+	margin-top:22px ;
+	width:220px ;
+}
+.buttomBtn li{
+	float:left ;
+	margin-right:15px ;
+}
+.buttomBtn li a{
+	background:#7cc0ff ;
+	display:block ;
+	height:3px ;
+	padding:0px ;
+	width:54px ;
+}
+.buttomBtn li a:link{
+	background:#7cc0ff ;
+}
+.buttomBtn li a:hover,.buttomBtn li.btnCurrent a:hover{
+	background:#cfa339 ;
+}
+.buttomBtn li.btnCurrent a{
+	background:#034787 ;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>dragupload</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../buttonActive/buttonActive.js"></script>
+<script language="javascript" type="text/javascript" src="dragUpload.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('.draguploadDiv').dragUpload({
+			upload_disable : ['exe','avi'] ,
+			display_form : 1 ,
+			dragEnterDiv : function(){//alert('dragenter') ;
+			}
+		});		
+	}) ;
+</script>
+</head>
+
+<body>
+<div>
+    <p class="draguploadMsg"><input type="button" class="buttonActive clearBtn" value="清空" data-width="standard"/>把您的文件拖到下面的容器内：(文件格式.gif,.jpg,.png)</p>
+    <div class="draguploadDiv"></div>
+    <div class="draguploadDiv"></div>
+</div>
+</body>
+</html>

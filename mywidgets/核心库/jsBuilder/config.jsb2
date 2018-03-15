@@ -1,0 +1,29 @@
+{
+    "projectName" : "WidgetLib",
+    "deployDir" : "uiBase",
+    "licenseText" : "版权所有",
+    "pkgs" : [
+        {
+            "name" : "PackageName",
+            "file" : "ui.js",
+            "isDebug" : true,
+            "fileIncludes" : [
+                {
+                    "text" : "a.js",
+                    "path" : "source/"
+                },
+                {
+                    "text" : "b.js",
+                    "path" : "source/"
+                }
+            ]
+        }
+    ],
+    "resources" : [
+        {
+            "src" : "source/images/",
+            "dest" : "img/",
+            "filters" : "eddy.png"
+        }
+    ]
+}

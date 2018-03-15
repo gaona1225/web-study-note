@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>dilaog</title>
+    <meta charset="utf-8"/>
+    <style>
+        * {padding:0;margin:0;}
+        #follow {
+            background-color: pink;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        /*来自stackoverflow.com*/
+        #tag-menu {
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            border: 1px solid #1c1c1c;
+            border-top: 1px solid #444444;
+            background-color: #333;
+            color: #e3e3e3;
+            text-align: left;
+            padding: 10px;
+            -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), inset 0 1px 0px #727272;
+            -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), inset 0 1px 0px #727272;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), inset 0 1px 0px #727272;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            z-index: 320;
+            position: relative;
+            font-size: 12px;
+            width: 248px;
+        }
+
+        #tag-menu .tm-heading {
+            color: #fff;
+            font-weight: bold;
+            border-bottom: 1px solid #727272;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+
+        #tag-menu .tm-description {
+            line-height: 13px;
+            font-size: 11px;
+            margin-bottom: 8px;
+            word-wrap: break-word;
+        }
+
+        #tag-menu .tm-description p {
+            margin-bottom: 8px;
+        }
+
+        #tag-menu .tm-description a, #tag-menu .tm-description a:visited {
+            color: #b4d4ec;
+        }
+
+        #tag-menu .tm-favorite {
+            color: #fdca5c;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        #tag-menu .tm-favorite-clear {
+            color: #bbbbbb;
+            font-size: 13px;
+            padding-right: 3px;
+            text-decoration: none;
+        }
+
+        #tag-menu .tm-favorite-ignore {
+            color: #ff0000;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        #tag-menu .tm-sub-links a, #tag-menu .tm-sub-links a:visited {
+            font-weight: normal;
+            color: #ff9933;
+            text-decoration: none;
+        }
+
+        #tag-menu .tm-sub-links a:hover {
+            color: #faaf65;
+        }
+
+        #tag-menu .tm-links {
+            color: #727272;
+        }
+
+        #tag-menu .tm-links a, #tag-menu .tm-links a:visited {
+            color: #b4d4ec;
+            font-size: 11px;
+            text-decoration: none;
+            margin-right: 8px;
+        }
+
+        #tag-menu .tm-links a:hover {
+            color: #dcecf7;
+        }
+    </style>
+</head>
+<body>
+    <!--/元素定位方式对获取offset的影响-->
+    <div style="position: absolute;left:300px;top:200px;" id="delegateCon">
+        <span id="follow">跟随内容</span>
+        <div>命名</div>
+    </div>
+
+    <!--stackoverflow tag的悬浮内容-->
+    <div style="overflow: hidden; position: absolute;width:0;height:0;display: block; " id="standby">
+        <div id="tag-menu">
+            <div>
+                <div class="tm-heading"><span class="tm-sub-info">838 followers <span class="tm-sub-links"
+                                                                                      style="float:right;"><a
+                        href="javascript:;" title="add this tag to your rss reader">rss</a></span></span></div>
+                <div class="tm-description">Custom Add-on / Plugins for the jQuery library.
+                    jQuery functions and features not included in the standard jQuery Library.
+                </div>
+            </div>
+        <span class="tm-links"><a href="javascript:;">faq</a> <a
+                href="javascript:;">info</a> <a href="javascript:;">top users</a></span>
+        </div>
+    </div>
+<script src="http://code.jquery.com/jquery-1.8.0.js"></script>
+<script>
+    var $delegateCon = $("#delegateCon");
+    var $standby = $("#standby");
+    $delegateCon.delegate("#follow","click",function(e){
+        var $this = $(this);
+        var _offset = $this.offset();//数值
+        var _w = $this.width();
+        var _h = $this.height();
+
+        var _left = _offset.left;
+        var _top = _offset.top + _h + 2;
+        //width: 278px; height: 118px; top: 331.79998779296875px; left: 475.5px;
+        var _cssOpt = {
+            "left": _left +"px",
+            "top": _top + "px",
+            "display": "block"
+        };
+        var _animateCss = {
+                "width": "278px",
+                "height": "118px"
+        //"display": "block"在动画中不会执行
+        };
+        var _initCss = {
+            "width": 0,
+            "height": 0
+        };
+        $standby.css(_cssOpt).animate(_animateCss,600,function(){
+           setTimeout(function(){
+               $standby.animate(_initCss,500);
+           },3000)
+        });
+    });
+    setInterval(function(){//10秒执行一次
+        $("#follow").trigger("click");
+    },10000)
+</script>
+</body>
+</html>

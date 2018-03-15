@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<title>drag</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/mod/header.css" />
+<link rel="stylesheet" href="css/mod/footer.css" />
+<link rel="stylesheet" href="css/mod/error.css" />
+<link rel="stylesheet" href="css/show/page.css" />
+<link rel="stylesheet" href="css/ui/input.css" />
+<link rel="stylesheet" href="css/ui/button.css" />
+<script language="javascript" src="zepto.js"></script>
+<style type="text/css">
+	.pass-header-fixed{
+		position:fixed;
+		z-index:101;
+	}
+	.mod-content-fixed{
+		padding:44px 10px;
+	}
+	.pass-header-scroll{
+		position:absolute;
+		z-index:101;
+		top:0px;
+	}
+	.footer-scroll{
+		position:absolute;
+		z-index:101;
+		bottom:0px;
+		width:100%;
+		text-align:center;
+	}
+	.mod-content-scroll{
+		position:absolute; 
+		z-index:1;
+		top:45px; 
+		bottom:48px; 
+		width:98%;
+		overflow:auto;
+		padding:0 1%;
+	}
+	.mod-content-scroll .form-wrapper{
+		width:98%;
+		padding:0 1%;
+	}
+</style>
+</head>
+
+<body>
+<div id="pageWrapper">
+  <header class="pass-header"> <a class="pass-header-back" id="goBack"></a> <span class="pass-header-title"> <span class="pass_header_logo">登录百度帐号</span> </span> <a class="pass-header-links" href="/passport/reg?clientfrom=&amp;adapter=&amp;ssid=&amp;from=http://www.baidu.com&amp;bd_page_type=&amp;uid=&amp;pu=&amp;tpl=zd&amp;u=http://m.baidu.com%3Fssid%3Dsfafd%26from%3Dsdfasf&amp;type=&amp;bdcm=&amp;tn=&amp;regist_mode=&amp;login_share_strategy=&amp;subpro=&amp;skin=default_v2&amp;client=&amp;connect=">注册</a> </header>
+  <div class="mod-content" id="wrapper">
+    <form autocomplete="off" method="POST" class="form-wrapper" id="login-formWrapper">
+      <p class="error_area" id="error"></p>
+      <p class="form-item form-input-wrapper form-item-username">
+        <label class="text-label text-label-username" for="login-username" id="login-label-username"></label>
+        <input type="text" name="username" class="text-input" maxlength="60" placeholder="手机号/邮箱/用户名" value="" id="login-username">
+        <span class="input-clearValue"></span> </p>
+      <p class="form-item form-input-wrapper">
+        <label class="text-label text-label-password" for="login-password" id="login-label-password"></label>
+        <input type="password" name="password" class="text-input" id="login-password" placeholder="密码" value="">
+        <span class="input-clearValue"></span> <span id="login-pwdToggle" class="input-aide input-pwdToggle"></span> </p>
+      <p class="form-item" style="display:none;"> <span class="form-input-wrapper">
+        <input type="text" name="verifycode" class="text-input" value="" placeholder="验证码" autocomplete="off" maxlength="6" id="login-verifycode">
+        <span class="input-clearValue"></span> </span> <img class="verifyCode-img" src="http://wappass.spacefe.baidu.com?" width="100" height="40" id="login-verifyCodeImg"> <a class="change-verifyCode" id="login-verifyCodeChange"></a>
+        <input type="hidden" id="login-vcodestr" name="vcodestr" value="">
+      </p>
+      <p class="form-item">
+        <input type="hidden" name="action" value="reg">
+        <input type="hidden" name="u" value="http%3A%2F%2Fm.baidu.com%3Fssid%3Dsfafd%26from%3Dsdfasf">
+        <input type="hidden" name="tpl" value="zd">
+        <input type="hidden" name="tn" value="">
+        <input type="hidden" name="pu" value="">
+        <input type="hidden" name="ssid" value="">
+        <input type="hidden" name="from" value="http://www.baidu.com">
+        <input type="hidden" name="bd_page_type" value="">
+        <input type="hidden" name="uid" value="">
+        <input type="hidden" name="type" value="">
+        <input type="hidden" name="regtype" value="">
+        <input type="hidden" name="subpro" value="">
+        <input type="hidden" name="adapter" value="">
+        <input type="hidden" name="skin" value="default_v2">
+        <input type="hidden" name="regist_mode" value="">
+        <input type="hidden" name="login_share_strategy" value="">
+        <input type="hidden" name="client" value="">
+        <input type="hidden" name="clientfrom" value="">
+        <input type="hidden" name="connect" value="">
+        <input type="hidden" id="login-isphone" name="isphone" value="">
+        <input type="hidden" id="login-loginmerge" name="loginmerge" value="1">
+        <input type="submit" value="登录" id="login-submit" class="pass-button-full pass-button-full-disabled">
+      </p>
+      <p class="clearfix"> <a class="right" href="/passport/getpass?clientfrom=&amp;adapter=&amp;ssid=&amp;from=http://www.baidu.com&amp;bd_page_type=&amp;uid=&amp;pu=&amp;tpl=zd&amp;u=http://m.baidu.com%3Fssid%3Dsfafd%26from%3Dsdfasf&amp;type=&amp;bdcm=&amp;tn=&amp;regist_mode=&amp;login_share_strategy=&amp;subpro=&amp;skin=default_v2&amp;client=&amp;connect=">忘记密码？</a> </p>
+      <div style="width:100%;height:600px;background:#ccc;"></div>
+      <div>1111</div>
+    </form>
+    <!--<p class="clearfix"> <a class="right" href="/passport/getpass?clientfrom=&amp;adapter=&amp;ssid=&amp;from=http://www.baidu.com&amp;bd_page_type=&amp;uid=&amp;pu=&amp;tpl=zd&amp;u=http://m.baidu.com%3Fssid%3Dsfafd%26from%3Dsdfasf&amp;type=&amp;bdcm=&amp;tn=&amp;regist_mode=&amp;login_share_strategy=&amp;subpro=&amp;skin=default_v2&amp;client=&amp;connect=">忘记密码？</a> </p>-->
+    
+  </div>
+  <div class="footer">
+    <div> <a href="">普通版</a> <span>-</span> <a href="http://wap.baidu.com">百度首页</a> </div>
+    <p class="m-t10">©2014 Baidu</p>
+  </div>
+</div>
+<script language="javascript">
+	var isIos = function(){
+		var u = window.navigator.userAgent ;
+		return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) ;
+	}
+	var isSupportFixed = function(){
+	  	var userAgent = window.navigator.userAgent,
+	   		ios = userAgent.match(/(iPad|iPhone|iPod)\s+OS\s([\d_\.]+)/),
+	   		ios5below = ios && ios[2] && (parseInt(ios[2].replace(/_/g, '.'), 10) < 5),
+	   		operaMini = /Opera Mini/i.test(userAgent),
+	   		body = document.body, div, isFixed;
+	  	div = document.createElement('div');
+	  	div.style.cssText = 'display:none;position:fixed;z-index:100;';
+	  	body.appendChild(div);
+	  	isFixed = window.getComputedStyle(div).position != 'fixed';//不支持fixed的会设置成absolute
+	  	body.removeChild(div);
+	  	div = null;
+	  	return !!(isFixed || isIos() || operaMini);  //false表示支持
+	}
+	if(!isSupportFixed()){
+		$('.pass-header').addClass('pass-header-fixed');
+		$('#wrapper').addClass('mod-content-fixed');
+		$('.text-input').focus(function(){
+			$('.pass-header').css({
+				'position':'absolute'
+			});
+		}) ;
+		$('.text-input').blur(function(){
+			$('.pass-header').css({
+				'position':'fixed'
+			});
+		}) ;
+		$(window).scroll(function(){
+			$('.pass-header').css({
+				'position':'fixed',
+				'top':'0px'
+			});
+		});
+	}else if(isIos()){
+		document.write("<script lanague=\"javascript\" src=\"iscroll.js\"><\/scri"+"pt>") ;
+		var myScroll;
+		function loaded(){
+			$('.pass-header').addClass('pass-header-scroll');
+			$('.footer').addClass('footer-scroll');
+			$('#wrapper').addClass('mod-content-scroll');
+			myScroll = new iScroll('wrapper', {
+				useTransform: false,
+				onBeforeScrollStart: function (e) {
+					var target = e.target;
+					while (target.nodeType != 1) target = target.parentNode;
+		
+					if (target.tagName != 'SELECT' && target.tagName != 'INPUT' && target.tagName != 'TEXTAREA')
+						e.preventDefault();
+				}
+			});
+		}
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+		document.addEventListener('DOMContentLoaded', loaded, false);
+	}
+</script>
+</body>
+</html>

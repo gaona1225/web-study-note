@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<!--<html style="height:100%;" debug="true">-->
+<html style="height:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>touchdrag</title>
+<script language="javascript" type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
+<script language="javascript" type="text/javascript" src="touchdrag.js"></script>
+<style type="text/css">
+	body{
+		-webkit-text-size-adjust:none;
+	}
+	.ulList{
+		background:#CCC ;
+		height:300px ;
+		padding:10px ;
+	}
+	.ulList li{
+		border:1px solid #fff ;
+		height:30px ;
+		list-style:none ;
+		line-height:30px ;
+		margin:10px ;
+		position:relative ;
+		text-align:center ;
+		width:120px ;
+	}
+</style>
+<script language="javascript" type="text/javascript">
+$(function(){
+	var ulL = $('.ulList')[0] ;
+	ulL.addEventListener("touchstart", touchstart, true); 
+	
+	var liH = $('.ulList li').height() ;
+	var liDiff = parseInt($('.ulList li').css('margin-top')) + liH/2 ;
+	var clientDiff = parseInt($('.ulList li').css('margin-top')) + liH ;
+	var placehodlLi = '<li class="placehoder"></li>' ;
+	var len = $('li').length ;
+	var minTop = 0 ;
+	var maxTop = clientDiff*len ;
+	var setInt  ;
+	
+	function elemObj(){
+		for(var i=0; i<len;i++){
+			if($('li').eq(i).hasClass('placehoder')){
+				$('li').eq(i).removeClass('placehoder') ;
+			}
+			var ulListElem = $('li')[i] ;
+			ulListElem.addEventListener("touchmove", touchmove, true); 
+			ulListElem.addEventListener("touchend", touchend, true); 
+			$('li').eq(i).data('userD',i) ;
+		}
+	}
+	
+	function touchstart(e){
+		beginY = e.targetTouches[0].pageY ;
+		setInt = setTimeout(elemObj,750) ;
+	}
+	function touchmove(e){
+		e.preventDefault() ;
+		var index = $(this).data('userD') ;	
+		clientY = e.targetTouches[0].pageY - (index+1)*clientDiff ;	
+		clientY2 = e.targetTouches[0].pageY ;
+		indexNew = parseInt(e.targetTouches[0].pageY/clientDiff) ;
+		$('li').eq(index).css('top',clientY) ;
+	}
+	function touchend(e){
+		var index = $(this).data('userD') ;	
+		var newText = $('li').eq(index).text() ;
+		if((clientY2>minTop)&&(clientY2<maxTop)){
+			if(beginY<clientY2){
+				$('li').eq(indexNew-1).after(placehodlLi) ;
+				$('.placehoder').text(newText) ;
+				$('.placehoder').css('position','relative') ;
+				$('li').eq(index).remove() ;
+			}else{
+				$('li').eq(index).remove() ;
+				$('li').eq(indexNew).before(placehodlLi) ;
+				$('.placehoder').text(newText) ;
+				$('.placehoder').css('position','relative') ;
+			}
+		}else if(clientY2<=0){
+			$('li').eq(index).remove() ;
+			$('li').eq(0).before(placehodlLi) ;
+			$('.placehoder').text(newText) ;
+			$('.placehoder').css('position','relative') ;
+		}else if(clientY2>=maxTop){
+			$('li').eq(len-1).after(placehodlLi) ;
+			$('.placehoder').text(newText) ;
+			$('.placehoder').css('position','relative') ;
+			$('li').eq(index).remove() ;
+		}
+		setTimeout(clearTimeout(setInt),750) ;
+		$('.text').text(indexNew) ;
+		$('.text2').text(clientY2) ;
+	} 
+}) ;
+</script>
+</head>
+
+<body>
+<ul class="ulList">
+	<!--<li>公文管理</li>
+	<li>我的流程</li>
+	<li>业务工作</li>
+	<li>个人事务</li>
+	<li>精确执行</li>
+	<li>费用管控</li>-->
+    <li>111</li>
+	<li>222</li>
+	<li>333</li>
+	<li>444</li>
+	<li>555</li>
+	<li>666</li>
+</ul>
+indexNew:<span class="text"></span><br/>clientY2:<span class="text2"></span>
+</body>
+</html>

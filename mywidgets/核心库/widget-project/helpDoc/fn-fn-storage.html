@@ -1,0 +1,410 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>表单-按钮-推荐按钮</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <style type="text/css">
+    		ul,li,dl,dt,dd {
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+        header {
+            height:30px;line-height:30px;
+            text-align:left;
+            width:100%;
+            -webkit-border-radius:25px;
+            border-radius:25px;
+            margin: 6px 8px 6px 0;
+            padding:3px;
+        }
+        dl {
+            clear:both;
+            width:600px;
+            height:auto;
+            border:1px solid gray;
+            margin:3px;
+        }
+        dt,dd {
+            height:26px;
+            line-height:26px;
+            font-style:italic;
+        }
+        dt {
+            text-align:center;
+            float:left;
+            width:60px;
+            background-color:#efefef;
+        }
+        dd {
+            padding-left:6px;
+            width:auto;
+            overflow:hidden;
+        }
+    </style>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver =  "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>本地存储(LocalStorage）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>提供本地存储操作的简单封装，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>version.js</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> 设值;&nbsp;ui.fn.storage.set( key, value);</p>
+            <p class="help-code"> 取值;&nbsp;ui.fn.storage.get( key );</p>
+            <p class="help-code"> 遍历输出对象;&nbsp;ui.fn.storage.get( );</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>暂无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>ui.fn.storage.set( key,value )方法在使用时需要配置如下参数：</p>
+            <p>
+              <label class="help-item">key：</label>
+             （字符） 设定的键值</p>
+            <p>
+              <label class="help-item">value：</label>
+             （1,字面量;2.数据;3.对象） 设置的具体内容</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>ui.fn.storage.get( key )方法在使用时需要配置如下参数：</p>
+            <p>
+              <label class="help-item">key：</label>
+             （字符） 要提取本地存储中的内容对应的键值</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>ui.fn.storage.get()方法在使用时需要配置如下参数：</p>
+            <p>暂无</p>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              操作本地存储实例(设值；取值；遍历输出)</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo"> 
+            	<div>
+						    <div>
+						        <dl id="ls">
+						            <dt>Key:</dt>
+						            <dd>Value</dd>
+						        </dl>
+						    </div>
+						    <div>
+						        <input type="button" value="初始化测试数据" id="init"/>
+						        <dl>
+						            <dt>Key:</dt>
+						            <dd><input type="text" id="setKey"/></dd>
+						            <dt>Value:</dt>
+						            <dd>
+						                <input type="text" id="setValue"/>
+						            </dd>
+						            <dt>操作:</dt>
+						            <dd>
+						                <input type="button" value="设值" id="set"/>(此种方式只能设定简单的值)
+						            </dd>
+						        </dl>
+						        <dl>
+						            <dt>Key:</dt>
+						            <dd><input type="text" id="getKey"/></dd>
+						            <dt>Value:</dt>
+						            <dd>
+						                <input type="text" id="getValue"  readonly/>
+						            </dd>
+						            <dt>操作:</dt>
+						            <dd>
+						                <input type="button" value="取值" id="get"/>
+						            </dd>
+						        </dl>
+						        <input type="button" value="迭代" id="iterate"/>
+						    </div>
+						</div>	
+						<script>
+						function _init() {
+						    window.localStorage.clear();//清楚本地存储数据
+						    var inputData =
+						        [
+						            "zhng",
+						             12,
+						             new Date().getTime(),
+						             [ 1, 2, 4, 5,
+						                 {
+						                     arr1:1,
+						                     arr2:2
+						                 }
+						             ],
+						            {
+						                id: "123",
+						                name: "ui",
+						                children: {
+						                    child1: 1,
+						                    child2: 2
+						                }
+						            }
+						        ];
+						    var newObj = new Object();
+						        newObj.name = "new fn";
+						        newObj.obj = { id:1,name:"z"};
+						    inputData[ inputData.length ] = newObj;
+						
+						    for ( var i=0; i<inputData.length; i++ ) {
+						        ui.storage.set( i, inputData[i] );
+						    }
+						    _clear();
+						};
+						function _r( ret ) {//只判断了2层
+						    var _r = "";
+						    if ( ret.constructor === Array ) {
+						        for ( var i in ret ) {
+						            _r += ( typeof ret[ i ]  === "object" ) ? JSON.stringify( ret[ i ] ) : ret[i] + " ";
+						        }
+						    } else {
+						        _r += typeof ret === "object" ? JSON.stringify( ret ) : ret + " ";
+						    }
+						    return _r;
+						};
+						var ls = document.getElementById( "ls" ),
+						    initBtn = document.getElementById( "init" ),
+						     setBtn = document.getElementById( "set" ),
+						     getBtn = document.getElementById( "get" ),
+						     iterateBtn = document.getElementById( "iterate" );
+						//迭代
+						function _iterate() {
+						    var ret,dls = "<dt>Key:</dt><dd>Value</dd>";
+						    ret =ui.storage.get();
+						    for( var k in ret ) {
+						        dls += "<dt>" + k + "</dt>" + "<dd>" + _r( ret[ k ] ) + "</dd>";
+						    }
+						    ls.innerHTML = dls;
+						};
+						//_iterate();
+						initBtn.onclick = _init;
+						setBtn.onclick = function() {
+						    var _key = document.getElementById( "setKey" ).value;
+						    var _value = document.getElementById( "setValue" ).value;
+						    if ( !_key || _key == "" ) return;
+						    ui.storage.set( _key, _value );
+						    _iterate();
+						};
+						getBtn.onclick = function() {
+						    var _key = document.getElementById( "getKey" ).value;
+						    var _value = document.getElementById( "getValue" );
+						    if ( !_key || _key == "" ) return;
+						    _value.value = ui.storage.get( _key );
+						};
+						iterateBtn.onclick = _iterate;
+						function _clear() {
+						    ls.innerHTML = "<dt>Key:</dt><dd>Value</dd>";
+						};	
+						</script>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+&lt;div>
+	&lt;div>
+	  &lt;dl id="ls">
+	      &lt;dt>Key:</dt>
+	      &lt;dd>Value</dd>
+	  &lt;/dl>
+	&lt;/div>
+	&lt;div>
+	  &lt;input type="button" value="初始化测试数据" id="init"/>
+	  &lt;dl>
+	      &lt;dt>Key:</dt>
+	      &lt;dd><input type="text" id="setKey"/></dd>
+	      &lt;dt>Value:</dt>
+	      &lt;dd>
+	          &lt;input type="text" id="setValue"/>
+	      &lt;/dd>
+	      &lt;dt>操作:</dt>
+	      &lt;dd>
+	          &lt;input type="button" value="设值" id="set"/>(此种方式只能设定简单的值)
+	      &lt;/dd>
+	  &lt;/dl>
+	  &lt;dl>
+	      &lt;dt>Key:</dt>
+	      &lt;dd><input type="text" id="getKey"/></dd>
+	      &lt;dt>Value:</dt>
+	      &lt;dd>
+	          &lt;input type="text" id="getValue"  readonly/>
+	      &lt;/dd>
+	      &lt;dt>操作:</dt>
+	      &lt;dd>
+	          &lt;input type="button" value="取值" id="get"/>
+	      &lt;/dd>
+	  &lt;/dl>
+	  &lt;input type="button" value="迭代" id="iterate"/>
+	&lt;/div>
+&lt;/div>	
+&lt;script>
+function _init() {
+	window.localStorage.clear();//清楚本地存储数据
+	var inputData =
+	  [
+	      "zhng",
+	       12,
+	       new Date().getTime(),
+	       [ 1, 2, 4, 5,
+	           {
+	               arr1:1,
+	               arr2:2
+	           }
+	       ],
+	      {
+	          id: "123",
+	          name: "ui",
+	          children: {
+	              child1: 1,
+	              child2: 2
+	          }
+	      }
+	  ];
+	var newObj = new Object();
+	  newObj.name = "new fn";
+	  newObj.obj = { id:1,name:"z"};
+	inputData[ inputData.length ] = newObj;
+	
+	for ( var i=0; i<inputData.length; i++ ) {
+	  ui.storage.set( i, inputData[i] );
+	}
+	_clear();
+};
+function _r( ret ) {//只判断了2层
+	var _r = "";
+	if ( ret.constructor === Array ) {
+	  for ( var i in ret ) {
+	      _r += ( typeof ret[ i ]  === "object" ) ? JSON.stringify( ret[ i ] ) : ret[i] + " ";
+	  }
+	} else {
+	  _r += typeof ret === "object" ? JSON.stringify( ret ) : ret + " ";
+	}
+	return _r;
+};
+var ls = document.getElementById( "ls" ),
+initBtn = document.getElementById( "init" ),
+setBtn = document.getElementById( "set" ),
+getBtn = document.getElementById( "get" ),
+iterateBtn = document.getElementById( "iterate" );
+//迭代
+function _iterate() {
+	var ret,dls = "&lt;dt>Key:&lt;/dt>&lt;dd>Value&lt;/dd>";
+	ret =ui.storage.get();
+	for( var k in ret ) {
+	  dls += "&lt;dt>" + k + "&lt;/dt>" + "&lt;dd>" + _r( ret[ k ] ) + "&lt;/dd>";
+	}
+	ls.innerHTML = dls;
+};
+//_iterate();
+initBtn.onclick = _init;
+setBtn.onclick = function() {
+	var _key = document.getElementById( "setKey" ).value;
+	var _value = document.getElementById( "setValue" ).value;
+	if ( !_key || _key == "" ) return;
+	ui.storage.set( _key, _value );
+	_iterate();
+};
+getBtn.onclick = function() {
+	var _key = document.getElementById( "getKey" ).value;
+	var _value = document.getElementById( "getValue" );
+	if ( !_key || _key == "" ) return;
+	_value.value = ui.storage.get( _key );
+};
+iterateBtn.onclick = _iterate;
+function _clear() {
+	ls.innerHTML = "&lt;dt>Key:&lt;/dt>&lt;dd>Value&lt;/dd>";
+};	
+&lt;/script>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

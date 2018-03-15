@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<script language="javascript" src="zepto.js"></script>
+<script language="javascript">
+	Zepto(function($){
+		console.log($.camelCase('hello-there')) ;
+				
+		var newElen = $('<p />',{
+			text:'Hello',
+			id:'greeting',
+			css:{color:'red'}
+        }) ;
+		$('div').html(newElen) ;
+		
+		$('div').attr('id','divId') ;
+		
+		$.each(['a','b','c'],function(index,item){
+			console.log('第' + index + '个li内容是：'+item) ;
+		})
+		
+		$('li').after('<p>A note below the label</p>') ;
+		
+		$.fn.empty = function(){
+          	return $('ul li').each(function(){
+          		this.innerHTML = '' 
+		 	})
+        }
+		
+		$('div').before('<p>See the following table:</p>') ;
+		$('li').css('color','red') ;
+		
+		$('div').click(function(){alert('ff') ;}) ;
+		
+		var obj = {name: "yaotaiyang",
+			test: function() {
+				alert( this.name );      
+				$("#test").unbind("click", obj.test); 
+			}
+		};    
+		$("#test").click( $.proxy( obj, "test" ));
+	}) ;
+</script>
+</head>
+
+<body>
+	<div id="test">fdsafs</div>
+    
+    <ul>
+    	<li>111</li>
+    	<li>222</li>
+    	<li>333</li>
+    	<li>444</li>
+    	<li>555</li>
+    	<li>666</li>
+    </ul>
+</body>
+</html>

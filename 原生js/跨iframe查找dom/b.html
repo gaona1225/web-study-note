@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>bbb</title>
+</head>
+
+<body>
+<div style="background:red" id="bDiv">我是b页面b页面b页面b页面b页面b页面</div>
+<script language="javascript">
+	window.onload = function(){		
+		document.getElementById('bDiv').onclick = function(){
+			var _iframe = window.parent ;
+			var _div =_iframe.document.getElementById('aDiv');  
+			_div.style.backgroundColor = '#00f';  
+		}
+	}
+</script>
+</body>
+</html>

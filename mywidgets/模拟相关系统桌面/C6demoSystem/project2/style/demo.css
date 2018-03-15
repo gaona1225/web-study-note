@@ -1,0 +1,373 @@
+/*工作台样式开始*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td{
+	font-family:"微软雅黑",Arial,"宋体" ;
+}
+body{
+	line-height:1 !important;
+}
+a{
+	color:#fff ;
+	padding-bottom:2px ;
+}
+a:hover{
+	background:url(../image/whiteLine.png) bottom repeat-x ;
+}
+.clear{
+	clear:both ;
+}
+.wrap{
+	background:url(../image/wrap.png) no-repeat ;
+	margin:0 auto ;
+	overflow:hidden ;
+	padding-bottom:36px ;
+	width:1002px ;
+}
+.top{
+	height:132px ;
+	width:100% ;
+}
+.desktop{
+	background:url(../image/desktop.png) no-repeat top ;
+	height:558px ;
+	padding:56px 80px 0px 80px ;
+}
+.leftBtn{
+	float:left ;
+}
+.leftBtn a{
+	background:url(../image/leftbtnl.png) no-repeat ;
+	display:block ;
+	height:56px ;
+	margin-top:139px ;
+	width:56px ;
+}
+.leftBtn a:link{
+	background:url(../image/leftbtnl.png) no-repeat ;
+}
+.leftBtn a:hover{
+	background:url(../image/leftbtnh.png) no-repeat ;
+}
+.leftBtn a.disable{
+	background:url(../image/leftbtnd.png) no-repeat ;
+	cursor:default ;
+}
+.rightBtn{
+	float:left ;
+}
+.rightBtn a{
+	background:url(../image/rightbtnl.png) no-repeat ;
+	display:block ;
+	height:56px ;
+	margin-top:139px ;
+	width:56px ;
+}
+.rightBtn a:link{
+	background:url(../image/rightbtnl.png) no-repeat ;
+}
+.rightBtn a:hover{
+	background:url(../image/rightbtnh.png) no-repeat ;
+}
+.rightBtn a.disable{
+	background:url(../image/rightbtnd.png) no-repeat ;
+	cursor:default ;
+}
+.main{
+	float:left ;
+	height:334px ;
+	margin-left:20px ;
+	margin-right:20px ;
+	overflow:hidden ;
+	position:relative ;
+	width:686px ;
+}
+.mainWrap{
+	height:334px ;
+}
+.mainElem{
+	color:#000 ;
+	float:left ;
+	height:334px ;
+	width:686px ;
+}
+.buttomBtn{
+	height:3px ;
+	margin:22px auto 0px ;
+	width:220px ;
+}
+.buttomBtn li{
+	float:left ;
+	margin-right:15px ;
+}
+.buttomBtn li a{
+	background:#7cc0ff ;
+	display:block ;
+	height:3px ;
+	padding:0px ;
+	width:54px ;
+}
+.buttomBtn li a:link{
+	background:#7cc0ff ;
+}
+.buttomBtn li a:hover,.buttomBtn li.btnCurrent a:hover{
+	background:#cfa339 ;
+}
+.buttomBtn li.btnCurrent a{
+	background:#034787 ;
+}
+.mainMetro{
+	color:#fff ;
+	float:left ;
+	font-size:18px ;
+	margin:0px 7px 7px 0px ;	
+	position:relative ;
+	z-index:1 ;	
+	-webkit-perspective:800px ;
+	-moz-perspective:800px ;
+	perspective:800px ;
+}
+.metroElem{
+	cursor:pointer ;
+	height:100% ;
+	overflow:hidden ;
+	width:100% ;	
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;	
+	-webkit-backface-visibility:hidden ;
+	-moz-backface-visibility:hidden ;
+	backface-visibility:hidden ;	
+	-webkit-transition:0.5s ;
+	-moz-transition:0.5s ;
+	transition:0.5s ;	
+	-webkit-animation: pulse 2s infinite;
+	-moz-animation: pulse 2s infinite;
+	animation: pulse 2s infinite;
+}
+.mainMetro .metroFront{
+	position:absolute ;
+	z-index:100 ;
+}
+.mainMetro .metroBack{
+	opacity:0 ;
+	position:absolute ;
+	text-align:center ;
+	z-index:1 ;	
+	-webkit-transform:rotateY(180deg);
+	-moz-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+}
+.flipped .metroFront{
+	opacity:0;
+	-moz-transform:rotateY(-180deg);
+	-webkit-transform:rotateY(-180deg);
+	transform:rotateY(-180deg);
+}
+.flipped .metroBack{	
+	opacity:1;
+	-moz-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+	transform:rotateY(0deg);
+}
+.background1{
+	background:#41b1ec ;
+}
+.background2{
+	background:#398ecf ;
+}
+.background3{
+	background:#2e98c0 ;
+}
+.textnum{
+	font-size:30px ;
+}
+.metroTitle{
+	font-size:18px ;
+	padding:8px 0px 16px 0px ;
+}
+.font12{
+	display:inline-block ;
+	font-family:"宋体" ;
+	font-size:12px ;
+	margin-bottom:6px ;
+}
+.backHref{
+	margin-bottom:5px ;
+	padding-top:30px ;
+}
+.autoSlide{
+	height:100% ;
+}
+.slideElem{
+	float:left ;
+	height:100% ;
+	width:100% ;
+}
+.metroFront p{
+	padding-left:6px ;
+}
+.mainBlock1{
+	height:106px ;
+	width:107px ;
+}
+.mainBlock2{
+	height:106px ;
+	width:221px ;
+}
+.renwu{
+	background:url(../image/renwu.png) no-repeat left bottom ;
+	height:103px ;
+}
+.font24{
+	display:inline-block ;
+	font-size:24px ;
+	font-weight:normal ;
+	padding-top:8px ;
+}
+.font14{
+	display:inline-block ;
+	font-size:14px ;
+	font-weight:normal ;
+	padding-top:8px ;
+	padding:3px 0px 12px 70px ;
+}
+.font14 span{
+	display:inline-block ;
+	margin-left:12px ;
+}
+.liuchen{
+	background:url(../image/liuchen.png) no-repeat ;
+	height:106px ;
+	padding-left:6px ;
+}
+.liuchen ul{
+	font-size:12px ;
+	text-align:right ;
+	padding-right:9px ;
+}
+.liuchen ul li{
+	margin-top:7px ;
+}
+.font30{
+	font-size:30px ;
+	line-height:106px ;
+	text-align:center ;
+	padding:0px ;
+}
+.shezhi img{
+	margin-top:6px ;
+}
+b.shezhiTxt{
+	color:#034f95 ;
+	display:block ;
+	font-size:18px ;
+	font-weight:normal ;
+	margin-top:4px ;
+	text-align:center ;
+}
+.riji{
+	padding-left:6px ;
+}
+.riji b{
+	display:block ;
+	font-size:30px ;
+	font-weight:normal ;
+	padding:8px 0px 0px 0px ;
+}
+.riji ul{
+	font-size:12px ;
+	padding-left:3px ;
+}
+.riji ul li{
+	margin-top:7px ;
+}
+.yeji{
+	padding-top:28px ;
+	text-align:center ;
+}
+.yeji p{
+	font-size:40px ;
+}
+.yeji p img{
+	margin-right:12px ;
+	vertical-align:top ;
+}
+.yeji a{
+	display:inline-block ;
+	float:right ;
+	font-size:14px ;
+	margin-top:10px ;
+	margin-right:9px ;
+}
+b.jiascTxt{
+	display:block ;
+	font-size:18px ;
+	font-weight:normal ;
+	margin-top:4px ;
+	text-align:center ;
+}
+.jixiao{
+	background:url(../image/jixiao.png) no-repeat right bottom ;
+	margin-right:6px ;
+	height:93px ;
+}
+.jixiao span{
+	display:inline-block ;
+	font-size:48px ;
+	margin-top:8px ;
+}
+.daiyueTit{
+	padding-bottom:4px ;
+}
+ul.daiyue{
+	font-size:12px ;
+	margin-left:18px ;
+}
+ul.daiyue li{
+	background:url(../image/libgW.png) no-repeat left ;
+	margin-top:6px ;
+	padding-left:12px ;
+}
+.daiyueHref{
+	display:inline-block ;
+	float:right ;
+	font-size:12px ;
+	padding-right:7px ;
+}
+.youjian{
+	background:url(../image/youjian.png) no-repeat left bottom ;
+	margin-left:16px ;
+}
+.youjian .metroTitle{
+	padding-bottom:3px ;
+}
+.youjian p b{
+	font-weight:normal ;
+}
+.youjian p a{
+	float:right ;
+	padding-right:8px ;
+}
+.youjian p a:hover{
+	background:none ;
+}
+.youjian ul{
+	font-size:14px ;
+	padding-left:72px ;
+}
+.youjian ul li{
+	margin-bottom:7px ;
+}
+
+.richen{
+	background:url(../image/richen.png) no-repeat right ;
+}
+.richen ul{
+	font-size:12px ;
+	padding-left:6px ;
+}
+.richen ul li{
+	margin-bottom:6px ;
+}
+.richen ul li span{
+	margin-right:6px ;
+}

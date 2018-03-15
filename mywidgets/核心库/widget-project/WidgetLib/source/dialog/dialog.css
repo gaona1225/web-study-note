@@ -1,0 +1,73 @@
+@charset "utf-8";
+.ui-dailog {
+    clear: both;
+    display: none;
+    position: absolute;
+    border: 1px solid #d1d1d1;
+    min-width: 108px;
+    width: auto;
+    height: auto;
+    padding: 3px;
+    top:0;
+    left: 0;
+    z-index: 9;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.ui-dailog-triangle {
+    overflow: hidden;
+    position: absolute;
+    display: inline-block;
+    background-image: url("images/dialog/ui-dialog-triangle.png");
+    background-repeat: no-repeat;
+}
+
+.ui-dailog .top {
+    background-position: 0 0;
+    width: 21px;
+    height: 10px;
+}
+
+.ui-dailog .right {
+    background-position: -10px 0;
+    width: 10px;
+    height: 21px;
+}
+
+.ui-dailog .bottom {
+    background-position: 0 -10px;
+    width: 21px;
+    height: 10px;
+}
+
+.ui-dailog .left {
+    background-position: 0 0;
+    width: 10px;
+    height: 21px;
+}
+
+.ui-ailog-close {
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    background: url("images/dialog/ui-dialog-close.png") no-repeat;
+    width: 10px;
+    height: 10px;
+    text-indent: -9999px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ui-dailog .content-container {
+    width: 100%;
+    height: auto;
+    background-color: pink;
+}

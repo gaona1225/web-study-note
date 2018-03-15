@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Farbtastic</title>
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="farbtastic.js"></script>
+<link rel="stylesheet" href="farbtastic.css" type="text/css">
+<script type="text/javascript">
+$(function(){
+	//$('#picker').farbtastic('#color');
+	$('#color').click(function(e){
+		obj = document.all ? event.srcElement : e.target;
+   	 	obj.style.position = "relative";
+        var inputTop = $(obj).offset().top + $(obj).height() + 2 ;
+        var inputLeft = $(obj).offset().left ;
+		var pickerDiv ;
+		pickerDiv = '<div id="picker"></div>' ;
+		if($('#picker').length<1){
+			pickerDiv = '<div id="picker"></div>' ;
+			$(obj).parent().append(pickerDiv) ;
+		}else if($('#picker').css('display') == 'none'){
+			$('#picker').css('display','block') ;
+		}
+				
+		$('#picker').css({
+			'left' : inputLeft ,
+			'top' : inputTop
+		}) ;
+		$('#picker').farbtastic('#color');
+		$(document).click(function(event){
+			var target = event.target ;
+			var inputLen = $(target).nextAll('#picker').length ;
+			var parLen = $(target).parents('#picker').length ;
+			if((parLen < 1) && (inputLen < 1)){
+				$('#picker').css('display','none') ;
+			}
+		}) ;
+	}) ;
+}) ;
+</script>
+<style>
+	#color{
+		margin:0px ;
+	}
+	#picker{
+		position:absolute ;
+	}
+</style>
+</head>
+<body>
+<input type="text" id="color" name="color" value="#123456" />
+<p>fdasfsfasf</p>
+</body>
+</html>

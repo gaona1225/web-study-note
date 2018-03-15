@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html style="height:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>testwidgets</title>
+<script language="javascript" type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="drag.js"></script>
+<script language="javascript" type="text/javascript">
+	$(function(){
+		$('#dragDiv1').drag({}) ;
+		$('#dragDiv2').drag({
+			div_background:'red'
+		}) ;
+		$('#dragDiv3').drag({
+			div_background:'blue'
+		}) ;
+	}) ;
+</script>
+<style type="text/css">
+.dragDiv{
+	float:left ;
+	margin-left:10px ;
+}
+</style>
+</head>
+
+<body>
+<div class="dragDiv" id="dragDiv1"></div>
+<div class="dragDiv" id="dragDiv2"></div>
+<div class="dragDiv" id="dragDiv3"></div>
+left:<span class="test"></span>
+</body>
+</html>

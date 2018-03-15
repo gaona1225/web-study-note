@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>verification单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="verificationTest.js"></script>
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+手机号：<input type="text" class="verInput" data-verif="verMobile"/>
+<br/>字母串：<input type="text" class="verInput" data-verif="verString"/>
+<br/>无范围数字串：<input type="text" class="verInput" data-verif="verNumber"/>
+<br/>大于10小于100整数串：<input type="text" class="verInput" data-verif="verNumber" data-range="10,100"/>
+<br/>大于10小于100整数串：<input type="text" class="verInput" data-verif="verNumber" data-range="10,100,integer"/>
+<br/>大于10小于100百分数串：<input type="text" class="verInput" data-verif="verNumber" data-range="10,100,percentage"/>
+<br/>大于10小于100小数串：<input type="text" class="verInput" data-verif="verNumber" data-range="10,100,float"/>
+<br/>座机：<input type="text" class="verInput" data-verif="verPhone" data-range="10,50,float"/>
+<br/>email：<input type="text" class="verInput" data-verif="verEmail"/>
+<br/>url：<input type="text" class="verInput" data-verif="verUrl"/>
+<br/>IP：<input type="text" class="verInput" data-verif="verIP"/>
+<br/>时间：<input type="text" class="verInput" data-verif="verTime"/>
+<br/>待修改验证-手机号：<input type="text" class="verInput" id="testInput"  />
+<br/>待销毁对象：<input type="text" class="verInput" data-verif="verPhone" id="destoryInput" />
+</div>
+</body>
+</html>

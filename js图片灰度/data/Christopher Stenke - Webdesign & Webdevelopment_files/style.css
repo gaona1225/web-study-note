@@ -1,0 +1,207 @@
+* {
+	
+}
+body {
+	margin: 0px auto 1px; height: 100%; color: rgb(102, 102, 102); font-family: "Myriad Pro", Verdana, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);
+}
+html {
+	margin: 0px 0px 1px; padding: 0px; height: 100%;
+}
+.wrapper {
+	margin: 0px auto; width: 961px; position: relative;
+}
+.logo {
+	background: url("images/head.jpg") repeat-x top rgb(68, 68, 68); height: 168px; position: relative;
+}
+.logo h1 {
+	background: url("images/schrift6.gif") no-repeat top; margin: 0px auto; text-indent: -9999px; clear: both;
+}
+.logo h1 a {
+	margin: 0px auto; width: 360px; height: 128px; display: block;
+}
+.logo ul {
+	list-style: none; margin: 11px 0px 0px; text-align: center; padding-right: 4%; font-family: "Myriad Pro", Verdana, sans-serif; font-size: 14px;
+}
+.logo ul li {
+	margin: 0px 8px; text-transform: uppercase; font-size: inherit; display: inline;
+}
+.logo ul li a {
+	padding: 17px 11px 13px; color: rgb(134, 134, 134);
+}
+.logo ul li a.current {
+	color: rgb(255, 255, 255); background-color: rgb(11, 11, 11);
+}
+.logo ul li a:hover {
+	color: rgb(255, 255, 255);
+}
+.footer {
+	background: url("images/bg_footer.gif") no-repeat top rgb(255, 255, 255); padding: 15px 0px 10px; clear: both;
+}
+.footer p {
+	text-align: center; font-size: 14px;
+}
+.content {
+	width: 463px; text-align: left; color: rgb(44, 44, 44); padding-top: 10px; margin-right: 35px; margin-bottom: 55px; float: left;
+}
+.content h1 {
+	color: rgb(206, 63, 0); line-height: 1.3em; font-size: 1.9em; font-weight: normal;
+}
+.content h3 {
+	text-align: left; line-height: 1.1em;
+}
+.content h4 {
+	text-align: left; line-height: 1.1em;
+}
+.navleft {
+	width: 214px; padding-top: 10px; margin-right: 35px; margin-bottom: 55px; float: left;
+}
+.navleft ul {
+	margin: 0px; padding: 22px 0px 0px 20px; list-style-type: none;
+}
+.extra ul {
+	margin: 0px; padding: 22px 0px 0px 20px; list-style-type: none;
+}
+.navleft ul li {
+	line-height: 1.4em; padding-top: 10px; font-size: 14px; border-bottom-color: rgb(213, 213, 213); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.extra ul li {
+	line-height: 1.4em; padding-top: 10px; font-size: 14px; border-bottom-color: rgb(213, 213, 213); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.navleft ul li a {
+	color: rgb(34, 34, 34);
+}
+.extra ul li a {
+	color: rgb(34, 34, 34);
+}
+.navleft ul li .current {
+	color: rgb(206, 63, 0);
+}
+.extra ul li .current {
+	color: rgb(206, 63, 0);
+}
+.navleft ul li a:hover {
+	color: rgb(206, 63, 0);
+}
+.extra ul li a:hover {
+	color: rgb(206, 63, 0);
+}
+.extra {
+	width: 214px; color: rgb(119, 119, 119); padding-top: 10px; margin-bottom: 55px; float: right;
+}
+.main2 {
+	width: 712px; float: right;
+}
+h1 {
+	color: rgb(206, 63, 0);
+}
+h2 {
+	color: rgb(206, 63, 0);
+}
+h3 {
+	color: rgb(206, 63, 0);
+}
+h4 {
+	color: rgb(206, 63, 0);
+}
+h5 {
+	color: rgb(206, 63, 0);
+}
+h6 {
+	color: rgb(206, 63, 0);
+}
+h1 {
+	font-weight: normal;
+}
+h2 {
+	font-weight: normal;
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-weight: normal;
+}
+h5 {
+	font-weight: normal;
+}
+h6 {
+	font-weight: normal;
+}
+h1 {
+	line-height: 1; font-size: 3em; margin-bottom: 0.5em;
+}
+h2 {
+	font-size: 1.8em; margin-bottom: 0.75em;
+}
+h3 {
+	line-height: 1; font-size: 1.5em; margin-top: 1.4em; margin-bottom: 0.5em;
+}
+h4 {
+	color: rgb(51, 51, 51); line-height: 1; font-size: 1.5em; margin-top: 1.4em; margin-bottom: 0.5em;
+}
+h5 {
+	font-size: 1em; font-weight: bold; margin-bottom: 1.5em;
+}
+h6 {
+	font-size: 1em; font-weight: bold;
+}
+p {
+	margin: 0px 0px 1em; line-height: 1.4em; font-size: 14px;
+}
+p.last {
+	margin-bottom: 0px;
+}
+li {
+	line-height: 1.4em; font-size: 14px; margin-bottom: 3px;
+}
+a {
+	color: rgb(206, 63, 0);
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:focus {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+input {
+	border: 1px solid rgb(102, 102, 102); width: 281px; color: rgb(44, 44, 44); font-family: inherit; font-size: 1em;
+}
+textarea {
+	border: 1px solid rgb(102, 102, 102); width: 99.5%; height: 150px; color: rgb(44, 44, 44); overflow: auto; font-family: inherit; font-size: 1em;
+}
+input:hover {
+	border: 1px solid rgb(206, 63, 0);
+}
+input:focus {
+	border: 1px solid rgb(206, 63, 0);
+}
+textarea:hover {
+	border: 1px solid rgb(206, 63, 0);
+}
+textarea:focus {
+	border: 1px solid rgb(206, 63, 0);
+}
+input[type='submit'] {
+	width: 200px; margin-left: 27%; background-color: rgb(255, 255, 255);
+}
+label {
+	width: 180px; color: rgb(63, 63, 63); float: left; cursor: pointer;
+}
+label:hover {
+	color: rgb(206, 63, 0);
+}
+.formular {
+	margin-bottom: 5px;
+}
+code {
+	font-size: 12.5px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>绝对定位布局</title>
+<style type="text/css">
+	.wrap{
+		margin:20px auto ;
+		position:relative ;
+	}
+	.cell{
+		border:1px solid #ccc ;
+		border-radius:8px ;
+		box-shadow:2px 2px 5px #ccc ;
+		overflow:hidden ;
+		padding:10px ;
+		position:absolute ;
+		text-decoration:none ;
+	}
+	.cell img{
+		width:190px ;
+	}
+	.desc{
+		color:#878787 ;
+		display:block ;
+		margin:10px 0 0 ;
+		width:100% ;
+	}
+</style>
+</head>
+
+<body>
+	<!--
+    	绝对定位实现方式因为要获取每格的高度，然后根据高度来计算定位位置，所以必须要知道图片的高度，如果没有高度，定位就不准确，所以传递数据的时候需要图片的高度。
+　　		我是这样计算绝对定位的位置的，left根据列数来，这个略过，下面主要讲TOP值的获取：
+    　　 比如如下的排列方式，数字代表格子
+    
+    　　		0    1     2     3    4     5
+    
+          	6    7    8    9     10   11
+    
+         	12   13  14   15   16   17
+
+    	第12格子的绝对定位TOP值 =  第0格的高度（offsetHeight） + 相隔距离(margin) + 6格的高度(offsetHeight) + 相隔距离(margin)；
+    -->
+	<div class="wrap" id="wrap">
+    	<a href="#" class="cell">
+        	<img src="images/1.jpg" />
+            <span class="desc">111111</span>
+        </a>
+        <a href="#" class="cell">
+        	<img src="images/2.jpg" />
+            <span class="desc">222222</span>
+        </a>
+    </div>
+    <script language="javascript">
+    	/*waterFall = function(name){
+			this.name = name ;
+		}
+		waterFall.prototype = {
+			fun1 : function(){
+				console.log('fun1') ;
+			},
+			fun2 : function(){
+				return 'fun2' ;
+			}
+		}
+		var per = new waterFall('gg') ;
+		per.fun1() ;		
+		console.log(per.name) ;
+		console.log(per.fun2()) ;*/
+		
+		
+		waterFall = function(option){
+			this.col = option.col ;
+			this.init(itemList) ;
+		}
+		
+		waterFall.prototype = {
+			setPosLeft : function(){
+			} ,
+			setPosTop : function(){
+			},
+			getPosLeft : function(){
+			},
+			getPosTop : function(){
+			},
+			getMinHeightCol : function(){
+			} ,
+			insertItem : function(){
+			} ,
+			init : function(itemList){
+				/*var li = document.getElementById('ulList').getElementsByTagName('li') ;
+				var itemLen = itemList.length ;
+				console.log(itemLen) ;
+				for(var i=0; i<itemLen;i++){
+					var j = i % (this.col) ;
+					var a = document.createElement('a') ;
+					a.id = itemList[i].id ;
+					var images = document.createElement('images') ;
+					images.src = itemList[i].src ;
+					var span = document.createElement('span') ;
+					span.setAttribute('class','desc') ;
+					span.innerHTML = itemList[i].spanhtml ;
+					a.appendChild(images) ;
+					a.appendChild(span) ;
+					li[j].appendChild(a) ;
+				}*/
+			}
+		}
+		
+		itemElem = function(id,src,spanhtml){
+			/*this.id = id ;
+			this.src = src ;
+			this.spanhtml = spanhtml ;*/
+		}
+		
+		var itemList = [
+			/*<a href="#"><images src="images/3.jpg" /><span class="desc">我是第3333333333个</span></a>*/
+			new itemElem('item1','images/1.jpg','我是第111111个') ,
+			new itemElem('item2','images/2.jpg','我是第222222个') ,
+			new itemElem('item3','images/3.jpg','我是第333333个') ,
+			
+			new itemElem('item4','images/4.jpg','我是第444444个') ,
+			new itemElem('item5','images/5.jpg','我是第555555个') ,
+			new itemElem('item6','images/6.jpg','我是第666666个') ,
+			
+			new itemElem('item7','images/7.jpg','我是第777777个') ,
+			new itemElem('item8','images/8.jpg','我是第888888个') ,
+			new itemElem('item9','images/9.jpg','我是第999999个') ,
+			
+			new itemElem('item1','images/10.jpg','我是第aaaaaa个') ,
+			new itemElem('item2','images/11.jpg','我是第bbbbbb个') ,
+			new itemElem('item3','images/12.jpg','我是第cccccc个') ,
+			
+			new itemElem('item4','images/13.jpg','我是第dddddd个') ,
+			new itemElem('item5','images/14.jpg','我是第eeeeee个') ,
+			new itemElem('item6','images/15.jpg','我是第ffffff个') 
+		] ;
+		var waterFallItem = new waterFall({
+			col : 5 
+		}) ;
+		//waterFallItem.init() ;
+    </script>
+</body>
+</html>

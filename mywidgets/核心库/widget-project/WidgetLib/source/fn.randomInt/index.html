@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>判断浏览器是否支持Html5特性</title>
+<script src="../version/version.js"></script>
+<script src="randomInt.js"></script>
+<script>
+function getRnd(){
+	var info = jui.fn.randomInt(1,100);
+	document.getElementById('rndInt').value = info;
+}	
+</script>
+</head>
+
+<body>
+<input name="" type="text" id="rndInt" />
+<input name="" type="button" value="随机(1-100)" onclick="getRnd();" />
+</body>
+</html>

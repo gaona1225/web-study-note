@@ -1,0 +1,12 @@
+var onShowHtml = "";
+var onFocusHtml = "<span><span class='validatebox-tip-content'>$data$</span><span class='validatebox-tip-pointer'></span></span>";
+var onErrorHtml = "<span><span class='validatebox-tip-content'>$data$</span><span class='validatebox-tip-pointer'></span></span>";
+var onFocusHtml1 = "<span><span class='validatebox-tip-content1'>$data$</span><span class='validatebox-tip-pointer1'></span></span>";
+var onErrorHtml1 = "<span><span class='validatebox-tip-content1'>$data$</span><span class='validatebox-tip-pointer1'></span></span>";
+var onFocusHtml2 = "<span><span class='validatebox-tip-content1'>$data$</span><span class='validatebox-tip-pointer2'></span></span>";
+var onErrorHtml2 = "<span><span class='validatebox-tip-content1'>$data$</span><span class='validatebox-tip-pointer2'></span></span>";
+var onCorrectHtml = "<span></span>";
+var onShowClass = "input_public";
+var onFocusClass = "input_public validatebox-invalid";
+var onErrorClass = "input_public validatebox-invalid";
+var onCorrectClass = "input_public input_correct";

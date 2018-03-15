@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>创建快捷键+收藏</title>
+<meta name="keywords" content="哥们网,网页游戏,网页游戏平台,哥们网页游戏平台">
+<meta name="description" content="哥们网为当前国内最知名的网页游戏平台，网页游戏平台上汇聚了数十款优秀的网页游戏，包含多款绿色精品网页游戏，是目前国内最具影响力的网页游戏平台。">
+<script language="javascript" type="text/javascript">
+	//var stat={sURL:"http://log.game2.cn/stat.htm",visit:function($,A){var _=new Image();_.src=this.sURL+"?app="+$+"&from="+(A||0)+"&r="+Math.random();_.onload=function(){return}}}
+	function addfavorite(){
+		if (document.all){
+			window.external.addFavorite('http://www.game2.cn','哥们网-网页游戏第一品牌');
+		}else if (window.sidebar)
+			window.sidebar.addPanel('哥们网-网页游戏第一品牌', 'http://www.game2.cn', "");
+	}
+</script>
+</head>
+
+<body>
+  <div">
+	  <a href="javascript:void(0);" onclick="addfavorite();return false;">玩家收藏</a>
+	  <span>|</span>
+	  <!--<a href="http://www.game2.cn/shortcut.php" onclick="stat.visit(&#39;toolbar20140227&#39;);" target="_blank">把哥们网放到桌面上</a>-->
+	  <a href="http://www.yxduo.com/shortcut.php" target="_blank">把哥们网放到桌面上</a> <!--此处 www.yxduo.com需要是已授权的网站-->
+  </div>
+</body>
+</html>

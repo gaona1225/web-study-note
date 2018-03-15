@@ -1,0 +1,60 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	margin: 0;
+	padding: 0;
+}
+html{
+	color: #000;
+	background: #ffffff;
+	overflow-y:scroll;
+	-webkit-text-size-adjust:none;
+	-webkit-user-select:none;
+}
+body, button, input, select, textarea , pre {
+	font-size: 16px;
+	font-family:Tahoma, Helvetica, "Microsoft Yahei", "微软雅黑", Arial, STHeiti;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+}
+
+h3,h4,h5,h6{
+	font-weight: normal;
+}
+/*address, cite, dfn, em, var {
+	font-style:normal;
+}
+small {
+	font-size:12px;
+}*/
+ul, ol {
+	list-style:none;
+}
+a {
+	text-decoration:none;
+	color:#1b66c7;
+	-webkit-touch-callout:none;
+}
+a:hover {
+	/*color:#3cbce7;
+	-webkit-transition: color .15s linear , background-color .3s linear;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;*/
+	cursor: pointer;
+}
+/*sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}*/
+fieldset, img {
+	border:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+textarea {
+	resize:vertical;
+}

@@ -1,0 +1,20 @@
+function DesktopFactory(){		
+	createMultiDesktop : function(amount){			
+		var list = new Array(amount);			
+			for(var i=0;i<amount;i++){			   
+				list[i] = createOneDesktop();			
+			}			
+			return list;		
+	},	
+	createOneDesktop:function(){//TODO}}
+function getNameListFromXml(){	
+	var nameList = new Array();	//TODO ½âÎöxml  
+	return nameList
+}
+var factory = new DesktopFactory();
+var desktopList = factory.createMultiDesktop(49);
+var nameList =getNameListFromXml();for(var i=0;i<nameList.length;i++){	
+	var name = nameList[i];	
+	var desktop = desktopList[i];	
+	desktop.setName(name);
+}

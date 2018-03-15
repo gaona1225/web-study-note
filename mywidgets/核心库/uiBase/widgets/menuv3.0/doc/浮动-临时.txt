@@ -1,0 +1,82 @@
+<!-- *********浮动层 开始*********************** -->
+<%--1.门户--%>
+<div class="jcs_common_door" id="jcs_door" style="display:none;"><ul></ul></div>
+<%--2.应用 --%>
+<div id="all_app_new" style="display:none;height:auto;">
+	<div class="jcs_m_Mei_top"></div>
+	<div class="jcs_m_Mei_con" id="jcs_m_Mei" style="display:block;">
+		<a class="jcs_fw_up" id="fw_u" style="display:none;"></a>
+		<a class="jcs_fw_down" id="fw_d" style="display:none;"></a>
+	    <div class="jcs_m_all_con" style="border:0 none;padding-top:3px;">
+	        <!--一级菜单容器-->
+	        <div style="border:0 none;overflow-y:hidden;float:left;border-right:1px solid #ccc;height:413px;" id="ulOuterCon">
+		        <ul class="jcs_m_all_top" id="allOneMenuUL" style="height:4130px;width:121px;">
+			        <li class="top_active" moduleid="showAll">所有应用</li>
+		        </ul>
+	        </div>
+	        <!--菜单容器-->
+	        <div class="jcs_m_all_list_con" style='width:518px;'><!-- style="margin-right:9px;"-->
+	        	<div class="jcs_m_all_s" style="float:left;">
+	                <input type="text" class="minSearch" id="jcsUISearch"/>
+	            </div>
+	            <div class="all_menu_close_ico"></div>
+	            <div class="jcs_m_all_list_index" id="allApp" style="height:380px;width:521px;"></div>
+	        </div>
+		</div>
+	</div>
+	<div class="jcs_m_Mei_bottom"></div>
+</div>
+<!--3.分类全文检索-->
+<div class="jcs_common_search_advance_con" id="searchAdvanceCon" style="display:none;">
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_all" style="padding-right:3px;"></span>搜全部</a>
+   </div>
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_info" style="padding-right:3px;"></span>搜信息</a>
+   </div>
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_know" style="padding-right:3px;"></span>搜知识</a>
+   </div>
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_flow"  style="padding-right:3px;"></span>搜网盘</a>
+   </div>
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_xunhu" style="padding-right:3px;"></span>搜寻呼</a>
+   </div>
+</div>
+<!-- 更多快捷菜单 -->
+<div class="pop_tree" id="morePopMenu" style="display:none;">
+    <div class="pop_tree_top"></div>
+    <div class="pop_tree_close" style="padding-bottom:3px;"><a href="#"></a></div>
+    <div class="left_nav pop_tree_list">
+        <div id="morePopContainer" style="overflow-x:hidden;overflow-y:auto;margin-right:10px;"><!--滚动、更多快捷菜单容器-->
+        	<ul id="menuPopTreeUL" class="connectedSortable"><!--设置高度-->
+        	</ul>
+        </div>
+    </div>
+    <div class="pop_tree_bottom"></div>
+</div>
+<!--下拉菜单 begin-->
+<div id="menuHz" class="jc6m_menuHz" style="display:none;">
+    <!--基本操作-->
+    <ul id="h_menu_btn">
+        <li id="h_m_c"><span class="jc6m_menuHz_n"></span>关闭页签</li>
+        <li id="h_m_r"><span class="jc6m_menuHz_n"></span>刷新</li>
+        <li id="h_m_ca"><span class="jc6m_menuHz_n"></span>关闭全部页签</li>
+        <li id="h_m_co"><span class="jc6m_menuHz_n"></span>关闭其他页签</li>
+    </ul>
+    <!-- 多任务标签下拉滚动-->
+    <a class="jcs_scrll_up" id="scrll_u" style="display:none;"></a>
+	<a class="jcs_scrll_down" id="scrll_d" style="display:none;"></a>
+    <!--分割线-->
+    <div class="jc6m_menuHz_split_line"></div>
+    <!--菜单1.已选菜单-->
+    <div style="border:0 none;overflow-y:hidden;height:182px;width:100%" id="scrllULCon">
+    <ul id="h_menu_s" style="height:3000px;margin-top:0;">   <!--动态获取-->
+    </ul>
+    </div>
+</div>
+<!--下拉菜单 end-->
+<%-- 快捷菜单右键菜单--%>
+<ul id="ctxUL" style="display:none;" class="jcs_pop_ctx_ul"><li>在新标签中打开</li><li>隐藏该菜单</li></ul>
+<!-- *********浮动层 结束*********************** -->

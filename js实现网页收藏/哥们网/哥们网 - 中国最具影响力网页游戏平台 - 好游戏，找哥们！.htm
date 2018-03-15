@@ -1,0 +1,1758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0029)http://www.game2.cn/?zhuomian -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！</title>
+<meta name="keywords" content="哥们网,网页游戏,网页游戏平台,哥们网页游戏平台"><meta name="description" content="哥们网为当前国内最知名的网页游戏平台，网页游戏平台上汇聚了数十款优秀的网页游戏，包含多款绿色精品网页游戏，是目前国内最具影响力的网页游戏平台。"><link rel="shortcut icon" href="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/favicon.ico" type="image/x-icon">
+<link type="text/css" rel="stylesheet" href="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/global.css">
+<link type="text/css" rel="stylesheet" href="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/layout.css">
+<link type="text/css" rel="stylesheet" href="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/tan.css">
+<link rel="stylesheet" type="text/css" href="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/home.css">
+
+<script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/tipswindown.js"></script>
+<script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/stat.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://script.game2.cn/fixPNG.js"></script>
+<script>
+  DD_belatedPNG.fix('.png');
+</script>
+<![endif]--><script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/slides.js"></script>
+<script type="text/javascript" language="javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/msg.js" id="msgjs"></script><link type="text/css" rel="STYLESHEET" href="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/pop_old.css"><script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/tool.js" id="tool"></script><script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/msg_display.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $("input[type='text'],input[type='password']").focus(function(){
+			$(this).addClass("focus")}).blur(function(){
+			$(this).removeClass("focus");
+		});
+		$(".btn button").addClass("btnOn").css("opacity","0");
+		$(".btn button").hover(
+			function(){$(this).animate({"opacity":"1"},300)},
+		    function(){$(this).animate({"opacity":"0"},300)});
+		$(".online").css("opacity","0");
+		$(".online").hover(
+			function(){$(this).animate({"opacity":"1"},300)},
+		    function(){$(this).animate({"opacity":"0"},300)});
+		$("a.inner").addClass("hover").css("opacity","0");
+		$("a.inner").hover(
+			function(){$(this).animate({"opacity":"1"},300)},
+		    function(){$(this).animate({"opacity":"0"},300)});
+		$("a.Gin").addClass("Ghover").css("opacity","0");
+		$("a.Gin").hover(
+			function(){$(this).animate({"opacity":"1"},300)},
+		    function(){$(this).animate({"opacity":"0"},300)});
+		//$("div.Gbox:nth-child(3n)").addClass("noMargin");
+
+		for(var i=1; i<=3 ; i++)
+		{
+			$('#slides'+i).slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: false,
+				pause: 2500,
+				hoverPause: true
+			});
+		}
+		var tabA=$(".newsTab h3 a");
+		var tabDiv=$(".newsTab div");
+		tabA.attr("name",function(i){return "newsCon"+i});
+		tabDiv.attr("id",function(i){return "newsCon"+i});
+		tabA.click(
+			function(){$(this).addClass("newsOn").siblings().removeClass("newsOn");
+			tabDiv.slideUp();
+			var showNews=$(this).attr("name");
+			$("#"+showNews).slideDown();
+			if(gid = $(this).attr("gid"))
+			{
+			    $("#moreaffice").attr("href","/moreAffiche/gid/"+gid+"/");
+			}
+			else
+			{
+			    $("#moreaffice").attr("href","/moreAffiche/");
+			}
+			return false;
+		})
+
+		var playerA=$(".player h3 a");
+		var playerUl=$(".playerList ul");
+		playerA.attr("name",function(i){return "g2show"+i});
+		playerUl.attr("id",function(i){return "g2show"+i});
+		playerA.click(
+			function(){$(this).addClass("playerOn").siblings().removeClass("playerOn");
+			playerUl.slideUp();
+			var playerShow=$(this).attr("name");
+			$("#"+playerShow).slideDown();
+			return false;
+		})
+
+		var myTool=$(".tool a");
+		myTool.hover(
+			function(){$(this).addClass("toolOn").siblings().removeClass("toolOn")},
+		    function(){$(this).siblings().removeClass("toolOn")})
+		    	//首页播放控制
+  var showTime="5000"; //播放时间
+  var changeTime=3500;//小图切换时间
+  var setItTime=null;
+  var timer=null;
+  var fullAdUrls=["http:\/\/www.game2.cn\/website4\/type\/server\/gc\/wanshi\/gid\/83\/","http:\/\/www.game2.cn\/website4\/type\/server\/gc\/ajer\/gid\/79\/"];//当格式为jpg时的链接
+  var fullAdNames=["\/images\/showit\/showIt1.swf","\/images\/showit\/showIt2.swf"];
+  var fullImgs=["\/images\/showit\/img1.jpg","\/images\/showit\/img2.jpg"];
+  var $small=$(".small");
+  var $len=$small.children().length;
+  var $now=0;
+  var isBjIp = 1;
+$(".small a:first").show();//默认让第一张小图显示
+  
+  //显示大图
+  function openIt()
+  {
+    var fullAdType="swf";
+    var fullAdName = fullAdNames[$now];
+    var bigImg=fullImgs[$now];
+    var dUrl = fullAdUrls[$now];
+    if (isBjIp) {
+        var swfHtml = '<embed wmode="transparent" width="777" height="310" flashvars="FlashVars=http://www.game2.cn/server/code/sgh/" allowscriptaccess="always" quality="high" name="Advertisement" id="Advertisement" style="" src="http://www.game2.cn/images/showit/showIt1-2.swf" type="application/x-shockwave-flash"></embed>';
+    } else {
+        var swfHtml = '<embed wmode="transparent" width="777" height="310" flashvars="FlashVars='+dUrl+'" allowscriptaccess="always" quality="high" name="Advertisement" id="Advertisement" style="" src="'+fullAdName+'" type="application/x-shockwave-flash"></embed>';
+    }
+    var ImgHtml='<a href="'+dUrl+'" target="_blank"><img src="'+bigImg+'" width="777" height="310"/></a>';
+    
+    if(fullAdType=='swf')
+    {
+       
+      $(".big").append(swfHtml);
+      
+    }
+    else
+    {
+      $(".big").append(ImgHtml);
+    }
+    $(".small").slideUp(500);
+    $(".big").slideDown(500,function(){
+      if($(".itBtn").is(":hidden"))
+      {
+        $(".itBtn").fadeIn();
+      }
+      
+      else if($(".itBtn a").hasClass("rep"))
+      {
+        $(".itBtn a").removeClass("rep");
+      }
+
+    });
+    
+    if(setItTime){clearTimeout(setItTime);}
+        setItTime = setTimeout(closeIt,showTime);
+  }
+  
+  //关闭大图显示小图
+  function closeIt()
+  {
+    $(".big").slideUp(500,function(){
+      $(".big").children().remove();
+      $(".small").slideDown(500,function(){
+        $(".itBtn a").addClass("rep");
+      });
+    });
+    changeImg();
+  
+  }
+  
+  //打开网页1500ms后开始显示大图
+  setTimeout(function(){
+    openIt(); 
+  },1500)
+
+
+    //点击小图或关闭重播按钮时切换小图和大图
+    $(".itBtn,.small").click(function(){  
+    
+    if($(".itBtn a").hasClass("rep"))
+    {
+      openIt();
+    }
+    else
+    {
+      closeIt();
+    }
+  })
+          //小图切换
+  function changeImg()
+  {
+    clearInterval(timer);
+    timer=setInterval(function(){
+      $(".small a").hide();
+      if($now<$len-1)
+      {
+        $now++;
+        $(".small a").eq($now).fadeIn();
+      }
+      else if($now>=$len-1)
+      {
+        $now=0;
+        $(".small a").eq($now).fadeIn();
+      }
+      
+    },changeTime)
+  }
+        $('.closeBtn').click(function(){
+            if(setItTime){clearTimeout(setItTime);}
+            closeIt();
+            return false;
+        });
+        $('.replayBtn,.showPic').click(function(){
+            if(setItTime){clearTimeout(setItTime);}
+				    openIt();
+            $('.replayBtn').hide();
+            $('.closeBtn').show();
+        	$(".showIt .showPic").slideUp();
+            return false;
+        });
+
+    	//setTimeout(openIt("",1,flAdUrl),"1500");//延迟显示
+		// clearInt=setInterval(changeImg,3500);
+		//clearInt=setInterval(Time,3500);
+    		})
+            function addFriend(id, name)
+        {
+            Notice.showNotice("您必须<a href=\"https://passport.game2.cn/login/\">登录<" + "/a>通行证才能进行该操作；如果您还没有通行证账号，请先<a href=\"/register/\">注册<" + "/a>。");
+        }
+    </script>
+</head>
+
+<body><iframe id="fbg" scrolling="no" style="display: none; width: 100%; height: 100%;"></iframe><div id="notice_div" style="display: none;"><div class="pop_notice"><h3 id="msg_drag"><span>系统提示</span></h3><div id="msg_content"></div><div id="bt_Container" class="button"><input id="msg_confirm" type="button" value="确 定" class="b2"><input id="msg_cancel" type="button" value="取 消" class="b2"></div><a href="javascript:void(0);" id="msg_close" class="close"></a></div></div><div id="msg_hiddenBorder" class="hiddenBorder"><div style="width:100%;height:100%;"></div></div>
+<div class="bg01">
+	  	<div class="wrap clearfix">
+   	  <div class="top clearfix">
+        <div class="logo fl">
+            <a href="http://www.game2.cn/" onfocus="this.blur();"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/logo.jpg" width="194" height="67"> </a>
+            <!--
+            <object width="500" height="120" align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" id="undefined">
+                <param value="always" name="allowScriptAccess">
+                <param value="/images/swf/logo.swf" name="movie">
+                <param value="high" name="quality">
+                <param value="#FFFFFF" name="bgcolor">
+                <param value="transparent" name="wmode">
+                <param value="false" name="menu">
+                <embed width="500"  height="120" align="middle" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" allowscriptaccess="always" name="undefined" menu="false" quality="high" src="/images/swf/logo.swf">
+            </object>
+            -->
+       	</div>
+          <div class="swf fr">
+           	  <div class="topBar">
+               	  <a href="https://passport.game2.cn/pay/" target="_blank">充值中心</a>
+                  <span>|</span>
+                  <a href="http://www.game2.cn/serverCenter/" target="_blank">客服中心</a>
+                  <span>|</span>
+                  <a href="javascript:void(0);" onclick="addfavorite();return false;">玩家收藏</a>
+                  <span>|</span>
+                  <a href="http://www.game2.cn/shortcut.php" onclick="stat.visit(&#39;toolbar20140227&#39;);" target="_blank">把哥们网放到桌面上</a>
+              </div>
+          </div>
+        </div>
+        <script language="javascript">
+        <!--
+        	function addfavorite()
+        	{
+        		if (document.all)
+        			window.external.addFavorite('http://www.game2.cn','哥们网-网页游戏第一品牌');
+        		else if (window.sidebar)
+        			window.sidebar.addPanel('哥们网-网页游戏第一品牌', 'http://www.game2.cn', "");
+        	}
+        -->
+        </script>              <div id="nav">
+      	 <ul>
+         	<li>
+            	<a class="navA current" href="http://www.game2.cn/" onfocus="this.blur();">首页</a>
+            	                <div class="notice" style="display:none0;">坚持以用户体验为己任，不断创新！哥们网新版上线，新视觉、新功能，感受“新”精彩！</div>
+                            </li>
+            <li>
+            	<a class="navA" href="http://www.game2.cn/hall/" onfocus="this.blur();">游戏大厅</a>
+            	            </li>
+            <li>
+            	<a class="navA" href="http://www.game2.cn/member/" onfocus="this.blur();">个人中心</a>
+            	            </li>
+            <li>
+            	<a class="navA" href="http://www.game2.cn/community/" onfocus="this.blur();">交友</a>
+                            </li>
+            <li>
+            	<a class="navA" href="http://www.game2.cn/moreAffiche/type/activity/" onfocus="this.blur();">活动</a>
+                            </li>
+            <li>
+            	<a class="navA" href="http://www.game2.cn/prize/" onfocus="this.blur();">礼品</a>
+                            </li>
+            <li>
+            	<a class="navA" href="https://passport.game2.cn/pay/" target="_blank" onfocus="this.blur();">充值</a>
+                            </li>
+            <li>
+            	<a class="navA" href="http://bbs.game2.cn/" onfocus="this.blur();" target="_blank">论坛</a>
+            </li>
+            <li>
+            	<a class="navA" href="http://www.game2.cn/allGM/" onfocus="this.blur();">我的GM</a>
+				<div style="display:none;"></div>
+				            </li>
+         </ul>
+      </div>      <div class="col1 fl">
+                   <script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/swfobject.js"></script>
+                   <form method="post" id="Form1" name="Form1" action="http://www.game2.cn/index_login/" onsubmit="return checkLogin();">
+      	  <div class="login" style="display:none0;">
+          	  <h3>哥们网用户登录</h3>
+              <p>
+              	 <label>通行证：</label>
+                 <input name="code" id="code" type="text" tabindex="1">
+              </p>
+              <p>
+              	 <label>密&nbsp;&nbsp;码：</label>
+                 <input name="password" type="password" id="password" tabindex="2">
+              </p>
+              <p class="validate">
+                   <label>验证码：</label>
+                   <input name="vcode" id="vcode" type="text" datatype="Custom" regexp="^\d{4}$" msg="您输入的密码有误！" tabindex="3">
+                   <img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/verifyCode.php" style="width:45px;height:20px;" onclick="this.src=&#39;/verifyCode.php?id=&#39;+Math.random();" id="vimg" alt="点击更换验证码">
+              </p>
+              <p class="check">
+                  <input name="keeplive" type="checkbox" value="1" id="rem" checked="checked">
+                  <label>记住登录账号</label>
+                  <a href="https://passport.game2.cn/login/" target="_blank" onclick="stat.visit(&#39;cum8008&#39;);">安全登录</a>
+              </p>
+              <p class="btn">
+              	 <button type="submit" class="btnOn" style="opacity: 0;">立即登录</button>
+              </p>
+              <em>没有哥们网账号？&nbsp;&nbsp;<a href="https://passport.game2.cn/getPassword/" target="_blank">找回密码</a></em>
+              <p>
+              	 <a class="regBtn" href="http://www.game2.cn/register/" target="_blank">这里注册哥们网通行证</a>
+              </p>
+          </div>
+          </form>
+                  <script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/md5.js"></script>
+        			<script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/cookie.js"></script>
+                    <script type="text/javascript">
+                    function checkLogin()
+                    {
+                        var code = document.getElementById('code').value;
+                        if(/^[a-z_][a-z_0-9]*$/i.test(code))
+                        {
+                            if(code.length > 20 || code.length <3)
+                            {
+                                Notice.showNotice("您输入的账号有误！",false);
+                                return false;
+                            }
+                        }
+                        else if(!(/^\d{6,15}$/.test(code)))
+                        {
+                            Notice.showNotice("您输入的账号有误！",false);
+                            return false;
+                        }
+                        var pwd = document.getElementById('password').value;
+                        if(pwd.length < 6)
+                        {
+                            Notice.showNotice("您输入的密码有误！",false);
+                            return false;
+                        }
+                        document.getElementById('password').value = hex_md5(pwd);;
+                        return true;
+                    };
+                    var femail=true;
+                    var fpwd=true;
+                    var keepcode= getCookie("KEEPCODE");
+                    if(keepcode)
+                    {
+                        document.getElementById('code').value = keepcode;
+                        document.getElementById('password').value = "";
+                        femail = false;
+                        fpwd = false;
+                    }
+             </script>
+          
+          <style type="text/css">
+    .pageItem_new,.pageItem_open,.pagnation .pagePrev,.pagnation .pageNext{display:none;}
+    .pageItemShow{display:block;}
+</style>
+<div class="newSer">
+    <h3>游戏开服信息</h3>
+    <div class="sTab">
+        <a href="javascript:void(0);" class="newSer_tabItem sOn">最新开服</a>
+        <a href="javascript:void(0);" class="newSer_tabItem">开服预告</a>
+    </div>
+
+    <div class="newSer_tabCont">
+        <ul class="clearfix">
+                        <li class="newSer_tabContItem pageItem_new pageItemShow">
+                <div class="sInfo" style="display: none;">
+                    <span class="gName">万世</span><span class="gSer">217服</span><em>04-16 17:00</em>
+                </div>
+                <dl class="sOpen" style="display: block;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_wanshi.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/wanshi/" class="gName" target="_blank">万世</a>
+                                                        <a href="http://www.game2.cn/codelist/code/wanshi/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/wanshi217/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">217服</span>
+                            <em>04-16 17:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new pageItemShow">
+                <div class="sInfo">
+                    <span class="gName">赤天</span><span class="gSer">291服</span><em>04-16 17:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ct.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ct/" class="gName" target="_blank">赤天</a>
+                                                        <a href="http://www.game2.cn/codelist/code/ct/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ct291/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">291服</span>
+                            <em>04-16 17:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new pageItemShow">
+                <div class="sInfo" style="display: block;">
+                    <span class="gName">傲剑2</span><span class="gSer">592服</span><em>04-16 16:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ajer.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ajer/" class="gName" target="_blank">傲剑2</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ajer592/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">592服</span>
+                            <em>04-16 16:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new pageItemShow">
+                <div class="sInfo" style="display: block;">
+                    <span class="gName">三国魂</span><span class="gSer">21服</span><em>04-16 14:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_sgh.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/sgh/" class="gName" target="_blank">三国魂</a>
+                                                        <a href="http://www.game2.cn/codelist/code/sgh/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/sgh21/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">21服</span>
+                            <em>04-16 14:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new pageItemShow">
+                <div class="sInfo">
+                    <span class="gName">傲剑2</span><span class="gSer">591服</span><em>04-16 13:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ajer.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ajer/" class="gName" target="_blank">傲剑2</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ajer591/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">591服</span>
+                            <em>04-16 13:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new pageItemShow">
+                <div class="sInfo" style="display: block;">
+                    <span class="gName">九龙朝</span><span class="gSer">502服</span><em>04-16 11:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_jlc.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/jlc/" class="gName" target="_blank">九龙朝</a>
+                                                        <a href="http://www.game2.cn/codelist/code/jlc/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/jlc502/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">502服</span>
+                            <em>04-16 11:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">开天辟地2</span><span class="gSer">11服</span><em>04-16 11:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_kt.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/kt/" class="gName" target="_blank">开天辟地2</a>
+                                                        <a href="http://www.game2.cn/codelist/code/kt/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/kt11/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">11服</span>
+                            <em>04-16 11:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">傲剑</span><span class="gSer">1054</span><em>04-16 11:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_aojian.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/aojian/" class="gName" target="_blank">傲剑</a>
+                                                        <a href="http://www.game2.cn/codelist/code/aojian/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/aojian1054/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">1054</span>
+                            <em>04-16 11:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">傲剑2</span><span class="gSer">590服</span><em>04-16 10:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ajer.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ajer/" class="gName" target="_blank">傲剑2</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ajer590/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">590服</span>
+                            <em>04-16 10:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">万世</span><span class="gSer">216服</span><em>04-16 10:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_wanshi.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/wanshi/" class="gName" target="_blank">万世</a>
+                                                        <a href="http://www.game2.cn/codelist/code/wanshi/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/wanshi216/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">216服</span>
+                            <em>04-16 10:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">赤天</span><span class="gSer">290服</span><em>04-16 10:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ct.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ct/" class="gName" target="_blank">赤天</a>
+                                                        <a href="http://www.game2.cn/codelist/code/ct/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ct290/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">290服</span>
+                            <em>04-16 10:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">傲剑2</span><span class="gSer">589服</span><em>04-15 21:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ajer.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ajer/" class="gName" target="_blank">傲剑2</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ajer589/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">589服</span>
+                            <em>04-15 21:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">傲剑2</span><span class="gSer">588服</span><em>04-15 19:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ajer.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ajer/" class="gName" target="_blank">傲剑2</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ajer588/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">588服</span>
+                            <em>04-15 19:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">万世</span><span class="gSer">215服</span><em>04-15 17:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_wanshi.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/wanshi/" class="gName" target="_blank">万世</a>
+                                                        <a href="http://www.game2.cn/codelist/code/wanshi/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/wanshi215/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">215服</span>
+                            <em>04-15 17:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">赤天</span><span class="gSer">289服</span><em>04-15 17:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ct.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ct/" class="gName" target="_blank">赤天</a>
+                                                        <a href="http://www.game2.cn/codelist/code/ct/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ct289/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">289服</span>
+                            <em>04-15 17:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">傲剑2</span><span class="gSer">587服</span><em>04-15 16:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_ajer.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/ajer/" class="gName" target="_blank">傲剑2</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/ajer587/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">587服</span>
+                            <em>04-15 16:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">风云无双</span><span class="gSer">十五服</span><em>04-15 14:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_fyws.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/fyws/" class="gName" target="_blank">风云无双</a>
+                                                        <a href="http://www.game2.cn/codelist/code/fyws/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/fyws15/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">十五服</span>
+                            <em>04-15 14:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_new">
+                <div class="sInfo">
+                    <span class="gName">御天</span><span class="gSer">27服</span><em>04-15 14:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_yt.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/yt/" class="gName" target="_blank">御天</a>
+                                                        <a href="http://www.game2.cn/codelist/code/yt/" class="gGift" target="_blank">礼</a>
+                                                        <a href="http://www.game2.cn/joinGame/code/yt27/" class="gInner" target="_blank">进入新区</a>
+                        </p>
+                        <p>
+                            <span class="gSer">27服</span>
+                            <em>04-15 14:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                    </ul>
+        <div class="pagnation pagnation_new pa2"><a class="prev pagePrev disabled" href="javascript:void(0)">上一页</a>    <a class="pageNum pageOn currPage" href="javascript:void(0)" data-page="1">1</a>    <a class="pageNum" href="javascript:void(0)" data-page="2">2</a>    <a class="pageNum" href="javascript:void(0)" data-page="3">3</a><a class="next pageNext disabled" href="javascript:void(0)">下一页</a></div>
+    </div>
+
+    <div class="newSer_tabCont" style="display:none;">
+                <ul class="clearfix">
+                        <li class="newSer_tabContItem pageItem_open pageItemShow">
+                <div class="sInfo" style="display: none;">
+                    <span class="gName">三国名将</span><span class="gSer">21服</span><em>04-17 11:00</em>
+                </div>
+                <dl class="sOpen" style="display: block;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_sgmj.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/sgmj/" class="gName" target="_blank">三国名将</a>
+                            <a href="javascript:void(0);" class="qqNotice gInner" data-time="2014-04-17 11:00:00" data-gcode="sgmj" data-svcode="sgmj21" data-gname="三国名将" data-svname="[21服]第21服">开服提醒</a>
+                        </p>
+                        <p>
+                            <span class="gSer">21服</span>
+                            <em>04-17 11:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                        <li class="newSer_tabContItem pageItem_open pageItemShow">
+                <div class="sInfo">
+                    <span class="gName">最无极</span><span class="gSer">10服</span><em>04-17 14:00</em>
+                </div>
+                <dl class="sOpen" style="display: none;">
+                    <dt><img width="40" height="35" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/s_zwj.jpg"></dt>
+                    <dd>
+                        <p>
+                            <a href="http://www.game2.cn/server/code/zwj/" class="gName" target="_blank">最无极</a>
+                            <a href="javascript:void(0);" class="qqNotice gInner" data-time="2014-04-17 14:00:00" data-gcode="zwj" data-svcode="zwj10" data-gname="最无极" data-svname="[10服]月夕花晨">开服提醒</a>
+                        </p>
+                        <p>
+                            <span class="gSer">10服</span>
+                            <em>04-17 14:00</em>
+                        </p>
+                    </dd>
+                </dl>
+            </li>
+                    </ul>
+        <div class="pagnation pagnation_open pa2"><a class="prev pagePrev disabled" href="javascript:void(0)">上一页</a>    <a class="pageNum pageOn currPage" href="javascript:void(0)" data-page="1">1</a><a class="next pageNext disabled" href="javascript:void(0)">下一页</a></div>
+            </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        // 切换
+        $('.newSer_tabItem').each(function(i){
+            $(this).bind('click', function(){
+                $(this).addClass('sOn').siblings('.newSer_tabItem').removeClass('sOn');
+                $('.newSer_tabCont').eq(i).show().siblings('.newSer_tabCont').hide();
+                return false;
+            });
+        });
+        $('.newSer_tabContItem').bind('mouseover', function(){
+            var $ul = $(this).closest('ul');
+            $ul.find('.sInfo').show();
+            $ul.find('.sOpen').hide();
+            $(this).find('.sOpen').show();
+            $(this).find('.sInfo').hide();
+            return false;
+        });
+        // 分页
+        Pager({perRecords: 6, pageItemCls:'.pageItem_new', paginationCls: '.pagnation_new'});
+        Pager({perRecords: 6, pageItemCls:'.pageItem_open', paginationCls: '.pagnation_open'});
+
+        // qq提醒
+        $('.newSer').delegate('.qqNotice', 'click', function(){
+            var time   = $(this).attr('data-time');
+            var time2  = time.substr(0,16);
+            var time3  = time.substr(11, 5);
+            var gcode  = $(this).attr('data-gcode');
+            var svcode = $(this).attr('data-svcode');
+            var gname  = $(this).attr('data-gname').replace('联盟', '');
+            var svname = $(this).attr('data-svname').replace('联盟', '');
+            var __qqClockShare = {
+                content: "温馨提示：哥们网《" + gname + "》" + svname + "于今日" + time3 + "开启，祝您游戏愉快！",
+                time: time2,
+                advance: 0,
+                url: "http://www.game2.cn/server/code/" + gcode + "/"
+            };
+            window.open('http://qzs.qq.com/snsapp/app/bee/widget/open.htm#content=' + encodeURIComponent(__qqClockShare.content) +'&time=' + encodeURIComponent(__qqClockShare.time) +'&advance=' + __qqClockShare.advance +'&url=' + encodeURIComponent(__qqClockShare.url) );
+            return false;
+        });
+    });
+
+
+    // 简单分页函数
+    var Pager = function(config){
+        return new Pager.fn.init(config);
+    };
+    Pager.fn = Pager.prototype = {
+        options: {
+            currentPage: 1,
+            perRecords: 3,
+            pageItemCls: '.pageItem',
+            paginationCls: '.pagination',
+            triggerType: 'click'
+        },
+        init: function(config) {
+            var that = this;
+            config = config || {};
+            $.extend(true, this.options, config);
+            this.currentPage = this.options.currentPage;
+            this.perRecords  = this.options.perRecords;
+            this.pageItem    = $(this.options.pageItemCls);
+            this.pagination  = $(this.options.paginationCls);
+            this.allRecords  = this.pageItem.length;
+            this.triggerType = this.options.triggerType;
+
+            if (this.allRecords) {
+                this.pagination.undelegate('.pagePrev', this.triggerType).delegate('.pagePrev', this.triggerType, function(){
+                    if (!$(this).hasClass('disabled')) {
+                        that.goPage(that.currentPage - 1);
+                    }
+                    return false;
+                }).undelegate('.pageNext', this.triggerType).delegate('.pageNext', this.triggerType, function(){
+                    if (!$(this).hasClass('disabled')) {
+                        that.goPage(that.currentPage + 1);
+                    }
+                    return false;
+                }).undelegate('.pageNum', this.triggerType).delegate('.pageNum', this.triggerType, function(){
+                    var pageNum = parseInt($(this).attr('data-page'));
+                    that.goPage(pageNum);
+                    return false;
+                }).html(this.getLink());
+
+                this.goPage(this.currentPage);
+            } else {
+                $('.pagePrev').addClass('disabled');
+                $('.pageNext').addClass('disabled');
+            }
+        },
+        getStartIndex: function() {
+            return (this.currentPage - 1) * this.perRecords;
+        },
+        getEndIndex: function() {
+            return this.currentPage * this.perRecords - 1;
+        },
+        hasNext: function() {
+            return this.currentPage < this.getAllPage();
+        },
+        getAllPage: function() {
+            return Math.ceil(this.allRecords/this.perRecords);
+        },
+        hasPrevious: function() {
+            return this.currentPage > 1;
+        },
+        getLink: function() {
+            var tplArr = [];
+            // 上一页
+            if (this.hasPrevious()) {
+                tplArr.push('<a class="prev pagePrev" href="javascript:void(0)">上一页</a>');
+            } else {
+                tplArr.push('<a class="prev pagePrev disabled" href="javascript:void(0)">上一页</a>');
+            }
+
+            // 分页数
+            var allPage = this.getAllPage();
+            for (var i=1; i<=allPage; i++) {
+                if (i == this.currentPage) {
+                    tplArr.push('    <a class="pageNum pageOn currPage" href="javascript:void(0)" data-page="' + i + '">' + i + '</a>');
+                } else {
+                    tplArr.push('    <a class="pageNum" href="javascript:void(0)" data-page="' + i + '">' + i + '</a>');
+                }
+            }
+
+            // 下一页
+            if (this.hasNext()) {
+                tplArr.push('<a class="next pageNext" href="javascript:void(0)">下一页</a>');
+            } else {
+                tplArr.push('<a class="next pageNext disabled" href="javascript:void(0)">下一页</a>');
+            }
+
+            return tplArr.join('');
+        },
+        goPage: function(pageNum) {
+            this.currentPage = pageNum;
+            this.pageItem.removeClass('pageItemShow');
+            this.pageItem.slice(this.getStartIndex(), this.getEndIndex()+1).addClass('pageItemShow');
+            this.pageItem.eq(this.getStartIndex()).trigger('mouseover');
+
+            // 上一页
+            if (this.hasPrevious()) {
+                $('.pagePrev').removeClass('disabled');
+            } else {
+                $('.pagePrev').addClass('disabled');
+            }
+            // 下一页
+            if (this.hasNext()) {
+                $('.pageNext').removeClass('disabled')
+            } else {
+                $('.pageNext').addClass('disabled')
+            }
+
+            this.pagination.html(this.getLink());
+        }
+    };
+    Pager.fn.init.prototype = Pager.fn;
+</script>
+          <div class="sidePic">
+          	  <a href="http://www.game2.cn/server/code/ajer/" target="_blank"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/sidePic2.jpg" width="207" height="189"></a>
+</div>                  <div class="cs">
+          	  <h3>客服信息</h3>
+              <p>客服邮箱：<a href="mailto:kf@game2.cn">kf@game2.cn</a></p>
+              <p>投诉邮箱：<a href="mailto:ts@game2.cn">ts@game2.cn</a></p>
+              <a class="online" href="http://chat.53kf.com/webCompany.php?arg=xmgame&style=1" target="_blank" style="opacity: 0;">在线咨询</a>
+          </div>          <div class="question">
+              <h3>常见问题</h3>	
+              <ul>
+                  <li><a href="http://www.game2.cn/faq/id/77/" target="_blank">什么是哥们通行证？</a></li>
+                  <li><a href="http://www.game2.cn/faq/id/89/" target="_blank">如何完成通行证注册？</a></li>
+                  <li><a href="http://www.game2.cn/faq/id/576/" target="_blank">什么是哥们号？</a></li>
+                  <li><a href="http://www.game2.cn/faq/id/612/" target="_blank">如何使用G宝？</a></li>
+                  <li><a href="http://www.game2.cn/faq/id/3000/" target="_blank">如何用积分兑换礼品？</a></li>
+                  <li><a href="http://www.game2.cn/faq/id/19/" target="_blank">如何选择适合我的充值方式？</a></li>
+                  <li><a href="http://www.game2.cn/faq/id/17/" target="_blank">为什么充值时提示未激活游戏？</a></li>
+                  <li><a href="http://www.game2.cn/faq/id/1519/" target="_blank">哥们网防沉迷系统如何设置？</a></li>
+                  <li><a href="http://www.game2.cn/faq/id/1458/" target="_blank">盗号方法大揭密及防范措施</a></li>
+              </ul>
+          </div>      </div>
+      <div class="col3 fr">
+                          <div class="showBox">
+              <div class="show">
+                <div class="small" style="display: block;">
+                                                      <a href="javascript:void(0)" style="display: none;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/img1-2.jpg" width="777" height="51"></a>
+                                                                        <a href="javascript:void(0)" style="display: inline;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/img2.jpg" width="777" height="51"></a>
+                                                      </div>
+                <div class="big" style="display: none;"></div>
+              </div> 
+              <div class="itBtn" style="display: block;">
+                <a href="javascript:void(0)" class="rep">展示-关闭</a>
+              </div>
+          </div>
+                	  <div class="commendBox clearfix">
+          	  <h3>重点推荐</h3>
+              <div class="commend">
+              	                                 	  <div class="hotBox">
+                  	  <div class="hotPic" id="slides1">
+                          <div class="con" style="overflow: hidden; position: relative;">
+                            <div class="slides_control" style="position: relative; width: 732px; height: 155px; left: -244px;"><a href="http://www.game2.cn/server/code/ajer/" style="position: absolute; top: 0px; left: 244px; z-index: 0;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/ajer_1.jpg" width="244" height="155" style="display: block;"></a><a href="http://www.game2.cn/server/code/ajer/" style="position: absolute; top: 0px; left: 244px; z-index: 0; display: none;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/ajer_2.jpg" width="244" height="155" style="display: block;"></a><a href="http://www.game2.cn/server/code/ajer/" style="position: absolute; top: 0px; left: 244px; z-index: 0; display: none;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/ajer_3.jpg" width="244" height="155" style="display: block;"></a></div>
+                            
+                            
+                          </div>
+                          <a href="http://www.game2.cn/?zhuomian#" class="prev" onclick="return false;"></a>
+                          <a href="http://www.game2.cn/?zhuomian#" class="next" onclick="return false;"></a>
+                          <var class="v0">角色扮演</var>
+                      </div>
+                      <div class="hotInfo">
+                      	  <p class="p1">
+                      	  	 <a href="http://www.aojian2.net/" target="_blank">官网</a><span>|</span>
+                             <a href="http://bbs.game2.cn/forum-615-1.html" target="_blank">论坛</a><span>|</span>
+                             <a href="http://www.aojian2.net/yxzl/youxiziliao-1809.htm" target="_blank">快速上手指南&gt;&gt;</a>
+                          </p>
+                          <p class="p2">《傲剑2》是一款哥们网2013年重磅推出的首款“新轻功”武侠网页游戏...</p>
+                          <p class="p3">
+                          	 <span>最新区服：<a href="http://www.game2.cn/joinGame/code/ajer592/" target="_blank">592服</a></span>
+                             <a class="inner hover" href="http://www.game2.cn/server/code/ajer/" target="_blank" style="opacity: 0;">进入游戏</a>
+                          </p>
+                      </div>
+                  </div>
+                                                                      	  <div class="hotBox hotMid">
+                  	  <div class="hotPic" id="slides2">
+                          <div class="con" style="overflow: hidden; position: relative;">
+                            <div class="slides_control" style="position: relative; width: 732px; height: 155px; left: -244px;"><a href="http://www.game2.cn/server/code/wanshi/" style="position: absolute; top: 0px; left: 244px; z-index: 0;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/wanshi_1.jpg" width="244" height="155" style="display: block;"></a><a href="http://www.game2.cn/server/code/wanshi/" style="position: absolute; top: 0px; left: 244px; z-index: 0; display: none;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/wanshi_2.jpg" width="244" height="155" style="display: block;"></a><a href="http://www.game2.cn/server/code/wanshi/" style="position: absolute; top: 0px; left: 244px; z-index: 0; display: none;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/wanshi_3.jpg" width="244" height="155" style="display: block;"></a></div>
+                            
+                            
+                          </div>
+                          <a href="http://www.game2.cn/?zhuomian#" class="prev" onclick="return false;"></a>
+                          <a href="http://www.game2.cn/?zhuomian#" class="next" onclick="return false;"></a>
+                          <var class="v0">角色扮演</var>
+                      </div>
+                      <div class="hotInfo">
+                      	  <p class="p1">
+                      	  	 <a href="http://wanshi.game2.cn/" target="_blank">官网</a><span>|</span>
+                             <a href="http://bbs.game2.cn/forum-627-1.html" target="_blank">论坛</a><span>|</span>
+                             <a href="http://wanshi.game2.cn/yxzl/list-1971.htm" target="_blank">快速上手指南&gt;&gt;</a>
+                          </p>
+                          <p class="p2">《万世》是纯正武侠题材网页游戏，并通过“轮回转生”将每一部小说...</p>
+                          <p class="p3">
+                          	 <span>最新区服：<a href="http://www.game2.cn/joinGame/code/wanshi217/" target="_blank">217服</a></span>
+                             <a class="inner hover" href="http://www.game2.cn/server/code/wanshi/" target="_blank" style="opacity: 0;">进入游戏</a>
+                          </p>
+                      </div>
+                  </div>
+                                                                      	  <div class="hotBox">
+                  	  <div class="hotPic" id="slides3">
+                          <div class="con" style="overflow: hidden; position: relative;">
+                            <div class="slides_control" style="position: relative; width: 732px; height: 155px; left: -244px;"><a href="http://www.game2.cn/server/code/ct/" style="position: absolute; top: 0px; left: 244px; z-index: 0;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/ct_1.jpg" width="244" height="155" style="display: block;"></a><a href="http://www.game2.cn/server/code/ct/" style="position: absolute; top: 0px; left: 244px; z-index: 0; display: none;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/ct_2.jpg" width="244" height="155" style="display: block;"></a><a href="http://www.game2.cn/server/code/ct/" style="position: absolute; top: 0px; left: 244px; z-index: 0; display: none;"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/ct_3.jpg" width="244" height="155" style="display: block;"></a></div>
+                            
+                            
+                          </div>
+                          <a href="http://www.game2.cn/?zhuomian#" class="prev" onclick="return false;"></a>
+                          <a href="http://www.game2.cn/?zhuomian#" class="next" onclick="return false;"></a>
+                          <var class="v0">角色扮演</var>
+                      </div>
+                      <div class="hotInfo">
+                      	  <p class="p1">
+                      	  	 <a href="http://chitian.game2.cn/" target="_blank">官网</a><span>|</span>
+                             <a href="http://bbs.game2.cn/forum-605-1.html" target="_blank">论坛</a><span>|</span>
+                             <a href="http://chitian.game2.cn/" target="_blank">快速上手指南&gt;&gt;</a>
+                          </p>
+                          <p class="p2">《赤天》是首款轻挑逗、纯武侠页游，全新3D渲染引擎的支持下，突...</p>
+                          <p class="p3">
+                          	 <span>最新区服：<a href="http://www.game2.cn/joinGame/code/ct291/" target="_blank">291服</a></span>
+                             <a class="inner hover" href="http://www.game2.cn/server/code/ct/" target="_blank" style="opacity: 0;">进入游戏</a>
+                          </p>
+                      </div>
+                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
+              <div class="commendB"></div>
+          </div>
+          <div class="wePlayBox">
+          	  <h3 class="clearfix">
+              	  <span class="fl">大家都在玩</span>
+                  <a class="fr" href="http://www.game2.cn/allgames/">全部游戏</a>
+              </h3>
+              <div class="wePlay clearfix">
+              	                                                                                                                                <div class="Gbox">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/fyws/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/fyws.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/fyws/">风云无双</a>
+                         <em>角色扮演</em>
+                         <span>火热推荐</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://fyws.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://fyws.game2.cn/yxgl/yxgl/youxigonglue-2352-1.htm" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/fyws/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/jlc/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/jlc.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/jlc/">九龙朝</a>
+                         <em>角色扮演</em>
+                         <span>火热推荐</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://9.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://9.game2.cn/yxzl/yxzl/yxzl/youximiji-7198.htm" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/jlc/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox noMargin">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/aojian/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/aojian.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/aojian/">傲剑</a>
+                         <em>角色扮演</em>
+                         <span>火热推荐</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://aojian.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://aojian.game2.cn/aojiangonglue/list-488-1.htm" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/aojian/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/tianjie/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/tianjie.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/tianjie/">天界</a>
+                         <em>角色扮演</em>
+                         <span>火热推荐</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://tianjie.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://tianjie.game2.cn/yxgl/yxgl/list-1264-1.htm" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/tianjie/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/yt/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/yt.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/yt/">御天</a>
+                         <em>角色扮演</em>
+                         <span>火热推荐</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://yt.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://yt.game2.cn/" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/yt/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox noMargin">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/nsly/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/nsly.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/nsly/">女神领域</a>
+                         <em>角色扮演</em>
+                         <span>新服</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://nsly.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://nsly.game2.cn/" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/nsly/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/kt/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/kt.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/kt/">开天辟地2</a>
+                         <em>角色扮演</em>
+                         <span>新服</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://kt.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://kt.game2.cn/yxgl/yxgl/youxigonglue-2247-1.htm" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/kt/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/zwj/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/zwj.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/zwj/">最无极</a>
+                         <em>角色扮演</em>
+                         <span>新服</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://zwj.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://zwj.game2.cn/" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/zwj/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox noMargin">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/qs/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/qs.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/qs/">七杀</a>
+                         <em>角色扮演</em>
+                         <span>新服</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://qs.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://qs.game2.cn/yxgl/yxgl/youxigonglue-2091-1.htm" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/qs/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/sgh/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/sgh.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/sgh/">三国魂</a>
+                         <em>战争策略</em>
+                         <span>新服</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://sgh.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://sgh.game2.cn/yxgl/yxgl/youxigonglue-1955-1.htm" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/sgh/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/sgmj/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/sgmj.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/sgmj/">三国名将</a>
+                         <em>角色扮演</em>
+                         <span>新服</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://sgmj.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://sgmj.game2.cn/" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/sgmj/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                  <div class="Gbox noMargin">
+                  	  <p class="p01"><a class="Gimg" href="http://www.game2.cn/server/code/wxlm/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/wxlm.jpg" width="232" height="97"></a></p>
+                      <p class="p02">
+                      	 <a href="http://www.game2.cn/server/code/wxlm/">武侠联盟</a>
+                         <em>角色扮演</em>
+                         <span>火热推荐</span>
+                      </p>
+                      <p class="p03">
+                      	 <a class="Ghome" href="http://wxlm.game2.cn/" target="_blank">进入官网</a>
+                         <a class="Gexp" href="http://wxlm.game2.cn/yxgl/yxgl/youxigonglue-2303-1.htm" target="_blank">游戏攻略</a>
+                         <a class="Gin Ghover" href="http://www.game2.cn/server/code/wxlm/" target="_blank" style="opacity: 0;">进入游戏</a>
+                      </p>
+                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+              <div class="wePlayB"></div>
+          </div>
+          <div class="rowBox clearfix">
+          	  <div class="newsTab fl">
+              	  <h3>
+                  	  <a class="newsOn" href="javascript:void(0)" name="newsCon0">综合热点</a>
+                  	                    	                        <a href="javascript:void(0)" gid="79" name="newsCon1">傲剑2</a>
+                                                              	                        <a href="javascript:void(0)" gid="83" name="newsCon2">万世</a>
+                                                              	                        <a href="javascript:void(0)" gid="78" name="newsCon3">赤天</a>
+                                                              	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          	                                          </h3>
+                  <a class="more" id="moreaffice" href="http://www.game2.cn/moreAffiche/">更多&gt;&gt;</a>
+                  <div id="newsCon0">
+                  	   <ul>
+                  	                                  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20548/" title="【哥们网·万世】4月16日17:00 217服“三才朝元”震撼开启，引爆...">【哥们网·万世】4月16日17:00 217服“三才朝元”震撼开启，引爆...</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                       <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20543/" title="【哥们网·傲剑2】4月16日16:00盛大开启592服">【哥们网·傲剑2】4月16日16:00盛大开启592服</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                       <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20541/" title="【哥们网·傲剑2】4月16日13:00盛大开启591服">【哥们网·傲剑2】4月16日13:00盛大开启591服</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                       <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/news/">[新闻]</a></span>
+                                <a href="http://www.game2.cn/news/id/20539/" title="谁是国民女神？哥们网《女神领域》真人秀高调出击">谁是国民女神？哥们网《女神领域》真人秀高调出击</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                  </ul>
+                  </div>
+                                    <div style="display:none;" id="newsCon1">
+                  	   <ul>
+                  	                             	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20543/" title="【哥们网·傲剑2】4月16日16:00盛大开启592服">【哥们网·傲剑2】4月16日16:00盛大开启592服</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20541/" title="【哥们网·傲剑2】4月16日13:00盛大开启591服">【哥们网·傲剑2】4月16日13:00盛大开启591服</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/activity/">[活动]</a></span>
+                                <a href="http://www.game2.cn/news/id/20533/" title="【哥们网·傲剑2】超强战戒震撼登场，打造逆天神装！">【哥们网·傲剑2】超强战戒震撼登场，打造逆天神装！</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20531/" title="【哥们网·傲剑2】4月16日10:00盛大开启590服">【哥们网·傲剑2】4月16日10:00盛大开启590服</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 </ul>
+                  </div>
+                                    <div style="display:none;" id="newsCon2">
+                  	   <ul>
+                  	                             	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20548/" title="【哥们网·万世】4月16日17:00 217服“三才朝元”震撼开启，引爆...">【哥们网·万世】4月16日17:00 217服“三才朝元”震撼开启，引爆...</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/news/">[新闻]</a></span>
+                                <a href="http://www.game2.cn/news/id/20538/" title="斗酒玩法解读，哥们网《万世》江湖中你不懂的事">斗酒玩法解读，哥们网《万世》江湖中你不懂的事</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/activity/">[活动]</a></span>
+                                <a href="http://www.game2.cn/news/id/19415/" title="【哥们网·万世】暗器、一阳指幸运日，宝石彩蛋福运来">【哥们网·万世】暗器、一阳指幸运日，宝石彩蛋福运来</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20527/" title="【哥们网·万世】4月16日10:00 216服“魂梦魅曲”震撼开启，引爆...">【哥们网·万世】4月16日10:00 216服“魂梦魅曲”震撼开启，引爆...</a>
+                                <em>2014-04-15</em>
+                            </li>
+                                                 </ul>
+                  </div>
+                                    <div style="display:none;" id="newsCon3">
+                  	   <ul>
+                  	                             	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/activity/">[活动]</a></span>
+                                <a href="http://www.game2.cn/news/id/20529/" title="【哥们网·赤天】绝世神功再度来袭，元宝福利惊喜不断">【哥们网·赤天】绝世神功再度来袭，元宝福利惊喜不断</a>
+                                <em>2014-04-15</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20549/" title="【哥们网·赤天】4月17日联服系统开启通知">【哥们网·赤天】4月17日联服系统开启通知</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20547/" title="【哥们网·赤天】第291服4月16日17:00火爆开启">【哥们网·赤天】第291服4月16日17:00火爆开启</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 	  <li>
+                                <span><a href="http://www.game2.cn/moreAffiche/type/affiche/">[公告]</a></span>
+                                <a href="http://www.game2.cn/news/id/20532/" title="【哥们网·赤天】4月16日10:00第290服火爆开启">【哥们网·赤天】4月16日10:00第290服火爆开启</a>
+                                <em>2014-04-16</em>
+                            </li>
+                                                 </ul>
+                  </div>
+                                </div>
+              <div class="tool fr">
+              	  <a id="down" class="toolOn" href="http://www.game2.cn/activatecode/" target="_blank">下载游戏礼包</a>
+                  <a id="face" href="http://www.game2.cn/downlele/" target="_blank">下载乐乐表情</a>
+                  <a id="desk" href="http://www.game2.cn/wallpaper/" target="_blank">精美游戏壁纸</a>
+              </div>
+          </div>
+      </div>
+      <div class="player clearfix">
+      	  <h3>
+          	 <a class="playerOn" href="javascript:void(0)" name="g2show0">人气美女</a>
+             <a href="javascript:void(0)" name="g2show1">人气帅哥</a>
+          </h3>
+          <div class="playerList">
+          		          	  <ul class="g2show" id="g2show0">
+          	                          <li>
+                        <!--div>
+                            <a href="/userHome/id/174632023/" target="_blank"><img alt="浮灬誇" src="http://ucenter.game2.cn/data/avatar/174/63/20/23_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/174632023/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(174632023,'浮灬誇');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/174632023/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/174632023/"><img alt="浮灬誇" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/23_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/174632023/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(174632023,&#39;浮灬誇&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/174632023/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">42116240</a></p>
+                        <p class="game">广东梅州<em>美女</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/6989166/" target="_blank"><img alt="shangjiesos" src="http://ucenter.game2.cn/data/avatar/006/98/91/66_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/6989166/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(6989166,'shangjiesos');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/6989166/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/6989166/"><img alt="shangjiesos" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/66_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/6989166/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(6989166,&#39;shangjiesos&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/6989166/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">36061887</a></p>
+                        <p class="game">河南洛阳<em>美女</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/13787956/" target="_blank"><img alt="紫晶魔恋" src="http://ucenter.game2.cn/data/avatar/013/78/79/56_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/13787956/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(13787956,'紫晶魔恋');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/13787956/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/13787956/"><img alt="紫晶魔恋" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/56_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/13787956/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(13787956,&#39;紫晶魔恋&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/13787956/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">44389190</a></p>
+                        <p class="game">广东阳江<em>美女</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/78881343/" target="_blank"><img alt="nana659115739" src="http://ucenter.game2.cn/data/avatar/078/88/13/43_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/78881343/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(78881343,'nana659115739');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/78881343/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/78881343/"><img alt="nana659115739" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/43_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/78881343/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(78881343,&#39;nana659115739&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/78881343/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">73200423</a></p>
+                        <p class="game">山东烟台<em>美女</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/84048097/" target="_blank"><img alt="xiao4054426yu" src="http://ucenter.game2.cn/data/avatar/084/04/80/97_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/84048097/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(84048097,'xiao4054426yu');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/84048097/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/84048097/"><img alt="xiao4054426yu" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/97_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/84048097/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(84048097,&#39;xiao4054426yu&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/84048097/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">64362243</a></p>
+                        <p class="game">广东广州<em>美女</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/38545915/" target="_blank"><img alt="天使掉人间" src="http://ucenter.game2.cn/data/avatar/038/54/59/15_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/38545915/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(38545915,'天使掉人间');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/38545915/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/38545915/"><img alt="天使掉人间" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/15_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/38545915/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(38545915,&#39;天使掉人间&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/38545915/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">59103259</a></p>
+                        <p class="game">黑龙江哈尔滨<em>美女</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/451532/" target="_blank"><img alt="凡妮莎" src="http://ucenter.game2.cn/data/avatar/000/45/15/32_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/451532/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(451532,'凡妮莎');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/451532/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/451532/"><img alt="凡妮莎" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/32_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/451532/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(451532,&#39;凡妮莎&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/451532/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">48005267</a></p>
+                        <p class="game">上海<em>美女</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/88025201/" target="_blank"><img alt="优雅。" src="http://ucenter.game2.cn/data/avatar/088/02/52/01_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/88025201/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(88025201,'优雅。');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/88025201/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/88025201/"><img alt="优雅。" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/01_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/88025201/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(88025201,&#39;优雅。&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/88025201/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">80010488</a></p>
+                        <p class="game">重庆<em>美女</em></p>
+                    </li>
+                                </ul>
+                        	  <ul class="g2show" style="display:none;" id="g2show1">
+          	                          <li>
+                        <!--div>
+                            <a href="/userHome/id/99705081/" target="_blank"><img alt="淼儿" src="http://ucenter.game2.cn/data/avatar/099/70/50/81_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/99705081/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(99705081,'淼儿');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/99705081/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/99705081/"><img alt="淼儿" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/81_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/99705081/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(99705081,&#39;淼儿&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/99705081/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">50057426</a></p>
+                        <p class="game">浙江台州<em>帅哥</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/15270132/" target="_blank"><img alt="yy7rbi" src="http://ucenter.game2.cn/data/avatar/015/27/01/32_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/15270132/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(15270132,'yy7rbi');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/15270132/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/15270132/"><img alt="yy7rbi" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/32_avatar_middle(1).jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/15270132/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(15270132,&#39;yy7rbi&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/15270132/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">42698874</a></p>
+                        <p class="game">广东珠海<em>帅哥</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/7614948/" target="_blank"><img alt="從頭/再來" src="http://ucenter.game2.cn/data/avatar/007/61/49/48_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/7614948/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(7614948,'從頭/再來');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/7614948/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/7614948/"><img alt="從頭/再來" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/48_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/7614948/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(7614948,&#39;從頭/再來&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/7614948/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">36758964</a></p>
+                        <p class="game">安徽合肥<em>帅哥</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/17939139/" target="_blank"><img alt="jianjian520" src="http://ucenter.game2.cn/data/avatar/017/93/91/39_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/17939139/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(17939139,'jianjian520');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/17939139/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/17939139/"><img alt="jianjian520" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/39_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/17939139/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(17939139,&#39;jianjian520&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/17939139/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">38298616</a></p>
+                        <p class="game">江苏泰州<em>帅哥</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/54515108/" target="_blank"><img alt="瑜跃龙门" src="http://ucenter.game2.cn/data/avatar/054/51/51/08_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/54515108/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(54515108,'瑜跃龙门');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/54515108/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/54515108/"><img alt="瑜跃龙门" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/08_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/54515108/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(54515108,&#39;瑜跃龙门&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/54515108/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">38773097</a></p>
+                        <p class="game">广西南宁<em>帅哥</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/81054852/" target="_blank"><img alt="yf125818" src="http://ucenter.game2.cn/data/avatar/081/05/48/52_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/81054852/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(81054852,'yf125818');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/81054852/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/81054852/"><img alt="yf125818" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/52_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/81054852/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(81054852,&#39;yf125818&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/81054852/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">61560641</a></p>
+                        <p class="game">宁夏银川<em>帅哥</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/37458706/" target="_blank"><img alt="pompu23" src="http://ucenter.game2.cn/data/avatar/037/45/87/06_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/37458706/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(37458706,'pompu23');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/37458706/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/37458706/"><img alt="pompu23" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/06_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/37458706/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(37458706,&#39;pompu23&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/37458706/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">46941474</a></p>
+                        <p class="game">广东深圳<em>帅哥</em></p>
+                    </li>
+                                      <li>
+                        <!--div>
+                            <a href="/userHome/id/15184826/" target="_blank"><img alt="hebaicheng120" src="http://ucenter.game2.cn/data/avatar/015/18/48/26_avatar_middle.jpg" /></a>
+                            <span class="look"><a href="/userHome/id/15184826/" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0);" onclick="addFriend(15184826,'hebaicheng120');return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="/userMsgBoard/id/15184826/"  target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div-->
+                        <div>
+                            <a href="http://www.game2.cn/userHome/id/15184826/"><img alt="hebaicheng120" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/26_avatar_middle.jpg"></a>
+                            <span class="look"><a href="http://www.game2.cn/userHome/id/15184826/" target="_blank" title="查看资料">&nbsp;</a></span>
+                            <span class="add"><a href="javascript:void(0)" onclick="addFriend(15184826,&#39;hebaicheng120&#39;);return false;" title="加为好友">&nbsp;</a></span>
+                            <span class="hi"><a href="http://www.game2.cn/userMsgBoard/id/15184826/" target="_blank" title="给他留言">&nbsp;</a></span>
+                        </div>
+                        <p class="district"><a href="javascript:void(0)" onclick="return false;">45506834</a></p>
+                        <p class="game">黑龙江哈尔滨<em>帅哥</em></p>
+                    </li>
+                                </ul>
+                        </div>
+      </div>
+      <div class="friendLink clearfix">
+           <h3>友情连接</h3>
+           <div class="linkList">
+               <div class="linkList">
+	<a href="http://9.game2.cn/" target="_blank">九龙朝</a>|
+	<a href="http://tianjie.game2.cn/" target="_blank">天界</a>|
+	<a href="http://aojian.game2.cn/" target="_blank">傲剑</a>|
+	<a href="http://www.zhenwu.com/" target="_blank">真武</a>|
+	<a href="http://xianyu.game2.cn/" target="_blank">仙域</a>|
+	<a href="http://zhushen.game2.cn/" target="_blank">诛神</a>|
+	<a href="http://www.juu.cn/" target="_blank">聚游网</a>|
+	<a href="http://www.niua.com/" target="_blank">牛A网页游戏平台</a>|
+	<a href="http://www.7711.com/" target="_blank">7711网页游戏平台</a>|
+	<a href="http://www.yxduo.com/" target="_blank">游戏多网页游戏平台</a>|
+	<a href="http://www.guan5.com/" target="_blank" onclick="stat.visit(&#39;cum1112&#39;);">guan5网页游戏</a>|
+	<a href="http://www.xba.com.cn/" target="_blank" onclick="stat.visit(&#39;cum1024&#39;);">XBA网页游戏</a>|
+	<a href="http://web.pcgames.com.cn/" target="_blank" onclick="stat.visit(&#39;cum1107&#39;);">太平洋网页游戏</a>|
+	<a href="http://game.people.com.cn/" target="_blank">人民网游戏</a>|
+	<a href="http://www.2366.com/" target="_blank" onclick="stat.visit(&#39;cum1111&#39;);">2366网页游戏</a>|
+	<a href="http://www.265g.com/" target="_blank" onclick="stat.visit(&#39;cum1099&#39;);">265G网页游戏</a>|
+	<a href="http://www.3839.com/" target="_blank">在线小游戏</a>|
+	<a href="http://www.yeyou.com/" target="_blank" onclick="stat.visit(&#39;cum1011&#39;);">页游网（17173）</a>|
+	<a href="http://www.2144.cn/" target="_blank" onclick="stat.visit(&#39;cum1010&#39;);">2144小游戏</a>|
+	<a href="http://www.86wan.com/" target="_blank" onclick="stat.visit(&#39;cum1004&#39;);">86wan网页游戏 </a>|
+	<a href="http://web.52pk.com/" target="_blank" onclick="stat.visit(&#39;cum1033&#39;);">52pk网页游戏新闻</a>|
+	<a href="http://www.3887.com/" target="_blank">3887小游戏</a>|
+	<a href="http://www.popwan.com/" target="_blank" onclick="stat.visit(&#39;cum1074&#39;);">泡泡玩网页游戏</a>|
+	<a href="http://web.766.com/" target="_blank" onclick="stat.visit(&#39;cum1092&#39;);">766网页游戏</a>|
+	<a href="http://games.ifeng.com/" target="_blank" onclick="stat.visit(&#39;cum1108&#39;);">凤凰游戏</a>|
+	<a href="http://www.sgamer.com/" target="_blank">超级玩家</a>|
+	<a href="http://www.91danji.com/" target="_blank">91单机游戏网</a>|
+	<a href="http://www.weibo008.com/" target="_blank">博客联盟</a>|
+	<a href="http://www.keyrun.cn/" target="_blank">麒润广告联盟</a>|
+	<a href="http://www.cwan.com/" target="_blank">中国玩家网</a>|
+	<a href="http://www.xxdm.com/" target="_blank">星星动漫</a>|
+	<a href="http://www.573.com/" target="_blank">573网游平台</a>|
+	<a href="http://web.duowan.com/" target="_blank">多玩网页游戏</a>|
+	<a href="http://game.163.com/" target="_blank">网易游戏</a>|
+	<a href="http://games.sina.com.cn/" target="_blank">新浪网页游戏</a>
+</div>           </div>
+       </div>
+    </div>
+    <div id="footer">
+        <p class="footP1">　　
+           <a href="http://www.g2.cn/swhz/swhz/shangwuhezuo-4434.htm" target="_blank">商务合作</a>
+           |
+           <a href="http://www.g2.cn/jrwm/syzp-4460.htm" target="_blank">人才招聘</a>
+           |
+           <a href="http://www.game2.cn/jiazhang/index.htm" target="_blank">家长监护</a>
+           |
+           <a href="http://www.game2.cn/dispute/" target="_blank">纠纷处理</a>
+           |
+           <a href="http://www.g2.cn/" target="_blank">趣游</a>
+        </p>
+        <p>抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+        <p>
+            <a href="http://www.game2.cn/images/GroupWWW.jpg" target="_blank">京网文[2010]0400-015号</a>
+            <a href="http://www.game2.cn/images/GroupICP.jpg" target="_blank">京ICP证100827号</a>
+            <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09113349号</a>
+            京公网安备110107000053 
+        </p>
+        <p><a href="http://www.gamewave.net/" target="_blank">趣游科技集团有限公司</a> Copyright <span>©</span> 2001-2011 Game2.cn 版权所有  未经授权禁止转载、摘编、复制或建立镜像</p>
+        <p class="footP2 clearfix">
+            <a href="http://www.game2.cn/"><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/footerLogo.jpg" width="106" height="37"></a>
+            <a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202012071300019" target="_blank">
+               <img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/biaoshi.jpg" width="34" height="39">
+               经营性网站备案信息
+            </a>
+        </p>
+        <div style="display:none;">
+            <img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/favicon.ico">
+            <img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/jlc.ico">
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+(function() {
+    var $backToTopTxt = "", $backToTopEle = $('<a href="javascript:void(0)" class="backToTop" onfocus="this.blur();"> </a>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 300);
+    }), $backToTopFun = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st >200)? $backToTopEle.show(): $backToTopEle.hide();
+        //IE6下的定位
+        if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 200);
+        }
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() { $backToTopFun(); });
+    var title = decodeURI(gettitleCookie("UserTitle"));
+    if(title)
+    {
+        window.document.title = title;
+    }
+})();
+function gettitleCookie(sName) {
+	var aCookie = document.cookie.split('; ');
+	for (var i=0; i < aCookie.length; i++) {
+		var aCrumb = aCookie[i].split('=');
+		if (sName == aCrumb[0] && aCrumb[1])
+		return decodeURI(aCrumb[1]);
+	}
+	return '';
+}
+</script>
+
+
+
+     <!--[if lt IE 7]>
+        <style type="text/css">
+        #bwdh{
+            position: absolute;
+            bottom: auto;
+            clear: both;
+            left:42px;
+            z-index:9999;
+            top:expression(eval(document.compatMode &&
+             document.compatMode=='CSS1Compat') ?
+             documentElement.scrollTop
+             +(documentElement.clientHeight-this.clientHeight) - 10
+             : document.body.scrollTop
+             +(document.body.clientHeight-this.clientHeight) - 10);
+        }
+
+        </style>
+        <![endif]-->
+        <div id="bwdh" style="display: none;">
+            <div id="bwdh-close"><a href="javascript:void(0);" onclick="document.getElementById(&#39;bwdh&#39;).style.display=&#39;none&#39;;return false;"></a></div>
+            <a href="http://www.game2.cn/announce/index.htm" target="_blank"></a>
+        </div>
+        <div style="display:none">
+            <script type="text/javascript" src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/tongji.js"></script><img src="./哥们网 - 中国最具影响力网页游戏平台 - 好游戏，找哥们！_files/tongji.do" border="0" width="1" height="1"><noscript>&lt;a href="http://www.linezing.com"&gt;&lt;img src="http://img.tongji.linezing.com/1756236/tongji.gif"/&gt;&lt;/a&gt;</noscript>
+        </div>
+
+        <script type="text/javascript">
+       $(function(){
+    		var timer=null;
+    		$(".xinBox").animate({"right":"0"},500);
+    		timer=setTimeout(xinClose,5000);
+
+    		function xinClose()
+    		{
+
+    			$(".xinBox").animate({"right":"-206px"},500);
+    			$(".lele").animate({"right":"0"},500);
+                callBack();
+    		}
+    		function xinShow()
+    		{
+    			clearTimeout(timer);
+    			$(".lele").animate({"right":"-130px"},500);
+    			$(".xinBox").animate({"right":"0"},500);
+    		}
+
+    		$(".lele").click(function(){
+    			clearTimeout(timer);
+    			xinShow();
+    		});
+
+    	    $("#xinClose").click(xinClose);
+    		$(".xinBox").one("mouseover",function(){clearTimeout(timer);});
+    		$(".xinBox").one("mouseout",function(){setTimeout(xinClose,5000);});
+
+
+    	})
+
+    	function callBack()
+    	{
+    		thisMovie("leleSwf").play();
+    	}
+
+    	function thisMovie(movieName) {
+    		if (navigator.appName.indexOf("Microsoft") != -1) {
+    			return window[movieName]
+    		}
+    		else {
+    			return document[movieName]
+    		}
+    	}
+
+    </script>
+</body></html>

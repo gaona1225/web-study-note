@@ -1,0 +1,70 @@
+/**自定义登录*****************/
+
+/**
+#FFFFFF
+****/
+
+/**设置区域********/
+.ui-custom-loginlayout-head {
+	border:1px dashed tomato;
+	width:278px;
+	height:24px;
+	position:relative;top:0px;left:0px;text-indent:5px;line-height:24px;
+	/ *background-color: #75D1FF; */
+}
+
+.ui-custom-loginlayout-head span {
+	color:blue;
+}
+
+.ui-custom-loginlayout-head span.down {
+	width:8px; height:4px; 
+}
+
+/**登录区域*********/
+.ui-custom-loginlayout-input {
+	border:1px dashed  tomato;width:335px;height:162px;position:relative;top:0px;left:0px;
+}
+.ui-custom-loginlayout-input .user_info{ width:60px; height:100px; position:absolute; left:0; top:5px; }
+.ui-custom-loginlayout-input .user_info .user_signal{ width:50px; height:50px; position:absolute; left:5px; top:5px; background-image:url("../../../images/finallogin/head-add.png"); }
+.ui-custom-loginlayout-input .user_info .current_account{ width:50px; height:50px; position:absolute; left:5px; top:5px; background-image:url("../images/finallogin/head-user-photo.png");}
+
+/**右侧区域******/
+.login_info_ltd{ padding-left:12px; }
+.ui-custom-loginlayout-input .login_right{ width:262px; height:163px; position:absolute; top:0; left:72px; }
+.ui-custom-loginlayout-input .login_right .table_bg{ background-image:url("../../../images/finallogin/table-bg.png"); width:260px; height:70px; position:absolute; top:0; left:2px; color:#666666; }
+.ui-custom-loginlayout-input .login_right .table_bg1{ background-image:url("../../../images/finallogin/table-bg1.png"); width:260px; height:105; position:absolute; top:0; left:2px; color:#666666; }
+.ui-custom-loginlayout-input .login_button{ width:165px; height:43px; background-image:url("../../../images/finallogin/login-btn.png"); background-position:0 0; position:absolute; left:72px;; top:120px; display:block;}
+.ui-custom-loginlayout-input .login_right .select_ico{ background-image:url("../../../images/finallogin/select-down.png"); background-position:0 0; position:absolute; right:5px; top:5px; width:24px; height:24px; }
+
+.ui-custom-loginlayout-bar{
+	background: url("images/ui-custom/dutyplan/duty-plan-top_bar_02.png") repeat-x scroll 0 0 transparent;
+    clear: both;
+    display: block;
+    height: 14px;
+    margin-top: -2px;
+    padding-top: 1px;
+    text-align: center;
+}
+
+.ui-custom-loginlayout-em-up{
+	background: url("images/ui-custom/dutyplan/duty-plan-top_bottom_bar_up.png") repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 11px;
+    margin: 0 auto;
+    width: 123px;
+   }
+.ui-custom-loginlayout-em-down{
+	background: url("images/ui-custom/dutyplan/duty-plan-top_bottom_bar_down.png") repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 11px;
+    margin: 0 auto;
+    width: 123px;
+}
+
+.select .selected {border:2px solid #FF9933;}
+
+
+

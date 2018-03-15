@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>HTML5获取地理位置信息</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.geolocation.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>HTML获取地理位置信息（geolocation）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>基于HTML5获取地理位置信息，针对版本1.2+<br/>
+                兼容浏览器：IE9+/Chrome/Firefox/Safari/Opera等支持HTML5高版本浏览器</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;api.map.baidu.com/api?v=1.3(可选)</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> geolocation(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">class：</label>
+              （字符）参数：'showGeo'，存放地理位置信息元素class名</p>
+            <p>
+              <label class="help-item">nosupportMsg：</label>
+              （字符）参数：'您当前的浏览器不支持Geolocation,请升级浏览器'，设置不支持该属性输出的提示信息</p>
+            <p>
+              <label class="help-item">isshowLat：</label>
+              （布尔值）参数：true,是否显示纬度</p>
+            <p>
+              <label class="help-item">isshowLon：</label>
+              （布尔值）参数：true,是否显示经度</p>
+            <p>
+              <label class="help-item">isshowAcc：</label>
+              （布尔值）参数：true,是否显示准确度</p>
+            <p>
+              <label class="help-item">isshowAlt：</label>
+              （布尔值）参数：true,是否显示海拔高度</p>
+            <p>
+              <label class="help-item">isshowAla：</label>
+              （布尔值）参数：true,是否显示海拔高度的精确度</p>
+            <p>
+              <label class="help-item">isshowHea：</label>
+              （布尔值）参数：true,是否显示行进方向</p>
+            <p>
+              <label class="help-item">isshowSpe：</label>
+              （布尔值）参数：true,是否显示地面速度</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+          	<p>
+              <label class="help-item">getAddress()：</label>
+              （方法）获得地理位置信息-详细地址</p>
+            <p>
+              <label class="help-item">getX()：</label>
+              （方法）获得地理位置信息-纬度</p>
+            <p>
+              <label class="help-item">getY()：</label>
+              （方法）获得地理位置信息-经度</p>
+            <p>
+              <label class="help-item">getA()：</label>
+              （方法）获得地理位置信息-准确度</p>
+            <p>
+              <label class="help-item">getAcc()：</label>
+              （方法）获得地理位置信息-海拔高度</p>
+           <p>
+              <label class="help-item">getAla()：</label>
+              （方法）获得地理位置信息-海拔高度的精确度</p>
+            <p>
+              <label class="help-item">getH()：</label>
+              （方法）获得地理位置信息-行进方向</p>
+            <p>
+              <label class="help-item">getS()：</label>
+              （方法）获得地理位置信息-地面速度</p>
+            <p>
+              <label class="help-item">destroy()：</label>
+              （方法）清除地理位置信息</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              基于HTML5获取地理位置信息</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+					$(function(){
+						$('body').geolocation() ;
+						$('#getBtn').click(function(){
+							$('#getxBtn').val($('body').geolocation('getX')) ;
+							$('#getyBtn').val($('body').geolocation('getY')) ;
+							$('#getAddBtn').val($('body').geolocation('getAddress')) ;
+						}) ;
+					}) ;
+				</script>
+			   <input type="button" value="获取地理位置信息" id="getBtn"/>
+                纬度：<input type="text" id="getxBtn" />
+                经度：<input type="text" id="getyBtn" />
+                详细地址：<input type="text" id="getAddBtn" />
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){
+						$('body').geolocation() ;
+                        $('#getBtn').click(function(){
+                            $('#getxBtn').val($('body').geolocation('getX')) ;
+                            $('#getyBtn').val($('body').geolocation('getY')) ;
+                            $('#getAddBtn').val($('body').geolocation('getAddress')) ;
+                        }) ;
+					}) ;
+			   &lt;/script>
+			   &lt;input type="button" value="获取地理位置信息" id="getBtn"/>
+                纬度：&lt;input type="text" id="getxBtn" />
+                经度：&lt;input type="text" id="getyBtn" />
+                详细地址：&lt;input type="text" id="getAddBtn" />
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

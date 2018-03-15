@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>advancedSearch</title>
+<link rel="stylesheet" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<link rel="stylesheet" href="advancedSearch.css">
+<script src="advancedSearch.js"></script>
+<script>	
+$(function(){ 
+	$(".advancedSearch").advancedSearch({
+		width:"120px",
+		btnClick:function(){},
+		onFocus:function(){}
+	});
+	$('#clearWid').click(function(){
+		$('#testClear').advancedSearch('destory') ;
+	}) ;
+});	
+</script>
+</head>
+<body style="padding:6px;">
+<input name="input" type="text" class="advancedSearch" id="testClear" x-webkit-speech="" />
+
+<!--高级搜索类型下拉菜单开始-->
+ <div class="jcs_common_search_advance_con" id="searchAdvanceCon" style="display:none;">
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_all" style="padding-right:3px;"></span>search all</a>
+   </div>
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_info" style="padding-right:3px;"></span>search info</a>
+   </div>
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_know" style="padding-right:3px;"></span>search knowledge</a>
+   </div>
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_flow"  style="padding-right:3px;"></span>search disk</a>
+   </div>
+   <div class="jcs_common_s_advance_item">
+       <a><span class="jcs_common_s_a_xunhu" style="padding-right:3px;"></span>search xunhu</a>
+   </div>
+</div>
+<!--高级搜索类型下拉菜单结束--><br/>
+<input type="button" class="buttonActive" value="清除插件效果" id="clearWid"/>
+</body>
+</html>

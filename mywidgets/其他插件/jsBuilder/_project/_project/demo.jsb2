@@ -1,0 +1,41 @@
+{
+	"projectName": "menu",
+	"deployDir": "js",
+	"licenseText": "Jinher JS Libary1.2\nCopyright(2)2012",
+	"pkgs":[
+	{
+		"name": "All JS",
+		"file": "jcs.menu.1.2.js",
+		"isDebug": true,
+		"fileIncludes":[
+		{
+			"text": "jcs.util.js",
+			"path": "menu/src/js/"
+		},
+		{
+			"text": "jcs.menu.js",
+			"path": "menu/src/js/"
+		},
+		{
+			"text": "jcs.hs.js",
+			"path": "menu/src/js/"
+		},
+		{
+			"text": "jcs.resize.js",
+			"path": "menu/src/js/"
+		},
+		{
+			"text": "jcs.slide.js",
+			"path": "menu/src/js/"
+		},
+		{
+			"text": "jcs.div.ipad.js",
+			"path": "menu/src/js/"
+		}
+		]
+	}
+	],
+	"resources":[
+	
+	]
+}

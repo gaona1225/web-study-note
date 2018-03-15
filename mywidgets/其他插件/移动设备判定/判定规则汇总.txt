@@ -1,0 +1,37 @@
+苹果专门提供了iPad的用户代理标识[UserAgent]，看起来是下面的一样：
+Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10
+
+iPhone的用户代理则跟下面的类似：
+HTTP_USER_AGENT=Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1C25 Safari/419.3
+有了上面的信息之后，事情就变得简单多了，我们用Javascript就可以做到这点，检测用户的平台，并且将他们分别转向不同的页面：
+
+<script type="text/javascript">
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) { 
+	if (document.cookie.indexOf("iphone_redirect=false") == -1) ;
+	window.location = "http://iphone.yoursite.com/";
+}
+</script>
+
+
+jquery mobile中判断方法
+var nokiaLTE7_3 = (function(){
+	var ua = window.navigator.userAgent;
+	return ua.indexOf( "Nokia" ) > -1 && ( ua.indexOf( "Symbian/3" ) > -1 || ua.indexOf( "Series60/5" ) > -1 ) && ua.indexOf( "AppleWebKit" ) > -1 && ua.match( /(BrowserNG|NokiaBrowser)\/7\.[0-3]/ );
+})();
+
+$.mobile.ajaxBlacklist =
+			// BlackBerry browsers, pre-webkit
+			window.blackberry && !window.WebKitPoint ||
+			// Opera Mini
+			operamini ||
+			// Symbian webkits pre 7.3
+			nokiaLTE7_3;
+
+// Lastly, this workaround is the only way we've found so far to get pre 7.3 Symbian webkit devices
+// to render the stylesheets when they're referenced before this script, as we'd recommend doing.
+// This simply reappends the CSS in place, which for some reason makes it apply
+if ( nokiaLTE7_3 ) {
+	$(function() {
+		$( "head link[rel='stylesheet']" ).attr( "rel", "alternate stylesheet" ).attr( "rel", "stylesheet" );
+	});
+}

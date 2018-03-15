@@ -1,0 +1,16 @@
+0.框架部分涉及文件:
+	菜单dto 
+		com.jh.jcs.platform.adm.model.UserModuleRelation
+	层级菜单dto 
+		UserRelationDTO
+	model
+		TblUserModuleRelation
+1.菜单dto:
+	com.jh.jcs.platform.adm.model.UserModuleRelation
+2.快捷菜单：
+3.应用菜单：
+4.添加应用：
+	1.一级菜单：
+	2.所有菜单:
+	3.已选菜单：
+5.门户:		

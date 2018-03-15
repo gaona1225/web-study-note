@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>file-FileWriter</title>
+<script language="javascript" src="phonegap-1.3.0.js"></script>
+<script language="javascript">
+	// 等待加载PhoneGap
+	document.addEventListener("deviceready", onDeviceReady, false); 
+	
+	// PhoneGap加载完毕
+	function onDeviceReady() { 
+		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail); 
+	}  
+	
+	function gotFS(fileSystem) { 
+		fileSystem.root.getFile("readme.txt", null, gotFileEntry, fail); 
+	} 
+	
+	function gotFileEntry(fileEntry) { 
+		fileEntry.createWriter(gotFileWriter, fail); 
+	}  
+	
+	function gotFileWriter(writer) { 
+		writer.onwrite = function(evt) { 
+			console.log("write success"); 
+		}; 
+		writer.write("some sample text"); 
+		// 文件当前内容是“some sample text”
+		writer.truncate(11); 
+		// 文件当前内容是“some sample” 
+		writer.seek(4); 
+		// 文件当前内容依然是“some sample”，但是文件的指针位于“some”的“e”之后
+		writer.write(" different text"); 
+		// 文件的当前内容是“some different text”
+	}  
+	
+	function fail(error) { 
+		console.log(error.code); 
+	}  
+</script>
+</head>
+
+<body>
+	<h1>Example</h1>
+	<p>File System</p>
+</body>
+</html>

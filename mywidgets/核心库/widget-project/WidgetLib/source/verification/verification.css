@@ -1,0 +1,60 @@
+/**
+ *verification
+ */
+.parDiv{
+	display:inline ;
+}
+.varPrompt{
+	color:#C6C6C6 ;
+}
+.inputPrompt{
+	background:#DCB1BC ;
+}
+.EditDiv{
+	border:1px solid #39f ;
+	display:inline ;
+}
+.EditDiv input{
+	background:none ;
+	border:none !important ;
+}
+.EditDiv input.inputInter{
+	text-align:right ;
+	width:60px ;
+}
+.EditDiv input.inputFloat{
+	width:60px ;
+}
+.decPoint{
+	font-size:12px ;
+	font-weight:bold ;
+	margin:0 3px ;
+}
+.EditDiv input.inputAreaCode{
+	text-align:left ;
+	width:40px ;
+}
+.EditDiv input.inputPhoneNumber,.EditDiv input.inputPhoneExt{
+	text-align:center ;
+	width:100px ;
+}
+.EditDiv input.inputEmailfront,.EditDiv input.inputEmailback,.EditDiv input.inputEmaillast{
+	text-align:center ;
+	width:100px ;
+}
+.EditDiv input.inputIP1,.EditDiv input.inputIP2,.EditDiv input.inputIP3,.EditDiv input.inputIP4{
+	text-align:center ;
+	width:30px ;
+}
+.EditDiv input.inputYear{
+	text-align:center ;
+	width:40px ;
+}
+.EditDiv input.inputMonth,.EditDiv input.inputDay{
+	text-align:center ;
+	width:20px ;
+}
+.EditDiv input.inputAtt1,.EditDiv input.inputAtt2,.EditDiv input.inputAtt3,.EditDiv input.inputAtt4{
+	text-align:center ;
+	width:30px ;
+}

@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+.doc-color-line{
+	background:#24abeb ;
+	height:10px ;
+	position:fixed ;
+	width:100% ;
+}
+.doc-color-one,.doc-color-two{
+	display:inline-block ;
+	float:left ;
+	height:10px ;
+	vertical-align:top ;
+}
+.doc-color-one{
+	background:#ff5500 ;
+	width:110px ;
+}
+.doc-color-two{
+	background:#333 ;
+	margin-left:0px ;
+	width:170px ;
+}
+.doc-warp{
+	overflow:hidden ;
+	padding-top:10px ;
+	width:100% ;
+}
+.doc-nav-list{
+	background:#24abeb ;
+	float:left ;
+	left:0px ;
+	position:fixed ;
+	width:280px ;
+}
+.doc-nav-list h1{
+	color:#fff ;
+	font-size:39px ;
+	height:90px ;
+	padding-top:20px ;
+	position:fixed ;
+	text-indent:15px ;
+	width:100% ;
+}
+.doc-nav-list ul{
+	padding-top:90px ;
+}
+.doc-nav-list li{
+	border-bottom:1px solid #3bbaf7 ;
+	font-size:18px ;
+	height:45px ;
+	line-height:45px ;
+}
+.doc-nav-list li a{
+	color:#fff ;
+	display:block ;
+	padding:0 15px ;
+}
+.doc-nav-list li a:link,.doc-nav-list li a:visited{
+	background:#24abeb ;
+}
+.doc-nav-list li a:hover{
+	background:#1f8fc4 ;
+	color:#fff ;
+}
+.doc-main{
+	float:left ;
+	margin-left:280px ;
+	padding:20px 60px 0px ;
+}
+.doc-main iframe{
+	background:none ;
+	border:none ;
+	width:100% ;
+}
+/*帮助文档内容样式*/
+.help-wrap div{
+	color:#666 ;
+	font-size:14px ;
+	/*padding-bottom:12px ;*/
+}
+.help-header h1{
+	color:#000 ;
+	font-size:39px ;
+}
+.help-ver{
+	color:#f50 ;
+	font-size:14px ;
+}
+.help-tit{
+	background:#3bbaf7 ;
+	border:none ;
+	height:3px ;
+}
+.help-wrap h2{
+	border-bottom:2px solid #e4f2f9 ;
+	color:#333 ;
+	font-size:16px ;
+	font-weight:bold ;
+	margin-top:20px ;
+	padding-bottom:6px ;
+}
+.help-wrap p{
+	padding-top:6px ;
+}
+.help-list{
+	padding-top:6px ;
+}
+.help-list li{
+	line-height:26px ;
+	list-style:disc ;
+	list-style-position:inside ;
+}

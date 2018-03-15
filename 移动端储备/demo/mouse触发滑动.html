@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<title>mouse触发滑动</title>
+<style type="text/css">
+	body{
+		margin:0 ;
+		padding:0 ;
+	}
+	.wrap{
+		height:160px ;
+		overflow:hidden ;
+		width:320px ;
+	}
+	ul,li{
+		list-style:none ;
+		margin:0 ;
+		padding:0 ;
+	}
+	ul{
+		overflow:hidden ;
+		width:1920px ;
+	}
+	ul li{
+		float:left ;
+		width:320px ;
+	}
+	li:nth-of-type(1){
+		background:red ;
+	}
+	li:nth-of-type(2){
+		background:yellow ;
+	}
+	li:nth-of-type(3){
+		background:blue ;
+	}
+	li:nth-of-type(4){
+		background:green ;
+	}
+	li:nth-of-type(5){
+		background:orange ;
+	}
+	li:nth-of-type(6){
+		background:purple ;
+	}
+</style>
+</head>
+
+<body>
+	<div class="wrap">
+        <ul id="ulList">
+        	<li>111<br/>222<br/>333<br/>444<br/>555<br/>666<br/>777<br/>888<br/>999<br/>000<br/>111<br/>222<br/>333<br/>444<br/>555<br/></li>
+            <li>111<br/>222<br/>333<br/>444<br/>555<br/>666<br/>777<br/>888<br/>999<br/>000<br/>111<br/>222<br/>333<br/>444<br/>555<br/></li>
+            <li>111<br/>222<br/>333<br/>444<br/>555<br/>666<br/>777<br/>888<br/>999<br/>000<br/>111<br/>222<br/>333<br/>444<br/>555<br/></li>
+            <li>111<br/>222<br/>333<br/>444<br/>555<br/>666<br/>777<br/>888<br/>999<br/>000<br/>111<br/>222<br/>333<br/>444<br/>555<br/></li>
+            <li>111<br/>222<br/>333<br/>444<br/>555<br/>666<br/>777<br/>888<br/>999<br/>000<br/>111<br/>222<br/>333<br/>444<br/>555<br/></li>
+            <li>111<br/>222<br/>333<br/>444<br/>555<br/>666<br/>777<br/>888<br/>999<br/>000<br/>111<br/>222<br/>333<br/>444<br/>555<br/></li>
+        </ul>
+    </div>
+	<div id='divId' style="background:#eee ;position:absolute ; top:200px ;width:200px ; height:200px ;"></div>
+	<div id='divTest' style="background:#eee ;position:absolute ; top:300px ;"></div>
+</body>
+<script language="javascript">
+	var ulTarget = document.getElementById('ulList') ;
+	var divTarget = document.getElementById('divId') ;
+	var liElem = ulTarget.getElementsByTagName('li') ;
+	var liLen = liElem.length ;
+	var liWid = parseInt(getStyle(liElem[0],'width')) ;
+	var maxLeft = (liLen-1) * liWid ;	
+	var minX = 20 ; //x轴方向上的响应精度
+	var minY = 20 ; //y轴方向上的响应精度
+	var flagTouch = 0, beginX, beginY, diffX, diffY, setInt,count = 0 ;
+	
+	ulTarget.addEventListener('mousedown',touchStart,false) ;
+	
+	function touchStart(e){
+		e.preventDefault() ;
+		touchLi(e) ;
+	}
+	
+	function touchLi(e){
+		e.preventDefault();
+		flagTouch = 1 ; //当用户连续滑动，只做一次处理。用户手指没有弹起脱离触摸屏做一次处理
+		beginX = e.clientX ;
+		beginY = e.clientY ;
+		ulTarget.addEventListener('mousemove',touchMove,false) ;
+		ulTarget.addEventListener('mouseup',touchEnd,false) ;
+	}
+	
+	function touchMove(e){
+		e.preventDefault();
+	}
+	
+	function touchEnd(e){
+		if(flagTouch){
+			diffX = e.clientX - beginX ;
+			diffY = e.clientY - beginY ;
+			if(Math.abs(diffX)>minX){
+				moveX(diffX) ;
+			}else if(Math.abs(diffY)>=minY && Math.abs(diffX)<minX){
+				moveY(diffY) ;
+			}
+		}
+		flagTouch = 0 ;
+	}
+	
+	function moveX(numX){
+		if(numX>0){
+			divTarget.innerHTML = '右' ;
+			count -- ;
+			if(count>=0){
+				var _left = parseInt(getStyle(ulTarget,'margin-left')) ;
+				setInt = setInterval(function(){
+					if(_left<=-(count*liWid)){
+						_left ++ ;
+						ulTarget.style.marginLeft = _left + 'px' ;
+					}else{
+						clearInterval(setInt) ;
+					}
+				}) ;
+			}else{
+				count = liLen-1 ;
+				ulTarget.style.marginLeft = -(liLen-1)*liWid + 'px' ;
+			}	
+		}else{
+			divTarget.innerHTML = '左' ;
+			count ++ ;
+			if(count<=liLen-1){
+				var _left = parseInt(getStyle(ulTarget,'margin-left')) ;
+				setInt = setInterval(function(){
+					if(_left>=-(count*liWid)){
+						_left -- ;
+						ulTarget.style.marginLeft = _left + 'px' ;
+					}else{
+						clearInterval(setInt) ;
+					}
+				}) ;
+			}else{
+				count = 0 ;
+				ulTarget.style.marginLeft = 0 + 'px' ;
+			}	
+		}
+	}
+	
+	function moveY(numY){
+		if(numY>0){
+			divTarget.innerHTML = '下' ;
+			var _top = parseInt(getStyle(ulTarget,'marginTop')) ;
+			setInt = setInterval(function(){
+				if(_top<=0){
+					_top ++ ;
+					ulTarget.style.marginTop = _top + 'px' ;
+				}else{
+					clearInterval(setInt) ;
+					alert('向上加载中...') ;
+				}
+			},1) ;
+		}else{
+			divTarget.innerHTML = '上' ;
+			var _top = parseInt(getStyle(ulTarget,'marginTop')) ;
+			setInt = setInterval(function(){
+				if(_top>=-108){
+					_top -- ;
+					ulTarget.style.marginTop = _top + 'px' ;
+				}else{
+					clearInterval(setInt) ;
+					alert('向下加载中...') ;
+				}
+			},1) ;
+		}
+	}
+	
+	//获取css中样式值方法
+	function getStyle(obj,cssName){
+		if(obj.currentStyle){
+			return obj.currentStyle[cssName] ;
+		}else{
+			return getComputedStyle(obj,false)[cssName] ;
+		}
+	}
+</script>
+</html>

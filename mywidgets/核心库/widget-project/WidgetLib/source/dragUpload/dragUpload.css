@@ -1,0 +1,71 @@
+/**
+ *dragUpload
+ */
+.draguploadDiv{
+	display:inline-block;
+	font-family: "Georgia", "微软雅黑", "华文中宋";
+	font-size:18px ;
+	color:#f30;
+	padding:8px 18px 18px 8px ;
+	border:2px solid #ddd;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	overflow:auto ;
+}
+.draguploadDiv ul,dl{margin:0px ;padding:0px ;}
+.draguploadDiv li{
+	border-bottom:1px dashed #999999 ;
+	list-style:none ;
+	padding-bottom:4px ;
+	padding-top:6px ;
+}
+.draguploadDiv li .fileName{
+	display:inline-block ;
+	margin-left:3px ;
+	padding-right:16px ;
+}
+.draguploadDiv li .delBtn{
+	cursor:pointer ;
+}
+.draguploadDiv dl{
+	float:left ;
+	margin:6px 12px 0px 8px;
+}
+.draguploadDiv dl dt{
+	float:left ;
+	height:120px ;
+	width:100px ;
+}
+.draguploadDiv dl .imgDiv{
+	background:url(images/dragUpload/defaultBig.jpg) no-repeat center ;
+	border-radius:12px ;		
+	height:120px ;
+	overflow:hidden ;
+	width:100px ;
+	-webkit-box-shadow: 3px 3px 4px 0px #999; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow: 3px 3px 4px 0px #999; /* FF3.5 - 3.6 */
+	box-shadow: 3px 3px 4px 0px #999;
+}
+.draguploadDiv dl .imgDiv img{
+	height:120px ;
+	width:100px ;
+}
+.draguploadDiv dl dd{
+	clear:both ;
+	margin:0px ;
+	padding:6px 6px 0px 0px ;
+	text-align:center ;
+	width:100px ;
+}
+.draguploadDiv dl .delBtn{
+	cursor:pointer ;
+	position:relative ;
+	right:-80px ;
+	top:-136px ;
+}
+.draguploadDiv .picIco{
+	display:inline-block ;
+	height:120px ;
+	width:100px ;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>图片播放-百葉窗</title>
+    <meta charset="utf-8"/>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: "\u5B8B\u4F53", sans-serif; /*宋体*/
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+    <!--/导入ui-all.css,测试样式是否受影响;ie import <=31;-->
+    <link rel="stylesheet" href="slide.css"/>
+
+    <!--<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+ <link rel="stylesheet" type="text/css" href="../css/ui-all2.css">-->
+   <!-- <script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.5.2.js"></script>
+</head>
+<body>
+<div id="slides">
+    <div class="slide-container" style="overflow: hidden;position: relative;display: block;">
+        <div class="slide-controller">
+            <a href="http://www.baidu.com" target="_blank" data-shutter="1">
+                <img src="images/slide/1.png"/>
+            </a>
+            <a href="javascript:;" data-shutter="2">
+                <img src="images/slide/2.png"/>
+            </a>
+            <a href="javascript:;" data-shutter="3">
+                <img src="images/slide/3.png"/>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="slide.js"></script>
+<script>
+    $(function () {
+        $("#slides").slide({
+            effect:"shutter",
+            shutterDir:"h",
+            shutterNum:4,
+            width:840,
+            height:305,
+            play:3000, //开启自动播放
+            pause:1000,
+            index:0,
+            dataAttributeName:"data-shutter",
+            eventHandler:function(param){
+                alert("eventHandler:" + param );
+            }
+        });
+    });
+</script>
+</body>
+</html>

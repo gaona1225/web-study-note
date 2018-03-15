@@ -1,0 +1,309 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0087)http://www.christopherstenke.de/blog/2011/02/grayscale-graustufen-von-bildern-ohne-css/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=10.000" 
+http-equiv="X-UA-Compatible">
+ <TITLE>Christopher Stenke - Webdesign &amp; Webdevelopment</TITLE> <LINK href="http://www.christopherstenke.de/fav.png" 
+rel="icon" type="image/vnd.microsoft.icon"> 
+<SCRIPT src="Christopher%20Stenke%20-%20Webdesign%20&amp;%20Webdevelopment_files/changeDiv.js" type="text/javascript"></SCRIPT>
+ <LINK href="Christopher%20Stenke%20-%20Webdesign%20&amp;%20Webdevelopment_files/style.css" 
+rel="stylesheet" type="text/css"> <LINK href="Christopher%20Stenke%20-%20Webdesign%20&amp;%20Webdevelopment_files/blog.css" 
+rel="stylesheet" type="text/css"> 
+<SCRIPT type="text/javascript">
+var headID = document.getElementsByTagName("head")[0];         
+var cssNode = document.createElement('link');
+cssNode.type = 'text/css';
+cssNode.rel = 'stylesheet';
+cssNode.href = 'http://www.christopherstenke.de/style_h1.css';
+cssNode.media = 'screen';
+headID.appendChild(cssNode);
+</SCRIPT>
+ 
+<META http-equiv="content-type" content="application/xhtml+xml;  charset=utf-8"> 
+<SCRIPT src="Christopher%20Stenke%20-%20Webdesign%20&amp;%20Webdevelopment_files/cufon.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="Christopher%20Stenke%20-%20Webdesign%20&amp;%20Webdevelopment_files/circ.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">Cufon.replace('.content h1');</SCRIPT>
+ 
+<SCRIPT src="Christopher%20Stenke%20-%20Webdesign%20&amp;%20Webdevelopment_files/grayscale.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">
+	function do_grayscale(id) {
+		var el = document.getElementById(id );
+		grayscale( el );
+	}
+	function do_ungrayscale(id) {
+		var el = document.getElementById(id );
+		grayscale.reset( el );
+	}
+</SCRIPT>
+ 
+<META http-equiv="X-UA-Compatible" content="IE=EmulateIE7"> <!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="http://www.christopherstenke.de/ie_8.css" />
+<![endif]--> 
+<META name="language" content="de"> 
+<META name="description" content="Christopher Stenke Blog für Tutorials in PHP, MySQL, Javascript, Cascading Style Sheets(CSS) und Wordpress."> 
+<META name="keywords" content="Christopher Stenke, Worpress, HTML, XHTMl, CSS, PHP, JS, Javascript, Skripte, Tutorials"> 
+<META name="author" content="Christopher Stenke"> 
+<META name="robots" content="index, follow"> 
+<META name="revisit-after" content="1 days"> <!-- Webdesign, Webdevelopment, Alfeld --> 
+<SCRIPT type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21100111-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</SCRIPT>
+ <LINK title="Christopher Stenke - Webdesign &amp; Webdevelopment » Grayscale / Graustufen von Bildern ohne CSS Kommentar-Feed" 
+href="http://www.christopherstenke.de/blog/2011/02/grayscale-graustufen-von-bildern-ohne-css/feed/" 
+rel="alternate" type="application/rss+xml"> <LINK title="RSD" href="http://www.christopherstenke.de/blog/xmlrpc.php?rsd" 
+rel="EditURI" type="application/rsd+xml"> <LINK href="http://www.christopherstenke.de/blog/wp-includes/wlwmanifest.xml" 
+rel="wlwmanifest" type="application/wlwmanifest+xml"> <LINK title="Bildertausch mit hover CSS" 
+href="http://www.christopherstenke.de/blog/2011/02/bildertausch-mit-hover-css/" 
+rel="prev"> <LINK title="Aufbau eines mit CSS gestylten Formulars" href="http://www.christopherstenke.de/blog/2011/02/aufbau-eines-mit-css-gestylten-formulars/" 
+rel="next"> 
+<META name="GENERATOR" content="MSHTML 10.00.9200.16750"> <LINK href="http://www.christopherstenke.de/blog/2011/02/grayscale-graustufen-von-bildern-ohne-css/" 
+rel="canonical"> <LINK href="http://www.christopherstenke.de/blog/?p=120" rel="shortlink"> 
+</HEAD> 
+<BODY>
+<DIV class="logo">
+<DIV class="wrapper">
+<H1><A href="http://www.christopherstenke.de/cstenke">Christopher Stenke - 
+Webdesign &amp; Webdevelopment</A></H1></DIV>
+<UL>
+  <LI><A href="http://www.christopherstenke.de/home">Start</A></LI> 
+  <LI><A href="http://www.christopherstenke.de/leistungen">Leistungen</A></LI> 
+  <LI><A href="http://www.christopherstenke.de/preise">Preise</A></LI> 
+  <LI><A href="http://www.christopherstenke.de/kontakt">Kontakt</A></LI> 
+  <LI><A class="current" 
+  href="http://www.christopherstenke.de/blog">Blog</A></LI>	 </UL></DIV>
+<DIV class="wrapper">
+<DIV class="main2"><!-- main column -->	   
+<DIV class="content"><!-- post -->		 
+<DIV class="post" id="post-120">
+<DIV class="post-title">
+<H1><A href="http://www.christopherstenke.de/blog/2011/02/grayscale-graustufen-von-bildern-ohne-css/" 
+rel="bookmark">Grayscale / Graustufen von Bildern ohne CSS</A></H1></DIV>
+<DIV class="post-sub">
+<DIV class="post-date"><!-- <img src="http://www.christopherstenke.de/blog/wp-content/themes/disciple/images/24.png" width="16" height="16" align="left" alt="" title="Date" border="0" style="margin-right:4px;">  -->
+					vom 08.02.2011				</DIV><!-- // post author, remove comments if you want it displayed
+				<div class="post-author">
+					<img src="http://www.christopherstenke.de/blog/wp-content/themes/disciple/images/39.png" width="16" height="16" align="left" alt="" title="Author" border="0" style="margin-right:3px;">
+					<a href="http://www.christopherstenke.de/blog/author/christopher-stenke/" title="Artikel von Christopher Stenke" rel="author">Christopher Stenke</a>				</div> -->
+								 
+<DIV class="post-cat"><!--  <img src="http://www.christopherstenke.de/blog/wp-content/themes/disciple/images/34.png" width="16" height="16" align="left" alt="" title="Category" border="0" style="margin-right:4px;">-->
+					in <A title="Alle Artikel in CSS Cascading Style Sheets ansehen" href="http://www.christopherstenke.de/blog/category/css/" 
+rel="category tag">CSS Cascading Style Sheets</A>, <A title="Alle Artikel in JS Javascript ansehen" 
+href="http://www.christopherstenke.de/blog/category/js/" rel="category tag">JS 
+Javascript</A>				</DIV></DIV>
+<DIV class="post-text">
+<P>Guten Tag liebe Leserinnen und Leser,<BR>ich möchte euch heute eine kleine 
+Javascript-Datei von <A href="http://james.padolsey.com/">James Padolsey</A> 
+vorstellen. Diese ermöglicht es, ohne den Austausch von Bildern, Bilder grau 
+einzufärben. Die “alten Hasen” wissen, sicher das es im Internet Explorer gibt, 
+der dieses ebenfalls ermöglicht. Der Clou ist, das James’ Javascript-Datei auch 
+in “den anderen” Browsern arbeitet. (Safari ab Version 4, Firefox ab Version 2, 
+Chrome ab Version 2 und Internet Explorer ab Version 6)</P>
+<P>Erstmal eine kleine Demo, damit ihr wisst was euch erwartet:</P>
+<DIV id="test"><IMG onmouseover="javascript:do_grayscale('test');" onmouseout="javascript:do_ungrayscale('test');" 
+alt="Pusteblumen" src="Christopher%20Stenke%20-%20Webdesign%20&amp;%20Webdevelopment_files/IMG_6142_1.png"></DIV>
+<P>Beim Herüberfahren mit der Maus wird das Bild grau. Beim Verlassen des Bildes 
+mit der Maus, wird das Bild wieder “normal”.</P>
+<P>Wie funktioniert das ganze?<BR>Also als erstes braucht ihr die 
+Javascript-Datei, die findet ihr unter: <A href="http://james.padolsey.com/demos/grayscale/grayscale.js">http://james.padolsey.com/demos/grayscale/grayscale.js</A> 
+(Rechtsklick -&gt; speichern unter).</P>
+<DIV><CODE><SPAN style="color: rgb(0, 0, 0);"><BR><SPAN style="color: rgb(0, 0, 204);"></SPAN><SPAN 
+style="color: rgb(0, 102, 0);">&lt;</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">script&nbsp;type</SPAN><SPAN style="color: rgb(0, 102, 0);">=</SPAN><SPAN 
+style="color: rgb(204, 0, 0);">"text/javascript"&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">src</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">=</SPAN><SPAN 
+style="color: rgb(204, 0, 0);">"grayscale.js"</SPAN><SPAN style="color: rgb(0, 102, 0);">&gt;</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">&lt;/script&gt;</SPAN></SPAN><BR></CODE></DIV>
+<P>Die Zeile im Head-Bereich eurer HTML-Seite bindet das ganze ein. Nun 
+erstellen wir 2 einfache Funktionen zum “Grayscalen” und Zurücksetzen.</P>
+<DIV><CODE><SPAN style="color: rgb(0, 0, 0);"><BR><SPAN style="color: rgb(0, 0, 204);"></SPAN><SPAN 
+style="color: rgb(0, 102, 0);">&lt;</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">script&nbsp;type</SPAN><SPAN style="color: rgb(0, 102, 0);">=</SPAN><SPAN 
+style="color: rgb(204, 0, 0);">"text/javascript"</SPAN><SPAN style="color: rgb(0, 102, 0);">&gt;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">do_grayscale</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">(</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">id</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">)&nbsp;{<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">el&nbsp;</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">=&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">document</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">.</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">getElementById</SPAN><SPAN style="color: rgb(0, 102, 0);">(</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">id&nbsp;</SPAN><SPAN style="color: rgb(0, 102, 0);">);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">grayscale</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">(&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">el&nbsp;</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">do_ungrayscale</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">(</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">id</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">)&nbsp;{<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">el&nbsp;</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">=&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">document</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">.</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">getElementById</SPAN><SPAN style="color: rgb(0, 102, 0);">(</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">id&nbsp;</SPAN><SPAN style="color: rgb(0, 102, 0);">);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">grayscale</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">.</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">reset</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">(&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">el&nbsp;</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">);<BR>&nbsp;&nbsp;&nbsp;&nbsp;}<BR></SPAN><SPAN 
+style="color: rgb(0, 0, 204);">&lt;/script&gt;<BR></SPAN></SPAN><BR></CODE></DIV>
+<P>Ihr müsst, wenn ihr eine der Funktionen aufruft, immer die ID übergeben.<BR>
+In meinem Beispiel habe ich einen Block (div) um das Bild gemacht und ihm die ID 
+“test” gegeben. </P>
+<DIV><CODE><SPAN style="color: rgb(0, 0, 0);"><BR><SPAN style="color: rgb(0, 0, 204);"></SPAN><SPAN 
+style="color: rgb(0, 102, 0);">&lt;</SPAN><SPAN 
+style="color: rgb(0, 0, 204);">div&nbsp;id</SPAN><SPAN style="color: rgb(0, 102, 0);">=</SPAN><SPAN 
+style="color: rgb(204, 0, 0);">"test"</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">&gt;&lt;</SPAN><SPAN style="color: rgb(0, 0, 204);">img&nbsp;src</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">=</SPAN><SPAN 
+style="color: rgb(204, 0, 0);">"meinbild.jpg"&nbsp;</SPAN><SPAN style="color: rgb(0, 0, 204);">alt</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">=</SPAN><SPAN 
+style="color: rgb(204, 0, 0);">""&nbsp;<BR></SPAN><SPAN style="color: rgb(0, 0, 204);">onmouseout</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">=</SPAN><SPAN 
+style="color: rgb(204, 0, 0);">"javascript:do_ungrayscale('test');"&nbsp;<BR></SPAN><SPAN 
+style="color: rgb(0, 0, 204);">onmouseover</SPAN><SPAN style="color: rgb(0, 102, 0);">=</SPAN><SPAN 
+style="color: rgb(204, 0, 0);">"javascript:do_grayscale('test');"&nbsp;</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">/&gt;&lt;/</SPAN><SPAN style="color: rgb(0, 0, 204);">div</SPAN><SPAN 
+style="color: rgb(0, 102, 0);">&gt;</SPAN><SPAN 
+style="color: rgb(0, 0, 204);"></SPAN><BR></SPAN><BR></CODE></DIV>
+<P>Das ist der Code vom Beispiel oben.</P>
+<P>Natürlich könnte man die Funktionen in der Javascript Datei auch direkt 
+aufrufen, aber so ist mehr Platz für Anpassungen.</P>
+<P>Den <A href="http://james.padolsey.com/javascript/grayscaling-in-non-ie-browsers/">Original-Beitrag 
+(englisch) von James Padolsey findet ihr hier</A>.</P>
+<P>Ich hoffe Ihr könnt was damit anfangen, gerade bei vielen Bildern, die in 
+Graustufen dargestellt werden sollen, lohnt es sich, nicht immer neue Bilder 
+erstellen zu müssen.</P>
+<P>Kommentare, Fragen, Verbesserungsvorschläge oder Ähnliches sind natürlich 
+immer gern gesehen.</P>
+<P>Soweit erstmal von mir<BR>Chris</P></DIV>
+<DIV class="post-foot">
+<DIV class="post-comments"><!-- <img src="http://www.christopherstenke.de/blog/wp-content/themes/disciple/images/18.png" width="16" height="16" align="left" alt="" border="0" style="margin-right:4px;" /> --><A 
+title="Kommentiere Grayscale / Graustufen von Bildern ohne CSS" href="http://www.christopherstenke.de/blog/2011/02/grayscale-graustufen-von-bildern-ohne-css/#comments">1 
+Kommentar</A>					<BR><BR><BR><BR></DIV><!--<span class="post-edit"></span>
+				 <span class="post-tags"><img src="http://www.christopherstenke.de/blog/wp-content/themes/disciple/images/36.png" width="16" height="16" align="left" title="Tags" alt="Tags" border="0" style="margin-right:4px;" /></span> -->
+			 </DIV></DIV>
+<DIV class="sep"></DIV><!--/post -->		 
+<DIV class="post" id="comments"><!-- comments -->	 
+<H4 id="comments">Keine Kommentare</H4>
+<OL class="commentlist"></OL>
+<H2>1 Trackback</H2>
+<UL>
+  <LI id="comment-4">		Feb 9, 2011: <A class="url" href="http://james.padolsey.com/javascript/grayscaling-in-non-ie-browsers/" 
+  rel="external nofollow">“Grayscaling” in non-IE browsers – James 
+  Padolsey</A>	</LI></UL>
+<H3 id="respond" style="margin-top: 25px;">Kommentar hinterlassen</H3>
+<FORM id="commentform" action="http://www.christopherstenke.de/blog/wp-comments-post.php" 
+method="post">
+<TABLE width="100%">
+  <TBODY>
+  <TR>
+    <TD><LABEL for="author">Name *</LABEL></TD>
+    <TD align="right"><INPUT name="author" tabindex="1" id="author" 
+      aria-required="true" type="text" size="25"> </TD></TR>
+  <TR>
+    <TD><LABEL for="email">E-Mail (bleibt unsichtbar) *</LABEL></TD>
+    <TD align="right"><INPUT name="email" tabindex="2" id="email" 
+      aria-required="true" type="text" size="25"> </TD></TR>
+  <TR>
+    <TD><LABEL for="url">Website</LABEL></TD>
+    <TD align="right"><INPUT name="url" tabindex="3" id="url" type="text" 
+      size="25"></TD></TR></TBODY></TABLE>
+<P><TEXTAREA name="comment" tabindex="4" id="comment" style="width: 101%; height: 100px; max-width: 101%;"></TEXTAREA></P>
+die mit einem * gekennzeichneten Felder werden benötigt
+<P><INPUT name="submit" tabindex="5" id="submit" type="submit" value="Kommentar veröffentlichen"> 
+<INPUT name="comment_post_ID" type="hidden" value="120"> </P><!--  <p><b>Allowed tags:</b> <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p> --> 
+</FORM><!-- /comments -->		</DIV>
+<DIV class="post">
+<DIV style="float: left;"></DIV>
+<DIV style="float: right;"></DIV></DIV></DIV><!-- /main column --> <!-- right sidebar --> 
+<DIV class="extra" style="text-align: right;"><!-- 
+<br/><br/>
+	<ul id="widgets2">
+	
+	<li class="widget">	
+	<h2>About this blog</h2>
+		<p>This is a sidebar example to show how it could look. Customize your sidebar by adding Widgets in WP Admin > Design > Widgets or edit the sidebar files on your own.</p>
+	</li>
+
+	<li class="widget">
+		<ul>
+			<h2>Search</h2>
+<form method="get" id="searchform" action="http://www.christopherstenke.de/blog/">
+<input type="text" onfocus="if (this.value == 'Search this blog') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this blog';}" value="Search this blog" name="s" id="s" /></form>		</ul>
+	</li>
+
+	<li class="widget widget_categories">
+	<h2>Categories</h2>
+		<ul>
+				<li class="cat-item cat-item-5"><a href="http://www.christopherstenke.de/blog/category/css/" title="Alle unter CSS Cascading Style Sheets abgelegten Artikel ansehen">CSS Cascading Style Sheets</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.christopherstenke.de/blog/category/js/" title="Alle unter JS Javascript abgelegten Artikel ansehen">JS Javascript</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.christopherstenke.de/blog/category/php/" title="Alle unter PHP: Hypertext Preprocessor abgelegten Artikel ansehen">PHP: Hypertext Preprocessor</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.christopherstenke.de/blog/category/xhtml/" title="Alle unter XHTML/HTML (Extensible) HyperText Markup Language abgelegten Artikel ansehen">XHTML/HTML (Extensible) HyperText Markup Language</a>
+</li>
+		</ul>
+	</li>
+		
+	<li class="widget widget_archive">
+	<h2>Archives</h2>
+		<ul>
+				<li><a href='http://www.christopherstenke.de/blog/2011/02/' title='Februar 2011'>Februar 2011</a></li>
+	<li><a href='http://www.christopherstenke.de/blog/2011/01/' title='Januar 2011'>Januar 2011</a></li>
+		</ul>
+	</li>
+	
+	<li class="widget widget_links">
+	<h2>Blogroll</h2>
+		<ul>
+			<li><a href="http://codex.wordpress.org/">Documentation</a></li>
+<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+<li><a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a></li>
+<li><a href="http://wordpress.org/support/">Support Forum</a></li>
+<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+<li><a href="http://wordpress.org/news/">WordPress Blog</a></li>
+<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+		</ul>
+	</li>
+
+		</ul>
+			 -->
+			 		 
+<UL>
+  <LI><A title="Februar 2011" href="http://www.christopherstenke.de/blog/2011/02/">Februar 
+  2011</A></LI>
+  <LI><A title="Januar 2011" href="http://www.christopherstenke.de/blog/2011/01/">Januar 
+  2011</A></LI></UL></DIV><!-- /right sidebar -->	 </DIV><!-- left sidebar --> 
+<DIV class="navleft">
+<UL>
+  <LI class="categories">Kategorien
+  <UL>
+    <LI class="cat-item cat-item-5"><A title="Alle unter CSS Cascading Style Sheets abgelegten Artikel ansehen" 
+    href="http://www.christopherstenke.de/blog/category/css/">CSS Cascading 
+    Style Sheets</A> </LI>
+    <LI class="cat-item cat-item-7"><A title="Alle unter JS Javascript abgelegten Artikel ansehen" 
+    href="http://www.christopherstenke.de/blog/category/js/">JS Javascript</A> 
+    </LI>
+    <LI class="cat-item cat-item-3"><A title="Alle unter PHP: Hypertext Preprocessor abgelegten Artikel ansehen" 
+    href="http://www.christopherstenke.de/blog/category/php/">PHP: Hypertext 
+    Preprocessor</A> </LI>
+    <LI class="cat-item cat-item-4"><A title="Alle unter XHTML/HTML (Extensible) HyperText Markup Language abgelegten Artikel ansehen" 
+    href="http://www.christopherstenke.de/blog/category/xhtml/">XHTML/HTML 
+    (Extensible) HyperText Markup Language</A> </LI></UL></LI></UL><BR></DIV><!-- /left sidebar --> 
+</DIV>
+<DIV class="footer">
+<P>Copyright © 2014 Christopher Stenke</P></DIV></BODY></HTML>

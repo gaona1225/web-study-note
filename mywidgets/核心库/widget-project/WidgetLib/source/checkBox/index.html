@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Check/Radio Box</title>
+<link rel="stylesheet" type="text/css" href="../css/ui-all.css">
+<script src="../jquery-ui/js/jquery-1.5.2.min.js"></script>
+<script src="../jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script src="checkBox.js"></script>
+<script language="javascript">
+function changeVal()
+{
+
+	if($("#chk1").is(":checked"))
+	{
+		$("#chk1").check("destroy").attr("checked",false).check();
+		$("#chk2").check("destroy").attr("checked",true).check();
+	}
+
+}
+</script>
+</head>
+<body>
+单选
+<input type="checkbox" class="c6ui-check" name="test" />
+<input type="checkbox" class="c6ui-check" name="test" checked="true"/>
+<input type="checkbox" class="c6ui-check" name="test" checked="true" data-type="half"/>
+<input type="checkbox" class="c6ui-check" name="test" disabled="true" />
+<input type="checkbox" class="c6ui-check" name="test" disabled="true" checked="true" />
+<input type="checkbox" class="c6ui-check" name="test" disabled="true" checked="true" data-type="half"/>
+
+<br />
+复选
+<input type="radio" class="c6ui-check" name="tdst" />
+<input type="radio" class="c6ui-check" name="tdst" checked="true" />
+<input type="radio" class="c6ui-check" name="tdst" />
+<input type="radio" class="c6ui-check" name="test" disabled="true" checked="true" />
+
+<br />
+动态选择
+<input type="button" onclick="changeVal();" value="用于动态改变控件选择状态" />
+<input type="checkbox" class="c6ui-check" name="t2" id="chk1" checked />
+<input type="checkbox" class="c6ui-check" name="t2" id="chk2" />
+
+
+</body>
+</html>

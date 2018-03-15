@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Photo</title>
+
+    <script type="text/javascript" charset="utf-8" src="../plugins/org.apache.cordova.webviewapi/www/CyouWebViewApi.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../plugins/org.apache.cordova.partRefresh/www/CyouPartRefreshApi.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../cordova-incl.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    function onFail(message) {
+      
+    }
+    
+     function success(result) {
+      //todo 
+      
+    }
+    
+    function pushview() {
+        webContrl.pushWebView(success,onFail,"create");
+    }
+    
+    function pop() {
+        webContrl.exitActivity(success,onFail,"create");
+    }
+    
+    function refresh(){
+    
+        partRefreshApi.refresh(success,onFail,"create");
+    }
+    
+    </script>
+  </head>
+  <body>
+    <button onclick="pushview();">push</button> <br>
+     <hr color="red">
+     <button onclick="pop();">pop</button> <br>
+     <hr color="red">
+     <button onclick="refresh();">refresh</button> <br>
+     <hr color="red">
+  </body>
+</html>

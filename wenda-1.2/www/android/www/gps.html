@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>	
+<title>Device Properties Example</title>
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+	// 等待加载PHoneGap
+	document.addEventListener("deviceready", onDeviceReady, false); 
+	
+	// PhoneGap加载完毕
+	function onDeviceReady() {
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	}
+	
+	// 获取位置信息成功后调用的回调函数
+	function onSuccess(position) {
+		var element = document.getElementById('geolocation');
+		element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+							'Longitude: '          + position.coords.longitude             + '<br />' +
+							'Altitude: '           + position.coords.altitude              + '<br />' +
+							'Accuracy: '           + position.coords.accuracy              + '<br />' +
+							'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+							'Heading: '            + position.coords.heading               + '<br />' +
+							'Speed: '              + position.coords.speed                 + '<br />' +
+							'Timestamp: '          + new Date(position.timestamp)          + '<br />';
+	}
+	
+	// onError回调函数接收一个PositionError对象
+	function onError(error) {
+		alert('code: '    + error.code    + '\n' +
+			'message: ' + error.message + '\n');
+	}
+	
+	function success() {
+	}
+	function fail() {
+	}
+	
+	function openGpsSettings() {
+		gps.setttings.openGpsSettings(success,fail);
+	}
+
+</script>
+</head>
+<body>
+	<hr color="red"> 
+	<button onclick="openGpsSettings();">openGpsSettings</button> <br>
+     <hr color="red"> 
+	<p id="geolocation">Finding geolocation...</p>
+</body>
+</html>

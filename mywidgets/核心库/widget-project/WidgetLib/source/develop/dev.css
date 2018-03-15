@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	padding:0px 10px ;
+}
+.dev_top{
+	border-bottom:1px solid #CECECE ;
+	overflow:hidden ;
+	padding:10px 0px ;
+	width:100% ;
+}
+.dev_top ul li{
+	cursor:pointer ;
+	display:inline-block ;
+	float:left ;
+	height:26px ;
+	width:160px ; 
+}
+.dev_main{
+	height:600px ;
+	width:100% ;
+}
+.dev_left{
+	border-right:1px solid #CECECE ;
+	float:left ;
+	height:96% ;
+	padding-top:10px ;
+	width:63% ;
+}
+.dev_right{
+	border-left:1px solid #CECECE ;
+	float:left ;
+	height:96% ;
+	padding:10px 1% 0px 1% ;
+	margin-left:-1px ;
+	width:34% ;
+}
+.del{
+	background: #EEE;
+	border: 1px solid #999;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	bottom: 16px;
+	display:inline-block ;
+	height: 14px;
+	padding: 5px 0px 5px 5px;
+	/*position:relative;
+	right: -40px;*/
+	position:absolute ;
+	left:40px ;
+	top:20px ;
+	width:19px ;
+	z-index: 1002;
+}
+.icon-close{
+	background:url(images/develop/icons_sprite.png) no-repeat -70px -15px ;
+	display: block;
+	float:left ;
+	margin-right: 5px;
+	height: 15px;
+	width:14px ;
+}
+.iframeShow,.iframeEdit{
+	border:none ;
+	width:100% ;
+}
+.editcontent{
+	background:#eee ;
+	box-shadow:2px 2px 4px 0px #333 ;
+}
+.editTit{
+	background:url(images/develop/main_header_bar_middle.png) repeat-x bottom ;
+	color:#fff ;
+	font-size:18px ;
+	font-weight:bold ;
+	height:32px ;
+	line-height:32px ;
+	padding:0px 8px ;
+	text-shadow:0px 1px 2px #333 ;
+}
+.editmain{
+	height:500px ;
+	padding:6px ;
+}
+.editElem{
+	margin-bottom:8px ;
+}
+.opeBtn{
+	text-align:center ;
+}

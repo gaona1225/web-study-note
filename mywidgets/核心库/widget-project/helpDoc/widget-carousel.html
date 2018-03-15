@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>carousel</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+	<script language="javascript" type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.fn.carousel.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>图片旋转木马效果（carousel）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>当前版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>图片旋转木马效果，针对版本1.3+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox等浏览器</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> carousel(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">插件在使用时需要配置如下参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            
+            <p>
+              <label class="help-item">wrapWid：</label>
+              （数字类型）参数：900，旋转图片展示区域外层宽度(设置宽度需要同时兼顾图片大小、目标相对于容器中心的环绕圆周位置)</p>
+            <p>
+              <label class="help-item">wrapHei：</label>
+              （数字类型）参数：480，旋转图片展示区域外层高度</p>
+            <p>
+              <label class="help-item">imgWid：</label>
+              （数字类型）参数：350，旋转图片的宽度（每个旋转图片的宽度一致）</p>
+            <p>
+              <label class="help-item">imgHei：</label>
+              （数字类型）参数：214，旋转图片的高度（每个旋转图片的高度一致）</p>
+            <p>
+              <label class="help-item">reflHeight：</label>
+              （数字类型）参数：0，设置图片的倒影高度</p>
+            <p>
+              <label class="help-item">reflOpacity：</label>
+              （数字类型）参数：0.5，指定倒影的透明度</p>
+            <p>
+              <label class="help-item">reflGap：</label>
+              （数字类型）参数：0，图片和倒影之间的垂直间隔</p>
+            <p>
+              <label class="help-item">minScale：</label>
+              （数字类型）参数：0.5，应用到最远项的最小刻度，正面项的刻度是1</p>
+			<p>
+              <label class="help-item">xPos：</label>
+              （数字类型）参数：0，相对于容器中心的环绕圆周水平位置</p>
+            <p>
+              <label class="help-item">yPos：</label>
+              （数字类型）参数：0，相对于容器中心的环绕圆周垂直位置</p>
+            <p>
+              <label class="help-item">xRadius：</label>
+              （数字类型）参数：0，水平图片环绕的半径</p>
+            <p>
+              <label class="help-item">yRadius：</label>
+              （数字类型）参数：0，垂直图片环绕的半径,你可以修改这个值来调整环绕的倾斜程度。</p>           <p>
+              <label class="help-item">altBox：</label>
+              （字符串类型）参数：null，当鼠标悬浮在某个图片上时，显示img元素的alt属性值的标签元素</p>
+           <p>
+              <label class="help-item">titleBox：</label>
+              （字符串类型）参数：null，当鼠标悬浮在某个图片上时，显示img元素的title属性值的标签元素</p>
+            <p>
+              <label class="help-item">buttonLeft：</label>
+              （对象类型）参数：null，向左旋转按钮对象(如果需要按钮控制，必须指定到相应的目标对象,否则失去点击按钮触发旋转功能)</p>
+            <p>
+              <label class="help-item">buttonRight：</label>
+              （对象类型）参数：null，向右旋转按钮对象(如果需要按钮控制，必须指定到相应的目标对象,否则失去点击按钮触发旋转功能)</p>
+            <p>
+              <label class="help-item">autoRotate：</label>
+              （字符串类型）参数：'no'，设置自动旋转方向，设置为'left'，则自动向左转动。设置为'right'，则自动向右转动，设置为'no'（默认），则不自动转动。</p>
+            <p>
+              <label class="help-item">autoRotateDelay：</label>
+              （数字类型）参数：1500，自动转动的间隔时间</p>
+            <p>
+              <label class="help-item">speed：</label>
+              （数字类型）参数：0.2，调整转动速度，设置为0不转动，设置为1则没有转动效果，立即切换到最终效果。</p>
+            <p>
+              <label class="help-item">mouseWheel：</label>
+              （布尔类型）参数：false，是否启动滚轮操作控制旋转</p>
+            <p>
+              <label class="help-item">bringToFront：</label>
+              （布尔类型）参数：false，是否启用点击某张图片，该图片转动到图片正面</p>
+            <p>
+              <label class="help-item">imgClick：</label>
+              （函数类型）参数：{}，点击滚动图片时触发自定义点击事件</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content">
+            <p>
+              <label class="help-item">destroy()：</label>
+              （方法）清除图片旋转木马效果</p>
+            <p></p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              图片旋转木马效果</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+            	<script>
+					$(function(){
+						$('.carousel').carousel({
+							xPos:450,
+							yPos:110,
+							buttonLeft:$('#but1'),
+							buttonRight:$('#but2'),		
+							FPS:30,
+							reflHeight:86,
+							reflGap:2,
+							yRadius:40,
+							autoRotate: 'yes',
+							autoRotateDelay: 2000,
+							speed:0.2,
+							mouseWheel:true,
+							bringToFront:true
+						});
+					}) ;
+				</script>
+			    <div class="carousel" id="carousel">
+                    <a href="http://www.baidu.com" title="01" target="_new"><img class="cloudcarousel" alt="01" title="01" src="images/carousel/01.jpg" /></a>
+                    <a href="http://www.baidu.com" title="02" target="_new"><img class="cloudcarousel" alt="02" title="02" src="images/carousel/02.jpg" /></a>
+                    <a href="http://www.baidu.com" title="03" target="_new"><img class="cloudcarousel" alt="03" title="03" src="images/carousel/03.jpg" /></a>
+                    <a href="http://www.baidu.com" title="04" target="_new"><img class="cloudcarousel" alt="04" title="04" src="images/carousel/04.jpg" /></a>
+                    <a href="http://www.baidu.com" title="05" target="_new"><img class="cloudcarousel" alt="05" title="05" src="images/carousel/05.jpg" /></a>
+                    <a href="http://www.baidu.com" title="06" target="_new"><img class="cloudcarousel" alt="06" title="06" src="images/carousel/06.jpg" /></a>
+                    
+                    <div class="carouseLeft" id="but1"></div>
+                    <div class="carouselRight" id="but2"></div>
+                </div>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+            	&lt;script>
+                    $(function(){
+						$('.carousel').carousel({
+							xPos:450,
+							yPos:110,
+							buttonLeft:$('#but1'),
+							buttonRight:$('#but2'),		
+							FPS:30,
+							reflHeight:86,
+							reflGap:2,
+							yRadius:40,
+							autoRotate: 'yes',
+							autoRotateDelay: 2000,
+							speed:0.2,
+							mouseWheel:true,
+							bringToFront:true
+						});
+					}) ;
+			   &lt;/script>
+			  &lt;div class="carousel" id="carousel">
+                    &lt;a href="http://www.baidu.com" title="01" target="_new">&lt;img class="cloudcarousel" alt="01" title="01" src="images/carousel/01.jpg" />&lt;/a>
+                    &lt;a href="http://www.baidu.com" title="02" target="_new">&lt;img class="cloudcarousel" alt="02" title="02" src="images/carousel/02.jpg" />&lt;/a>
+                    &lt;a href="http://www.baidu.com" title="03" target="_new">&lt;img class="cloudcarousel" alt="03" title="03" src="images/carousel/03.jpg" />&lt;/a>
+                    &lt;a href="http://www.baidu.com" title="04" target="_new">&lt;img class="cloudcarousel" alt="04" title="04" src="images/carousel/04.jpg" />&lt;/a>
+                    &lt;a href="http://www.baidu.com" title="05" target="_new">&lt;img class="cloudcarousel" alt="05" title="05" src="images/carousel/05.jpg" />&lt;/a>
+                    &lt;a href="http://www.baidu.com" title="06" target="_new">&lt;img class="cloudcarousel" alt="06" title="06" src="images/carousel/06.jpg" />&lt;/a>
+                    
+                    &lt;div class="carouseLeft" id="but1">&lt;/div>
+                    &lt;div class="carouselRight" id="but2">&lt;/div>
+                &lt;/div>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html style="height:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>helpTip</title>
+<script language="javascript" type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../touchwipe/touchwipe.js"></script>
+<style type="text/css">
+.mainDiv{
+	background:#BFC6B9 ;
+	height:300px ;
+	width:400px ;
+}
+.helpDiv{
+	height:50px ;
+	left:30px ;
+	position:absolute ;
+	top:160px ;
+	width:30px ;
+}
+</style>
+<script language="javascript" type="text/javascript">
+$(function(){
+	/*拖动区域提示帮助*/
+	var divTip = '<div class="helpDiv"></div>' ;
+	var helpTip ;
+	var imgCon ;
+	var xwipeOk = $('.condDiv1').attr('userD') ;
+	var ywipeOk = $('.condDiv2').attr('userD') ;
+	var ywipeNum = parseInt(Math.random()*2) ;
+	function initHelpTip(helpTip){
+		var imgCon = '<img src="images/'+helpTip+'.png"/>' ;
+		$('.mainDiv').append(divTip) ;
+		$('.helpDiv').append(imgCon) ;
+		var _width = $(imgCon).width() ;
+		var _height = $(imgCon).height() ;
+	}
+	
+	function delHelpTip(){
+		$('.helpDiv').remove() ;
+	}
+	
+	if(xwipeOk == 1){
+		initHelpTip('xwipe') ;
+	}
+	if(ywipeOk == 1){
+		initHelpTip('ywipe') ;
+	}
+	$('.mainDiv').touchwipe({
+		wipeLeft: function(){
+			delHelpTip() ;
+			$('.condDiv2').attr('userD',ywipeNum) ;
+		},
+		wipeRight: function(){
+			delHelpTip() ;
+			$('.condDiv2').attr('userD',ywipeNum) ;
+		},
+		wipeUp: function(){
+			//delHelpTip() ;
+		},
+		wipeDown: function(){
+			//delHelpTip() ;
+		},
+		preventDefaultEvents: true
+	}) ;
+	window.addEventListener('touchstart', function(e){},false);
+}) ;
+</script>
+</head>
+
+<body>
+<div class="mainDiv">
+	<div class="condDiv1" userD='1'>condDiv1</div>
+	<div class="condDiv2" userD='0'>condDiv2</div>
+</div>
+</body>
+</html>

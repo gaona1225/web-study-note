@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>表单-表单控件-下拉选择框</title>
+    <!--基础应用开始-->
+    <link rel="stylesheet" type="text/css" href="../helpBase/base/reset.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/skins/default/style.css">
+    <link rel="stylesheet" type="text/css" href="../helpBase/js/jquery-ui/css/base/jquery-ui-1.8.11.custom.css">
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="../helpBase/js/syntaxhighlighter_2.1.382/styles/shThemeDefault.css"/>
+    <script src="../helpBase/base/jquery-1.5.2.min.js"></script>
+    <script src="../helpBase/js/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/src/shCore.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../helpBase/js/syntaxhighlighter_2.1.382/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = '../helpBase/js/syntaxhighlighter_2.1.382/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+    <!--基础引用结束-->
+    <!--插件引用开始-->
+    <link rel="stylesheet" type="text/css" href="../WidgetLib/uiBase/skins/default/skin.css">
+    <script type="text/javascript" src="../WidgetLib/uiBase/js/ui.js"></script>
+    <!--插件引用结束-->
+    <script>
+    $(function(){
+		var ver = $.ui.inputSelect.version || "未知";//当前插件的版本信息 
+		$('#ver').html(ver);
+	});
+    </script>
+    </head>
+
+    <body>
+    <div class="help-wrap">
+      <div class="header">
+        <div class="title">
+          <h1>下拉选择框（inputSelect）</h1>
+        </div>
+        <div class="attribute">
+          <p><strong>版本：
+            <label id="ver"></label>
+            </strong></p>
+        </div>
+      </div>
+      <div class="content"> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">概述：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>下拉选择框插件，针对版本1.0+<br/>
+                兼容浏览器：IE7+/Chrome/Firefox/Safari/Opera<br/>
+				v1.3版本：加入css3样式圆角和边框（阴影没有实现）、修改禁用启用方法 </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">依赖：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>jQuery; jQuery-UI;</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">调用：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p class="help-code"> inputSelect(); </p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">参数：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>暂无</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">方法：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+			<p>
+              <label class="help-code">disable()：</label>
+              使输入框转换为禁用状态。</p>
+            <p>
+              <label class="help-code">enable()：</label>
+              使输入框转换为可用状态。</p>
+            <p>
+              <label class="help-code">hide()：</label>
+              隐藏输入框。</p>
+            <p>
+              <label class="help-code">show()：</label>
+              显示输入框。</p>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+        <!--语法段落开始-->
+        <div class="help-mod">
+          <h2 class="title">示例：</h2>
+          <div class="content"> 
+            <!--语法描述-->
+            <p>
+              <label class="help-item">描述：</label>
+              标准的下拉选择框</p>
+            <label class="help-item">效果：</label>
+            <div class="help-demo">
+				<script>
+					$(function(){
+						$('#disable').click(function(){
+							$('#textfield').inputSelect('disable');
+						});
+						$('#enable').click(function(){
+							$('#textfield').inputSelect('enable');
+						});
+						$('#hide').click(function(){
+							$('#textfield').inputSelect('hide');
+						});
+						$('#show').click(function(){
+							$('#textfield').inputSelect('show');
+						});
+					});
+				</script>
+				<select name="" id="textfield">
+					<option>昨天</option>
+					<option>今天</option>
+					<option>明天</option>
+				</select>
+				<a href="###" id="disable">禁用</a> <a href="###" id="enable">启用</a> <a href="###" id="hide">隐藏</a> <a href="###" id="show">显示</a>
+            </div>
+            <label class="help-item">代码：</label>
+            <pre class="brush: js; html-script: true; highlight: 0">
+				&lt;script>
+                    $(function(){
+                        $('#disable').click(function(){
+                            $('#textfield').inputSelect('disable');
+                        });
+                        $('#enable').click(function(){
+                            $('#textfield').inputSelect('enable');
+                        });
+                        $('#hide').click(function(){
+                            $('#textfield').inputSelect('hide');
+                        });
+                        $('#show').click(function(){
+                            $('#textfield').inputSelect('show');
+                        });
+                    });
+                &lt;/script>
+				&lt;select name="" id="textfield">
+					&lt;option>昨天&lt;/option>
+					&lt;option>今天&lt;/option>
+					&lt;option>明天&lt;/option>
+				&lt;/select>
+				&lt;a href="###" id="disable">禁用&lt;/a> 
+                &lt;a href="###" id="enable">启用&lt;/a>
+                &lt;a href="###" id="hide">隐藏&lt;/a> 
+                &lt;a href="###" id="show">显示&lt;/a>
+            </pre>
+          </div>
+        </div>
+        <!--语法段落结束--> 
+      </div>
+    </div>
+</body>
+</html>

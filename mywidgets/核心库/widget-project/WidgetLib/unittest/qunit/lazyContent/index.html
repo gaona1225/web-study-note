@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>lazyContent单元测试</title>
+<link rel="stylesheet" href="../../../uiBase/skins/base/reset.css" />
+<link rel="stylesheet" href="../../../uiBase/skins/default/skin-min.css" />
+<link rel="stylesheet" href="../qunit.css" />
+<script language="javascript" src="../jquery-1.5.2.min.js"></script>
+<script language="javascript" src="../../../source/jquery-ui/js/jquery-ui-1.8.11.custom.min.js"></script>
+<script language="javascript" type="text/javascript" src="../qunit.js"></script>
+<script language="javascript" src="../../../uiBase/js/ui-min.js"></script>
+<script language="javascript" src="lazyContentTest.js"></script>
+<style type="text/css">
+	ul.lazy_content {
+      list-style: none;
+    }
+    ul.lazy_content li {
+        width: 200px;
+        height: 150px;  
+        float: left;
+        margin: 10px 30px;
+        outline: 1px dashed red;
+    }
+    .item_con {
+        margin: 10px;
+        outline: 1px dashed black;
+        height: 130px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .nav_content {
+        position: relative;
+        outline: 1px dashed red;
+        height: 340px;
+        width: 349px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+</head>
+
+<body>
+<div class="qunit-wrap">
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+</div>
+<div>
+    <h2>1个显示区+多个导航#2</h2>
+    <div class="btn-group btn-group-vertical" id="navCon2">
+        <input type="button" class="btn" value="li#0" data-url="data.txt" data-param="text"/>
+        <input type="button" class="btn" value="li#1" data-url="data.txt" data-param="text"/>
+        <input type="button" class="btn" value="li#2" data-url="data.txt" data-param="text"/>
+        <input type="button" class="btn" value="li#3" data-url="data.txt" data-param="text"/>        
+    </div>
+    <div class="nav_content" id="con2"></div>
+    <h2>多个平行ajax块#2</h2>
+    <input type="button" value="去加载" id="loadAjax2" class="btn"/>
+    <ul class="lazy_content" id="nav2">
+        <li data-url="data.txt" data-param="text">
+            <div class="item_con">li#0</div>
+        </li>
+        <li data-url="data.txt" data-param="text">
+            <div class="item_con">li#1</div>
+        </li>
+        <li data-url="data.txt" data-param="text">
+            <div class="item_con">li#2</div>
+        </li>
+        <li data-url="data.txt" data-param="text">
+            <div class="item_con">li#3</div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

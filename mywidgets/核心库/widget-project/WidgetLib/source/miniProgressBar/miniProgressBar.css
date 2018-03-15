@@ -1,0 +1,16 @@
+/*widget miniProgressBar*/
+.ui-mini-progressBar span {
+	width:51px;
+	height:5px;
+	background-color:#bababa;
+	display:block;
+}
+.ui-mini-progressBar span b{
+	height:5px;
+	background-color:#3895fd;
+	display:block;
+	width:0px ;
+}
+div.ui-mini-progressBar-dataValue{
+    line-height:1px;margin-left:58px;margin-top: -4px;
+}
