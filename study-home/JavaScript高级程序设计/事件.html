@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件</title>
+</head>
+
+<body onresize="javascript:console.log('aa');">
+	<input type="button" value="click ME" id="clickBtn" />
+	<input type="text" value="" id="inputText" />
+	<div style="width:300px;height:300px;border:1px solid #333;" id="divId"></div>
+	<textarea id="txt1" rows=15 cols=50></textarea>
+	<script type="text/javascript">
+		/*document.getElementById('clickBt').onclick = function(){
+			alert('click');
+		}*/
+		
+		/*document.getElementById('clickBtn').addEventListener('click',function(event){
+			alert('click');
+			console.log(event.type);
+		});
+		document.getElementById('clickBtn').addEventListener('click',function(){
+			alert('click2');
+		});*/
+		var btn = document.getElementById('clickBtn') ;
+		btn.onclick = handleEvent ;
+		btn.onmouseover = handleEvent ;
+		function handleEvent(event){
+			var _type = event.type ;
+			if(_type == 'click'){
+				console.log('click');
+			}else if(_type == 'mouseover'){
+				console.log('mouseover');
+			}
+		}
+		
+		var inputText = document.getElementById('inputText') ;
+		inputText.onkeydown = handleKeyDown ;
+		function handleKeyDown(event){
+			//console.log(event.shiftKey);
+			//console.log(event.ctrlKey);
+			console.log(event.altKey);
+			console.log(event.keyCode);
+		}
+		
+		/*window.onmouseover = function(event){
+			console.log(event.clientX + '===' + event.screenX) ;
+		}*/
+		
+		document.oncontextmenu = function(event){
+			event.preventDefault();
+		}
+		
+		var divId = document.getElementById('divId') ;
+		divId.onclick = handleEventAll;
+		divId.ondblclick = handleEventAll;
+		divId.onmousedown = handleEventAll;
+		divId.onmouseover = handleEventAll;
+		divId.onmouseup = handleEventAll;
+		divId.onmouseout = handleEventAll;
+		
+		function handleEventAll(event){
+			var txt = document.getElementById('txt1') ;
+			txt.value += '\n' + event.type;
+			txt.value += '\n' + event.target.tagName;
+			txt.value += '\n' + event.relatedTarget.tagName;
+			txt.value += '\n' + event.clientX + '==' + event.clientY + '==' + event.screenX + '==' + event.screenY;
+		}
+		
+		function handleLoad(){
+			alert(window.onload);
+		}
+		document.body.onload = function(){
+			console.log('aa');
+		}
+	</script>
+</body>
+</html>

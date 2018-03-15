@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>高级DOM技术</title>
+<style>
+
+</style>
+</head>
+
+<body>
+	<form method="post" action="handlepost.php" name="formName" id="formID">
+		<label for="txtName">Name:</label><br/>
+		<input type="text" id="txtName" name="txtName" placeholder="zhangsan" maxlength="6" onkeyup="FormUtil.tabForward(this)" /><br/>
+		
+		<label for="txtPassword">Password:</label><br/>
+		<input type="password" id="txtPassword" name="txtPassword" placeholder="password" /><br/>
+		
+		<label for="selAge">Age:</label><br/>
+		<select name="selAge" id="selAge">
+			<option>18-21</option>
+			<option>22-25</option>
+			<option>26-29</option>
+			<option>30-35</option>
+			<option>Over 35</option>
+		</select><br/>
+		
+		<label for="txtComments">Comments:</label><br/>
+		<textarea rows="10" cols="50" id="txtComments" name="txtComments" maxlength="20">placeholder</textarea><br/>
+		
+		<input type="reset" value="Reset Form" id="resetBtn" />
+		<input type="button" value="Submit Form" id="submitBtn" />
+	</form>
+	<script>		
+		var FormUtil = new Object() ;
+		//将焦点设置在第一个可见的表单字段上
+		FormUtil.focusOnFirst = function(){
+			var _forms = document.forms ;
+			if(_forms.length>0){
+				var _elements = _forms[0].elements;
+				for(var i=0;i<_elements.length;i++){
+					var oFiled = _elements[i];
+					if(oFiled.type != 'hidden' && oFiled.value == ''){
+						oFiled.focus();
+						return ;
+					}
+				}
+			}
+		}
+		
+		//自动选择文本
+		FormUtil.setTextboxes = function(){
+			var colInputs = document.getElementsByTagName('input');
+			var colTextareas = document.getElementsByTagName('textarea');
+			for(var i=0;i<colInputs.length;i++){
+				if(colInputs[i].type == 'text' || colInputs[i].type == 'password'){
+					colInputs[i].onfocus = function(){
+						this.select();
+					}
+				}
+			}
+			for(var i=0;i<colTextareas.length;i++){
+				colTextareas[i].onfocus = function(){
+					this.select();
+				}
+			}
+		}
+		
+		//自动切换到下一个-需要定义element的maxlength
+		FormUtil.tabForward = function(oTextbox){
+			var oForm = oTextbox.form ;
+			if(oForm.elements[oForm.elements.length-1] != oTextbox && oTextbox.value.length == oTextbox.getAttribute('maxlength')){ //确定oTextbox不是最后一个元素并且输入的长度已经达到最大长度
+				for(var i=0;i<oForm.elements.length;i++){
+					if(oForm.elements[i] == oTextbox){
+						for(var j=i+1;j<oForm.elements.length;i++){
+							if(oForm.elements[j].type != 'hidden'){
+								oForm.elements[j].focus();
+								return ;
+							}
+						}
+						return ;
+					}
+				}
+			}
+		}
+		
+		
+		//提交表单
+		FormUtil.submitForm = function(btn,form){
+			//TODO
+			btn.disabled = true ;
+			form.submit();
+		}
+		
+		FormUtil.focusOnFirst();
+		FormUtil.setTextboxes();
+		
+		var _oForm = document.forms['formName'] ;
+		/*_oForm.txtComments.focus();
+		_oForm.txtComments.select();*/
+		var _submitBtn = document.getElementById('submitBtn') ;
+		_submitBtn.onclick = function(){
+			FormUtil.submitForm(this,_oForm);
+		}
+	</script>
+</body>
+</html>

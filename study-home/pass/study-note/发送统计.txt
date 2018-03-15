@@ -1,0 +1,51 @@
+通过对一个v.gif的图片资源发送请求，来做统计（注意需要处理重复统计情况一个页面的类似操作只做一次统计）
+touch版：
+logEffective : function(evt,type){
+    function effectiveLog(){
+        var img = new Image()
+        img.onerror = img.onload = function(){img = null}
+        img.src = "http://passport.baidu.com/img/v.gif?type="+type+"&v="+(new Date()).getTime();
+        for(var i in evt){
+      	evt[i].off(i,effectiveLog)
+      }
+    }
+
+    for(var i in evt){
+    	evt[i].on(i,effectiveLog)
+    }           
+}
+调用：
+if(ns.log){ns.log.logEffective({
+    'focus' : $('.text-input', me.getElement('formWrapper')),
+    'tap' : $(me.getElement('submit')),
+		'click':$('a'),
+		'singleTap':$(me.getElement('verifyCodeSend'))
+},'wapConnect_Click_Auth')};
+
+
+pc版：
+（需要考虑http和https）
+_log : function(type,action){
+		var me = this;
+		var logType = type + action ;
+	    if(me.logHistory[logType]){
+		  return;
+		}
+		var protocol = window.location ? window.location.protocol.toLowerCase() : document.location.protocol.toLowerCase();
+		if(protocol == 'http:'){
+			var link = 'http://nsclick.baidu.com/v.gif?type='+logType+'&v='+(new Date()).getTime();
+		}else if(protocol == 'https:'){
+			var link = 'https://passport.baidu.com/img/v.gif?type='+logType+'&v='+(new Date()).getTime();
+		}
+		if(link){
+			var img = new Image();
+			img.onload = img.onerror = function() {
+				img.onload = img.onerror = null;
+				img = null
+			};
+			img.src = link;   
+			me.logHistory[logType]=true;
+		}
+},
+调用：
+me._log('click','logType');

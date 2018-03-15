@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>错误处理</title>
+
+</head>
+
+<body onload="nonExistentFunction()">
+</body>
+<script>
+
+	try{
+		window.nonExistentFunction();
+		console.log("Method completed");
+	}catch(exception){
+		try{
+			window.test();
+			console.log("Catch Method completed" + exception.message);
+		}catch(exception){
+			console.log('222  an exception occurred.');
+		}
+		console.log('an exception occurred.');
+	}finally{
+		console.log('end of try...catch test');
+	}
+
+	try{
+		eval('a++b');
+	}catch(exception){
+		console.log(exception.name);
+		if(exception.name == 'SyntaxError'){
+			console.log('Syntax Error:'+exception.message);
+		}else{
+			console.log('Ohter Error:'+exception.message);
+		}
+	}
+
+	try{
+		eval('a++b');
+	}catch(exception){
+		console.log(exception instanceof SyntaxError);
+		if(exception instanceof SyntaxError){
+			console.log('Syntax Error:'+exception.message);
+		}else{
+			console.log('Ohter Error:'+exception.message);
+		}
+	}
+</script>
+</html>

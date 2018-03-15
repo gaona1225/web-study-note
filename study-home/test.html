@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+</head>
+
+<body>
+<script language="javascript">
+function test(){}
+var test = function(){}
+
+(function(){
+	
+	var person = function(opt){
+		this.name = opt.name ;
+		this.age = opt.age ;
+	}
+	
+	person.prototype.run = function(){
+		var me = this;
+		console.log(me.name + " is running");
+	}
+	
+	person.prototype.sex = "women" ;
+	
+	
+	var gaona = new person({
+		'name':'gaona',
+		'age':'28'
+		
+	}) ;
+	gaona.run();
+	
+	
+	
+	
+	var lihanwu = new person({
+		'name':'gaona',
+		'age':'28'
+	
+	}) ;
+	console.log(gaona.sex);//women
+	console.log(lihanwu.sex);//women
+	
+	lihanwu.sex = "man" ;
+	
+	console.log(gaona.sex); //woman
+	console.log(lihanwu.sex);//man
+
+})()
+
+
+function person(opt){
+	this.name = opt.name ;
+	this.age = opt.age ;
+}
+
+person.prototype = {
+	eating : function(){
+		console.log(this.name+' is eating');
+	},
+	running : function(){
+		console.log(this.name + ' is running');
+	}
+}
+	
+var gaona = new person({
+	'name' : 'doudou',
+	'age' : 1
+}) ;
+
+gaona.eating() ;
+gaona.running();
+	
+</script>
+</body>
+</html>

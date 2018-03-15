@@ -1,0 +1,171 @@
+情景：
+等相关依赖模块加载完成，再处理回调函数内容
+eg：study/passpc-api/static/js/wrapper.js
+passport.use('accConnect', {
+    tangram: false,
+    tangramInst: (config.tangram ? baidu : null)
+}, function(magic){ 
+    setupComponents.init(magic);  //调用之前确保accConnect已经加载完成了
+    attachMethod();
+    attachEvent();
+    callback && callback();
+});
+        
+(function ( /*importstart*/ ) {
+var scripts = document.getElementsByTagName('script'),
+    length = scripts.length,
+    src = scripts[length - 1].src,
+    pos = src.indexOf('/js/'),
+    scriptPath = src.substr(0, pos) + '/js/';
+window.importScriptList = {};
+window.importScript = function (filename) {
+    if (!filename) return;
+    if (filename.indexOf("http://") == -1 && filename.indexOf("https://") == -1) {
+        if (filename.substr(0, 1) == '/') filename = filename.substr(1);
+        filename = scriptPath + filename;
+    }
+    if (filename in importScriptList) return;
+    importScriptList[filename] = true;
+    document.write('<script src="' + filename + '" type="text/javascript"><\/' + 'script>');
+}
+})( /*importend*/ ) 
+
+importScript("conf/module_define.js");
+
+passport._load = passport._load || function(u,flag,callback){
+	if (flag) { //增加flag，需要统计加载时间的设为true
+	    var d = document,
+	        s = d.createElement('SCRIPT');
+	    s.type = 'text/javascript';
+	    s.charset = 'UTF-8';
+	    var url = u.split("?")[0];
+	    var random = Math.round(Math.random() * 1000);
+	    var t = new Date()
+	        .getTime();
+	    if (s.readyState) { //IE
+	        s.onreadystatechange = function() {
+	            if (s.readyState == "loaded" || s.readyState == "complete") { s.onreadystatechange = null;
+	                if (100 == random) {
+	                    var time = new Date()
+	                        .getTime() - t;
+	                    (new Image())
+	                        .src = "http://nsclick.baidu.com/v.gif?pid=111&type=1023&url=" + encodeURIComponent(url) + "&time=" + time;
+	                }        
+	                callback && callback();
+	            }    
+	        };
+	    } else { //Others
+	        s.onload = function() {        
+	            if (100 == random) {
+	                var time = new Date()
+	                    .getTime() - t;
+	                (new Image())
+	                    .src = "http://nsclick.baidu.com/v.gif?pid=111&type=1023&url=" + encodeURIComponent(url) + "&time=" + time;
+	            }    
+	            callback && callback();
+	        };
+	    }
+	    if (100 == random) {
+	        s.src = url + "?t=" + Math.random();
+	    } else {
+	        s.src = u;
+	    }
+	    d.getElementsByTagName('head')[0].appendChild(s);
+	} else {
+	    var d = document,
+	        s = d.createElement('SCRIPT');
+	    s.type = 'text/javascript';
+	    s.charset = 'UTF-8';
+	    s.src = u;
+	    d.getElementsByTagName('head')[0].appendChild(s);
+	    if (s.readyState) { //IE
+	        s.onreadystatechange = function() {
+	            if (s.readyState == "loaded" || s.readyState == "complete") {
+	            	s.onreadystatechange = null;
+	            	callback && callback();
+	            }
+	        }
+	    } else { //Others
+	        s.onload = function() {
+	        	callback && callback();
+	        }
+	    }
+	}
+}
+
+/**
+ * @description load script module
+ * @function
+ * @param {Enum} module 模块名, 必须
+ * @param {String} path js模块路径, 必须，不带域名
+ * @param {Function} callback 加载完成回调函数, 必需
+ */
+passport._use = passport._use || function(module, path, callback){
+    var url = (window.location ? 
+					((window.location.protocol.toLowerCase()=="http:")?"http://passport.bdimg.com":"https://passport.baidu.com") : 
+					((document.location.protocol.toLowerCase()=="http:")?"http://passport.bdimg.com":"https://passport.baidu.com")) + path;
+    var fullModuleName = module + ".js";
+        moduleInstance = passport._getModule(fullModuleName);
+    if(moduleInstance) { callback && callback(moduleInstance); }
+    else {
+        passport._load(url, true,loadScriptBack);
+    }
+    function loadScriptBack() {
+        var inst = passport._getModule(fullModuleName);
+        if(inst) { callback && callback(inst); }
+        else { throw new Error("load " + fullModuleName + "module script error."); }
+    }
+};
+/**
+ * @description loader
+ * @function
+ * @param {Enum} module 模块名  reg|regPhone|login|fillUserName, 必需
+ * @param {Object} config 配置, 可选
+ * @param {Boolean} config.tangram 是否加载 tangram2, 可选, 默认 false
+ * @param {Boolean} config.regPhoneOnly （对于注册）是否仅使用手机注册功能
+ * @param {Function} callback 加载完成回调函数, 必需
+ */
+passport.use = passport.use || function(module, config, callback){
+	var tangram = (config && config.tangram === false) ? '' : '_tangram';
+	if(module == 'reg' && config && config.regPhoneOnly) module = 'regPhone';
+    var fileMap = {
+            "login" : "/passApi/js/login.js",
+            "login_tangram" : "/passApi/js/login_tangram.js",
+
+            "accConnect" : "/passApi/js/accConnect.js",
+            "accConnect_tangram" : "/passApi/js/accConnect_tangram.js",
+
+            "loginWap" : "/passApi/js/loginWap.js",
+
+            "reg" : "/passApi/js/reg.js",
+            "reg_tangram" : "/passApi/js/reg_tangram.js",
+            "regPhone" : "/passApi/js/regPhone.js",
+            "regPhone_tangram" : "/passApi/js/regPhone_tangram.js",
+            "fillUserName" : "/passApi/js/fillUserName.js",
+            "fillUserName_tangram" : "/passApi/js/fillUserName_tangram.js",
+            "qrcode" : "/passApi/js/qrcode.js",
+            "qrcode_tangram" : "/passApi/js/qrcode_tangram.js",
+            "realUserTag" : "/passApi/js/realUserTag.js",
+            "realUserTag_tangram" : "/passApi/js/realUserTag_tangram.js",
+            "bind" : "/passApi/js/bind.js",
+            "bind_tangram" : "/passApi/js/bind_tangram.js",
+            "multiBind" : "/passApi/js/multiBind.js",
+            "multiBind_tangram" : "/passApi/js/multiBind_tangram.js",
+            "multiUnbind" : "/passApi/js/multiUnbind.js",
+            "multiUnbind_tangram" : "/passApi/js/multiUnbind_tangram.js",
+            "changeUser" : "/passApi/js/changeUser.js",
+            "changeUser_tangram" : "/passApi/js/changeUser_tangram.js",
+            "loginMultichoice" : "/passApi/js/loginMultichoice.js",
+            "loginMultichoice_tangram" : "/passApi/js/loginMultichoice_tangram.js",
+            "confirmWidget" : "/passApi/js/confirmWidget.js",
+            "confirmWidget_tangram" : "/passApi/js/confirmWidget_tangram.js"
+        },
+        moduleName = module + tangram;
+    if(arguments.length == 2){
+    	callback = config;
+    }
+    //外引tangram
+    if(config && config.tangramInst) { passport.tangramInst = config.tangramInst; }
+    passport._use(moduleName, fileMap[moduleName], callback);
+};
+        

@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>高级DOM技术</title>
+<script type="text/javascript" src="eventutil.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<form method="post" action="handlepost.php" name="formName" id="formID">
+		<label for="txtName">Name:</label><br/>
+		<input type="text" id="txtName" name="txtName" placeholder="zhangsan" maxlength="6"  data-invalidchars="0123456789" /><br/>
+		
+		<label for="txtPassword">Password:</label><br/>
+		<input type="text" id="txtPassword" name="txtPassword" max="200" min="99" placeholder="password" data-validchars="0123456789" /><br/>
+		
+		<label for="selAge">Age:</label><br/>
+		<select name="selAge" id="selAge">
+			<option value="1">18-21</option>
+			<option value="2">22-25</option>
+			<option value="3">26-29</option>
+			<option value="4">30-35</option>
+			<option value="5">Over 35</option>
+		</select><br/>
+		<label for="selLove">Love:</label><br/>
+		<select name="selLove" id="selLove" multiple>
+			<option value="1">读书</option>
+			<option value="2">游泳</option>
+			<option value="3">画画</option>
+			<option value="4">打球</option>
+			<option value="5">旅游</option>
+		</select><br/>
+		<label for="selHate">Hate:</label><br/>
+		<select name="selHate" id="selHate" multiple>
+			<option value="1">睡觉</option>
+			<option value="2">吃饭</option>
+			<option value="3">跑步</option>
+			<option value="4">看电视</option>
+			<option value="5">打游戏</option>
+		</select><br/>
+		
+		<label for="txtComments">Comments:</label><br/>
+		<textarea rows="10" cols="50" id="txtComments" name="txtComments" maxlength="20">placeholder</textarea><br/>
+		
+		<input type="reset" value="move Select" id="moveBtn" />
+		<input type="button" value="Submit Form" id="submitBtn" />
+	</form>
+	<script>		
+		var ListUtil = new Object();
+		//获取所有选中项，select可以有多选
+		ListUtil.getSelectedIndexs = function(oListbox){
+			var arrIndex = new Array() ;
+			for(var i=0;i<oListbox.options.length;i++){
+				if(oListbox.options[i].selected){
+					arrIndex.push(i) ;
+				}
+			}
+			return arrIndex;
+		}
+		
+		//添加选项
+		ListUtil.add = function(oListbox,sName,sValue){
+			var oOption = document.createElement('option');
+			oOption.appendChild(document.createTextNode(sName));
+			
+			if(arguments.length == 3){ //确定是否传了value值
+				oOption.setAttribute("value",sValue);
+			}
+			oListbox.appendChild(oOption);
+		}
+		
+		//删除选项
+		ListUtil.remove = function(oListbox,iIndex){
+			oListbox.remove(iIndex);
+		}
+		
+		//删除列表框中所有的选项
+		ListUtil.clear = function(oListbox){
+			for(var i=oListbox.options.length-1;i>=0;i--){ //每删除一个选项后，每个选项的index特性就会重置，所以最好从最大的索引开始删除。
+				ListUtil.remove(oListbox,i);
+			}
+		}
+		
+		//移动选项
+		ListUtil.move = function(oListboxFrom,oListboxTo,iIndex){
+			var oOption = oListboxFrom.options[iIndex];
+			if(oOption != null){
+				oListboxTo.appendChild(oOption);
+			}
+		}
+		
+		//重新排序选项--向上移动一个位置
+		ListUtil.shiftUp = function(oListbox,iIndex){
+			if(iIndex>0){
+				var oOption = oListbox.options[iIndex] ;
+				var oPrevOption = oListbox.options[iIndex-1] ;
+				oListbox.insertBefore(oOption,oPrevOption);
+			}
+		}
+		
+		//重新排序选项--向下移动一个位置
+		ListUtil.shiftDown = function(oListbox,iIndex){
+			if(iIndex<oListbox.options.length-1){
+				var oOption = oListbox.options[iIndex] ;
+				var onextOption = oListbox.options[iIndex+1] ;
+				oListbox.insertBefore(onextOption,oOption);
+			}
+		}
+		
+		
+		//调用
+		var _selAge = document.getElementById('selAge') ;
+		var _selLove = document.getElementById('selLove');
+		var _selHate = document.getElementById('selHate');
+		var _submitBtn = document.getElementById('submitBtn') ;
+		var _moveBtn = document.getElementById('moveBtn') ;
+		console.log(_selAge.options[1].index);
+		console.log(_selAge.selectedIndex);
+		_submitBtn.onclick = function(){
+			console.log(ListUtil.getSelectedIndexs(_selLove));
+			ListUtil.add(_selAge,'我是新增的','new');
+			//ListUtil.clear(_selAge);
+		}
+		_moveBtn.onclick = function(){
+			//ListUtil.move(_selHate,_selLove,0);
+			//ListUtil.shiftUp(_selHate,2);
+			ListUtil.shiftDown(_selHate,2);
+		}
+	</script>
+</body>
+</html>

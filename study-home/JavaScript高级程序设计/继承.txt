@@ -1,0 +1,169 @@
+对象冒充:
+function ClassA(sColor,name){
+	this.color = sColor ;
+	this.name = name ;
+	this.showColor = function(){
+		console.log('show '+this.color);
+	};
+	this.sayName = function(){
+		console.log('show '+this.name);
+	}
+}
+
+function ClassC(sColor){
+	this.showColor = function(){
+		console.log('showCCC '+this.color);
+	}
+}
+
+function ClassB(sColor,name){
+	this.newMethod = ClassA ; //为ClassA赋予了方法newMethod
+	this.newMethod(sColor) ;
+	delete this.newMethod;
+	
+	this.newMethodC = ClassC ;
+	this.newMethodC() ;
+	delete this.newMethodC ;
+	
+	this.name = name ;
+	this.sayName = function(){
+		console.log(this.name);
+	}
+	
+}
+
+var objA = new ClassA('red','aaa');
+objA.showColor() ;
+objA.sayName();
+var objB = new ClassB('blue','bbb');
+objB.showColor() ;
+objB.sayName();
+
+call()方法：
+function descColor(sPre,sNext){
+	console.log(sPre + this.color + sNext);
+}
+var obj = new Object() ;
+obj.color = 'blue' ;
+descColor.call(obj,'The color is ',' ,It is very beautiful') ;
+
+function ClassA(sColor,name){
+	this.color = sColor ;
+	this.name = name ;
+	this.showColor = function(){
+		console.log('show '+this.color);
+	};
+	this.sayName = function(){
+		console.log('show '+this.name);
+	}
+}
+
+function ClassB(sColor,sName){
+	ClassA.call(this,sColor) ;
+	
+	this.name = sName ;
+	this.sayName = function(){
+		console.log(this.name);
+	}
+	
+}
+var obj = new ClassA('red','yueji') ;
+obj.sayName() ;  //来于ClassA
+obj.showColor();   //来于ClassA
+var objB = new ClassB('red','yueji') ;
+objB.sayName() ;   //来于ClassB
+objB.showColor();   //来于ClassA
+
+apply()方法：
+function descColor(sPre,sNext){
+	console.log(sPre + this.color + sNext);
+}
+var obj = new Object() ;
+obj.color = 'blue' ;
+descColor.apply(obj,new Array('sPre ',' sNext'));
+
+function ClassA(sColor){
+	this.color = sColor ;
+	this.showColor = function(){
+		console.log('AAA '+this.color);
+	}
+}
+
+function ClassB(sColor,sName){
+	ClassA.apply(this,new Array(sColor)) ;
+	this.color = sColor ;
+	this.showColor = function(){
+		console.log('BBB '+this.color);
+	}
+	
+	this.name = sName ;
+	this.showName = function(){
+		console.log('BBB '+this.name);
+	}
+}
+var obj = new ClassB('red','obj') ;
+obj.showColor();  //BBB red
+obj.showName() ;
+
+
+function ClassA(sColor){
+	this.color = sColor ;
+	this.showColor = function(){
+		console.log('AAA '+this.color);
+	}
+}
+
+function ClassB(sColor,sName){
+	this.color = sColor ;
+	this.showColor = function(){
+		console.log('BBB '+this.color);
+	}
+	
+	ClassA.apply(this,new Array(sColor)) ;
+	
+	
+	this.name = sName ;
+	this.showName = function(){
+		console.log('BBB '+this.name);
+	}
+}
+var obj = new ClassB('red','obj') ;
+obj.showColor();  //AAA red
+obj.showName() ;
+
+prototype。原型链方式继承
+function ClassA(){
+}
+ClassA.prototype.color = 'red' ;
+ClassA.prototype.showColor = function(){
+	console.log('AAA '+this.color);
+}
+
+function ClassB(){
+}
+ClassB.prototype = new ClassA(); //将ClassA中的所有属性和方法都赋予ClassB的prototype属性
+var obj = new ClassB();
+obj.showColor() ;
+
+console.log(obj instanceof ClassA);
+console.log(obj instanceof ClassB);
+
+混合方式:
+function ClassA(sColor){
+	this.color = sColor ;
+}
+ClassA.prototype.showColor = function(){
+	console.log('AAA '+this.color);
+}
+function ClassB(sColor,sName){
+	ClassA.call(this,sColor);
+	
+	this.name = sName ;
+}
+ClassB.prototype = new ClassA();
+ClassB.prototype.showName = function(){
+	console.log('BBB '+this.name);
+}
+var obj = new ClassB('red','objName') ;
+obj.showColor();
+obj.showName();

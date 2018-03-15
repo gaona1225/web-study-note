@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>客户端与服务器端的通信</title>
+
+</head>
+
+<body>
+	<form name="formResponse">
+		<textarea name="result">This is some data coming from the server.</textarea>
+	</form>
+</body>
+<script>
+	window.onload = function(){
+		parent.handleResponse(document.forms['formResponse'].result.value);
+	}	
+</script>
+</html>

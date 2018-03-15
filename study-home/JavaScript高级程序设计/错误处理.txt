@@ -1,0 +1,201 @@
+var findItem = function(ary,elem){
+	var len = ary.length;
+	for(var i=0;i<len;i++){
+		if(ary[i] == elem){
+			return i ;
+		}else{
+			return -1 ;
+		}
+	}
+}
+
+var colorarray = ['red','green','yellow'] ;
+
+var iLoc = findItem(colorarray,'blue');
+if(iLoc == -1){
+	console.log('The item does not exist.');
+}else{
+	console.log('The item is in location ' + iLoc + '.');
+}
+
+
+//异常-运行时错误
+function handleLoad(){
+	window.openMySpecialWindow();
+	alert('Loaded');
+}
+function handleClick(){
+	alert('Clicked')
+}
+document.onclick = function(){
+	handleClick();
+	handleLoad();
+}
+
+//处理错误--onerror
+document.onclick = function(){
+	nonExistentFunction();
+}
+
+window.onerror = function(){
+	console.log('an error is occurred');  
+
+	return true ; //如果不加这个，浏览器仍然会报错。
+}
+
+//取出错误信息
+document.onclick = function(){
+	nonExistentFunction();
+}
+
+window.onerror = function(sMsg,sUrl,sLine){
+	console.log('an error is occurred:\n' + sMsg + '\nURL:'+sUrl+'\nline:'+sLine);  
+
+	return true ; //如果不加这个，浏览器仍然会报错。
+}
+
+//处理错误语法  -- 事件处理函数必须是页面中第一个出现的代码  下面例子中的onerror方法将不会触发，因为在之前已经有语法错误会完全停止代码的执行。
+console.log('fdsaf' ;
+window.onerror = function(sMsg,sURL,sLine){
+	console.log('msg:'+sMsg+'\nurl:'+sURL+'\nline:'+sLine);
+}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>错误处理</title>
+
+</head>
+
+<body>
+	<img src="a.jpg" id="imgID" />
+</body>
+<script>
+	var _img = document.getElementById('imgID') ;
+	_img.onerror = function(){
+		console.log('an error occurred loading the image.');
+	}
+</script>
+</html>
+
+
+//try...catch--基本语法
+try{
+	//code to run
+}catch(exception){
+	//code to run if an exception occurs and the expression is matched
+}finally{
+	//code that is alwats executed regardless of an exception occurring
+}
+
+
+//在finally中关闭打开的链接和释放资源很有用。
+connection.open();
+try{
+	connection.send(data);
+}catch(exception){
+	console.log('an error is occurred.');
+}finally{
+	connection.close();
+}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>错误处理</title>
+
+</head>
+
+<body onload="nonExistentFunction()">
+</body>
+<script>
+
+	try{
+		window.nonExistentFunction();
+		console.log("Method completed");
+	}catch(exception){
+		try{
+			window.test();
+			console.log("Catch Method completed" + exception.message);
+		}catch(exception){
+			console.log('222  an exception occurred.');
+		}
+		console.log('an exception occurred.');
+	}finally{
+		console.log('end of try...catch test');
+	}
+</script>
+</html>
+
+
+//判断错误类型  name/instanceof
+try{
+	eval('a++b');
+}catch(exception){
+	console.log(exception.name);
+	if(exception.name == 'SyntaxError'){
+		console.log('Syntax Error:'+exception.message);
+	}else{
+		console.log('Ohter Error:'+exception.message);
+	}
+}
+
+try{
+	eval('a++b');
+}catch(exception){
+	console.log(exception instanceof SyntaxError);
+	if(exception instanceof SyntaxError){
+		console.log('Syntax Error:'+exception.message);
+	}else{
+		console.log('Ohter Error:'+exception.message);
+	}
+}
+
+//throw
+throw 'An error occurred.';
+throw 50067;
+throw true;
+throw new Object();
+
+function addTwoNumbers(a,b){
+	if(arguments.length<2){
+		throw new Error('Two numbers are required.');
+	}else{
+		return a+b;
+	}
+}
+try{
+	result = addTwoNumbers(3);
+}catch(exception){
+	console.log(exception.message);
+}
+
+function addTwoNumbers(a,b){
+	if(arguments.length<2){
+		throw new Error('Two numbers are required.');
+	}else{
+		return a+b;
+	}
+}
+try{
+	result = addTwoNumbers(3,parseInt('z'));
+}catch(exception){
+	
+	if(exception instanceof SyntaxError){
+		console.log('SyntaxError:'+exception.message);
+	}else if(exception instanceof Error){
+		console.log(exception.message);
+	}
+}
+
+//抛出自定义错误
+function divide(iNum1,iNum2){
+	if(arguments.length!=2){
+		throw new Error('divide() requires two arguments');
+	}else if(typeof iNum1 !="number" || typeof iNum2 !="number"){
+		throw new Error('divide() requires two numbers for arguments');
+	}
+	return iNum1.valueOf();
+}
+divide(10,'b');

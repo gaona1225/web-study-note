@@ -1,0 +1,40 @@
+监听模式。。。。消息订阅
+
+有一个新闻频道，10个人订阅，有新闻的时候，通知这10个人
+
+
+
+var NewChannel = function(){
+	this.persons = [] ;
+}
+
+NewChannel.prototype.addPerson = function(person){
+	this.persons.push(person);
+}
+
+NewChannel.prototype.findNews = function(newContent){
+	for(var p in  persons){
+		p.recevieNews(newContent);
+	}
+}
+
+var cctv = new NewChannel();
+var Person = function(){}
+Person.prototype.recevieNews = function(news){
+	//晒到朋友圈
+}
+
+var p1 = new Person();
+var p2 = new Person();
+
+....
+var p10 = new Person();
+
+cctv.addPerson(p1);
+cctv.addPerson(p2);
+cctv.addPerson(p10);
+
+
+cctv.findNews('明天不上班');
+
+

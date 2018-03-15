@@ -1,0 +1,42 @@
+1、通过随机数进行统计（例子参考）
+a、对随机数的统计
+b、保证处于统计状态的文件是最新的，加个时间戳或是随机数
+
+eg：study/passpc-api/static/js/wrapper.js
+ var d = document,
+ s = d.createElement('SCRIPT');
+	    s.type = 'text/javascript';
+	    s.charset = 'UTF-8';
+	    var url = u.split("?")[0];
+	    var random = Math.round(Math.random() * 1000);
+	    var t = new Date()
+	        .getTime();
+	    if (s.readyState) { //IE
+	        s.onreadystatechange = function() {
+	            if (s.readyState == "loaded" || s.readyState == "complete") { s.onreadystatechange = null;
+	                if (100 == random) {  //随机数为100 时候发送请求进行抽样统计
+	                    var time = new Date()
+	                        .getTime() - t;
+	                    (new Image())
+	                        .src = "http://nsclick.baidu.com/v.gif?pid=111&type=1023&url=" + encodeURIComponent(url) + "&time=" + time;
+	                }        
+	                callback && callback();
+	            }    
+	        };
+	    } else { //Others
+	        s.onload = function() {        
+	            if (100 == random) {
+	                var time = new Date()
+	                    .getTime() - t;
+	                (new Image())
+	                    .src = "http://nsclick.baidu.com/v.gif?pid=111&type=1023&url=" + encodeURIComponent(url) + "&time=" + time;
+	            }    
+	            callback && callback();
+	        };
+	    }
+	    if (100 == random) {
+	        s.src = url + "?t=" + Math.random();  //通过随机数去避免浏览器使用本地缓存
+	    } else {
+	        s.src = u;
+	    }
+	    d.getElementsByTagName('head')[0].appendChild(s);

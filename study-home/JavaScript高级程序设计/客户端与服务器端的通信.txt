@@ -1,0 +1,151 @@
+//创建一个cookie
+document.cookie="name=zhangsan" ;
+document.cookie="book="+encodeURIComponent("Professional JavaScript");
+console.log(document.cookie);
+
+//创建cookie方法
+function setCookie(sName,sValue,oExpires,sPath,sDomain,bSecure){
+	var sCookie = sName + "=" + encodeURIComponent(sValue);
+	if(oExpires){
+		sCookie+=";expires="+oExpires.toGMTString();
+	}
+	if(sPath){
+		sCookie+=";path=" + sPath;
+	}
+	if(sDomain){
+		sCookie+=";domain="+sDomain;
+	}
+	if(bSecure){
+		sCookie+=";secure" ;
+	}
+	document.cookie = sCookie ;
+}
+setCookie('name','zhangsan',new Date(Date.parse("Jan 1,2006")));
+
+//获取cookie
+function getCookie(sName){
+	var sRE = "(?:;)?" + sName + "=([^;]*);?" ;
+	var oRE = new RegExp(sRE);
+	if(oRE.test(document.cookie)){
+		return decodeURIComponet(RegExp["$1"]);
+	}else{
+		return null;
+	}
+}
+var sName = getCookie('name');
+
+//删除cookie
+function deleteCookie(sName,sPath,sDomain){
+	setCookie(sName,"",new Date(0),sPath,sDomain);
+}
+
+//隐藏框架-与服务器交互
+var oHiddenFrame = null ;
+//向服务器发送请求--通过创建隐藏的iframe实现
+function getServerInfo(){
+	if(oHiddenFrame == null){
+		oHiddenFrame = document.createElement('iframe');
+		oHiddenFrame.name = 'hiddenFrame' ;
+		oHiddenFrame.id = 'hiddenFrame' ;
+		oHiddenFrame.style.width = '0px' ;
+		oHiddenFrame.style.height = '0px' ;
+		oHiddenFrame.style.position = 'absolute' ;
+		oHiddenFrame.style.visibility = 'hidden' ;
+		document.body.appendChild(oHiddenFrame);
+	}
+	setTimeout(function(){ //iframe创建好并添加后，大部分浏览器会需要一小段事件来认出新的框架并将其添加到帧集合中。考虑到这个问题，应该用setTimeout()函数使发送请求的操作的那个带10毫秒。
+		frames['hiddenFrame'].location.href = 'HiddenFrameExampleCom2.html'
+	},10);	
+}
+
+function handleResponse(sResponseText){
+	console.log("The server returned:"+sResponseText);
+}
+
+//HTTP请求-创建统一的XML HTTP请求对象
+
+if(typeof XMLHttpRequest == 'undefined' && window.ActiveXObject{
+	function XMLHttpRequest(){
+		try{
+			var oRequest = new ActiveXObject();
+			return oRequest ;
+		}catch(oError){
+
+		}
+		throw new Error('MSXML is not installed on your system.');
+	}
+}
+
+function addURLParam(sURL,sParamName,sParamValue){
+	sURL += (sURL.indexOf('?') == -1 ? '?':'&') ;
+	sURL += encodeURIComponent(sParamName) + '=' + encodeURIComponent(sParamValue);
+	return sURL ;
+}
+
+function addPostParam(sParams,sParamsName,sParamValue){
+	if(sParams.length>0){
+		sParams += '&' ;
+	}
+	return sParams + encodeURIComponent(sParamName) + '=' + encodeURIComponent(sParamValue);
+}
+
+//智能HTTP请求-get（）方法
+Http.get = function(sURL,fnCallback){
+	if(bXmlHttpSupport){
+		var oRequest = new XMLHttpRequest();
+		oRequest.open('get',sURL,true);
+		oRequest.onreadystatechange = function(){
+			if(oRequest.readyState == 4){
+				fnCallback && fnCallback(oRequest.responseText);
+			}
+		}
+		oRequest.send(null);
+	}else if(navigator.javaEnabled() && typeof java != 'undefined' && typeof java.net != 'undefined'){
+		//TODO LiveConnect code here
+		//模仿异步调用
+		setTimeout(function(){
+			fnCallback  && fnCallback(httpGet(sURL));
+		},10);
+	}else{
+		alert('your browser doesn\'t support HTTP requests.') ;
+	}
+}
+
+//调用
+var sURL = 'http://www.somewhere.com/page.php' ;
+sURL = addURLParam(sURL,'name','zhangsan');
+sURL = addURLParam(sURL,'book','Professional JavaScript');
+Http.get(sURL,function(sData){
+	alert('server sent back:'+sData);
+});
+
+//智能HTTP请求-post（）
+Http.post = function(sURL,sParams,fnCallback){
+	if(bXmlHttpSupport){
+		var oRequest = new XMLHttpRequest();
+		oRequest.open('post',sURL,true);
+		oRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		oRequest.onreadystatechange = function(){
+			if(oRequest.readyState == 4){
+				fnCallback && fnCallback(oRequest.responseText);
+			}
+		}
+		oRequest.send(sParams);
+	}else if(navigator.javaEnabled() && typeof java != 'undefined' && typeof java.net != 'undefined'){
+		//TODO LiveConnect code here
+		//模仿异步调用
+		setTimeout(function(){
+			fnCallback  && fnCallback(httpPost(sURL,sParams));
+		},10);
+	}else{
+		alert('your browser doesn\'t support HTTP requests.') ;
+	}
+}
+
+//调用
+var sURL = 'http://www.somewhere.com/page.php' ;
+sURL = addPostParam(sParams,'name','zhangsan');
+sURL = addPostParam(sParams,'book','Professional JavaScript');
+Http.post(sURL,function(sData){
+	alert('server sent back:'+sData);
+});

@@ -1,0 +1,106 @@
+前端性能优化：最重要，减少DOM操作
+1、减少请求次数：减少请求条数、异步加载
+2、减少请求体积
+3、加快请求速度
+4、缩短渲染时间
+
+慢速用户
+IE用户：脚本加载和运行时间长，DOM节点过多
+2G用户：请求数过多，功能依赖外链Javascript
+移动低端机：页面复杂、动画过多，前端渲染多。
+
+预处理：查询本地cache（获取缓存状态）--》Request header（Accept-Encoding：gzip、If-Modified-since）--》Response header（Content-Encoding：gzip、Last-modified）
+查询DNS：DNS缓存（浏览器、计算机、服务器（TTL））--》减少DNS查找（较少的域名（2-4个）、木桶效应）
+建立链接：尽量使用CDN（缩短连接时间、缓存、pagecache）--》--静态资源上CDN--》动态加速（跨机房长联、优化TCP窗口）--》缓存加速
+发送请求：减少HTTP请求（合并js和css、css sprites）--》Ajax使用get（post会发两次请求Header&Data）
+等待响应：避免重定向--》Response Headers：（HTTP、1.0 302 Moved Temporarily）--》提供后端响应时间
+发送数据：压缩组件（HTML、JS、CSS）--》精简代码（逻辑、样式、HTML）
+读取cache：缓存过期时间（请求URL、Expires&Cache-control）--》Etag（刷新页面）--避免内联文件--长过期时间与短过期时间
+处理、渲染：不要gzip二进制文件--》不要缩放图像--》样式表置顶--》脚本置底（并行加载）--》减少DOM操作
+
+JS优化：
+数据结构和算法优化
+减少查找：属性、全局变量
+避免with
+避免动态改版对象属性（delete a.b）
+用array来进行字符串拼接
+避免eval
+缓存计算
+避免访问childNode宿主
+innerHTML代替createElement
+读写分离
+避免触发重绘
+
+性能测试不准确，有以下相关影响因素：
+有其他程序在运行，进程切换
+JS引擎有动态优化，PICs、JIT、OSR
+反优化
+各种不可见的Cache（I/O、CPU）
+笔记本的电源管理
+推荐jsperf.com网站
+
+延迟加载与预加载
+延迟载入（渲染）：可见部分载入（滚动条触发加载），通过用户行为触发
+预加载：考虑猜测用户习惯，预判用户下一步操作
+
+减少渲染
+首屏以外滚动渲染：用textarea存放首屏外的HTML
+逐楼分批渲染：setTimeout分片
+做好动画开关
+避免前端模板渲染：架构清晰、gzip后JSON和HTML差别不大
+屏幕翻转，避免批量渲染：通过devicemotion事件模拟onbeforeorientationchange
+window.bind('devicemotion',function(event){});
+
+减少资源消耗
+DOM量大时，适当清理内存
+缓存数据而非DOM
+聚集iScroll、避免CSS 3D加速
+
+FIS-静态资源管理：自动打包资源、动态&并行加载、自动添加CDN。
+集成优化工具：PC、无线方案，http://fe.baidu.com/FIS
+
+优化工具：Chrome Developer Toolkit能（性监控工具）、Pagecheck（性能检测工具）、HttpWatch（性监控工具）、Dynatrace+showslow（前端性能测试）
+
+从输入URL到浏览器接收的过程中发生了什么
+数据传输：带宽和延迟（影响网络性能的关键）、网络协议（DNS、TCP/IP、HTTP/1.0&1.1、SPDY）、缓存
+延迟处理：
+1、减少DNS查询/DNS预查询/DNS结果缓存
+2、减少HTTP请求的数
+3、尽量使用CDN
+4、合理的配置服务器缓存策略
+5、减少传输的内容大小/压缩文本/删除无用的文本
+6、新的协议SPDY、QUIC、HTTP2
+数据渲染：HTML&CSS、JavaScript Engine
+HTML&CSS：控制代码的提交，选择合理的HTML结构
+1、PreloadScanner
+2、书写高效的CSS selectors
+3、避免使用CSS expressions,如果可能的话，使用标准的CSS属性、如果无法避免，尽量使用js完成所需功能（filter少用）
+4、把CSS放到页面顶部
+5、明确图片的尺寸
+6、明确内容的编码
+7、图片避免缩放，图片缩放需要重绘html
+8、尽早flush：将数据线督导内存中，再把数据写到文件中。
+
+输入url-域名解析-解析到服务器ip地址，然后向服务器发送http请求，通过处理请求之后返回页面通过浏览器渲染出来，渲染页面顺序解析html代码，运行js，渲染css
+域名-ip地址-向服务器(通过ip知道服务器）发送http请求-服务器处理、响应，返回数据（html）给客户端-解析html-执行js-计算布局（解析css）-渲染-响应交互
+
+新闻类网站性能瓶颈：js执行加载，js处理图片等
+ajax类（gmail）网站性能瓶颈：dom渲染
+
+Expires：缓存过期时间(从本地cache里取，不发请求)
+Etag:发送了请求，但是服务器反馈内容没有修改，（304）然后从缓存中取，没有发送请求。所以做统计最好带上时间戳（F5、ctrl+f5），将Etag发送到服务器，服务器判断ETag有没有修改。有修改不再发送请求。修改重新发送其他请求
+浏览器前进后退从内存读取。
+
+css放头部：浏览器先加载css，这样在渲染html的时候不需要重新绘制，可以一次性绘制完全。css会改变html布局，这时候就会出现重绘，所以css先加载，html可以按照css指定布局直接渲染。
+js放尾部：防止阻塞，方便js并行加载
+
+内嵌外联（css、js）。外联文件可以缓存，外联增加请求。
+
+图片：大图片（色彩丰富，如渐变）--用jpg。动图用gif其他用png-8（可以兼容IE6透明）
+
+
+
+
+
+
+遗留问题

@@ -1,0 +1,311 @@
+var animal = function(opts){
+	this.name = opts.name ;
+	this.age = opts.age ;
+	this.run = function(){
+		console.log('name:' + this.name + ' age:' + this.age );
+	}
+}
+
+var pig = new animal({
+	'name':'huahua',
+	'age':2
+}) ;
+pig.run();
+
+
+var animal = {
+	name : 'zhangsan',
+	age : 2
+}
+console.log(animal.age);
+animal.age = 5 ;
+console.log(animal['age']);
+
+
+var aArray = new Array() ;
+aArray = [1,2,3,4,5,6,7,8,9,0] ;
+aArray.splice(2,0,'a') ;
+console.log(aArray); 
+
+var d = new Date(Date.parse("May 25,2004")) ;
+console.log(d);
+
+var d1 = new Date(2014,0,1) ;
+var d2 = new Date(2014,6,1);
+console.log(d1.getTimeZoneOffset() == d2.getTimeZoneOffset());
+
+
+var sUri = "http://www.wrox.com/illegal/ value.html#start" ;
+var encodeUri = encodeURI(sUri) ;
+var encodeUriCom = encodeURIComponent(sUri)
+console.log(encodeUri);
+console.log(encodeUriCom);
+
+console.log(decodeURI(encodeUri));
+console.log(decodeURIComponent(encodeUriCom));
+
+
+function animal(){
+	this.name = 'pig111' ;
+}
+
+//var pig = new animal() ; 
+var pig = animal.prototype ;
+console.log(pig.name);
+
+function sayHi(){
+	alert('sayHi') ;
+}
+
+sayHi.toName = function(){
+	alert('sayHi name') ;
+}
+sayHi() ;
+sayHi.toName()
+
+var oCar = new Object() ;
+oCar.color = "red" ;
+oCar.showColor = function(){
+	console.log(this.color);
+}
+oCar.showColor() ;
+
+function showColor(){
+	console.log(this.color);
+}
+var oCar = new Object() ;
+oCar.color = "red" ;
+oCar.showColor = showColor ;
+
+var oBus = new Object() ;
+oBus.color = "blue" ;
+oBus.showColor = showColor ;
+oCar.showColor() ;
+oBus.showColor() ;
+
+
+工厂方式
+
+var oCar = new Object() ;
+oCar.color = "red" ;
+oCar.doors = 4 ;
+oCar.showColor = function(){
+	console.log(this.color);
+}
+oCar.showColor();
+
+function createFactory(color,doors){
+	var createCar = new Object() ;
+	createCar.color = color ;
+	createCar.doors = doors ;
+	createCar.showColor = function(){
+		console.log(this.color) ;
+	}	
+	
+	return createCar ;
+}
+var oCar = createFactory("red",4) ;
+oCar.showColor() ;
+
+构造函数
+function Car(){
+	this.color = "red" ;
+	this.doors = 4 ;
+	this.showColor = function(){
+		console.log(this.color);
+	}
+}
+
+var oCar = new Car() ;
+oCar.showColor() ;
+
+原型方式
+function Car(){
+}
+Car.prototype.color = 'red' ;
+Car.prototype.doors = 4 ;
+Car.prototype.drivers = new Array('HanMeiMei','LiLei') ;
+Car.prototype.showDrivers = function(){
+	console.log(this.drivers) ;
+}
+
+var oCar1 = new Car() ;
+var oCar2 = new Car() ;
+oCar1.drivers.push('Lucy') ;
+oCar1.showDrivers() ;  //output ["HanMeiMei", "LiLei", "Lucy"] 
+oCar2.showDrivers() ; //output ["HanMeiMei", "LiLei", "Lucy"] 
+
+混合的构造函数/原型方式
+function Car(sColor,iDoors){
+	this.color = sColor ;
+	this.doors = iDoors ;
+	this.drivers = new Array('HanMeiMei','LiLei') ;
+}
+Car.prototype.showDrivers = function(){
+	console.log(this.drivers) ;
+}
+
+var oCar1 = new Car('red',4) ;
+var oCar2 = new Car('blue',2) ;
+oCar1.drivers.push('Lucy') ;
+oCar1.showDrivers() ; //output ["HanMeiMei", "LiLei", "Lucy"] 
+oCar2.showDrivers() ; //output ["HanMeiMei", "LiLei"] 
+
+动态原型方式
+function Car(sColor,iDoors){
+	this.color = sColor ;
+	this.doors = iDoors ;
+	this.drivers = new Array('HanMeiMei','LiLei') ;
+	if(typeof Car._initalized == 'undefined'){  //如果未初始化则初始化
+		Car.prototype.showDrivers = function(){
+			console.log(this.drivers) ;
+		};
+		Car._initalized = true ;
+	}
+}
+
+var oCar1 = new Car('red',4) ;
+var oCar2 = new Car('blue',2) ;
+
+oCar1.drivers.push('Lucy') ;
+
+oCar1.showDrivers() ; //output ["HanMeiMei", "LiLei", "Lucy"] 
+oCar2.showDrivers() ; //output ["HanMeiMei", "LiLei"] 
+
+
+function Car(opts){
+	this.name = opts.name ;
+	this.color = opts.color ;
+	this.doors = opts.doors ;
+}
+
+Car.prototype.showColor = function(){
+	console.log(this.color);
+}
+
+var oCar = new Car({
+	"name" : "aodi" ,
+	"doors" : 4 ,
+	"color" : 'red'
+}) ;
+
+oCar.showColor() ;
+
+混合工厂方式
+function createFactory(color,doors){
+	var createCar = new Object() ;
+	createCar.color = color ;
+	createCar.doors = doors ;
+	createCar.showColor = function(){
+		console.log(this.color) ;
+	}	
+	
+	return createCar ;
+}
+var oCar = new createFactory("red",4) ;
+oCar.showColor() ;
+
+
+实例
+var aArray = new Array('hello') ;
+aArray.push('world') ;
+var sStr = aArray.join(' ') ;
+console.log(sStr);
+
+function StringBuffer(){
+	//TODO
+}
+
+StringBuffer
+function StringBuffer(){
+	this._strings_ = new Array() ;
+}
+StringBuffer.prototype.append = function(newStr){
+	this._strings_.push(newStr) ;
+}
+StringBuffer.prototype.toString = function(){
+	return this._strings_.join('') ;
+}
+
+var Buffer = new StringBuffer() ;
+Buffer.append('Hello ') ;
+Buffer.append('World!') ;
+console.log(Buffer.toString());
+
+性能测试：
+var d1 = new Date() ;
+var str = '' ;
+for(var i=0;i<1000000;i++){
+	str += 'text' ;
+}
+var d2 = new Date() ;
+console.log('传统字符串连接耗时：'+(d2.getTime()-d1.getTime()));
+
+//Buffer
+
+var t1 = new Date() ;
+function StringBuffer(){
+	this._strings_ = new Array() ;
+}
+StringBuffer.prototype.append = function(str){
+	this._strings_.push(str) ;
+}
+StringBuffer.prototype.toString = function(){
+	return this._strings_.join('') ;
+}
+
+var aAry = new StringBuffer() ;
+for(var i=0;i<1000000;i++){
+	aAry.append('text') ;
+}
+aAry.toString() ;
+var t2 = new Date() ;
+console.log('Buffer字符串连接耗时：'+(t2.getTime() - t1.getTime()));
+
+prototype重写方法
+//toHexString
+Number.prototype.toHexString = function(){
+	return this.toString('16') ;
+}
+var iNum = 15 ;
+console.log(iNum.toHexString()) ;
+
+//enqueue
+Array.prototype.enqueue = function(str){
+	return this.push(str)
+}
+
+//dequeue
+Array.prototype.dequeue = function(str){
+	return this.shift(str) ;
+}
+
+//Object
+Object.prototype.showValue = function(){
+	return this.valueOf() ;
+}
+var sStr = 'Hello' ;
+var iNum = 10 ;
+console.log(sStr.showValue()) ;
+console.log(iNum.showValue()) ;
+
+Function.prototype.newToString = Function.prototype.toString ;
+
+Function.prototype.toString = function(){
+	if(this.newToString().length>100){
+		return "Function is too long to delay" ;
+	}else{
+		return this.newToString() ;
+	}
+}
+
+var test = function(){
+}
+console.log(test.newToString());
+
+
+var o = new Object() ;
+Object.prototype.sayHi = function(){
+	alert('aaa') ;
+}
+o.sayHi() ;

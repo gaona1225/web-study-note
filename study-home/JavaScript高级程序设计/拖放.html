@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>拖放</title>
+<style>
+	img{height:100px;width:100px;}
+	#dragDiv{background-color:red;height:100px;width:100px;position:absolute;cursor:move;z-index:100;}
+	#divDropTarget{background-color:blue;height:200px;width:200px;position:absolute;left:300px;}
+</style>
+<script type="text/javascript" src="eventutil.js"></script>
+
+</head>
+
+<body>
+	<p>Try dragging the image.</p>
+	<div id="dragDiv">This is a red square</div>
+	<div id="divDropTarget"></div>
+</body>
+<script>
+	var _dragDiv = document.getElementById('dragDiv'),iDiffX=0,iDiffY=0,moving=false;
+	_dragDiv.onmousedown = function(event){
+		var oEvent = EventUtil.getEvent() ;
+		var _dragDiv = document.getElementById('dragDiv');
+		oEvent.preventDefault();
+		moving = true;
+		iDiffX = oEvent.clientX - _dragDiv.offsetLeft;
+		iDiffY = oEvent.clientY - _dragDiv.offsetTop;
+		EventUtil.addEventHandler(_dragDiv,'mousemove',handsMouseMove);
+		EventUtil.addEventHandler(_dragDiv,'mouseup',handsMouseUp);
+	}
+
+	var handsMouseMove = function(){
+		if(moving){
+			var oEvent = EventUtil.getEvent() ;
+			var _dragDiv = document.getElementById('dragDiv');
+			oEvent.preventDefault();
+			_dragDiv.style.left = oEvent.clientX - iDiffX +'px';
+			_dragDiv.style.top = oEvent.clientY - iDiffY +'px';
+		}
+	}
+
+	var handsMouseUp = function(){
+		var oEvent = EventUtil.getEvent() ;
+		var _dragDiv = document.getElementById('dragDiv');
+		oEvent.preventDefault();
+		EventUtil.removeEventHandler(_dragDiv,'mousemove',handsMouseMove);
+		EventUtil.removeEventHandler(_dragDiv,'mouseup',handsMouseUp);
+		moving = false ;
+
+		if(isOverDropTarget(oEvent.clientX,oEvent.clientY)){
+			alert('dropped');
+			var oDiv = document.getElementById('divDropTarget');
+			var _dragDiv = document.getElementById('dragDiv');
+			oDiv.style.left = _dragDiv.offsetLeft;
+			oDiv.style.top = _dragDiv.offsetTop;
+		}
+	}
+
+	var isOverDropTarget = function(iX,iY){
+		var oTarget = document.getElementById('divDropTarget');
+		var iX1 = oTarget.offsetLeft;
+		var iX2 = iX1 + oTarget.offsetWidth;
+		var iY1 = oTarget.offsetTop;
+		var iY2 = iY1 + oTarget.offsetHeight;
+
+		return (iX>iX1 && iX<=iX2 && iY>iY1 && iY<=iY2);
+	}
+</script>
+</html>

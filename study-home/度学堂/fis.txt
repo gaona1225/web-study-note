@@ -1,0 +1,42 @@
+压缩、打包、添加md5、添加domain、测试、校验
+fis release --optimize --pack --md5 --domains --test --lint --dest ../output
+或者fis release -opmDtld ../out
+
+监听文件变化
+fis release --watch --dest ../output
+或者fis release -wd ../output
+
+自劢刷新浏览器
+fis release --live --dest ../output 
+或者fis release -Ld ../output
+
+文件上传
+fis release --dest remote
+或者fis release --dest remote,output
+
+文件监听+自劢刷新+优化+md5+domain+测试+校验+打包+多机器上传
+fis release -wLomDtlp -d rd,qa,output
+
+
+本地开发不调试
+-fis server install <something>
+–fis server start
+–fis release --watch
+
+获取资源
+–fis install tangram ./lib
+–fis install slider ./component
+玩玩coffee、less甚至markdown
+–npm install -g fis-parser-coffee-script
+–npm install -g fis-parser-less
+–npm install -g fis-parser-marked
+–vi path/to/project/fis-conf.js
+
+与后端工程师联调
+–fis release --watch --dest rd
+
+提测给qa测试
+–fis release -otlmp --dest qa
+
+上线
+–fis release -otlmpD --dest output

@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表格排序</title>
+<style>
+	th{curson:pointer;}
+	td img{width:20px;height:20px}
+</style>
+</head>
+
+<body>
+	<table border="1" id="tblSort">
+		<thead>
+			<tr>
+				<th id="thCell1">Last Name</th>
+				<th id="thCell2">First NameName</th>
+				<th id="thCell3">Birthday</th>
+				<th id="thCell4">href</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Smith</td>
+				<td>John</td>
+				<td>7/12/1978</td>
+				<td value="blue">blue<img src="photo02.jpg" /></td>
+			</tr>
+			<tr>
+				<td>Johnson</td>
+				<td>Betty</td>
+				<td>6/1/1978</td>
+				<td value="orange">orange<img src="photo02.jpg" /></td>
+			</tr>
+			<tr>
+				<td>Henderson</td>
+				<td>Nathan</td>
+				<td>7/12/1978</td>
+				<td value="word">word<img src="photo02.jpg" /></td>
+			</tr>
+			<tr>
+				<td>Williams</td>
+				<td>James</td>
+				<td>7/11/1998</td>
+				<td value="pdf">pdf<img src="photo02.jpg" /></td>
+			</tr>
+			<tr>
+				<td>Gilliam</td>
+				<td>Michael</td>
+				<td>7/12/2078</td>
+				<td value="txt">txt<img src="photo02.jpg" /></td>
+			</tr>
+			<tr>
+				<td>Walker</td>
+				<td>Matthew</td>
+				<td>7/2/1978</td>
+				<td value="zip">zip<img src="photo02.jpg" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		var TableUtil = new Object();
+		
+		//排序
+		TableUtil.sortTable = function(tableId,iCol,sDataType){
+			var oTable = document.getElementById(tableId);
+			var oTBody = oTable.tBodies[0];
+			var colDataRows = oTBody.rows;
+			var aTRs = new Array;
+			
+			for(var i=0;i<colDataRows.length;i++){
+				aTRs.push(colDataRows[i]);
+			}
+			if(oTable.sortCol == iCol){
+				aTRs.reverse();
+			}else{
+				aTRs.sort(TableUtil.generateCompareTRs(iCol,sDataType));
+			}
+			
+			var oFragment = document.createDocumentFragment();
+			for(var i=0;i<aTRs.length;i++){
+				oFragment.appendChild(aTRs[i]);
+			}
+			oTBody.appendChild(oFragment);
+			oTable.sortCol = iCol ;
+		};
+		
+		
+		//比较函数生成器
+		TableUtil.generateCompareTRs = function(iCol,sDataType){
+		    return function(oTR1,oTR2){
+			    return TableUtil.compareTRs(oTR1,oTR2,iCol,sDataType);
+			};
+		};
+		
+		//对tr数组进行排序
+		TableUtil.compareTRs = function(oTR1,oTR2,iCol,sDataType){
+		   /* var sValue1 = oTR1.cells[iCol].firstChild.nodeValue ;
+			var sValue2 = oTR2.cells[iCol].firstChild.nodeValue ;*/
+			var vValue1,vValue2;
+			if(oTR1.cells[iCol].getAttribute('value')){
+				console.log(oTR1.cells[iCol].getAttribute('value'));
+				vValue1 = TableUtil.convert(oTR1.cells[iCol].getAttribute('value'),sDataType) ;
+				vValue2 = TableUtil.convert(oTR2.cells[iCol].getAttribute('value'),sDataType) ;
+			}else{
+				vValue1 = TableUtil.convert(oTR1.cells[iCol].firstChild.nodeValue,sDataType) ;
+				vValue2 = TableUtil.convert(oTR2.cells[iCol].firstChild.nodeValue,sDataType) ;
+			}
+			
+			if(vValue1 < vValue2){
+				return -1 ;
+			}else if(vValue1 > vValue2){
+				return 1 ;
+			}else{
+				return 0 ;
+			}
+			
+			//return sValue1.localeCompare(sValue2);
+		};
+		
+		//创建转换函数
+		TableUtil.convert = function(sValue,sDataType){
+			switch(sDataType){
+				case 'int' : return parseInt(sValue) ;break;
+				case 'float' : return parseFloat(sValue) ;break;
+				case 'date' : return new Date(Date.parse(sValue)) ;break;
+				default:return sValue.toString();break;
+			}
+		};
+		
+		//调用
+		var _table = document.getElementById('tblSort');
+		var _thCell1 = document.getElementById('thCell1');
+		_thCell1.onclick = function(){
+			TableUtil.sortTable('tblSort',0)
+		}
+		var _thCell2 = document.getElementById('thCell2');
+		_thCell2.onclick = function(){
+			TableUtil.sortTable('tblSort',1)
+		}
+		
+		var _thCell3 = document.getElementById('thCell3');
+		_thCell3.onclick = function(){
+			TableUtil.sortTable('tblSort',2,'date')
+		}
+		
+		var _thCell4 = document.getElementById('thCell4');
+		_thCell4.onclick = function(){
+			TableUtil.sortTable('tblSort',3)
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+var oHello = OP1.firstChild.firstChild ;
+var oRange = document.createRange();
+oRange.setStart(oHello,2);
+oRange.endStart(oHello,5);

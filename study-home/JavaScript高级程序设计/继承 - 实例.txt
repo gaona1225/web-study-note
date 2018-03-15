@@ -1,0 +1,63 @@
+继承实例
+//背景：基类：形状，超类：多边形，椭圆，子类：矩形、三角形、五边形等，圆形、椭圆形。子类：正方形
+背景：基类（超类）：形状polygon，子类：矩形Rectangle、三角形Triangle
+/**
+	* 创建基类
+	* @param number sides 边数
+	* @param function getArea() 获取面积--返回 number类型  基类中的获取面积方法只是一个占位符，以便子类覆盖，所以再次返回0
+*/
+function polygon(iSides){
+	this.sides = iSides ;
+}
+polygon.prototype.getArea = function(){
+	return 0 ;
+}
+
+
+/**
+	* 创建子类 三角形Triangle
+	* @param number sides 边数--3  --从基类继承
+	* @param function getArea() 需要列出计算三角形面积的详细实现 0.5*width*height
+	* @param number base  底的值
+	* @param number height  高的值
+*/
+function Triangle(iBase,iHeight){
+	polygon.call(this,3);
+	
+	this.base = iBase ;
+	this.height = iHeight ;
+}
+Triangle.prototype = new polygon();
+Triangle.prototype.getArea = function(){
+	return 0.5*this.base*this.height;
+}
+
+/**
+	* 创建子类 矩形Rectangle
+	* @param number sides 边数--4  --从基类继承
+	* @param function getArea() 需要列出计算矩形面积的详细实现 width*height
+	* @param number width  宽的值
+	* @param number height  长的值
+*/
+function Rectangle(iWidth,iHeight){
+	polygon.call(this,4);
+	
+	this.width = iWidth ;
+	this.height = iHeight ;
+}
+Rectangle.prototype = new polygon();
+Rectangle.prototype.getArea = function(){
+	return this.width*this.height ;
+}
+
+/**
+	* 测试代码
+*/
+var tri = new Triangle(12,4);
+var rec = new Rectangle(22,10);
+
+console.log(tri.sides);
+console.log(tri.getArea());
+
+console.log(rec.sides);
+console.log(rec.getArea());

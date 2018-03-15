@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM</title>
+</head>
+
+<body>
+	<ul id="parent">
+		<li id="li1">111</li>
+		<li id="li2">222</li>
+		<li id="li3">333</li>
+		<li id="li4">444</li>
+		<li id="li5">555</li>
+		<li id="li6">666</li>
+		<li id="li7">777</li>
+		<li id="li8">888</li>
+	</ul>
+	<script>
+		var _parent = document.getElementById('parent') ;
+		var _li1 = document.getElementById('li1') ;
+		var _li2 = document.getElementById('li2') ;
+		var _li3 = document.getElementById('li3') ;
+		var _li4 = document.getElementById('li4') ;
+		var _li5 = document.getElementById('li5') ;
+		var _li6 = document.getElementById('li6') ;
+		var _li7 = document.getElementById('li7') ;
+		var _li8 = document.getElementById('li8') ;
+		console.log('nodeName:'+_parent.nodeName); //output UL
+		console.log('nodeValue:'+_parent.nodeValue); 
+		console.log('nodeType:'+_parent.nodeType); 
+		console.log('childNodes:'+_parent.childNodes.length); //output 13 包含相关的元素节点，文本节点，属性节点
+		console.log('firstChild nodeName:'+_parent.firstChild.nodeType); 
+		console.log('lastChild nodeName:'+_parent.lastChild.nodeName); 
+		console.log('li2 previousSibling:'+_li2.previousSibling.nodeName); 
+		console.log('li2 nextSibling:'+_li2.nextSibling.nodeName); 
+		console.log('hasChildNodes:'+_parent.hasChildNodes()); 
+		console.log('attributes:'+_parent.attributes); 
+		console.log('appendChild:'+_li2.appendChild(_li1)); 
+		console.log('removeChild:'+_parent.appendChild(_li3)); 
+		console.log('removeChild:'+_parent.removeChild(_li4)); 
+		console.log('replaceChild:'+_parent.replaceChild(_li8,_li7)); //在_li7的位置放置_li8,_li8去除占位。
+		console.log('insertBefore:'+_parent.insertBefore(_li6,_li5)); //在_li5前面插入_li6
+	</script>
+</body>
+</html>

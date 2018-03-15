@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>高级DOM技术</title>
+<style>
+.divID{
+	border:1px solid #666 ;
+	height:300px ;
+	width:300px;
+}
+.divTip{
+	background:#999;
+	border:1px solid #333;
+	height:20px;
+	position:absolute;
+	visibility:hidden;
+	width:160px;
+}
+.divTitle{
+	background:#aaa ;
+	border:1px solid #999;
+	height:20px ;
+	margin:0;
+	padding:0;
+	width:200px; 
+}
+.divContent{
+	border:1px solid #999;
+	height:100px ;
+	margin:0;
+	padding:0;
+	width:200px; 
+}
+</style>
+</head>
+
+<body>
+	<div id="divID" class="divID" style="width:100px;height:200px;"></div>
+	<div id="divTip" class="divTip"></div>
+	
+	<div class="divWrap" id="divWrap">
+		<h3 class="divTitle" id="divTitle">111</h3>
+		<p class="divContent" id="divContent">PPP111</p>
+	</div>
+	
+	<p id="pl"><b>Hello</b> World</p>
+	<script type="text/javascript">
+		var divID = document.getElementById('divID');
+		var divTip = document.getElementById('divTip');
+		//divID.style.border = '2px solid red' ;
+		divID.onmouseover = function(event){
+			divID.style.border = '2px solid red' ;
+		}
+		divID.onmousemove = function(event){
+			var _x = event.clientX + 5 ;
+			var _y = event.clientY + 5 ;
+			divTip.style.left = _x + 'px' ;
+			divTip.style.top = _y + 'px' ;
+			divTip.style.visibility = 'visible' ;
+		}
+		divID.onmouseout = function(event){
+			divTip.style.visibility = 'hidden' ;
+		}
+		console.log(divID.style.getPropertyValue('width'));
+		console.log(divID.style.item(1));
+		divID.style.removeProperty('height');
+		//divID.style.setProperty('background-color','#333');
+		
+		var divContent = document.getElementById('divContent') ;
+		document.getElementById('divTitle').onclick = function(){
+			divContent.style.display = (divContent.style.display == 'none') ? 'block' : 'none'
+		}
+		
+		var oCSSRules = document.styleSheets[0].cssRules || document.styleSheets[0].rules ;
+		console.log(oCSSRules);
+		console.log(oCSSRules[0].style.border);
+		
+		//IE最终样式
+		if(document.all){
+			console.log('haha');
+			console.log(divID.currentStyle.height);
+		}else{
+			console.log('hehe');
+			console.log(getComputedStyle(divID,false)['height']);
+		}
+		
+		divID.innerText = 'fdsakjflksajf <div/>.' ;
+		
+		var _divWrap = document.getElementById('divWrap');
+		console.log(_divWrap.innerText);
+		console.log(_divWrap.outerText);
+		console.log(_divWrap.innerHTML);
+		console.log(_divWrap.outerHTML);
+		//_divWrap.innerText = _divWrap.innerText ;
+		//_divWrap.outerText = _divWrap.outerText ;
+		
+		var oRange1 = document.createRange();
+		var oRange2 = document.createRange();
+		
+		var OP1 = document.getElementById('pl') ;
+		oRange1.selectNode(OP1);
+		oRange2.selectNodeContents(OP1);
+		console.log('DOM范围中的简单选取');
+		console.log(oRange1.startContainer.tagName);
+		console.log(oRange2.startContainer.tagName);
+		
+		console.log(oRange1.startOffset);
+		console.log(oRange2.startOffset);
+		
+		console.log(oRange1.endContainer.tagName);
+		console.log(oRange2.endContainer.tagName);
+		
+		console.log(oRange1.endOffset);
+		console.log(oRange2.endOffset);
+		
+		console.log(oRange1.commonAncestorContainer.tagName);
+		console.log(oRange2.commonAncestorContainer.tagName);
+		
+		var OP1 = document.getElementById('pl') ;
+		var oHello = OP1.firstChild.firstChild ;
+		var oWorld = OP1.lastChild ;
+		var oRange = document.createRange();
+		oRange.setStart(oHello,2);
+		oRange.setEnd(oWorld,3);
+		console.log(oRange);
+	</script>
+</body>
+</html>

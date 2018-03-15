@@ -1,0 +1,41 @@
+console.log(document.getElementById('parent').hasChildNodes());
+
+检查节点类型
+console.log(document.nodeType); //output 9
+console.log(document.documentElement.nodeType); //output 1
+
+
+var arrText = ['111','222','333','444','555','666','777','888','999','000'] ;
+
+var oFragment = document.createDocumentFragment() ;
+
+for(var i=0; i<arrText.length;i++){
+	var _p = document.createElement('p') ;
+	var _text = document.createTextNode(arrText[i]) ;
+	_p.appendChild(_text);
+	oFragment.appendChild(_p);
+}
+
+document.body.appendChild(oFragment);
+
+创建表格
+var table = document.createElement('table');
+table.setAttribute('border','1') ;
+table.setAttribute('width','100%');
+
+var tBody = document.createElement('tBody');
+table.appendChild(tBody);
+
+tBody.insertRow(0);
+tBody.rows[0].insertCell(0);
+tBody.rows[0].cells[0].appendChild(document.createTextNode('Cell 1,1'));
+tBody.rows[0].insertCell(1);
+tBody.rows[0].cells[1].appendChild(document.createTextNode('Cell 2,1'));
+
+tBody.insertRow(1);
+tBody.rows[1].insertCell(0);
+tBody.rows[1].cells[0].appendChild(document.createTextNode('Cell 1,2'));
+tBody.rows[1].insertCell(1);
+tBody.rows[1].cells[1].appendChild(document.createTextNode('Cell 2,2'));
+
+document.body.appendChild(table);

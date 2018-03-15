@@ -1,0 +1,13 @@
+情景：
+js按需加载，模块化管理，根据需求import相关文件，每次增加一个js文件，将该js文件依赖的库、脚本等加载进来
+eg：study/passpc-api/static/js/accConnect.js
+passport._define('accConnect.js', function(){
+    importScript("conf/domain.js");
+    importScript("lib/magic.js");
+    importScript("lib/rsa_wap.js");
+    importScript("lang/accConnect.js");
+    importScript("network/data.js");
+    importScript("ui.js");
+    importScript("modules/accConnect.js");
+    return magic;
+})

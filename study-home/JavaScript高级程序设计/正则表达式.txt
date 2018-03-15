@@ -1,0 +1,211 @@
+//判断模式是否匹配某个字符串--test()
+var reg = new RegExp(/at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(reg.test(strX));
+
+//访问模式的每次出现 返回第一个位置  -- exec()
+var reg = new RegExp(/at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(reg.exec(strX));
+
+//返回每个匹配的字符串 -- match()
+var reg = new RegExp(/at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.match(reg));
+
+//返回在字符串中出现的一个匹配的位置--search()
+var reg = new RegExp(/at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.search(reg));
+
+//replace()
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.replace('at','hello'));
+
+var reg = new RegExp(/at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.replace(reg,'@@@'));
+
+var reg = new RegExp(/at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.replace(reg,function(){return '111';}));
+
+//splite()
+var sColor = 'red,blue,green,purple' ;
+var reg = new RegExp(/\,/);
+console.log(sColor.split(reg));
+
+//元字符 非字面量表示 双重转义
+var sColor = 'red,blue,green,purple' ;
+var reg = new RegExp('\\,');  //非字面量表示  字面量表示形式（new RegExp(/\,/)）
+console.log(sColor.split(reg));
+
+//使用特殊字符
+var sColor = 'blue' ;
+var reg = new RegExp(/\x62/) ;
+console.log(reg.test(sColor));
+
+//字符类-简单类
+var reg = new RegExp(/[bcf]at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.match(reg));
+
+var reg = new RegExp(/[\u0062cf]at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.match(reg));
+
+//字符类-负向类
+var reg = new RegExp(/[^bc]at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.match(reg));
+
+//字符类-范围类
+var reg = new RegExp(/[a-z]at/gi);
+var strX = 'a bat, aCat, a fAt baT, a faT cat' ;
+console.log(strX.match(reg));
+
+//字符类-组合类
+var reg = new RegExp(/[a-m1-4\n]/gi);
+var strX = 'fdsaklfjdaskj2\n32432546jkdfjdsafj' ;
+console.log(strX.match(reg));
+
+//字符类-预定义类
+var reg = new RegExp(/\d\d\d/gi);
+var num = '123 123 123';
+console.log(reg.test(num));
+
+//量词-简单量词
+var strX = 'breadreadred' ;
+var reg = new RegExp(/b?rea?d/gi);
+console.log(reg.test(strX));
+
+//量词-贪婪、懒惰、支配
+var strX = 'abbbaabbbaaabbb1234' ;
+var reg1 = new RegExp(/.*bbb/gi);
+var reg2 = new RegExp(/.*?bbb/gi);
+var reg3 = new RegExp(/.*+bbb/gi); 
+console.log(reg1.test(strX));
+console.log(reg2.test(strX));
+console.log(reg3.test(strX)); // false
+
+//分组
+var strX = 'dogdogdog' ;
+var reg = new RegExp(/(dog){2}/);
+console.log(reg.test(strX));
+
+var strX = '  fdsafdsaf   dsafadsfdsaf  fdsafdsafdsa   ' ;
+var reg = new RegExp(/^\s*|\s*$/gi);
+console.log(strX.replace(reg,""));
+
+//反向引用
+var sToMatch = '#1234567890';
+var reNumber = /#(\d+)/ ;
+reNumber.test(sToMatch);  //必须的，经过test()方法的调用，所有的反向引用都被保存在RegExp构造函数中。
+console.log(RegExp.$1);
+
+var sToChange = '1234 5678';
+var reMatch = /(\d{4})\s(\d{4})/ ;
+reMatch.test(sToChange);
+console.log(RegExp.$1);
+console.log(RegExp.$2);
+console.log(sToChange.replace(reMatch,'$2 $1'));
+
+//候选
+var strX1 = 'redffdsafsad' ; 
+var strX2 = 'blue123244354' ; 
+var reg = /red|blue/gi ;
+console.log(strX1.replace(reg,'***'));
+var newStr = strX1.replace(reg,function(str){
+	return str.replace(/./g,'@');
+});
+console.log(newStr);
+
+//非捕获性分组
+String.prototype.stripHTML = function(){
+	var reg = /<(?:.)*?>/gi ;
+	return this.replace(reg,'');
+}
+var sTest = '<img src="test.jpg" /><span>fdsafaer234324543</span>' ;
+console.log(sTest.stripHTML());
+
+//前瞻-正向前瞻
+var sToMatch1 = 'bedroom' ;
+var sToMatch2 = 'beding';
+var reBed = /(bed(?=room))/gi;
+console.log(reBed.test(sToMatch1)); // true
+console.log(RegExp.$1);
+console.log(reBed.test(sToMatch2)); // false
+console.log(RegExp.$1);
+
+//前瞻-负向前瞻
+var sToMatch1 = 'bedroom' ;
+var sToMatch2 = 'beding';
+var reBed = /(bed(?!room))/gi;
+console.log(reBed.test(sToMatch1)); // false
+console.log(RegExp.$1);
+console.log(reBed.test(sToMatch2)); // true
+console.log(RegExp.$1);
+
+//边界
+var sToMatch1 = 'bedroom hello world . abd5' ;
+var reBed = /^(\w+)\d$/gi;
+console.log(reBed.test(sToMatch1)); // false
+console.log(RegExp.$1);
+
+var sToMatch1 = 'bedroom hello world . abd5' ;
+var reBed = /(\w+)/gi;
+sToMatch1.match(reBed)
+
+//多行
+var sToMatch1 = 'bedroom hello\n world . abd5' ;
+var reBed = /(\w+)$/gim;
+sToMatch1.match(reBed)
+
+//验证日期--展现形式dd/mm/yyyy
+var reDate = /(?:0[1-9]|[12][0-9]|3[01])\/(?:0[1-9]|1[0-2])\/(?:19|20\d{2})/gi ;
+var num = '22/12/2011' ;
+console.log(reDate.test(num));
+
+//验证信用卡--包含16位数字，其中前两个数字必须是51-55之间,每四位数字之间用空格或是-或是没有任何符号分隔。加入捕获性分组
+var reMasterCard = /^(5[1-5]\d{2})[\s\-]?(\d{4})[\s\-]?(\d{4})[\s\-]?(\d{4})$/gi ;
+var card = '5432123456789012' ;
+console.log(reMasterCard.test(card));
+console.log(RegExp.$1+'==='+RegExp.$2+'==='+RegExp.$3+'==='+RegExp.$4);
+Luhn算法验证信用卡,该算法第一步是从卡号最后一个数字开始，并逆向地逐个将奇数位置（1,3等等）的数字相加，要判断当前的这个数字是不是在偶数位置上。
+function luhnCheckSum(sCardNum){
+	var iOddSum = 0 ;
+	var iEvenSum = 0 ;
+	var bIsOdd = true ;
+	for(var i=sCardNum.length-1;i>=0;i--){
+		var iNum = parseInt(sCardNum.charAt(i));
+		if(bIsOdd){
+			iOddSum += iNum;
+		}else{
+			iNum = iNum*2;
+			if(iNum>9){
+				iNum = eval(iNum.toString().split('').join('+'));
+			}
+			iEvenSum += iNum;
+		}
+		bIsOdd = !bIsOdd ;
+	}
+	return ((iEvenSum + iOddSum)%10 == 0) ;
+}
+
+function isValidMasterCard(sText){
+	var reMasterCard = /^(5[1-5]\d{2})[\s\-]?(\d{4})[\s\-]?(\d{4})[\s\-]?(\d{4})$/gi ;
+	if(reMasterCard.test(sText)){
+		var sCardNum = RegExp.$1 + RegExp.$2 + RegExp.$3 + RegExp.$4 ;
+		return luhnCheckSum(sCardNum);
+	}else{
+		return false ;
+	}
+}
+console.log(isValidMasterCard('5432123456789012'));
+console.log(isValidMasterCard('5432-1234-5678-9012'));
+console.log(isValidMasterCard('5432 1234 5678 9012'))
+
+//验证电子邮件地址
+var reEmail = /^(?:\w+\.?)*\w+@(?:\w+\.?)*\w+$/gi ;
+var email = 'test.hello@126.com' ;
+console.log(reEmail.test(email));

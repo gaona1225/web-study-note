@@ -1,0 +1,44 @@
+1、抽样统计：
+当符合某个抽样脚本与服务器交互，再次为了统计值准确性，在发送请求时候添加相关唯一标识（时间戳、随机数）
+2、回调函数处理：
+多个互相有依赖关系的js同时载入，例如a.js/b.js 现在b.js需要调用a.js里面定义的方法。为了确保b.js调用a.js定义的方法之前a.js已经加载完成了。
+3、发布处理:压缩合并文件到一个新取的文件中
+4、js按需加载:
+js按需加载，模块化管理，根据需求加载相关文件
+
+
+
+
+
+importScript //载入js文件 ，是否载入成功，并不知道
+_define(name,fn) //执行fn，并将fn的返回值 附值给_modulePool.name
+_getModule(name);//取模块
+
+
+载多个js载入顺序的问题 , 是否载入成功 
+js之间的依赖关系问题，比如advert.js要依赖 json.js wrap.js ..... js的依赖关系，是要由调用者去保证 
+js按需加载
+
+
+js合并的好处：
+1 缩小文件的大小
+2 减少请求的次数，加快加载的速度
+3 如果合并的js之间形成依赖，它可以保证一次性载入，不会有出现调用访问undefined问题
+
+
+
+
+
+基础的载入方法 load(module,callback); 可以保证module加载成功之后，才执行callback
+涉及到一些知识点：
+   1 http://xxxx/a.js?t=1213   参数t的作用??
+   2 统计的时候，可以选择精确统计，或者抽样统计
+   3 浏览器兼容性问题，代码风格
+
+应用场景 accConnect.js 里面有test() ,
+uni_accConnect.js里面需要调用test()方法，那么就可以利用load方法，先载入accConnect.js，然后再回调中调用test
+
+
+load("accConnect.js " ,function(){
+  test();//定义在accConnect.js中的
+});

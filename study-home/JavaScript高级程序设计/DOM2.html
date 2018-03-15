@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM2</title>
+</head><body>
+	<p id="pId" name="pName">Hello World!</p>
+	<p name="pName">Isn't this exciting?</p>
+	<p>You're learning to use the DOM!</p>
+	
+	<div id="div1">
+		<p>Hello <b>World!</b></p>
+		<ul>
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+		</ul>
+	</div>
+	<textarea rows="10" cols="40" id="text1"></textarea><br/>
+	<input type="button" value="Make List" onclick="makeList()" />
+	<input type="button" value="Make List -- walker" onclick="makeWalkerList()" />
+	<script>
+		var oHtml = document.documentElement;  //输出整个html
+		console.log(oHtml); 
+		var oHead = oHtml.firstChild ;  //输出head
+		console.log(oHead);
+		var oBody = oHtml.lastChild;  //输出body
+		console.log(oBody);
+		var oHead1 = oHtml.childNodes[0] ;  //输出head
+		console.log(oHead1);
+		var oBody1 = oHtml.childNodes[1];  //输出body -- 注意</head><body>之间不可以有换行，不然在head和body之间会有个空节点
+		console.log(oBody1);
+		var oBody2 = oHtml.childNodes.item(1);  //输出body
+		console.log(oBody2);
+		var len = oHtml.childNodes.length ;
+		console.log(len);
+		
+		console.log(oHead.parentNode == oHtml);
+		console.log(oHead.nextSibling == oBody);
+		console.log(oBody.previousSibling == oHead);
+		console.log(oHead.previousSibling == null); //oHead是第一个子节点。没有previousSibling
+		console.log(oHead.ownerDocument == document); //output true ： oHead的ownerDocument特性事实上是指向该文档。
+		
+		var sId = document.getElementById('pId').attributes.getNamedItem('id').value;
+		console.log(sId);
+		document.getElementById('pId').attributes.getNamedItem('id').value = 'newId'; 
+		
+		console.log(document.getElementsByName('pName')[0].innerHTML);
+		
+		var _div = document.createElement('div');
+		var _text = document.createTextNode('I am is a div');
+		_div.appendChild(_text);
+		oBody.appendChild(_div);
+		
+		var iterator = null ;
+		/*
+			* 未加过滤p标签
+		function makeList(){
+			var oDiv = document.getElementById('div1') ;
+			iterator = document.createNodeIterator(oDiv,NodeFilter.SHOW_ELEMENT,null,false);
+			var oOutput = document.getElementById('text1');
+			var oNode = iterator.nextNode();
+			while(oNode){
+				oOutput.value += oNode.tagName + '\n' ;
+				oNode = iterator.nextNode();
+				console.log(oNode);
+			}
+		}
+		*/
+		function makeList(){
+			var oDiv = document.getElementById('div1') ;
+			var oFilter = new Object();
+			oFilter.acceptNode = function(oNode){
+				console.log((oNode.tagName == 'P') ? NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT);
+				return ((oNode.tagName == 'P') ? NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT) ;
+			}
+			
+			iterator = document.createNodeIterator(oDiv,NodeFilter.SHOW_ELEMENT,oFilter,false);
+			var oOutput = document.getElementById('text1');
+			var oNode = iterator.nextNode();
+			while(oNode){
+				oOutput.value += oNode.tagName + '\n' ;
+				oNode = iterator.nextNode();
+				console.log(oNode);
+			}
+		}
+		
+		var walker = null ;
+		function makeWalkerList(){
+			var oDiv = document.getElementById('div1') ;
+			var oFilter = new Object();
+			oFilter.acceptNode = function(oNode){
+				console.log((oNode.tagName == 'P') ? NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT);
+				return ((oNode.tagName == 'P') ? NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT) ;
+			}
+			
+			walker = document.createTreeWalker(oDiv,NodeFilter.SHOW_ELEMENT,oFilter,false);
+			var oOutput = document.getElementById('text1');
+			var oNode = walker.nextNode();
+			while(oNode){
+				oOutput.value += oNode.tagName + '\n' ;
+				oNode = walker.nextNode();
+				console.log(oNode);
+			}
+		}
+	</script>
+</body>
+</html>
